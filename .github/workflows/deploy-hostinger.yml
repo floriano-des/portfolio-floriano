@@ -31,4 +31,4 @@ jobs:
           remote_host: ${{ secrets.SSH_HOST }}
           remote_port: ${{ secrets.SSH_PORT }}
           remote_user: ${{ secrets.SSH_USER }}
-          remote_pass: ${{ secrets.SSH_PASSWORD }}
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }} # Usando a chave agora!
