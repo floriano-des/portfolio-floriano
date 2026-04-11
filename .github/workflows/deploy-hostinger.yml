@@ -1,0 +1,34 @@
+name: Deploy para Hostinger (Produção)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pegar o código fonte
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Instalar dependências e Gerar Site
+        run: |
+          npm install
+          npx @11ty/eleventy
+
+      - name: Enviar para Hostinger via SSH (Rsync)
+        uses: Burnett01/rsync-deployments@7.0.1
+        with:
+          switches: -avzr --delete
+          path: _site/
+          remote_path: /home/u228637966/domains/floriano.des.br/public_html/
+          remote_host: ${{ secrets.SSH_HOST }}
+          remote_port: ${{ secrets.SSH_PORT }}
+          remote_user: ${{ secrets.SSH_USER }}
+          remote_pass: ${{ secrets.SSH_PASSWORD }}
