@@ -27,8 +27,8 @@ jobs:
         with:
           switches: -avzr --delete
           path: _site/
-          remote_path: /home/u228637966/domains/floriano.des.br/public_html/
+          remote_path: domains/floriano.des.br/public_html/
           remote_host: ${{ secrets.SSH_HOST }}
           remote_port: ${{ secrets.SSH_PORT }}
           remote_user: ${{ secrets.SSH_USER }}
-          remote_key: ${{ secrets.SSH_PRIVATE_KEY }} # Usando a chave agora!
+          remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
