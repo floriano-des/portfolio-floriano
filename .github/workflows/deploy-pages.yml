@@ -1,0 +1,44 @@
+name: Deploy para GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # O robô vai rodar toda vez que você enviar algo para a main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Pegar o código fonte
+        uses: actions/checkout@v4
+
+      - name: Instalar o Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Instalar dependências do Eleventy
+        run: npm install
+
+      - name: Construir o site pronto
+        run: npx @11ty/eleventy
+
+      - name: Configurar o GitHub Pages
+        uses: actions/configure-pages@v4
+
+      - name: Preparar a pasta _site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_site"
+
+      - name: Colocar o site online
+        id: deployment
+        uses: actions/deploy-pages@v4
