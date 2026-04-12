@@ -229,62 +229,39 @@ activeNav: home
 
       <div class="reflections__grid">
 
-        <!-- Post 1 -->
-        <article class="post-card" data-animate data-delay="1">
-          <a href="/reflexoes/maquinas-vs-humanos" class="post-card__link">
-            <div class="post-card__thumb">
-              <img
-                src="https://www.figma.com/api/mcp/asset/bec4326d-e1a8-40ee-9783-3acdcf5b1cee"
-                alt="As máquinas já ganharam de humanos nas fábricas"
-                loading="lazy"
-              >
-              <div class="post-card__thumb-gradient"></div>
-            </div>
-            <div class="post-card__body">
-              <h3 class="post-card__title">As máquinas já ganharam de humanos nas fábricas. Você vai cometer o mesmo erro?</h3>
-              <p class="post-card__excerpt">Se você descreve seu trabalho como "criar algo", você está em uma zona de risco. A IA já venceu a batalha da produção, mas há um terreno onde ela jamais poderá competir:</p>
-              <span class="post-card__cta">Leia mais »</span>
-            </div>
-          </a>
-        </article>
-
-        <!-- Post 2 -->
-        <article class="post-card" data-animate data-delay="2">
-          <a href="/reflexoes/designer-a-dados" class="post-card__link">
-            <div class="post-card__thumb">
-              <img
-                src="https://www.figma.com/api/mcp/asset/2387e443-f545-4323-82c1-30d388056658"
-                alt="De designer a dados: o projeto que mudou meu foco"
-                loading="lazy"
-              >
-              <div class="post-card__thumb-gradient"></div>
-            </div>
-            <div class="post-card__body">
-              <h3 class="post-card__title">De designer a dados: o projeto que mudou meu foco</h3>
-              <p class="post-card__excerpt">Sou web designer, mas recentemente meu foco mudou. Em um projeto desafiador, percebi a necessidade de exibir dados financeiros de forma dinâmica, sem depender da equipe técnica. Decidi transformar uma simples planilha</p>
-              <span class="post-card__cta">Leia mais »</span>
-            </div>
-          </a>
-        </article>
-
-        <!-- Post 3 -->
-        <article class="post-card" data-animate data-delay="3">
-          <a href="/reflexoes/parece-carinho-e-ux" class="post-card__link">
-            <div class="post-card__thumb">
-              <img
-                src="https://www.figma.com/api/mcp/asset/ea5462b6-b7b8-4926-80f2-b3a534216285"
-                alt="Parece carinho e empatia, mas é UX"
-                loading="lazy"
-              >
-              <div class="post-card__thumb-gradient"></div>
-            </div>
-            <div class="post-card__body">
-              <h3 class="post-card__title">Parece carinho e empatia, mas é UX.</h3>
-              <p class="post-card__excerpt">Quando a IA te chama de 'amigo', parece afeto… mas é só UX. Até onde o design entrega conexão real, e onde começa a ilusão?</p>
-              <span class="post-card__cta">Leia mais »</span>
-            </div>
-          </a>
-        </article>
+        {% if reflexoes.items.length %}
+          {% for post in reflexoes.items %}
+            {% if loop.index <= 3 %}
+            <article class="post-card" data-animate data-delay="{{ loop.index }}">
+              <a href="{{ post.link }}" class="post-card__link" target="_blank" rel="noopener noreferrer">
+                <div class="post-card__thumb">
+                  {% if post.thumbnail %}
+                    <img src="{{ post.thumbnail }}" alt="{{ post.title }}" loading="lazy">
+                  {% else %}
+                    <div style="width:100%;height:100%;background:rgba(255,255,255,.06);"></div>
+                  {% endif %}
+                  <div class="post-card__thumb-gradient"></div>
+                </div>
+                <div class="post-card__body">
+                  <h3 class="post-card__title">{{ post.title }}</h3>
+                  {% if post.excerpt %}
+                    <p class="post-card__excerpt">{{ post.excerpt }}</p>
+                  {% endif %}
+                  <span class="post-card__cta">Leia mais »</span>
+                </div>
+                {% if post.dateDisplay %}
+                  <time class="post-card__date" datetime="{{ post.dateAttr }}">{{ post.dateDisplay }}</time>
+                {% endif %}
+              </a>
+            </article>
+            {% endif %}
+          {% endfor %}
+        {% else %}
+          <p style="color: rgba(230,230,230,.5); grid-column: 1 / -1;">
+            Nenhum artigo encontrado. Confira diretamente no
+            <a href="https://medium.com/@floriano-des" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">Medium</a>.
+          </p>
+        {% endif %}
 
       </div>
     </div>

@@ -3,12 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }}</title>
-  <meta name="description" content="{{ description }}">
-  <meta name="author" content="Floriano Silva">
-  <meta property="og:title" content="{{ title }}">
-  <meta property="og:description" content="{{ description }}">
-  <meta property="og:type" content="website">
+
+  <!-- SEO Essencial -->
+  <title>{{ title or metadata.title }}</title>
+  <meta name="description" content="{{ description or metadata.description }}">
+  <meta name="author" content="{{ metadata.author }}">
+  <link rel="canonical" href="{{ metadata.url }}{{ page.url }}">
+  {% if robots %}<meta name="robots" content="{{ robots }}">{% endif %}
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:type"        content="{{ ogType or 'website' }}">
+  <meta property="og:url"         content="{{ metadata.url }}{{ page.url }}">
+  <meta property="og:title"       content="{{ title or metadata.title }}">
+  <meta property="og:description" content="{{ description or metadata.description }}">
+  <meta property="og:image"       content="{{ ogImage or metadata.ogImage }}">
+  <meta property="og:image:alt"   content="{{ ogImageAlt or title or metadata.title }}">
+  <meta property="og:locale"      content="pt_BR">
+  <meta property="og:site_name"   content="{{ metadata.siteName }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="{{ title or metadata.title }}">
+  <meta name="twitter:description" content="{{ description or metadata.description }}">
+  <meta name="twitter:image"       content="{{ ogImage or metadata.ogImage }}">
+  <meta name="twitter:image:alt"   content="{{ ogImageAlt or title or metadata.title }}">
 
   <!-- Fonts: Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

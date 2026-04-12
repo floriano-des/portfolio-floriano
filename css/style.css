@@ -2012,3 +2012,66 @@ body {
     gap: 24px;
   }
 }
+
+/* ============================================================
+   Página 404
+   ============================================================ */
+.page-404 {
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-dark);
+  padding: var(--section-py) var(--container-px);
+  text-align: center;
+}
+
+.page-404__inner {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.page-404__visual {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  line-height: 1;
+}
+
+.page-404__digit {
+  font-size: clamp(6rem, 15vw, 10rem);
+  font-weight: 700;
+  color: var(--clr-orange);
+  line-height: 1;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.page-404__face {
+  width: clamp(80px, 12vw, 120px);
+  height: auto;
+  flex-shrink: 0;
+}
+
+.page-404__title {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-white);
+  line-height: 1.3;
+}
+
+.page-404__desc {
+  font-size: var(--text-base);
+  color: var(--clr-text-muted);
+  line-height: var(--leading-normal);
+  max-width: 480px;
+}
+
+.page-404__desc em {
+  color: var(--clr-orange);
+  font-style: normal;
+  font-weight: 500;
+}

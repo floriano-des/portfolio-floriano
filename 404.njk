@@ -1,0 +1,48 @@
+---
+layout: base.njk
+title: "404 — Página não encontrada · Floriano Silva"
+description: "Ops! Essa página ficou no backlog permanente. Volte para o início e encontre o que procura."
+robots: "noindex, nofollow"
+permalink: 404.html
+---
+
+<main>
+  <section class="page-404">
+    <div class="page-404__inner">
+
+      <div class="page-404__visual" aria-label="Erro 404 — página não encontrada">
+        <span class="page-404__digit" aria-hidden="true">4</span>
+
+        <!-- SVG: wireframe triste (o "0" do 404) -->
+        <svg class="page-404__face" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <!-- Círculo externo — o "0" do 404 -->
+          <circle cx="60" cy="60" r="54" fill="rgba(238, 120, 46, 0.06)" stroke="#ee782e" stroke-width="3.5"/>
+          <!-- Olho esquerdo — X de erro -->
+          <line x1="36" y1="40" x2="50" y2="54" stroke="#ee782e" stroke-width="4" stroke-linecap="round"/>
+          <line x1="50" y1="40" x2="36" y2="54" stroke="#ee782e" stroke-width="4" stroke-linecap="round"/>
+          <!-- Olho direito — X de erro -->
+          <line x1="70" y1="40" x2="84" y2="54" stroke="#ee782e" stroke-width="4" stroke-linecap="round"/>
+          <line x1="84" y1="40" x2="70" y2="54" stroke="#ee782e" stroke-width="4" stroke-linecap="round"/>
+          <!-- Boca triste -->
+          <path d="M 38 84 Q 60 70 82 84" fill="none" stroke="#ee782e" stroke-width="4" stroke-linecap="round"/>
+          <!-- Detalhes de wireframe: linhas de "conteúdo" acima da boca -->
+          <line x1="42" y1="98" x2="78" y2="98" stroke="rgba(238, 120, 46, 0.25)" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="50" y1="106" x2="70" y2="106" stroke="rgba(238, 120, 46, 0.15)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+
+        <span class="page-404__digit" aria-hidden="true">4</span>
+      </div>
+
+      <h1 class="page-404__title">Essa tela ficou no backlog… para sempre.</h1>
+
+      <p class="page-404__desc">
+        Parece que você clicou em um link que nunca passou pelo
+        <em>usability test</em>. A página pode ter sido movida,
+        deletada, ou talvez nunca tenha existido fora de um wireframe lo-fi.
+      </p>
+
+      <a href="/" class="btn btn--orange">Voltar para o início</a>
+
+    </div>
+  </section>
+</main>
