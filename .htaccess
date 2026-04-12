@@ -6,6 +6,21 @@
 # Desativa listagem de diretórios
 Options -Indexes
 
+# ── Redirects 301 (migração WordPress → Eleventy) ────────────
+# Posts antigos → /reflexoes
+Redirect 301 /2025/06/o-que-aprendi-construindo-meu-primeiro-design-system-do-zero/ /reflexoes
+Redirect 301 /2025/06/parece-carinho-e-empatia-mas-e-so-ux/ /reflexoes
+Redirect 301 /2026/02/as-maquinas-ja-ganharam-de-humanos-nas-fabricas-voce-vai-cometer-o-mesmo-erro/ /reflexoes
+
+# Páginas renomeadas
+Redirect 301 /sobre-mim/ /sobre/
+Redirect 301 /projetos-de-design/ /projetos/
+
+# Projetos
+Redirect 301 /olho-vivo/ /projetos/olho-vivo/
+Redirect 301 /bit-system-design-system-da-dois-palitos-marketing/ /projetos/bit-system/
+Redirect 301 /quantum-viz-ux-estrategico-copywriting-e-otimizacao-de-conversao/ /projetos/quantum-vizz/
+
 # ── HTTPS + non-www ──────────────────────────────────────────
 # Nota: a Hostinger geralmente já força HTTPS no painel.
 # Mantenha ativo apenas se não houver conflito com as
