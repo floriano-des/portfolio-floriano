@@ -22,25 +22,12 @@ jobs:
           npm install
           npx @11ty/eleventy
 
-      - name: Configurar chave SSH
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -p ${{ secrets.SSH_PORT }} -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts 2>/dev/null || true
-
-      - name: Testar conexão SSH
-        run: |
-          ssh -i ~/.ssh/id_rsa \
-            -p ${{ secrets.SSH_PORT }} \
-            -o StrictHostKeyChecking=no \
-            -o ConnectTimeout=30 \
-            -o ServerAliveInterval=10 \
-            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "echo 'Conexão SSH OK'"
-
-      - name: Enviar para Hostinger via Rsync
-        run: |
-          rsync -avzr --delete \
-            -e "ssh -i ~/.ssh/id_rsa -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no -o ConnectTimeout=30 -o ServerAliveInterval=10" \
-            _site/ \
-            ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:~/domains/floriano.des.br/public_html/
+      - name: Enviar para Hostinger via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./_site/
+          server-dir: /public_html/
+          dangerous-clean-slate: false
