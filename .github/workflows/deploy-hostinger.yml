@@ -26,10 +26,21 @@ jobs:
 
       - name: Publicar arquivos na branch deploy
         run: |
-          cd _site
-          git init
           git config user.name "GitHub Actions"
           git config user.email "github-actions@github.com"
+
+          # Salva os arquivos gerados fora do repo
+          cp -r _site /tmp/site-build
+
+          # Faz checkout da branch deploy (ou cria como orphan se não existir)
+          git fetch origin deploy 2>/dev/null || true
+          git checkout deploy 2>/dev/null || git checkout --orphan deploy
+
+          # Remove tudo e copia os arquivos novos
+          git rm -rf . --quiet 2>/dev/null || true
+          cp -r /tmp/site-build/. .
+
+          # Commit e push normal — sem --force
           git add -A
-          git commit -m "deploy: ${{ github.sha }}"
-          git push --force https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:deploy
+          git commit -m "deploy: ${{ github.sha }}" || echo "Nada para commitar"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git deploy
