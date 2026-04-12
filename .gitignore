@@ -1,3 +1,25 @@
-node_modules/
+# Build output
 _site/
+
+# Dependências
+node_modules/
+
+# Variáveis de ambiente (nunca commitar)
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Sistema operacional
 .DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
