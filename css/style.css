@@ -1121,7 +1121,10 @@ body {
   }
 
   .nav__center {
-    display: none;
+    /* display:none esconderia o nav__menu position:fixed filho — usar absolute */
+    position: absolute;
+    pointer-events: none;
+    overflow: visible;
   }
 
   .nav__right {
@@ -1139,6 +1142,7 @@ body {
   .nav__menu {
     position: fixed;
     inset: 0;
+    height: 100dvh;
     background: rgba(255,255,255,0.97);
     backdrop-filter: blur(12px);
     flex-direction: column;
@@ -1147,8 +1151,7 @@ body {
     gap: 0;
     transform: translateX(100%);
     transition: transform var(--transition-slow);
-    z-index: 99;
-    height: auto;
+    z-index: 200;
   }
 
   .nav__menu.open {
@@ -1494,7 +1497,8 @@ body {
 /* ===================================================
    Bio — Sobre Mim
    =================================================== */
-.bio-section { padding-block: var(--section-py); }
+.bio-section:not(.page-top) { padding-block: var(--section-py); }
+.bio-section.page-top      { padding-bottom: var(--section-py); }
 
 .bio__grid {
   display: grid;
