@@ -44,8 +44,8 @@
   <link rel="icon" type="image/webp" href="/assets/favicon.webp">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/reset.css?v=1776177670188">
-  <link rel="stylesheet" href="/css/style.css?v=1776177670188">
+  <link rel="stylesheet" href="/css/reset.css?v=312e3b939b">
+  <link rel="stylesheet" href="/css/style.css?v=3b3b2bdf0e">
   
 </head>
 <body>
@@ -60,7 +60,13 @@
       <!-- Logo -->
       <div class="nav__logo-wrap">
         <a href="/" class="nav__logo" aria-label="Floriano Silva — Página Inicial">
-          <img src="/assets/floriano-logotipo.svg" alt="Floriano">
+          <img
+            src="/assets/floriano-logotipo.svg"
+            alt="Floriano"
+            width="140"
+            height="24"
+            decoding="async"
+          >
         </a>
       </div>
 
@@ -167,10 +173,17 @@
 
       <div class="hero__image" data-animate data-delay="1">
         <img
-          src="/assets/foto-floriano-1.webp"
+          src="/assets/foto-floriano-1-720.webp"
+          srcset="/assets/foto-floriano-1-720.webp 720w,
+                  /assets/foto-floriano-1-1080.webp 1080w,
+                  /assets/foto-floriano-1.webp 1444w"
+          sizes="(max-width: 365px) 82vw, (max-width: 768px) 300px, 680px"
           alt="Floriano Silva — Product Designer com foco em Growth, CRO e Analytics"
+          width="1444"
+          height="1429"
           loading="eager"
           fetchpriority="high"
+          decoding="async"
         >
       </div>
 
@@ -556,6 +569,6 @@
   </footer>
 
 
-  <script src="/js/main.js?v=1776177670188"></script>
+  <script src="/js/main.js?v=8d880ef38d"></script>
 </body>
 </html>
