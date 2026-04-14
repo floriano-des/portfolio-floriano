@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "eleventy"
+    "build": "rimraf _site && eleventy"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.5",
-    "docx": "^9.6.1"
+    "docx": "^9.6.1",
+    "rimraf": "^6.0.1"
   }
 }

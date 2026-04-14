@@ -29,7 +29,7 @@ jobs:
         run: npm install
 
       - name: Construir o site pronto
-        run: npx @11ty/eleventy
+        run: npm run build
 
       - name: Configurar o GitHub Pages
         uses: actions/configure-pages@v4

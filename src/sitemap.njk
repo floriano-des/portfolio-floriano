@@ -1,0 +1,17 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+eleventyExcludeFromSitemap: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for entry in collections.sitemapPages %}
+  <url>
+    <loc>{{ metadata.url }}{{ entry.url }}</loc>
+    {% set lastmod = entry.data.lastmod or entry.date %}
+    {% if lastmod %}
+    <lastmod>{{ lastmod | dateToIso }}</lastmod>
+    {% endif %}
+  </url>
+{% endfor %}
+</urlset>

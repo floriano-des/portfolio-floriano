@@ -22,7 +22,7 @@ jobs:
       - name: Instalar dependências e Gerar Site
         run: |
           npm install
-          npx @11ty/eleventy
+          npm run build
 
       - name: Publicar arquivos na branch deploy
         run: |

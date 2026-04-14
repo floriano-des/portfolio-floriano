@@ -1,4 +1,6 @@
 node_modules/
 _site/
-assets/
+deprecated/
+docs/
 .claude/
+src/_unused/

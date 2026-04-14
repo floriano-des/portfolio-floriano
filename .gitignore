@@ -1,10 +1,10 @@
 # Build output
 _site/
 
-# Dependências
+# Dependencies
 node_modules/
 
-# Variáveis de ambiente (nunca commitar)
+# Environment
 .env
 .env.local
 .env.*.local
@@ -12,20 +12,22 @@ node_modules/
 # Logs
 *.log
 npm-debug.log*
+.eleventy-dev.err.log
+.eleventy-dev.log
 
-# Sistema operacional
+# Operating system
 .DS_Store
 Thumbs.db
 desktop.ini
 
-# Documentos internos do projeto (não publicar)
-assets/projetos/mercado-das-figurinhas/docs/
+# Internal working docs (not published)
+docs/projetos/mercado-das-figurinhas/
 
-# Editores
+# Editors
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# Worktrees / Claude
+# Local tooling
 .claude/
