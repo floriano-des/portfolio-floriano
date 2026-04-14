@@ -489,10 +489,14 @@
 }
 
 .cs-learning__icon {
-  font-size: 1.5rem;
-  line-height: 1;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
 }
 
 .cs-learning__text {

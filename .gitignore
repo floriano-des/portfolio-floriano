@@ -26,3 +26,6 @@ assets/projetos/mercado-das-figurinhas/docs/
 .idea/
 *.swp
 *.swo
+
+# Worktrees / Claude
+.claude/
