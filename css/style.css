@@ -734,15 +734,18 @@ body {
 }
 
 .project-card {
-  display: flex;
+  --project-card-image-offset-top: 33px;
+  --project-card-image-offset-left: 67px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: stretch;
-  gap: 118px;
+  gap: 0;
   min-height: 600px;
   border-radius: var(--radius-md);
   border: 1px solid var(--clr-border);
   overflow: hidden;
   position: relative;
-  padding-right: 33px;
+  padding-right: 0;
 }
 
 .project-card--quantum { background: var(--card-quantum); }
@@ -751,8 +754,8 @@ body {
 .project-card--farm    { background: var(--card-farm); }
 
 .project-card__content {
-  flex: 1 0 0;
-  padding: 33px 0 33px 105px;
+  min-width: 0;
+  padding: 48px 56px 48px 56px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -798,7 +801,7 @@ body {
   line-height: 1.5;
   opacity: 0.9;
   margin-bottom: 0;
-  max-width: 380px;
+  max-width: 420px;
 }
 
 .project-card__result {
@@ -807,7 +810,7 @@ body {
   line-height: 1.5;
   margin-top: 14px;
   margin-bottom: 46px;
-  max-width: 380px;
+  max-width: 420px;
 }
 
 .project-card__btn-wrap {
@@ -842,25 +845,38 @@ body {
 }
 
 .project-card__image {
-  flex-shrink: 0;
+  min-width: 0;
+  min-height: inherit;
   overflow: hidden;
   position: relative;
-  align-self: flex-end;
+  align-self: stretch;
+  justify-self: stretch;
+  height: 100%;
+  display: block;
 }
 
 .project-card__image img {
   display: block;
-  width: 638px;
-  max-width: 45vw;
-  height: auto;
+  position: absolute;
+  top: calc(-1 * var(--project-card-image-offset-top));
+  right: 0;
+  bottom: 0;
+  left: calc(-1 * var(--project-card-image-offset-left));
+  width: calc(100% + var(--project-card-image-offset-left));
+  min-width: calc(100% + var(--project-card-image-offset-left));
+  min-height: calc(100% + var(--project-card-image-offset-top));
+  height: calc(100% + var(--project-card-image-offset-top));
   object-fit: cover;
+  object-position: top right;
   transition: transform var(--transition-slow);
 }
 
 .project-card--bit .project-card__image img {
-  width: 706px;
-  max-width: 48vw;
-  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  width: calc(100% + var(--project-card-image-offset-left));
+  max-width: none;
+  min-height: calc(100% + var(--project-card-image-offset-top));
+  height: calc(100% + var(--project-card-image-offset-top));
+  border-radius: 0;
 }
 
 .project-card:hover .project-card__image img {
@@ -1229,6 +1245,7 @@ body {
 /* Tablet */
 @media (max-width: 1024px) {
   .project-card {
+    display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 0;
@@ -1242,13 +1259,20 @@ body {
 
   .project-card__image {
     width: 100%;
+    min-height: 0;
+    height: auto;
   }
 
   .project-card__image img,
   .project-card--bit .project-card__image img {
+    position: static;
     width: 100%;
     max-width: 100%;
+    min-width: 0;
+    min-height: 0;
+    height: auto;
     border-radius: 0;
+    transform: none;
   }
 
   .principles__grid {
@@ -1513,6 +1537,74 @@ body {
 
   .reflections__grid {
     grid-template-columns: 1fr;
+  }
+
+  .projects .page-intro {
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .projects .section-title.section-title--home {
+    max-width: 10ch;
+    line-height: 1.1;
+  }
+
+  .projects .section-subtitle {
+    max-width: 100%;
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .project-card {
+    gap: 0;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .project-card__content {
+    justify-content: flex-start;
+    min-height: auto;
+    padding: 24px 20px 18px;
+  }
+
+  .project-card__tag {
+    margin-bottom: 12px;
+    line-height: 1.35;
+  }
+
+  .project-card__title {
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .project-card__desc,
+  .project-card__result {
+    max-width: 100%;
+  }
+
+  .project-card__result {
+    margin-top: 10px;
+    margin-bottom: 24px;
+  }
+
+  .project-card__desc + .project-card__btn-wrap {
+    margin-top: 24px;
+  }
+
+  .project-card__btn-wrap {
+    margin-bottom: 0;
+  }
+
+  .project-card__image {
+    align-self: stretch;
+  }
+
+  .project-card__image img,
+  .project-card--bit .project-card__image img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0;
   }
 
   /* Section header */
