@@ -1,14 +1,14 @@
-# Floriano Silva · Product Designer
+# Floriano Silva - Product Designer
 
-> Portfólio de Floriano Silva, focado em Product Design, UX, Growth, CRO e Analytics.
+> Portfolio de Floriano Silva, focado em Product Design, UX, Growth, CRO e Analytics.
 
 Site: https://floriano.des.br
 Sitemap: https://floriano.des.br/sitemap.xml
 
 ## Sobre
-Floriano Silva é Product Designer com atuação em UX orientado a dados, growth, conversão e execução de produto ponta a ponta.
+Floriano Silva e Product Designer com atuacao em UX orientado a dados, growth, conversao e execucao de produto ponta a ponta.
 
-## Páginas principais
+## Paginas principais
 - https://floriano.des.br/
 - https://floriano.des.br/projetos/
 - https://floriano.des.br/reflexoes/
@@ -24,7 +24,7 @@ Floriano Silva é Product Designer com atuação em UX orientado a dados, growth
 - https://floriano.des.br/projetos/mercado-das-figurinhas/
 - https://floriano.des.br/projetos/design-grafico/
 
-## Observações
-- O site atual é estático e gerado com Eleventy.
-- A seção Reflexões agrega conteúdo publicado no Medium.
-- Para descoberta de URLs canônicas, use o sitemap.
+## Observacoes
+- O site atual e estatico e gerado com Eleventy.
+- A secao Reflexoes agrega conteudo publicado no Medium.
+- Para descoberta de URLs canonicas, use o sitemap.
