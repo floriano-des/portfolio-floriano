@@ -99,7 +99,8 @@
   --card-2p:        #2409a9;
   --card-bit:       rgba(10, 1, 70, 0.97);
   --card-farm:      #00cd93;
-  --card-olho-vivo: #ece8df;
+  --card-olho-vivo:    #ece8df;
+  --card-figurinhas:   #0c2b1a;
 }
 
 /* --- Base -------------------------------------------- */
@@ -1281,6 +1282,13 @@ body {
 .project-card--olho-vivo { background: var(--card-olho-vivo); }
 .project-card--olho-vivo .project-card__content { color: var(--clr-text-dark); }
 .project-card--olho-vivo .project-card__tag     { color: var(--clr-text-dark); }
+
+/* ===================================================
+   Card de projeto — Mercado das Figurinhas (1º card)
+   =================================================== */
+.project-card--figurinhas { background: var(--card-figurinhas); }
+.project-card--figurinhas .project-card__content { color: var(--clr-light); }
+.project-card--figurinhas .project-card__tag     { color: var(--clr-light); }
 
 /* ===================================================
    Sites em produção

@@ -18,6 +18,9 @@ npm-debug.log*
 Thumbs.db
 desktop.ini
 
+# Documentos internos do projeto (não publicar)
+assets/projetos/mercado-das-figurinhas/docs/
+
 # Editores
 .vscode/
 .idea/
