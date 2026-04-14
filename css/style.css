@@ -1319,6 +1319,7 @@ body {
     margin-left: 0;
     margin-right: 0;
     padding-right: 0;
+    padding: 0;
     flex-shrink: 0;
     position: relative;
     z-index: 250;
@@ -1333,6 +1334,12 @@ body {
     justify-self: end;
     align-self: center;
     grid-column: 3;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .nav__toggle span {
+    width: 18px;
   }
 
   /* Menu mobile overlay */
@@ -1349,10 +1356,16 @@ body {
     transform: translateX(100%);
     transition: transform var(--transition-slow);
     z-index: 200;
+    pointer-events: none;
   }
 
   .nav__menu.open {
     transform: translateX(0);
+    pointer-events: auto;
+  }
+
+  .header.menu-open .nav__center {
+    pointer-events: auto;
   }
 
   .nav__item {
