@@ -37,9 +37,9 @@
   <link rel="icon" type="image/webp" href="/assets/favicon.webp">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/reset.css?v={{ buildTime }}">
-  <link rel="stylesheet" href="/css/style.css?v={{ buildTime }}">
-  <link rel="stylesheet" href="/css/case-study.css?v={{ buildTime }}">
+  <link rel="stylesheet" href="/css/reset.css?v={{ '/css/reset.css' | assetVersion }}">
+  <link rel="stylesheet" href="/css/style.css?v={{ '/css/style.css' | assetVersion }}">
+  <link rel="stylesheet" href="/css/case-study.css?v={{ '/css/case-study.css' | assetVersion }}">
 </head>
 <body>
 
@@ -49,6 +49,6 @@
 
   {% include "partials/footer.njk" %}
 
-  <script src="/js/main.js?v={{ buildTime }}"></script>
+  <script src="/js/main.js?v={{ '/js/main.js' | assetVersion }}"></script>
 </body>
 </html>

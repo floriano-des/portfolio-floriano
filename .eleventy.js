@@ -1,6 +1,10 @@
+const crypto = require("node:crypto");
 const fs = require("node:fs");
+const path = require("node:path");
 
 module.exports = function (eleventyConfig) {
+  const assetVersionCache = new Map();
+
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
   eleventyConfig.addFilter("dateToIso", (value) => {
     if (!value) return "";
@@ -9,6 +13,25 @@ module.exports = function (eleventyConfig) {
     if (Number.isNaN(date.getTime())) return "";
 
     return date.toISOString();
+  });
+  eleventyConfig.addFilter("assetVersion", (assetPath) => {
+    if (!assetPath || typeof assetPath !== "string") return "";
+
+    const normalizedPath = assetPath.replace(/^\/+/, "").replace(/\//g, path.sep);
+    const absolutePath = path.resolve("src", normalizedPath);
+
+    if (assetVersionCache.has(absolutePath)) {
+      return assetVersionCache.get(absolutePath);
+    }
+
+    try {
+      const content = fs.readFileSync(absolutePath);
+      const version = crypto.createHash("md5").update(content).digest("hex").slice(0, 10);
+      assetVersionCache.set(absolutePath, version);
+      return version;
+    } catch (_) {
+      return "";
+    }
   });
 
   eleventyConfig.addCollection("sitemapPages", (collectionApi) => {
@@ -42,9 +65,6 @@ module.exports = function (eleventyConfig) {
         return item;
       });
   });
-
-  // Cache busting por build para CSS/JS em producao.
-  eleventyConfig.addGlobalData("buildTime", () => Date.now());
 
   // Copia arquivos estaticos a partir de src/ mantendo a URL publica.
   eleventyConfig.addPassthroughCopy({ "src/css": "css" });
