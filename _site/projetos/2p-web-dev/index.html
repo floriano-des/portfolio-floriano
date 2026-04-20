@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO Essencial -->
+  <title>Web Dev 2.0 · Case Study · Floriano Silva</title>
+  <meta name="description" content="Como resolvi o maior risco de segurança da agência Dois Palitos sem contratar dev, sem orçamento, e em duas semanas.">
+  <meta name="author" content="Floriano Silva">
+  <link rel="canonical" href="https://floriano.des.br/projetos/2p-web-dev/">
+  
+
+  <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://floriano.des.br/projetos/2p-web-dev/">
+  <meta property="og:title"       content="Web Dev 2.0 · Case Study · Floriano Silva">
+  <meta property="og:description" content="Como resolvi o maior risco de segurança da agência Dois Palitos sem contratar dev, sem orçamento, e em duas semanas.">
+  <meta property="og:image"       content="https://floriano.des.br/assets/og-image.jpg">
+  <meta property="og:image:alt"   content="Web Dev 2.0 · Case Study · Floriano Silva">
+  <meta property="og:locale"      content="pt_BR">
+  <meta property="og:site_name"   content="Floriano Silva · Product Designer">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Web Dev 2.0 · Case Study · Floriano Silva">
+  <meta name="twitter:description" content="Como resolvi o maior risco de segurança da agência Dois Palitos sem contratar dev, sem orçamento, e em duas semanas.">
+  <meta name="twitter:image"       content="https://floriano.des.br/assets/og-image.jpg">
+  <meta name="twitter:image:alt"   content="Web Dev 2.0 · Case Study · Floriano Silva">
+
+  <!-- Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/webp" href="/assets/favicon.webp">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/css/reset.css?v=312e3b939b">
+  <link rel="stylesheet" href="/css/style.css?v=3b3b2bdf0e">
+  <link rel="stylesheet" href="/css/case-study.css?v=d5a67787d7">
+</head>
+<body>
+
+    <header class="header" id="header">
+    <nav class="nav">
+
+      <!-- Logo -->
+      <div class="nav__logo-wrap">
+        <a href="/" class="nav__logo" aria-label="Floriano Silva — Página Inicial">
+          <img
+            src="/assets/floriano-logotipo.svg"
+            alt="Floriano"
+            width="140"
+            height="24"
+            decoding="async"
+          >
+        </a>
+      </div>
+
+      <!-- Links centrais -->
+      <div class="nav__center">
+        <ul class="nav__menu" id="navMenu">
+          <li class="nav__item">
+            <a href="/" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <div class="nav__divider" aria-hidden="true"></div>
+          </li>
+          <li class="nav__item">
+            <a href="/projetos/" class="nav__link">Projetos</a>
+          </li>
+          <li class="nav__item">
+            <div class="nav__divider" aria-hidden="true"></div>
+          </li>
+          <li class="nav__item">
+            <a href="/reflexoes/" class="nav__link">Reflexões</a>
+          </li>
+          <li class="nav__item">
+            <div class="nav__divider" aria-hidden="true"></div>
+          </li>
+          <li class="nav__item">
+            <a href="/sobre/" class="nav__link">Sobre</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Ícones -->
+      <div class="nav__right">
+        <div class="nav__socials">
+          <a href="https://www.linkedin.com/in/floriano-des/" target="_blank" rel="noopener" class="nav__social-btn nav__social-btn--linkedin" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://docs.google.com/document/d/1hm6hnDomiTFlADy_AUysVOnuAU3BDrJ8Y7_ym4VbcRo/edit?tab=t.qxjadoowrw9d" target="_blank" rel="noopener" class="nav__social-btn nav__social-btn--dark" aria-label="Ver CV">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="12" y1="18" x2="12" y2="12"/>
+              <polyline points="9 15 12 18 15 15"/>
+            </svg>
+          </a>
+          <a href="https://github.com/floriano-des/" target="_blank" rel="noopener" class="nav__social-btn nav__social-btn--dark" aria-label="GitHub">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/5518996773264" target="_blank" rel="noopener" class="nav__social-btn nav__social-btn--whatsapp" aria-label="WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Hamburger mobile -->
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </nav>
+  </header>
+
+
+  
+  <main>
+
+    <!-- ================================================
+         HERO
+         ================================================ -->
+    <section class="cs-hero">
+      <div class="cs-hero__inner" data-animate>
+        <span class="cs-hero__tag">Produto interno | Operação | Segurança e adoção</span>
+        <h1 class="cs-hero__title">Web Dev 2.0</h1>
+        <p class="cs-hero__subtitle">
+          Um produto interno criado para substituir uma operação insegura e frágil por um fluxo claro, autenticado e adotado pelo time.
+        </p>
+      </div>
+      <div class="cs-hero__image" data-animate data-delay="1">
+        <img
+          src="/assets/projetos/web-dev/webdev2-2048x1032.webp"
+          alt="Interface do sistema Web Dev 2.0 mostrando painel de clientes com protocolos e dados organizados"
+          loading="eager"
+          fetchpriority="high"
+        >
+      </div>
+    </section>
+
+    <!-- ================================================
+         DESAFIO + PERFIL DO PROJETO
+         ================================================ -->
+    <section class="cs-challenge section">
+      <div class="container">
+        <div class="cs-challenge__grid">
+
+          <div>
+            <p class="cs-challenge__label">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              Contexto e problema
+            </p>
+            <h2 class="cs-challenge__title">
+              Dados de clientes expostos.<br>Em uma planilha pública.
+            </h2>
+            <p class="cs-challenge__text">
+              A Dois Palitos Growth usava uma planilha compartilhada para gerenciar credenciais
+              e protocolos de todos os clientes. O link era público. Qualquer pessoa com acesso
+              ao link podia ver tudo, sem nenhuma autenticação.
+            </p>
+            <p class="cs-challenge__text">
+              Além do risco de segurança, a experiência de uso era pesada: encontrar um dado
+              levava minutos, o preenchimento era propenso a erros e o time abria a planilha
+              com resistência mental.
+            </p>
+            <p class="cs-challenge__text">
+              A decisão foi tratar isso como problema de produto, não só de tecnologia:
+              reduzir risco, organizar a operação e criar uma experiência que o time quisesse
+              usar desde o primeiro dia.
+            </p>
+          </div>
+
+          <aside class="cs-meta-card" aria-label="Detalhes do projeto">
+            <div class="cs-meta-item">
+              <p class="cs-meta-item__label">Empresa</p>
+              <p class="cs-meta-item__value">Dois Palitos Growth</p>
+            </div>
+            <div class="cs-meta-item">
+              <p class="cs-meta-item__label">Papel</p>
+              <p class="cs-meta-item__value">Product Designer — discovery, definição de produto, prototipagem, decisões técnicas e implementação assistida por IA</p>
+            </div>
+            <div class="cs-meta-item">
+              <p class="cs-meta-item__label">Implementação</p>
+              <p class="cs-meta-item__value">Produto interno desenhado e colocado no ar com PHP, MySQL e apoio de IA na implementação</p>
+            </div>
+            <div class="cs-meta-item">
+              <p class="cs-meta-item__label">Duração</p>
+              <p class="cs-meta-item__value">Beta em 1-2 semanas + ciclo de iteração v2</p>
+            </div>
+            <div class="cs-meta-item cs-meta-item--result">
+              <p class="cs-meta-item__label">Adoção</p>
+              <p class="cs-meta-item__value">100% do time desde o primeiro dia</p>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         CONTEXTO E GARGALOS
+         ================================================ -->
+    <section class="cs-context section">
+      <div class="container">
+
+        <p class="cs-context__question">
+          Como <strong>eliminar o risco de segurança</strong> e melhorar a experiência
+          de uso sem depender de budget ou time de desenvolvimento?
+        </p>
+
+        <div class="cs-gargalos">
+          <h2 class="cs-gargalos__title section-title" style="color: var(--clr-white);">
+            Os Problemas Reais
+          </h2>
+          <p class="cs-challenge__text" style="color: rgba(230,230,230,.8); margin-bottom: var(--space-8);">
+            A planilha era usada diariamente, mas criava fricção em todo o fluxo de trabalho:
+          </p>
+          <ul class="cs-gargalos__list" role="list">
+            <li class="cs-gargalos__item">
+              <span class="cs-gargalos__num" aria-hidden="true">1</span>
+              <p class="cs-gargalos__text">
+                <strong>Link público ativado.</strong> Dados de todos os clientes acessíveis
+                por qualquer pessoa com o link, sem nenhum tipo de autenticação.
+              </p>
+            </li>
+            <li class="cs-gargalos__item">
+              <span class="cs-gargalos__num" aria-hidden="true">2</span>
+              <p class="cs-gargalos__text">
+                <strong>Tempo de busca alto.</strong> Localizar uma informação levava de 2 a 3
+                minutos entre rolar, filtrar e encontrar a linha certa na planilha.
+              </p>
+            </li>
+            <li class="cs-gargalos__item">
+              <span class="cs-gargalos__num" aria-hidden="true">3</span>
+              <p class="cs-gargalos__text">
+                <strong>Risco constante de erro.</strong> Colunas sem estrutura visual clara
+                tornavam o preenchimento propenso a equívocos e dados fora do lugar.
+              </p>
+            </li>
+            <li class="cs-gargalos__item">
+              <span class="cs-gargalos__num" aria-hidden="true">4</span>
+              <p class="cs-gargalos__text">
+                <strong>Carga cognitiva alta.</strong> O time sabia onde tudo estava — mas
+                precisava lembrar. Não havia hierarquia visual nem contexto no momento certo.
+              </p>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================
+         PROCESSO
+         ================================================ -->
+    <section class="cs-process section">
+      <div class="container">
+
+        <div class="section-header" data-animate>
+          <h2 class="section-title">Do Problema<br>ao Sistema</h2>
+        </div>
+
+        <div class="cs-steps">
+
+          <!-- Alternativas Consideradas -->
+          <div class="cs-step" data-animate>
+            <div class="cs-step__content">
+              <p class="cs-step__num">Etapa 01</p>
+              <h3 class="cs-step__title">Alternativas Consideradas</h3>
+              <p class="cs-step__text">
+                Antes de construir qualquer coisa, avaliei as soluções existentes no mercado.
+                Três opções foram analisadas:
+              </p>
+              <div style="overflow-x: auto; margin-top: var(--space-5);">
+                <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm);">
+                  <thead>
+                    <tr style="border-bottom: 1px solid rgba(1,7,29,.12);">
+                      <th style="text-align:left; padding: 10px 12px; color: var(--clr-text-muted); font-weight: 500;">Opção</th>
+                      <th style="text-align:left; padding: 10px 12px; color: var(--clr-text-muted); font-weight: 500;">Decisão</th>
+                      <th style="text-align:left; padding: 10px 12px; color: var(--clr-text-muted); font-weight: 500;">Motivo</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom: 1px solid rgba(1,7,29,.07);">
+                      <td style="padding: 12px; color: var(--clr-text-dark);">1Password</td>
+                      <td style="padding: 12px; color: #c0392b; font-weight: 500;">Descartado</td>
+                      <td style="padding: 12px; color: var(--clr-text);">Resolveria só as senhas, não os protocolos e o fluxo de uso</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(1,7,29,.07);">
+                      <td style="padding: 12px; color: var(--clr-text-dark);">Notion</td>
+                      <td style="padding: 12px; color: #c0392b; font-weight: 500;">Descartado</td>
+                      <td style="padding: 12px; color: var(--clr-text);">Genérico demais. Sem a estrutura específica que a 2P precisa</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 12px; color: var(--clr-text-dark);">Build com IA</td>
+                      <td style="padding: 12px; color: #16a34a; font-weight: 500;">Escolhido</td>
+                      <td style="padding: 12px; color: var(--clr-text);">Personalizado para o fluxo real da agência, com custo próximo de zero</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <!-- Design e Prototipagem -->
+          <div class="cs-step cs-step--reverse" data-animate>
+            <div class="cs-step__content">
+              <p class="cs-step__num">Etapa 02</p>
+              <h3 class="cs-step__title">Design e Prototipagem</h3>
+              <p class="cs-step__text">
+                Com o escopo definido, protipei o sistema inteiro no Figma usando o Bit System
+                como base de componentes. O foco principal foi reduzir ao máximo o número de
+                passos para chegar à informação.
+              </p>
+              <p class="cs-step__text" style="margin-top: var(--space-4);">
+                O fluxo central ficou assim:
+              </p>
+              <div style="display: flex; align-items: center; gap: 8px; margin-top: var(--space-4); flex-wrap: wrap;">
+                <span style="background: rgba(1,7,29,.06); padding: 6px 14px; border-radius: 6px; font-size: var(--text-sm); color: var(--clr-text-dark);">Início</span>
+                <span style="color: var(--clr-text-muted);">→</span>
+                <span style="background: rgba(1,7,29,.06); padding: 6px 14px; border-radius: 6px; font-size: var(--text-sm); color: var(--clr-text-dark);">Busca</span>
+                <span style="color: var(--clr-text-muted);">→</span>
+                <span style="background: rgba(1,7,29,.06); padding: 6px 14px; border-radius: 6px; font-size: var(--text-sm); color: var(--clr-text-dark);">Ficha do cliente</span>
+                <span style="color: var(--clr-text-muted);">→</span>
+                <span style="background: rgba(1,7,29,.06); padding: 6px 14px; border-radius: 6px; font-size: var(--text-sm); color: var(--clr-text-dark);">Dado copiado</span>
+              </div>
+              <ul class="cs-step__list" style="margin-top: var(--space-5);">
+                <li>Busca com autocomplete para localizar clientes em segundos</li>
+                <li>Tela exclusiva por cliente com campos fixos e contextualizados</li>
+                <li>Protocolos com indicador de progresso e gamificação visual</li>
+                <li>Visibilidade estratégica sobre quais clientes têm cada protocolo concluído</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Desenvolvimento com IA -->
+          <div class="cs-step" data-animate>
+            <div class="cs-step__content">
+              <p class="cs-step__num">Etapa 03</p>
+              <h3 class="cs-step__title">Desenvolvimento com IA</h3>
+              <p class="cs-step__text">
+                Com o protótipo aprovado, usei o Claude AI como parceiro de desenvolvimento.
+                O processo consistia em traduzir cada decisão de produto em especificações
+                claras, e então colaborar com a IA para implementar em PHP e MySQL.
+              </p>
+              <p class="cs-step__text" style="margin-top: var(--space-4);">
+                A qualidade do resultado dependia diretamente da qualidade da especificação.
+                O processo de produto tinha que existir antes do código.
+              </p>
+              <ul class="cs-step__list">
+                <li>Back-end em PHP com MySQL hospedado na Hostinger</li>
+                <li>Autenticação com senha, controle de perfis e sessões</li>
+                <li>Gestão global de protocolos com propagação automática para todos os clientes</li>
+                <li>Log completo de auditoria: usuário, ação, data e hora</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Beta, Feedback e Iteração -->
+          <div class="cs-step cs-step--reverse" data-animate>
+            <div class="cs-step__content">
+              <p class="cs-step__num">Etapa 04</p>
+              <h3 class="cs-step__title">Beta, Feedback e Iteração</h3>
+              <p class="cs-step__text">
+                A v1 foi lançada deliberadamente simples. Tratei como hipótese, não como
+                produto final. O objetivo era colocar na mão do time o mais rápido possível
+                e aprender com o uso real.
+              </p>
+              <p class="cs-step__text" style="margin-top: var(--space-4);">
+                Dois bugs foram identificados logo nas primeiras semanas:
+              </p>
+              <ul class="cs-step__list">
+                <li>Problema de fuso horário nos registros de data</li>
+                <li>Contador de protocolos pendentes exibindo valores incorretos</li>
+              </ul>
+              <p class="cs-step__text" style="margin-top: var(--space-4);">
+                Ambos foram corrigidos na v2, junto com melhorias levantadas pelo time via
+                feedback direto: gestão global de protocolos, filtros avançados e interface
+                mais responsiva para mobile.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+         RESULTADO
+         ================================================ -->
+    <section class="cs-results section">
+      <div class="container">
+
+        <h2 class="section-title" data-animate>O Sistema<br>em Produção</h2>
+
+        <p class="cs-challenge__text" style="margin-bottom: clamp(32px,4vw,56px); max-width:640px;" data-animate>
+          Veja o sistema funcionando. A demonstração abaixo mostra o fluxo principal:
+          busca, ficha do cliente e acesso aos dados com um clique.
+        </p>
+
+        <figure data-animate style="margin-bottom: var(--space-12);">
+          <video
+            src="/assets/projetos/web-dev/2026-03-18-01-18-24.mp4"
+            controls
+            style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,.1);"
+          ></video>
+          <figcaption style="margin-top: var(--space-3); font-size: var(--text-sm); color: rgba(230,230,230,.6); text-align: center;">
+            Demonstração do sistema: busca com autocomplete, ficha de cliente e protocolos gamificados
+          </figcaption>
+        </figure>
+
+        <h3 class="section-title" data-animate style="font-size: var(--text-2xl); margin-bottom: var(--space-6);">
+          Antes e Depois
+        </h3>
+
+        <div data-animate style="overflow-x: auto; margin-bottom: var(--space-12);">
+          <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm);">
+            <thead>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,.15);">
+                <th style="text-align:left; padding: 12px 16px; color: rgba(230,230,230,.6); font-weight: 500; min-width: 180px;">Métrica</th>
+                <th style="text-align:left; padding: 12px 16px; color: rgba(230,230,230,.6); font-weight: 500; min-width: 160px;">Antes</th>
+                <th style="text-align:left; padding: 12px 16px; color: rgba(230,230,230,.6); font-weight: 500; min-width: 200px;">Depois</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,.07);">
+                <td style="padding: 14px 16px; color: rgba(230,230,230,.9);">🔒 Exposição de dados sensíveis</td>
+                <td style="padding: 14px 16px; color: #f87171;">100% público. Qualquer pessoa com link via tudo</td>
+                <td style="padding: 14px 16px; color: #4ade80;">100% restrito. Acesso apenas por login autenticado</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,.07);">
+                <td style="padding: 14px 16px; color: rgba(230,230,230,.9);">⏱️ Tempo de busca de informação</td>
+                <td style="padding: 14px 16px; color: #f87171;">2 a 3 min (rolar, filtrar, localizar na planilha)</td>
+                <td style="padding: 14px 16px; color: #4ade80;">~10 seg (autocomplete, abrir ficha) — redução de ~60%</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,.07);">
+                <td style="padding: 14px 16px; color: rgba(230,230,230,.9);">⚠️ Risco de erro de alimentação</td>
+                <td style="padding: 14px 16px; color: #f87171;">Alto. Linhas e colunas sem estrutura visual clara</td>
+                <td style="padding: 14px 16px; color: #4ade80;">Baixo. Tela própria por cliente, campos fixos e com contexto</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,.07);">
+                <td style="padding: 14px 16px; color: rgba(230,230,230,.9);">🧠 Carga cognitiva de uso</td>
+                <td style="padding: 14px 16px; color: #f87171;">Alta. Usuário precisava lembrar onde cada dado estava</td>
+                <td style="padding: 14px 16px; color: #4ade80;">Baixa. Hierarquia visual clara, busca inteligente, navegação previsível</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(255,255,255,.07);">
+                <td style="padding: 14px 16px; color: rgba(230,230,230,.9);">👥 Adoção do time</td>
+                <td style="padding: 14px 16px; color: #f87171;">Planilha aberta com resistência mental</td>
+                <td style="padding: 14px 16px; color: #4ade80;">100% do time ativo desde o primeiro dia, sem fricção</td>
+              </tr>
+              <tr>
+                <td style="padding: 14px 16px; color: rgba(230,230,230,.9);">📋 Rastreabilidade de ações</td>
+                <td style="padding: 14px 16px; color: #f87171;">Zero. Sem histórico de quem editou o quê</td>
+                <td style="padding: 14px 16px; color: #4ade80;">Log completo: usuário, ação, data e hora de tudo</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Feedback do time -->
+        <blockquote data-animate style="
+          background: rgba(255,255,255,.05);
+          border-left: 3px solid rgba(255,255,255,.3);
+          padding: var(--space-6) var(--space-7);
+          border-radius: 0 8px 8px 0;
+          margin-bottom: var(--space-12);
+        ">
+          <p style="font-size: var(--text-lg); color: rgba(230,230,230,.85); line-height: 1.7; font-style: italic;">
+            "As equipes de marketing, atendimento e gerência disseram que o sistema estava muito
+            fácil de usar. Antes, abrir a planilha era mentalmente cansativo. Com o sistema, essa
+            fricção desapareceu. A gamificação funcionou: ver o progresso por cliente criou
+            engajamento real com os protocolos, algo que antes simplesmente não existia."
+          </p>
+          <cite style="display: block; margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(230,230,230,.5); font-style: normal;">
+            Feedback direto do time
+          </cite>
+        </blockquote>
+
+        <!-- Segurança -->
+        <div data-animate style="margin-bottom: var(--space-12);">
+          <h3 style="font-size: var(--text-2xl); font-weight: 600; color: var(--clr-white); margin-bottom: var(--space-6);">
+            Segurança
+          </h3>
+          <p style="color: rgba(230,230,230,.8); margin-bottom: var(--space-5);">O sistema tem segurança real agora:</p>
+          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-3);">
+            <li style="display: flex; gap: 12px; color: rgba(230,230,230,.8); font-size: var(--text-sm); line-height: 1.6;">
+              <span style="color: #4ade80; flex-shrink: 0;">✓</span>
+              Senhas de login criptografadas com bcrypt (cost 12), algoritmo robusto e amplamente adotado para autenticação
+            </li>
+            <li style="display: flex; gap: 12px; color: rgba(230,230,230,.8); font-size: var(--text-sm); line-height: 1.6;">
+              <span style="color: #4ade80; flex-shrink: 0;">✓</span>
+              Controle de sessão com timeout automático de 4 horas, sessão expirada automaticamente por inatividade
+            </li>
+            <li style="display: flex; gap: 12px; color: rgba(230,230,230,.8); font-size: var(--text-sm); line-height: 1.6;">
+              <span style="color: #4ade80; flex-shrink: 0;">✓</span>
+              Log de auditoria completo: toda ação registrada com usuário, IP, data e hora
+            </li>
+            <li style="display: flex; gap: 12px; color: rgba(230,230,230,.8); font-size: var(--text-sm); line-height: 1.6;">
+              <span style="color: #4ade80; flex-shrink: 0;">✓</span>
+              Backup diário automático via Cron Job da Hostinger, com retenção dos últimos 30 dias
+            </li>
+            <li style="display: flex; gap: 12px; color: rgba(230,230,230,.8); font-size: var(--text-sm); line-height: 1.6;">
+              <span style="color: #4ade80; flex-shrink: 0;">✓</span>
+              HTTPS com SSL ativo: tráfego criptografado entre o navegador e o servidor
+            </li>
+            <li style="display: flex; gap: 12px; color: rgba(230,230,230,.8); font-size: var(--text-sm); line-height: 1.6;">
+              <span style="color: #4ade80; flex-shrink: 0;">✓</span>
+              Controle de perfis verificado server-side: permissões validadas no servidor, não apenas no frontend
+            </li>
+          </ul>
+          <div style="
+            margin-top: var(--space-6);
+            background: rgba(251,191,36,.08);
+            border: 1px solid rgba(251,191,36,.2);
+            border-radius: 8px;
+            padding: var(--space-5);
+          ">
+            <p style="font-size: var(--text-sm); color: rgba(251,191,36,.9); font-weight: 600; margin-bottom: var(--space-2);">Limitação conhecida e próximo passo</p>
+            <p style="font-size: var(--text-sm); color: rgba(230,230,230,.7); line-height: 1.6;">
+              As credenciais dos clientes (senhas de WordPress, cPanel, etc.) estão armazenadas
+              em texto simples no banco de dados. É uma limitação real. A próxima iteração prevê
+              criptografia AES-256 para esses campos. Mesmo assim, esses dados só são acessíveis
+              por usuários autenticados, com log de cada acesso e backup diário.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================
+         APRENDIZADOS
+         ================================================ -->
+    <section class="cs-learnings section">
+      <div class="container">
+
+        <h2 class="section-title" data-animate>O que este projeto prova</h2>
+
+        <div class="cs-learnings__list">
+          <div class="cs-learning" data-animate>
+            <span class="cs-learning__icon" aria-hidden="true">🚀</span>
+            <p class="cs-learning__text">
+              <strong>Consigo transformar risco operacional em produto utilizável.</strong>
+              A v1 foi propositalmente simples, mas já suficiente para substituir a planilha
+              e mudar o comportamento do time.
+            </p>
+          </div>
+          <div class="cs-learning" data-animate data-delay="1">
+            <span class="cs-learning__icon" aria-hidden="true">🔓</span>
+            <p class="cs-learning__text">
+              <strong>Tenho ownership para destravar problema real.</strong> O time sabia do
+              risco, mas o projeto só aconteceu quando alguém assumiu a responsabilidade de
+              definir escopo, priorizar e entregar.
+            </p>
+          </div>
+          <div class="cs-learning" data-animate data-delay="2">
+            <span class="cs-learning__icon" aria-hidden="true">🤖</span>
+            <p class="cs-learning__text">
+              <strong>Sei usar implementação como extensão do raciocínio de produto.</strong>
+              A IA acelerou partes do código, mas o valor esteve em decidir o que construir,
+              o que cortar e como preservar a intenção do fluxo até a entrega.
+            </p>
+          </div>
+          <div class="cs-learning" data-animate data-delay="3">
+            <span class="cs-learning__icon" aria-hidden="true">🧠</span>
+            <p class="cs-learning__text">
+              <strong>Adoção depende de experiência, não só de correção técnica.</strong>
+              Resolver o acesso indevido era urgente, mas a troca só vingou porque a nova
+              solução diminuiu carga cognitiva e melhorou o uso cotidiano.
+            </p>
+          </div>
+          <div class="cs-learning" data-animate data-delay="4">
+            <span class="cs-learning__icon" aria-hidden="true">🎯</span>
+            <p class="cs-learning__text">
+              <strong>Consigo decidir quando vale construir algo próprio.</strong> Ferramentas
+              prontas existiam, mas nenhuma resolvia o conjunto de segurança, contexto e
+              operação que a 2P precisava.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================================================
+         NAVEGAÇÃO ENTRE PROJETOS
+         ================================================ -->
+    <nav class="cs-nav" aria-label="Navegação entre projetos">
+      <div class="container cs-nav__inner">
+
+        <a href="/projetos/quantum-vizz" class="cs-nav__link cs-nav__link--prev">
+          <span class="cs-nav__direction">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Projeto Anterior
+          </span>
+          <span class="cs-nav__project">Quantum Vizz</span>
+        </a>
+
+        <a href="/projetos" class="cs-nav__back">
+          Todos os Projetos
+        </a>
+
+        <a href="/projetos/bit-system" class="cs-nav__link cs-nav__link--next">
+          <span class="cs-nav__direction">
+            Próximo Projeto
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="cs-nav__project">Bit System</span>
+        </a>
+
+      </div>
+    </nav>
+
+    <!-- ================================================
+         CTA
+         ================================================ -->
+    <section class="cta-section" id="contato">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-card__inner">
+            <h2 class="cta-card__title" data-animate>
+              Produto, growth e execução na mesma conversa.
+            </h2>
+            <p class="cta-card__subtitle" data-animate data-delay="1">
+              Se você precisa de alguém para investigar problema, estruturar hipótese e levar a solução até a entrega, vamos conversar.
+            </p>
+            <div class="cta-card__contacts" data-animate data-delay="2">
+              <a href="mailto:contato@floriano.des.br" class="cta-contact">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+                contato@floriano.des.br
+              </a>
+              <a href="https://wa.me/5518996773264" class="cta-contact" target="_blank" rel="noopener">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                (18) 99677-3264
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+    <footer class="footer">
+    <div class="container footer__container">
+      <p class="footer__tagline">
+        Desenvolvido por mim mesmo, com Figma, Eleventy, Claude Code, muitos livros e muuuita iteração💙
+      </p>
+      <nav class="footer__right" aria-label="Links do rodapé">
+      <a href="/politica-de-privacidade/">Políticas de Privacidade</a>
+        <a href="https://www.linkedin.com/in/floriano-des/" target="_blank" rel="noopener">Linkedin</a>
+        <a href="https://wa.me/5518996773264" target="_blank" rel="noopener">WhatsApp</a>
+      </nav>
+    </div>
+  </footer>
+
+
+  <script src="/js/main.js?v=8d880ef38d"></script>
+</body>
+</html>
