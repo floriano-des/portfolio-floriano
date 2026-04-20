@@ -357,34 +357,44 @@ description: "Como o Bit System evoluiu de um design system interno criado em 20
 
     .cs-validation-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: var(--space-5);
       margin-top: var(--space-8);
     }
 
     .cs-validation-card {
-      padding: var(--space-7);
+      padding: 28px;
       border-radius: var(--radius-md);
       background: rgba(255, 255, 255, 0.08);
       border: 1px solid rgba(255, 255, 255, 0.10);
       box-shadow: var(--shadow-lg);
       display: flex;
       flex-direction: column;
-      gap: var(--space-2);
-      min-height: 210px;
+      gap: 10px;
+      min-height: 190px;
+    }
+
+    .cs-validation-card__eyebrow {
+      font-size: 0.72rem;
+      font-weight: var(--fw-bold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(230, 230, 230, 0.58);
     }
 
     .cs-validation-card__value {
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1;
+      font-size: clamp(2rem, 3vw, 2.9rem);
+      line-height: 0.95;
       font-weight: var(--fw-bold);
       color: var(--clr-orange);
+      max-width: 12ch;
     }
 
     .cs-validation-card__label {
-      font-size: var(--text-sm);
-      line-height: var(--leading-loose);
+      font-size: 1rem;
+      line-height: 1.6;
       color: rgba(230, 230, 230, 0.76);
+      max-width: 28ch;
     }
 
     .cs-validation-panels {
@@ -462,6 +472,10 @@ description: "Como o Bit System evoluiu de um design system interno criado em 20
 
       .cs-validation .container {
         padding-inline: clamp(18px, 5vw, 24px);
+      }
+
+      .cs-validation-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -991,18 +1005,22 @@ description: "Como o Bit System evoluiu de um design system interno criado em 20
 
         <div class="cs-validation-grid">
           <div class="cs-validation-card" data-animate>
+            <span class="cs-validation-card__eyebrow">Tempo de produção</span>
             <span class="cs-validation-card__value">30 min</span>
             <span class="cs-validation-card__label">por página nova, contra cerca de 4 horas antes da primeira versão do sistema</span>
           </div>
           <div class="cs-validation-card" data-animate data-delay="1">
+            <span class="cs-validation-card__eyebrow">Adoção</span>
             <span class="cs-validation-card__value">100%</span>
             <span class="cs-validation-card__label">de adoção interna nos projetos que usam a base operacional da agência</span>
           </div>
           <div class="cs-validation-card" data-animate data-delay="2">
+            <span class="cs-validation-card__eyebrow">Validação</span>
             <span class="cs-validation-card__value">2</span>
             <span class="cs-validation-card__label">validadores passados no main para integridade do sistema e do pacote de IA</span>
           </div>
           <div class="cs-validation-card" data-animate data-delay="3">
+            <span class="cs-validation-card__eyebrow">Acessibilidade</span>
             <span class="cs-validation-card__value">WCAG AA</span>
             <span class="cs-validation-card__label">como base de contraste e acessibilidade aplicada aos tokens atuais</span>
           </div>
