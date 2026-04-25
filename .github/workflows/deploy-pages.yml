@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main # O robô vai rodar toda vez que você enviar algo para a main
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: read

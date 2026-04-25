@@ -1,0 +1,56 @@
+---
+pagination:
+  data: reflexoes.items
+  size: 1
+  alias: post
+permalink: "{{ post.url }}"
+layout: base.njk
+activeNav: reflexoes
+eleventyComputed:
+  title: "{{ post.title }} | Floriano Silva"
+  description: "{{ post.excerpt }}"
+  ogType: "article"
+  ogImage: "{{ post.thumbnail or metadata.ogImage }}"
+  ogImageAlt: "{{ post.title }}"
+  articlePublishedTime: "{{ post.dateIso }}"
+  articleModifiedTime: "{{ post.dateIso }}"
+  articleAuthor: "https://floriano.des.br/sobre/"
+---
+
+{% block extraHead %}
+  <script type="application/ld+json">{{ post.jsonLd | safe }}</script>
+{% endblock %}
+
+<main class="article-page page-top">
+  <article class="article">
+    <div class="container article__container">
+      <a href="/reflexoes/" class="article__back">Voltar para reflexões</a>
+
+      <header class="article__header" data-animate>
+        <p class="section-kicker">Reflexão</p>
+        <h1 class="article__title">{{ post.title }}</h1>
+        <div class="article__meta">
+          {% if post.dateDisplay %}
+            <time datetime="{{ post.dateAttr }}">{{ post.dateDisplay }}</time>
+          {% endif %}
+          <a href="{{ post.sourceUrl }}" target="_blank" rel="noopener noreferrer">Ver no Medium</a>
+        </div>
+      </header>
+
+      {% if post.thumbnail %}
+        <figure class="article__cover" data-animate data-delay="1">
+          <img src="{{ post.thumbnail }}" alt="{{ post.title }}" loading="eager" fetchpriority="high" decoding="async">
+        </figure>
+      {% endif %}
+
+      <div class="article__body" data-animate data-delay="2">
+        {{ post.contentHtml | safe }}
+      </div>
+
+      <footer class="article__footer" data-animate>
+        <a href="/reflexoes/" class="btn btn--white-glass">Ver outras reflexões</a>
+        <a href="{{ post.sourceUrl }}" target="_blank" rel="noopener noreferrer" class="btn btn--orange">Abrir no Medium</a>
+      </footer>
+    </div>
+  </article>
+</main>

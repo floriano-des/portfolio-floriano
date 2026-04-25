@@ -295,7 +295,7 @@ activeNav: home
           {% for post in reflexoes.items %}
             {% if loop.index <= 3 %}
             <article class="post-card" data-animate data-delay="{{ loop.index }}">
-              <a href="{{ post.link }}" class="post-card__link" target="_blank" rel="noopener noreferrer">
+              <a href="{{ post.url }}" class="post-card__link">
                 <div class="post-card__thumb">
                   {% if post.thumbnail %}
                     <img src="{{ post.thumbnail }}" alt="{{ post.title }}" loading="lazy">

@@ -1047,6 +1047,204 @@ body {
 }
 
 /* ===================================================
+   Artigo de reflexão
+   =================================================== */
+.article-page {
+  padding-block: 96px var(--section-py);
+}
+
+.article__container {
+  max-width: 980px;
+}
+
+.article__back {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 32px;
+  color: var(--clr-text-subtle);
+  font-size: 0.95rem;
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.article__back:hover {
+  color: var(--clr-orange);
+}
+
+.article__header {
+  max-width: 840px;
+  margin-bottom: 40px;
+}
+
+.article__title {
+  margin-top: 10px;
+  color: var(--clr-text);
+  font-size: clamp(2.4rem, 7vw, 5.6rem);
+  font-weight: var(--fw-semibold);
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.article__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  margin-top: 24px;
+  color: var(--clr-text-subtle);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.article__meta a {
+  color: var(--clr-orange);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+}
+
+.article__cover {
+  margin: 0 0 56px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,.06);
+  box-shadow: var(--shadow-card);
+}
+
+.article__cover img {
+  display: block;
+  width: 100%;
+  max-height: 560px;
+  object-fit: cover;
+}
+
+.article__body {
+  max-width: 760px;
+  margin-inline: auto;
+  color: var(--clr-text);
+  font-size: clamp(1.08rem, 1.4vw, 1.22rem);
+  line-height: 1.85;
+}
+
+.article__body > * + * {
+  margin-top: 1.35em;
+}
+
+.article__body p {
+  color: var(--clr-text);
+}
+
+.article__body strong {
+  color: var(--clr-text-dark);
+  font-weight: var(--fw-semibold);
+}
+
+.article__body em {
+  color: var(--clr-text-dark);
+}
+
+.article__body h2,
+.article__body h3,
+.article__body h4 {
+  color: var(--clr-text-dark);
+  font-weight: var(--fw-semibold);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.article__body h2 {
+  margin-top: 2em;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+}
+
+.article__body h3 {
+  margin-top: 1.8em;
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+}
+
+.article__body h4 {
+  margin-top: 1.6em;
+  font-size: 1.25rem;
+}
+
+.article__body a {
+  color: var(--clr-orange);
+  font-weight: var(--fw-medium);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.article__body figure {
+  margin: 2.2em 0;
+}
+
+.article__body img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  background: rgba(255,255,255,.06);
+}
+
+.article__body figcaption {
+  margin-top: 10px;
+  color: var(--clr-text-subtle);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.article__body blockquote {
+  margin: 2em 0;
+  padding: 24px 28px;
+  border-left: 4px solid var(--clr-orange);
+  border-radius: 0 18px 18px 0;
+  background: rgba(238,120,46,.08);
+  color: var(--clr-text-dark);
+  font-size: 1.18rem;
+  line-height: 1.65;
+}
+
+.article__body ul,
+.article__body ol {
+  padding-left: 1.35em;
+  color: var(--clr-text);
+}
+
+.article__body li + li {
+  margin-top: 0.55em;
+}
+
+.article__body pre {
+  overflow-x: auto;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(0,0,0,.3);
+}
+
+.article__body code {
+  color: var(--clr-text-dark);
+  font-size: 0.95em;
+}
+
+.article__body hr {
+  margin: 3em 0;
+  border: 0;
+  border-top: 1px solid var(--clr-border);
+}
+
+.article__footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  max-width: 760px;
+  margin: 64px auto 0;
+  padding-top: 32px;
+  border-top: 1px solid var(--clr-border);
+}
+
+/* ===================================================
    CTA / Contato
    =================================================== */
 .cta-section {
@@ -1537,6 +1735,41 @@ body {
 
   .reflections__grid {
     grid-template-columns: 1fr;
+  }
+
+  .article-page {
+    padding-block: 72px 64px;
+  }
+
+  .article__back {
+    margin-bottom: 24px;
+  }
+
+  .article__header {
+    margin-bottom: 28px;
+  }
+
+  .article__title {
+    letter-spacing: -0.04em;
+  }
+
+  .article__cover {
+    margin-bottom: 36px;
+    border-radius: 18px;
+  }
+
+  .article__body {
+    font-size: 1.03rem;
+    line-height: 1.75;
+  }
+
+  .article__body blockquote {
+    padding: 20px;
+    font-size: 1.05rem;
+  }
+
+  .article__footer {
+    margin-top: 48px;
   }
 
   .projects .page-intro {
