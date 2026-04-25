@@ -1,17 +1,17 @@
 /* ===================================================
-   main.js — Floriano Silva Portfolio
+   main.js , Floriano Silva Portfolio
    =================================================== */
 
 (function () {
   'use strict';
 
   // ─── Constantes ──────────────────────────────────────
-  var SCROLL_TRIGGER     = 40;   // px — threshold para classe .scrolled no header
-  var ACTIVE_LINK_OFFSET = 120;  // px — offset do topo para detecção de seção ativa
-  var CAROUSEL_GAP       = 24;   // px — gap entre itens do carrossel (deve bater com CSS)
+  var SCROLL_TRIGGER     = 40;   // px , threshold para classe .scrolled no header
+  var ACTIVE_LINK_OFFSET = 120;  // px , offset do topo para detecção de seção ativa
+  var CAROUSEL_GAP       = 24;   // px , gap entre itens do carrossel (deve bater com CSS)
   var IO_THRESHOLD       = 0.12; // fração visível para disparar animação
   var IO_ROOT_MARGIN     = '0px 0px -40px 0px'; // margem do Intersection Observer
-  var RESIZE_DEBOUNCE    = 150;  // ms — debounce no resize do carrossel
+  var RESIZE_DEBOUNCE    = 150;  // ms , debounce no resize do carrossel
 
   // ─── Navbar: scroll effect ────────────────────────────
   var header   = document.getElementById('header');
@@ -111,8 +111,8 @@
   }
 
   // ─── Carrossel genérico ───────────────────────────────
-  // mode: 'multi' (padrão) — exibe perView itens por vez
-  // mode: 'full'           — cada slide ocupa 100% da largura
+  // mode: 'multi' (padrão) , exibe perView itens por vez
+  // mode: 'full'           , cada slide ocupa 100% da largura
   function initCarousel(trackEl, prevBtn, nextBtn, dotsContainer, mode) {
     if (!trackEl) return;
 
@@ -193,7 +193,7 @@
     goTo(0);
   }
 
-  // Carrossel — Explorações (projetos.html)
+  // Carrossel , Explorações (projetos.html)
   initCarousel(
     document.getElementById('carouselTrack'),
     document.getElementById('carouselPrev'),
@@ -202,7 +202,7 @@
     'multi'
   );
 
-  // Slider — Depoimentos (sobre.html)
+  // Slider , Depoimentos (sobre.html)
   initCarousel(
     document.getElementById('testimonialsTrack'),
     document.getElementById('testimonialsPrev'),
