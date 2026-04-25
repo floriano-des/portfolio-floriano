@@ -1608,6 +1608,10 @@ body {
   }
 
   /* Hero mobile */
+  .hero {
+    padding-top: 0;
+  }
+
   .hero__container {
     grid-template-columns: 1fr;
     text-align: center;
