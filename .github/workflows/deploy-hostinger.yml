@@ -21,7 +21,7 @@ jobs:
 
       - name: Instalar dependências e Gerar Site
         run: |
-          npm install
+          npm ci
           npm run build
 
       - name: Publicar arquivos na branch deploy
@@ -40,7 +40,7 @@ jobs:
           git rm -rf . --quiet 2>/dev/null || true
           cp -r /tmp/site-build/. .
 
-          # Commit e push normal — sem --force
+          # Commit e push normal, sem --force
           git add -A
           git commit -m "deploy: ${{ github.sha }}" || echo "Nada para commitar"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git deploy

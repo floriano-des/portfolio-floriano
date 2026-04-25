@@ -4,15 +4,18 @@
  */
 module.exports = async function () {
   const FEED_URL = 'https://medium.com/feed/@floriano-des';
+  const FETCH_TIMEOUT_MS = 5000;
+  const fallback = require('./reflexoes-fallback.json');
 
   try {
-    const res = await fetch(FEED_URL);
+    const res = await fetch(FEED_URL, { signal: AbortSignal.timeout(FETCH_TIMEOUT_MS) });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const xml = await res.text();
-    return { items: parseRSS(xml) };
+    const items = parseRSS(xml);
+    return items.length ? { items } : fallback;
   } catch (err) {
     console.warn(`[reflexoes] Falha ao buscar feed do Medium: ${err.message}`);
-    return { items: [] };
+    return fallback;
   }
 };
 

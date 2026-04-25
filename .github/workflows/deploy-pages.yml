@@ -26,7 +26,7 @@ jobs:
           node-version: "20"
 
       - name: Instalar dependências do Eleventy
-        run: npm install
+        run: npm ci
 
       - name: Construir o site pronto
         run: npm run build
