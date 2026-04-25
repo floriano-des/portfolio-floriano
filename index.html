@@ -63,7 +63,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/reset.css?v=a1ae43b1e1">
-  <link rel="stylesheet" href="/css/style.css?v=eb4722efc1">
+  <link rel="stylesheet" href="/css/style.css?v=a09f093e31">
   
 </head>
 <body>
@@ -142,6 +142,9 @@
             </svg>
           </a>
         </div>
+        <div class="nav__translate" aria-label="Selecionar idioma">
+          <div class="gtranslate_wrapper nav__translate-widget"></div>
+        </div>
       </div>
 
       <!-- Hamburger mobile -->
@@ -152,6 +155,19 @@
       </button>
 
     </nav>
+    <script>
+      window.gtranslateSettings = {
+        "default_language": "pt",
+        "languages": ["pt", "en"],
+        "wrapper_selector": ".gtranslate_wrapper",
+        "flag_size": 16,
+        "alt_flags": {
+          "pt": "brazil",
+          "en": "usa"
+        }
+      };
+    </script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/fc.js" defer></script>
   </header>
 
 
