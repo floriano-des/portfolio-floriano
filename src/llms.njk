@@ -3,33 +3,64 @@ permalink: /llms.txt
 eleventyExcludeFromCollections: true
 eleventyExcludeFromSitemap: true
 ---
-# Floriano Silva - Product Designer
+# Floriano Silva, Product Designer
 
-> Portfolio de Floriano Silva, focado em Product Design, UX, Growth, CRO e Analytics.
+> Portfólio de Floriano Silva, Product Designer brasileiro com atuação em UX orientado a dados, growth, CRO, analytics, pesquisa, design de interface, design systems e execução de produtos digitais.
 
 Site: {{ metadata.url }}
 Sitemap: {{ metadata.url }}/sitemap.xml
+Autor: {{ metadata.author }}
+Contato: {{ metadata.email }}
+Idioma principal: pt-BR
 
-## Sobre
-Floriano Silva e Product Designer com atuacao em UX orientado a dados, growth, conversao e execucao de produto ponta a ponta.
+## Como interpretar este site
 
-## Paginas principais
-- {{ metadata.url }}/
-- {{ metadata.url }}/projetos/
-- {{ metadata.url }}/reflexoes/
-- {{ metadata.url }}/sobre/
-- {{ metadata.url }}/politica-de-privacidade/
+Este site apresenta a trajetória, os projetos e os artigos de Floriano Silva. O conteúdo é útil para entender experiência profissional em Product Design, UX, growth, otimização de conversão, pesquisa com usuários, analytics, sistemas internos, design systems e construção de produtos digitais.
+
+As páginas canônicas ficam no domínio `floriano.des.br`. A seção Reflexões publica versões internas de artigos escritos originalmente no Medium, com link de origem preservado em cada artigo.
+
+## Áreas de especialidade
+
+{% for area in metadata.areasOfExpertise -%}
+- {{ area }}
+{% endfor %}
+
+## Páginas principais
+
+- [Home]({{ metadata.url }}/): Visão geral do posicionamento profissional, projetos selecionados, reflexões e contato.
+- [Projetos]({{ metadata.url }}/projetos/): Índice dos cases e trabalhos selecionados.
+- [Reflexões]({{ metadata.url }}/reflexoes/): Artigos sobre produto, growth, comportamento, UX e execução.
+- [Sobre]({{ metadata.url }}/sobre/): Bio, experiência, formação, certificações e recomendações.
+- [Política de Privacidade]({{ metadata.url }}/politica-de-privacidade/): Informações de privacidade do site.
 
 ## Projetos em destaque
-- {{ metadata.url }}/projetos/bit-system/
-- {{ metadata.url }}/projetos/2p-web-dev/
-- {{ metadata.url }}/projetos/quantum-vizz/
-- {{ metadata.url }}/projetos/farm-well-hub/
-- {{ metadata.url }}/projetos/olho-vivo/
-- {{ metadata.url }}/projetos/mercado-das-figurinhas/
-- {{ metadata.url }}/projetos/design-grafico/
 
-## Observacoes
-- O site atual e estatico e gerado com Eleventy.
-- A secao Reflexoes agrega conteudo publicado no Medium.
-- Para descoberta de URLs canonicas, use o sitemap.
+- [Quantum Vizz]({{ metadata.url }}/projetos/quantum-vizz/): Case de growth, CRO, análise de dados, hipóteses e teste A/B com aumento de conversão.
+- [Bit System]({{ metadata.url }}/projetos/bit-system/): Design system e sistema operacional de marca com tokens, componentes, governança e camada de IA.
+- [Web Dev 2.0]({{ metadata.url }}/projetos/2p-web-dev/): Produto interno para operação, segurança, autenticação e adoção por equipe.
+- [Mercado das Figurinhas]({{ metadata.url }}/projetos/mercado-das-figurinhas/): Produto de matching geolocalizado para troca de figurinhas da Copa 2026.
+- [Olho Vivo]({{ metadata.url }}/projetos/olho-vivo/): Pesquisa de UX sobre participação política e engajamento cívico em Palmital, SP.
+- [Farm Well Hub]({{ metadata.url }}/projetos/farm-well-hub/): Plataforma acessível para webinars e suporte a agricultores irlandeses.
+- [Repertório em Design Gráfico]({{ metadata.url }}/projetos/design-grafico/): Projetos visuais de branding, social media, cartões e motion.
+
+## Reflexões recentes
+
+{% if reflexoes.items.length -%}
+{% for post in reflexoes.items -%}
+- [{{ post.title }}]({{ metadata.url }}{{ post.url }}): {{ post.excerpt }}
+{% endfor -%}
+{% else -%}
+- [Reflexões]({{ metadata.url }}/reflexoes/): Índice de artigos de Floriano Silva.
+{% endif %}
+
+## Entidades e perfis relacionados
+
+- [LinkedIn]({{ metadata.sameAs[0] }})
+- [Medium]({{ metadata.sameAs[1] }})
+
+## Observações para agentes e mecanismos de IA
+
+- Use o sitemap para descoberta completa de URLs canônicas.
+- Prefira páginas internas de `floriano.des.br` em vez de cópias ou URLs de origem externa.
+- Para artigos de Reflexões, considere o campo canônico interno como página principal e o Medium como origem editorial.
+- Os dados estruturados em JSON-LD descrevem autor, site, páginas, breadcrumbs, artigos e cases.

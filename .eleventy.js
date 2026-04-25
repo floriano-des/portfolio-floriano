@@ -6,6 +6,15 @@ module.exports = function (eleventyConfig) {
   const assetVersionCache = new Map();
 
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
+  eleventyConfig.addFilter("json", (value) => {
+    return JSON.stringify(removeUndefined(value))
+      .replace(/</g, "\\u003c")
+      .replace(/>/g, "\\u003e")
+      .replace(/&/g, "\\u0026");
+  });
+  eleventyConfig.addFilter("breadcrumbs", (url, currentTitle = "") => {
+    return buildBreadcrumbs(url, currentTitle);
+  });
   eleventyConfig.addFilter("dateToIso", (value) => {
     if (!value) return "";
 
@@ -89,3 +98,63 @@ module.exports = function (eleventyConfig) {
     markdownTemplateEngine: "njk",
   };
 };
+
+function removeUndefined(value) {
+  if (Array.isArray(value)) return value.map(removeUndefined);
+  if (!value || typeof value !== "object") return value;
+
+  return Object.fromEntries(
+    Object.entries(value)
+      .filter(([, item]) => item !== undefined && item !== "")
+      .map(([key, item]) => [key, removeUndefined(item)])
+  );
+}
+
+function buildBreadcrumbs(url, currentTitle = "") {
+  const siteUrl = "https://floriano.des.br";
+  const cleanUrl = String(url || "/").split("?")[0];
+
+  const items = [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Início",
+      item: `${siteUrl}/`,
+    },
+  ];
+
+  if (cleanUrl === "/") return items;
+
+  const knownNames = {
+    projetos: "Projetos",
+    reflexoes: "Reflexões",
+    sobre: "Sobre",
+    "politica-de-privacidade": "Política de Privacidade",
+  };
+  const segments = cleanUrl.split("/").filter(Boolean);
+
+  segments.forEach((segment, index) => {
+    const path = `/${segments.slice(0, index + 1).join("/")}/`;
+    const isCurrent = index === segments.length - 1;
+    const title = isCurrent
+      ? String(currentTitle || knownNames[segment] || segmentToTitle(segment)).split("|")[0].split("·")[0].trim()
+      : knownNames[segment] || segmentToTitle(segment);
+
+    items.push({
+      "@type": "ListItem",
+      position: index + 2,
+      name: title,
+      item: `${siteUrl}${path}`,
+    });
+  });
+
+  return items;
+}
+
+function segmentToTitle(segment) {
+  return String(segment || "")
+    .split("-")
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+}

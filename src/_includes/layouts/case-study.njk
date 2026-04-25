@@ -27,6 +27,33 @@
   <meta name="twitter:description" content="{{ description or metadata.description }}">
   <meta name="twitter:image"       content="{{ ogImage or metadata.ogImage }}">
   <meta name="twitter:image:alt"   content="{{ ogImageAlt or title or metadata.title }}">
+  {% include "partials/structured-data.njk" %}
+  {% set caseUrl = metadata.url + page.url %}
+  {% set caseStudySchema = {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "@id": caseUrl + "#case-study",
+    "name": title or metadata.title,
+    "headline": title or metadata.title,
+    "description": description or metadata.description,
+    "url": caseUrl,
+    "image": ogImage or metadata.ogImage,
+    "inLanguage": "pt-BR",
+    "creator": {
+      "@id": metadata.url + "/#person"
+    },
+    "author": {
+      "@id": metadata.url + "/#person"
+    },
+    "isPartOf": {
+      "@id": metadata.url + "/projetos/#webpage"
+    },
+    "mainEntityOfPage": {
+      "@id": caseUrl + "#webpage"
+    },
+    "keywords": metadata.areasOfExpertise
+  } %}
+  <script type="application/ld+json">{{ caseStudySchema | json | safe }}</script>
 
   <!-- Fonts: Montserrat -->
   <link rel="preconnect" href="https://fonts.googleapis.com">

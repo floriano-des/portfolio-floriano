@@ -1,0 +1,66 @@
+{% set currentTitle = title or metadata.title %}
+{% set currentDescription = description or metadata.description %}
+{% set currentUrl = metadata.url + page.url %}
+{% set currentImage = ogImage or metadata.ogImage %}
+{% set pageSchemaType = schemaType or "WebPage" %}
+{% set personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": metadata.url + "/#person",
+  "name": metadata.author,
+  "url": metadata.url + "/sobre/",
+  "jobTitle": metadata.profession,
+  "email": metadata.email,
+  "telephone": metadata.phone,
+  "image": metadata.url + "/assets/foto-floriano-1-720.webp",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "BR"
+  },
+  "knowsAbout": metadata.areasOfExpertise,
+  "sameAs": metadata.sameAs
+} %}
+{% set websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": metadata.url + "/#website",
+  "name": metadata.siteName,
+  "url": metadata.url + "/",
+  "description": metadata.description,
+  "inLanguage": "pt-BR",
+  "publisher": {
+    "@id": metadata.url + "/#person"
+  }
+} %}
+{% set webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": pageSchemaType,
+  "@id": currentUrl + "#webpage",
+  "url": currentUrl,
+  "name": currentTitle,
+  "description": currentDescription,
+  "inLanguage": "pt-BR",
+  "isPartOf": {
+    "@id": metadata.url + "/#website"
+  },
+  "about": {
+    "@id": metadata.url + "/#person"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": currentImage
+  },
+  "breadcrumb": {
+    "@id": currentUrl + "#breadcrumb"
+  }
+} %}
+{% set breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": currentUrl + "#breadcrumb",
+  "itemListElement": page.url | breadcrumbs(currentTitle)
+} %}
+<script type="application/ld+json">{{ personSchema | json | safe }}</script>
+<script type="application/ld+json">{{ websiteSchema | json | safe }}</script>
+<script type="application/ld+json">{{ webPageSchema | json | safe }}</script>
+<script type="application/ld+json">{{ breadcrumbSchema | json | safe }}</script>

@@ -37,6 +37,7 @@
   <meta name="twitter:description" content="{{ description or metadata.description }}">
   <meta name="twitter:image"       content="{{ ogImage or metadata.ogImage }}">
   <meta name="twitter:image:alt"   content="{{ ogImageAlt or title or metadata.title }}">
+  {% include "partials/structured-data.njk" %}
   {% block extraHead %}{% endblock %}
 
   <!-- Fonts: Montserrat -->

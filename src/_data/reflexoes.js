@@ -201,25 +201,26 @@ function buildBlogPostingJsonLd(post) {
   const payload = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
+    '@id': `${post.canonicalUrl}#blogposting`,
     headline: post.title,
     description: post.excerpt,
     url: post.canonicalUrl,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': post.canonicalUrl,
+      '@id': `${post.canonicalUrl}#webpage`,
     },
     author: {
-      '@type': 'Person',
-      name: 'Floriano Silva',
-      url: 'https://floriano.des.br/sobre/',
+      '@id': 'https://floriano.des.br/#person',
     },
     publisher: {
-      '@type': 'Person',
-      name: 'Floriano Silva',
-      url: 'https://floriano.des.br/',
+      '@id': 'https://floriano.des.br/#person',
+    },
+    isPartOf: {
+      '@id': 'https://floriano.des.br/reflexoes/#webpage',
     },
     inLanguage: 'pt-BR',
     isBasedOn: post.sourceUrl,
+    keywords: ['Product Design', 'UX', 'Growth', 'CRO', 'Analytics'],
     wordCount: post.plainText ? post.plainText.split(/\s+/).filter(Boolean).length : undefined,
   };
 
