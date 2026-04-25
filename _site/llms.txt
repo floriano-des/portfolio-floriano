@@ -1,0 +1,30 @@
+# Floriano Silva - Product Designer
+
+> Portfolio de Floriano Silva, focado em Product Design, UX, Growth, CRO e Analytics.
+
+Site: https://floriano.des.br
+Sitemap: https://floriano.des.br/sitemap.xml
+
+## Sobre
+Floriano Silva e Product Designer com atuacao em UX orientado a dados, growth, conversao e execucao de produto ponta a ponta.
+
+## Paginas principais
+- https://floriano.des.br/
+- https://floriano.des.br/projetos/
+- https://floriano.des.br/reflexoes/
+- https://floriano.des.br/sobre/
+- https://floriano.des.br/politica-de-privacidade/
+
+## Projetos em destaque
+- https://floriano.des.br/projetos/bit-system/
+- https://floriano.des.br/projetos/2p-web-dev/
+- https://floriano.des.br/projetos/quantum-vizz/
+- https://floriano.des.br/projetos/farm-well-hub/
+- https://floriano.des.br/projetos/olho-vivo/
+- https://floriano.des.br/projetos/mercado-das-figurinhas/
+- https://floriano.des.br/projetos/design-grafico/
+
+## Observacoes
+- O site atual e estatico e gerado com Eleventy.
+- A secao Reflexoes agrega conteudo publicado no Medium.
+- Para descoberta de URLs canonicas, use o sitemap.
