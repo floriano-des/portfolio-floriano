@@ -1807,6 +1807,22 @@ details[open] .cs-summary__icon {
   margin: 0;
 }
 
+.cs-olho-lightbox-trigger {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+  display: block;
+  text-align: left;
+}
+
+.cs-olho-lightbox-trigger:focus-visible {
+  outline: 3px solid var(--clr-orange);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
 .cs-olho-process img,
 .cs-olho-process video,
 .cs-olho-personas img,
@@ -1873,6 +1889,11 @@ details[open] .cs-summary__icon {
   font-size: clamp(1.55rem, 2.4vw, 2.35rem);
 }
 
+.cs-results--olho .cs-metric__value--compact {
+  font-size: clamp(1.45rem, 2vw, 2rem);
+  white-space: nowrap;
+}
+
 .cs-results--olho .cs-metric__label {
   font-size: 0.86rem;
 }
@@ -1905,6 +1926,55 @@ details[open] .cs-summary__icon {
 
 .cs-olho .cs-role__label {
   color: var(--clr-orange-readable);
+}
+
+.cs-olho-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(18px, 4vw, 44px);
+  background: rgba(1, 7, 29, 0.94);
+  cursor: zoom-out;
+}
+
+.cs-olho-lightbox[hidden] {
+  display: none;
+}
+
+.cs-olho-lightbox__img {
+  max-width: min(1280px, 100%);
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  background: var(--clr-white);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.46);
+  cursor: default;
+}
+
+.cs-olho-lightbox__close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--clr-white);
+  cursor: pointer;
+}
+
+.cs-olho-lightbox__close:hover,
+.cs-olho-lightbox__close:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
 }
 
 /* ===================================================
