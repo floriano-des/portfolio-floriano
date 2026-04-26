@@ -1419,6 +1419,252 @@ details[open] .cs-summary__icon {
 }
 
 /* ===================================================
+   Bit System
+   =================================================== */
+.cs-bit {
+  --section-py: clamp(52px, 6vw, 84px);
+  --space-10: 32px;
+  --space-12: 40px;
+}
+
+.cs-bit .cs-hero {
+  padding-top: calc(var(--nav-height) + 88px);
+}
+
+.cs-bit .cs-hero__inner {
+  max-width: 980px;
+  padding-bottom: clamp(30px, 4vw, 44px);
+}
+
+.cs-bit .cs-hero__tag {
+  margin-bottom: 10px;
+}
+
+.cs-bit .cs-hero__title {
+  font-size: clamp(3rem, 6vw, 4.7rem);
+  line-height: 1.02;
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.cs-bit .cs-hero__subtitle {
+  max-width: 760px;
+  font-size: clamp(1rem, 1.45vw, 1.2rem);
+}
+
+.cs-bit .section-title {
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1.16;
+}
+
+.cs-bit-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.cs-bit-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 18px;
+  border-radius: var(--radius-full);
+  background: var(--clr-orange);
+  color: var(--clr-dark);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+  box-shadow: 0 14px 34px rgba(238, 120, 46, 0.22);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.cs-bit-actions a + a {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--clr-white);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: none;
+}
+
+.cs-bit-actions a:hover {
+  transform: translateY(-2px);
+}
+
+.cs-bit-wide {
+  max-width: 980px;
+}
+
+.cs-bit-dark {
+  background: var(--clr-dark);
+}
+
+.cs-bit .cs-gallery {
+  padding-block: var(--space-4);
+}
+
+.cs-bit .cs-gallery__img {
+  width: clamp(240px, 28vw, 420px);
+  height: clamp(135px, 15vw, 236px);
+  object-fit: cover;
+  object-position: center;
+  background: var(--clr-dark);
+}
+
+.cs-bit-diagnosis {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-10);
+}
+
+.cs-bit-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-height: 205px;
+  padding: var(--space-5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cs-bit-card__icon {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: rgba(238, 120, 46, 0.12);
+  color: var(--clr-orange);
+}
+
+.cs-bit-card h3 {
+  font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+  font-weight: var(--fw-bold);
+  color: var(--clr-white);
+  line-height: 1.2;
+}
+
+.cs-bit-card p {
+  font-size: var(--text-sm);
+  color: rgba(230, 230, 230, 0.72);
+  line-height: var(--leading-normal);
+}
+
+.cs-bit-principles {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-10);
+}
+
+.cs-bit-principles div {
+  padding: var(--space-5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cs-bit-principles span {
+  display: block;
+  margin-bottom: var(--space-3);
+  color: var(--clr-orange);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-bold);
+}
+
+.cs-bit-principles strong {
+  display: block;
+  color: var(--clr-white);
+  font-size: var(--text-base);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-2);
+}
+
+.cs-bit-principles p {
+  color: rgba(230, 230, 230, 0.72);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+}
+
+.cs-bit-media-grid,
+.cs-bit-screen-grid {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-10);
+}
+
+.cs-bit-media-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cs-bit-screen-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.cs-bit-media-grid figure {
+  margin: 0;
+}
+
+.cs-bit-media-grid img,
+.cs-bit-screen-grid img,
+.cs-bit-single-shot img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(1, 7, 29, 0.12);
+  box-shadow: 0 12px 36px rgba(1, 7, 29, 0.12);
+  background: var(--clr-dark);
+  display: block;
+}
+
+.cs-bit-dark .cs-bit-screen-grid img,
+.cs-bit-dark .cs-bit-single-shot img {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+}
+
+.cs-bit-single-shot {
+  margin-top: var(--space-10);
+}
+
+.cs-results--bit .cs-container {
+  max-width: 900px;
+}
+
+.cs-results--bit .cs-metrics {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.cs-results--bit .cs-metric {
+  padding: var(--space-6);
+}
+
+.cs-results--bit .cs-metric__value {
+  font-size: clamp(1.35rem, 2.2vw, 2.1rem);
+}
+
+.cs-results--bit .cs-metric__label {
+  font-size: 0.86rem;
+}
+
+.cs-bit .cs-role .cs-tag {
+  background: rgba(159, 69, 5, 0.08);
+  border-color: rgba(159, 69, 5, 0.28);
+  color: var(--clr-text-dark);
+}
+
+.cs-bit .cs-role__label {
+  color: var(--clr-orange-readable);
+}
+
+/* ===================================================
    Big Numbers
    =================================================== */
 .cs-bignums {
@@ -1661,6 +1907,54 @@ details[open] .cs-summary__icon {
   }
 
   .cs-results--webdev .cs-metric__value {
+    font-size: clamp(1.55rem, 7vw, 2.1rem);
+  }
+
+  .cs-bit {
+    --section-py: 48px;
+    --space-10: 28px;
+    --space-12: 34px;
+  }
+
+  .cs-bit .cs-hero {
+    padding-top: 128px;
+  }
+
+  .cs-bit .cs-hero__inner {
+    padding-bottom: 28px;
+  }
+
+  .cs-bit .cs-hero__title {
+    font-size: clamp(1.9rem, 9.5vw, 2.3rem);
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  .cs-bit .cs-hero__subtitle {
+    font-size: 0.98rem;
+  }
+
+  .cs-bit .section-title {
+    font-size: clamp(1.7rem, 8vw, 2.35rem);
+  }
+
+  .cs-bit-diagnosis,
+  .cs-bit-principles,
+  .cs-bit-media-grid,
+  .cs-bit-screen-grid,
+  .cs-results--bit .cs-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-bit-card {
+    min-height: auto;
+  }
+
+  .cs-results--bit .cs-metric {
+    padding: var(--space-5);
+  }
+
+  .cs-results--bit .cs-metric__value {
     font-size: clamp(1.55rem, 7vw, 2.1rem);
   }
 }
