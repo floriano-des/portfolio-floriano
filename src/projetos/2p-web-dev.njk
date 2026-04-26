@@ -1,540 +1,564 @@
 ---
 layout: case-study.njk
-title: "Web Dev 2.0 · Case Study · Floriano Silva"
-description: "Como resolvi o maior risco de segurança da agência Dois Palitos sem contratar dev, sem orçamento, e em duas semanas."
+title: "Web Dev 2.0 · Estudo de caso · Floriano Silva"
+description: "Como substituí uma planilha pública por um sistema interno seguro, escalável e usado diariamente pela operação da agência."
 ---
 
-  <main>
+<main class="cs-webdev">
 
-    <!-- ================================================
-         HERO
-         ================================================ -->
-    <section class="cs-hero">
-      <div class="cs-hero__inner" data-animate>
-        <span class="cs-hero__tag">Produto interno | Operação | Segurança e adoção</span>
-        <h1 class="cs-hero__title">Web Dev 2.0</h1>
-        <p class="cs-hero__subtitle">
-          Um produto interno criado para substituir uma operação insegura e frágil por um fluxo claro, autenticado e adotado pelo time.
-        </p>
-      </div>
-      <div class="cs-hero__image" data-animate data-delay="1">
+  <!-- ================================================
+       TOPO
+       ================================================ -->
+  <section class="cs-hero">
+    <div class="cs-hero__inner" data-animate>
+      <span class="cs-hero__tag">produto interno · operação · segurança · Bit System</span>
+      <h1 class="cs-hero__title">Web Dev 2.0</h1>
+      <p class="cs-hero__subtitle">
+        Como substituí uma planilha pública por um sistema interno seguro, escalável e usado diariamente pelo time da Dois Palitos.
+      </p>
+      <div class="cs-published-by">
         <img
-          src="/assets/projetos/web-dev/webdev2-2048x1032.webp"
-          alt="Interface do sistema Web Dev 2.0 mostrando painel de clientes com protocolos e dados organizados"
-          loading="eager"
-          fetchpriority="high"
+          class="cs-published-by__avatar"
+          src="/assets/perfil-floriano-hero.png"
+          alt="Floriano Silva"
+          loading="lazy"
+          width="36"
+          height="36"
         >
+        <div class="cs-published-by__info">
+          <p class="cs-published-by__label">Publicado por</p>
+          <p class="cs-published-by__name">Floriano Silva</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ================================================
-         DESAFIO + PERFIL DO PROJETO
-         ================================================ -->
-    <section class="cs-challenge section">
-      <div class="container">
-        <div class="cs-challenge__grid">
+  <!-- ================================================
+       RESUMO DO PROJETO
+       ================================================ -->
+  <div class="cs-summary">
+    <div class="cs-summary__inner">
+      <details>
+        <summary class="cs-summary__toggle">
+          <span style="display:flex;align-items:center;gap:var(--space-3);">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Resumo do projeto
+          </span>
+          <svg class="cs-summary__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </summary>
+        <div class="cs-summary__body">
+          <div class="cs-summary__item">
+            <span class="cs-summary__label">Situação:</span>
+            <span class="cs-summary__text">A agência gerenciava credenciais, protocolos e dados operacionais de clientes em uma planilha pública. O fluxo era rápido para nascer, mas inseguro para escalar.</span>
+          </div>
+          <div class="cs-summary__item">
+            <span class="cs-summary__label">Tarefa:</span>
+            <span class="cs-summary__text">Transformar a planilha em um produto interno com autenticação, controle de acesso, histórico, organização por cliente e uma experiência que o time realmente usasse no dia a dia.</span>
+          </div>
+          <div class="cs-summary__item">
+            <span class="cs-summary__label">Ação:</span>
+            <span class="cs-summary__text">Mapeei os fluxos críticos, desenhei a estrutura do produto, implementei com PHP e MySQL, evoluí a interface para o Bit System v2.1.0 e conduzi iterações baseadas no uso real da equipe.</span>
+          </div>
+          <div class="cs-summary__item">
+            <span class="cs-summary__label">Resultado:</span>
+            <span class="cs-summary__text">O sistema entrou em produção em <strong>webdev.doispalitosmkt.com.br</strong>, passou a centralizar clientes ativos, protocolos, senhas internas, usuários e logs, com a equipe usando a ferramenta como fonte principal da operação.</span>
+          </div>
+        </div>
+      </details>
+    </div>
+  </div>
 
+  <!-- ================================================
+       NÚMEROS PRINCIPAIS
+       ================================================ -->
+  <div class="cs-bignums">
+    <div class="cs-bignum" data-animate>
+      <div class="cs-bignum__head">
+        <svg class="cs-bignum__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+          <circle cx="9" cy="7" r="4"/>
+          <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+        </svg>
+        <span class="cs-bignum__value">29</span>
+      </div>
+      <span class="cs-bignum__label">clientes ativos no dashboard operacional</span>
+    </div>
+    <div class="cs-bignum" data-animate data-delay="1">
+      <div class="cs-bignum__head">
+        <svg class="cs-bignum__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 11l3 3L22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+        <span class="cs-bignum__value">1.044</span>
+      </div>
+      <span class="cs-bignum__label">tarefas de protocolo monitoradas no sistema</span>
+    </div>
+    <div class="cs-bignum" data-animate data-delay="2">
+      <div class="cs-bignum__head">
+        <svg class="cs-bignum__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 20h9"/>
+          <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+        </svg>
+        <span class="cs-bignum__value">v2.0</span>
+      </div>
+      <span class="cs-bignum__label">em produção com redesign e novas funções</span>
+    </div>
+  </div>
+
+  <!-- ================================================
+       GALERIA
+       ================================================ -->
+  <div class="cs-gallery" aria-hidden="true">
+    <div class="cs-gallery__track">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-login.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-dashboard.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-clientes.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-protocolos-cliente.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-ferramentas.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-gestao-protocolos.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-senhas.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-usuarios.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-log.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-login.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-dashboard.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-clientes.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-protocolos-cliente.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-ferramentas.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-gestao-protocolos.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-senhas.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-usuarios.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/web-dev/webdev-log.webp" alt="" loading="lazy">
+    </div>
+  </div>
+
+  <!-- ================================================
+       CONTEXTO
+       ================================================ -->
+  <section class="section">
+    <div class="cs-container">
+      <p class="cs-kicker-light">Contexto</p>
+      <h2 class="section-title" data-animate>Uma operação crítica presa em uma planilha.</h2>
+      <p data-animate data-delay="1" class="cs-body-copy">
+        A Dois Palitos precisava consultar dados de hospedagem, acessos, protocolos, senhas internas e histórico de clientes todos os dias. A solução existente era uma planilha compartilhada, fácil de editar, mas frágil do ponto de vista de segurança, rastreabilidade e experiência.
+      </p>
+      <p data-animate data-delay="2" class="cs-body-copy">
+        O problema não era só técnico. A planilha exigia memória, paciência e contexto que não estavam na interface. Cada busca dependia de saber onde procurar, qual aba abrir e como interpretar o que estava preenchido.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================================================
+       DIAGNÓSTICO
+       ================================================ -->
+  <section class="section cs-webdev-dark">
+    <div class="cs-container cs-webdev-wide">
+      <p class="cs-kicker-dark">Diagnóstico</p>
+      <h2 class="section-title" data-animate style="color: var(--clr-white);">O que precisava sair da planilha</h2>
+
+      <div class="cs-webdev-diagnosis">
+        <div class="cs-webdev-diagnosis__card" data-animate>
+          <span class="cs-webdev-diagnosis__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M9 12l2 2 4-4"/></svg>
+          </span>
+          <h3 class="cs-webdev-diagnosis__title">Segurança</h3>
+          <p class="cs-webdev-diagnosis__text">Credenciais e dados de clientes precisavam sair de um link público e entrar em um ambiente autenticado.</p>
+        </div>
+
+        <div class="cs-webdev-diagnosis__card" data-animate data-delay="1">
+          <span class="cs-webdev-diagnosis__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          </span>
+          <h3 class="cs-webdev-diagnosis__title">Encontrabilidade</h3>
+          <p class="cs-webdev-diagnosis__text">O time precisava localizar cliente, acesso e protocolo em segundos, sem depender de rolagem e memória.</p>
+        </div>
+
+        <div class="cs-webdev-diagnosis__card" data-animate data-delay="2">
+          <span class="cs-webdev-diagnosis__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+          </span>
+          <h3 class="cs-webdev-diagnosis__title">Visibilidade</h3>
+          <p class="cs-webdev-diagnosis__text">Protocolos, pendências e clientes ativos precisavam virar indicadores claros para gestão diária.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       OBJETIVO
+       ================================================ -->
+  <section class="cs-context section">
+    <div class="cs-container">
+      <p class="cs-kicker-dark" style="text-align:center;">Objetivo</p>
+      <p class="cs-context__question" data-animate>
+        Como criar um produto interno seguro e simples o suficiente para ser adotado pelo time inteiro, sem virar mais uma ferramenta que ninguém usa?
+      </p>
+
+      <div class="cs-gargalos">
+        <h2 class="cs-gargalos__title section-title" style="color: var(--clr-white);">4 princípios de produto</h2>
+        <ul class="cs-gargalos__list" role="list">
+          <li class="cs-gargalos__item">
+            <span class="cs-gargalos__num" aria-hidden="true">1</span>
+            <p class="cs-gargalos__text"><strong>Segurança sem fricção.</strong> Autenticação e perfis eram obrigatórios, mas o fluxo precisava continuar rápido.</p>
+          </li>
+          <li class="cs-gargalos__item">
+            <span class="cs-gargalos__num" aria-hidden="true">2</span>
+            <p class="cs-gargalos__text"><strong>Contexto antes de edição.</strong> Cada cliente precisava ter sua própria página com dados, notas, protocolos e histórico.</p>
+          </li>
+          <li class="cs-gargalos__item">
+            <span class="cs-gargalos__num" aria-hidden="true">3</span>
+            <p class="cs-gargalos__text"><strong>Operação acima de estética.</strong> O design precisava ser denso, escaneável e feito para uso repetido.</p>
+          </li>
+          <li class="cs-gargalos__item">
+            <span class="cs-gargalos__num" aria-hidden="true">4</span>
+            <p class="cs-gargalos__text"><strong>Iteração sem cerimônia.</strong> O sistema precisava aceitar melhorias pequenas, rápidas e seguras depois do lançamento.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       SOLUÇÃO
+       ================================================ -->
+  <section class="section">
+    <div class="cs-container cs-webdev-wide">
+      <p class="cs-kicker-light">Solução</p>
+      <h2 class="section-title" data-animate>De planilha pública para sistema operacional.</h2>
+      <p class="cs-body-copy" data-animate data-delay="1">
+        A primeira versão substituiu o risco central: dados expostos sem autenticação. As iterações seguintes transformaram o sistema em uma ferramenta de operação, com módulos para clientes, protocolos, senhas internas, usuários, logs, campos extras e notas inline.
+      </p>
+
+      <div class="cs-webdev-feature-grid">
+        <article class="cs-webdev-feature-card" data-animate>
+          <span class="cs-webdev-feature-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h.01"/><path d="M11 15h.01"/><path d="M15 15h.01"/><path d="M17 9h.01"/></svg>
+          </span>
+          <h3>Credenciais completas</h3>
+          <p>Cada rede social passou a guardar perfil, login e senha individual, com cadastro rápido direto na página do cliente.</p>
+        </article>
+
+        <article class="cs-webdev-feature-card" data-animate data-delay="1">
+          <span class="cs-webdev-feature-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/><path d="M8 3v18"/></svg>
+          </span>
+          <h3>Campos extras</h3>
+          <p>Campos customizáveis por cliente, com tipo texto, senha mascarada ou URL, usando CRUD completo via AJAX.</p>
+        </article>
+
+        <article class="cs-webdev-feature-card" data-animate data-delay="2">
+          <span class="cs-webdev-feature-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+          </span>
+          <h3>Notas inline</h3>
+          <p>A seção de notas deixou de exigir redirecionamento. O usuário edita, salva e continua no mesmo contexto.</p>
+        </article>
+
+        <article class="cs-webdev-feature-card" data-animate data-delay="3">
+          <span class="cs-webdev-feature-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/><path d="M3 3h18v18H3z"/></svg>
+          </span>
+          <h3>Protocolos vivos</h3>
+          <p>Protocolos com status, progresso, ordenação por ativos e celebração ao concluir 100% das tarefas de um cliente.</p>
+        </article>
+      </div>
+
+      <div class="cs-webdev-screen-grid" data-animate>
+        <img src="/assets/projetos/web-dev/webdev-senhas.webp" alt="Tela sanitizada do módulo de senhas internas do Web Dev" loading="lazy">
+        <img src="/assets/projetos/web-dev/webdev-usuarios.webp" alt="Tela sanitizada do módulo de usuários do Web Dev" loading="lazy">
+        <img src="/assets/projetos/web-dev/webdev-log.webp" alt="Tela sanitizada do log de atividades do Web Dev" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       DESIGN SYSTEM
+       ================================================ -->
+  <section class="section cs-webdev-dark">
+    <div class="cs-container">
+      <p class="cs-kicker-dark">Design System</p>
+      <h2 class="section-title" data-animate style="color: var(--clr-white);">Bit System aplicado à operação.</h2>
+      <p class="cs-body-copy cs-body-copy--dark" data-animate data-delay="1">
+        A v2.1.0 abandonou o visual glow anterior e aproximou o sistema da identidade oficial da Dois Palitos: preto profundo, cards sólidos, neon e fuchsia como acentos, sombras pixel hard e botões sem arredondamento.
+      </p>
+
+      <div class="cs-webdev-token-grid">
+        <div class="cs-webdev-token" data-animate>
+          <span style="background:#100F0F;"></span>
+          <p>Background<br><strong>#100F0F</strong></p>
+        </div>
+        <div class="cs-webdev-token" data-animate data-delay="1">
+          <span style="background:#221F20;"></span>
+          <p>Cards<br><strong>#221F20</strong></p>
+        </div>
+        <div class="cs-webdev-token" data-animate data-delay="2">
+          <span style="background:#00FFD1;"></span>
+          <p>Neon<br><strong>#00FFD1</strong></p>
+        </div>
+        <div class="cs-webdev-token" data-animate data-delay="3">
+          <span style="background:#FF00FF;"></span>
+          <p>Fuchsia<br><strong>#FF00FF</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       DECISÕES
+       ================================================ -->
+  <section class="cs-process section">
+    <div class="cs-container cs-webdev-wide">
+      <div class="section-header" data-animate>
+        <p class="cs-kicker-light">Decisões de produto</p>
+        <h2 class="section-title">O que mudou na prática</h2>
+      </div>
+
+      <div class="cs-comparison-list">
+        <div class="cs-comparison" data-animate>
           <div>
-            <p class="cs-challenge__label">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              Contexto e problema
-            </p>
-            <h2 class="cs-challenge__title">
-              Dados de clientes expostos.<br>Em uma planilha pública.
-            </h2>
-            <p class="cs-challenge__text">
-              A Dois Palitos Growth usava uma planilha compartilhada para gerenciar credenciais
-              e protocolos de todos os clientes. O link era público. Qualquer pessoa com acesso
-              ao link podia ver tudo, sem nenhuma autenticação.
-            </p>
-            <p class="cs-challenge__text">
-              Além do risco de segurança, a experiência de uso era pesada: encontrar um dado
-              levava minutos, o preenchimento era propenso a erros e o time abria a planilha
-              com resistência mental.
-            </p>
-            <p class="cs-challenge__text">
-              A decisão foi tratar isso como problema de produto, não só de tecnologia:
-              reduzir risco, organizar a operação e criar uma experiência que o time quisesse
-              usar desde o primeiro dia.
-            </p>
+            <p class="cs-comparison__label">Decisão 01 · Dashboard</p>
+            <h3 class="cs-comparison__title">Ativos primeiro, ruído depois</h3>
+            <p class="cs-comparison__note">O dashboard passou a destacar clientes ativos, protocolos concluídos, pendências e usuários em atividade. Total e inativos viraram informação secundária.</p>
           </div>
+          <div class="cs-comparison__images cs-comparison__images--single">
+            <div class="cs-comparison__side cs-comparison__side--plain">
+              <img src="/assets/projetos/web-dev/webdev-dashboard.webp" alt="Dashboard sanitizado do sistema Web Dev com indicadores operacionais" class="cs-comparison__img cs-webdev-media" loading="lazy">
+            </div>
+          </div>
+        </div>
 
-          <aside class="cs-meta-card" aria-label="Detalhes do projeto">
-            <div class="cs-meta-item">
-              <p class="cs-meta-item__label">Empresa</p>
-              <p class="cs-meta-item__value">Dois Palitos Growth</p>
+        <div class="cs-comparison" data-animate>
+          <div>
+            <p class="cs-comparison__label">Decisão 02 · Clientes</p>
+            <h3 class="cs-comparison__title">Detalhe do cliente como centro da operação</h3>
+            <p class="cs-comparison__note">A página do cliente concentrou credenciais, redes sociais, campos extras, notas inline e botão de voltar contextual, reduzindo dependência do navegador e da memória do time.</p>
+          </div>
+          <div class="cs-comparison__images cs-comparison__images--single">
+            <div class="cs-comparison__side cs-comparison__side--plain">
+              <img src="/assets/projetos/web-dev/webdev-clientes.webp" alt="Lista sanitizada de clientes ativos no sistema Web Dev" class="cs-comparison__img cs-webdev-media" loading="lazy">
             </div>
-            <div class="cs-meta-item">
-              <p class="cs-meta-item__label">Papel</p>
-              <p class="cs-meta-item__value">Product Designer, discovery, definição de produto, prototipagem, decisões técnicas e implementação assistida por IA</p>
-            </div>
-            <div class="cs-meta-item">
-              <p class="cs-meta-item__label">Implementação</p>
-              <p class="cs-meta-item__value">Produto interno desenhado e colocado no ar com PHP, MySQL e apoio de IA na implementação</p>
-            </div>
-            <div class="cs-meta-item">
-              <p class="cs-meta-item__label">Duração</p>
-              <p class="cs-meta-item__value">Beta em 1-2 semanas + ciclo de iteração v2</p>
-            </div>
-            <div class="cs-meta-item cs-meta-item--result">
-              <p class="cs-meta-item__label">Adoção</p>
-              <p class="cs-meta-item__value">100% do time desde o primeiro dia</p>
-            </div>
-          </aside>
+          </div>
+        </div>
 
+        <div class="cs-comparison" data-animate>
+          <div>
+            <p class="cs-comparison__label">Decisão 03 · Protocolos</p>
+            <h3 class="cs-comparison__title">Status operacional em tempo real</h3>
+            <p class="cs-comparison__note">A tela de protocolos passou a ordenar clientes ativos primeiro, mostrar progresso e permitir atualização de status sem transformar a rotina em tarefa administrativa pesada.</p>
+          </div>
+          <div class="cs-comparison__images cs-comparison__images--single">
+            <div class="cs-comparison__side cs-comparison__side--plain">
+              <img src="/assets/projetos/web-dev/webdev-protocolos-cliente.webp" alt="Tela sanitizada de protocolos por cliente no sistema Web Dev" class="cs-comparison__img cs-webdev-media" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <div class="cs-comparison" data-animate>
+          <div>
+            <p class="cs-comparison__label">Decisão 04 · Infraestrutura</p>
+            <h3 class="cs-comparison__title">Produção mais previsível</h3>
+            <p class="cs-comparison__note">A migração para webdev.doispalitosmkt.com.br veio com banco dedicado, ambiente local espelhado e deploy seletivo via SSH preservando o config.php de produção.</p>
+          </div>
+          <div class="cs-webdev-stack">
+            <div>
+              <span>Local</span>
+              <strong>PHP + MySQL</strong>
+            </div>
+            <div>
+              <span>Deploy</span>
+              <strong>PowerShell + PSCP</strong>
+            </div>
+            <div>
+              <span>Produção</span>
+              <strong>Hostinger + banco dedicado</strong>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- ================================================
-         CONTEXTO E GARGALOS
-         ================================================ -->
-    <section class="cs-context section">
-      <div class="container">
+  <!-- ================================================
+       RESULTADO
+       ================================================ -->
+  <section class="cs-results cs-results--webdev section">
+    <div class="cs-container">
+      <p class="cs-kicker-dark">Resultado</p>
+      <h2 class="section-title" data-animate>Sistema interno em produção e em uso real</h2>
 
-        <p class="cs-context__question">
-          Como <strong>eliminar o risco de segurança</strong> e melhorar a experiência
-          de uso sem depender de budget ou time de desenvolvimento?
-        </p>
+      <div class="cs-metrics" style="margin-top: var(--space-10);">
+        <div class="cs-metric" data-animate>
+          <span class="cs-metric__value">100%</span>
+          <span class="cs-metric__label">do time usando o sistema como fonte principal da operação</span>
+        </div>
+        <div class="cs-metric" data-animate data-delay="1">
+          <span class="cs-metric__value">v2.0</span>
+          <span class="cs-metric__label">redesign visual e funcionalidades novas já em produção</span>
+        </div>
+        <div class="cs-metric" data-animate data-delay="2">
+          <span class="cs-metric__value">0</span>
+          <span class="cs-metric__label">dependência da antiga planilha pública para o fluxo principal</span>
+        </div>
+      </div>
 
-        <div class="cs-gargalos">
-          <h2 class="cs-gargalos__title section-title" style="color: var(--clr-white);">
-            Os Problemas Reais
+      <figure data-animate style="margin: var(--space-12) auto 0;">
+        <video
+          src="/assets/projetos/web-dev/2026-03-18-01-18-24.mp4"
+          controls
+          style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,.1);"
+          preload="metadata"
+        ></video>
+        <figcaption style="margin-top: var(--space-3); font-size: var(--text-sm); color: rgba(230,230,230,.6); text-align: center;">Registro da versão anterior do sistema, antes das iterações visuais e funcionais mais recentes</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================================================
+       APRENDIZADOS
+       ================================================ -->
+  <section class="cs-learnings section">
+    <div class="cs-container">
+      <p class="cs-kicker-light">Aprendizados</p>
+      <h2 class="section-title" data-animate>O que este projeto prova</h2>
+
+      <div class="cs-learnings__list" style="margin-top: var(--space-10);">
+        <div class="cs-learning" data-animate>
+          <span class="cs-learning__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--clr-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="M9 12l2 2 4-4"/></svg>
+          </span>
+          <p class="cs-learning__text">
+            <strong>Consigo transformar risco operacional em produto utilizável.</strong> O valor não estava só em esconder a planilha, mas em criar uma rotina melhor para quem depende daqueles dados.
+          </p>
+        </div>
+
+        <div class="cs-learning" data-animate data-delay="1">
+          <span class="cs-learning__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--clr-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h10"/></svg>
+          </span>
+          <p class="cs-learning__text">
+            <strong>Produto interno precisa ser denso e claro ao mesmo tempo.</strong> A interface não podia parecer landing page. Ela precisava ser uma ferramenta de trabalho.
+          </p>
+        </div>
+
+        <div class="cs-learning" data-animate data-delay="2">
+          <span class="cs-learning__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--clr-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+          </span>
+          <p class="cs-learning__text">
+            <strong>Iteração é parte do produto, não manutenção menor.</strong> Redes sociais, campos extras, notas inline e confete de conclusão nasceram depois do uso real.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PAPEL E RESPONSABILIDADES
+       ================================================ -->
+  <section class="cs-role">
+    <div class="cs-container">
+      <p class="cs-kicker-light">Papel e responsabilidades</p>
+
+      <div class="cs-role__groups">
+        <div class="cs-role__group">
+          <p class="cs-role__label">Papel</p>
+          <div class="cs-tags">
+            <span class="cs-tag">Product Designer</span>
+            <span class="cs-tag">Produto Interno</span>
+            <span class="cs-tag">UX Operacional</span>
+            <span class="cs-tag">Implementação com IA</span>
+          </div>
+        </div>
+
+        <div class="cs-role__group">
+          <p class="cs-role__label">Stack</p>
+          <div class="cs-tags">
+            <span class="cs-tag">PHP</span>
+            <span class="cs-tag">MySQL</span>
+            <span class="cs-tag">AJAX</span>
+            <span class="cs-tag">Hostinger</span>
+          </div>
+        </div>
+
+        <div class="cs-role__group">
+          <p class="cs-role__label">Design</p>
+          <div class="cs-tags">
+            <span class="cs-tag">Bit System v2.1.0</span>
+            <span class="cs-tag">VT323</span>
+            <span class="cs-tag">Inconsolata</span>
+            <span class="cs-tag">Hard shadows</span>
+          </div>
+        </div>
+
+        <div class="cs-role__group">
+          <p class="cs-role__label">Entrega</p>
+          <div class="cs-tags">
+            <span class="cs-tag">Discovery</span>
+            <span class="cs-tag">Arquitetura de informação</span>
+            <span class="cs-tag">Interface</span>
+            <span class="cs-tag">Deploy</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       NAVEGAÇÃO ENTRE PROJETOS
+       ================================================ -->
+  <nav class="cs-nav" aria-label="Navegação entre projetos">
+    <div class="container cs-nav__inner">
+      <a href="/projetos/quantum-vizz" class="cs-nav__link cs-nav__link--prev">
+        <span class="cs-nav__direction">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Projeto anterior
+        </span>
+        <span class="cs-nav__project">Quantum Vizz</span>
+      </a>
+
+      <a href="/projetos" class="cs-nav__back">
+        Todos os projetos
+      </a>
+
+      <a href="/projetos/bit-system" class="cs-nav__link cs-nav__link--next">
+        <span class="cs-nav__direction">
+          Próximo projeto
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="cs-nav__project">Bit System</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ================================================
+       CTA
+       ================================================ -->
+  <section class="cta-section" id="contato">
+    <div class="container">
+      <div class="cta-card">
+        <div class="cta-content">
+          <span class="section-kicker">Vamos conversar?</span>
+          <h2 class="cta-title">
+            Produto, operação e execução na mesma conversa.
           </h2>
-          <p class="cs-challenge__text" style="color: rgba(230,230,230,.8); margin-bottom: var(--space-8);">
-            A planilha era usada diariamente, mas criava fricção em todo o fluxo de trabalho:
+          <p class="cta-text">
+            Se você precisa transformar um problema interno em ferramenta real de trabalho, posso ajudar a sair do diagnóstico e chegar na entrega.
           </p>
-          <ul class="cs-gargalos__list" role="list">
-            <li class="cs-gargalos__item">
-              <span class="cs-gargalos__num" aria-hidden="true">1</span>
-              <p class="cs-gargalos__text">
-                <strong>Link público ativado.</strong> Dados de todos os clientes acessíveis
-                por qualquer pessoa com o link, sem nenhum tipo de autenticação.
-              </p>
-            </li>
-            <li class="cs-gargalos__item">
-              <span class="cs-gargalos__num" aria-hidden="true">2</span>
-              <p class="cs-gargalos__text">
-                <strong>Tempo de busca alto.</strong> Localizar uma informação levava de 2 a 3
-                minutos entre rolar, filtrar e encontrar a linha certa na planilha.
-              </p>
-            </li>
-            <li class="cs-gargalos__item">
-              <span class="cs-gargalos__num" aria-hidden="true">3</span>
-              <p class="cs-gargalos__text">
-                <strong>Risco constante de erro.</strong> Colunas sem estrutura visual clara
-                tornavam o preenchimento propenso a equívocos e dados fora do lugar.
-              </p>
-            </li>
-            <li class="cs-gargalos__item">
-              <span class="cs-gargalos__num" aria-hidden="true">4</span>
-              <p class="cs-gargalos__text">
-                  <strong>Carga cognitiva alta.</strong> O time sabia onde tudo estava, mas
-                precisava lembrar. Não havia hierarquia visual nem contexto no momento certo.
-              </p>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================================================
-         PROCESSO
-         ================================================ -->
-    <section class="cs-process section">
-      <div class="container">
-
-        <div class="section-header" data-animate>
-          <h2 class="section-title">Do Problema<br>ao Sistema</h2>
-        </div>
-
-        <div class="cs-steps">
-
-          <!-- Alternativas Consideradas -->
-          <div class="cs-step" data-animate>
-            <div class="cs-step__content">
-              <p class="cs-step__num">Etapa 01</p>
-              <h3 class="cs-step__title">Alternativas Consideradas</h3>
-              <p class="cs-step__text">
-                Antes de construir qualquer coisa, avaliei as soluções existentes no mercado.
-                Três opções foram analisadas:
-              </p>
-              <div style="overflow-x: auto; margin-top: var(--space-5);">
-                <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm);">
-                  <thead>
-                    <tr style="border-bottom: 1px solid rgba(1,7,29,.12);">
-                      <th style="text-align:left; padding: 10px 12px; color: var(--clr-text-muted); font-weight: 500;">Opção</th>
-                      <th style="text-align:left; padding: 10px 12px; color: var(--clr-text-muted); font-weight: 500;">Decisão</th>
-                      <th style="text-align:left; padding: 10px 12px; color: var(--clr-text-muted); font-weight: 500;">Motivo</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr style="border-bottom: 1px solid rgba(1,7,29,.07);">
-                      <td style="padding: 12px; color: var(--clr-text-dark);">1Password</td>
-                      <td style="padding: 12px; color: #c0392b; font-weight: 500;">Descartado</td>
-                      <td style="padding: 12px; color: var(--clr-text);">Resolveria só as senhas, não os protocolos e o fluxo de uso</td>
-                    </tr>
-                    <tr style="border-bottom: 1px solid rgba(1,7,29,.07);">
-                      <td style="padding: 12px; color: var(--clr-text-dark);">Notion</td>
-                      <td style="padding: 12px; color: #c0392b; font-weight: 500;">Descartado</td>
-                      <td style="padding: 12px; color: var(--clr-text);">Genérico demais. Sem a estrutura específica que a 2P precisa</td>
-                    </tr>
-                    <tr>
-                      <td style="padding: 12px; color: var(--clr-text-dark);">Build com IA</td>
-                      <td style="padding: 12px; color: #16a34a; font-weight: 500;">Escolhido</td>
-                      <td style="padding: 12px; color: var(--clr-text);">Personalizado para o fluxo real da agência, com custo próximo de zero</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-
-          <!-- Design e Prototipagem -->
-          <div class="cs-step cs-step--reverse" data-animate>
-            <div class="cs-step__content">
-              <p class="cs-step__num">Etapa 02</p>
-              <h3 class="cs-step__title">Design e Prototipagem</h3>
-              <p class="cs-step__text">
-                Com o escopo definido, protipei o sistema inteiro no Figma usando o Bit System
-                como base de componentes. O foco principal foi reduzir ao máximo o número de
-                passos para chegar à informação.
-              </p>
-              <p class="cs-step__text" style="margin-top: var(--space-4);">
-                O fluxo central ficou assim:
-              </p>
-              <div style="display: flex; align-items: center; gap: 8px; margin-top: var(--space-4); flex-wrap: wrap;">
-                <span style="background: rgba(1,7,29,.06); padding: 6px 14px; border-radius: 6px; font-size: var(--text-sm); color: var(--clr-text-dark);">Início</span>
-                <span style="color: var(--clr-text-muted);">→</span>
-                <span style="background: rgba(1,7,29,.06); padding: 6px 14px; border-radius: 6px; font-size: var(--text-sm); color: var(--clr-text-dark);">Busca</span>
-                <span style="color: var(--clr-text-muted);">→</span>
-                <span style="background: rgba(1,7,29,.06); padding: 6px 14px; border-radius: 6px; font-size: var(--text-sm); color: var(--clr-text-dark);">Ficha do cliente</span>
-                <span style="color: var(--clr-text-muted);">→</span>
-                <span style="background: rgba(1,7,29,.06); padding: 6px 14px; border-radius: 6px; font-size: var(--text-sm); color: var(--clr-text-dark);">Dado copiado</span>
-              </div>
-              <ul class="cs-step__list" style="margin-top: var(--space-5);">
-                <li>Busca com autocomplete para localizar clientes em segundos</li>
-                <li>Tela exclusiva por cliente com campos fixos e contextualizados</li>
-                <li>Protocolos com indicador de progresso e gamificação visual</li>
-                <li>Visibilidade estratégica sobre quais clientes têm cada protocolo concluído</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Desenvolvimento com IA -->
-          <div class="cs-step" data-animate>
-            <div class="cs-step__content">
-              <p class="cs-step__num">Etapa 03</p>
-              <h3 class="cs-step__title">Desenvolvimento com IA</h3>
-              <p class="cs-step__text">
-                Com o protótipo aprovado, usei o Claude AI como parceiro de desenvolvimento.
-                O processo consistia em traduzir cada decisão de produto em especificações
-                claras, e então colaborar com a IA para implementar em PHP e MySQL.
-              </p>
-              <p class="cs-step__text" style="margin-top: var(--space-4);">
-                A qualidade do resultado dependia diretamente da qualidade da especificação.
-                O processo de produto tinha que existir antes do código.
-              </p>
-              <ul class="cs-step__list">
-                <li>Back-end em PHP com MySQL hospedado na Hostinger</li>
-                <li>Autenticação com senha, controle de perfis e sessões</li>
-                <li>Gestão global de protocolos com propagação automática para todos os clientes</li>
-                <li>Log completo de auditoria: usuário, ação, data e hora</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Beta, Feedback e Iteração -->
-          <div class="cs-step cs-step--reverse" data-animate>
-            <div class="cs-step__content">
-              <p class="cs-step__num">Etapa 04</p>
-              <h3 class="cs-step__title">Beta, Feedback e Iteração</h3>
-              <p class="cs-step__text">
-                A v1 foi lançada deliberadamente simples. Tratei como hipótese, não como
-                produto final. O objetivo era colocar na mão do time o mais rápido possível
-                e aprender com o uso real.
-              </p>
-              <p class="cs-step__text" style="margin-top: var(--space-4);">
-                Dois bugs foram identificados logo nas primeiras semanas:
-              </p>
-              <ul class="cs-step__list">
-                <li>Problema de fuso horário nos registros de data</li>
-                <li>Contador de protocolos pendentes exibindo valores incorretos</li>
-              </ul>
-              <p class="cs-step__text" style="margin-top: var(--space-4);">
-                Ambos foram corrigidos na v2, junto com melhorias levantadas pelo time via
-                feedback direto: gestão global de protocolos, filtros avançados e interface
-                mais responsiva para mobile.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ================================================
-         RESULTADO
-         ================================================ -->
-    <section class="cs-results section">
-      <div class="container">
-
-        <h2 class="section-title" data-animate>O Sistema<br>em Produção</h2>
-
-        <p class="cs-challenge__text" style="margin-bottom: clamp(32px,4vw,56px); max-width:640px;" data-animate>
-          Veja o sistema funcionando. A demonstração abaixo mostra o fluxo principal:
-          busca, ficha do cliente e acesso aos dados com um clique.
-        </p>
-
-        <figure data-animate style="margin-bottom: var(--space-12);">
-          <video
-            src="/assets/projetos/web-dev/2026-03-18-01-18-24.mp4"
-            controls
-            style="width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,.1);"
-          ></video>
-          <figcaption style="margin-top: var(--space-3); font-size: var(--text-sm); color: rgba(230,230,230,.6); text-align: center;">
-            Demonstração do sistema: busca com autocomplete, ficha de cliente e protocolos gamificados
-          </figcaption>
-        </figure>
-
-        <h3 class="section-title" data-animate style="font-size: var(--text-2xl); margin-bottom: var(--space-6);">
-          Antes e Depois
-        </h3>
-
-        <div data-animate style="overflow-x: auto; margin-bottom: var(--space-12);">
-          <table style="width:100%; border-collapse: collapse; font-size: var(--text-sm);">
-            <thead>
-              <tr style="border-bottom: 1px solid rgba(255,255,255,.15);">
-                <th style="text-align:left; padding: 12px 16px; color: rgba(230,230,230,.6); font-weight: 500; min-width: 180px;">Métrica</th>
-                <th style="text-align:left; padding: 12px 16px; color: rgba(230,230,230,.6); font-weight: 500; min-width: 160px;">Antes</th>
-                <th style="text-align:left; padding: 12px 16px; color: rgba(230,230,230,.6); font-weight: 500; min-width: 200px;">Depois</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid rgba(255,255,255,.07);">
-                <td style="padding: 14px 16px; color: rgba(230,230,230,.9);">🔒 Exposição de dados sensíveis</td>
-                <td style="padding: 14px 16px; color: #f87171;">100% público. Qualquer pessoa com link via tudo</td>
-                <td style="padding: 14px 16px; color: #4ade80;">100% restrito. Acesso apenas por login autenticado</td>
-              </tr>
-              <tr style="border-bottom: 1px solid rgba(255,255,255,.07);">
-                <td style="padding: 14px 16px; color: rgba(230,230,230,.9);">⏱️ Tempo de busca de informação</td>
-                <td style="padding: 14px 16px; color: #f87171;">2 a 3 min (rolar, filtrar, localizar na planilha)</td>
-                    <td style="padding: 14px 16px; color: #4ade80;">~10 seg (autocomplete, abrir ficha), redução de ~60%</td>
-              </tr>
-              <tr style="border-bottom: 1px solid rgba(255,255,255,.07);">
-                <td style="padding: 14px 16px; color: rgba(230,230,230,.9);">⚠️ Risco de erro de alimentação</td>
-                <td style="padding: 14px 16px; color: #f87171;">Alto. Linhas e colunas sem estrutura visual clara</td>
-                <td style="padding: 14px 16px; color: #4ade80;">Baixo. Tela própria por cliente, campos fixos e com contexto</td>
-              </tr>
-              <tr style="border-bottom: 1px solid rgba(255,255,255,.07);">
-                <td style="padding: 14px 16px; color: rgba(230,230,230,.9);">🧠 Carga cognitiva de uso</td>
-                <td style="padding: 14px 16px; color: #f87171;">Alta. Usuário precisava lembrar onde cada dado estava</td>
-                <td style="padding: 14px 16px; color: #4ade80;">Baixa. Hierarquia visual clara, busca inteligente, navegação previsível</td>
-              </tr>
-              <tr style="border-bottom: 1px solid rgba(255,255,255,.07);">
-                <td style="padding: 14px 16px; color: rgba(230,230,230,.9);">👥 Adoção do time</td>
-                <td style="padding: 14px 16px; color: #f87171;">Planilha aberta com resistência mental</td>
-                <td style="padding: 14px 16px; color: #4ade80;">100% do time ativo desde o primeiro dia, sem fricção</td>
-              </tr>
-              <tr>
-                <td style="padding: 14px 16px; color: rgba(230,230,230,.9);">📋 Rastreabilidade de ações</td>
-                <td style="padding: 14px 16px; color: #f87171;">Zero. Sem histórico de quem editou o quê</td>
-                <td style="padding: 14px 16px; color: #4ade80;">Log completo: usuário, ação, data e hora de tudo</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <!-- Feedback do time -->
-        <blockquote data-animate style="
-          background: rgba(255,255,255,.05);
-          border-left: 3px solid rgba(255,255,255,.3);
-          padding: var(--space-6) var(--space-7);
-          border-radius: 0 8px 8px 0;
-          margin-bottom: var(--space-12);
-        ">
-          <p style="font-size: var(--text-lg); color: rgba(230,230,230,.85); line-height: 1.7; font-style: italic;">
-            "As equipes de marketing, atendimento e gerência disseram que o sistema estava muito
-            fácil de usar. Antes, abrir a planilha era mentalmente cansativo. Com o sistema, essa
-            fricção desapareceu. A gamificação funcionou: ver o progresso por cliente criou
-            engajamento real com os protocolos, algo que antes simplesmente não existia."
-          </p>
-          <cite style="display: block; margin-top: var(--space-4); font-size: var(--text-sm); color: rgba(230,230,230,.5); font-style: normal;">
-            Feedback direto do time
-          </cite>
-        </blockquote>
-
-        <!-- Segurança -->
-        <div data-animate style="margin-bottom: var(--space-12);">
-          <h3 style="font-size: var(--text-2xl); font-weight: 600; color: var(--clr-white); margin-bottom: var(--space-6);">
-            Segurança
-          </h3>
-          <p style="color: rgba(230,230,230,.8); margin-bottom: var(--space-5);">O sistema tem segurança real agora:</p>
-          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: var(--space-3);">
-            <li style="display: flex; gap: 12px; color: rgba(230,230,230,.8); font-size: var(--text-sm); line-height: 1.6;">
-              <span style="color: #4ade80; flex-shrink: 0;">✓</span>
-              Senhas de login criptografadas com bcrypt (cost 12), algoritmo robusto e amplamente adotado para autenticação
-            </li>
-            <li style="display: flex; gap: 12px; color: rgba(230,230,230,.8); font-size: var(--text-sm); line-height: 1.6;">
-              <span style="color: #4ade80; flex-shrink: 0;">✓</span>
-              Controle de sessão com timeout automático de 4 horas, sessão expirada automaticamente por inatividade
-            </li>
-            <li style="display: flex; gap: 12px; color: rgba(230,230,230,.8); font-size: var(--text-sm); line-height: 1.6;">
-              <span style="color: #4ade80; flex-shrink: 0;">✓</span>
-              Log de auditoria completo: toda ação registrada com usuário, IP, data e hora
-            </li>
-            <li style="display: flex; gap: 12px; color: rgba(230,230,230,.8); font-size: var(--text-sm); line-height: 1.6;">
-              <span style="color: #4ade80; flex-shrink: 0;">✓</span>
-              Backup diário automático via Cron Job da Hostinger, com retenção dos últimos 30 dias
-            </li>
-            <li style="display: flex; gap: 12px; color: rgba(230,230,230,.8); font-size: var(--text-sm); line-height: 1.6;">
-              <span style="color: #4ade80; flex-shrink: 0;">✓</span>
-              HTTPS com SSL ativo: tráfego criptografado entre o navegador e o servidor
-            </li>
-            <li style="display: flex; gap: 12px; color: rgba(230,230,230,.8); font-size: var(--text-sm); line-height: 1.6;">
-              <span style="color: #4ade80; flex-shrink: 0;">✓</span>
-              Controle de perfis verificado server-side: permissões validadas no servidor, não apenas no frontend
-            </li>
-          </ul>
-          <div style="
-            margin-top: var(--space-6);
-            background: rgba(251,191,36,.08);
-            border: 1px solid rgba(251,191,36,.2);
-            border-radius: 8px;
-            padding: var(--space-5);
-          ">
-            <p style="font-size: var(--text-sm); color: rgba(251,191,36,.9); font-weight: 600; margin-bottom: var(--space-2);">Limitação conhecida e próximo passo</p>
-            <p style="font-size: var(--text-sm); color: rgba(230,230,230,.7); line-height: 1.6;">
-              As credenciais dos clientes (senhas de WordPress, cPanel, etc.) estão armazenadas
-              em texto simples no banco de dados. É uma limitação real. A próxima iteração prevê
-              criptografia AES-256 para esses campos. Mesmo assim, esses dados só são acessíveis
-              por usuários autenticados, com log de cada acesso e backup diário.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================================================
-         APRENDIZADOS
-         ================================================ -->
-    <section class="cs-learnings section">
-      <div class="container">
-
-        <h2 class="section-title" data-animate>O que este projeto prova</h2>
-
-        <div class="cs-learnings__list">
-          <div class="cs-learning" data-animate>
-            <span class="cs-learning__icon" aria-hidden="true">🚀</span>
-            <p class="cs-learning__text">
-              <strong>Consigo transformar risco operacional em produto utilizável.</strong>
-              A v1 foi propositalmente simples, mas já suficiente para substituir a planilha
-              e mudar o comportamento do time.
-            </p>
-          </div>
-          <div class="cs-learning" data-animate data-delay="1">
-            <span class="cs-learning__icon" aria-hidden="true">🔓</span>
-            <p class="cs-learning__text">
-              <strong>Tenho ownership para destravar problema real.</strong> O time sabia do
-              risco, mas o projeto só aconteceu quando alguém assumiu a responsabilidade de
-              definir escopo, priorizar e entregar.
-            </p>
-          </div>
-          <div class="cs-learning" data-animate data-delay="2">
-            <span class="cs-learning__icon" aria-hidden="true">🤖</span>
-            <p class="cs-learning__text">
-              <strong>Sei usar implementação como extensão do raciocínio de produto.</strong>
-              A IA acelerou partes do código, mas o valor esteve em decidir o que construir,
-              o que cortar e como preservar a intenção do fluxo até a entrega.
-            </p>
-          </div>
-          <div class="cs-learning" data-animate data-delay="3">
-            <span class="cs-learning__icon" aria-hidden="true">🧠</span>
-            <p class="cs-learning__text">
-              <strong>Adoção depende de experiência, não só de correção técnica.</strong>
-              Resolver o acesso indevido era urgente, mas a troca só vingou porque a nova
-              solução diminuiu carga cognitiva e melhorou o uso cotidiano.
-            </p>
-          </div>
-          <div class="cs-learning" data-animate data-delay="4">
-            <span class="cs-learning__icon" aria-hidden="true">🎯</span>
-            <p class="cs-learning__text">
-              <strong>Consigo decidir quando vale construir algo próprio.</strong> Ferramentas
-              prontas existiam, mas nenhuma resolvia o conjunto de segurança, contexto e
-              operação que a 2P precisava.
-            </p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================================================
-         NAVEGAÇÃO ENTRE PROJETOS
-         ================================================ -->
-    <nav class="cs-nav" aria-label="Navegação entre projetos">
-      <div class="container cs-nav__inner">
-
-        <a href="/projetos/quantum-vizz" class="cs-nav__link cs-nav__link--prev">
-          <span class="cs-nav__direction">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M13 8H3M7 12l-4-4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Projeto Anterior
-          </span>
-          <span class="cs-nav__project">Quantum Vizz</span>
-        </a>
-
-        <a href="/projetos" class="cs-nav__back">
-          Todos os Projetos
-        </a>
-
-        <a href="/projetos/bit-system" class="cs-nav__link cs-nav__link--next">
-          <span class="cs-nav__direction">
-            Próximo Projeto
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <span class="cs-nav__project">Bit System</span>
-        </a>
-
-      </div>
-    </nav>
-
-    <!-- ================================================
-         CTA
-         ================================================ -->
-    <section class="cta-section" id="contato">
-      <div class="container">
-        <div class="cta-card">
-          <div class="cta-card__inner">
-            <h2 class="cta-card__title" data-animate>
-              Produto, growth e execução na mesma conversa.
-            </h2>
-            <p class="cta-card__subtitle" data-animate data-delay="1">
-              Se você precisa de alguém para investigar problema, estruturar hipótese e levar a solução até a entrega, vamos conversar.
-            </p>
-            <div class="cta-card__contacts" data-animate data-delay="2">
-              <a href="mailto:contato@floriano.des.br" class="cta-contact">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <rect width="20" height="16" x="2" y="4" rx="2"/>
-                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                </svg>
-                contato@floriano.des.br
-              </a>
-        <a href="https://wa.me/5518996773264" class="cta-contact" target="_blank" rel="noopener noreferrer">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-                </svg>
-                (18) 99677-3264
-              </a>
-            </div>
+          <div class="cta-actions">
+            <a href="mailto:contato@floriano.des.br" class="btn btn--primary">
+              <span>Enviar email</span>
+            </a>
+            <a href="https://www.linkedin.com/in/floriano-des/" target="_blank" rel="noopener" class="btn btn--secondary">
+              <span>LinkedIn</span>
+            </a>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-  </main>
+</main>
