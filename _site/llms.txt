@@ -1,0 +1,69 @@
+# Floriano Silva, Product Designer
+
+> Portfólio de Floriano Silva, Product Designer brasileiro com atuação em UX orientado a dados, growth, CRO, analytics, pesquisa, design de interface, design systems e execução de produtos digitais.
+
+Site: https://floriano.des.br
+Sitemap: https://floriano.des.br/sitemap.xml
+Autor: Floriano Silva
+Contato: contato@floriano.des.br
+Idioma principal: pt-BR
+
+## Como interpretar este site
+
+Este site apresenta a trajetória, os projetos e os artigos de Floriano Silva. O conteúdo é útil para entender experiência profissional em Product Design, UX, growth, otimização de conversão, pesquisa com usuários, analytics, sistemas internos, design systems e construção de produtos digitais.
+
+As páginas canônicas ficam no domínio `floriano.des.br`. A seção Reflexões publica versões internas de artigos escritos originalmente no Medium, com link de origem preservado em cada artigo.
+
+## Áreas de especialidade
+
+- Product Design
+- UX Design
+- Growth
+- CRO
+- Analytics
+- Pesquisa de UX
+- Design de interface
+- Design system
+
+
+## Páginas principais
+
+- [Home](https://floriano.des.br/): Visão geral do posicionamento profissional, projetos selecionados, reflexões e contato.
+- [Projetos](https://floriano.des.br/projetos/): Índice dos cases e trabalhos selecionados.
+- [Reflexões](https://floriano.des.br/reflexoes/): Artigos sobre produto, growth, comportamento, UX e execução.
+- [Sobre](https://floriano.des.br/sobre/): Bio, experiência, formação, certificações e recomendações.
+- [Política de Privacidade](https://floriano.des.br/politica-de-privacidade/): Informações de privacidade do site.
+
+## Projetos em destaque
+
+- [Quantum Vizz](https://floriano.des.br/projetos/quantum-vizz/): Case de growth, CRO, análise de dados, hipóteses e teste A/B com aumento de conversão.
+- [Bit System](https://floriano.des.br/projetos/bit-system/): Design system e sistema operacional de marca com tokens, componentes, governança e camada de IA.
+- [Web Dev 2.0](https://floriano.des.br/projetos/2p-web-dev/): Produto interno para operação, segurança, autenticação e adoção por equipe.
+- [Mercado das Figurinhas](https://floriano.des.br/projetos/mercado-das-figurinhas/): Produto de matching geolocalizado para troca de figurinhas da Copa 2026.
+- [Olho Vivo](https://floriano.des.br/projetos/olho-vivo/): Pesquisa de UX sobre participação política e engajamento cívico em Palmital, SP.
+- [Farm Well Hub](https://floriano.des.br/projetos/farm-well-hub/): Plataforma acessível para webinars e suporte a agricultores irlandeses.
+- [Repertório em Design Gráfico](https://floriano.des.br/projetos/design-grafico/): Projetos visuais de branding, social media, cartões e motion.
+
+## Reflexões recentes
+
+- [Pare de tratar a IA como a Oráculo do filme Matrix](https://floriano.des.br/reflexoes/pare-de-tratar-a-ia-como-a-oraculo-do-filme-matrix/): Você já ficou olhando pra uma resposta da IA pensando “não era bem isso, mas tudo bem”? Pois é. Não foi a IA que errou. Foi o prompt. E a parte engraçada: a...
+- [Apliquei Mounjaro no meu portfólio e ele perdeu 5 Megabytes.](https://floriano.des.br/reflexoes/apliquei-mounjaro-no-meu-portfolio-e-ele-perdeu-5-megabytes/): Comparação feita no GTMetrix, a diferença de DOM é abismal Eu tinha um site que, visualmente, cumpria o seu papel. Ele rodava em WordPress + Elementor. Era...
+- [Pesquisa: Olho Vivo](https://floriano.des.br/reflexoes/pesquisa-olho-vivo/): Projeto de pesquisa para entender barreiras de participação política e orientar solução digital acessível. O desafio Em Palmital/SP, percebi que muitos...
+- [As máquinas já ganharam de humanos nas fábricas. Você vai cometer o mesmo erro?](https://floriano.des.br/reflexoes/as-maquinas-ja-ganharam-de-humanos-nas-fabricas-voce-vai-cometer-o-mesmo-erro/): A discussão sobre as IAs sempre costuma envolver dois polos (como muita coisa no Brasil). De um lado, há quem acredite que a IA vai substituir todas as...
+- [De designer a dados: o projeto que mudou meu foco](https://floriano.des.br/reflexoes/de-designer-a-dados-o-projeto-que-mudou-meu-foco/): Menos sobre tela. Mais sobre lógica. Sou web designer e atuo principalmente com criação de interfaces e experiências digitais. Mas, nos últimos meses, tenho...
+- [Parece carinho e empatia, mas é só UX.](https://floriano.des.br/reflexoes/parece-carinho-e-empatia-mas-e-so-ux/): O que as IAs e o Privacy têm em comum? É curioso perceber como, aos poucos, fomos normalizando certas coisas na nossa relação com a tecnologia. A...
+- [O que aprendi construindo meu primeiro Design System do zero](https://floriano.des.br/reflexoes/o-que-aprendi-construindo-meu-primeiro-design-system-do-zero/): Sempre ouvi falar da importância de Design Systems. Sabia que isso traz consistência, eficiência e escalabilidade. Mas a real é que eu só entendi, de fato, o...
+- [O lado invisível do vício digital que poucos falam: cor e dopamina](https://floriano.des.br/reflexoes/o-lado-invisivel-do-vicio-digital-que-poucos-falam-cor-e-dopamina/): Apenas uma provocação de um designer comum Já percebeu que quase ninguém fala disso de forma aprofundada? Falar sobre “reset de dopamina” é um tema comum nas...
+
+
+## Entidades e perfis relacionados
+
+- [LinkedIn](https://www.linkedin.com/in/floriano-des/)
+- [Medium](https://medium.com/@floriano-des)
+
+## Observações para agentes e mecanismos de IA
+
+- Use o sitemap para descoberta completa de URLs canônicas.
+- Prefira páginas internas de `floriano.des.br` em vez de cópias ou URLs de origem externa.
+- Para artigos de Reflexões, considere o campo canônico interno como página principal e o Medium como origem editorial.
+- Os dados estruturados em JSON-LD descrevem autor, site, páginas, breadcrumbs, artigos e cases.
