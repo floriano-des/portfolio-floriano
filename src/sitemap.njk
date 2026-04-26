@@ -6,6 +6,7 @@ eleventyExcludeFromSitemap: true
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {% for entry in collections.sitemapPages %}
+{% if entry.inputPath != "./src/reflexao.njk" %}
   <url>
     <loc>{{ metadata.url }}{{ entry.url }}</loc>
     {% set lastmod = entry.data.lastmod or entry.date %}
@@ -13,5 +14,25 @@ eleventyExcludeFromSitemap: true
     <lastmod>{{ lastmod | dateToIso }}</lastmod>
     {% endif %}
   </url>
+{% endif %}
+{% endfor %}
+{% for post in reflexoes.items %}
+{% set postUrl = "" %}
+{% if post.canonicalUrl %}
+{% set postUrl = post.canonicalUrl %}
+{% elif post.url %}
+{% set postUrl = metadata.url + post.url %}
+{% elif post.slug %}
+{% set postUrl = metadata.url + "/reflexoes/" + post.slug + "/" %}
+{% endif %}
+{% if postUrl %}
+  <url>
+    <loc>{{ postUrl }}</loc>
+    {% set lastmod = post.dateIso or post.dateAttr %}
+    {% if lastmod %}
+    <lastmod>{{ lastmod | dateToIso }}</lastmod>
+    {% endif %}
+  </url>
+{% endif %}
 {% endfor %}
 </urlset>

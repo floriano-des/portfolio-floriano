@@ -6,7 +6,10 @@
       "thumbnail": "https://cdn-images-1.medium.com/max/1024/1*HdmzckFxPauqfRBhGjitFg.jpeg",
       "excerpt": "Você já ficou olhando pra uma resposta da IA pensando “não era bem isso, mas tudo bem”?Pois é. Não foi a IA que errou. Foi o prompt.E a parte engraçada: a habilidade pra escrever prompts melhores v...",
       "dateDisplay": "16 de abril de 2026",
-      "dateAttr": "2026-04-16"
+      "dateAttr": "2026-04-16",
+      "slug": "pare-de-tratar-a-ia-como-a-oraculo-do-filme-matrix",
+      "url": "/reflexoes/pare-de-tratar-a-ia-como-a-oraculo-do-filme-matrix/",
+      "canonicalUrl": "https://floriano.des.br/reflexoes/pare-de-tratar-a-ia-como-a-oraculo-do-filme-matrix/"
     },
     {
       "title": "Apliquei Mounjaro no meu portfólio e ele perdeu 5 Megabytes.",
@@ -14,7 +17,10 @@
       "thumbnail": "https://cdn-images-1.medium.com/max/1024/1*odZhNtKUjvCUTe5XAGZIfg.jpeg",
       "excerpt": "Comparação feita no GTMetrix, a diferença de DOM é abismalEu tinha um site que, visualmente, cumpria o seu papel. Ele rodava em WordPress + Elementor. Era fácil e rápido de editar, afinal, a promes...",
       "dateDisplay": "11 de abril de 2026",
-      "dateAttr": "2026-04-12"
+      "dateAttr": "2026-04-12",
+      "slug": "apliquei-mounjaro-no-meu-portfolio-e-ele-perdeu-5-megabytes",
+      "url": "/reflexoes/apliquei-mounjaro-no-meu-portfolio-e-ele-perdeu-5-megabytes/",
+      "canonicalUrl": "https://floriano.des.br/reflexoes/apliquei-mounjaro-no-meu-portfolio-e-ele-perdeu-5-megabytes/"
     },
     {
       "title": "Pesquisa: Olho Vivo",
@@ -22,7 +28,10 @@
       "thumbnail": "https://cdn-images-1.medium.com/max/1024/1*3S8mUTGNlpD4__bqie0MLA.jpeg",
       "excerpt": "Projeto de pesquisa para entender barreiras de participação política e orientar solução digital acessível.O desafioEm Palmital/SP, percebi que muitos moradores confundem as funções do prefeito e do...",
       "dateDisplay": "11 de abril de 2026",
-      "dateAttr": "2026-04-11"
+      "dateAttr": "2026-04-11",
+      "slug": "pesquisa-olho-vivo",
+      "url": "/reflexoes/pesquisa-olho-vivo/",
+      "canonicalUrl": "https://floriano.des.br/reflexoes/pesquisa-olho-vivo/"
     },
     {
       "title": "As máquinas já ganharam de humanos nas fábricas. Você vai cometer o mesmo erro?",
@@ -30,7 +39,10 @@
       "thumbnail": "https://cdn-images-1.medium.com/max/498/1*E6ZUMt2neYR2BYv9S-lU2A.gif",
       "excerpt": "A discussão sobre as IAs sempre costuma envolver dois polos (como muita coisa no Brasil). De um lado, há quem acredite que a IA vai substituir todas as profissões, e do outro, achando que elas são ...",
       "dateDisplay": "23 de fevereiro de 2026",
-      "dateAttr": "2026-02-23"
+      "dateAttr": "2026-02-23",
+      "slug": "as-maquinas-ja-ganharam-de-humanos-nas-fabricas-voce-vai-cometer-o-mesmo-erro",
+      "url": "/reflexoes/as-maquinas-ja-ganharam-de-humanos-nas-fabricas-voce-vai-cometer-o-mesmo-erro/",
+      "canonicalUrl": "https://floriano.des.br/reflexoes/as-maquinas-ja-ganharam-de-humanos-nas-fabricas-voce-vai-cometer-o-mesmo-erro/"
     },
     {
       "title": "De designer a dados: o projeto que mudou meu foco",
@@ -38,7 +50,10 @@
       "thumbnail": "https://cdn-images-1.medium.com/max/1024/1*Pl_zVoEwCesTwkhnTc96jQ.jpeg",
       "excerpt": "Menos sobre tela. Mais sobre lógica.Sou web designer e atuo principalmente com criação de interfaces e experiências digitais.Mas, nos últimos meses, tenho percebido um interesse crescente por tudo ...",
       "dateDisplay": "15 de fevereiro de 2026",
-      "dateAttr": "2026-02-15"
+      "dateAttr": "2026-02-15",
+      "slug": "de-designer-a-dados-o-projeto-que-mudou-meu-foco",
+      "url": "/reflexoes/de-designer-a-dados-o-projeto-que-mudou-meu-foco/",
+      "canonicalUrl": "https://floriano.des.br/reflexoes/de-designer-a-dados-o-projeto-que-mudou-meu-foco/"
     },
     {
       "title": "Parece carinho e empatia, mas é só UX.",
@@ -46,7 +61,10 @@
       "thumbnail": "https://cdn-images-1.medium.com/max/1024/1*AEA4rbdioEv_sERQXYNgrg.jpeg",
       "excerpt": "O que as IAs e o Privacy têm em comum?É curioso perceber como, aos poucos, fomos normalizando certas coisas na nossa relação com a tecnologia. A inteligência artificial, por exemplo, nunca te chamo...",
       "dateDisplay": "21 de junho de 2025",
-      "dateAttr": "2025-06-21"
+      "dateAttr": "2025-06-21",
+      "slug": "parece-carinho-e-empatia-mas-e-so-ux",
+      "url": "/reflexoes/parece-carinho-e-empatia-mas-e-so-ux/",
+      "canonicalUrl": "https://floriano.des.br/reflexoes/parece-carinho-e-empatia-mas-e-so-ux/"
     },
     {
       "title": "O que aprendi construindo meu primeiro Design System do zero",
@@ -54,7 +72,10 @@
       "thumbnail": "https://cdn-images-1.medium.com/max/1024/1*LUB__NEh3QfdsI0wr6tTEg.jpeg",
       "excerpt": "Sempre ouvi falar da importância de Design Systems. Sabia que isso traz consistência, eficiência e escalabilidade. Mas a real é que eu só entendi, de fato, o poder de um Design System quando precis...",
       "dateDisplay": "20 de junho de 2025",
-      "dateAttr": "2025-06-20"
+      "dateAttr": "2025-06-20",
+      "slug": "o-que-aprendi-construindo-meu-primeiro-design-system-do-zero",
+      "url": "/reflexoes/o-que-aprendi-construindo-meu-primeiro-design-system-do-zero/",
+      "canonicalUrl": "https://floriano.des.br/reflexoes/o-que-aprendi-construindo-meu-primeiro-design-system-do-zero/"
     },
     {
       "title": "O lado invisível do vício digital que poucos falam: cor e dopamina",
@@ -62,7 +83,10 @@
       "thumbnail": "https://cdn-images-1.medium.com/max/1024/1*Uck_UJ-hEZnpD1wpdCJBNQ.jpeg",
       "excerpt": "Apenas uma provocação de um designer comumJá percebeu que quase ninguém fala disso de forma aprofundada?Falar sobre “reset de dopamina” é um tema comum nas redes sociais, com diversos vídeos no You...",
       "dateDisplay": "16 de junho de 2025",
-      "dateAttr": "2025-06-16"
+      "dateAttr": "2025-06-16",
+      "slug": "o-lado-invisivel-do-vicio-digital-que-poucos-falam-cor-e-dopamina",
+      "url": "/reflexoes/o-lado-invisivel-do-vicio-digital-que-poucos-falam-cor-e-dopamina/",
+      "canonicalUrl": "https://floriano.des.br/reflexoes/o-lado-invisivel-do-vicio-digital-que-poucos-falam-cor-e-dopamina/"
     }
   ]
 }
