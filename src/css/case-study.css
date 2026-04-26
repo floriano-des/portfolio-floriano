@@ -1665,6 +1665,249 @@ details[open] .cs-summary__icon {
 }
 
 /* ===================================================
+   Olho Vivo
+   =================================================== */
+.cs-olho {
+  --section-py: clamp(52px, 6vw, 84px);
+  --space-10: 32px;
+  --space-12: 40px;
+}
+
+.cs-olho .cs-hero {
+  padding-top: calc(var(--nav-height) + 88px);
+}
+
+.cs-olho .cs-hero__inner {
+  max-width: 980px;
+  padding-bottom: clamp(30px, 4vw, 44px);
+}
+
+.cs-olho .cs-hero__tag {
+  margin-bottom: 10px;
+}
+
+.cs-olho .cs-hero__title {
+  font-size: clamp(3rem, 6vw, 4.7rem);
+  line-height: 1.02;
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.cs-olho .cs-hero__subtitle {
+  max-width: 760px;
+  font-size: clamp(1rem, 1.45vw, 1.2rem);
+}
+
+.cs-olho .section-title {
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1.16;
+}
+
+.cs-olho-wide {
+  max-width: 980px;
+}
+
+.cs-olho-dark {
+  background: var(--clr-dark);
+}
+
+.cs-olho-soft {
+  background: rgba(1, 7, 29, 0.035);
+}
+
+.cs-olho .cs-gallery {
+  padding-block: var(--space-4);
+}
+
+.cs-olho .cs-gallery__img {
+  width: clamp(240px, 28vw, 420px);
+  height: clamp(135px, 15vw, 236px);
+  object-fit: cover;
+  object-position: center;
+  background: var(--clr-dark);
+}
+
+.cs-olho-diagnosis,
+.cs-olho-initiatives {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-10);
+}
+
+.cs-olho-card,
+.cs-olho-initiatives article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-height: 205px;
+  padding: var(--space-5);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.cs-olho-card__icon {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm);
+  background: rgba(238, 120, 46, 0.12);
+  color: var(--clr-orange);
+}
+
+.cs-olho-card h3,
+.cs-olho-initiatives h3 {
+  font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+  font-weight: var(--fw-bold);
+  color: var(--clr-white);
+  line-height: 1.2;
+}
+
+.cs-olho-card p,
+.cs-olho-initiatives p {
+  font-size: var(--text-sm);
+  color: rgba(230, 230, 230, 0.72);
+  line-height: var(--leading-normal);
+}
+
+.cs-olho-initiatives article {
+  background: var(--clr-dark);
+}
+
+.cs-olho-initiatives span {
+  color: var(--clr-orange);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cs-olho-process,
+.cs-olho-personas,
+.cs-olho-source-grid {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-10);
+}
+
+.cs-olho-process,
+.cs-olho-personas {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.cs-olho-source-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.cs-olho-process figure,
+.cs-olho-personas figure {
+  margin: 0;
+}
+
+.cs-olho-process img,
+.cs-olho-process video,
+.cs-olho-personas img,
+.cs-olho-source-grid img,
+.cs-olho-journeys img,
+.cs-olho-single-shot img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(1, 7, 29, 0.12);
+  box-shadow: 0 12px 36px rgba(1, 7, 29, 0.12);
+  background: var(--clr-dark);
+  display: block;
+}
+
+.cs-olho-source-grid img {
+  aspect-ratio: 4 / 3;
+}
+
+.cs-olho-personas--maps img {
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background: rgba(1, 7, 29, 0.04);
+}
+
+.cs-olho-journeys {
+  display: grid;
+  gap: var(--space-4);
+  margin-top: var(--space-10);
+}
+
+.cs-olho-journeys img {
+  aspect-ratio: 16 / 7;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.cs-olho-single-shot {
+  margin-top: var(--space-10);
+}
+
+.cs-olho-single-shot img {
+  object-fit: contain;
+  background: rgba(1, 7, 29, 0.04);
+}
+
+.cs-results--olho .cs-container {
+  max-width: 900px;
+}
+
+.cs-results--olho .cs-metrics {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.cs-results--olho .cs-metric {
+  padding: var(--space-6);
+}
+
+.cs-results--olho .cs-metric__value {
+  font-size: clamp(1.55rem, 2.4vw, 2.35rem);
+}
+
+.cs-results--olho .cs-metric__label {
+  font-size: 0.86rem;
+}
+
+.cs-olho-link {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-8);
+}
+
+.cs-olho-link a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 18px;
+  border-radius: var(--radius-full);
+  background: var(--clr-orange);
+  color: var(--clr-dark);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-bold);
+  text-decoration: none;
+}
+
+.cs-olho .cs-role .cs-tag {
+  background: rgba(159, 69, 5, 0.08);
+  border-color: rgba(159, 69, 5, 0.28);
+  color: var(--clr-text-dark);
+}
+
+.cs-olho .cs-role__label {
+  color: var(--clr-orange-readable);
+}
+
+/* ===================================================
    Big Numbers
    =================================================== */
 .cs-bignums {
@@ -1955,6 +2198,64 @@ details[open] .cs-summary__icon {
   }
 
   .cs-results--bit .cs-metric__value {
+    font-size: clamp(1.55rem, 7vw, 2.1rem);
+  }
+
+  .cs-olho {
+    --section-py: 48px;
+    --space-10: 28px;
+    --space-12: 34px;
+  }
+
+  .cs-olho .cs-hero {
+    padding-top: 128px;
+  }
+
+  .cs-olho .cs-hero__inner {
+    padding-bottom: 28px;
+  }
+
+  .cs-olho .cs-hero__title {
+    font-size: clamp(1.9rem, 9.5vw, 2.3rem);
+    letter-spacing: 0;
+    white-space: nowrap;
+  }
+
+  .cs-olho .cs-hero__subtitle {
+    font-size: 0.98rem;
+  }
+
+  .cs-olho .section-title {
+    font-size: clamp(1.7rem, 8vw, 2.35rem);
+  }
+
+  .cs-olho-diagnosis,
+  .cs-olho-initiatives,
+  .cs-olho-process,
+  .cs-olho-personas,
+  .cs-olho-source-grid,
+  .cs-results--olho .cs-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-olho-card,
+  .cs-olho-initiatives article {
+    min-height: auto;
+  }
+
+  .cs-olho-source-grid img {
+    aspect-ratio: 16 / 10;
+  }
+
+  .cs-olho-journeys img {
+    aspect-ratio: 16 / 9;
+  }
+
+  .cs-results--olho .cs-metric {
+    padding: var(--space-5);
+  }
+
+  .cs-results--olho .cs-metric__value {
     font-size: clamp(1.55rem, 7vw, 2.1rem);
   }
 }
