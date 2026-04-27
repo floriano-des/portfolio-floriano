@@ -959,3 +959,16 @@
   font-style: normal;
   font-weight: 500;
 }
+
+/* ===================================================
+   Título de subseção , ex: Política de Privacidade
+   =================================================== */
+.section-title--page {
+  font-size: 1.25rem;
+  margin-top: 2.5rem;
+}
+
+ul.bio__text {
+  padding-left: 1.5rem;
+  line-height: 2;
+}

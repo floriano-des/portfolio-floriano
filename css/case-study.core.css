@@ -185,7 +185,7 @@
 .cs-gargalos__title {
   font-size: var(--text-lg);
   font-weight: var(--fw-semibold);
-  color: var(--clr-light);
+  color: var(--clr-white);
   margin-bottom: var(--space-8);
 }
 
@@ -475,6 +475,7 @@
   flex-direction: column;
   gap: var(--space-6);
   max-width: 800px;
+  margin-top: var(--space-10);
 }
 
 .cs-learning {
@@ -713,6 +714,12 @@
 
 .cs-summary__toggle::-webkit-details-marker {
   display: none;
+}
+
+.cs-summary__toggle span {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 .cs-summary__icon {

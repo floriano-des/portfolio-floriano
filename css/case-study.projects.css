@@ -1369,6 +1369,69 @@
 }
 
 /* ===================================================
+   Utilitários compartilhados entre cases
+   =================================================== */
+.cs-dark { background: var(--clr-dark); }
+
+.cs-dark .section-title,
+.cs-bit-dark .section-title,
+.cs-olho-dark .section-title { color: var(--clr-white); }
+
+.cs-context .cs-kicker-dark { text-align: center; }
+
+.cs-figure-frame {
+  margin-top: var(--space-10);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.cs-figure-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cs-img-dark {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+.cs-figcaption {
+  margin-top: var(--space-3);
+  font-size: var(--text-sm);
+  color: rgba(230,230,230,.55);
+  text-align: center;
+}
+
+.cs-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+}
+
+.cs-data-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.cs-data-stat__value {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: var(--fw-bold);
+  color: var(--clr-orange);
+  line-height: 1;
+}
+
+.cs-data-stat__label {
+  font-size: var(--text-sm);
+  color: rgba(230,230,230,.65);
+  line-height: var(--leading-normal);
+}
+
+/* ===================================================
    Big Numbers
    =================================================== */
 .cs-bignums {
