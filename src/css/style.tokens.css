@@ -1,0 +1,268 @@
+/* ===================================================
+   Design System , Floriano Silva Portfolio
+   Baseado fielmente no Figma: floriano.des.br
+   =================================================== */
+
+/* --- Variáveis ---------------------------------------- */
+:root {
+  /* ─── Cores , Primitivas ─────────────────────────── */
+  --color-brand-500:   #ee782e;
+  --color-brand-600:   #d4641a;
+  --color-dark-900:    #01071d;
+  --color-neutral-050: #f7f7f7;
+  --color-neutral-100: #ececec;
+  --color-neutral-200: #e6e6e6;
+  --color-neutral-500: #6b7280; /* #777 original falhava WCAG AA , 4.61:1 ✓ */
+  --color-neutral-600: #54595f;
+  --color-white:       #ffffff;
+
+  /* ─── Cores , Semânticas ─────────────────────────── */
+  --clr-orange:        var(--color-brand-500);
+  --clr-orange-dark:   var(--color-brand-600);
+  --clr-orange-readable:#9f4505;
+  --clr-dark:          var(--color-dark-900);
+  --clr-text:          rgba(1, 7, 29, 0.80);
+  --clr-text-dark:     var(--color-dark-900);
+  --clr-text-muted:    var(--color-neutral-600);
+  --clr-text-subtle:   var(--color-neutral-500); /* 4.61:1 , passa WCAG AA ✓ */
+  --clr-date:          #767676;                  /* era #adadad (2.3:1 ✗) → 4.54:1 ✓ */
+  --clr-light:         var(--color-neutral-200);
+  --clr-border:        var(--color-neutral-200);
+  --clr-white:         var(--color-white);
+  --clr-cta-bg:        var(--color-neutral-100);
+  --clr-edu-border:    #f3b77f;
+
+  /* Cores sociais */
+  --clr-linkedin:      #0077b5;
+  --clr-whatsapp:      #25d366;
+
+  /* ─── Tipografia ─────────────────────────────────── */
+  --font:              'Montserrat', sans-serif;
+  --fw-light:          300;
+  --fw-regular:        400;
+  --fw-medium:         500;
+  --fw-semibold:       600;
+  --fw-bold:           700;
+
+  /* Escala de tipo , use estas variáveis para novos componentes */
+  --text-xs:   clamp(0.75rem,  1vw,   0.875rem);
+  --text-sm:   clamp(0.875rem, 1.2vw, 1rem);
+  --text-base: 1rem;
+  --text-lg:   clamp(1.125rem, 1.5vw, 1.25rem);
+  --text-xl:   clamp(1.25rem,  2vw,   1.5rem);
+  --text-2xl:  clamp(1.5rem,   3vw,   2rem);
+  --text-3xl:  clamp(2rem,     4vw,   3rem);
+  --text-4xl:  clamp(2.5rem,   6vw,   5rem);
+
+  /* Line heights */
+  --leading-tight:  1.2;
+  --leading-normal: 1.5;
+  --leading-loose:  1.8;
+
+  /* ─── Espaçamento , escala 4px ───────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ─── Layout ─────────────────────────────────────── */
+  --container-max: 1392px;
+  --container-px:  clamp(var(--space-4), 2.4vw, var(--space-6));
+  --section-py:    clamp(80px, 9vw, 130px);
+  --page-top-offset: clamp(136px, 12vw, 168px);
+  --page-intro-gap: clamp(16px, 2vw, 24px);
+  --page-intro-after: clamp(40px, 5vw, 56px);
+  --nav-height:    80px;
+  /* Nota: .nav usa max-width: 1440px (= --container-max + 2×24px padding do header) */
+
+  /* ─── Bordas & Raios ─────────────────────────────── */
+  --radius-sm:   8px;
+  --radius-md:   16px;
+  --radius-full: 99px;
+
+  /* ─── Sombras ────────────────────────────────────── */
+  --shadow-sm:    0 1px 3px rgba(0, 0, 0, 0.10);
+  --shadow-card:  0 0 10px rgba(0, 0, 0, 0.15);
+  --shadow-md:    0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg:    0 8px 30px rgba(0, 0, 0, 0.15);
+  --shadow-brand: 0 8px 24px rgba(238, 120, 46, 0.40);
+
+  /* ─── Transições ─────────────────────────────────── */
+  --transition:      0.22s ease;
+  --transition-slow: 0.40s ease;
+  --home-stats-height: 180px;
+
+  /* ─── Tokens de projeto (camada de conteúdo) ─────── */
+  /* Cores específicas de cards de projeto , não usar fora desse contexto */
+  --card-quantum:   #272727;
+  --card-2p:        #2409a9;
+  --card-bit:       rgba(10, 1, 70, 0.97);
+  --card-farm:      #00cd93;
+  --card-olho-vivo:    #ece8df;
+  --card-figurinhas:   #0c2b1a;
+}
+
+/* --- Base -------------------------------------------- */
+body {
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--clr-text);
+  background: linear-gradient(90deg, #f7f7f7 0%, #e2e2e2 100%);
+  /* background-attachment: fixed removido , causa repaint contínuo no iOS/Android */
+}
+
+/* --- Utilitários ------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+.section {
+  padding-block: var(--section-py);
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--nav-height) + 56px);
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: var(--fw-light);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--clr-text-dark);
+}
+
+.section-title--home {
+  font-size: clamp(2.1rem, 4.3vw, 3.8rem);
+  line-height: 1.18;
+  max-width: 980px;
+}
+
+.section-kicker {
+  font-size: 0.8rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--clr-orange-readable);
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  max-width: 760px;
+  font-size: 1.05rem;
+  color: var(--clr-text);
+  line-height: 1.7;
+  margin-bottom: clamp(40px, 5vw, 56px);
+}
+
+.page-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--page-intro-gap);
+  margin-bottom: var(--page-intro-after);
+}
+
+.page-intro .section-kicker,
+.page-intro .section-title,
+.page-intro .section-subtitle {
+  margin-bottom: 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: clamp(40px, 5vw, 64px);
+  flex-wrap: wrap;
+}
+
+/* --- Botões ------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: var(--fw-medium);
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  transition: transform var(--transition), filter var(--transition), box-shadow var(--transition);
+  line-height: 1.5;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--orange {
+  background: var(--clr-orange);
+  color: var(--clr-text-dark);
+}
+
+.btn--orange:hover {
+  box-shadow: var(--shadow-brand);
+}
+
+.btn--white-glass {
+  background: rgba(255, 255, 255, 0.62);
+  color: rgba(1, 7, 29, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.btn--white-glass:hover {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+/* --- Foco visível (a11y) ------------------------------ */
+/* Garante indicador de foco para navegação por teclado em todos os elementos */
+:focus-visible {
+  outline: 2px solid var(--clr-orange);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.btn:focus-visible,
+.hero__cta:focus-visible,
+.project-card__btn:focus-visible,
+.featured-project-card__btn:focus-visible {
+  outline-offset: 4px;
+  border-radius: var(--radius-full);
+}
+
+.nav__social-btn:focus-visible,
+.cta-social-btn:focus-visible {
+  border-radius: 50%;
+  outline-offset: 3px;
+}
+
+.post-card__link:focus-visible {
+  outline-offset: 0;
+  border-radius: var(--radius-md);
+}
+
+.carousel__btn:focus-visible,
+.carousel__dot:focus-visible,
+.testimonials__btn:focus-visible,
+.testimonials__dot:focus-visible {
+  outline-offset: 3px;
+}
+
