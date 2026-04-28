@@ -778,6 +778,46 @@
   margin-bottom: clamp(32px, 4vw, 48px);
 }
 
+.dg-stack {
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.dg-stack__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.dg-stack__label {
+  color: var(--clr-orange);
+  font-size: 0.72rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+.dg-stack__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.dg-stack__tags span {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: var(--fw-medium);
+  line-height: 1;
+  color: var(--clr-text-dark);
+  background: rgba(159, 69, 5, 0.08);
+  border: 1px solid rgba(159, 69, 5, 0.28);
+}
+
 /* Grid: Logotipos , 3 cols */
 .dg-grid { display: grid; gap: 16px; }
 
