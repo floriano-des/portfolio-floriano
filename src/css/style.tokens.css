@@ -243,7 +243,8 @@ section[id] {
 .btn:focus-visible,
 .hero__cta:focus-visible,
 .project-card__btn:focus-visible,
-.featured-project-card__btn:focus-visible {
+.featured-project-card__btn:focus-visible,
+.home-testimonial-card__profile:focus-visible {
   outline-offset: 4px;
   border-radius: var(--radius-full);
 }
@@ -265,4 +266,3 @@ section[id] {
 .testimonials__dot:focus-visible {
   outline-offset: 3px;
 }
-
