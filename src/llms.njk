@@ -3,9 +3,9 @@ permalink: /llms.txt
 eleventyExcludeFromCollections: true
 eleventyExcludeFromSitemap: true
 ---
-# Floriano Silva, Product Designer
+# Floriano Silva, Design Engineer
 
-> Portfólio de Floriano Silva, Product Designer brasileiro com atuação em UX orientado a dados, growth, CRO, analytics, pesquisa, design de interface, design systems e execução de produtos digitais.
+> Portfólio de Floriano Silva, Design Engineer brasileiro com atuação em estratégia, design, dados, IA, growth, CRO, analytics, pesquisa, design de interface, design systems e execução de produtos digitais.
 
 Site: {{ metadata.url }}
 Sitemap: {{ metadata.url }}/sitemap.xml
@@ -15,7 +15,7 @@ Idioma principal: pt-BR
 
 ## Como interpretar este site
 
-Este site apresenta a trajetória, os projetos e os artigos de Floriano Silva. O conteúdo é útil para entender experiência profissional em Product Design, UX, growth, otimização de conversão, pesquisa com usuários, analytics, sistemas internos, design systems e construção de produtos digitais.
+Este site apresenta a trajetória, os projetos e os artigos de Floriano Silva. O conteúdo é útil para entender experiência profissional em Design Engineering, UX, growth, otimização de conversão, pesquisa com usuários, analytics, IA aplicada, sistemas internos, design systems e construção de produtos digitais.
 
 As páginas canônicas ficam no domínio `floriano.des.br`. A seção Reflexões publica versões internas de artigos escritos originalmente no Medium, com link de origem preservado em cada artigo.
 
@@ -29,7 +29,7 @@ As páginas canônicas ficam no domínio `floriano.des.br`. A seção Reflexões
 
 - [Home]({{ metadata.url }}/): Visão geral do posicionamento profissional, projetos selecionados, reflexões e contato.
 - [Projetos]({{ metadata.url }}/projetos/): Índice dos cases e trabalhos selecionados.
-- [Reflexões]({{ metadata.url }}/reflexoes/): Artigos sobre produto, growth, comportamento, UX e execução.
+- [Reflexões]({{ metadata.url }}/reflexoes/): Artigos sobre design, growth, comportamento, UX, IA e execução.
 - [Sobre]({{ metadata.url }}/sobre/): Bio, experiência, formação, certificações e recomendações.
 - [Política de Privacidade]({{ metadata.url }}/politica-de-privacidade/): Informações de privacidade do site.
 
@@ -47,7 +47,7 @@ As páginas canônicas ficam no domínio `floriano.des.br`. A seção Reflexões
 
 {% if reflexoes.items.length -%}
 {% for post in reflexoes.items -%}
-- [{{ post.title }}]({{ metadata.url }}{{ post.url }}): {{ post.excerpt }}
+- [{{ post.title }}]({{ metadata.url }}{{ post.url }})
 {% endfor -%}
 {% else -%}
 - [Reflexões]({{ metadata.url }}/reflexoes/): Índice de artigos de Floriano Silva.

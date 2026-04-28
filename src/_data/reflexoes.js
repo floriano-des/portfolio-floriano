@@ -220,7 +220,7 @@ function buildBlogPostingJsonLd(post) {
     },
     inLanguage: 'pt-BR',
     isBasedOn: post.sourceUrl,
-    keywords: ['Product Design', 'UX', 'Growth', 'CRO', 'Analytics'],
+    keywords: ['Design Engineering', 'UX', 'Growth', 'CRO', 'Analytics', 'IA aplicada'],
     wordCount: post.plainText ? post.plainText.split(/\s+/).filter(Boolean).length : undefined,
   };
 

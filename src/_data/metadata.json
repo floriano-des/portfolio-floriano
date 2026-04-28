@@ -1,26 +1,29 @@
 {
   "url": "https://floriano.des.br",
-  "title": "Floriano Silva, Product Designer UX",
-  "description": "Product Designer especializado em UX orientado a dados. Transformo comportamento do usuário em decisões de design mensuráveis.",
+  "title": "Floriano Silva | Design Engineer para sites, LPs e sistemas",
+  "description": "Sou Floriano, Design Engineer. Estratégia, design, dados e IA para criar sites, LPs e sistemas com foco em Growth, execução, CRO e conversão.",
   "author": "Floriano Silva",
-  "profession": "Product Designer",
+  "profession": "Design Engineer",
   "email": "contato@floriano.des.br",
   "phone": "+55 18 99677-3264",
   "location": "Brasil",
   "areasOfExpertise": [
-    "Product Design",
+    "Design Engineering",
     "UX Design",
     "Growth",
     "CRO",
     "Analytics",
     "Pesquisa de UX",
     "Design de interface",
-    "Design system"
+    "Design system",
+    "WordPress",
+    "Elementor",
+    "IA aplicada"
   ],
   "sameAs": [
     "https://www.linkedin.com/in/floriano-des/",
     "https://medium.com/@floriano-des"
   ],
   "ogImage": "https://floriano.des.br/assets/og-image.jpg",
-  "siteName": "Floriano Silva · Product Designer"
+  "siteName": "Floriano Silva · Design Engineer"
 }
