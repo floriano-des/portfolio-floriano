@@ -1,6 +1,6 @@
-# CLAUDE.md — Contexto do projeto floriano.des.br
+# README — Contexto do projeto floriano.des.br
 
-Este arquivo é carregado automaticamente pelo Claude Code em todas as sessões. Ele descreve quem é Floriano, qual é o posicionamento do site, como o projeto está estruturado e como o site funciona tecnicamente.
+Este arquivo descreve quem é Floriano, qual é o posicionamento do site, como o projeto está estruturado e como o site funciona tecnicamente. É lido por Claude Code e Codex em todas as sessões.
 
 ---
 
@@ -29,6 +29,12 @@ A IA faz parte do método de trabalho, não da identidade. Ela aparece como apoi
 - Conteúdo interno dos cases/projetos (`src/projetos/*.njk`)
 - Posts, reflexões e artigos
 - Métricas, resultados e números dos projetos
+
+**Decisões editoriais consolidadas:**
+- A página `/projetos/` foi removida — era réplica da home. O nav "Projetos" aponta para `/#projetos`.
+- As seções "Repertório aplicado" (sites de clientes) e "Explorações" (carrossel de interfaces) foram removidas da home e da página de projetos — conflitavam com o posicionamento de Digital Product Builder.
+- A seção de design gráfico foi movida para a página Sobre (link discreto na trajetória).
+- Ordem dos projetos na home: Quantum Vizz → 2P Web Dev → Mercado das Figurinhas → Farm Well Hub → Olho Vivo → Bit System.
 
 ---
 
@@ -104,8 +110,7 @@ floriano-des-br/
 │   │   ├── olho-vivo.njk             # Pesquisa sobre participação política
 │   │   └── design-grafico.njk        # Portfólio de design visual
 │   │
-│   ├── index.njk                     # Home
-│   ├── projetos.njk                  # Listagem de projetos
+│   ├── index.njk                     # Home (hero, stats, 6 projetos, depoimentos, sobre, reflexões)
 │   ├── reflexoes.njk                 # Listagem de artigos (blog)
 │   ├── reflexao.njk                  # Template de post individual (pagination)
 │   ├── sobre.njk                     # Página Sobre
@@ -122,7 +127,7 @@ floriano-des-br/
 ├── .eleventy.js                      # Configuração principal do Eleventy
 ├── package.json
 ├── README.md
-└── CLAUDE.md                         # Este arquivo
+└── README.md                         # Este arquivo
 ```
 
 ---
@@ -194,11 +199,11 @@ Se o fetch falhar, usa `reflexoes-fallback.json` como cache local. O build nunca
 | URL | Arquivo | Conteúdo |
 |---|---|---|
 | `/` | `index.njk` | Hero, stats, 6 projetos em destaque, depoimentos, mini-sobre, 3 reflexões |
-| `/projetos/` | `projetos.njk` | Cases, sites em produção, explorações (carrossel), design gráfico |
 | `/projetos/[slug]/` | `projetos/*.njk` | Case study completo |
 | `/reflexoes/` | `reflexoes.njk` | Grid de cards com artigos do Medium |
 | `/reflexoes/[slug]/` | `reflexao.njk` | Artigo individual (gerado por pagination) |
-| `/sobre/` | `sobre.njk` | Bio, trajetória, jeito de trabalhar, stack, vida pessoal |
+| `/sobre/` | `sobre.njk` | Bio, trajetória (com link para design gráfico), jeito de trabalhar, stack, vida pessoal |
+| `/projetos/design-grafico/` | `projetos/design-grafico.njk` | Repertório gráfico — acessível via link no Sobre |
 | `/llms.txt` | `llms.njk` | Contexto para IAs que consultam o site |
 | `/politica-de-privacidade/` | `politica-de-privacidade.njk` | Política de privacidade |
 
