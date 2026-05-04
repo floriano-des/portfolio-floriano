@@ -1,21 +1,29 @@
-﻿---
+---
 layout: case-study.njk
 title: "Mercado das Figurinhas · Estudo de caso · Floriano Silva"
-description: "Produto de matching geolocalizado para conectar colecionadores de figurinhas por proximidade, reduzir fricção nas trocas e validar uma oportunidade sazonal de grande volume."
+description: "Como construí um produto solo, funcional e em produção para conectar colecionadores da Copa 2026 por matching geolocalizado."
 ---
 
 <main class="cs-mercado">
 
   <!-- ================================================
-       TOPO
+       HERO
        ================================================ -->
   <section class="cs-hero">
     <div class="cs-hero__inner" data-animate>
-      <span class="cs-hero__tag">produto · matching geolocalizado · validação de oportunidade</span>
+      <span class="cs-mercado-status">
+        <span class="cs-mercado-status__dot"></span>
+        Em produção
+      </span>
+      <span class="cs-hero__tag">produto solo · web app · matching geolocalizado · março 2026</span>
       <h1 class="cs-hero__title">Mercado das Figurinhas</h1>
       <p class="cs-hero__subtitle">
-        Como estruturei um produto para conectar colecionadores por proximidade e transformar a troca de figurinhas em uma experiência mais simples, local e confiável.
+        Um produto solo, funcional e em produção para transformar a troca de figurinhas da Copa 2026 em um fluxo simples: marcar o álbum, encontrar colecionadores próximos e combinar trocas pelo WhatsApp.
       </p>
+      <a href="https://mercadodasfigurinhas.com.br" target="_blank" rel="noopener" class="cs-mercado-live-link" data-animate data-delay="1">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        mercadodasfigurinhas.com.br
+      </a>
       <div class="cs-published-by">
         <img
           class="cs-published-by__avatar"
@@ -49,19 +57,19 @@ description: "Produto de matching geolocalizado para conectar colecionadores de 
         <div class="cs-summary__body">
           <div class="cs-summary__item">
             <span class="cs-summary__label">Situação:</span>
-            <span class="cs-summary__text">Completar um álbum grande da Copa gera um problema recorrente: pessoas têm repetidas, precisam de faltantes, mas não sabem quem perto delas pode trocar.</span>
+            <span class="cs-summary__text">Copa 2026 com álbum recorde de 980 figurinhas, custo crescente e trocas organizadas via grupos de WhatsApp caóticos, sem matching estruturado.</span>
           </div>
           <div class="cs-summary__item">
             <span class="cs-summary__label">Tarefa:</span>
-            <span class="cs-summary__text">Encontrar uma direção de produto para reduzir descoberta manual, organizar disponibilidade de figurinhas e aproximar colecionadores locais.</span>
+            <span class="cs-summary__text">Criar um produto capaz de conectar colecionadores por proximidade geográfica, cruzar catálogos automaticamente e facilitar o contato para trocas presenciais.</span>
           </div>
           <div class="cs-summary__item">
             <span class="cs-summary__label">Ação:</span>
-            <span class="cs-summary__text">Estruturei o problema, usei IA para acelerar pesquisa e análise de padrões, mapeei alternativas existentes, defini o mecanismo de matching, desenhei telas principais e organizei um MVP validável.</span>
+            <span class="cs-summary__text">Fiz desk research, defini problema e hipótese de produto, construí MVP funcional com catálogo de 980 figurinhas, matching geolocalizado, billing Stripe, autenticação completa e fluxo de WhatsApp contextual, com apoio de IA.</span>
           </div>
           <div class="cs-summary__item">
             <span class="cs-summary__label">Resultado:</span>
-            <span class="cs-summary__text">O case chegou a uma proposta clara de produto: encontrar pessoas próximas, cruzar faltantes e repetidas, e facilitar contato sem transformar a plataforma em marketplace completo.</span>
+            <span class="cs-summary__text">Produto funcional em produção: login, 980 figurinhas reais, matching geolocalizado, WhatsApp contextual, Stripe em produção (R$9,99/mês), Resend, Analytics, Clarity e domínio próprio.</span>
           </div>
         </div>
       </details>
@@ -74,35 +82,24 @@ description: "Produto de matching geolocalizado para conectar colecionadores de 
   <div class="cs-bignums">
     <div class="cs-bignum" data-animate>
       <div class="cs-bignum__head">
-        <svg class="cs-bignum__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="3" y="3" width="7" height="7" rx="1"/>
-          <rect x="14" y="3" width="7" height="7" rx="1"/>
-          <rect x="3" y="14" width="7" height="7" rx="1"/>
-          <rect x="14" y="14" width="7" height="7" rx="1"/>
-        </svg>
-        <span class="cs-bignum__value">~1.000</span>
+        <svg class="cs-bignum__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        <span class="cs-bignum__value">980</span>
       </div>
-      <span class="cs-bignum__label">figurinhas previstas no álbum da Copa 2026</span>
+      <span class="cs-bignum__label">figurinhas no álbum da Copa 2026, recorde histórico da Panini</span>
     </div>
     <div class="cs-bignum" data-animate data-delay="1">
       <div class="cs-bignum__head">
-        <svg class="cs-bignum__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 1v22"/>
-          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"/>
-        </svg>
+        <svg class="cs-bignum__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7H14a3.5 3.5 0 0 1 0 7H6"/></svg>
         <span class="cs-bignum__value">R$4k+</span>
       </div>
-      <span class="cs-bignum__label">custo potencial para completar sem trocar figurinhas</span>
+      <span class="cs-bignum__label">custo estimado para completar sem trocar figurinhas em 2026</span>
     </div>
     <div class="cs-bignum" data-animate data-delay="2">
       <div class="cs-bignum__head">
-        <svg class="cs-bignum__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/>
-          <circle cx="12" cy="10" r="3"/>
-        </svg>
-        <span class="cs-bignum__value">local</span>
+        <svg class="cs-bignum__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="cs-bignum__value">40%</span>
       </div>
-      <span class="cs-bignum__label">matching orientado por proximidade entre colecionadores</span>
+      <span class="cs-bignum__label">do mercado global da Panini é Brasil, o maior mercado do mundo</span>
     </div>
   </div>
 
@@ -112,191 +109,589 @@ description: "Produto de matching geolocalizado para conectar colecionadores de 
   <div class="cs-gallery" aria-hidden="true">
     <div class="cs-gallery__track">
       <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/hero.webp" alt="" loading="lazy">
-      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/problema.webp" alt="" loading="lazy">
-      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/mind-map.webp" alt="" loading="lazy">
-      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/matches.webp" alt="" loading="lazy">
-      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/album-grid.webp" alt="" loading="lazy">
       <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/produto-landing.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/album-grid.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/matches.webp" alt="" loading="lazy">
       <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/produto-tela-inicial.webp" alt="" loading="lazy">
       <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/whatsapp-contato.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/mind-map.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/problema.webp" alt="" loading="lazy">
       <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/hero.webp" alt="" loading="lazy">
-      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/problema.webp" alt="" loading="lazy">
-      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/mind-map.webp" alt="" loading="lazy">
-      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/matches.webp" alt="" loading="lazy">
-      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/album-grid.webp" alt="" loading="lazy">
       <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/produto-landing.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/album-grid.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/matches.webp" alt="" loading="lazy">
       <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/produto-tela-inicial.webp" alt="" loading="lazy">
       <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/whatsapp-contato.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/mind-map.webp" alt="" loading="lazy">
+      <img class="cs-gallery__img" src="/assets/projetos/mercado-das-figurinhas/problema.webp" alt="" loading="lazy">
     </div>
   </div>
 
   <!-- ================================================
-       CONTEXTO
+       CONTEXTO — COMO A IDEIA COMEÇOU
        ================================================ -->
   <section class="section">
     <div class="cs-container">
       <p class="cs-kicker-light">Contexto</p>
-      <h2 class="section-title" data-animate>O problema não era trocar. Era descobrir quem podia trocar.</h2>
+      <h2 class="section-title" data-animate>A ideia veio de uma dor simples.</h2>
       <p class="cs-body-copy" data-animate data-delay="1">
-        O comportamento de troca já existe: escola, trabalho, família, bancas, grupos de WhatsApp e encontros presenciais. A oportunidade estava em reduzir o esforço de descoberta, porque a pessoa não quer navegar por um catálogo infinito. Ela quer saber quem está perto, o que essa pessoa tem repetido e se existe uma troca possível.
+        Colecionar figurinhas sempre foi uma atividade social. A troca é o ritual. Mas a organização das trocas nunca evoluiu: grupos de WhatsApp caóticos, listas em texto que se perdem, fotos de repetidas postadas sem contexto, e nenhuma forma de saber quem, perto de você, tem exatamente o que falta.
+      </p>
+      <p class="cs-body-copy" data-animate data-delay="2">
+        A hipótese era que o problema não estava em registrar figurinhas. Checklists já existiam. O gap estava na descoberta: encontrar quem perto de mim tem o que preciso e aceita o que tenho repetido. A Copa 2026, com o maior álbum da história e um custo crescente para completar sem trocar, tornava esse o momento certo para construir.
+      </p>
+      <div class="cs-mercado-brand" data-animate data-delay="3">
+        <img src="/assets/projetos/mercado-das-figurinhas/brand-logo.webp" alt="Mercado das Figurinhas" height="36">
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PESQUISA DE MERCADO
+       ================================================ -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <p class="cs-kicker-light">Pesquisa de mercado</p>
+      <h2 class="section-title" data-animate>O mercado era grande. A solução boa, inexistente.</h2>
+      <p class="cs-body-copy" data-animate data-delay="1" style="max-width:760px;">
+        O desk research confirmou o que a intuição apontava: grande demanda, sem produto estruturado para atender. O Brasil consome cerca de 40% das figurinhas da Panini no mundo. Com 48 seleções e 980 figurinhas, a Copa 2026 criaria um mercado de trocas sem precedentes, sem nenhum produto dominante resolvendo matching por proximidade.
       </p>
       <div class="cs-mercado-cards" data-animate data-delay="2">
         <article class="cs-mercado-card">
           <span class="cs-mercado-card__icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
           </span>
-          <h3>Grupos são ruidosos</h3>
-          <p>WhatsApp ajuda a encontrar pessoas, mas não estrutura faltantes, repetidas, localização ou prioridade.</p>
+          <h3>Mercado bilionário</h3>
+          <p>O Brasil responde por ~40% das vendas globais da Panini. Em 2022, uma distribuidora em Curitiba faturou R$60 milhões apenas com álbuns da Copa do Qatar.</p>
         </article>
         <article class="cs-mercado-card">
           <span class="cs-mercado-card__icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
           </span>
-          <h3>Proximidade muda tudo</h3>
-          <p>Trocar figurinha é uma ação física. A distância precisa entrar no produto como critério central, não como filtro secundário.</p>
+          <h3>Álbum recorde</h3>
+          <p>980 figurinhas, 48 seleções, pacotes com 7 unidades a R$7. Completar sem trocar pode custar entre R$4.000 e R$5.000, tornando a troca economicamente necessária.</p>
+        </article>
+        <article class="cs-mercado-card">
+          <span class="cs-mercado-card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+          </span>
+          <h3>WhatsApp como canal natural</h3>
+          <p>Centenas de grupos regionais surgiram na Copa 2022. Mães criavam grupos para os filhos. O comportamento de troca já existe. Faltava a camada de descoberta antes do contato.</p>
         </article>
         <article class="cs-mercado-card">
           <span class="cs-mercado-card__icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
           </span>
-          <h3>Matching reduz fricção</h3>
-          <p>O valor aparece quando o sistema cruza o que falta com o que sobra e mostra trocas possíveis.</p>
+          <h3>Gap real de produto</h3>
+          <p>O mercado tinha vários checklists, mas nenhum produto resolvendo matching por proximidade. Não era problema de demanda. Era problema de descoberta.</p>
+        </article>
+        <article class="cs-mercado-card">
+          <span class="cs-mercado-card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </span>
+          <h3>Mobile first, sem app</h3>
+          <p>88,9% dos brasileiros com 10+ anos têm smartphone. Uma plataforma web eliminava a barreira de download: mais rápida para lançar, mais acessível para validar.</p>
+        </article>
+        <article class="cs-mercado-card">
+          <span class="cs-mercado-card__icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <h3>Janela temporal clara</h3>
+          <p>Álbum lançado em abril/2026, Copa de junho a julho. Uma janela curta e previsível. O produto precisava provar valor rápido antes de pedir esforço demais.</p>
         </article>
       </div>
     </div>
   </section>
 
   <!-- ================================================
-       RECORTE DO PRODUTO
+       HIPÓTESE E PROBLEMA (dark)
        ================================================ -->
   <section class="cs-context">
     <p class="cs-context__question" data-animate>
-      Se o mercado é sazonal, grande e presencial, o produto precisa provar valor rápido: <strong>mostrar oportunidade de troca antes de pedir esforço demais.</strong>
+      A proximidade é o fator decisivo. <strong>Não é problema de demanda: é problema de descoberta.</strong>
     </p>
     <div class="cs-gargalos" data-animate data-delay="1">
-      <h3 class="cs-gargalos__title">O recorte ficou concentrado em três decisões:</h3>
+      <h3 class="cs-gargalos__title">O foco único do MVP ficou claro:</h3>
       <ul class="cs-gargalos__list" role="list">
         <li class="cs-gargalos__item">
           <span class="cs-gargalos__num">1</span>
-          <span class="cs-gargalos__text">Cadastro do álbum como inventário simples, separando faltantes e repetidas.</span>
+          <span class="cs-gargalos__text">O usuário precisa descobrir quem perto dele tem as figurinhas que faltam e aceita as suas repetidas. Tudo mais é backlog.</span>
         </li>
         <li class="cs-gargalos__item">
           <span class="cs-gargalos__num">2</span>
-          <span class="cs-gargalos__text">Busca por pessoas próximas, porque a troca precisa acontecer fora da tela.</span>
+          <span class="cs-gargalos__text">Se colecionadores próximos conseguirem cruzar repetidas e faltantes automaticamente, vão ter mais chance de combinar trocas e reduzir o custo de completar o álbum.</span>
         </li>
         <li class="cs-gargalos__item">
           <span class="cs-gargalos__num">3</span>
-          <span class="cs-gargalos__text">Contato direto via WhatsApp, mantendo o MVP leve e sem criar uma camada social complexa cedo demais.</span>
+          <span class="cs-gargalos__text">Em um mercado sazonal com janela curta, o produto precisa mostrar valor antes de pedir cadastro completo ou configuração demais.</span>
         </li>
       </ul>
     </div>
   </section>
 
   <!-- ================================================
-       PROCESSO
+       ESCOPO DO MVP
        ================================================ -->
-  <section class="cs-process">
-    <div class="container">
-      <p class="cs-kicker-light">Processo</p>
-      <h2 class="section-title" data-animate>Da oportunidade ao MVP validável.</h2>
-      <div class="cs-steps">
-        <div class="cs-step" data-animate>
-          <div class="cs-step__content">
-            <p class="cs-step__num">01 · Leitura do problema</p>
-            <h3 class="cs-step__title">Entender onde a troca já acontecia.</h3>
-            <p class="cs-step__text">A primeira camada foi mapear os caminhos existentes: grupos, encontros presenciais, familiares, bancas e redes sociais. Isso mostrou que o comportamento já era forte, mas a organização era frágil.</p>
-            <ul class="cs-step__list">
-              <li>O usuário já aceita trocar presencialmente.</li>
-              <li>A dor aparece na descoberta e na coordenação.</li>
-              <li>Um marketplace completo seria pesado para validar o primeiro comportamento.</li>
-            </ul>
-          </div>
-          <figure class="cs-step__image">
-            <img src="/assets/projetos/mercado-das-figurinhas/problema.webp" alt="Mapeamento do problema de troca de figurinhas" loading="lazy">
-          </figure>
+  <section class="section">
+    <div class="cs-container">
+      <p class="cs-kicker-light">Escopo do MVP</p>
+      <h2 class="section-title" data-animate>Saber cortar é metade do produto.</h2>
+      <p class="cs-body-copy" data-animate data-delay="1">
+        O MVP foi reduzido ao menor fluxo capaz de entregar valor: criar conta, marcar figurinhas, encontrar matches próximos e abrir uma conversa no WhatsApp. Tudo que aumentava complexidade sem provar melhor a hipótese central ficou fora.
+      </p>
+      <div class="cs-mercado-scope" data-animate data-delay="2">
+        <div class="cs-mercado-scope-col cs-mercado-scope-col--in">
+          <p class="cs-mercado-scope-col__title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Dentro do MVP
+          </p>
+          <ul>
+            <li>Login com Google OAuth + email e senha</li>
+            <li>Cadastro com confirmação de e-mail</li>
+            <li>Recuperação de senha</li>
+            <li>Perfil com localização e raio de busca</li>
+            <li>Catálogo completo com 980 figurinhas reais</li>
+            <li>Marcação de tenho, repetida e preciso</li>
+            <li>Matching por proximidade geolocalizada</li>
+            <li>Contato via WhatsApp com mensagem contextual</li>
+            <li>Histórico e status de trocas</li>
+            <li>Notificações em tempo real</li>
+            <li>Planos FREE / TRIAL 3 dias / PRO R$9,99/mês</li>
+            <li>Stripe Checkout + Portal + Webhook</li>
+            <li>E-mail transacional com Resend</li>
+            <li>Analytics + Microsoft Clarity</li>
+          </ul>
         </div>
-
-        <div class="cs-step cs-step--reverse" data-animate>
-          <div class="cs-step__content">
-            <p class="cs-step__num">02 · Estrutura da solução</p>
-            <h3 class="cs-step__title">Transformar faltantes e repetidas em matching.</h3>
-            <p class="cs-step__text">A solução passou a girar em torno de um cruzamento simples: o que eu tenho repetido, o que eu preciso e quem perto de mim pode completar essa troca.</p>
-            <ul class="cs-step__list">
-              <li>Registro de álbum e figurinhas.</li>
-              <li>Lista de matches por compatibilidade.</li>
-              <li>Priorização de usuários próximos.</li>
-            </ul>
-          </div>
-          <figure class="cs-step__image">
-            <img src="/assets/projetos/mercado-das-figurinhas/matches.webp" alt="Tela de matches do Mercado das Figurinhas" loading="lazy">
-          </figure>
-        </div>
-
-        <div class="cs-step" data-animate>
-          <div class="cs-step__content">
-            <p class="cs-step__num">03 · Produto e validação</p>
-            <h3 class="cs-step__title">Deixar o contato simples e medir interesse.</h3>
-            <p class="cs-step__text">Em vez de criar chat, reputação, pagamento e logística logo no início, o produto usa WhatsApp como ponte de contato. Isso reduz escopo e ajuda a validar se o matching tem valor antes de escalar funções mais caras.</p>
-            <ul class="cs-step__list">
-              <li>Landing para explicar a proposta.</li>
-              <li>Tela inicial focada em descoberta.</li>
-              <li>Contato direto após identificar uma troca possível.</li>
-            </ul>
-          </div>
-          <figure class="cs-step__image">
-            <img src="/assets/projetos/mercado-das-figurinhas/whatsapp-contato.webp" alt="Tela de contato via WhatsApp para troca de figurinhas" loading="lazy">
-          </figure>
+        <div class="cs-mercado-scope-col cs-mercado-scope-col--out">
+          <p class="cs-mercado-scope-col__title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            Fora do MVP
+          </p>
+          <ul>
+            <li>Chat interno (WhatsApp resolve)</li>
+            <li>Mapa interativo com pins de usuários</li>
+            <li>Marketplace de compra e venda</li>
+            <li>Gamificação e badges</li>
+            <li>App nativo (iOS / Android)</li>
+            <li>Dark mode</li>
+            <li>Multi-álbum (Brasileirão, Champions etc.)</li>
+            <li>Feed social e timeline de atividades</li>
+            <li>Reputação avançada</li>
+            <li>Upload de foto das figurinhas</li>
+            <li>Notificações push nativas</li>
+            <li>Modo feira de troca para eventos</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ================================================
-       TELAS
+       DECISÕES PRINCIPAIS
+       ================================================ -->
+  <section class="section" style="padding-top:0;">
+    <div class="cs-container">
+      <p class="cs-kicker-light">Decisões de produto</p>
+      <h2 class="section-title" data-animate>Cinco apostas que moldaram o produto.</h2>
+      <div class="cs-mercado-decisions" data-animate data-delay="1">
+        <div class="cs-mercado-decision">
+          <div class="cs-mercado-decision__num">1</div>
+          <div>
+            <p class="cs-mercado-decision__title">WhatsApp em vez de chat interno</p>
+            <p class="cs-mercado-decision__why">O produto não precisava substituir o canal onde as trocas já aconteciam. Precisava organizar a etapa anterior. O sistema gera uma mensagem específica com contexto da troca (quem oferece o quê, quem recebe o quê) e transfere a conversa para o WhatsApp. Menos complexidade técnica, mais naturalidade para o usuário.</p>
+          </div>
+        </div>
+        <div class="cs-mercado-decision">
+          <div class="cs-mercado-decision__num">2</div>
+          <div>
+            <p class="cs-mercado-decision__title">Web app mobile-first, não app nativo</p>
+            <p class="cs-mercado-decision__why">Sem barreira de download, menor custo de desenvolvimento, mais rápido para lançar e testar. Em um produto sazonal com janela curta, a velocidade de chegada ao usuário valia mais do que a experiência nativa.</p>
+          </div>
+        </div>
+        <div class="cs-mercado-decision">
+          <div class="cs-mercado-decision__num">3</div>
+          <div>
+            <p class="cs-mercado-decision__title">Matching por geolocalização com raio configurável</p>
+            <p class="cs-mercado-decision__why">Troca de figurinha é uma ação presencial. A distância não podia ser filtro secundário. Precisava ser o critério central. O usuário define um raio (0–100 km) e o sistema respeita esse limite. O banco recebeu constraint para garantir consistência mesmo em edições diretas.</p>
+          </div>
+        </div>
+        <div class="cs-mercado-decision">
+          <div class="cs-mercado-decision__num">4</div>
+          <div>
+            <p class="cs-mercado-decision__title">Modelo freemium: FREE / TRIAL / PRO</p>
+            <p class="cs-mercado-decision__why">Entrada gratuita sem barreira, trial de 3 dias com tudo ilimitado para mostrar o valor real do produto, e PRO a R$9,99/mês para quem quer usar sem limite. O paywall aparece no contato com o match, o momento em que o valor é mais claro.</p>
+          </div>
+        </div>
+        <div class="cs-mercado-decision">
+          <div class="cs-mercado-decision__num">5</div>
+          <div>
+            <p class="cs-mercado-decision__title">IA como suporte operacional, não substituta de decisão</p>
+            <p class="cs-mercado-decision__why">Claude Code e Codex aceleraram implementação, debugging e refatoração. As decisões de produto, escopo, UX, modelo de negócio, priorização e critérios de aceite foram humanas. Trabalhar com IA exigiu mais clareza de contexto e documentação, não menos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PROCESSO — LINHA DO TEMPO
+       ================================================ -->
+  <section class="cs-process">
+    <div class="container">
+      <p class="cs-kicker-light">Processo</p>
+      <h2 class="section-title" data-animate>Da oportunidade ao produto em produção.</h2>
+      <p class="cs-body-copy" data-animate data-delay="1" style="max-width:760px;">
+        O projeto seguiu ciclos curtos de build-test-iterate. Cada rodada adicionava uma camada de produto ou corrigia um problema encontrado em uso real.
+      </p>
+      <div class="cs-mercado-timeline" data-animate data-delay="2">
+        <div class="cs-mercado-tl-item">
+          <p class="cs-mercado-tl-date">Março 2026</p>
+          <p class="cs-mercado-tl-title">Pesquisa, definição e primeira estrutura</p>
+          <ul class="cs-mercado-tl-list">
+            <li>Desk research: mercado, concorrentes, comportamento do colecionador</li>
+            <li>PRD com escopo, fluxos, regras de negócio e métricas do MVP</li>
+            <li>Definição da stack: Next.js, TypeScript, Neon, Prisma, Auth.js, Stripe, Resend, Vercel</li>
+            <li>Primeira landing page e estrutura base do produto</li>
+            <li>Login com Google OAuth e fluxo inicial do dashboard</li>
+          </ul>
+        </div>
+        <div class="cs-mercado-tl-item">
+          <p class="cs-mercado-tl-date">Abril / início de maio 2026</p>
+          <p class="cs-mercado-tl-title">Catálogo, matching e identidade visual</p>
+          <ul class="cs-mercado-tl-list">
+            <li>980 figurinhas reais da Copa 2026 no banco (seed com dados oficiais da Panini)</li>
+            <li>Grid de catálogo reorganizado por seleção, ciclo tenho → repetida → preciso</li>
+            <li>Algoritmo de matching por modelo implícito: cruza o que o usuário não tem com o que o outro tem repetido</li>
+            <li>Páginas Matches e Trocas unificadas com abas</li>
+            <li>Emojis substituídos por ícones reais com lucide-react</li>
+            <li>Logos e favicon do produto em SVG e WebP</li>
+            <li>Stripe configurado em produção: checkout, portal e webhook</li>
+            <li>Preço PRO ajustado para R$9,99/mês, trial reduzido para 3 dias</li>
+            <li>Domínio <strong>mercadodasfigurinhas.com.br</strong> configurado</li>
+          </ul>
+        </div>
+        <div class="cs-mercado-tl-item">
+          <p class="cs-mercado-tl-date">Maio 2026</p>
+          <p class="cs-mercado-tl-title">Autenticação completa, segurança e estabilidade</p>
+          <ul class="cs-mercado-tl-list">
+            <li>Login por email e senha com hash scrypt e parâmetros versionados</li>
+            <li>Cadastro com confirmação de e-mail via Resend e modelo PendingRegistration</li>
+            <li>Recuperação de senha com tokens SHA-256, expiração calculada no banco</li>
+            <li>WhatsApp contextual: mensagem personalizada com nome, time e número de cada figurinha</li>
+            <li>Regra de rematch: usuário só volta a dar match após atualizar o catálogo</li>
+            <li>Notificações em tempo real com polling a cada 60s e rollback otimista</li>
+            <li>Mapa de raio próprio (sem Leaflet) com tiles do OpenStreetMap</li>
+            <li>Upload e otimização de avatar (256×256, base64)</li>
+            <li>Modal pós-confirmação de troca com lista do que foi trocado</li>
+            <li>Cache na query de matching com TTL de 5 minutos</li>
+            <li>Domínio verificado no Resend: DKIM, SPF e MX</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       INTERFACE
        ================================================ -->
   <section class="section cs-mercado-soft">
     <div class="container">
       <p class="cs-kicker-light">Interface</p>
-      <h2 class="section-title" data-animate>Uma experiência simples para um ritual presencial.</h2>
-      <p class="cs-body-copy" data-animate data-delay="1" style="max-width: 760px;">
-        As telas evitam complexidade desnecessária: o foco é mostrar o valor do produto rapidamente, permitir controle do álbum e conduzir o usuário para uma conversa quando existir compatibilidade real.
+      <h2 class="section-title" data-animate>Telas construídas para reduzir fricção.</h2>
+      <p class="cs-body-copy" data-animate data-delay="1" style="max-width:760px;">
+        O foco foi mostrar valor rápido, dar controle do álbum e conduzir o usuário ao contato quando existir compatibilidade real. Complexidade evitada em favor de clareza de fluxo.
       </p>
       <div class="cs-mercado-media-grid" data-animate data-delay="2">
         <figure>
           <img src="/assets/projetos/mercado-das-figurinhas/produto-landing.webp" alt="Landing page do Mercado das Figurinhas" loading="lazy">
         </figure>
         <figure>
-          <img src="/assets/projetos/mercado-das-figurinhas/produto-tela-inicial.webp" alt="Tela inicial do produto Mercado das Figurinhas" loading="lazy">
+          <img src="/assets/projetos/mercado-das-figurinhas/produto-tela-inicial.webp" alt="Tela inicial do produto" loading="lazy">
         </figure>
         <figure>
-          <img src="/assets/projetos/mercado-das-figurinhas/album-grid.webp" alt="Grid do álbum com figurinhas" loading="lazy">
+          <img src="/assets/projetos/mercado-das-figurinhas/album-grid.webp" alt="Catálogo com 980 figurinhas" loading="lazy">
         </figure>
         <figure>
-          <img src="/assets/projetos/mercado-das-figurinhas/mind-map.webp" alt="Mapa mental do produto Mercado das Figurinhas" loading="lazy">
+          <img src="/assets/projetos/mercado-das-figurinhas/matches.webp" alt="Tela de matches por proximidade" loading="lazy">
         </figure>
       </div>
     </div>
   </section>
 
   <!-- ================================================
-       RESULTADO
+       CORE LOOP
+       ================================================ -->
+  <section class="section">
+    <div class="cs-container">
+      <p class="cs-kicker-light">Core loop</p>
+      <h2 class="section-title" data-animate>Como o produto funciona.</h2>
+      <p class="cs-body-copy" data-animate data-delay="1">
+        O produto funciona em loop: quanto mais o usuário atualiza o catálogo, mais preciso fica o matching. O catálogo vira o ativo principal. Cada figurinha marcada como repetida é uma potencial troca com alguém próximo.
+      </p>
+      <div class="cs-mercado-loop" data-animate data-delay="2">
+        <div class="cs-mercado-loop-step">
+          <div class="cs-mercado-loop-step__num">1</div>
+          <div class="cs-mercado-loop-step__body">
+            <p class="cs-mercado-loop-step__title">Cria conta</p>
+            <p class="cs-mercado-loop-step__desc">Google OAuth ou email e senha com confirmação. Trial de 3 dias com acesso completo começa após confirmação do e-mail.</p>
+          </div>
+        </div>
+        <div class="cs-mercado-loop-step">
+          <div class="cs-mercado-loop-step__num">2</div>
+          <div class="cs-mercado-loop-step__body">
+            <p class="cs-mercado-loop-step__title">Completa perfil</p>
+            <p class="cs-mercado-loop-step__desc">Informa localização via CEP, define raio de busca (0–100 km) com mapa visual e número de WhatsApp.</p>
+          </div>
+        </div>
+        <div class="cs-mercado-loop-step">
+          <div class="cs-mercado-loop-step__num">3</div>
+          <div class="cs-mercado-loop-step__body">
+            <p class="cs-mercado-loop-step__title">Marca figurinhas</p>
+            <p class="cs-mercado-loop-step__desc">Catálogo completo com 980 figurinhas organizadas por seleção. Ciclo de status: Preciso → Tenho → Repetida → Preciso.</p>
+          </div>
+        </div>
+        <div class="cs-mercado-loop-step">
+          <div class="cs-mercado-loop-step__num">4</div>
+          <div class="cs-mercado-loop-step__body">
+            <p class="cs-mercado-loop-step__title">Busca matches</p>
+            <p class="cs-mercado-loop-step__desc">Sistema cruza catálogo com outros colecionadores dentro do raio definido. Ordena por número de figurinhas em comum. Matching usa modelo implícito: considera como precisa tudo que o usuário ainda não tem.</p>
+          </div>
+        </div>
+        <div class="cs-mercado-loop-step">
+          <div class="cs-mercado-loop-step__num">5</div>
+          <div class="cs-mercado-loop-step__body">
+            <p class="cs-mercado-loop-step__title">Analisa a troca possível</p>
+            <p class="cs-mercado-loop-step__desc">Vê o que cada um oferece e recebe. Usuários do plano FREE enxergam os matches mas não acessam o contato.</p>
+          </div>
+        </div>
+        <div class="cs-mercado-loop-step">
+          <div class="cs-mercado-loop-step__num">6</div>
+          <div class="cs-mercado-loop-step__body">
+            <p class="cs-mercado-loop-step__title">Abre o WhatsApp</p>
+            <p class="cs-mercado-loop-step__desc">Mensagem já vem preenchida com contexto: nome do colecionador, figurinhas que ele oferece e que vai receber, por nome, time e número.</p>
+          </div>
+        </div>
+        <div class="cs-mercado-loop-step">
+          <div class="cs-mercado-loop-step__num">7</div>
+          <div class="cs-mercado-loop-step__body">
+            <p class="cs-mercado-loop-step__title">Confirma a troca</p>
+            <p class="cs-mercado-loop-step__desc">Após combinar fora da plataforma, marca a troca como concluída. O sistema solicita atualização do catálogo e só libera novo match após isso.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       STACK TÉCNICA (dark)
+       ================================================ -->
+  <section class="cs-context" style="padding-block: var(--section-py);">
+    <div class="cs-container">
+      <p class="cs-kicker-dark" style="text-align:left;">Stack técnica</p>
+      <h2 class="section-title" style="color:var(--clr-white);" data-animate>Escolhida para operar um produto real sozinho.</h2>
+      <p class="cs-body-copy cs-body-copy--dark" data-animate data-delay="1">
+        A stack foi escolhida para equilibrar velocidade, custo baixo e capacidade de operar um produto real de forma solo. Todos os serviços têm planos gratuitos ou acessíveis, integração madura e boa documentação. Condição necessária para um projeto sem equipe de engenharia dedicada.
+      </p>
+      <div class="cs-mercado-stack-grid" data-animate data-delay="2">
+        <div class="cs-mercado-tech">
+          <span class="cs-mercado-tech__name">Next.js 16</span>
+          <span class="cs-mercado-tech__role">Framework · App Router</span>
+        </div>
+        <div class="cs-mercado-tech">
+          <span class="cs-mercado-tech__name">TypeScript</span>
+          <span class="cs-mercado-tech__role">Linguagem · strict mode</span>
+        </div>
+        <div class="cs-mercado-tech">
+          <span class="cs-mercado-tech__name">Tailwind CSS v4</span>
+          <span class="cs-mercado-tech__role">Estilos + shadcn/ui</span>
+        </div>
+        <div class="cs-mercado-tech">
+          <span class="cs-mercado-tech__name">Neon PostgreSQL</span>
+          <span class="cs-mercado-tech__role">Banco · serverless</span>
+        </div>
+        <div class="cs-mercado-tech">
+          <span class="cs-mercado-tech__name">Prisma 7</span>
+          <span class="cs-mercado-tech__role">ORM + HTTP adapter</span>
+        </div>
+        <div class="cs-mercado-tech">
+          <span class="cs-mercado-tech__name">Auth.js v5</span>
+          <span class="cs-mercado-tech__role">Autenticação · Google + credenciais</span>
+        </div>
+        <div class="cs-mercado-tech">
+          <span class="cs-mercado-tech__name">Stripe</span>
+          <span class="cs-mercado-tech__role">Pagamentos · checkout + webhook</span>
+        </div>
+        <div class="cs-mercado-tech">
+          <span class="cs-mercado-tech__name">Resend</span>
+          <span class="cs-mercado-tech__role">E-mail transacional</span>
+        </div>
+        <div class="cs-mercado-tech">
+          <span class="cs-mercado-tech__name">Vercel</span>
+          <span class="cs-mercado-tech__role">Deploy · auto-deploy via GitHub</span>
+        </div>
+        <div class="cs-mercado-tech">
+          <span class="cs-mercado-tech__name">TanStack Query v5</span>
+          <span class="cs-mercado-tech__role">Data fetching client-side</span>
+        </div>
+        <div class="cs-mercado-tech">
+          <span class="cs-mercado-tech__name">Zod v4</span>
+          <span class="cs-mercado-tech__role">Validação de dados</span>
+        </div>
+        <div class="cs-mercado-tech">
+          <span class="cs-mercado-tech__name">Analytics + Clarity</span>
+          <span class="cs-mercado-tech__role">Métricas + sessões gravadas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       IA NO PROCESSO
+       ================================================ -->
+  <section class="section">
+    <div class="cs-container">
+      <p class="cs-kicker-light">IA no processo</p>
+      <h2 class="section-title" data-animate>Acelerador operacional, não substituto de decisão.</h2>
+      <p class="cs-body-copy" data-animate data-delay="1">
+        Claude Code e Codex aceleraram a implementação. Debugging, refatoração, revisão de tipos, geração de documentação. As decisões de produto continuaram com o humano. Trabalhar com IA exigiu mais clareza de contexto e critérios de aceite, não menos.
+      </p>
+      <div class="cs-mercado-ai-grid" data-animate data-delay="2">
+        <div class="cs-mercado-ai-col cs-mercado-ai-col--used">
+          <p class="cs-mercado-ai-col__title">IA usada para</p>
+          <ul>
+            <li>Quebrar tarefas complexas em steps menores</li>
+            <li>Implementar features com base em spec clara</li>
+            <li>Debugging de Auth.js, Stripe e Neon adapter</li>
+            <li>Refatoração e limpeza de código</li>
+            <li>Avaliação de edge cases</li>
+            <li>Geração de documentação operacional</li>
+            <li>Revisão de consistência de tipos TypeScript</li>
+          </ul>
+        </div>
+        <div class="cs-mercado-ai-col cs-mercado-ai-col--human">
+          <p class="cs-mercado-ai-col__title">Decisões humanas</p>
+          <ul>
+            <li>Definição e recorte do problema</li>
+            <li>Escopo e priorização do MVP</li>
+            <li>Arquitetura de produto e UX</li>
+            <li>Modelo de negócio e pricing</li>
+            <li>Critérios de aceite e QA</li>
+            <li>Estratégia de lançamento</li>
+            <li>Trade-offs técnicos com impacto de produto</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PRODUTO HOJE (dark)
        ================================================ -->
   <section class="cs-results cs-results--mercado">
     <div class="cs-container">
-      <p class="cs-kicker-dark">Resultado</p>
-      <h2 class="section-title" data-animate>Um produto enxuto para validar descoberta, proximidade e intenção de troca.</h2>
+      <p class="cs-kicker-dark">Produto hoje</p>
+      <h2 class="section-title" data-animate>Funcional em produção, pronto para lançamento público.</h2>
+      <div class="cs-mercado-features" data-animate data-delay="1">
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Landing no domínio próprio</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Login com Google OAuth</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Login com email e senha</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Confirmação de e-mail (Resend)</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Recuperação de senha</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>980 figurinhas reais no banco</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Catálogo com marcação em tempo real</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Matching geolocalizado por raio</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>WhatsApp com mensagem contextual</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Mapa de raio (OpenStreetMap)</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Histórico de trocas com datas</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Notificações com badge e polling</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Perfil com avatar otimizado</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Trial de 3 dias automático</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Stripe Checkout em produção</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Portal Stripe (gestão + cancelamento)</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Webhook de assinatura sincronizado</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Analytics + Microsoft Clarity</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>Deploy automático via GitHub</div>
+        <div class="cs-mercado-feature"><span class="cs-mercado-feature__dot"></span>E-mail DKIM + SPF verificados</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       MÉTRICAS E VALIDAÇÃO
+       ================================================ -->
+  <section class="cs-results cs-results--mercado" style="border-top: 1px solid rgba(255,255,255,0.08);">
+    <div class="cs-container">
+      <p class="cs-kicker-dark">Validação</p>
+      <h2 class="section-title" data-animate>O que precisa ser verdade para o produto funcionar.</h2>
       <div class="cs-metrics" data-animate data-delay="1">
         <div class="cs-metric">
-          <span class="cs-metric__value">matching</span>
-          <span class="cs-metric__label">cruza faltantes e repetidas para mostrar oportunidades reais.</span>
+          <span class="cs-metric__value">2.000</span>
+          <span class="cs-metric__label">cadastros como meta do primeiro mês de operação</span>
         </div>
         <div class="cs-metric">
-          <span class="cs-metric__value">geo</span>
-          <span class="cs-metric__label">prioriza pessoas próximas, respeitando a natureza presencial da troca.</span>
+          <span class="cs-metric__value">70%</span>
+          <span class="cs-metric__label">dos cadastrados devem marcar ao menos 1 figurinha</span>
         </div>
         <div class="cs-metric">
-          <span class="cs-metric__value">MVP</span>
-          <span class="cs-metric__label">usa WhatsApp como ponte para validar demanda antes de criar camadas mais complexas.</span>
+          <span class="cs-metric__value">≥ 1</span>
+          <span class="cs-metric__label">match gerado por usuário ativo como indicador mínimo</span>
+        </div>
+        <div class="cs-metric">
+          <span class="cs-metric__value">40%</span>
+          <span class="cs-metric__label">de retenção D7 como sinal de valor recorrente</span>
+        </div>
+        <div class="cs-metric">
+          <span class="cs-metric__value">NPS 30+</span>
+          <span class="cs-metric__label">em survey pós-MVP via e-mail transacional e banner in-app</span>
+        </div>
+        <div class="cs-metric">
+          <span class="cs-metric__value">15+</span>
+          <span class="cs-metric__label">cidades com 10 ou mais usuários para massa crítica local</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PRÓXIMOS PASSOS
+       ================================================ -->
+  <section class="section">
+    <div class="cs-container">
+      <p class="cs-kicker-light">Próximos passos</p>
+      <h2 class="section-title" data-animate>O produto está funcional. O lançamento está próximo.</h2>
+      <p class="cs-body-copy" data-animate data-delay="1">
+        As limitações atuais não impedem o funcionamento do MVP. Orientam as próximas iterações. Os principais pontos são melhorar ativação, revisar segurança e validar massa crítica por cidade.
+      </p>
+      <div class="cs-mercado-next" data-animate data-delay="2">
+        <div class="cs-mercado-next-item">
+          <p class="cs-mercado-next-item__num">01</p>
+          <p class="cs-mercado-next-item__title">Onboarding guiado</p>
+          <p class="cs-mercado-next-item__desc">Reduzir a distância entre cadastro e primeiro valor percebido. O produto depende de dados do catálogo para gerar bons matches. O onboarding precisa ensinar isso rápido.</p>
+        </div>
+        <div class="cs-mercado-next-item">
+          <p class="cs-mercado-next-item__num">02</p>
+          <p class="cs-mercado-next-item__title">Análise heurística</p>
+          <p class="cs-mercado-next-item__desc">Revisar os fluxos críticos pelos critérios de Nielsen antes do lançamento: cadastro, catálogo, matches, WhatsApp e billing. Foco em fricções que prejudicam ativação.</p>
+        </div>
+        <div class="cs-mercado-next-item">
+          <p class="cs-mercado-next-item__num">03</p>
+          <p class="cs-mercado-next-item__title">Revisão de segurança</p>
+          <p class="cs-mercado-next-item__desc">Auditar rotas protegidas, validações de input, permissões por plano, webhook Stripe, recuperação de senha, dados sensíveis e variáveis de ambiente antes do beta público.</p>
+        </div>
+        <div class="cs-mercado-next-item">
+          <p class="cs-mercado-next-item__num">04</p>
+          <p class="cs-mercado-next-item__title">Lançamento beta público</p>
+          <p class="cs-mercado-next-item__desc">Estratégia cidade a cidade para construir massa crítica local. Sem matches relevantes em regiões sem usuários, o produto perde valor. Por isso, concentrar aquisição antes de escalar.</p>
+        </div>
+        <div class="cs-mercado-next-item">
+          <p class="cs-mercado-next-item__num">05</p>
+          <p class="cs-mercado-next-item__title">Funil de ativação</p>
+          <p class="cs-mercado-next-item__desc">Acompanhar cada etapa: visita → cadastro → confirmação → primeira figurinha → primeiro match → clique no WhatsApp → conversão PRO. Analytics e Clarity já instalados.</p>
+        </div>
+        <div class="cs-mercado-next-item">
+          <p class="cs-mercado-next-item__num">06</p>
+          <p class="cs-mercado-next-item__title">Survey quantitativo</p>
+          <p class="cs-mercado-next-item__desc">Após D7, rodar survey via e-mail e in-app para validar hipóteses: proximidade como fator decisivo, matching vs. WhatsApp, clareza do onboarding, percepção do pricing PRO.</p>
         </div>
       </div>
     </div>
@@ -308,19 +703,27 @@ description: "Produto de matching geolocalizado para conectar colecionadores de 
   <section class="cs-learnings">
     <div class="container">
       <p class="cs-kicker-light">Aprendizados</p>
-      <h2 class="section-title" data-animate>Mercado sazonal exige produto direto.</h2>
+      <h2 class="section-title" data-animate>Construir um produto real exige decisões muito além da interface.</h2>
       <div class="cs-learnings__list">
         <div class="cs-learning" data-animate>
           <div class="cs-learning__icon">01</div>
-          <p class="cs-learning__text">Quando a janela de uso é curta, a experiência precisa mostrar valor antes de pedir cadastro ou configuração demais.</p>
+          <p class="cs-learning__text">Em mercados sazonais com janela curta, mostrar valor antes de pedir esforço demais é mais importante do que ter o produto perfeito. A velocidade de chegada ao usuário vale mais do que o refinamento prematuro.</p>
         </div>
         <div class="cs-learning" data-animate data-delay="1">
           <div class="cs-learning__icon">02</div>
-          <p class="cs-learning__text">Em produtos locais, geolocalização não é enfeite. Ela muda a utilidade da solução.</p>
+          <p class="cs-learning__text">Produto real exige lidar com auth, e-mail, pagamento, webhooks, migrações de banco, bugs em produção e deploy contínuo. UX é só uma das camadas, e longe de ser a mais difícil de manter.</p>
         </div>
         <div class="cs-learning" data-animate data-delay="2">
           <div class="cs-learning__icon">03</div>
-          <p class="cs-learning__text">MVP bom não precisa resolver todo o ritual. Precisa provar que o ponto de maior fricção tem demanda real.</p>
+          <p class="cs-learning__text">IA acelera, mas exige direção clara. Quanto mais preciso o contexto e os critérios de aceite, mais útil o output. Operar bem com IA é uma habilidade de produto, não só de engenharia.</p>
+        </div>
+        <div class="cs-learning" data-animate data-delay="3">
+          <div class="cs-learning__icon">04</div>
+          <p class="cs-learning__text">Em produtos locais, geolocalização não é enfeite. Ela muda a utilidade da solução. O raio de busca precisou entrar como critério central (não como filtro opcional) para o produto fazer sentido.</p>
+        </div>
+        <div class="cs-learning" data-animate data-delay="4">
+          <div class="cs-learning__icon">05</div>
+          <p class="cs-learning__text">O ponto de maior fricção no produto não era a troca. Era a descoberta. Identificar e construir em cima desse recorte específico definiu tudo: o que entrou no MVP, o que ficou fora e como a monetização foi posicionada.</p>
         </div>
       </div>
     </div>
@@ -337,31 +740,37 @@ description: "Produto de matching geolocalizado para conectar colecionadores de 
           <p class="cs-role__label">Papel</p>
           <div class="cs-tags">
             <span class="cs-tag">Digital Product Builder</span>
+            <span class="cs-tag">Product Designer</span>
+            <span class="cs-tag">Product Owner</span>
           </div>
         </div>
         <div class="cs-role__group">
           <p class="cs-role__label">Skills</p>
           <div class="cs-tags">
-            <span class="cs-tag">Pesquisa exploratória</span>
+            <span class="cs-tag">Pesquisa de mercado</span>
             <span class="cs-tag">Estratégia de produto</span>
-            <span class="cs-tag">Análise de resultados</span>
+            <span class="cs-tag">UX/UI Design</span>
+            <span class="cs-tag">Implementação assistida por IA</span>
+            <span class="cs-tag">QA e operação</span>
           </div>
         </div>
         <div class="cs-role__group">
           <p class="cs-role__label">Ferramentas</p>
           <div class="cs-tags">
             <span class="cs-tag">Figma</span>
-            <span class="cs-tag">IA aplicada</span>
-            <span class="cs-tag">Mapa mental</span>
+            <span class="cs-tag">Claude Code</span>
+            <span class="cs-tag">Next.js</span>
+            <span class="cs-tag">Stripe</span>
+            <span class="cs-tag">Neon</span>
+            <span class="cs-tag">Vercel</span>
+            <span class="cs-tag">Resend</span>
           </div>
         </div>
         <div class="cs-role__group">
-          <p class="cs-role__label">Métodos</p>
+          <p class="cs-role__label">Período</p>
           <div class="cs-tags">
-            <span class="cs-tag">Pesquisa desk</span>
-            <span class="cs-tag">Prototipação</span>
-            <span class="cs-tag">Fluxo de matching</span>
-            <span class="cs-tag">Modelo de monetização</span>
+            <span class="cs-tag">Março 2026 · presente</span>
+            <span class="cs-tag">Em produção</span>
           </div>
         </div>
       </div>
