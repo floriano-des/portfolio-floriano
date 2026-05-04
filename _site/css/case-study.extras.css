@@ -1,0 +1,99 @@
+/* ===================================================
+   Gallery (marquee auto-scroll)
+   =================================================== */
+.cs-gallery {
+  overflow: hidden;
+  padding-block: var(--space-5);
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cs-gallery__track {
+  display: flex;
+  gap: var(--space-4);
+  width: max-content;
+  animation: cs-marquee 36s linear infinite;
+}
+
+.cs-gallery__track:hover {
+  animation-play-state: paused;
+}
+
+.cs-gallery__img {
+  height: 200px;
+  width: auto;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cs-quantum .cs-gallery {
+  padding-block: var(--space-4);
+}
+
+.cs-quantum .cs-gallery__img {
+  height: clamp(140px, 15vw, 180px);
+}
+
+@keyframes cs-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-gallery__track {
+    animation: none;
+  }
+}
+
+/* ===================================================
+   Role & Responsibilities
+   =================================================== */
+.cs-role {
+  padding-block: var(--section-py);
+  border-top: 1px solid var(--clr-border);
+}
+
+.cs-role__groups {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.cs-role__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.cs-role__label {
+  font-size: 0.7rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-orange);
+  text-transform: uppercase;
+  letter-spacing: 0.10em;
+}
+
+.cs-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.cs-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: var(--fw-medium);
+  line-height: 1;
+  background: rgba(238, 120, 46, 0.10);
+  color: var(--clr-orange);
+  border: 1px solid rgba(238, 120, 46, 0.25);
+}
