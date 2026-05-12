@@ -57,19 +57,24 @@
   <link rel="stylesheet" href="/css/style.footer-motion.css?v={{ '/css/style.footer-motion.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/style.responsive.css?v={{ '/css/style.responsive.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/style.pages.css?v={{ '/css/style.pages.css' | assetVersion }}">
+  {% if extraStylesheet %}<link rel="stylesheet" href="{{ extraStylesheet }}?v={{ extraStylesheet | assetVersion }}">{% endif %}
   {% block extraStyles %}{% endblock %}
 </head>
-<body>
+<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K738G4S2"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
+  {% if not hideSiteChrome %}
   {% include "partials/nav.njk" %}
+  {% endif %}
 
   {{ content | safe }}
 
+  {% if not hideSiteChrome %}
   {% include "partials/footer.njk" %}
+  {% endif %}
 
   <script src="/js/main.js?v={{ '/js/main.js' | assetVersion }}"></script>
 </body>

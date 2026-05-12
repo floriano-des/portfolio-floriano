@@ -1,0 +1,50 @@
+---
+layout: base.njk
+permalink: /treino/
+title: "Treino | Floriano"
+description: "Rotina pessoal de treino de Floriano."
+robots: "noindex, nofollow"
+eleventyExcludeFromSitemap: true
+hideSiteChrome: true
+bodyClass: workout-shell
+extraStylesheet: /css/style.workout.css
+---
+<main class="workout-app" aria-labelledby="workoutTitle">
+  <header class="workout-topbar">
+    <div>
+      <p class="workout-kicker">Treino Sanda</p>
+      <h1 class="workout-title" id="workoutTitle">Rotina da semana</h1>
+    </div>
+    <button class="workout-reset" type="button" data-reset-day>Zerar dia</button>
+  </header>
+
+  <nav class="workout-tabs" id="workoutTabs" aria-label="Dias da semana"></nav>
+
+  <section class="workout-progress" aria-label="Progresso do dia">
+    <div>
+      <span class="workout-progress__label">Progresso</span>
+      <strong class="workout-progress__value" id="workoutProgressValue">0%</strong>
+    </div>
+    <div class="workout-progress__track" aria-hidden="true">
+      <span class="workout-progress__fill" id="workoutProgressFill"></span>
+    </div>
+  </section>
+
+  <section class="workout-content" id="workoutContent" aria-live="polite"></section>
+
+  <aside class="workout-timer" id="workoutTimer" aria-hidden="true">
+    <div class="workout-timer__handle" aria-hidden="true"></div>
+    <p class="workout-timer__label" id="workoutTimerLabel">Descanso</p>
+    <h2 class="workout-timer__name" id="workoutTimerName"></h2>
+    <div class="workout-timer__display" id="workoutTimerDisplay">1:00</div>
+    <div class="workout-timer__bar" aria-hidden="true">
+      <span class="workout-timer__fill" id="workoutTimerFill"></span>
+    </div>
+    <div class="workout-timer__actions">
+      <button class="workout-timer__button workout-timer__button--secondary" type="button" data-stop-timer>Cancelar</button>
+      <button class="workout-timer__button workout-timer__button--primary" type="button" data-pause-timer>Pausar</button>
+    </div>
+  </aside>
+</main>
+
+<script src="/js/workout.js?v={{ '/js/workout.js' | assetVersion }}" defer></script>
