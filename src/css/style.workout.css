@@ -250,6 +250,19 @@
   line-height: 1.45;
 }
 
+.workout-card__alt {
+  margin: 5px 0 0;
+  color: rgba(255, 255, 255, 0.46);
+  font-size: 0.72rem;
+  font-weight: var(--fw-medium);
+  line-height: 1.45;
+}
+
+.workout-card__alt::before {
+  content: "Alternativa: ";
+  color: rgba(255, 255, 255, 0.32);
+}
+
 .workout-card__bottom {
   display: flex;
   align-items: center;

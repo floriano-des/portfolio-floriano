@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var STORAGE_KEY = 'floriano-workout-v1';
+  var STORAGE_KEY = 'floriano-workout-v2';
 
   var DAYS = [
     {
@@ -9,42 +9,29 @@
       label: 'Seg',
       type: 'gym',
       day: 'Segunda',
-      sub: 'Pernas',
-      tip: 'Dia mais longe do Sanda. Quarta e quinta ajudam a recuperar antes do próximo estímulo forte.',
+      sub: 'Full Body A, empurrar + quadríceps',
+      tip: '48h até o Sanda. Foca em força nos compostos. Leva cada série até 1 ou 2 reps na reserva.',
       core: [
-        { name: 'Prancha frontal', sets: 3, reps: '40s', timer: 40, timed: true },
-        { name: 'Elevação de pernas', sets: 3, reps: '12 rep', timer: 60, timed: false },
-        { name: 'Russian twist com peso', sets: 3, reps: '15 rep', timer: 60, timed: false },
-        { name: 'Hollow hold', sets: 3, reps: '30s', timer: 30, timed: true }
+        { name: 'Pallof press no cabo', sets: 3, reps: '12 cada lado', note: 'Anti-rotacional, transfere para o clinch', timer: 45, timed: false },
+        { name: 'Prancha lateral', sets: 3, reps: '30s cada', timer: 30, timed: true },
+        { name: 'Pescoço, flexão e extensão', sets: 2, reps: '15 cada', note: 'Com a mão ou faixa, leve', timer: 45, timed: false }
       ],
       main: [
-        { name: 'Agachamento livre', sets: 4, reps: '8 rep', note: 'Explosivo na subida', timer: 90, timed: false, badge: 'base' },
-        { name: 'Leg press', sets: 3, reps: '10 rep', timer: 90, timed: false },
-        { name: 'Mesa flexora', sets: 3, reps: '10 rep', note: 'Posterior da coxa', timer: 90, timed: false },
-        { name: 'Cadeira extensora', sets: 3, reps: '12 rep', timer: 60, timed: false },
-        { name: 'Panturrilha no aparelho', sets: 3, reps: '15 rep', note: 'Leve, o Sanda já trabalha bastante', timer: 60, timed: false }
+        { name: 'Salto no caixote', sets: 3, reps: '5 rep', note: 'Opcional. Pula se estiver cansado', timer: 90, timed: false, badge: 'explosivo' },
+        { name: 'Agachamento livre', sets: 4, reps: '5 rep', note: 'Carga alta, explosivo na subida', timer: 150, timed: false, badge: 'base' },
+        { name: 'Supino reto com barra', sets: 4, reps: '5 rep', note: 'Desce controlado, sobe socando a barra', alt: 'Supino reto com halteres', timer: 120, timed: false, badge: 'explosivo' },
+        { name: 'Remada curvada com barra', sets: 4, reps: '6 rep', note: 'Explosivo na puxada', alt: 'Remada cavalinho, T-bar, ou remada curvada com halteres', timer: 120, timed: false, badge: 'explosivo' },
+        { name: 'Stiff, terra romeno', sets: 3, reps: '8 rep', note: 'Posterior leve, quadril articula', alt: 'Stiff com halteres', timer: 90, timed: false },
+        { name: 'Desenvolvimento com halteres', sets: 3, reps: '8 rep', alt: 'Desenvolvimento com barra', timer: 90, timed: false }
       ]
     },
     {
       id: 'ter',
       label: 'Ter',
-      type: 'gym',
+      type: 'rest',
       day: 'Terça',
-      sub: 'Empurrar, peito, ombro e tríceps',
-      tip: 'Na subida do supino, pensa em socar a barra. Velocidade na fase concêntrica.',
-      core: [
-        { name: 'Prancha lateral', sets: 3, reps: '30s cada', timer: 30, timed: true },
-        { name: 'Abdominal bicicleta', sets: 3, reps: '20 rep', timer: 60, timed: false },
-        { name: 'Dead bug', sets: 3, reps: '10 rep', timer: 60, timed: false },
-        { name: 'Prancha com toque no ombro', sets: 3, reps: '12 rep', timer: 45, timed: true }
-      ],
-      main: [
-        { name: 'Supino reto com barra', sets: 4, reps: '6 rep', note: 'Desce controlado, sobe explodindo', timer: 120, timed: false, badge: 'explosivo' },
-        { name: 'Desenvolvimento com halteres', sets: 3, reps: '8 rep', note: 'Explosivo na subida', timer: 90, timed: false, badge: 'explosivo' },
-        { name: 'Supino inclinado', sets: 3, reps: '10 rep', timer: 90, timed: false },
-        { name: 'Tríceps corda', sets: 3, reps: '12 rep', timer: 60, timed: false },
-        { name: 'Elevação lateral', sets: 3, reps: '12 rep', note: 'Leve, protege o ombro para luta', timer: 60, timed: false }
-      ]
+      sub: 'Descanso, recupera para o Sanda',
+      restText: 'Recupera para o Sanda. Mobilidade leve, caminhada e sono.'
     },
     {
       id: 'qua',
@@ -52,27 +39,27 @@
       type: 'sanda',
       day: 'Quarta',
       sub: 'Sanda',
-      tip: 'Sem academia hoje. Foca em timing, footwork e sparring. O treino já é o esforço principal.'
+      tip: 'Sem academia hoje. Foca em timing, footwork e sparring. O treino já é o esforço.'
     },
     {
       id: 'qui',
       label: 'Qui',
       type: 'gym',
       day: 'Quinta',
-      sub: 'Puxar, costas e bíceps',
-      tip: 'Costas fortes ajudam na velocidade dos socos e em projeções mais potentes.',
+      sub: 'Full Body B, puxar + posterior',
+      tip: 'Costas fortes geram socos mais rápidos e projeções mais potentes. Cuidado no terra se a perna estiver pesada do Sanda de ontem.',
       core: [
-        { name: 'Superman', sets: 3, reps: '12 rep', timer: 60, timed: false },
-        { name: 'Abdominal remador', sets: 3, reps: '15 rep', timer: 60, timed: false },
-        { name: 'Prancha com rotação', sets: 3, reps: '10 cada lado', timer: 45, timed: true },
-        { name: 'Prancha frontal', sets: 3, reps: '40s', timer: 40, timed: true }
+        { name: 'Lenhador no cabo', sets: 3, reps: '10 cada lado', note: 'Rotacional, transfere para chute e soco', timer: 45, timed: false },
+        { name: 'Elevação de pernas nas paralelas', sets: 3, reps: '12 rep', note: 'Joelho dobrado se 12 estendido for difícil', timer: 60, timed: false },
+        { name: 'Pescoço, lateral', sets: 2, reps: '15 cada', note: 'Com a mão ou faixa, leve', timer: 45, timed: false }
       ],
       main: [
-        { name: 'Remada curvada com barra', sets: 4, reps: '6 rep', note: 'Explosivo na puxada', timer: 120, timed: false, badge: 'explosivo' },
-        { name: 'Puxada frontal', sets: 4, reps: '8 rep', timer: 90, timed: false },
-        { name: 'Remada unilateral com halter', sets: 3, reps: '10 rep', timer: 90, timed: false },
-        { name: 'Rosca direta com barra', sets: 3, reps: '8 rep', note: 'Explosivo na subida', timer: 90, timed: false, badge: 'explosivo' },
-        { name: 'Facepull', sets: 3, reps: '12 rep', note: 'Saúde do ombro, não pule', timer: 60, timed: false }
+        { name: 'Levantamento terra', sets: 4, reps: '5 rep', note: 'Força máxima. Técnica antes de carga', timer: 180, timed: false, badge: 'base' },
+        { name: 'Puxada frontal', sets: 4, reps: '7 rep', note: 'Pega aberta, puxa até o peito', alt: 'Barra fixa', timer: 120, timed: false },
+        { name: 'Supino inclinado com halteres', sets: 3, reps: '10 rep', alt: 'Supino inclinado com barra', timer: 90, timed: false },
+        { name: 'Remada unilateral com halter', sets: 3, reps: '10 rep', note: 'Cuidado com a rotação do tronco', alt: 'Remada serrote no banco', timer: 90, timed: false },
+        { name: 'Facepull', sets: 3, reps: '12 rep', note: 'Saúde do ombro, não pule', alt: 'Crucifixo invertido com halteres', timer: 60, timed: false },
+        { name: 'Elevação lateral', sets: 3, reps: '12 rep', note: 'Leve, protege o ombro para luta', alt: 'Elevação lateral no cabo', timer: 60, timed: false }
       ]
     },
     {
@@ -81,7 +68,7 @@
       type: 'sanda',
       day: 'Sexta',
       sub: 'Sanda',
-      tip: 'Se a perna ainda estiver pesada da segunda, avisa o professor. Melhor adaptar do que lesionar.'
+      tip: 'Se a perna ainda estiver pesada do terra de ontem, avisa o professor. Melhor adaptar do que lesionar.'
     },
     { id: 'sab', label: 'Sáb', type: 'rest', day: 'Sábado', sub: 'Descanso' },
     { id: 'dom', label: 'Dom', type: 'rest', day: 'Domingo', sub: 'Descanso' }
@@ -160,7 +147,7 @@
           '<div class="workout-state">',
             '<span class="workout-state__eyebrow">Recuperação</span>',
             '<h2 class="workout-state__title">Descanso ativo</h2>',
-            '<p class="workout-state__text">Mobilidade leve, caminhada e sono. O músculo cresce fora da academia também.</p>',
+            '<p class="workout-state__text">' + (day.restText || 'Mobilidade leve, caminhada e sono. O músculo cresce fora da academia também.') + '</p>',
           '</div>',
         '</article>'
       ].join('');
@@ -186,7 +173,7 @@
     contentEl.innerHTML = [
       '<article class="workout-day">',
         renderDayHeader(day),
-        renderSection(day, 'core', 'Aquecimento, core, 15 min'),
+        renderSection(day, 'core', 'Preparação, core e pescoço'),
         renderSection(day, 'main', 'Treino principal'),
       '</article>'
     ].join('');
@@ -238,6 +225,7 @@
           '<div>',
             '<h4 class="workout-card__name">' + exercise.name + '</h4>',
             exercise.note ? '<p class="workout-card__note">' + exercise.note + '</p>' : '',
+            exercise.alt ? '<p class="workout-card__alt">' + exercise.alt + '</p>' : '',
           '</div>',
           '<button class="workout-timer-button ' + timerClass + '" type="button" data-timer="' + key + '">',
             '<span class="workout-timer-button__time">' + formatTime(exercise.timer) + '</span>',
@@ -260,7 +248,7 @@
       return '<span class="workout-badge workout-badge--orange">Explosivo</span>';
     }
     if (section === 'core') {
-      return '<span class="workout-badge workout-badge--blue">Aquecimento</span>';
+      return '<span class="workout-badge workout-badge--blue">Preparação</span>';
     }
     if (complete) {
       return '<span class="workout-badge workout-badge--green">Concluído</span>';
