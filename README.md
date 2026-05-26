@@ -6,7 +6,7 @@ Este arquivo descreve quem é Floriano, qual é o posicionamento do site, como o
 
 ## Quem é Floriano
 
-**Floriano Silva** é um **Digital Product Builder** com mais de 8 anos de experiência construindo produtos digitais. Seu diferencial não está em apenas executar — está em entender o problema de negócio a fundo, estruturar a solução correta e desenvolver o produto funcional adequado.
+**Floriano Silva** é um **UX Engineer** com mais de 8 anos de experiência construindo produtos digitais. Seu diferencial não está em apenas executar — está em entender o problema de negócio a fundo, estruturar a solução correta e desenvolver o produto funcional adequado.
 
 Ele atua entre negócio, experiência e tecnologia. O repertório cobre UX, estratégia de produto, growth, CRO, analytics, dados, desenvolvimento web e IA aplicada. Não é especialista absoluto em tudo — é um profissional com escuta, leitura de contexto e capacidade de conectar áreas para chegar na solução certa.
 
@@ -19,7 +19,7 @@ A IA faz parte do método de trabalho, não da identidade. Ela aparece como apoi
 
 ## Posicionamento e tom de voz
 
-- O título principal é exatamente: **Digital Product Builder**. Não usar variações.
+- O título principal é exatamente: **UX Engineer**. Não usar variações.
 - O site comunica: entendimento do problema → estruturação da solução → construção do produto digital.
 - Design é uma ferramenta, não a identidade. Não posicionar Floriano como "designer que também programa".
 - Tom: direto, estratégico, humano. Sem jargões vazios, sem exageros, sem corporativês.
@@ -32,7 +32,7 @@ A IA faz parte do método de trabalho, não da identidade. Ela aparece como apoi
 
 **Decisões editoriais consolidadas:**
 - A página `/projetos/` foi removida — era réplica da home. O nav "Projetos" aponta para `/#projetos`.
-- As seções "Repertório aplicado" (sites de clientes) e "Explorações" (carrossel de interfaces) foram removidas da home e da página de projetos — conflitavam com o posicionamento de Digital Product Builder.
+- As seções "Repertório aplicado" (sites de clientes) e "Explorações" (carrossel de interfaces) foram removidas da home e da página de projetos — conflitavam com o posicionamento de UX Engineer.
 - A seção de design gráfico foi movida para a página Sobre (link discreto na trajetória).
 - Ordem dos projetos na home: Quantum Vizz → 2P Web Dev → Mercado das Figurinhas → Farm Well Hub → Olho Vivo → Bit System.
 
@@ -254,10 +254,10 @@ Disponível em todos os templates como `{{ metadata.* }}`. É a fonte de verdade
 
 ```json
 {
-  "title": "Floriano Silva | Digital Product Builder",
-  "description": "Sou Floriano, Digital Product Builder. Entendo problemas de negócio, estruturo soluções digitais e desenvolvo produtos funcionais unindo UX, estratégia, dados e tecnologia.",
-  "profession": "Digital Product Builder",
-  "siteName": "Floriano Silva · Digital Product Builder"
+  "title": "Floriano Silva | UX Engineer",
+  "description": "Sou Floriano, UX Engineer. Entendo problemas de negócio, estruturo soluções digitais e desenvolvo produtos funcionais unindo UX, estratégia, dados e tecnologia.",
+  "profession": "UX Engineer",
+  "siteName": "Floriano Silva · UX Engineer"
 }
 ```
 
