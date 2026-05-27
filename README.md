@@ -1,4 +1,4 @@
-# README — Contexto do projeto floriano.des.br
+# README - Contexto do projeto floriano.des.br
 
 Este arquivo descreve quem é Floriano, qual é o posicionamento do site, como o projeto está estruturado e como o site funciona tecnicamente. É lido por Claude Code e Codex em todas as sessões.
 
@@ -6,9 +6,9 @@ Este arquivo descreve quem é Floriano, qual é o posicionamento do site, como o
 
 ## Quem é Floriano
 
-**Floriano Silva** é um **UX Engineer** com mais de 8 anos de experiência construindo produtos digitais. Seu diferencial não está em apenas executar — está em entender o problema de negócio a fundo, estruturar a solução correta e desenvolver o produto funcional adequado.
+**Floriano Silva** é um **Designer de experiências digitais** com mais de 8 anos de experiência construindo produtos, sites e experiências digitais. Seu diferencial não está em apenas executar, está em entender o problema de negócio a fundo, estruturar a solução correta e desenvolver a experiência funcional adequada.
 
-Ele atua entre negócio, experiência e tecnologia. O repertório cobre UX, estratégia de produto, growth, CRO, analytics, dados, desenvolvimento web e IA aplicada. Não é especialista absoluto em tudo — é um profissional com escuta, leitura de contexto e capacidade de conectar áreas para chegar na solução certa.
+Ele atua entre negócio, experiência e tecnologia. O repertório cobre UX, estratégia de produto, marketing digital, growth, CRO, analytics, dados, desenvolvimento web e IA aplicada. Não é especialista absoluto em tudo, é um profissional com escuta, leitura de contexto e capacidade de conectar áreas para chegar na solução certa.
 
 A IA faz parte do método de trabalho, não da identidade. Ela aparece como apoio para desenvolvimento, prototipação e entrega.
 
@@ -19,22 +19,22 @@ A IA faz parte do método de trabalho, não da identidade. Ela aparece como apoi
 
 ## Posicionamento e tom de voz
 
-- O título principal é exatamente: **UX Engineer**. Não usar variações.
-- O site comunica: entendimento do problema → estruturação da solução → construção do produto digital.
+- O título principal é exatamente: **Designer de experiências digitais**. Não usar o posicionamento antigo como título público.
+- O site comunica: entendimento do problema, estruturação da solução e construção da experiência digital funcional.
 - Design é uma ferramenta, não a identidade. Não posicionar Floriano como "designer que também programa".
 - Tom: direto, estratégico, humano. Sem jargões vazios, sem exageros, sem corporativês.
-- O texto soa como alguém que pensa, estrutura e executa — não como consultor que só analisa, nem como alguém que só codifica.
+- O texto soa como alguém que pensa, estrutura e executa, não como consultor que só analisa, nem como alguém que só codifica.
 
-**Escopo protegido — nunca alterar:**
+**Escopo protegido, nunca alterar:**
 - Conteúdo interno dos cases/projetos (`src/projetos/*.njk`)
 - Posts, reflexões e artigos
 - Métricas, resultados e números dos projetos
 
 **Decisões editoriais consolidadas:**
-- A página `/projetos/` foi removida — era réplica da home. O nav "Projetos" aponta para `/#projetos`.
-- As seções "Repertório aplicado" (sites de clientes) e "Explorações" (carrossel de interfaces) foram removidas da home e da página de projetos — conflitavam com o posicionamento de UX Engineer.
+- A página `/projetos/` foi removida. Era réplica da home. O nav "Portfólio" aponta para `/#projetos`.
+- A home agora prioriza serviços, IA no processo e portfólio comercial para clientes diretos.
 - A seção de design gráfico foi movida para a página Sobre (link discreto na trajetória).
-- Ordem dos projetos na home: Quantum Vizz → 2P Web Dev → Mercado das Figurinhas → Farm Well Hub → Olho Vivo → Bit System.
+- Ordem dos projetos na home: Quantum Vizz, 2P Web Dev, Mercado das Figurinhas, Bit System, Farm Well Hub e Olho Vivo.
 
 ---
 
@@ -43,9 +43,9 @@ A IA faz parte do método de trabalho, não da identidade. Ela aparece como apoi
 | Tecnologia | Versão | Uso |
 |---|---|---|
 | Eleventy (11ty) | ^3.1.5 | Gerador de site estático |
-| Nunjucks | — | Template engine |
-| CSS Puro | — | Estilização (sem Tailwind/Bootstrap) |
-| JavaScript Vanilla | — | Interatividade (sem React/Vue) |
+| Nunjucks | n/a | Template engine |
+| CSS Puro | n/a | Estilização (sem Tailwind/Bootstrap) |
+| JavaScript Vanilla | n/a | Interatividade (sem React/Vue) |
 | Node.js | 20 | Runtime de build |
 | Rimraf | ^6.0.1 | Limpeza de `_site/` antes do build |
 | GitHub Actions | — | CI/CD automatizado |
@@ -254,10 +254,10 @@ Disponível em todos os templates como `{{ metadata.* }}`. É a fonte de verdade
 
 ```json
 {
-  "title": "Floriano Silva | UX Engineer",
-  "description": "Sou Floriano, UX Engineer. Entendo problemas de negócio, estruturo soluções digitais e desenvolvo produtos funcionais unindo UX, estratégia, dados e tecnologia.",
-  "profession": "UX Engineer",
-  "siteName": "Floriano Silva · UX Engineer"
+  "title": "Floriano Silva | Designer de experiências digitais",
+  "description": "Crio produtos, sites e experiências digitais que unem UX, estratégia, dados, marketing e tecnologia para resolver problemas de negócio com clareza e resultado.",
+  "profession": "Designer de experiências digitais",
+  "siteName": "Floriano Silva · Designer de experiências digitais"
 }
 ```
 

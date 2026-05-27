@@ -253,6 +253,40 @@
     padding-block: 22px;
   }
 
+  .home-services__grid,
+  .ai-process__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-services .section-subtitle,
+  .featured-projects .section-subtitle {
+    max-width: 100%;
+  }
+
+  .home-service-card {
+    padding: 24px 20px;
+  }
+
+  .ai-process__grid {
+    gap: 34px;
+  }
+
+  .ai-process__tools {
+    gap: 10px;
+  }
+
+  .ai-process__tools span {
+    min-height: 36px;
+  }
+
+  .ai-process__list li {
+    padding-block: 18px;
+  }
+
+  .ai-process__list li::before {
+    top: 27px;
+  }
+
   .featured-projects__grid {
     grid-template-columns: 1fr;
   }
@@ -448,6 +482,18 @@
     gap: 16px;
   }
 
+  .whatsapp-float {
+    right: 18px;
+    bottom: 18px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-float svg {
+    width: 27px;
+    height: 27px;
+  }
+
   /* Footer */
   .footer__container {
     flex-direction: column;
@@ -478,4 +524,3 @@
     height: 38px;
   }
 }
-
