@@ -15,7 +15,7 @@ summary:
   - label: "Ação"
     text: "Analisei comportamento no Hotjar (mapas de calor e rolagem), relatórios de Google Ads, intenção de busca e sinais nas redes sociais. Reformulei texto, hierarquia e chamadas para ação. Implementei o redesenho em WordPress + Elementor e acompanhei o teste A/B até validar o resultado."
   - label: "Resultado"
-    text: "Taxa de conversão subiu de 0,71% para 2,09%, totalizando <strong>+194%</strong>. Tempo médio de sessão cresceu <strong>+42,8%</strong>. Tudo sem aumentar o orçamento de mídia."
+    text: "Taxa de conversão subu de 0,71% para 2,09%, totalizando <strong>+194%</strong>. Tempo médio de sessão cresceu <strong>+42,8%</strong>. Tudo sem aumentar o orçamento de mídia."
 metrics:
   - value: "+194%"
     label: "de aumento na taxa de conversão"
