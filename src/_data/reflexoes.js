@@ -42,7 +42,7 @@ function parseRSS(xml) {
     const imgMatch  = content.match(/src="(https?:\/\/[^"]+)"/);
     const thumbnail = imgMatch ? imgMatch[1] : null;
 
-    const plainText = toPlainText(desc || content);
+    const plainText = normalizePositioningTerms(toPlainText(desc || content));
     const excerpt = makeExcerpt(plainText, 160);
 
     // Formata data para exibição em pt-BR
@@ -60,7 +60,7 @@ function parseRSS(xml) {
       }
     }
 
-    let contentHtml = sanitizeMediumHtml(content);
+    let contentHtml = normalizePositioningTerms(sanitizeMediumHtml(content));
     if (thumbnail) {
       contentHtml = removeFirstThumbnailFigure(contentHtml, thumbnail);
     }
@@ -91,8 +91,8 @@ function normalizePost(post) {
   const title = post.title || 'Reflexão';
   const sourceUrl = post.sourceUrl || post.link || '';
   const slug = post.slug || slugFromMediumUrl(sourceUrl) || slugify(title);
-  const plainText = post.plainText || toPlainText(post.contentHtml || post.excerpt || '');
-  const excerpt = makeExcerpt(post.excerpt || plainText, 160);
+  const plainText = normalizePositioningTerms(post.plainText || toPlainText(post.contentHtml || post.excerpt || ''));
+  const excerpt = makeExcerpt(normalizePositioningTerms(post.excerpt || plainText), 160);
   const canonicalUrl = `https://floriano.des.br/reflexoes/${slug}/`;
   const dateIso = post.dateIso || normalizeDateIso(post.dateAttr);
   const dateAttr = post.dateAttr || (dateIso ? dateIso.slice(0, 10) : '');
@@ -111,7 +111,7 @@ function normalizePost(post) {
     dateAttr,
     dateDisplay,
     dateIso,
-    contentHtml: post.contentHtml || fallbackContentHtml(excerpt, sourceUrl),
+    contentHtml: normalizePositioningTerms(post.contentHtml || fallbackContentHtml(excerpt, sourceUrl)),
     jsonLd: buildBlogPostingJsonLd({
       title,
       excerpt,
@@ -137,6 +137,19 @@ function fallbackContentHtml(excerpt, sourceUrl) {
   }
 
   return parts.join('');
+}
+
+function normalizePositioningTerms(value) {
+  if (!value) return value;
+
+  return value
+    .replace(/Sou web designer e atuo principalmente com criação de interfaces e experiências digitais\./gi, 'Atuo principalmente com criação de interfaces e experiências digitais.')
+    .replace(/Ainda sou web designer\./gi, 'Ainda atuo com design e experiências digitais.')
+    .replace(/Como Product Designer orientado a dados/gi, 'Como designer orientado a dados')
+    .replace(/Floriano Silva,<br>\s*UX\s*Designer/gi, 'Floriano Silva,<br>Designer de experiências digitais')
+    .replace(/\bProduct Designer\b/g, 'Designer de experiências digitais')
+    .replace(/\bUX Designer\b/g, 'Designer de experiências digitais')
+    .replace(/\bweb designer\b/gi, 'designer de experiências digitais');
 }
 
 function slugFromMediumUrl(url) {
@@ -220,7 +233,7 @@ function buildBlogPostingJsonLd(post) {
     },
     inLanguage: 'pt-BR',
     isBasedOn: post.sourceUrl,
-    keywords: ['Design Engineering', 'UX', 'Growth', 'CRO', 'Analytics', 'IA aplicada'],
+    keywords: ['Designer de experiências digitais', 'UX', 'Growth', 'CRO', 'Analytics', 'IA aplicada'],
     wordCount: post.plainText ? post.plainText.split(/\s+/).filter(Boolean).length : undefined,
   };
 

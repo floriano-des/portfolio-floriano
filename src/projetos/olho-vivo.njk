@@ -1,7 +1,7 @@
 ﻿---
 layout: case-study.njk
 title: "Olho Vivo · Estudo de caso · Floriano Silva"
-description: "Pesquisa de produto para entender barreiras de participação política em Palmital, SP e orientar uma solução digital acessível de engajamento cívico."
+description: "Da pesquisa de campo em Palmital ao PRD do Olho Vivo: um web-app de bolso para acompanhar promessas de prefeito e vereadores, com módulo de educação política integrado."
 ---
 
 <main class="cs-olho">
@@ -11,10 +11,10 @@ description: "Pesquisa de produto para entender barreiras de participação pol�
        ================================================ -->
   <section class="cs-hero">
     <div class="cs-hero__inner" data-animate>
-      <span class="cs-hero__tag">pesquisa de produto · comportamento · participação cívica</span>
+      <span class="cs-hero__tag">pesquisa → produto · web-app PWA · participação cívica</span>
       <h1 class="cs-hero__title">Olho Vivo</h1>
       <p class="cs-hero__subtitle">
-        Como uma pesquisa aplicada em Palmital transformou barreiras de participação política em personas, jornadas e uma direção clara de solução digital.
+        Pesquisa aplicada em Palmital virou personas, jornadas e a base do Olho Vivo: um web-app de bolso para acompanhar promessas de prefeito e vereadores, com módulo de educação política integrado.
       </p>
       <div class="cs-published-by">
         <img
@@ -61,7 +61,7 @@ description: "Pesquisa de produto para entender barreiras de participação pol�
           </div>
           <div class="cs-summary__item">
             <span class="cs-summary__label">Resultado:</span>
-            <span class="cs-summary__text">A pesquisa revelou duas personas, barreiras distintas de participação e três iniciativas priorizadas para orientar uma solução cívica mais simples, acessível e confiável.</span>
+            <span class="cs-summary__text">A pesquisa virou um PRD e o recorte do MVP do Olho Vivo: rastreador de promessas + módulo de educação política, web-app PWA primeiro e app nativo numa fase seguinte.</span>
           </div>
         </div>
       </details>
@@ -346,24 +346,68 @@ description: "Pesquisa de produto para entender barreiras de participação pol�
   </section>
 
   <!-- ================================================
-       DIREÇÃO DE SOLUÇÃO
+       IDEAÇÃO
+       ================================================ -->
+  <section class="section">
+    <div class="cs-container">
+      <p class="cs-kicker-light">Ideação</p>
+      <h2 class="section-title" data-animate>Divergir antes de escolher.</h2>
+      <p class="cs-body-copy" data-animate data-delay="1">
+        Antes de fechar uma solução, abri o leque. Usei IA como parceira de ideação para forçar variedade e fugir da primeira ideia óbvia (um app político genérico). Depois fiz a curadoria à mão: cortei por <strong>impacto × esforço</strong>, dado o contexto de designer solo.
+      </p>
+
+      <div class="cs-gargalos">
+        <h3 class="cs-gargalos__title section-title" style="font-size:1.1rem">6 direções exploradas</h3>
+        <ul class="cs-gargalos__list" role="list">
+          <li class="cs-gargalos__item">
+            <span class="cs-gargalos__num" aria-hidden="true">1</span>
+            <p class="cs-gargalos__text"><strong>Rastreador de promessas.</strong> Status visual + fonte verificável por promessa.</p>
+          </li>
+          <li class="cs-gargalos__item">
+            <span class="cs-gargalos__num" aria-hidden="true">2</span>
+            <p class="cs-gargalos__text"><strong>Glossário cívico.</strong> Termos políticos traduzidos em linguagem de feira.</p>
+          </li>
+          <li class="cs-gargalos__item">
+            <span class="cs-gargalos__num" aria-hidden="true">3</span>
+            <p class="cs-gargalos__text"><strong>Comparador de cargos.</strong> "O que faz prefeito × o que faz vereador" lado a lado.</p>
+          </li>
+          <li class="cs-gargalos__item">
+            <span class="cs-gargalos__num" aria-hidden="true">4</span>
+            <p class="cs-gargalos__text"><strong>Bot de WhatsApp.</strong> Resposta automática para "qual o status da promessa X?".</p>
+          </li>
+          <li class="cs-gargalos__item">
+            <span class="cs-gargalos__num" aria-hidden="true">5</span>
+            <p class="cs-gargalos__text"><strong>Newsletter local mensal.</strong> Resumo de promessas em e-mail e mensagem.</p>
+          </li>
+          <li class="cs-gargalos__item">
+            <span class="cs-gargalos__num" aria-hidden="true">6</span>
+            <p class="cs-gargalos__text"><strong>Checklist em PDF.</strong> Material offline para quem não usa app.</p>
+          </li>
+        </ul>
+      </div>
+
+      <p class="cs-body-copy" data-animate data-delay="2">
+        A matriz esforço × impacto cortou para três frentes complementares: uma core (digital), uma de distribuição (social) e uma de inclusão (offline).
+      </p>
+    </div>
+  </section>
+
+  <!-- ================================================
+       DIREÇÃO DE PRODUTO
        ================================================ -->
   <section class="section">
     <div class="cs-container cs-olho-wide">
-      <p class="cs-kicker-light">Direção de solução</p>
-      <h2 class="section-title" data-animate>Da pesquisa para iniciativas priorizadas.</h2>
-      <p class="cs-body-copy" data-animate data-delay="1">
-        A pesquisa não terminou em diagnóstico. Ela gerou um recorte de produto orientado por impacto e viabilidade: acompanhar promessas, educar de forma simples e criar materiais que não dependem apenas do digital.
-      </p>
+      <p class="cs-kicker-light">Direção de produto</p>
+      <h2 class="section-title" data-animate>Três frentes priorizadas.</h2>
 
       <div class="cs-olho-initiatives">
         <article data-animate>
-          <span>Prioridade alta</span>
-          <h3>Rastreador de promessas</h3>
-          <p>Ferramenta digital para acompanhar promessas eleitorais por mandato, com linguagem simples e sinais claros de status.</p>
+          <span>Núcleo do produto</span>
+          <h3>Rastreador + educação política</h3>
+          <p>Web-app de bolso para acompanhar promessas com status claros, fontes verificáveis e explicação inline de papéis dos cargos.</p>
         </article>
         <article data-animate data-delay="1">
-          <span>Ganho rápido</span>
+          <span>Distribuição</span>
           <h3>Campanha em redes sociais</h3>
           <p>Conteúdo educativo para o público que já usa canais digitais, sem depender de sites oficiais como ponto de partida.</p>
         </article>
@@ -375,17 +419,56 @@ description: "Pesquisa de produto para entender barreiras de participação pol�
       </div>
 
       <div class="cs-olho-single-shot">
-        <img src="/assets/projetos/olho-vivo/Aplicativo-Politico.webp" alt="Conceito de aplicativo político gerado a partir da pesquisa Olho Vivo" loading="lazy">
+        <img src="/assets/projetos/olho-vivo/Aplicativo-Politico.webp" alt="Conceito visual do Olho Vivo gerado a partir da pesquisa" loading="lazy">
       </div>
     </div>
   </section>
 
   <!-- ================================================
-       RESULTADO
+       RECORTE DO MVP + ROADMAP
+       ================================================ -->
+  <section class="section cs-olho-dark">
+    <div class="cs-container cs-olho-wide">
+      <p class="cs-kicker-dark">Recorte do MVP</p>
+      <h2 class="section-title" data-animate>O que entra primeiro, o que vai depois.</h2>
+      <p class="cs-body-copy cs-body-copy--dark" data-animate data-delay="1">
+        O MVP combina <strong>rastreador de promessas</strong> e <strong>módulo de educação política</strong> num único web-app PWA, escopo Palmital, curadoria por admin único. Redes e PDF entram como apoio depois do lançamento. App nativo é fase 2.
+      </p>
+
+      <div class="cs-olho-diagnosis">
+        <div class="cs-olho-card" data-animate>
+          <span class="cs-olho-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </span>
+          <h3>Fase 0 — Protótipo</h3>
+          <p>Wireframe + protótipo navegável em Figma, validado com 5–8 cidadãos de Palmital em teste de guerrilha.</p>
+        </div>
+
+        <div class="cs-olho-card" data-animate data-delay="1">
+          <span class="cs-olho-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18"/><circle cx="7" cy="6" r="0.5"/></svg>
+          </span>
+          <h3>Fase 1 — Web-app PWA</h3>
+          <p>Lançamento público, instalável no celular, 30 promessas pré-cadastradas, analytics ativos (GA4 + Clarity).</p>
+        </div>
+
+        <div class="cs-olho-card" data-animate data-delay="2">
+          <span class="cs-olho-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg>
+          </span>
+          <h3>Fase 2 — App nativo</h3>
+          <p>Migração para nativo motivada por notificações push, offline completo e favoritos. Reusa design system da v1.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       RESULTADO DA PESQUISA
        ================================================ -->
   <section class="cs-results cs-results--olho section">
     <div class="cs-container">
-      <p class="cs-kicker-dark">Resultado</p>
+      <p class="cs-kicker-dark">Resultado da pesquisa</p>
       <h2 class="section-title" data-animate>Um mapa claro para decidir o que construir primeiro.</h2>
 
       <div class="cs-metrics">
@@ -398,8 +481,8 @@ description: "Pesquisa de produto para entender barreiras de participação pol�
           <span class="cs-metric__label">mostrando pontos de dor, abandono e oportunidades de intervenção.</span>
         </div>
         <div class="cs-metric" data-animate data-delay="2">
-          <span class="cs-metric__value cs-metric__value--compact">3 iniciativas</span>
-          <span class="cs-metric__label">priorizadas para orientar a evolução da solução com menor risco.</span>
+          <span class="cs-metric__value cs-metric__value--compact">1 PRD</span>
+          <span class="cs-metric__label">com escopo de MVP, princípios de UX e roadmap em 3 fases.</span>
         </div>
       </div>
 
@@ -407,6 +490,77 @@ description: "Pesquisa de produto para entender barreiras de participação pol�
         <a href="/reflexoes/pesquisa-olho-vivo/">
           Ver pesquisa completa
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       MÉTRICAS DE SUCESSO DO PRODUTO
+       ================================================ -->
+  <section class="section">
+    <div class="cs-container cs-olho-wide">
+      <p class="cs-kicker-light">Métricas de sucesso</p>
+      <h2 class="section-title" data-animate>Como saberemos que o produto funcionou.</h2>
+      <p class="cs-body-copy" data-animate data-delay="1">
+        Sem indicadores, "pronto" vira opinião. O PRD fecha quatro métricas-âncora para a v1 do web-app — definidas antes do lançamento e instrumentadas no GA4 e no Microsoft Clarity.
+      </p>
+
+      <div class="cs-olho-initiatives">
+        <article data-animate>
+          <span>Engajamento</span>
+          <h3>≥40%</h3>
+          <p>dos visitantes abre ao menos uma promessa.</p>
+        </article>
+        <article data-animate data-delay="1">
+          <span>Educação</span>
+          <h3>≥25%</h3>
+          <p>dos visitantes abre o módulo "Quem faz o quê?".</p>
+        </article>
+        <article data-animate data-delay="2">
+          <span>Mobilização</span>
+          <h3>≥0,15</h3>
+          <p>cliques em "compartilhar" por sessão (WhatsApp).</p>
+        </article>
+        <article data-animate data-delay="3">
+          <span>Retenção</span>
+          <h3>≥15%</h3>
+          <p>de visitantes voltam em 30 dias.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================
+       PRÓXIMOS PASSOS
+       ================================================ -->
+  <section class="section cs-olho-soft">
+    <div class="cs-container">
+      <p class="cs-kicker-light">Próximos passos</p>
+      <h2 class="section-title" data-animate>Do PRD ao produto no ar.</h2>
+
+      <div class="cs-gargalos">
+        <ul class="cs-gargalos__list" role="list">
+          <li class="cs-gargalos__item">
+            <span class="cs-gargalos__num" aria-hidden="true">1</span>
+            <p class="cs-gargalos__text"><strong>Wireframes em baixa fidelidade</strong> das 5 telas principais — validar arquitetura antes do pixel.</p>
+          </li>
+          <li class="cs-gargalos__item">
+            <span class="cs-gargalos__num" aria-hidden="true">2</span>
+            <p class="cs-gargalos__text"><strong>Protótipo médio-fi em Figma</strong> com 1 fluxo navegável end-to-end e componentes reutilizáveis marcados.</p>
+          </li>
+          <li class="cs-gargalos__item">
+            <span class="cs-gargalos__num" aria-hidden="true">3</span>
+            <p class="cs-gargalos__text"><strong>Teste de guerrilha</strong> com 5–8 cidadãos de Palmital, com pelo menos 2 do perfil Cidadão do Povo.</p>
+          </li>
+          <li class="cs-gargalos__item">
+            <span class="cs-gargalos__num" aria-hidden="true">4</span>
+            <p class="cs-gargalos__text"><strong>Iteração</strong> baseada nos achados. Reteste se mudanças forem grandes.</p>
+          </li>
+          <li class="cs-gargalos__item">
+            <span class="cs-gargalos__num" aria-hidden="true">5</span>
+            <p class="cs-gargalos__text"><strong>Implementação assistida por IA</strong> usando PRD + protótipo aprovado como verdade. Lançamento da PWA com 30 promessas pré-cadastradas.</p>
+          </li>
+        </ul>
       </div>
     </div>
   </section>
@@ -446,6 +600,15 @@ description: "Pesquisa de produto para entender barreiras de participação pol�
             <strong>Pesquisa de campo exige método e sensibilidade.</strong> Em um tema sensível como política, as respostas mais úteis apareceram quando houve escuta real antes do roteiro.
           </p>
         </div>
+
+        <div class="cs-learning" data-animate data-delay="3">
+          <span class="cs-learning__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--clr-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 6-6"/></svg>
+          </span>
+          <p class="cs-learning__text">
+            <strong>Pesquisa não termina no diagnóstico.</strong> Fechar o ciclo exige traduzir os achados em escopo, princípios de UX e métricas de sucesso — antes de tocar no pixel ou no código.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -471,6 +634,8 @@ description: "Pesquisa de produto para entender barreiras de participação pol�
             <span class="cs-tag">UX Research</span>
             <span class="cs-tag">Síntese</span>
             <span class="cs-tag">Definição de problema</span>
+            <span class="cs-tag">Estratégia de produto</span>
+            <span class="cs-tag">Definição de MVP</span>
           </div>
         </div>
 
@@ -491,11 +656,14 @@ description: "Pesquisa de produto para entender barreiras de participação pol�
             <span class="cs-tag">Entrevistas</span>
             <span class="cs-tag">5W2H</span>
             <span class="cs-tag">Diagrama de afinidade</span>
-            <span class="cs-tag">Jornadas</span>
             <span class="cs-tag">Personas</span>
             <span class="cs-tag">Mapas de empatia</span>
             <span class="cs-tag">Jornada do usuário</span>
-            <span class="cs-tag">Priorização</span>
+            <span class="cs-tag">Ideação com IA</span>
+            <span class="cs-tag">Matriz esforço × impacto</span>
+            <span class="cs-tag">PRD</span>
+            <span class="cs-tag">Roadmap</span>
+            <span class="cs-tag">KPIs</span>
           </div>
         </div>
       </div>
