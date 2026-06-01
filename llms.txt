@@ -16,7 +16,7 @@ As páginas canônicas ficam no domínio `floriano.des.br`. A seção Reflexões
 
 ## Áreas de especialidade
 
-- Digital Product Building
+- Experiências digitais
 - UX Design
 - Estratégia de produto
 - Growth
