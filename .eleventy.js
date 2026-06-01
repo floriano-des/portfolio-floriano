@@ -1,9 +1,11 @@
 const crypto = require("node:crypto");
 const fs = require("node:fs");
 const path = require("node:path");
+const markdownIt = require("markdown-it");
 
 module.exports = function (eleventyConfig) {
   const assetVersionCache = new Map();
+  const markdown = markdownIt({ html: true, breaks: false, linkify: false });
 
   eleventyConfig.addFilter("limit", (arr, n) => arr.slice(0, n));
   eleventyConfig.addFilter("json", (value) => {
@@ -41,6 +43,110 @@ module.exports = function (eleventyConfig) {
     } catch (_) {
       return "";
     }
+  });
+
+  eleventyConfig.addPairedShortcode("caseSection", (content, kicker, title, sectionClass = "section", theme = "light") => {
+    const kickerClass = theme === "dark" ? "cs-kicker-dark" : "cs-kicker-light";
+    const renderedContent = markdown.render(String(content || "").replace(/^\s+(<)/gm, "$1"));
+
+    return `<section class="${escapeAttribute(sectionClass)}">
+<div class="cs-container">
+<p class="${kickerClass}">${kicker}</p>
+<h2 class="section-title" data-animate>${title}</h2>
+<div class="cs-md-content">
+${renderedContent}
+</div>
+</div>
+</section>`;
+  });
+
+  eleventyConfig.addShortcode("caseFigure", (src, alt = "", caption = "", theme = "light", maxWidth = "", frameClass = "") => {
+    const figureStyle = maxWidth ? ` style="margin: var(--space-12) auto 0; max-width: ${escapeAttribute(maxWidth)};"` : "";
+    const figureClass = frameClass ? ` class="${escapeAttribute(frameClass)}"` : "";
+    const imageClass = theme === "dark" ? " class=\"cs-img-dark\"" : "";
+    const figcaption = caption ? `<figcaption class="cs-figcaption">${caption}</figcaption>` : "";
+
+    return `<figure${figureClass}${figureStyle} data-animate>
+<img src="${escapeAttribute(src)}" alt="${escapeAttribute(alt)}"${imageClass} loading="lazy">
+${figcaption}
+</figure>`;
+  });
+
+  eleventyConfig.addShortcode("dataStats", (stats = []) => {
+    if (!Array.isArray(stats) || !stats.length) return "";
+
+    return `<div class="cs-data-grid">
+${stats.map((stat, index) => `<div class="cs-data-stat" data-animate${index ? ` data-delay="${index}"` : ""}>
+<p class="cs-data-stat__value">${stat.value || ""}</p>
+<p class="cs-data-stat__label">${stat.label || ""}</p>
+</div>`).join("")}
+</div>`;
+  });
+
+  eleventyConfig.addShortcode("objectiveBlock", (question = "", items = []) => {
+    if (!Array.isArray(items)) return "";
+
+    return `<section class="cs-context section">
+<div class="cs-container">
+<p class="cs-kicker-dark">Objetivo</p>
+<p class="cs-context__question" data-animate>${question}</p>
+<div class="cs-gargalos">
+<h2 class="cs-gargalos__title section-title">${items.length} gargalos identificados</h2>
+<ul class="cs-gargalos__list" role="list">
+${items.map((item, index) => `<li class="cs-gargalos__item">
+<span class="cs-gargalos__num" aria-hidden="true">${index + 1}</span>
+<p class="cs-gargalos__text">${item}</p>
+</li>`).join("")}
+</ul>
+</div>
+</div>
+</section>`;
+  });
+
+  eleventyConfig.addShortcode("comparisonList", (items = []) => {
+    if (!Array.isArray(items) || !items.length) return "";
+
+    return `<div class="cs-comparison-list">
+${items.map((item) => `<div class="cs-comparison" data-animate>
+<div>
+<p class="cs-comparison__label">${item.label || ""}</p>
+<h3 class="cs-comparison__title">${item.title || ""}</h3>
+<p class="cs-comparison__note">${item.note || ""}</p>
+</div>
+<div class="cs-comparison__images">
+<div class="cs-comparison__side">
+<span class="cs-comparison__badge cs-comparison__badge--before">Antes</span>
+<img src="${escapeAttribute(item.before && item.before.src)}" alt="${escapeAttribute(item.before && item.before.alt)}" class="cs-comparison__img" loading="lazy">
+</div>
+<div class="cs-comparison__side">
+<span class="cs-comparison__badge cs-comparison__badge--after">Depois</span>
+<img src="${escapeAttribute(item.after && item.after.src)}" alt="${escapeAttribute(item.after && item.after.alt)}" class="cs-comparison__img" loading="lazy">
+</div>
+</div>
+</div>`).join("")}
+</div>`;
+  });
+
+  eleventyConfig.addShortcode("caseMetrics", (items = []) => {
+    if (!Array.isArray(items) || !items.length) return "";
+
+    return `<div class="cs-metrics" style="margin-top: var(--space-10);">
+${items.map((item, index) => `<div class="cs-metric${item.modifier ? ` ${escapeAttribute(item.modifier)}` : ""}" data-animate${index ? ` data-delay="${index}"` : ""}>
+<span class="cs-metric__value">${item.value || ""}</span>
+<span class="cs-metric__label">${item.label || ""}</span>
+</div>`).join("")}
+</div>`;
+  });
+
+  eleventyConfig.addShortcode("conversionFormula", (formula = {}) => {
+    if (!formula.value) return "";
+
+    return `<div class="cs-conversion-formula" data-animate data-delay="3">
+<p class="cs-conversion-formula__label">${formula.label || ""}</p>
+<p class="cs-conversion-formula__intro">${formula.intro || ""}</p>
+<p class="cs-conversion-formula__value">${formula.value || ""}</p>
+<p class="cs-conversion-formula__note">${formula.note || ""}</p>
+</div>`;
   });
 
   eleventyConfig.addCollection("sitemapPages", (collectionApi) => {
@@ -93,7 +199,7 @@ module.exports = function (eleventyConfig) {
       data: "_data",
       layouts: "_includes/layouts",
     },
-    templateFormats: ["njk", "html"],
+    templateFormats: ["njk", "html", "md"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
   };
@@ -157,4 +263,12 @@ function segmentToTitle(segment) {
     .filter(Boolean)
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
+}
+
+function escapeAttribute(value = "") {
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/"/g, "&quot;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
 }
