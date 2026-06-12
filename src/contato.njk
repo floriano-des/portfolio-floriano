@@ -1,0 +1,109 @@
+---
+layout: base.njk
+title: "Contato, Floriano Silva · Designer de experiências digitais"
+description: "Conte o que você precisa construir. Entre em contato com Floriano Silva por formulário, email, WhatsApp ou LinkedIn."
+activeNav: contato
+schemaType: ContactPage
+bodyClass: contact-redesign
+extraStylesheet: /css/style.periphery.css
+extraScript: /js/contact-form.js
+---
+
+<main class="contact-page page-top" id="contato-form">
+  <section class="contact-hero">
+    <div class="container">
+      <p class="section-kicker" data-animate>Tem um projeto em mente?</p>
+      <h1 data-animate>Vamos construir algo juntos</h1>
+      <p class="contact-hero__lead" data-animate data-delay="1">
+        Conte o contexto, o problema e onde você quer chegar. A mensagem será organizada e aberta no WhatsApp para você revisar antes de enviar.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact-workspace">
+    <div class="container contact-workspace__grid">
+      <form
+        class="contact-form"
+        action="mailto:contato@floriano.des.br"
+        method="post"
+        enctype="text/plain"
+        data-contact-form
+      >
+        <div class="contact-field" data-animate>
+          <span class="contact-field__number" aria-hidden="true">01</span>
+          <div>
+            <label for="contact-name">Como você se chama?</label>
+            <input id="contact-name" name="nome" type="text" autocomplete="name" placeholder="Seu nome" required>
+          </div>
+        </div>
+
+        <div class="contact-field" data-animate>
+          <span class="contact-field__number" aria-hidden="true">02</span>
+          <div>
+            <label for="contact-email">Qual é o seu email?</label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="voce@empresa.com" required>
+          </div>
+        </div>
+
+        <div class="contact-field" data-animate>
+          <span class="contact-field__number" aria-hidden="true">03</span>
+          <div>
+            <label for="contact-company">Empresa ou projeto</label>
+            <input id="contact-company" name="empresa" type="text" autocomplete="organization" placeholder="Nome da empresa, produto ou iniciativa">
+          </div>
+        </div>
+
+        <div class="contact-field" data-animate>
+          <span class="contact-field__number" aria-hidden="true">04</span>
+          <div>
+            <label for="contact-need">O que você precisa?</label>
+            <select id="contact-need" name="necessidade" required>
+              <option value="" selected disabled>Selecione uma opção</option>
+              <option>Estratégia e UX</option>
+              <option>Site ou produto digital</option>
+              <option>IA aplicada</option>
+              <option>Design system</option>
+              <option>Outro desafio</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="contact-field contact-field--message" data-animate>
+          <span class="contact-field__number" aria-hidden="true">05</span>
+          <div>
+            <label for="contact-message">Conte um pouco mais</label>
+            <textarea id="contact-message" name="mensagem" rows="5" placeholder="Contexto, prazo, objetivo e qualquer detalhe importante" required></textarea>
+          </div>
+        </div>
+
+        <div class="contact-form__actions">
+          <button class="contact-form__submit" type="submit" data-magnetic>
+            <span>Preparar mensagem</span>
+            <span aria-hidden="true">↗</span>
+          </button>
+          <p class="contact-form__note">Sem backend e sem armazenamento no site. Com JavaScript desligado, o envio usa seu aplicativo de email.</p>
+        </div>
+      </form>
+
+      <aside class="contact-sidebar" aria-label="Outros canais de contato" data-animate data-delay="1">
+        <p class="contact-sidebar__eyebrow">Outros canais</p>
+        <a href="mailto:contato@floriano.des.br">
+          <span>Email</span>
+          <strong>contato@floriano.des.br</strong>
+        </a>
+        <a href="https://wa.me/5518996773264" target="_blank" rel="noopener noreferrer">
+          <span>WhatsApp</span>
+          <strong>Conversar agora ↗</strong>
+        </a>
+        <a href="https://www.linkedin.com/in/floriano-des/" target="_blank" rel="noopener noreferrer">
+          <span>LinkedIn</span>
+          <strong>Ver perfil ↗</strong>
+        </a>
+        <a href="https://github.com/floriano-des/" target="_blank" rel="noopener noreferrer">
+          <span>GitHub</span>
+          <strong>Ver projetos ↗</strong>
+        </a>
+      </aside>
+    </div>
+  </section>
+</main>
