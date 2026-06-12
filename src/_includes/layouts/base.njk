@@ -93,6 +93,7 @@
   {% endif %}
 
   <script src="/js/main.js?v={{ '/js/main.js' | assetVersion }}"></script>
+  {% if extraScript %}<script src="{{ extraScript }}?v={{ extraScript | assetVersion }}" defer></script>{% endif %}
   {% include "partials/motion-scripts.njk" %}
 </body>
 </html>

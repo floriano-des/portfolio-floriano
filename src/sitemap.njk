@@ -16,6 +16,9 @@ eleventyExcludeFromSitemap: true
   </url>
 {% endif %}
 {% endfor %}
+  <url>
+    <loc>{{ metadata.url }}/contato/</loc>
+  </url>
 {% for post in reflexoes.items %}
 {% set postUrl = "" %}
 {% if post.canonicalUrl %}

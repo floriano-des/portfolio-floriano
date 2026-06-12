@@ -156,6 +156,7 @@ ${items.map((item, index) => `<div class="cs-metric${item.modifier ? ` ${escapeA
       "/sitemap_index.xml",
       "/page-sitemap.xml",
       "/post-sitemap.xml",
+      "/contato/",
     ]);
 
     return collectionApi
