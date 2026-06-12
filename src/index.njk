@@ -4,468 +4,219 @@ title: "Floriano Silva | Designer de experiências digitais"
 description: "Crio produtos, sites e experiências digitais que unem UX, estratégia, dados, marketing e tecnologia para resolver problemas de negócio com clareza e resultado."
 activeNav: home
 schemaType: ProfilePage
+bodyClass: home-redesign
 ---
 
-  <!-- ================================================
-       HERO
-       ================================================ -->
-  <section class="hero" id="home">
+<main class="home-v2" id="conteudo">
+  <section class="home-hero" id="home" aria-labelledby="home-title">
+    <div class="home-hero__topline">
+      <span class="home-hero__location">Brasil, trabalho remoto</span>
+      <span class="home-hero__availability">Disponível para novos projetos</span>
+    </div>
 
-    <div class="hero__container">
+    <h1 class="sr-only" id="home-title">Floriano Silva, Designer de experiências digitais</h1>
 
-      <div class="hero__image" data-animate>
+    <div class="home-marquee" data-marquee aria-label="Designer de experiências digitais">
+      <div class="home-marquee__track" data-marquee-track>
+        <div class="home-marquee__group">
+          <span>Designer de experiências digitais</span>
+          <span class="home-marquee__mark" aria-hidden="true">✳</span>
+        </div>
+        <div class="home-marquee__group" aria-hidden="true">
+          <span>Designer de experiências digitais</span>
+          <span class="home-marquee__mark">✳</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-hero__stage">
+      <div class="home-hero__portrait">
+        <div class="home-hero__portrait-halo" aria-hidden="true"></div>
         <img
-          src="/assets/perfil-floriano-hero.png"
+          src="/assets/perfil-floriano-hero.webp"
           alt="Floriano Silva"
-          width="900"
-          height="900"
+          width="800"
+          height="800"
           loading="eager"
           fetchpriority="high"
           decoding="async"
         >
       </div>
 
-      <div class="hero__content">
-        <p class="hero__kicker" data-animate>Designer de experiências digitais</p>
-        <h1 class="hero__title" data-animate>
-          Transformo problemas de negócio em produtos, sites e experiências digitais funcionais.
-        </h1>
-        <p class="hero__subtitle" data-animate data-delay="1">
-          Combino UX, estratégia, marketing, dados e desenvolvimento para criar interfaces, páginas e sistemas que melhoram clareza, conversão e operação.
+      <p class="home-hero__statement" data-animate>
+        Transformo problemas de negócio em produtos, sites e experiências digitais que funcionam.
+      </p>
+
+      <a class="home-hero__scroll" href="#sobre-mim" aria-label="Ir para a apresentação">
+        <span>Explorar</span>
+        <svg width="18" height="26" viewBox="0 0 18 26" fill="none" aria-hidden="true">
+          <path d="M9 1v22M2 16l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="home-intro" id="sobre-mim">
+    <div class="home-shell home-intro__grid">
+      <p class="home-eyebrow" data-animate>Como eu trabalho</p>
+      <div class="home-intro__content">
+        <p class="home-intro__lead" data-animate>
+          Entender o problema vem antes de desenhar a tela.
         </p>
-        <div class="hero__actions" data-animate data-delay="2">
-          <a href="https://wa.me/5518996773264?text=Ol%C3%A1%2C%20Floriano.%20Vi%20seu%20site%20e%20quero%20conversar%20sobre%20um%20projeto%20digital." class="hero__cta" target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp</a>
-          <a href="/#projetos" class="btn btn--white-glass">Ver portfólio</a>
-        </div>
+        <p class="home-intro__copy" data-animate>
+          Conecto estratégia, experiência e tecnologia para transformar contextos complexos em soluções digitais claras, úteis e prontas para operar no mundo real.
+        </p>
+        <a class="round-link" href="/sobre/" data-magnetic data-animate>
+          <span data-magnetic-inner>Sobre mim</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 19 19 5M8 5h11v11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
-
-    </div>
-
-  </section>
-
-  <!-- ================================================
-       BIG NUMBERS
-       ================================================ -->
-  <section class="impact-stats section" id="resultados">
-    <div class="container">
-
-      <div class="impact-stats__grid">
-        <article class="impact-stat" data-animate>
-          <p class="impact-stat__value">8+ anos</p>
-          <p class="impact-stat__label">de experiência em design</p>
-        </article>
-
-        <article class="impact-stat" data-animate data-delay="1">
-          <p class="impact-stat__value">R$ 2 mi+</p>
-          <p class="impact-stat__label">em receita gerada para empresas</p>
-        </article>
-
-        <article class="impact-stat" data-animate data-delay="2">
-          <p class="impact-stat__value">7M+</p>
-          <p class="impact-stat__label">usuários impactados</p>
-        </article>
-      </div>
-
     </div>
   </section>
 
-  <!-- ================================================
-       SERVIÇOS
-       ================================================ -->
-  <section class="home-services section" id="servicos">
-    <div class="container">
+  <section class="project-index" id="projetos" aria-labelledby="projects-title">
+    <div class="home-shell">
+      <div class="home-section-head">
+        <p class="home-eyebrow" data-animate>Portfólio</p>
+        <h2 id="projects-title" data-animate>Trabalhos selecionados</h2>
+        <p data-animate>Projetos em produto, conversão, operação e serviços digitais.</p>
+      </div>
 
-      <div class="section-header home-services__header" data-animate>
+      <div class="project-index__list">
+        <a class="project-row" href="/projetos/quantum-vizz/" data-project-row data-project-image="/assets/projetos/quantum-vizz/cover.webp">
+          <span class="project-row__number">01</span>
+          <span class="project-row__name">Quantum Vizz</span>
+          <span class="project-row__meta">Growth e CRO</span>
+          <span class="project-row__year">2025</span>
+          <span class="project-row__arrow" aria-hidden="true">↗</span>
+          <img class="project-row__thumb" src="/assets/projetos/quantum-vizz/cover.webp" alt="" loading="lazy">
+        </a>
+
+        <a class="project-row" href="/projetos/2p-web-dev/" data-project-row data-project-image="/assets/projetos/web-dev/cover.webp">
+          <span class="project-row__number">02</span>
+          <span class="project-row__name">Web Dev 2.0</span>
+          <span class="project-row__meta">Produto interno</span>
+          <span class="project-row__year">2026</span>
+          <span class="project-row__arrow" aria-hidden="true">↗</span>
+          <img class="project-row__thumb" src="/assets/projetos/web-dev/cover.webp" alt="" loading="lazy">
+        </a>
+
+        <a class="project-row" href="/projetos/mercado-das-figurinhas/" data-project-row data-project-image="/assets/projetos/mercado-das-figurinhas/cover.webp">
+          <span class="project-row__number">03</span>
+          <span class="project-row__name">Mercado das Figurinhas</span>
+          <span class="project-row__meta">Produto e IA</span>
+          <span class="project-row__year">2026</span>
+          <span class="project-row__arrow" aria-hidden="true">↗</span>
+          <img class="project-row__thumb" src="/assets/projetos/mercado-das-figurinhas/cover.webp" alt="" loading="lazy">
+        </a>
+
+        <a class="project-row" href="/projetos/bit-system/" data-project-row data-project-image="/assets/projetos/bit-system/bitsystem-cover.webp">
+          <span class="project-row__number">04</span>
+          <span class="project-row__name">Bit System</span>
+          <span class="project-row__meta">Design system</span>
+          <span class="project-row__year">2025</span>
+          <span class="project-row__arrow" aria-hidden="true">↗</span>
+          <img class="project-row__thumb" src="/assets/projetos/bit-system/bitsystem-cover.webp" alt="" loading="lazy">
+        </a>
+
+        <a class="project-row" href="/projetos/farm-well-hub/" data-project-row data-project-image="/assets/projetos/farm-well-hub/cover.webp">
+          <span class="project-row__number">05</span>
+          <span class="project-row__name">Farm Well Hub</span>
+          <span class="project-row__meta">Serviço digital</span>
+          <span class="project-row__year">2024</span>
+          <span class="project-row__arrow" aria-hidden="true">↗</span>
+          <img class="project-row__thumb" src="/assets/projetos/farm-well-hub/cover.webp" alt="" loading="lazy">
+        </a>
+
+        <a class="project-row" href="/projetos/olho-vivo/" data-project-row data-project-image="/assets/projetos/olho-vivo/cover.webp">
+          <span class="project-row__number">06</span>
+          <span class="project-row__name">Olho Vivo</span>
+          <span class="project-row__meta">Pesquisa e produto</span>
+          <span class="project-row__year">2026</span>
+          <span class="project-row__arrow" aria-hidden="true">↗</span>
+          <img class="project-row__thumb" src="/assets/projetos/olho-vivo/cover.webp" alt="" loading="lazy">
+        </a>
+      </div>
+    </div>
+
+    <div class="project-preview" data-project-preview aria-hidden="true">
+      <img src="/assets/projetos/quantum-vizz/cover.webp" alt="" data-project-preview-image>
+      <span class="project-preview__cta">Ver case</span>
+    </div>
+  </section>
+
+  <section class="home-services-v2" id="servicos" aria-labelledby="services-title">
+    <div class="section-curve" aria-hidden="true">
+      <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
+        <path data-section-curve-path d="M0 100 Q280 0 600 70 T1200 50 V100 H0Z"></path>
+      </svg>
+    </div>
+
+    <div class="home-shell">
+      <div class="home-section-head home-section-head--dark">
+        <p class="home-eyebrow" data-animate>Serviços</p>
+        <h2 id="services-title" data-animate>Da pergunta certa até a solução no ar.</h2>
+      </div>
+
+      <div class="service-lines">
+        <details class="service-line" data-animate>
+          <summary>
+            <span class="service-line__number">01</span>
+            <span class="service-line__title">Estratégia e UX</span>
+            <span class="service-line__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="service-line__content">
+            <p>Pesquisa, diagnóstico, arquitetura, fluxos e interfaces orientadas pelo problema de negócio e pelas necessidades reais de quem usa.</p>
+            <span>Pesquisa, UX, Produto, Service Design</span>
+          </div>
+        </details>
+
+        <details class="service-line" data-animate>
+          <summary>
+            <span class="service-line__number">02</span>
+            <span class="service-line__title">Sites e produtos</span>
+            <span class="service-line__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="service-line__content">
+            <p>Sites, landing pages, sistemas internos e produtos digitais projetados e implementados para funcionar com clareza, performance e consistência.</p>
+            <span>Web design, Desenvolvimento, SEO, CRO</span>
+          </div>
+        </details>
+
+        <details class="service-line" data-animate>
+          <summary>
+            <span class="service-line__number">03</span>
+            <span class="service-line__title">IA aplicada</span>
+            <span class="service-line__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="service-line__content">
+            <p>Uso estratégico de inteligência artificial para acelerar pesquisa, prototipação, desenvolvimento e operações sem terceirizar as decisões.</p>
+            <span>Automação, Prototipação, Desenvolvimento assistido</span>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="home-proof" aria-labelledby="proof-title">
+    <div class="home-shell home-proof__grid">
+      <div>
+        <p class="home-eyebrow" data-animate>Trabalho em parceria</p>
+        <h2 class="sr-only" id="proof-title">Depoimento de cliente</h2>
+        <blockquote data-animate>
+          “Ele não apenas desenvolve soluções eficazes, mas também identifica os problemas reais a serem resolvidos.”
+        </blockquote>
+      </div>
+
+      <div class="home-proof__author" data-animate>
+        <img src="/assets/clients/Leonardo.webp" alt="" width="64" height="64" loading="lazy">
         <div>
-          <p class="section-kicker">Serviços</p>
-          <h2 class="section-title section-title--home">O que eu faço</h2>
-          <p class="section-subtitle">Três frentes para transformar problemas, ideias e operações em experiências digitais mais claras, comerciais e funcionais.</p>
+          <strong>Leonardo Santos</strong>
+          <span>Growth Marketing, supervisor direto</span>
         </div>
-      </div>
-
-      <div class="home-services__grid">
-        <article class="home-service-card" data-animate>
-          <div class="home-service-card__icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="2"/>
-              <circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="2"/>
-              <path d="M12 5v3M12 16v3M5 12h3M16 12h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="home-service-card__title">Produto e Experiência Digital</h3>
-          <p class="home-service-card__desc">Redesign de produtos, auditorias de UX, estruturação de fluxos, interfaces e experiências digitais orientadas por negócio, clareza e usabilidade.</p>
-          <div class="home-service-card__tags">
-            <span>UX/UI Design</span>
-            <span>Produto digital</span>
-            <span>Service Design</span>
-            <span>Pesquisa</span>
-          </div>
-        </article>
-
-        <article class="home-service-card" data-animate data-delay="1">
-          <div class="home-service-card__icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M5 15l4-4 4 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M16 7h3v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3 class="home-service-card__title">Marketing Digital, Growth e Infoprodutos</h3>
-          <p class="home-service-card__desc">Estratégia de páginas, funis, lançamentos, conteúdo, campanhas e otimização de conversão para negócios digitais, infoprodutores e serviços.</p>
-          <div class="home-service-card__tags">
-            <span>Growth</span>
-            <span>Infoprodutos</span>
-            <span>Funis</span>
-            <span>CRO</span>
-          </div>
-        </article>
-
-        <article class="home-service-card" data-animate data-delay="2">
-          <div class="home-service-card__icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
-              <path d="M4 9h16M8 13h4M8 16h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="home-service-card__title">Sites e Landing Pages</h3>
-          <p class="home-service-card__desc">Sites institucionais, landing pages e páginas comerciais com estratégia, design responsivo, SEO, performance e implementação pronta para publicação.</p>
-          <div class="home-service-card__tags">
-            <span>Sites</span>
-            <span>Landing Pages</span>
-            <span>SEO</span>
-            <span>Performance</span>
-          </div>
-        </article>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================
-       IA NO PROCESSO
-       ================================================ -->
-  <section class="ai-process section" id="ia">
-    <div class="container">
-      <div class="ai-process__grid">
-
-        <div class="ai-process__content" data-animate>
-          <p class="section-kicker">IA no processo</p>
-          <h2 class="section-title section-title--home">Design acelerado por inteligência artificial</h2>
-          <p class="ai-process__text">Uso IA de forma estratégica para acelerar pesquisa, prototipação, documentação, conteúdo, automações e validação de ideias, mantendo critério de UX, negócio e execução.</p>
-          <div class="ai-process__tools" aria-label="Ferramentas usadas no processo">
-            <span>Figma Make</span>
-            <span>Codex</span>
-            <span>Claude Code</span>
-          </div>
-        </div>
-
-        <ul class="ai-process__list" data-animate data-delay="1">
-          <li>Prototipação mais rápida do briefing ao teste</li>
-          <li>Ciclos de design mais curtos com apoio de automações</li>
-          <li>MVPs e interfaces funcionais com mais velocidade</li>
-          <li>Documentação, conteúdo e handoff mais organizados</li>
-          <li>Mais qualidade em menos tempo, sem perder direção estratégica</li>
-        </ul>
-
       </div>
     </div>
   </section>
-
-  <!-- ================================================
-       PROJETOS EM DESTAQUE
-       ================================================ -->
-  <section class="featured-projects section" id="projetos">
-    <div class="container">
-
-      <div class="section-header featured-projects__header" data-animate>
-        <div>
-          <p class="section-kicker">Portfólio</p>
-          <h2 class="section-title section-title--home">Projetos que mostram resultado, não só tela bonita.</h2>
-          <p class="section-subtitle">Cases com foco em conversão, produto, operação e experiência digital.</p>
-        </div>
-      </div>
-
-      <div class="featured-projects__grid">
-
-        <article class="featured-project-card" data-animate>
-          <a href="/projetos/quantum-vizz" class="featured-project-card__media" aria-label="Ver projeto Quantum Vizz">
-            <img src="/assets/projetos/quantum-vizz/cover.webp" alt="Quantum Vizz, case de growth e CRO" loading="lazy">
-          </a>
-          <div class="featured-project-card__body">
-            <span class="featured-project-card__tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <path d="M5 15l4-4 4 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16 7h3v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Growth / CRO
-            </span>
-            <h3 class="featured-project-card__title">+194% de conversão sem elevar investimento em mídia</h3>
-            <p class="featured-project-card__desc">Problema de conversão em tráfego pago, resolvido com diagnóstico, hipóteses, redesign e leitura de comportamento.</p>
-            <a href="/projetos/quantum-vizz" class="featured-project-card__btn">Ver projeto</a>
-          </div>
-        </article>
-
-        <article class="featured-project-card" data-animate data-delay="1">
-          <a href="/projetos/2p-web-dev" class="featured-project-card__media" aria-label="Ver projeto Web Dev 2.0">
-            <img src="/assets/projetos/web-dev/cover.webp" alt="Web Dev 2.0, produto interno para operação e segurança" loading="lazy">
-          </a>
-          <div class="featured-project-card__body">
-            <span class="featured-project-card__tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                <path d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              Sistema interno / Implementação
-            </span>
-            <h3 class="featured-project-card__title">Uma planilha pública virou um sistema interno com login, histórico e controle</h3>
-            <p class="featured-project-card__desc">Um improviso operacional virou produto interno com autenticação, histórico, controle e mais segurança para a equipe.</p>
-            <a href="/projetos/2p-web-dev" class="featured-project-card__btn">Ver projeto</a>
-          </div>
-        </article>
-
-        <article class="featured-project-card" data-animate>
-          <a href="/projetos/mercado-das-figurinhas" class="featured-project-card__media" aria-label="Ver projeto Mercado das Figurinhas">
-            <img src="/assets/projetos/mercado-das-figurinhas/cover.webp" alt="Mercado das Figurinhas, produto digital para troca de figurinhas" loading="lazy">
-          </a>
-          <div class="featured-project-card__body">
-            <span class="featured-project-card__tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 21s7-5.4 7-12a7 7 0 1 0-14 0c0 6.6 7 12 7 12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="2"/>
-              </svg>
-              Produto + IA / Matching
-            </span>
-            <h3 class="featured-project-card__title">Um produto para organizar a bagunça das trocas de figurinhas</h3>
-            <p class="featured-project-card__desc">Da pesquisa ao MVP funcional, um produto com matching geolocalizado, WhatsApp contextual e modelo de assinatura.</p>
-            <a href="/projetos/mercado-das-figurinhas" class="featured-project-card__btn">Ver projeto</a>
-          </div>
-        </article>
-
-        <article class="featured-project-card" data-animate data-delay="1">
-          <a href="/projetos/bit-system" class="featured-project-card__media" aria-label="Ver projeto Bit System">
-            <img src="/assets/projetos/bit-system/bitsystem-cover.webp" alt="Bit System, sistema de marca e design system" loading="lazy">
-          </a>
-          <div class="featured-project-card__body">
-            <span class="featured-project-card__tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <rect x="4" y="4" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="2"/>
-                <rect x="14" y="4" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="2"/>
-                <rect x="4" y="14" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="2"/>
-                <rect x="14" y="14" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="2"/>
-              </svg>
-              Design System / Marca
-            </span>
-            <h3 class="featured-project-card__title">Um sistema de componentes para padronizar a entrega de uma operação que precisava escalar</h3>
-            <p class="featured-project-card__desc">Menos decisão repetida, menos retrabalho e mais consistência visual para uma operação de design em escala.</p>
-            <a href="/projetos/bit-system" class="featured-project-card__btn">Ver projeto</a>
-          </div>
-        </article>
-
-        <article class="featured-project-card" data-animate>
-          <a href="/projetos/farm-well-hub" class="featured-project-card__media" aria-label="Ver projeto Farm Well Hub">
-            <img src="/assets/projetos/farm-well-hub/cover.webp" alt="Farm Well Hub, serviço digital com foco em acessibilidade" loading="lazy">
-          </a>
-          <div class="featured-project-card__body">
-            <span class="featured-project-card__tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M5 19c9 0 14-5 14-14C10 5 5 10 5 19Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <path d="M5 19c3.8-4.7 7.4-7.5 12-10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              Serviço digital / Acessibilidade
-            </span>
-            <h3 class="featured-project-card__title">Uma plataforma para quem não podia perder tempo tentando entender a interface</h3>
-            <p class="featured-project-card__desc">A clareza vinha antes da estética: informação fácil, fluxo direto e acessibilidade para um público vulnerável.</p>
-            <a href="/projetos/farm-well-hub" class="featured-project-card__btn">Ver projeto</a>
-          </div>
-        </article>
-
-        <article class="featured-project-card" data-animate data-delay="1">
-          <a href="/projetos/olho-vivo" class="featured-project-card__media" aria-label="Ver projeto Olho Vivo">
-            <img src="/assets/projetos/olho-vivo/cover.webp" alt="Olho Vivo, pesquisa de produto sobre participação política" loading="lazy">
-          </a>
-          <div class="featured-project-card__body">
-            <span class="featured-project-card__tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2"/>
-                <path d="M16 16l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              Pesquisa / Produto digital
-            </span>
-            <h3 class="featured-project-card__title">Uma pesquisa para entender por que participar da política parecia tão distante</h3>
-            <p class="featured-project-card__desc">O trabalho partiu de entrevistas, mapas e jornadas para transformar barreiras reais em direção de produto.</p>
-            <a href="/projetos/olho-vivo" class="featured-project-card__btn">Ver projeto</a>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================
-       DEPOIMENTOS
-       ================================================ -->
-  <section class="home-testimonials section" id="depoimentos">
-    <div class="container">
-
-      <p class="section-kicker" data-animate>Depoimentos</p>
-      <h2 class="section-title section-title--home" data-animate>O que dizem sobre trabalhar comigo</h2>
-
-      <div class="home-testimonials__grid">
-
-        <article class="home-testimonial-card" data-animate data-delay="1">
-          <div class="home-testimonial-card__author">
-            <div class="home-testimonial-card__avatar" aria-hidden="true">
-              <span>JD</span>
-              <img src="/assets/clients/Juan.webp" alt="" loading="lazy">
-            </div>
-            <div>
-              <h3 class="home-testimonial-card__name">Juan Diaz</h3>
-              <a class="home-testimonial-card__profile" href="https://www.linkedin.com/in/juandiazmarketing/" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil de Juan Diaz no LinkedIn">LinkedIn</a>
-              <p class="home-testimonial-card__role">Growth Marketing · Cliente direto</p>
-            </div>
-          </div>
-          <blockquote class="home-testimonial-card__quote">
-            "Floriano's contributions have led to significant enhancements in digital platforms for esteemed clients. His ability to merge technical skill with creative vision ensures that all projects not only function seamlessly but also resonate with the intended audiences."
-          </blockquote>
-        </article>
-
-        <article class="home-testimonial-card" data-animate data-delay="2">
-          <div class="home-testimonial-card__author">
-            <div class="home-testimonial-card__avatar" aria-hidden="true">
-              <span>AM</span>
-              <img src="/assets/clients/Aramis.webp" alt="" loading="lazy">
-            </div>
-            <div>
-              <h3 class="home-testimonial-card__name">Aramis Magwitz</h3>
-              <a class="home-testimonial-card__profile" href="https://www.linkedin.com/in/aramis-magwitz-7483a82a/" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil de Aramis Magwitz no LinkedIn">LinkedIn</a>
-              <p class="home-testimonial-card__role">CEO da 2 Palitos Growth Lab</p>
-            </div>
-          </div>
-          <blockquote class="home-testimonial-card__quote">
-            "Desenvolvemos diversos projetos juntos e conseguimos alcançar todos os objetivos propostos pelos clientes, resultando em aumento das vendas, melhoria da identidade visual das marcas e crescimento na internet."
-          </blockquote>
-        </article>
-
-        <article class="home-testimonial-card" data-animate data-delay="3">
-          <div class="home-testimonial-card__author">
-            <div class="home-testimonial-card__avatar" aria-hidden="true">
-              <span>LS</span>
-              <img src="/assets/clients/Leonardo.webp" alt="" loading="lazy">
-            </div>
-            <div>
-              <h3 class="home-testimonial-card__name">Leonardo Santos</h3>
-              <a class="home-testimonial-card__profile" href="https://www.linkedin.com/in/leonardo-luis-santos/" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil de Leonardo Santos no LinkedIn">LinkedIn</a>
-              <p class="home-testimonial-card__role">Growth Marketing · Supervisor direto</p>
-            </div>
-          </div>
-          <blockquote class="home-testimonial-card__quote">
-            "Ele não apenas desenvolve soluções eficazes, mas também identifica os problemas reais a serem resolvidos, tornando-se um valioso companheiro no dia a dia."
-          </blockquote>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================
-       SOBRE MIM
-       ================================================ -->
-  <section class="home-about section" id="sobre-mim">
-    <div class="container">
-      <div class="home-about__grid">
-
-        <div class="home-about__media" data-animate>
-          <img
-            src="/assets/foto-floriano-sobre.webp"
-            alt="Floriano Silva"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="home-about__content" data-animate data-delay="1">
-          <ul class="home-about__list">
-            <li>Mais de 8 anos de experiência em design</li>
-            <li>Mais de 3 anos unindo estratégia, interface, dados e execução</li>
-            <li>Pós-graduado em Design Digital (UX/UI)</li>
-            <li>Certificado em Analytics, Growth e Google UX Design</li>
-            <li>Experiência internacional, atuando com clientes na Irlanda, EUA e Austrália</li>
-            
-          </ul>
-
-          <div class="home-about__actions">
-            <a href="https://docs.google.com/document/d/1hm6hnDomiTFlADy_AUysVOnuAU3BDrJ8Y7_ym4VbcRo/edit?tab=t.qxjadoowrw9d" class="home-about__btn home-about__btn--primary" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M14 2v6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 12v6M9 15l3 3 3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Currículo
-            </a>
-            <a href="https://www.linkedin.com/in/floriano-des/" class="home-about__btn home-about__btn--secondary" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-              LinkedIn
-            </a>
-            <a href="/sobre/" class="home-about__btn home-about__btn--secondary">Sobre mim</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================
-       REFLEXÕES
-       ================================================ -->
-  <section class="reflections section" id="reflexoes">
-    <div class="container">
-
-      <div class="section-header" data-animate>
-        <div>
-          <p class="section-kicker">Reflexões</p>
-          <h2 class="section-title section-title--home">Penso em voz alta por aqui.</h2>
-        </div>
-          <a href="/reflexoes/" class="btn btn--orange">Ver todas as reflexões</a>
-      </div>
-
-      <div class="reflections__grid">
-
-        {% if reflexoes.items.length %}
-          {% for post in reflexoes.items %}
-            {% if loop.index <= 3 %}
-            <article class="post-card" data-animate data-delay="{{ loop.index }}">
-              <a href="{{ post.url }}" class="post-card__link">
-                <div class="post-card__thumb">
-                  {% if post.thumbnail %}
-                    <img src="{{ post.thumbnail }}" alt="{{ post.title }}" loading="lazy">
-                  {% else %}
-                    <div style="width:100%;height:100%;background:rgba(255,255,255,.06);"></div>
-                  {% endif %}
-                  <div class="post-card__thumb-gradient"></div>
-                </div>
-                <div class="post-card__body">
-                  <h3 class="post-card__title">{{ post.title }}</h3>
-                  {% if post.excerpt %}
-                    <p class="post-card__excerpt">{{ post.excerpt }}</p>
-                  {% endif %}
-                  <span class="post-card__cta">Leia mais »</span>
-                </div>
-                {% if post.dateDisplay %}
-                  <time class="post-card__date" datetime="{{ post.dateAttr }}">{{ post.dateDisplay }}</time>
-                {% endif %}
-              </a>
-            </article>
-            {% endif %}
-          {% endfor %}
-        {% else %}
-          <p style="color: rgba(230,230,230,.5); grid-column: 1 / -1;">
-            Nenhum artigo encontrado. Confira diretamente no
-        <a href="https://medium.com/@floriano-des" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Medium</a>.
-          </p>
-        {% endif %}
-
-      </div>
-    </div>
-  </section>
+</main>

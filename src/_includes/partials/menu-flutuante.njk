@@ -1,0 +1,51 @@
+<button
+  class="floating-menu__trigger"
+  type="button"
+  aria-label="Abrir menu"
+  aria-expanded="false"
+  aria-controls="floatingMenuPanel"
+  data-floating-menu-trigger
+  data-magnetic
+>
+  <span class="floating-menu__trigger-label" data-magnetic-inner>Menu</span>
+  <span class="floating-menu__trigger-lines" aria-hidden="true">
+    <span></span>
+    <span></span>
+  </span>
+</button>
+
+<div class="floating-menu__backdrop" data-floating-menu-backdrop hidden></div>
+
+<aside
+  class="floating-menu__panel"
+  id="floatingMenuPanel"
+  aria-hidden="true"
+  aria-label="Menu"
+  data-floating-menu-panel
+  data-lenis-prevent
+>
+  <div class="floating-menu__panel-top">
+    <span>Navegação</span>
+    <button type="button" class="floating-menu__close" aria-label="Fechar menu" data-floating-menu-close>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <nav class="floating-menu__nav" aria-label="Navegação expandida">
+    <a href="/" data-floating-menu-link><span>01</span>Home</a>
+    <a href="/#projetos" data-floating-menu-link><span>02</span>Projetos</a>
+    <a href="/#servicos" data-floating-menu-link><span>03</span>Serviços</a>
+    <a href="/sobre/" data-floating-menu-link><span>04</span>Sobre</a>
+    <a href="/reflexoes/" data-floating-menu-link><span>05</span>Reflexões</a>
+  </nav>
+
+  <div class="floating-menu__footer">
+    <div class="floating-menu__socials">
+      <a href="https://www.linkedin.com/in/floriano-des/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/floriano-des/" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://wa.me/5518996773264" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+    <div class="gtranslate_wrapper floating-menu__translate" aria-label="Selecionar idioma"></div>
+  </div>
+</aside>
