@@ -19,5 +19,16 @@
     } catch (_) {
       document.documentElement.removeAttribute("data-transition-pending");
     }
+
+    try {
+      var preloaderSeen = sessionStorage.getItem("floriano:preloader-v2");
+      var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!preloaderSeen && !reducedMotion && !document.documentElement.hasAttribute("data-transition-pending")) {
+        document.documentElement.setAttribute("data-preloader-pending", "");
+      }
+    } catch (_) {
+      document.documentElement.removeAttribute("data-preloader-pending");
+    }
   }());
 </script>
