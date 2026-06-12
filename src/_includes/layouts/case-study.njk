@@ -84,19 +84,22 @@
   <link rel="stylesheet" href="/css/case-study.core.css?v={{ '/css/case-study.core.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/case-study.projects.css?v={{ '/css/case-study.projects.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/case-study.extras.css?v={{ '/css/case-study.extras.css' | assetVersion }}">
+  <link rel="stylesheet" href="/css/style.case-redesign.css?v={{ '/css/style.case-redesign.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/style.motion.css?v={{ '/css/style.motion.css' | assetVersion }}">
 </head>
-<body>
+<body class="case-redesign">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K738G4S2"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+  {% include "partials/preloader.njk" %}
   {% include "partials/transition-curtain.njk" %}
 
   {% include "partials/nav.njk" %}
 
   {{ content | safe }}
 
+  {% include "partials/case-next.njk" %}
   {% include "partials/footer.njk" %}
 
   <script src="/js/main.js?v={{ '/js/main.js' | assetVersion }}"></script>
