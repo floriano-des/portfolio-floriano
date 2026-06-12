@@ -1,0 +1,23 @@
+<script>
+  (function () {
+    document.documentElement.classList.add("motion-js");
+    window.setTimeout(function () {
+      if (!window.__florianoRevealsReady) {
+        document.documentElement.classList.remove("motion-js");
+      }
+    }, 2500);
+
+    try {
+      var raw = sessionStorage.getItem("floriano:page-transition");
+      var state = raw ? JSON.parse(raw) : null;
+
+      if (state && state.expiresAt > Date.now()) {
+        document.documentElement.setAttribute("data-transition-pending", "");
+      } else {
+        sessionStorage.removeItem("floriano:page-transition");
+      }
+    } catch (_) {
+      document.documentElement.removeAttribute("data-transition-pending");
+    }
+  }());
+</script>

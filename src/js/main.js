@@ -9,8 +9,6 @@
   var SCROLL_TRIGGER     = 40;   // px , threshold para classe .scrolled no header
   var ACTIVE_LINK_OFFSET = 120;  // px , offset do topo para detecção de seção ativa
   var CAROUSEL_GAP       = 24;   // px , gap entre itens do carrossel (deve bater com CSS)
-  var IO_THRESHOLD       = 0.12; // fração visível para disparar animação
-  var IO_ROOT_MARGIN     = '0px 0px -40px 0px'; // margem do Intersection Observer
   var RESIZE_DEBOUNCE    = 150;  // ms , debounce no resize do carrossel
 
   // ─── Navbar: scroll effect ────────────────────────────
@@ -83,31 +81,6 @@
         navToggle.focus();
       }
     });
-  }
-
-  // ─── Animações de entrada (Intersection Observer) ────
-  var animateEls = document.querySelectorAll('[data-animate]');
-
-  if ('IntersectionObserver' in window && animateEls.length > 0) {
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: IO_THRESHOLD, rootMargin: IO_ROOT_MARGIN });
-
-    animateEls.forEach(function (el) {
-      var rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight && rect.bottom > 0) {
-        el.classList.add('visible');
-      } else {
-        observer.observe(el);
-      }
-    });
-  } else {
-    animateEls.forEach(function (el) { el.classList.add('visible'); });
   }
 
   // ─── Carrossel genérico ───────────────────────────────

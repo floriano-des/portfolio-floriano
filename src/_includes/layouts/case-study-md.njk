@@ -10,6 +10,7 @@
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% include "partials/motion-head.njk" %}
 
   <!-- SEO Essencial -->
   <title>{{ title or metadata.title }}</title>
@@ -72,6 +73,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/reset.css?v={{ '/css/reset.css' | assetVersion }}">
+  <link rel="stylesheet" href="/css/vendor.lenis.css?v={{ '/css/vendor.lenis.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/style.tokens.css?v={{ '/css/style.tokens.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/style.nav.css?v={{ '/css/style.nav.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/style.home.css?v={{ '/css/style.home.css' | assetVersion }}">
@@ -82,12 +84,14 @@
   <link rel="stylesheet" href="/css/case-study.core.css?v={{ '/css/case-study.core.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/case-study.projects.css?v={{ '/css/case-study.projects.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/case-study.extras.css?v={{ '/css/case-study.extras.css' | assetVersion }}">
+  <link rel="stylesheet" href="/css/style.motion.css?v={{ '/css/style.motion.css' | assetVersion }}">
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K738G4S2"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+  {% include "partials/transition-curtain.njk" %}
 
   {% include "partials/nav.njk" %}
 
@@ -256,5 +260,6 @@
   {% include "partials/footer.njk" %}
 
   <script src="/js/main.js?v={{ '/js/main.js' | assetVersion }}"></script>
+  {% include "partials/motion-scripts.njk" %}
 </body>
 </html>

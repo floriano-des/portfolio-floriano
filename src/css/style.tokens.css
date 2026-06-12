@@ -53,6 +53,8 @@
   --text-2xl:  clamp(1.5rem,   3vw,   2rem);
   --text-3xl:  clamp(2rem,     4vw,   3rem);
   --text-4xl:  clamp(2.5rem,   6vw,   5rem);
+  --text-h1:      clamp(2.5rem, 6vw, 5rem);
+  --text-display: clamp(3.5rem, 12vw, 11rem);
 
   /* Line heights */
   --leading-tight:  1.2;
@@ -96,7 +98,19 @@
   /* ─── Transições ─────────────────────────────────── */
   --transition:      0.22s ease;
   --transition-slow: 0.40s ease;
+  --duration-fast:   0.22s;
+  --duration-base:   0.40s;
+  --duration-reveal: 0.55s;
+  --duration-curtain: 0.82s;
+  --ease-curtain:    cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-out-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-reveal:     ease;
+  --curve-depth:     clamp(36px, 5vw, 80px);
   --home-stats-height: 180px;
+
+  /* Tema contextual para componentes novos, sem alterar páginas existentes */
+  --bg: var(--color-neutral-050);
+  --fg: var(--color-dark-900);
 
   /* ─── Tokens de projeto (camada de conteúdo) ─────── */
   /* Cores específicas de cards de projeto , não usar fora desse contexto */
