@@ -75,12 +75,14 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  width: min(calc(100% - 48px), 1400px);
   color: var(--color-neutral-050);
-  font-size: var(--text-sm);
-  font-weight: var(--fw-medium);
-  letter-spacing: 0.04em;
+  font-size: clamp(2.6rem, 7vw, 7.4rem);
+  font-weight: var(--fw-light);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  text-align: center;
   transform: translate(-50%, -50%);
-  white-space: nowrap;
 }
 
 .site-preloader {
@@ -152,6 +154,11 @@ html[data-transition-pending] .page-transition,
   visibility: visible;
   pointer-events: auto;
   animation: page-transition-failsafe 0.2s 2.5s forwards;
+}
+
+html[data-transition-pending] .page-transition {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes page-transition-failsafe {

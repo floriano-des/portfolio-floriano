@@ -83,8 +83,8 @@
   top: 24px;
   right: 24px;
   z-index: 3;
-  width: 82px;
-  height: 82px;
+  width: 104px;
+  height: 104px;
   display: grid;
   place-items: center;
   border-radius: 50%;
@@ -118,20 +118,20 @@
 }
 
 .floating-menu__trigger-label {
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   font-weight: var(--fw-medium);
 }
 
 .floating-menu__trigger-lines {
   position: absolute;
-  right: 17px;
-  bottom: 20px;
+  right: 22px;
+  bottom: 25px;
   display: grid;
   gap: 4px;
 }
 
 .floating-menu__trigger-lines span {
-  width: 13px;
+  width: 17px;
   height: 1px;
   background: currentColor;
   transition: transform 0.3s ease;
@@ -297,16 +297,16 @@ body.floating-menu-open .whatsapp-float {
   .floating-menu__trigger {
     top: 14px;
     right: 14px;
-    width: 68px;
-    height: 68px;
+    width: 80px;
+    height: 80px;
     opacity: 1;
     transform: scale(1);
     pointer-events: auto;
   }
 
   .floating-menu__trigger-lines {
-    right: 13px;
-    bottom: 16px;
+    right: 16px;
+    bottom: 19px;
   }
 
   .floating-menu__panel {

@@ -201,21 +201,65 @@ bodyClass: home-redesign
   </section>
 
   <section class="home-proof" aria-labelledby="proof-title">
-    <div class="home-shell home-proof__grid">
-      <div>
-        <p class="home-eyebrow" data-animate>Trabalho em parceria</p>
-        <h2 class="sr-only" id="proof-title">Depoimento de cliente</h2>
-        <blockquote data-animate>
-          “Ele não apenas desenvolve soluções eficazes, mas também identifica os problemas reais a serem resolvidos.”
-        </blockquote>
+    <div class="home-shell">
+      <p class="home-eyebrow" data-animate>Trabalho em parceria</p>
+      <h2 class="sr-only" id="proof-title">Depoimentos de clientes e parceiros</h2>
+
+      <div class="home-proof__viewport testimonials__viewport" data-animate>
+        <div class="home-proof__track testimonials__track" id="testimonialsTrack">
+          <article class="home-proof__slide testimonial-slide">
+            <blockquote>
+              “Ele não apenas desenvolve soluções eficazes, mas também identifica os problemas reais a serem resolvidos.”
+            </blockquote>
+            <a class="home-proof__author" href="https://www.linkedin.com/in/leonardo-luis-santos/" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/clients/Leonardo.webp" alt="" width="64" height="64" loading="lazy">
+              <div>
+                <strong>Leonardo Santos</strong>
+                <span>Growth Marketing, supervisor direto</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="home-proof__slide testimonial-slide">
+            <blockquote>
+              “His ability to merge technical skill with creative vision ensures that projects function seamlessly and resonate with the intended audiences.”
+            </blockquote>
+            <a class="home-proof__author" href="https://www.linkedin.com/in/juandiazmarketing/" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/clients/Juan.webp" alt="" width="64" height="64" loading="lazy">
+              <div>
+                <strong>Juan Diaz</strong>
+                <span>Growth Marketing, cliente direto</span>
+              </div>
+            </a>
+          </article>
+
+          <article class="home-proof__slide testimonial-slide">
+            <blockquote>
+              “Desenvolvemos diversos projetos juntos e conseguimos alcançar todos os objetivos propostos pelos clientes.”
+            </blockquote>
+            <a class="home-proof__author" href="https://www.linkedin.com/in/aramis-magwitz-7483a82a/" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/clients/Aramis.webp" alt="" width="64" height="64" loading="lazy">
+              <div>
+                <strong>Aramis Magwitz</strong>
+                <span>CEO da 2 Palitos Growth Lab</span>
+              </div>
+            </a>
+          </article>
+        </div>
       </div>
 
-      <div class="home-proof__author" data-animate>
-        <img src="/assets/clients/Leonardo.webp" alt="" width="64" height="64" loading="lazy">
-        <div>
-          <strong>Leonardo Santos</strong>
-          <span>Growth Marketing, supervisor direto</span>
-        </div>
+      <div class="home-proof__controls testimonials__controls" data-animate>
+        <button class="home-proof__button testimonials__btn" id="testimonialsPrev" type="button" aria-label="Depoimento anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M19 12H5M11 18l-6-6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="home-proof__dots testimonials__dots" id="testimonialsDots" role="tablist" aria-label="Selecionar depoimento"></div>
+        <button class="home-proof__button testimonials__btn" id="testimonialsNext" type="button" aria-label="Próximo depoimento">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
     </div>
   </section>

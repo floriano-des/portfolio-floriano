@@ -68,7 +68,9 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K738G4S2"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+  {% if page.url == "/" %}
   {% include "partials/preloader.njk" %}
+  {% endif %}
   {% include "partials/transition-curtain.njk" %}
 
   {% if not hideSiteChrome %}

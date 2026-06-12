@@ -17,6 +17,16 @@
   var moveX = window.gsap.quickTo(preview, 'x', { duration: 0.45, ease: 'power3.out' });
   var moveY = window.gsap.quickTo(preview, 'y', { duration: 0.45, ease: 'power3.out' });
 
+  function getClampedPoint(event) {
+    var halfWidth = preview.offsetWidth / 2;
+    var halfHeight = preview.offsetHeight / 2;
+
+    return {
+      x: Math.max(halfWidth + 28, Math.min(window.innerWidth - halfWidth - 28, event.clientX)),
+      y: Math.max(halfHeight + 28, Math.min(window.innerHeight - halfHeight - 28, event.clientY))
+    };
+  }
+
   window.gsap.set(preview, {
     xPercent: -50,
     yPercent: -50
@@ -28,9 +38,10 @@
     preload.src = source;
 
     row.addEventListener('pointerenter', function (event) {
+      var point = getClampedPoint(event);
       image.src = source;
-      moveX(event.clientX);
-      moveY(event.clientY);
+      moveX(point.x);
+      moveY(point.y);
       window.gsap.to(preview, {
         autoAlpha: 1,
         scale: 1,
@@ -41,13 +52,10 @@
     });
 
     row.addEventListener('pointermove', function (event) {
-      var halfWidth = preview.offsetWidth / 2;
-      var halfHeight = preview.offsetHeight / 2;
-      var x = Math.max(halfWidth + 28, Math.min(window.innerWidth - halfWidth - 54, event.clientX));
-      var y = Math.max(halfHeight + 28, Math.min(window.innerHeight - halfHeight - 54, event.clientY));
+      var point = getClampedPoint(event);
 
-      moveX(x);
-      moveY(y);
+      moveX(point.x);
+      moveY(point.y);
     });
 
     row.addEventListener('pointerleave', function () {

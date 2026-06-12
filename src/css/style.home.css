@@ -233,23 +233,25 @@
 
 .round-link {
   justify-self: end;
-  width: clamp(142px, 14vw, 190px);
+  position: relative;
+  width: clamp(168px, 15vw, 210px);
   aspect-ratio: 1;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
+  padding: 28px;
+  display: grid;
+  place-items: center;
   border-radius: 50%;
   color: var(--color-neutral-050);
   background: var(--color-brand-500);
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   font-weight: var(--fw-semibold);
+  text-align: center;
   will-change: transform;
 }
 
 .round-link svg {
-  align-self: flex-end;
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
 }
 
 .project-index {
@@ -346,7 +348,8 @@
   left: 0;
   width: min(34vw, 470px);
   aspect-ratio: 4 / 3;
-  overflow: visible;
+  overflow: hidden;
+  border-radius: 18px;
   opacity: 0;
   transform: translate(-50%, -50%) scale(0.84);
   pointer-events: none;
@@ -363,9 +366,9 @@
 
 .project-preview__cta {
   position: absolute;
-  right: -34px;
-  bottom: -34px;
-  width: 98px;
+  right: 18px;
+  bottom: 18px;
+  width: 92px;
   aspect-ratio: 1;
   display: grid;
   place-items: center;
@@ -374,6 +377,7 @@
   background: var(--color-brand-500);
   font-size: 0.74rem;
   font-weight: var(--fw-semibold);
+  box-shadow: 0 12px 30px rgba(1, 7, 29, 0.22);
 }
 
 .home-services-v2 {
@@ -485,15 +489,32 @@
   background: #f1f0ec;
 }
 
-.home-proof__grid {
+.home-proof .home-proof__viewport {
+  margin-top: 36px;
+  overflow: hidden;
+  transition: height 0.45s var(--ease-out-expo);
+}
+
+.home-proof .home-proof__track {
+  display: flex;
+  align-items: flex-start;
+  transition: transform 0.55s var(--ease-out-expo);
+  will-change: transform;
+}
+
+.home-proof .home-proof__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 0;
   display: grid;
   grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.5fr);
   gap: clamp(60px, 10vw, 180px);
-  align-items: end;
+  align-items: start;
+  text-align: left;
 }
 
 .home-proof blockquote {
-  margin-top: 36px;
+  margin: 0;
   max-width: 1040px;
   font-size: clamp(2.2rem, 5.4vw, 5.2rem);
   font-weight: var(--fw-light);
@@ -503,8 +524,10 @@
 
 .home-proof__author {
   display: flex;
+  align-self: end;
   align-items: center;
   gap: 16px;
+  color: inherit;
 }
 
 .home-proof__author img {
@@ -529,6 +552,68 @@
   line-height: 1.45;
 }
 
+.home-proof .home-proof__controls {
+  margin-top: clamp(42px, 5vw, 72px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.home-proof .home-proof__button {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(1, 7, 29, 0.22);
+  border-radius: 50%;
+  color: var(--color-dark-900);
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.home-proof .home-proof__button:hover,
+.home-proof .home-proof__button:focus-visible {
+  color: var(--color-neutral-050);
+  background: var(--color-dark-900);
+  transform: translateY(-2px);
+}
+
+.home-proof .home-proof__dots {
+  min-width: 72px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.home-proof .testimonials__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-dark-900);
+  opacity: 0.22;
+  cursor: pointer;
+  transition: width 0.25s ease, opacity 0.25s ease;
+}
+
+.home-proof .testimonials__dot.active {
+  width: 28px;
+  opacity: 1;
+}
+
+@media (min-width: 1600px) {
+  .home-marquee__group {
+    font-size: clamp(8rem, 10vw, 11rem);
+  }
+
+  .home-hero__portrait {
+    width: min(43vw, 700px);
+  }
+}
+
 @media (max-width: 1000px) {
   .home-marquee {
     transform: translateY(-72%);
@@ -551,8 +636,9 @@
     grid-template-columns: 46px minmax(220px, 1fr) minmax(150px, 0.55fr) 60px 24px;
   }
 
-  .home-proof__grid {
+  .home-proof .home-proof__slide {
     grid-template-columns: 1fr;
+    gap: 48px;
   }
 }
 
@@ -626,7 +712,7 @@
 
   .round-link {
     justify-self: start;
-    width: 150px;
+    width: 168px;
   }
 
   .project-index {
@@ -725,12 +811,12 @@
     padding-block: 110px;
   }
 
-  .home-proof__grid {
-    gap: 50px;
-  }
-
   .home-proof blockquote {
     font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .home-proof .home-proof__controls {
+    justify-content: flex-start;
   }
 }
 

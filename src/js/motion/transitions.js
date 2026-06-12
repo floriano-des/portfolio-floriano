@@ -162,7 +162,7 @@
     var destination = url.href;
     var transitionLabel = getLabel(link, url);
     active = true;
-    label.textContent = "• " + transitionLabel;
+    label.textContent = transitionLabel;
     dispatch("floriano:transition-start");
     armWatchdog(destination);
     writeState(destination, transitionLabel);
@@ -204,7 +204,7 @@
       return;
     }
 
-    label.textContent = "• " + (state.label || "Próxima página");
+    label.textContent = state.label || "Próxima página";
     active = true;
     dispatch("floriano:transition-start");
     armWatchdog();

@@ -105,9 +105,15 @@
       return items[0] ? items[0].offsetWidth + CAROUSEL_GAP : 0;
     }
 
+    function updateViewportHeight() {
+      if (!slideMode || !trackEl.parentElement || !items[current]) return;
+      trackEl.parentElement.style.height = items[current].offsetHeight + 'px';
+    }
+
     function goTo(index) {
       current = Math.max(0, Math.min(index, maxIndex()));
       trackEl.style.transform = 'translateX(-' + (current * itemWidth()) + 'px)';
+      updateViewportHeight();
       updateDots();
     }
 
@@ -150,20 +156,21 @@
       if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
     });
 
-    if (!slideMode) {
-      window.addEventListener('resize', function () {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function () {
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(function () {
+        if (!slideMode) {
           perView  = window.innerWidth <= 768 ? 1 : 2;
           current  = Math.min(current, maxIndex());
           buildDots();
-          goTo(current);
-        }, RESIZE_DEBOUNCE);
-      }, { passive: true });
-    }
+        }
+        goTo(current);
+      }, RESIZE_DEBOUNCE);
+    }, { passive: true });
 
     buildDots();
     goTo(0);
+    window.addEventListener('load', updateViewportHeight, { once: true });
   }
 
   // Carrossel , Explorações (projetos.html)
