@@ -1,14 +1,46 @@
-<script src="/js/vendor/gsap-3.15.0.min.js?v={{ '/js/vendor/gsap-3.15.0.min.js' | assetVersion }}" defer fetchpriority="low"></script>
-<script src="/js/vendor/ScrollTrigger-3.15.0.min.js?v={{ '/js/vendor/ScrollTrigger-3.15.0.min.js' | assetVersion }}" defer fetchpriority="low"></script>
-<script src="/js/vendor/lenis-1.3.23.min.js?v={{ '/js/vendor/lenis-1.3.23.min.js' | assetVersion }}" defer fetchpriority="low"></script>
-<script src="/js/motion/lenis-init.js?v={{ '/js/motion/lenis-init.js' | assetVersion }}" defer></script>
-<script src="/js/motion/reveals.js?v={{ '/js/motion/reveals.js' | assetVersion }}" defer></script>
 <script src="/js/motion/transitions.js?v={{ '/js/motion/transitions.js' | assetVersion }}" defer></script>
+{% if motionContext == "home" %}
 <script src="/js/motion/preloader.js?v={{ '/js/motion/preloader.js' | assetVersion }}" defer></script>
-<script src="/js/motion/floating-menu.js?v={{ '/js/motion/floating-menu.js' | assetVersion }}" defer></script>
-<script src="/js/motion/magnetic.js?v={{ '/js/motion/magnetic.js' | assetVersion }}" defer></script>
-<script src="/js/motion/home-marquee.js?v={{ '/js/motion/home-marquee.js' | assetVersion }}" defer></script>
-<script src="/js/motion/project-preview.js?v={{ '/js/motion/project-preview.js' | assetVersion }}" defer></script>
-<script src="/js/motion/section-curves.js?v={{ '/js/motion/section-curves.js' | assetVersion }}" defer></script>
-<script src="/js/motion/case-motion.js?v={{ '/js/motion/case-motion.js' | assetVersion }}" defer></script>
+{% endif %}
 <script src="/js/motion/footer-clock.js?v={{ '/js/motion/footer-clock.js' | assetVersion }}" defer></script>
+<script>
+  (function () {
+    "use strict";
+
+    var sources = [
+      "/js/vendor/gsap-3.15.0.min.js?v={{ '/js/vendor/gsap-3.15.0.min.js' | assetVersion }}",
+      "/js/vendor/ScrollTrigger-3.15.0.min.js?v={{ '/js/vendor/ScrollTrigger-3.15.0.min.js' | assetVersion }}",
+      "/js/vendor/lenis-1.3.23.min.js?v={{ '/js/vendor/lenis-1.3.23.min.js' | assetVersion }}",
+      "/js/motion/lenis-init.js?v={{ '/js/motion/lenis-init.js' | assetVersion }}",
+      "/js/motion/reveals.js?v={{ '/js/motion/reveals.js' | assetVersion }}",
+      "/js/motion/floating-menu.js?v={{ '/js/motion/floating-menu.js' | assetVersion }}",
+      "/js/motion/magnetic.js?v={{ '/js/motion/magnetic.js' | assetVersion }}"
+      {% if motionContext == "home" %},
+      "/js/motion/home-marquee.js?v={{ '/js/motion/home-marquee.js' | assetVersion }}",
+      "/js/motion/project-preview.js?v={{ '/js/motion/project-preview.js' | assetVersion }}",
+      "/js/motion/section-curves.js?v={{ '/js/motion/section-curves.js' | assetVersion }}"
+      {% endif %}
+      {% if motionContext == "case" %},
+      "/js/motion/case-motion.js?v={{ '/js/motion/case-motion.js' | assetVersion }}"
+      {% endif %}
+    ];
+
+    function loadMotion() {
+      if (window.__florianoMotionLoading) return;
+      window.__florianoMotionLoading = true;
+
+      sources.forEach(function (source) {
+        var script = document.createElement("script");
+        script.src = source;
+        script.async = false;
+        document.body.appendChild(script);
+      });
+    }
+
+    if (document.readyState === "complete") {
+      loadMotion();
+    } else {
+      window.addEventListener("load", loadMotion, { once: true });
+    }
+  }());
+</script>

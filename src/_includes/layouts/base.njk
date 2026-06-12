@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-K738G4S2');</script>
-  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
+  {% include "partials/gtm-head.njk" %}
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% include "partials/motion-head.njk" %}
 
@@ -42,14 +36,20 @@
   {% block extraHead %}{% endblock %}
 
   <!-- Fonts: Montserrat -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/montserrat-latin-normal.woff2" crossorigin>
+  {% if page.url == "/" %}
+  <link rel="preload" as="image" href="/assets/perfil-floriano-hero.webp" fetchpriority="high">
+  {% endif %}
 
   <!-- Favicon -->
   <link rel="icon" type="image/webp" href="/assets/favicon.webp">
 
   <!-- Styles -->
+  {% if page.url == "/" %}
+  <style>
+    {% inlineCss "reset.css", "vendor.lenis.css", "style.tokens.css", "style.nav.css", "style.home.css", "style.footer-motion.css", "style.motion.css" %}
+  </style>
+  {% else %}
   <link rel="stylesheet" href="/css/reset.css?v={{ '/css/reset.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/vendor.lenis.css?v={{ '/css/vendor.lenis.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/style.tokens.css?v={{ '/css/style.tokens.css' | assetVersion }}">
@@ -60,6 +60,7 @@
   <link rel="stylesheet" href="/css/style.responsive.css?v={{ '/css/style.responsive.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/style.pages.css?v={{ '/css/style.pages.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/style.motion.css?v={{ '/css/style.motion.css' | assetVersion }}">
+  {% endif %}
   {% if extraStylesheet %}<link rel="stylesheet" href="{{ extraStylesheet }}?v={{ extraStylesheet | assetVersion }}">{% endif %}
   {% block extraStyles %}{% endblock %}
 </head>

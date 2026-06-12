@@ -1,0 +1,31 @@
+<!-- Google Tag Manager -->
+<script>
+  (function (window, document, tagName, layerName, containerId) {
+    window[layerName] = window[layerName] || [];
+    window[layerName].push({
+      "gtm.start": new Date().getTime(),
+      event: "gtm.js"
+    });
+
+    function loadTagManager() {
+      var firstScript = document.getElementsByTagName(tagName)[0];
+      var script = document.createElement(tagName);
+      var layerQuery = layerName !== "dataLayer" ? "&l=" + layerName : "";
+
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtm.js?id=" + containerId + layerQuery;
+      firstScript.parentNode.insertBefore(script, firstScript);
+    }
+
+    function scheduleTagManager() {
+      window.setTimeout(loadTagManager, 2500);
+    }
+
+    if (document.readyState === "complete") {
+      scheduleTagManager();
+    } else {
+      window.addEventListener("load", scheduleTagManager, { once: true });
+    }
+  }(window, document, "script", "dataLayer", "GTM-K738G4S2"));
+</script>
+<!-- End Google Tag Manager -->

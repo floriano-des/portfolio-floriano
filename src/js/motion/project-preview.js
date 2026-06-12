@@ -34,12 +34,14 @@
 
   Array.prototype.forEach.call(rows, function (row) {
     var source = row.getAttribute('data-project-image');
-    var preload = new Image();
-    preload.src = source;
 
     row.addEventListener('pointerenter', function (event) {
       var point = getClampedPoint(event);
-      image.src = source;
+
+      if (image.getAttribute('src') !== source) {
+        image.src = source;
+      }
+
       moveX(point.x);
       moveY(point.y);
       window.gsap.to(preview, {

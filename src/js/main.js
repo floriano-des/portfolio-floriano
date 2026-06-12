@@ -127,6 +127,8 @@
         dot.className = dotClass + (i === 0 ? ' active' : '');
         dot.setAttribute('aria-label', 'Ir para slide ' + (i + 1));
         dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        dot.setAttribute('tabindex', i === 0 ? '0' : '-1');
         (function (idx) {
           dot.addEventListener('click', function () { goTo(idx); });
         }(i));
@@ -138,7 +140,10 @@
       if (!dotsContainer) return;
       var dotClass = slideMode ? 'testimonials__dot' : 'carousel__dot';
       dotsContainer.querySelectorAll('.' + dotClass).forEach(function (d, i) {
-        d.classList.toggle('active', i === current);
+        var isCurrent = i === current;
+        d.classList.toggle('active', isCurrent);
+        d.setAttribute('aria-selected', isCurrent ? 'true' : 'false');
+        d.setAttribute('tabindex', isCurrent ? '0' : '-1');
       });
     }
 

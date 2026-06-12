@@ -92,6 +92,7 @@
   visibility: hidden;
   pointer-events: none;
   transform: translateY(-112%);
+  transition: transform 0.56s cubic-bezier(0.76, 0, 0.24, 1);
   will-change: transform;
 }
 
@@ -126,6 +127,7 @@
   left: 50%;
   opacity: 0;
   transform: translate(-50%, -30%);
+  transition: opacity 0.16s ease, transform 0.2s var(--ease-out-expo);
   white-space: nowrap;
 }
 
@@ -139,6 +141,11 @@ html[data-preloader-pending] .site-preloader {
   pointer-events: auto;
   transform: translateY(0);
   animation: preloader-failsafe 0.25s 2.5s forwards;
+}
+
+html[data-preloader-pending] .site-preloader.is-leaving {
+  pointer-events: none;
+  transform: translateY(-112%);
 }
 
 @keyframes preloader-failsafe {

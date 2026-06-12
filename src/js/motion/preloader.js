@@ -27,42 +27,18 @@
 
   window.setTimeout(releasePreloader, 2500);
 
-  if (!window.gsap) {
-    releasePreloader();
-    return;
-  }
-
-  var timeline = window.gsap.timeline({
-    defaults: { ease: 'power3.out' },
-    onComplete: releasePreloader
-  });
-
   words.forEach(function (word, index) {
-    if (index === 0) {
-      timeline.fromTo(word,
-        { autoAlpha: 0, yPercent: 28 },
-        { autoAlpha: 1, yPercent: 0, duration: 0.16 }
-      );
-    }
-
-    timeline.to(word, {
-      autoAlpha: 0,
-      yPercent: -28,
-      duration: 0.14
-    }, index === 0 ? '+=0.12' : '+=0.1');
-
-    if (words[index + 1]) {
-      timeline.fromTo(words[index + 1],
-        { autoAlpha: 0, yPercent: 28 },
-        { autoAlpha: 1, yPercent: 0, duration: 0.16 },
-        '<0.05'
-      );
-    }
+    window.setTimeout(function () {
+      words.forEach(function (item) {
+        item.classList.remove('is-active');
+      });
+      word.classList.add('is-active');
+    }, index * 380);
   });
 
-  timeline.to(preloader, {
-    yPercent: -112,
-    duration: 0.5,
-    ease: 'power4.inOut'
-  }, '+=0.08');
+  window.setTimeout(function () {
+    preloader.classList.add('is-leaving');
+  }, 1180);
+
+  window.setTimeout(releasePreloader, 1780);
 }());

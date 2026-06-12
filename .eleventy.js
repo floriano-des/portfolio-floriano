@@ -45,6 +45,20 @@ module.exports = function (eleventyConfig) {
     }
   });
 
+  eleventyConfig.addShortcode("inlineCss", (...files) => {
+    const cssRoot = path.resolve("src", "css");
+
+    return files.map((file) => {
+      const absolutePath = path.resolve(cssRoot, file);
+
+      if (!absolutePath.startsWith(`${cssRoot}${path.sep}`)) {
+        throw new Error(`Invalid CSS path: ${file}`);
+      }
+
+      return fs.readFileSync(absolutePath, "utf8").replace(/<\/style/gi, "<\\/style");
+    }).join("\n");
+  });
+
   eleventyConfig.addPairedShortcode("caseSection", (content, kicker, title, sectionClass = "section", theme = "light") => {
     const kickerClass = theme === "dark" ? "cs-kicker-dark" : "cs-kicker-light";
     const renderedContent = markdown.render(String(content || "").replace(/^\s+(<)/gm, "$1"));
