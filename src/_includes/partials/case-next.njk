@@ -1,0 +1,17 @@
+{% set caseData = caseStudies[page.fileSlug] %}
+{% if caseData and caseData.next %}
+<nav class="case-next" aria-label="Próximo projeto">
+  <a class="case-next__link" href="{{ caseData.next.href }}">
+    <span class="case-next__eyebrow">Próximo projeto</span>
+    <span class="case-next__title">{{ caseData.next.title }}</span>
+    <span class="case-next__media" aria-hidden="true">
+      <img src="{{ caseData.next.cover }}" alt="" loading="lazy">
+    </span>
+    <span class="case-next__arrow" aria-hidden="true">
+      <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+        <path d="M5 29 29 5M11 5h18v18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </a>
+</nav>
+{% endif %}

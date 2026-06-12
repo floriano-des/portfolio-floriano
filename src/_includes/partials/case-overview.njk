@@ -1,0 +1,32 @@
+{% set caseData = caseStudies[page.fileSlug] %}
+{% if caseData %}
+<section class="case-overview" aria-label="Informações principais do projeto">
+  <div class="case-overview__inner">
+    <dl class="case-overview__meta">
+      <div>
+        <dt>Serviços</dt>
+        <dd>{{ caseData.service }}</dd>
+      </div>
+      <div>
+        <dt>Stack</dt>
+        <dd>{{ caseData.stack }}</dd>
+      </div>
+      <div>
+        <dt>{{ caseData.timeLabel }}</dt>
+        <dd>{{ caseData.time }}</dd>
+      </div>
+    </dl>
+
+    <figure class="case-overview__cover" data-case-cover>
+      <img
+        src="{{ caseData.cover }}"
+        alt="{{ caseData.coverAlt }}"
+        width="2000"
+        height="1250"
+        loading="eager"
+        fetchpriority="high"
+      >
+    </figure>
+  </div>
+</section>
+{% endif %}

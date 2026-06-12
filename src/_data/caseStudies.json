@@ -1,0 +1,86 @@
+{
+  "quantum-vizz": {
+    "title": "Quantum Vizz",
+    "service": "Growth, UX e CRO",
+    "stack": "Figma, Hotjar, Analytics, WordPress",
+    "timeLabel": "Ano",
+    "time": "2025",
+    "cover": "/assets/projetos/quantum-vizz/hero.webp",
+    "coverAlt": "Interface do projeto Quantum Vizz",
+    "next": {
+      "title": "Web Dev 2.0",
+      "href": "/projetos/2p-web-dev/",
+      "cover": "/assets/projetos/web-dev/cover.webp"
+    }
+  },
+  "2p-web-dev": {
+    "title": "Web Dev 2.0",
+    "service": "Produto interno e UX operacional",
+    "stack": "PHP, MySQL, AJAX, Bit System",
+    "timeLabel": "Ano",
+    "time": "2026",
+    "cover": "/assets/projetos/web-dev/webdev2-2048x1032.webp",
+    "coverAlt": "Telas do sistema interno Web Dev 2.0",
+    "next": {
+      "title": "Mercado das Figurinhas",
+      "href": "/projetos/mercado-das-figurinhas/",
+      "cover": "/assets/projetos/mercado-das-figurinhas/cover.webp"
+    }
+  },
+  "mercado-das-figurinhas": {
+    "title": "Mercado das Figurinhas",
+    "service": "Produto digital e IA aplicada",
+    "stack": "Next.js, Supabase, Stripe, Resend",
+    "timeLabel": "Ano",
+    "time": "2026",
+    "cover": "/assets/projetos/mercado-das-figurinhas/hero.webp",
+    "coverAlt": "Produto Mercado das Figurinhas em diferentes telas",
+    "next": {
+      "title": "Bit System",
+      "href": "/projetos/bit-system/",
+      "cover": "/assets/projetos/bit-system/bitsystem-cover.webp"
+    }
+  },
+  "bit-system": {
+    "title": "Bit System",
+    "service": "Design system e operação de marca",
+    "stack": "Figma, HTML, CSS, JavaScript, IA",
+    "timeLabel": "Status",
+    "time": "v2.1.0 em uso",
+    "cover": "/assets/projetos/bit-system/bitsystem-cover.webp",
+    "coverAlt": "Visão geral do Bit System",
+    "next": {
+      "title": "Farm Well Hub",
+      "href": "/projetos/farm-well-hub/",
+      "cover": "/assets/projetos/farm-well-hub/cover.webp"
+    }
+  },
+  "farm-well-hub": {
+    "title": "Farm Well Hub",
+    "service": "Serviço digital e acessibilidade",
+    "stack": "Figma, WordPress, Elementor",
+    "timeLabel": "Duração",
+    "time": "6 semanas",
+    "cover": "/assets/projetos/farm-well-hub/cover.webp",
+    "coverAlt": "Interface da plataforma Farm Well Hub",
+    "next": {
+      "title": "Olho Vivo",
+      "href": "/projetos/olho-vivo/",
+      "cover": "/assets/projetos/olho-vivo/cover.webp"
+    }
+  },
+  "olho-vivo": {
+    "title": "Olho Vivo",
+    "service": "Pesquisa e estratégia de produto",
+    "stack": "Figma, FigJam, Notion, Google Forms",
+    "timeLabel": "Ano",
+    "time": "2026",
+    "cover": "/assets/projetos/olho-vivo/hero.webp",
+    "coverAlt": "Proposta de interface do produto Olho Vivo",
+    "next": {
+      "title": "Quantum Vizz",
+      "href": "/projetos/quantum-vizz/",
+      "cover": "/assets/projetos/quantum-vizz/cover.webp"
+    }
+  }
+}
