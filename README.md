@@ -70,8 +70,7 @@ floriano-des-br/
 │   ├── _includes/                    # Layouts e partials reutilizáveis
 │   │   ├── layouts/
 │   │   │   ├── base.njk              # Layout base (html, head, nav, footer)
-│   │   │   ├── case-study-md.njk     # Template compartilhado dos seis cases principais
-│   │   │   └── case-study.njk        # Layout legado para páginas especiais
+│   │   │   └── case-study-md.njk     # Template compartilhado dos seis cases principais
 │   │   └── partials/
 │   │       ├── nav.njk               # Navbar responsiva com hamburger mobile
 │   │       ├── footer.njk            # Rodapé com CTA de contato
@@ -91,15 +90,15 @@ floriano-des-br/
 │   │   └── case-study.extras.css
 │   │
 │   ├── js/
-│   │   └── main.js                   # Vanilla JS: nav, carrossel, animações (~215 linhas)
+│   │   ├── main.js                   # Interações globais
+│   │   ├── motion/                   # Scripts de animação e transições
+│   │   └── vendor/                   # Bibliotecas locais versionadas
 │   │
 │   ├── assets/                       # Mídia pública
 │   │   ├── projetos/                 # Screenshots dos cases
-│   │   ├── exploracoes/              # Galeria de interfaces (carrossel)
 │   │   ├── clients/                  # Avatares dos depoimentos
 │   │   ├── design-grafico/           # Portfólio de design visual
-│   │   ├── flags/                    # Bandeiras (brasil, ireland, usa)
-│   │   ├── sites/                    # Screenshots de sites em produção
+│   │   ├── fonts/                    # Fontes locais e licenças
 │   │   └── sobre/                    # Fotos pessoais para a página Sobre
 │   │
 │   ├── projetos/                     # Case studies principais em Markdown
