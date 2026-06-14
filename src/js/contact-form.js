@@ -15,6 +15,7 @@
     const company = String(fields.get("empresa") || "").trim();
     const need = String(fields.get("necessidade") || "").trim();
     const message = String(fields.get("mensagem") || "").trim();
+    const channel = String(fields.get("canal") || "whatsapp").trim();
     const lines = [
       "Olá, Floriano. Vim pelo seu site e quero conversar sobre um projeto.",
       "",
@@ -26,7 +27,12 @@
       message,
     ].filter(Boolean);
 
-    const url = `https://wa.me/5518996773264?text=${encodeURIComponent(lines.join("\n"))}`;
+    const body = lines.join("\n");
+    const url =
+      channel === "email"
+        ? `mailto:contato@floriano.des.br?subject=${encodeURIComponent("Contato pelo site")}&body=${encodeURIComponent(body)}`
+        : `https://wa.me/5518996773264?text=${encodeURIComponent(body)}`;
+
     window.location.assign(url);
   });
 })();

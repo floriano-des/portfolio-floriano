@@ -42,14 +42,17 @@
         image.src = source;
       }
 
-      moveX(point.x);
-      moveY(point.y);
+      window.gsap.set(preview, {
+        x: point.x,
+        y: point.y
+      });
+
       window.gsap.to(preview, {
         autoAlpha: 1,
         scale: 1,
         duration: 0.35,
         ease: 'power3.out',
-        overwrite: true
+        overwrite: 'auto'
       });
     });
 
@@ -66,7 +69,7 @@
         scale: 0.84,
         duration: 0.28,
         ease: 'power2.out',
-        overwrite: true
+        overwrite: 'auto'
       });
     });
   });

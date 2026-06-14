@@ -5,7 +5,15 @@
     <span class="case-next__eyebrow">Próximo projeto</span>
     <span class="case-next__title">{{ caseData.next.title }}</span>
     <span class="case-next__media" aria-hidden="true">
-      <img src="{{ caseData.next.cover }}" alt="" loading="lazy">
+      <img
+        src="{{ caseData.next.cover }}"
+        srcset="{{ caseData.next.coverSmall }} 768w, {{ caseData.next.cover }} 1448w"
+        sizes="100vw"
+        alt=""
+        width="1448"
+        height="1086"
+        loading="lazy"
+      >
     </span>
     <span class="case-next__arrow" aria-hidden="true">
       <svg width="34" height="34" viewBox="0 0 34 34" fill="none">

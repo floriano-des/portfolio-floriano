@@ -26,7 +26,8 @@
   elements.forEach(function (element) {
     var rect = element.getBoundingClientRect();
 
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
+    // In viewport OR already scrolled past (e.g. landing via #hash anchor)
+    if ((rect.top < window.innerHeight && rect.bottom > 0) || rect.bottom <= 0) {
       element.classList.add("visible");
       return;
     }

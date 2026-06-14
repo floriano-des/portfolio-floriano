@@ -15,7 +15,7 @@ extraScript: /js/contact-form.js
       <p class="section-kicker" data-animate>Tem um projeto em mente?</p>
       <h1 data-animate>Vamos construir algo juntos</h1>
       <p class="contact-hero__lead" data-animate data-delay="1">
-        Conte o contexto, o problema e onde você quer chegar. A mensagem será organizada e aberta no WhatsApp para você revisar antes de enviar.
+        Conte o contexto, o problema e onde você quer chegar. A mensagem será organizada para você revisar e enviar pelo WhatsApp ou por email.
       </p>
     </div>
   </section>
@@ -76,12 +76,28 @@ extraScript: /js/contact-form.js
           </div>
         </div>
 
+        <fieldset class="contact-field contact-field--channel" data-animate>
+          <span class="contact-field__number" aria-hidden="true">06</span>
+          <div>
+            <legend>Como você prefere enviar?</legend>
+            <div class="contact-channel" role="radiogroup" aria-label="Canal de envio">
+              <label class="contact-channel__option">
+                <input type="radio" name="canal" value="whatsapp" checked>
+                <span>Disparar no WhatsApp</span>
+              </label>
+              <label class="contact-channel__option">
+                <input type="radio" name="canal" value="email">
+                <span>Enviar por email</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+
         <div class="contact-form__actions">
           <button class="contact-form__submit" type="submit" data-magnetic>
-            <span>Preparar mensagem</span>
-            <span aria-hidden="true">↗</span>
+            <span>Continuar</span>
           </button>
-          <p class="contact-form__note">Sem backend e sem armazenamento no site. Com JavaScript desligado, o envio usa seu aplicativo de email.</p>
+          <p class="contact-form__note">Depois de preencher, você revisa a mensagem no WhatsApp ou no email antes de enviar.</p>
         </div>
       </form>
 

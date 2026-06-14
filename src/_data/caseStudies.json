@@ -5,12 +5,14 @@
     "stack": "Figma, Hotjar, Analytics, WordPress",
     "timeLabel": "Ano",
     "time": "2025",
-    "cover": "/assets/projetos/quantum-vizz/hero.webp",
+    "cover": "/assets/projetos/quantum-vizz/cover-hover.webp",
+    "coverSmall": "/assets/projetos/quantum-vizz/cover-hover-768.webp",
     "coverAlt": "Interface do projeto Quantum Vizz",
     "next": {
       "title": "Web Dev 2.0",
       "href": "/projetos/2p-web-dev/",
-      "cover": "/assets/projetos/web-dev/cover.webp"
+      "cover": "/assets/projetos/web-dev/cover-hover.webp",
+      "coverSmall": "/assets/projetos/web-dev/cover-hover-768.webp"
     }
   },
   "2p-web-dev": {
@@ -19,12 +21,14 @@
     "stack": "PHP, MySQL, AJAX, Bit System",
     "timeLabel": "Ano",
     "time": "2026",
-    "cover": "/assets/projetos/web-dev/webdev2-2048x1032.webp",
+    "cover": "/assets/projetos/web-dev/cover-hover.webp",
+    "coverSmall": "/assets/projetos/web-dev/cover-hover-768.webp",
     "coverAlt": "Telas do sistema interno Web Dev 2.0",
     "next": {
       "title": "Mercado das Figurinhas",
       "href": "/projetos/mercado-das-figurinhas/",
-      "cover": "/assets/projetos/mercado-das-figurinhas/cover.webp"
+      "cover": "/assets/projetos/mercado-das-figurinhas/cover-hover.webp",
+      "coverSmall": "/assets/projetos/mercado-das-figurinhas/cover-hover-768.webp"
     }
   },
   "mercado-das-figurinhas": {
@@ -33,12 +37,14 @@
     "stack": "Next.js, Supabase, Stripe, Resend",
     "timeLabel": "Ano",
     "time": "2026",
-    "cover": "/assets/projetos/mercado-das-figurinhas/hero.webp",
+    "cover": "/assets/projetos/mercado-das-figurinhas/cover-hover.webp",
+    "coverSmall": "/assets/projetos/mercado-das-figurinhas/cover-hover-768.webp",
     "coverAlt": "Produto Mercado das Figurinhas em diferentes telas",
     "next": {
       "title": "Bit System",
       "href": "/projetos/bit-system/",
-      "cover": "/assets/projetos/bit-system/bitsystem-cover.webp"
+      "cover": "/assets/projetos/bit-system/cover-hover.webp",
+      "coverSmall": "/assets/projetos/bit-system/cover-hover-768.webp"
     }
   },
   "bit-system": {
@@ -47,12 +53,14 @@
     "stack": "Figma, HTML, CSS, JavaScript, IA",
     "timeLabel": "Status",
     "time": "v2.1.0 em uso",
-    "cover": "/assets/projetos/bit-system/bitsystem-cover.webp",
+    "cover": "/assets/projetos/bit-system/cover-hover.webp",
+    "coverSmall": "/assets/projetos/bit-system/cover-hover-768.webp",
     "coverAlt": "Visão geral do Bit System",
     "next": {
       "title": "Farm Well Hub",
       "href": "/projetos/farm-well-hub/",
-      "cover": "/assets/projetos/farm-well-hub/cover.webp"
+      "cover": "/assets/projetos/farm-well-hub/cover-hover.webp",
+      "coverSmall": "/assets/projetos/farm-well-hub/cover-hover-768.webp"
     }
   },
   "farm-well-hub": {
@@ -61,12 +69,14 @@
     "stack": "Figma, WordPress, Elementor",
     "timeLabel": "Duração",
     "time": "6 semanas",
-    "cover": "/assets/projetos/farm-well-hub/cover.webp",
+    "cover": "/assets/projetos/farm-well-hub/cover-hover.webp",
+    "coverSmall": "/assets/projetos/farm-well-hub/cover-hover-768.webp",
     "coverAlt": "Interface da plataforma Farm Well Hub",
     "next": {
       "title": "Olho Vivo",
       "href": "/projetos/olho-vivo/",
-      "cover": "/assets/projetos/olho-vivo/cover.webp"
+      "cover": "/assets/projetos/olho-vivo/cover-hover.webp",
+      "coverSmall": "/assets/projetos/olho-vivo/cover-hover-768.webp"
     }
   },
   "olho-vivo": {
@@ -75,12 +85,14 @@
     "stack": "Figma, FigJam, Notion, Google Forms",
     "timeLabel": "Ano",
     "time": "2026",
-    "cover": "/assets/projetos/olho-vivo/hero.webp",
+    "cover": "/assets/projetos/olho-vivo/cover-hover.webp",
+    "coverSmall": "/assets/projetos/olho-vivo/cover-hover-768.webp",
     "coverAlt": "Proposta de interface do produto Olho Vivo",
     "next": {
       "title": "Quantum Vizz",
       "href": "/projetos/quantum-vizz/",
-      "cover": "/assets/projetos/quantum-vizz/cover.webp"
+      "cover": "/assets/projetos/quantum-vizz/cover-hover.webp",
+      "coverSmall": "/assets/projetos/quantum-vizz/cover-hover-768.webp"
     }
   }
 }

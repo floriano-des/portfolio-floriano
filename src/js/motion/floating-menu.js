@@ -7,6 +7,8 @@
   var closeButton = document.querySelector('[data-floating-menu-close]');
   var backdrop = document.querySelector('[data-floating-menu-backdrop]');
   var links = document.querySelectorAll('[data-floating-menu-link]');
+  var subToggle = panel ? panel.querySelector('[data-floating-submenu-toggle]') : null;
+  var subList = panel ? panel.querySelector('.floating-menu__sub-list') : null;
 
   if (!header || !trigger || !panel || !closeButton || !backdrop) return;
 
@@ -22,6 +24,13 @@
     return Array.prototype.slice.call(
       panel.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
     );
+  }
+
+  function closeSubmenu() {
+    if (!subToggle || !subList) return;
+    subToggle.setAttribute('aria-expanded', 'false');
+    subList.setAttribute('aria-hidden', 'true');
+    subList.classList.remove('is-open');
   }
 
   function openMenu() {
@@ -44,6 +53,7 @@
     trigger.setAttribute('aria-label', 'Abrir menu');
     panel.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('floating-menu-open');
+    closeSubmenu();
 
     closeTimer = window.setTimeout(function () {
       backdrop.hidden = true;
@@ -75,6 +85,16 @@
       closeMenu(false);
     });
   });
+
+  // Submenu accordion toggle
+  if (subToggle && subList) {
+    subToggle.addEventListener('click', function () {
+      var expanded = subToggle.getAttribute('aria-expanded') === 'true';
+      subToggle.setAttribute('aria-expanded', String(!expanded));
+      subList.setAttribute('aria-hidden', String(expanded));
+      subList.classList.toggle('is-open', !expanded);
+    });
+  }
 
   document.addEventListener('keydown', function (event) {
     if (!panel.classList.contains('is-open')) return;

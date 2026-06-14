@@ -68,11 +68,7 @@
   <link rel="stylesheet" href="/css/vendor.lenis.css?v={{ '/css/vendor.lenis.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/style.tokens.css?v={{ '/css/style.tokens.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/style.nav.css?v={{ '/css/style.nav.css' | assetVersion }}">
-  <link rel="stylesheet" href="/css/style.home.css?v={{ '/css/style.home.css' | assetVersion }}">
-  <link rel="stylesheet" href="/css/style.content.css?v={{ '/css/style.content.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/style.footer-motion.css?v={{ '/css/style.footer-motion.css' | assetVersion }}">
-  <link rel="stylesheet" href="/css/style.responsive.css?v={{ '/css/style.responsive.css' | assetVersion }}">
-  <link rel="stylesheet" href="/css/style.pages.css?v={{ '/css/style.pages.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/case-study.core.css?v={{ '/css/case-study.core.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/case-study.projects.css?v={{ '/css/case-study.projects.css' | assetVersion }}">
   <link rel="stylesheet" href="/css/case-study.extras.css?v={{ '/css/case-study.extras.css' | assetVersion }}">
@@ -90,14 +86,24 @@
 
   <main class="{{ bodyClass or 'cs-case-md' }}">
     <section class="cs-hero">
-      <div class="cs-hero__inner" data-animate>
+      <div class="cs-hero__inner">
+        {% if heroStatus %}
+          <span class="cs-hero__status">{{ heroStatus }}</span>
+        {% endif %}
         <span class="cs-hero__tag">{{ heroTag }}</span>
         <h1 class="cs-hero__title">{{ projectName or title }}</h1>
         <p class="cs-hero__subtitle">{{ subtitle or description }}</p>
+        {% if projectLinks %}
+          <div class="cs-hero__links">
+            {% for link in projectLinks %}
+              <a href="{{ link.href }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
         <div class="cs-published-by">
           <img
             class="cs-published-by__avatar"
-            src="/assets/perfil-floriano-hero.png"
+            src="/assets/perfil-floriano-avatar.webp"
             alt="Floriano Silva"
             loading="lazy"
             width="36"
@@ -157,23 +163,20 @@
       </div>
     {% endif %}
 
-    {% if gallery %}
-      <div class="cs-gallery" aria-hidden="true">
-        <div class="cs-gallery__track">
-          {% for image in gallery %}
-            <img class="cs-gallery__img" src="{{ image.src }}" alt="{{ image.alt or '' }}" loading="lazy">
-          {% endfor %}
-          {% for image in gallery %}
-            <img class="cs-gallery__img" src="{{ image.src }}" alt="{{ image.alt or '' }}" loading="lazy">
-          {% endfor %}
-        </div>
+    <div class="cs-layout">
+      <aside class="cs-toc" aria-label="Índice do case" data-cs-toc>
+        <p class="cs-toc__title">Neste case</p>
+        <nav aria-label="Seções do case">
+          <ul class="cs-toc__list"></ul>
+        </nav>
+      </aside>
+      <div class="cs-layout__body">
+        {{ content | safe }}
       </div>
-    {% endif %}
-
-    {{ content | safe }}
+    </div>
 
     {% if learnings %}
-      <section class="cs-learnings section">
+      <section class="cs-learnings section" id="sec-aprendizados-finais" data-cs-section data-cs-label="Aprendizados finais">
         <div class="cs-container">
           <p class="cs-kicker-light">Aprendizados</p>
           <h2 class="section-title" data-animate>{{ learningsTitle or "O que este projeto prova" }}</h2>
@@ -198,7 +201,7 @@
     {% endif %}
 
     {% if roleGroups %}
-      <section class="cs-role">
+      <section class="cs-role" id="sec-papel" data-cs-section data-cs-label="Papel">
         <div class="cs-container">
           <p class="cs-kicker-light">Como atuei no projeto</p>
           <div class="cs-role__groups">

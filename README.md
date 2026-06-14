@@ -70,7 +70,8 @@ floriano-des-br/
 │   ├── _includes/                    # Layouts e partials reutilizáveis
 │   │   ├── layouts/
 │   │   │   ├── base.njk              # Layout base (html, head, nav, footer)
-│   │   │   └── case-study.njk        # Layout para cases (CSS extra + Schema CreativeWork)
+│   │   │   ├── case-study-md.njk     # Template compartilhado dos seis cases principais
+│   │   │   └── case-study.njk        # Layout legado para páginas especiais
 │   │   └── partials/
 │   │       ├── nav.njk               # Navbar responsiva com hamburger mobile
 │   │       ├── footer.njk            # Rodapé com CTA de contato
@@ -101,13 +102,13 @@ floriano-des-br/
 │   │   ├── sites/                    # Screenshots de sites em produção
 │   │   └── sobre/                    # Fotos pessoais para a página Sobre
 │   │
-│   ├── projetos/                     # Case studies — 1 arquivo .njk por projeto
-│   │   ├── quantum-vizz.njk          # +194% conversão (Growth / CRO)
-│   │   ├── 2p-web-dev.njk            # Produto interno com login e controle
-│   │   ├── bit-system.njk            # Design system para escalabilidade
-│   │   ├── mercado-das-figurinhas.njk
-│   │   ├── farm-well-hub.njk         # Plataforma com foco em acessibilidade
-│   │   ├── olho-vivo.njk             # Pesquisa sobre participação política
+│   ├── projetos/                     # Case studies principais em Markdown
+│   │   ├── quantum-vizz.md           # +194% conversão (Growth / CRO)
+│   │   ├── 2p-web-dev.md             # Produto interno com login e controle
+│   │   ├── mercado-das-figurinhas.md
+│   │   ├── bit-system.md             # Design system para escalabilidade
+│   │   ├── farm-well-hub.md          # Plataforma com foco em acessibilidade
+│   │   ├── olho-vivo.md              # Pesquisa sobre participação política
 │   │   └── design-grafico.njk        # Portfólio de design visual
 │   │
 │   ├── index.njk                     # Home (hero, stats, 6 projetos, depoimentos, sobre, reflexões)
@@ -199,7 +200,7 @@ Se o fetch falhar, usa `reflexoes-fallback.json` como cache local. O build nunca
 | URL | Arquivo | Conteúdo |
 |---|---|---|
 | `/` | `index.njk` | Hero, stats, 6 projetos em destaque, depoimentos, mini-sobre, 3 reflexões |
-| `/projetos/[slug]/` | `projetos/*.njk` | Case study completo |
+| `/projetos/[slug]/` | `projetos/*.md` | Case study completo |
 | `/reflexoes/` | `reflexoes.njk` | Grid de cards com artigos do Medium |
 | `/reflexoes/[slug]/` | `reflexao.njk` | Artigo individual (gerado por pagination) |
 | `/sobre/` | `sobre.njk` | Bio, trajetória (com link para design gráfico), jeito de trabalhar, stack, vida pessoal |
@@ -270,4 +271,4 @@ Disponível em todos os templates como `{{ metadata.* }}`. É a fonte de verdade
 - **Medium nunca causa build failure:** try/catch com timeout de 5s e fallback para JSON local.
 - **Seletor de idioma:** GTranslate Widget na navbar — tradução feita no cliente, sem rebuild.
 - **Navbar:** muda de estilo ao rolar (transparente → sólida) via scroll event listener.
-- **Cases são hardcoded:** cada `projetos/*.njk` tem conteúdo fixo — sem CMS, sem arquivos de dados. Intencional: cada case é storytelling editorial com ritmo próprio.
+- **Cases são editoriais:** cada `projetos/*.md` tem conteúdo fixo, sem CMS. O layout compartilhado centraliza hero, resumo, métricas, aprendizados, papel, TOC e navegação.

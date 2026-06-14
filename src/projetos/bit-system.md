@@ -1,0 +1,215 @@
+---
+layout: case-study-md.njk
+permalink: /projetos/bit-system/
+title: "Bit System · Estudo de caso · Floriano Silva"
+description: "Como transformei um design system interno da Dois Palitos em um sistema operacional de marca com documentação, componentes, padrões visuais e camada para IA."
+projectName: "Bit System"
+bodyClass: "cs-bit"
+heroTag: "design system · marca · operação · IA"
+subtitle: "Como organizei a identidade visual, os componentes, os padrões de motion e a documentação da Dois Palitos em um sistema vivo para acelerar entregas sem perder consistência."
+projectLinks:
+  - href: "https://bitsystem.doispalitosmkt.com.br/"
+    label: "Ver sistema online"
+  - href: "https://www.figma.com/design/HXUvqiIZK4wdkpdUObXw30/Bit-System?node-id=0-1&t=nXBhpnLIvyuOddn1-1"
+    label: "Ver origem no Figma"
+summary:
+  - label: "Situação"
+    text: "A agência já tinha uma linguagem visual forte, mas as decisões estavam espalhadas entre arquivos, referências, entregas anteriores e memória do time."
+  - label: "Tarefa"
+    text: "Transformar essa linguagem em um sistema consultável, reutilizável e claro o suficiente para designers, editores, social media, IA e desenvolvimento."
+  - label: "Ação"
+    text: "Estruturei fundamentos, identidade, componentes, receitas, padrões de motion, tokens e documentação online conectando Figma, código e operação."
+  - label: "Resultado"
+    text: "O Bit System virou uma referência central da marca, com <strong>v2.1.0 em uso</strong>, documentação online, biblioteca de padrões e base para orientar entregas humanas e assistidas por IA."
+metrics:
+  - value: "v2.1.0"
+    label: "design system evoluído para uso real da operação"
+    icon: "trend"
+  - value: "4 frentes"
+    label: "fundamentos, identidade, componentes e motion"
+    icon: "time"
+  - value: "IA"
+    label: "documentação preparada para orientar agentes e prompts"
+    icon: "calendar"
+learningsTitle: "O que este projeto prova"
+learnings:
+  - icon: "alert"
+    text: "<strong>Consigo transformar linguagem visual em sistema operacional.</strong> O valor do Bit System não está só em documentar estética, mas em tornar decisões de marca fáceis de consultar, aplicar e repetir."
+  - icon: "grid"
+    text: "<strong>Design system precisa nascer do uso real.</strong> Componentes, tokens, motion e receitas só fazem sentido quando respondem dúvidas recorrentes da operação."
+  - icon: "trend"
+    text: "<strong>IA exige documentação mais clara, não menos humana.</strong> Para uma marca ser usada por pessoas e agentes, o sistema precisa explicitar contexto, regras e exemplos."
+roleGroups:
+  - label: "Papel"
+    tags:
+      - "Designer de experiências digitais"
+  - label: "Skills"
+    tags:
+      - "Design System"
+      - "Direção visual"
+      - "Documentação"
+  - label: "Ferramentas"
+    tags:
+      - "Figma"
+      - "HTML"
+      - "CSS"
+      - "JavaScript"
+      - "IA"
+  - label: "Métodos"
+    tags:
+      - "Sistema online"
+      - "Tokens"
+      - "Componentes"
+      - "Receitas"
+      - "Motion"
+      - "Guia para IA"
+projectNav:
+  backHref: "/#projetos"
+  backLabel: "Todos os Projetos"
+  prev:
+    href: "/projetos/mercado-das-figurinhas/"
+    label: "Projeto anterior"
+    title: "Mercado das Figurinhas"
+  next:
+    href: "/projetos/farm-well-hub/"
+    label: "Próximo Projeto"
+    title: "Farm Well Hub"
+---
+
+{% caseSection "Contexto", "Um sistema visual que precisava sair da memória do time.", "section", "light" %}
+<p data-animate data-delay="1" class="cs-body-copy">
+        A Dois Palitos já tinha uma estética reconhecível: pixel, neon, preto, contraste alto, linguagem direta e uma energia visual própria. O problema era que essa identidade dependia demais de quem já conhecia a marca.
+      </p>
+      <p data-animate data-delay="2" class="cs-body-copy">
+        Cada nova peça exigia recuperar decisões anteriores: qual fonte usar, como escrever, quais cores aplicar, como animar, que tipo de botão ou componente manter. O Bit System nasceu para reduzir esse atrito.
+      </p>
+{% endcaseSection %}
+
+{% caseSection "Diagnóstico", "O que precisava virar sistema", "section cs-bit-dark cs-dark", "dark" %}
+<div class="cs-bit-diagnosis">
+        <div class="cs-bit-card" data-animate>
+          <span class="cs-bit-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M4 12h10"/><path d="M4 17h16"/></svg>
+          </span>
+          <h3>Consistência</h3>
+          <p>Centralizar cores, tipografia, voz, ícones, componentes e regras para que a marca não mudasse a cada entrega.</p>
+        </div>
+
+        <div class="cs-bit-card" data-animate data-delay="1">
+          <span class="cs-bit-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3h7v7H3z"/><path d="M14 3h7v7h-7z"/><path d="M14 14h7v7h-7z"/><path d="M3 14h7v7H3z"/></svg>
+          </span>
+          <h3>Escala</h3>
+          <p>Transformar decisões recorrentes em padrões reutilizáveis para reduzir retrabalho em campanhas, páginas e produtos internos.</p>
+        </div>
+
+        <div class="cs-bit-card" data-animate data-delay="2">
+          <span class="cs-bit-card__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><circle cx="12" cy="12" r="3"/></svg>
+          </span>
+          <h3>IA e documentação</h3>
+          <p>Criar uma fonte clara o suficiente para orientar pessoas e também agentes, prompts e fluxos assistidos por IA.</p>
+        </div>
+      </div>
+{% endcaseSection %}
+
+{% caseSection "Objetivo", "Como transformar uma estética forte em um sistema prático, consultável e útil para o ritmo real de uma agência?", "cs-context section cs-dark", "dark" %}
+<div class="cs-bit-principles">
+        <div>
+          <span>01</span>
+          <strong>Decisão antes de componente</strong>
+          <p>O sistema precisava explicar o porquê dos padrões, não apenas mostrar exemplos bonitos.</p>
+        </div>
+        <div>
+          <span>02</span>
+          <strong>Uso por função</strong>
+          <p>Designer, editor, social media, IA e dev deveriam encontrar rapidamente o que precisavam.</p>
+        </div>
+        <div>
+          <span>03</span>
+          <strong>Documentação viva</strong>
+          <p>O site precisava ser mais fácil de consultar e atualizar do que um arquivo parado no Figma.</p>
+        </div>
+      </div>
+{% endcaseSection %}
+
+{% caseSection "Decisão 01 · Arquitetura", "Organizar o sistema pelo uso, não pelo arquivo.", "section", "light" %}
+<p class="cs-body-copy" data-animate data-delay="1">
+        A navegação foi pensada para responder às perguntas mais comuns da operação: onde usar, quais bases seguir, como aplicar identidade, como montar componentes e como gerar variações sem quebrar a marca.
+      </p>
+
+      <div class="cs-bit-media-grid">
+        <figure>
+          <img src="/assets/projetos/bit-system/bit-home.webp" alt="Página inicial do Bit System com chamada principal e atalhos de navegação" loading="lazy">
+        </figure>
+        <figure>
+          <img src="/assets/projetos/bit-system/bit-uso-bases.webp" alt="Seção de uso e bases do Bit System com cards de referência" loading="lazy">
+        </figure>
+      </div>
+{% endcaseSection %}
+
+{% caseSection "Decisão 02 · Fundamentos", "Transformar cor, tipo e voz em regras claras.", "section cs-bit-dark cs-dark", "dark" %}
+<p class="cs-body-copy cs-body-copy--dark" data-animate data-delay="1">
+        A base do sistema documenta paleta, contraste, tipografia, tokens e direção verbal para que a marca continue reconhecível em peças comerciais, interfaces e materiais editoriais.
+      </p>
+
+      <div class="cs-bit-screen-grid">
+        <img src="/assets/projetos/bit-system/bit-cores.webp" alt="Página de cores do Bit System" loading="lazy">
+        <img src="/assets/projetos/bit-system/bit-tipografia.webp" alt="Página de tipografia do Bit System" loading="lazy">
+        <img src="/assets/projetos/bit-system/bit-bases-identidade.webp" alt="Página de bases e identidade do Bit System" loading="lazy">
+      </div>
+{% endcaseSection %}
+
+{% caseSection "Decisão 03 · Componentes e receitas", "Dar ao time blocos prontos para recombinar.", "section", "light" %}
+<p class="cs-body-copy" data-animate data-delay="1">
+        Botões, efeitos de marca, boxes de conteúdo, seções e receitas ajudam o time a sair do zero com uma estrutura coerente. O objetivo não era engessar a criação, era reduzir decisões repetidas.
+      </p>
+
+      <div class="cs-bit-media-grid">
+        <figure>
+          <img src="/assets/projetos/bit-system/bit-botoes.webp" alt="Página de botões do Bit System com variações de componentes" loading="lazy">
+        </figure>
+        <figure>
+          <img src="/assets/projetos/bit-system/bit-assets-reutilizaveis.webp" alt="Biblioteca de assets reutilizáveis do Bit System" loading="lazy">
+        </figure>
+      </div>
+{% endcaseSection %}
+
+{% caseSection "Decisão 04 · IA", "Preparar o sistema para leitura humana e assistida por IA.", "section cs-bit-dark cs-dark", "dark" %}
+<p class="cs-body-copy cs-body-copy--dark" data-animate data-delay="1">
+        A documentação inclui instruções, exemplos e arquivos de referência para que agentes possam gerar peças, páginas e variações respeitando a identidade da marca.
+      </p>
+
+      <div class="cs-bit-single-shot">
+        <img src="/assets/projetos/bit-system/bit-ia.webp" alt="Página do Bit System com arquivos e instruções para uso com IA" loading="lazy">
+      </div>
+{% endcaseSection %}
+
+{% caseSection "Decisão 05 · Motion", "Documentar o movimento como parte da identidade.", "section", "light" %}
+<p class="cs-body-copy" data-animate data-delay="1">
+        O Bit System trata motion como linguagem de marca, com padrões para tempo, easing, glitch, scanlines, blink e outros efeitos que aparecem em interfaces e peças visuais.
+      </p>
+
+      <div class="cs-bit-screen-grid">
+        <img src="/assets/projetos/bit-system/bit-design-grafico-motion.webp" alt="Página de design gráfico e motion do Bit System" loading="lazy">
+        <img src="/assets/projetos/bit-system/bit-motion-video.webp" alt="Página de padrões de motion e vídeo do Bit System" loading="lazy">
+        <img src="/assets/projetos/bit-system/bit-efeitos-marca.webp" alt="Página de efeitos de marca do Bit System" loading="lazy">
+      </div>
+{% endcaseSection %}
+
+{% caseSection "Resultado", "Um sistema de marca que virou ferramenta de operação.", "cs-results cs-results--bit section cs-dark", "dark" %}
+<div class="cs-metrics">
+        <div class="cs-metric" data-animate>
+          <span class="cs-metric__value">online</span>
+          <span class="cs-metric__label">documentação consultável fora do Figma, com navegação por uso real.</span>
+        </div>
+        <div class="cs-metric" data-animate data-delay="1">
+          <span class="cs-metric__value">menos retrabalho</span>
+          <span class="cs-metric__label">decisões visuais recorrentes passaram a ter referência clara e reaproveitável.</span>
+        </div>
+        <div class="cs-metric" data-animate data-delay="2">
+          <span class="cs-metric__value">mais escala</span>
+          <span class="cs-metric__label">o sistema passou a orientar designers, social media, editores, devs e IA.</span>
+        </div>
+      </div>
+{% endcaseSection %}

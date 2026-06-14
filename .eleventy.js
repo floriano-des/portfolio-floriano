@@ -62,8 +62,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPairedShortcode("caseSection", (content, kicker, title, sectionClass = "section", theme = "light") => {
     const kickerClass = theme === "dark" ? "cs-kicker-dark" : "cs-kicker-light";
     const renderedContent = markdown.render(String(content || "").replace(/^\s+(<)/gm, "$1"));
+    const slug = slugifyCaseLabel(kicker);
 
-    return `<section class="${escapeAttribute(sectionClass)}">
+    return `<section class="${escapeAttribute(sectionClass)}" id="sec-${escapeAttribute(slug)}" data-cs-section data-cs-label="${escapeAttribute(kicker)}">
 <div class="cs-container">
 <p class="${kickerClass}">${kicker}</p>
 <h2 class="section-title" data-animate>${title}</h2>
@@ -74,14 +75,17 @@ ${renderedContent}
 </section>`;
   });
 
-  eleventyConfig.addShortcode("caseFigure", (src, alt = "", caption = "", theme = "light", maxWidth = "", frameClass = "") => {
-    const figureStyle = maxWidth ? ` style="margin: var(--space-12) auto 0; max-width: ${escapeAttribute(maxWidth)};"` : "";
-    const figureClass = frameClass ? ` class="${escapeAttribute(frameClass)}"` : "";
+  eleventyConfig.addShortcode("caseFigure", (src, alt = "", caption = "", theme = "light", maxWidth = "", frameClass = "", width = "", height = "") => {
+    const figureStyle = maxWidth ? ` style="max-width: ${escapeAttribute(maxWidth)};"` : "";
+    const figureClass = ` class="cs-case-figure${frameClass ? ` ${escapeAttribute(frameClass)}` : ""}"`;
     const imageClass = theme === "dark" ? " class=\"cs-img-dark\"" : "";
+    const imageDimensions = width && height
+      ? ` width="${escapeAttribute(width)}" height="${escapeAttribute(height)}"`
+      : "";
     const figcaption = caption ? `<figcaption class="cs-figcaption">${caption}</figcaption>` : "";
 
     return `<figure${figureClass}${figureStyle} data-animate>
-<img src="${escapeAttribute(src)}" alt="${escapeAttribute(alt)}"${imageClass} loading="lazy">
+<img src="${escapeAttribute(src)}" alt="${escapeAttribute(alt)}"${imageClass}${imageDimensions} loading="lazy">
 ${figcaption}
 </figure>`;
   });
@@ -100,7 +104,7 @@ ${stats.map((stat, index) => `<div class="cs-data-stat" data-animate${index ? ` 
   eleventyConfig.addShortcode("objectiveBlock", (question = "", items = []) => {
     if (!Array.isArray(items)) return "";
 
-    return `<section class="cs-context section">
+    return `<section class="cs-context section" id="sec-objetivo" data-cs-section data-cs-label="Objetivo">
 <div class="cs-container">
 <p class="cs-kicker-dark">Objetivo</p>
 <p class="cs-context__question" data-animate>${question}</p>
@@ -115,6 +119,15 @@ ${items.map((item, index) => `<li class="cs-gargalos__item">
 </div>
 </div>
 </section>`;
+  });
+
+  eleventyConfig.addShortcode("caseQuote", (text, cite = "") => {
+    if (!text) return "";
+
+    return `<figure class="cs-quote" data-animate>
+<blockquote class="cs-quote__text">${text}</blockquote>
+${cite ? `<figcaption class="cs-quote__cite">${cite}</figcaption>` : ""}
+</figure>`;
   });
 
   eleventyConfig.addShortcode("comparisonList", (items = []) => {
@@ -286,4 +299,13 @@ function escapeAttribute(value = "") {
     .replace(/"/g, "&quot;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;");
+}
+
+function slugifyCaseLabel(value = "") {
+  return String(value || "secao")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "") || "secao";
 }

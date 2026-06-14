@@ -122,21 +122,6 @@
   font-weight: var(--fw-medium);
 }
 
-.floating-menu__trigger-lines {
-  position: absolute;
-  right: 22px;
-  bottom: 25px;
-  display: grid;
-  gap: 4px;
-}
-
-.floating-menu__trigger-lines span {
-  width: 17px;
-  height: 1px;
-  background: currentColor;
-  transition: transform 0.3s ease;
-}
-
 .floating-menu__backdrop {
   position: fixed;
   inset: 0;
@@ -230,9 +215,9 @@
   display: flex;
   align-items: baseline;
   gap: 20px;
-  padding-block: 10px;
+  padding-block: 6px;
   color: rgba(247, 247, 247, 0.58);
-  font-size: clamp(2rem, 5vw, 4.6rem);
+  font-size: clamp(1.8rem, 3.8vw, 3.6rem);
   font-weight: var(--fw-light);
   line-height: 1.05;
   letter-spacing: -0.05em;
@@ -304,11 +289,6 @@ body.floating-menu-open .whatsapp-float {
     pointer-events: auto;
   }
 
-  .floating-menu__trigger-lines {
-    right: 16px;
-    bottom: 19px;
-  }
-
   .floating-menu__panel {
     width: 100%;
     padding: 24px 24px 32px;
@@ -316,14 +296,199 @@ body.floating-menu-open .whatsapp-float {
   }
 
   .floating-menu__nav a {
-    font-size: clamp(2.4rem, 11vw, 4.2rem);
-    padding-block: 8px;
+    font-size: clamp(1.6rem, 9vw, 3rem);
+    padding-block: 4px;
   }
 
   .floating-menu__footer {
     align-items: flex-start;
     flex-direction: column;
   }
+}
+
+/* ── Submenu de projetos ──────────────────────────── */
+.site-nav__has-sub {
+  position: relative;
+}
+
+.site-nav__chevron {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 3px;
+  margin-top: -1px;
+  transition: transform 0.22s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.site-nav__has-sub:hover .site-nav__chevron,
+.site-nav__has-sub:focus-within .site-nav__chevron {
+  transform: rotate(180deg);
+}
+
+.site-nav__sub {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  min-width: 210px;
+  padding: 6px;
+  margin: 0;
+  list-style: none;
+  background: var(--color-neutral-050, #f7f7f4);
+  border: 1px solid rgba(1, 7, 29, 0.07);
+  border-radius: 14px;
+  box-shadow:
+    0 4px 16px rgba(1, 7, 29, 0.08),
+    0 12px 40px rgba(1, 7, 29, 0.07);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.22s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
+    visibility 0s 0.2s;
+  z-index: 10;
+}
+
+/* Invisible bridge so hovering gap between link and menu doesn't close it */
+.site-nav__sub::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+}
+
+.site-nav__has-sub:hover .site-nav__sub,
+.site-nav__has-sub:focus-within .site-nav__sub {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+  transition:
+    opacity 0.2s ease,
+    transform 0.22s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
+    visibility 0s;
+}
+
+.site-nav__sub li {
+  list-style: none;
+}
+
+.site-nav__sub a {
+  display: block;
+  padding: 9px 14px;
+  border-radius: 9px;
+  font-size: 0.78rem;
+  font-weight: var(--fw-medium, 500);
+  color: var(--color-dark-900, #01071d);
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+/* Suppress the global underline pseudo-element for submenu links */
+.site-nav__sub a::after {
+  display: none !important;
+}
+
+.site-nav__sub a:hover,
+.site-nav__sub a:focus-visible {
+  background: rgba(1, 7, 29, 0.05);
+  color: var(--color-brand-500, #ee782e);
+}
+
+@media (max-width: 900px) {
+  .site-nav__has-sub,
+  .site-nav__sub,
+  .site-nav__chevron {
+    display: none;
+  }
+}
+
+/* ── Floating menu submenu (acordeão) ─────────────── */
+.floating-menu__has-sub {
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-menu__sub-toggle {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-block: 6px;
+  color: rgba(247, 247, 247, 0.58);
+  font-size: clamp(1.8rem, 3.8vw, 3.6rem);
+  font-weight: var(--fw-light);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.25s ease, transform 0.35s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.floating-menu__sub-toggle:hover,
+.floating-menu__sub-toggle:focus-visible {
+  color: var(--color-neutral-050);
+  transform: translateX(10px);
+}
+
+.floating-menu__sub-toggle > span {
+  min-width: 24px;
+  color: var(--color-brand-500);
+  font-size: 0.64rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
+  flex-shrink: 0;
+}
+
+.floating-menu__sub-chevron {
+  margin-left: auto;
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: transform 0.3s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.floating-menu__sub-toggle[aria-expanded="true"] .floating-menu__sub-chevron {
+  transform: rotate(180deg);
+}
+
+.floating-menu__sub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 44px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-menu__sub-list.is-open {
+  max-height: 420px;
+}
+
+.floating-menu__sub-list li {
+  list-style: none;
+}
+
+.floating-menu__sub-list a {
+  display: block;
+  padding: 8px 0;
+  color: rgba(247, 247, 247, 0.4);
+  font-size: clamp(1.2rem, 3.2vw, 1.7rem);
+  font-weight: var(--fw-light);
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.floating-menu__sub-list a:hover,
+.floating-menu__sub-list a:focus-visible {
+  color: var(--color-neutral-050);
+  transform: translateX(6px);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -28,12 +28,13 @@
     window.gsap.registerPlugin(window.ScrollTrigger);
 
     lenis = new window.Lenis({
-      lerp: 0.1,
+      lerp: 0.065,
       smoothWheel: true,
       syncTouch: false,
       anchors: false,
     });
 
+    window.__lenis = lenis; // expõe para o botão back-to-top e outros
     lenis.on("scroll", window.ScrollTrigger.update);
 
     tickerCallback = function (time) {

@@ -32,3 +32,4 @@ docs/projetos/mercado-das-figurinhas/
 
 # Local tooling
 .claude/
+.tmp/

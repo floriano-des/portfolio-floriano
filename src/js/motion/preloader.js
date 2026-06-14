@@ -25,7 +25,7 @@
     // A animacao continua mesmo sem sessionStorage.
   }
 
-  window.setTimeout(releasePreloader, 2500);
+  window.setTimeout(releasePreloader, 3400);
 
   words.forEach(function (word, index) {
     window.setTimeout(function () {
@@ -33,12 +33,12 @@
         item.classList.remove('is-active');
       });
       word.classList.add('is-active');
-    }, index * 380);
+    }, index * 650);
   });
 
   window.setTimeout(function () {
     preloader.classList.add('is-leaving');
-  }, 1180);
+  }, 1950);
 
-  window.setTimeout(releasePreloader, 1780);
+  window.setTimeout(releasePreloader, 2560);
 }());

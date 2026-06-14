@@ -38,7 +38,7 @@
   <!-- Fonts: Montserrat -->
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/montserrat-latin-normal.woff2" crossorigin>
   {% if page.url == "/" %}
-  <link rel="preload" as="image" href="/assets/perfil-floriano-hero.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/foto-hero-floriano.webp?v={{ '/assets/foto-hero-floriano.webp' | assetVersion }}" fetchpriority="high">
   {% endif %}
 
   <!-- Favicon -->
@@ -63,6 +63,18 @@
   {% endif %}
   {% if extraStylesheet %}<link rel="stylesheet" href="{{ extraStylesheet }}?v={{ extraStylesheet | assetVersion }}">{% endif %}
   {% block extraStyles %}{% endblock %}
+  <!-- Cobre a página imediatamente se há uma transição pendente, evitando flash -->
+  <script>
+    (function () {
+      try {
+        var raw = sessionStorage.getItem('floriano:page-transition');
+        var s = raw ? JSON.parse(raw) : null;
+        if (s && s.expiresAt > Date.now()) {
+          document.documentElement.setAttribute('data-transition-pending', '');
+        }
+      } catch (_) {}
+    }());
+  </script>
 </head>
 <body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
   <!-- Google Tag Manager (noscript) -->
@@ -82,6 +94,16 @@
 
   {% if not hideSiteChrome %}
   {% include "partials/footer.njk" %}
+  <button
+    class="back-to-top"
+    type="button"
+    aria-label="Voltar ao topo"
+    data-back-to-top
+  >
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d="M8 13V3M3 8l5-5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
   <a
     href="https://wa.me/5518996773264?text=Ol%C3%A1%2C%20Floriano.%20Vi%20seu%20site%20e%20quero%20conversar%20sobre%20um%20projeto%20digital."
     class="whatsapp-float"
