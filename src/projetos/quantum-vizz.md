@@ -168,14 +168,14 @@ O formulário recebeu 19 respostas de arquitetos, divulgado em grupos de Faceboo
 
 Os principais achados:
 
-- 63% tinham mais de 5 anos de atuação.
-- 47% nunca tinham contratado renderização 3D, sinal de que a página precisava educar sem enrolar.
-- Entre os 10 que já contratavam, 90% usavam 3D para apresentar melhor o projeto ao cliente final.
+- 63% dos 19 respondentes tinham mais de 5 anos de atuação.
+- 47% dos 19 nunca tinham contratado renderização 3D, sinal de que a página precisava educar sem enrolar.
+- Entre os 10 que já contratavam, 9 (90%) usavam 3D para apresentar melhor o projeto ao cliente final.
 - Preço e qualidade visual eram os critérios mais fortes na contratação.
 - Indicação e Instagram apareciam como caminhos mais fortes que Google, então quem chegava pelo anúncio precisava confiar rápido.
 - Nas respostas abertas, os termos de busca giravam em torno de "render", "render arquitetura", "maquete eletrônica", "visualização arquitetônica" e "3D para interiores".
 - Nos critérios de portfólio, apareceram realismo, qualidade da imagem, iluminação, detalhamento, fidelidade e ângulo.
-- Entre quem respondeu a escala de impacto, todas as notas ficaram entre 8 e 10.
+- Entre quem respondeu a escala de impacto, todas as notas válidas ficaram entre 8 e 10.
 
 Esse último ponto virou o centro do diagnóstico. O arquiteto sabe que imagem 3D vende, mas é o portfólio que convence. Quem chega por anúncio não quer decifrar a marca primeiro. Quer ver o trabalho pronto.
 
@@ -192,7 +192,7 @@ Baseline disponível antes do redesenho: conversão de 0,71%, CTR acima de 8% e 
       <span>19 respostas</span>
     </header>
 
-    <section class="cs-quantum-v2__research-carousel" data-research-carousel data-autoplay="5200" aria-label="Gráficos quantitativos da pesquisa">
+    <section class="cs-quantum-v2__research-carousel" data-research-carousel aria-label="Gráficos quantitativos da pesquisa">
       <header class="cs-quantum-v2__research-carousel-head">
         <p class="cs-quantum-v2__research-track-title">Gráficos da pesquisa</p>
         <div class="cs-quantum-v2__research-controls" aria-label="Controles do carrossel de gráficos">
@@ -258,7 +258,7 @@ Baseline disponível antes do redesenho: conversão de 0,71%, CTR acima de 8% e 
         <figcaption>Pesquisa divulgada por iniciativa própria, fora do escopo do projeto, para validar o redesign com dados reais.</figcaption>
       </figure>
 
-      <section class="cs-quantum-v2__research-carousel cs-quantum-v2__research-carousel--answers" data-research-carousel data-autoplay="6200" aria-label="Respostas abertas da pesquisa">
+      <section class="cs-quantum-v2__research-carousel cs-quantum-v2__research-carousel--answers" data-research-carousel aria-label="Respostas abertas da pesquisa">
         <header class="cs-quantum-v2__research-carousel-head">
           <p class="cs-quantum-v2__research-track-title">Respostas abertas</p>
           <div class="cs-quantum-v2__research-controls" aria-label="Controles do carrossel de respostas abertas">
@@ -303,14 +303,14 @@ Baseline disponível antes do redesenho: conversão de 0,71%, CTR acima de 8% e 
 </figure>
 
 {% caseSection "Usabilidade", "O que a página antiga colocava no caminho.", "section" %}
-Para complementar a pesquisa, fiz uma avaliação heurística da página antiga e de três concorrentes diretos. Em termos simples, foi uma inspeção da experiência contra boas práticas de usabilidade, como as 10 heurísticas de Nielsen.
+Para complementar a pesquisa, fiz uma inspeção de usabilidade da página antiga e de três concorrentes diretos, guiada pelas 10 heurísticas de Nielsen. Foi uma avaliação de um único especialista — eu —, não uma avaliação heurística formal com três a cinco avaliadores. Por isso trato os achados como hipóteses fortes, não como veredito fechado.
 
-Os gargalos mais importantes:
+Os gargalos mais importantes, com a heurística (ou o princípio de UX) que cada um tensiona:
 
-- **Portfólio escondido.** O principal argumento de venda aparecia quase no fim da página.
-- **Texto desalinhado da busca.** A página falava em "visualizações que emocionam", enquanto o público buscava termos como "render arquitetura" e "3D para interiores".
-- **CTAs concorrentes.** A revista do Iago e o WhatsApp disputavam atenção, mesmo a campanha precisando levar ao contato.
-- **Hierarquia invertida.** A página explicava antes de provar, mas o visitante precisava ver imagens para decidir se continuava.
+- **Portfólio escondido** — _reconhecimento em vez de memória_. O principal argumento de venda aparecia quase no fim da página.
+- **Texto desalinhado da busca** — _correspondência com o mundo real_. A página falava em "visualizações que emocionam", enquanto o público buscava termos como "render arquitetura" e "3D para interiores".
+- **CTAs concorrentes** — _estética e design minimalista_. A revista do Iago e o WhatsApp disputavam atenção, mesmo a campanha precisando levar ao contato.
+- **Hierarquia invertida** — _arquitetura de informação e modelo mental do usuário_, mais do que uma heurística específica. A página explicava antes de provar, mas o visitante precisava ver imagens para decidir se continuava.
 
 O padrão dos concorrentes ajudou a validar a direção: proposta de valor clara no início, portfólio visível cedo e prova social perto da decisão. A galeria escondida deixou de ser uma impressão pessoal e virou hipótese de alto impacto.
 {% endcaseSection %}
@@ -475,11 +475,13 @@ O teste A/B rodou com 4.484 sessões no total, divididas quase igualmente entre 
 
 A leitura simples: a nova versão gerou 44 conversões contra 16 da antiga, com o mesmo orçamento de mídia. Para a leitura técnica, o teste de duas proporções indicou diferença significativa, com z aproximado de 4,0 e valor-p menor que 0,001. A ferramenta reportou taxa sobre visitantes únicos, enquanto a tabela mostra sessões totais, então dividir conversões por sessões dá um número um pouco menor, mas a conclusão não muda.
 
-Sobre causalidade: o fator mais alterado entre V1 e V2 foi a hierarquia da prova visual. Na V1, o Hotjar mostrava que cerca de 50% dos visitantes não chegavam à galeria. Na V2, a galeria foi para o início e os dados de navegação mostravam usuários vendo os projetos. A pesquisa, o benchmark e o comportamento apontavam para a mesma hipótese, por isso atribuí o ganho principalmente à reorganização da experiência.
+Sobre causalidade, sendo honesto: a V2 mudou vários elementos ao mesmo tempo — galeria, copy, CTA, grid e hero. O teste prova que o conjunto venceu, não qual mudança isolada pesou mais. A direção é coerente, porque pesquisa, benchmark e comportamento apontavam todos para a hierarquia da prova visual — na V1, o Hotjar mostrava cerca de 50% dos visitantes não chegando à galeria; na V2, ela foi para o início e os dados de navegação mostravam as pessoas vendo os projetos. Ainda assim, isolar o peso de cada peça exigiria testes sequenciais ou multivariados. Por isso trato a reorganização da prova visual como a hipótese mais provável, não como causa única comprovada.
 {% endcaseSection %}
 
 {% caseSection "Transparência", "O que ficou fora da medição final.", "section" %}
 Nem todo dado do processo ficou preservado. Os registros de comportamento do Hotjar usados no diagnóstico não estão mais disponíveis para exportação, mas os padrões observados na época, como a saída antes da galeria, orientaram as hipóteses que o teste A/B depois confirmou.
+
+Uma ressalva sobre a métrica de sucesso: a conversão medida foi o clique no WhatsApp, a macroconversão definida pela campanha. É um indicador forte de intenção, mas um clique não é o mesmo que um lead qualificado ou uma venda fechada — essa etapa final do funil ficou fora da minha medição.
 
 Também instalei uma pesquisa de satisfação, NPS, durante o teste. A taxa de resposta foi quase zero, o que fazia sentido para esse contexto: quem chega por anúncio está decidindo se chama no WhatsApp, não avaliando a experiência.
 
@@ -491,7 +493,7 @@ O principal aprendizado foi sobre ordem de prioridade. O dono do negócio queria
 
 A pesquisa com arquitetos, mesmo pequena, foi suficiente para trocar gosto pessoal por hipótese testável. Ela também revelou que indicação e Instagram tinham mais força que busca no Google, insight que repassei para a equipe de redes sociais.
 
-Como próximo passo, eu testaria variações do texto principal e revisaria a seção de pacotes, que ficou depois do botão principal.
+Como próximo passo, eu testaria variações do texto principal e revisaria a seção de pacotes, que ficou depois do botão principal. Também rodaria testes sequenciais para isolar qual das mudanças da V2 mais pesou na conversão, já que o A/B validou o conjunto, não cada peça.
 {% endcaseSection %}
 
 {% caseSection "Encerramento", "O canal funcionava.", "section" %}

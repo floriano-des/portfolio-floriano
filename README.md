@@ -6,7 +6,7 @@ Este arquivo descreve quem é Floriano, qual é o posicionamento do site, como o
 
 ## Quem é Floriano
 
-**Floriano Silva** é um **Designer de experiências digitais** com mais de 8 anos de experiência construindo produtos, sites e experiências digitais. Seu diferencial não está em apenas executar, está em entender o problema de negócio a fundo, estruturar a solução correta e desenvolver a experiência funcional adequada.
+**Floriano Silva** é um **Designer de experiências digitais** com mais de 3 anos de experiência construindo produtos, sites e experiências digitais. Seu diferencial não está em apenas executar, está em entender o problema de negócio a fundo, estruturar a solução correta e desenvolver a experiência funcional adequada.
 
 Ele atua entre negócio, experiência e tecnologia. O repertório cobre UX, estratégia de produto, marketing digital, growth, CRO, analytics, dados, desenvolvimento web e IA aplicada. Não é especialista absoluto em tudo, é um profissional com escuta, leitura de contexto e capacidade de conectar áreas para chegar na solução certa.
 
@@ -121,13 +121,11 @@ floriano-des-br/
 │   ├── sitemap.njk                   # Sitemap XML
 │   └── robots.njk
 │
-├── deprecated/                       # Arquivo morto (não entra no build)
-├── docs/                             # Material interno (não entra no build)
+├── docs/                             # Material interno, planos, PRDs e QA
 ├── _site/                            # Output gerado pelo Eleventy (não versionado)
 ├── .github/workflows/deploy-hostinger.yml
 ├── .eleventy.js                      # Configuração principal do Eleventy
 ├── package.json
-├── README.md
 └── README.md                         # Este arquivo
 ```
 

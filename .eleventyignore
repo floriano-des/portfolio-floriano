@@ -1,6 +1,5 @@
 node_modules/
 _site/
-deprecated/
 docs/
 .claude/
 src/_unused/

@@ -229,7 +229,9 @@
       var dotsContainer = carousel.querySelector('[data-research-dots]');
       var current = 0;
       var timer = null;
-      var interval = Number(carousel.getAttribute('data-autoplay')) || 5600;
+      var autoplayAttr = carousel.getAttribute('data-autoplay');
+      var autoplayEnabled = autoplayAttr !== null && Number(autoplayAttr) > 0;
+      var interval = Number(autoplayAttr) || 5600;
 
       if (!track || !slides.length) return;
 
@@ -244,7 +246,7 @@
       }
 
       function start() {
-        if (reduceMotion || slides.length < 2 || hasOpenCaption() || timer) return;
+        if (!autoplayEnabled || reduceMotion || slides.length < 2 || hasOpenCaption() || timer) return;
         timer = window.setInterval(function () {
           goTo(current + 1, false);
         }, interval);
@@ -430,7 +432,7 @@
     lightbox.innerHTML = [
       '<button class="case-lightbox__close" type="button" aria-label="Fechar imagem ampliada">Fechar</button>',
       '<figure class="case-lightbox__figure">',
-      '<img class="case-lightbox__img" src="" alt="">',
+      '<img class="case-lightbox__img" alt="">',
       '<figcaption class="case-lightbox__caption"></figcaption>',
       '</figure>',
       '<a class="case-lightbox__original" href="#" target="_blank" rel="noopener">Abrir imagem original</a>'
