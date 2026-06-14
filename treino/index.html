@@ -1,15 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-K738G4S2');</script>
-  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
+  <!-- Google Tag Manager -->
+<script>
+  (function (window, document, tagName, layerName, containerId) {
+    window[layerName] = window[layerName] || [];
+    window[layerName].push({
+      "gtm.start": new Date().getTime(),
+      event: "gtm.js"
+    });
+
+    function loadTagManager() {
+      var firstScript = document.getElementsByTagName(tagName)[0];
+      var script = document.createElement(tagName);
+      var layerQuery = layerName !== "dataLayer" ? "&l=" + layerName : "";
+
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtm.js?id=" + containerId + layerQuery;
+      firstScript.parentNode.insertBefore(script, firstScript);
+    }
+
+    function scheduleTagManager() {
+      window.setTimeout(loadTagManager, 2500);
+    }
+
+    if (document.readyState === "complete") {
+      scheduleTagManager();
+    } else {
+      window.addEventListener("load", scheduleTagManager, { once: true });
+    }
+  }(window, document, "script", "dataLayer", "GTM-K738G4S2"));
+</script>
+<!-- End Google Tag Manager -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+  (function () {
+    document.documentElement.classList.add("motion-js");
+    window.setTimeout(function () {
+      if (!window.__florianoRevealsReady) {
+        document.documentElement.classList.remove("motion-js");
+      }
+    }, 2500);
+
+    try {
+      var raw = sessionStorage.getItem("floriano:page-transition");
+      var state = raw ? JSON.parse(raw) : null;
+
+      if (state && state.expiresAt > Date.now()) {
+        document.documentElement.setAttribute("data-transition-pending", "");
+      } else {
+        sessionStorage.removeItem("floriano:page-transition");
+      }
+    } catch (_) {
+      document.documentElement.removeAttribute("data-transition-pending");
+    }
+
+    
+      document.documentElement.removeAttribute("data-preloader-pending");
+    
+  }());
+</script>
+
 
   <!-- SEO Essencial -->
   <title>Treino | Floriano</title>
@@ -54,30 +107,59 @@
   
 
   <!-- Fonts: Montserrat -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/montserrat-latin-normal.woff2" crossorigin>
+  
 
   <!-- Favicon -->
   <link rel="icon" type="image/webp" href="/assets/favicon.webp">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/reset.css?v=a1ae43b1e1">
-  <link rel="stylesheet" href="/css/style.tokens.css?v=adde936899">
-  <link rel="stylesheet" href="/css/style.nav.css?v=909bf72805">
-  <link rel="stylesheet" href="/css/style.home.css?v=532a07b6c1">
+  
+  <link rel="stylesheet" href="/css/reset.css?v=db80d640cd">
+  <link rel="stylesheet" href="/css/vendor.lenis.css?v=e2d7eba5ff">
+  <link rel="stylesheet" href="/css/style.tokens.css?v=8f22a411bb">
+  <link rel="stylesheet" href="/css/style.nav.css?v=531ddab80c">
+  <link rel="stylesheet" href="/css/style.home.css?v=4d73e74020">
   <link rel="stylesheet" href="/css/style.content.css?v=9ff3f6ee65">
-  <link rel="stylesheet" href="/css/style.footer-motion.css?v=d48cc40059">
+  <link rel="stylesheet" href="/css/style.footer-motion.css?v=da52c39693">
   <link rel="stylesheet" href="/css/style.responsive.css?v=8dddfa21d2">
   <link rel="stylesheet" href="/css/style.pages.css?v=0cfac88381">
+  <link rel="stylesheet" href="/css/style.motion.css?v=df7843a26d">
+  
   <link rel="stylesheet" href="/css/style.workout.css?v=2f2147c329">
   
+  <!-- Cobre a página imediatamente se há uma transição pendente, evitando flash -->
+  <script>
+    (function () {
+      try {
+        var raw = sessionStorage.getItem('floriano:page-transition');
+        var s = raw ? JSON.parse(raw) : null;
+        if (s && s.expiresAt > Date.now()) {
+          document.documentElement.setAttribute('data-transition-pending', '');
+        }
+      } catch (_) {}
+    }());
+  </script>
 </head>
 <body class="workout-shell">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K738G4S2"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+  
+  <div class="page-transition" data-page-transition aria-hidden="true">
+  <svg
+    class="page-transition__shape"
+    viewBox="0 0 100 112"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <path d="M0 0H100V96C78 108 42 99 0 111Z"></path>
+  </svg>
+  <p class="page-transition__label" data-page-transition-label></p>
+</div>
+
+
 
   
 
@@ -124,6 +206,50 @@
 
   
 
-  <script src="/js/main.js?v=4ee53d0b94"></script>
+  <script src="/js/main.js?v=1504d88634"></script>
+  
+  <script src="/js/motion/transitions.js?v=4daea0c295" defer></script>
+
+<script src="/js/motion/footer-clock.js?v=2ceac01182" defer></script>
+
+<script>
+  (function () {
+    "use strict";
+
+    var sources = [
+      "/js/vendor/gsap-3.15.0.min.js?v=bf3fd8ec2a",
+      "/js/vendor/ScrollTrigger-3.15.0.min.js?v=5445d0e95e",
+      "/js/vendor/lenis-1.3.23.min.js?v=c94f512954",
+      "/js/motion/lenis-init.js?v=753de89af8",
+      "/js/motion/cursor.js?v=f9eb5cddd1",
+      "/js/motion/reveals.js?v=760da37033",
+      "/js/motion/text-reveal.js?v=5a3e52877d",
+      "/js/motion/floating-menu.js?v=ef68e87d89",
+      "/js/motion/magnetic.js?v=166e0da26c",
+      "/js/motion/count-up.js?v=1d3121fc15"
+      
+      
+    ];
+
+    function loadMotion() {
+      if (window.__florianoMotionLoading) return;
+      window.__florianoMotionLoading = true;
+
+      sources.forEach(function (source) {
+        var script = document.createElement("script");
+        script.src = source;
+        script.async = false;
+        document.body.appendChild(script);
+      });
+    }
+
+    if (document.readyState === "complete") {
+      loadMotion();
+    } else {
+      window.addEventListener("load", loadMotion, { once: true });
+    }
+  }());
+</script>
+
 </body>
 </html>

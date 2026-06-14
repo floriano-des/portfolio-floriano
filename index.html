@@ -1,15 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-K738G4S2');</script>
-  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
+  <!-- Google Tag Manager -->
+<script>
+  (function (window, document, tagName, layerName, containerId) {
+    window[layerName] = window[layerName] || [];
+    window[layerName].push({
+      "gtm.start": new Date().getTime(),
+      event: "gtm.js"
+    });
+
+    function loadTagManager() {
+      var firstScript = document.getElementsByTagName(tagName)[0];
+      var script = document.createElement(tagName);
+      var layerQuery = layerName !== "dataLayer" ? "&l=" + layerName : "";
+
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtm.js?id=" + containerId + layerQuery;
+      firstScript.parentNode.insertBefore(script, firstScript);
+    }
+
+    function scheduleTagManager() {
+      window.setTimeout(loadTagManager, 2500);
+    }
+
+    if (document.readyState === "complete") {
+      scheduleTagManager();
+    } else {
+      window.addEventListener("load", scheduleTagManager, { once: true });
+    }
+  }(window, document, "script", "dataLayer", "GTM-K738G4S2"));
+</script>
+<!-- End Google Tag Manager -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+  (function () {
+    document.documentElement.classList.add("motion-js");
+    window.setTimeout(function () {
+      if (!window.__florianoRevealsReady) {
+        document.documentElement.classList.remove("motion-js");
+      }
+    }, 2500);
+
+    try {
+      var raw = sessionStorage.getItem("floriano:page-transition");
+      var state = raw ? JSON.parse(raw) : null;
+
+      if (state && state.expiresAt > Date.now()) {
+        document.documentElement.setAttribute("data-transition-pending", "");
+      } else {
+        sessionStorage.removeItem("floriano:page-transition");
+      }
+    } catch (_) {
+      document.documentElement.removeAttribute("data-transition-pending");
+    }
+
+    
+      try {
+        var preloaderSeen = sessionStorage.getItem("floriano:preloader-v2");
+        var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        if (!preloaderSeen && !reducedMotion && !document.documentElement.hasAttribute("data-transition-pending")) {
+          document.documentElement.setAttribute("data-preloader-pending", "");
+        }
+      } catch (_) {
+        document.documentElement.removeAttribute("data-preloader-pending");
+      }
+    
+  }());
+</script>
+
 
   <!-- SEO Essencial -->
   <title>Floriano Silva | Designer de experiências digitais</title>
@@ -54,709 +116,2789 @@
   
 
   <!-- Fonts: Montserrat -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/montserrat-latin-normal.woff2" crossorigin>
+  
+  <link rel="preload" as="image" href="/assets/foto-hero-floriano.webp?v=af4df382f6" fetchpriority="high">
+  
 
   <!-- Favicon -->
   <link rel="icon" type="image/webp" href="/assets/favicon.webp">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="/css/reset.css?v=a1ae43b1e1">
-  <link rel="stylesheet" href="/css/style.tokens.css?v=adde936899">
-  <link rel="stylesheet" href="/css/style.nav.css?v=909bf72805">
-  <link rel="stylesheet" href="/css/style.home.css?v=532a07b6c1">
-  <link rel="stylesheet" href="/css/style.content.css?v=9ff3f6ee65">
-  <link rel="stylesheet" href="/css/style.footer-motion.css?v=d48cc40059">
-  <link rel="stylesheet" href="/css/style.responsive.css?v=8dddfa21d2">
-  <link rel="stylesheet" href="/css/style.pages.css?v=0cfac88381">
+  
+  <style>
+    /* ===================================================
+   Reset CSS , Moderno e Minimalista
+   =================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  scrollbar-width: none; /* Firefox */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+/* Scroll suave apenas para quem não configurou preferência por movimento reduzido */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, video, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+.lenis [data-lenis-prevent],
+.lenis [data-lenis-prevent-wheel],
+.lenis [data-lenis-prevent-touch],
+.lenis [data-lenis-prevent-vertical],
+.lenis [data-lenis-prevent-horizontal] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
+}
+
+/* ===================================================
+   Design System , Floriano Silva Portfolio
+   Baseado fielmente no Figma: floriano.des.br
+   =================================================== */
+
+/* --- Variáveis ---------------------------------------- */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat-latin-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/montserrat-latin-italic.woff2") format("woff2");
+}
+
+:root {
+  /* ─── Cores , Primitivas ─────────────────────────── */
+  --color-brand-500:   #ee782e;
+  --color-brand-600:   #d4641a;
+  --color-dark-900:    #01071d;
+  --color-neutral-050: #f7f7f7;
+  --color-neutral-100: #ececec;
+  --color-neutral-200: #e6e6e6;
+  --color-neutral-500: #6b7280; /* #777 original falhava WCAG AA , 4.61:1 ✓ */
+  --color-neutral-600: #54595f;
+  --color-white:       #ffffff;
+
+  /* ─── Cores , Semânticas ─────────────────────────── */
+  --clr-orange:        var(--color-brand-500);
+  --clr-orange-dark:   var(--color-brand-600);
+  --clr-orange-readable:#9f4505;
+  --clr-dark:          var(--color-dark-900);
+  --clr-text:          rgba(1, 7, 29, 0.80);
+  --clr-text-dark:     var(--color-dark-900);
+  --clr-text-muted:    var(--color-neutral-600);
+  --clr-text-subtle:   var(--color-neutral-500); /* 4.61:1 , passa WCAG AA ✓ */
+  --clr-date:          #767676;                  /* era #adadad (2.3:1 ✗) → 4.54:1 ✓ */
+  --clr-light:         var(--color-neutral-200);
+  --clr-border:        var(--color-neutral-200);
+  --clr-white:         var(--color-white);
+  --clr-cta-bg:        var(--color-neutral-100);
+  --clr-edu-border:    #f3b77f;
+
+  /* Cores sociais */
+  --clr-linkedin:      #0077b5;
+  --clr-whatsapp:      #25d366;
+
+  /* ─── Tipografia ─────────────────────────────────── */
+  --font:              'Montserrat', sans-serif;
+  --fw-light:          300;
+  --fw-regular:        400;
+  --fw-medium:         500;
+  --fw-semibold:       600;
+  --fw-bold:           700;
+
+  /* Escala de tipo , use estas variáveis para novos componentes */
+  --text-xs:   clamp(0.75rem,  1vw,   0.875rem);
+  --text-sm:   clamp(0.875rem, 1.2vw, 1rem);
+  --text-base: 1rem;
+  --text-lg:   clamp(1.125rem, 1.5vw, 1.25rem);
+  --text-xl:   clamp(1.25rem,  2vw,   1.5rem);
+  --text-2xl:  clamp(1.5rem,   3vw,   2rem);
+  --text-3xl:  clamp(2rem,     4vw,   3rem);
+  --text-4xl:  clamp(2.5rem,   6vw,   5rem);
+  --text-h1:      clamp(2.5rem, 6vw, 5rem);
+  --text-display: clamp(3.5rem, 12vw, 11rem);
+
+  /* Line heights */
+  --leading-tight:  1.2;
+  --leading-normal: 1.5;
+  --leading-loose:  1.8;
+
+  /* ─── Espaçamento , escala 4px ───────────────────── */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ─── Layout ─────────────────────────────────────── */
+  --container-max: 1392px;
+  --container-px:  clamp(var(--space-4), 2.4vw, var(--space-6));
+  --section-py:    clamp(80px, 9vw, 130px);
+  --page-top-offset: clamp(136px, 12vw, 168px);
+  --page-intro-gap: clamp(16px, 2vw, 24px);
+  --page-intro-after: clamp(40px, 5vw, 56px);
+  --nav-height:    80px;
+  /* Nota: .nav usa max-width: 1440px (= --container-max + 2×24px padding do header) */
+
+  /* ─── Bordas & Raios ─────────────────────────────── */
+  --radius-sm:   8px;
+  --radius-md:   16px;
+  --radius-full: 99px;
+
+  /* ─── Sombras ────────────────────────────────────── */
+  --shadow-sm:    0 1px 3px rgba(0, 0, 0, 0.10);
+  --shadow-card:  0 0 10px rgba(0, 0, 0, 0.15);
+  --shadow-md:    0 4px 12px rgba(0, 0, 0, 0.12);
+  --shadow-lg:    0 8px 30px rgba(0, 0, 0, 0.15);
+  --shadow-brand: 0 8px 24px rgba(238, 120, 46, 0.40);
+
+  /* ─── Transições ─────────────────────────────────── */
+  --transition:      0.22s ease;
+  --transition-slow: 0.40s ease;
+  --duration-fast:   0.22s;
+  --duration-base:   0.40s;
+  --duration-reveal: 0.55s;
+  --duration-curtain: 0.82s;
+  --ease-curtain:    cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-out-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-reveal:     ease;
+  --curve-depth:     clamp(36px, 5vw, 80px);
+  --home-stats-height: 180px;
+
+  /* Tema contextual para componentes novos, sem alterar páginas existentes */
+  --bg: var(--color-neutral-050);
+  --fg: var(--color-dark-900);
+
+  /* ─── Tokens de projeto (camada de conteúdo) ─────── */
+  /* Cores específicas de cards de projeto , não usar fora desse contexto */
+  --card-quantum:   #272727;
+  --card-2p:        #2409a9;
+  --card-bit:       rgba(10, 1, 70, 0.97);
+  --card-farm:      #00cd93;
+  --card-olho-vivo:    #ece8df;
+  --card-figurinhas:   #0c2b1a;
+}
+
+/* --- Base -------------------------------------------- */
+body {
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--clr-text);
+  background: linear-gradient(90deg, #f7f7f7 0%, #e2e2e2 100%);
+  /* background-attachment: fixed removido , causa repaint contínuo no iOS/Android */
+}
+
+/* --- Utilitários ------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-px);
+}
+
+.section {
+  padding-block: var(--section-py);
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--nav-height) + 56px);
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: var(--fw-light);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: var(--clr-text-dark);
+}
+
+.section-title--home {
+  font-size: clamp(2.1rem, 4.3vw, 3.8rem);
+  line-height: 1.18;
+  max-width: 980px;
+}
+
+.section-kicker {
+  font-size: 0.8rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: var(--clr-orange-readable);
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  max-width: 760px;
+  font-size: 1.05rem;
+  color: var(--clr-text);
+  line-height: 1.7;
+  margin-bottom: clamp(40px, 5vw, 56px);
+}
+
+.page-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--page-intro-gap);
+  margin-bottom: var(--page-intro-after);
+}
+
+.page-intro .section-kicker,
+.page-intro .section-title,
+.page-intro .section-subtitle {
+  margin-bottom: 0;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: clamp(40px, 5vw, 64px);
+  flex-wrap: wrap;
+}
+
+/* --- Botões ------------------------------------------ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: var(--fw-medium);
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  transition: transform var(--transition), filter var(--transition), box-shadow var(--transition);
+  line-height: 1.5;
+  white-space: nowrap;
+  cursor: pointer;
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn--orange {
+  background: var(--clr-orange);
+  color: var(--clr-text-dark);
+}
+
+.btn--orange:hover {
+  box-shadow: var(--shadow-brand);
+}
+
+.btn--white-glass {
+  background: rgba(255, 255, 255, 0.62);
+  color: rgba(1, 7, 29, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.btn--white-glass:hover {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+/* --- Foco visível (a11y) ------------------------------ */
+/* Garante indicador de foco para navegação por teclado em todos os elementos */
+:focus-visible {
+  outline: 2px solid var(--clr-orange);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.btn:focus-visible,
+.hero__cta:focus-visible,
+.project-card__btn:focus-visible,
+.featured-project-card__btn:focus-visible,
+.home-testimonial-card__profile:focus-visible {
+  outline-offset: 4px;
+  border-radius: var(--radius-full);
+}
+
+.nav__social-btn:focus-visible,
+.cta-social-btn:focus-visible {
+  border-radius: 50%;
+  outline-offset: 3px;
+}
+
+.post-card__link:focus-visible {
+  outline-offset: 0;
+  border-radius: var(--radius-md);
+}
+
+.carousel__btn:focus-visible,
+.carousel__dot:focus-visible,
+.testimonials__btn:focus-visible,
+.testimonials__dot:focus-visible {
+  outline-offset: 3px;
+}
+
+/* ===================================================
+   Navegação editorial e menu flutuante
+   =================================================== */
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 120;
+  pointer-events: none;
+}
+
+.site-nav {
+  width: min(calc(100% - 48px), 1392px);
+  min-height: 88px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 32px;
+  color: var(--color-dark-900);
+  pointer-events: auto;
+  transition:
+    opacity 0.35s var(--ease-out-expo),
+    transform 0.35s var(--ease-out-expo);
+}
+
+.site-nav__logo {
+  justify-self: start;
+}
+
+.site-nav__logo img {
+  width: 140px;
+  height: auto;
+}
+
+.site-nav__links {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 2.5vw, 40px);
+  font-size: 0.82rem;
+  font-weight: var(--fw-medium);
+}
+
+.site-nav__links a,
+.site-nav__contact {
+  position: relative;
+}
+
+.site-nav__links a::after,
+.site-nav__contact::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.35s var(--ease-out-expo);
+}
+
+.site-nav__links a:hover::after,
+.site-nav__contact:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.site-nav__contact {
+  justify-self: end;
+  font-size: 0.82rem;
+  font-weight: var(--fw-semibold);
+}
+
+.site-header.is-condensed .site-nav {
+  opacity: 0;
+  transform: translateY(-24px);
+  pointer-events: none;
+}
+
+.floating-menu__trigger {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 3;
+  width: 104px;
+  height: 104px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--color-neutral-050);
+  background: var(--color-dark-900);
+  box-shadow: 0 16px 44px rgba(1, 7, 29, 0.24);
+  opacity: 0;
+  transform: scale(0.72);
+  pointer-events: none;
+  transition:
+    opacity 0.35s var(--ease-out-expo),
+    transform 0.35s var(--ease-out-expo),
+    background-color 0.25s ease;
+}
+
+.site-header.is-condensed .floating-menu__trigger,
+.floating-menu__trigger[aria-expanded="true"] {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.floating-menu__trigger[aria-expanded="true"] {
+  opacity: 0;
+  transform: scale(0.72);
+  pointer-events: none;
+}
+
+.floating-menu__trigger:hover {
+  background: var(--color-brand-500);
+}
+
+.floating-menu__trigger-label {
+  font-size: 0.82rem;
+  font-weight: var(--fw-medium);
+}
+
+.floating-menu__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  display: block;
+  background: rgba(1, 7, 29, 0.36);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.45s ease;
+}
+
+.floating-menu__backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.floating-menu__panel {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  width: min(620px, 88vw);
+  height: 100svh;
+  padding: 36px clamp(36px, 6vw, 82px) 42px clamp(64px, 8vw, 112px);
+  display: flex;
+  flex-direction: column;
+  color: var(--color-neutral-050);
+  background: var(--color-dark-900);
+  border-radius: 46% 0 0 46% / 10% 0 0 10%;
+  transform: translateX(108%);
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    transform 0.72s var(--ease-out-expo),
+    visibility 0s 0.72s;
+}
+
+.floating-menu__panel.is-open {
+  transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
+  transition:
+    transform 0.72s var(--ease-out-expo),
+    visibility 0s;
+}
+
+.floating-menu__panel-top,
+.floating-menu__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(247, 247, 247, 0.62);
+}
+
+.floating-menu__close {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.floating-menu__close span {
+  position: absolute;
+  top: 23px;
+  left: 14px;
+  width: 20px;
+  height: 1px;
+  background: white;
+}
+
+.floating-menu__close span:first-child {
+  transform: rotate(45deg);
+}
+
+.floating-menu__close span:last-child {
+  transform: rotate(-45deg);
+}
+
+.floating-menu__nav {
+  margin-block: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-menu__nav a {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding-block: 6px;
+  color: rgba(247, 247, 247, 0.58);
+  font-size: clamp(1.8rem, 3.8vw, 3.6rem);
+  font-weight: var(--fw-light);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+  transition: color 0.25s ease, transform 0.35s var(--ease-out-expo);
+}
+
+.floating-menu__nav a:hover,
+.floating-menu__nav a:focus-visible {
+  color: var(--color-neutral-050);
+  transform: translateX(10px);
+}
+
+.floating-menu__nav a span {
+  min-width: 24px;
+  color: var(--color-brand-500);
+  font-size: 0.64rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
+}
+
+.floating-menu__socials {
+  display: flex;
+  gap: 18px;
+}
+
+.floating-menu__socials a:hover {
+  color: var(--color-neutral-050);
+}
+
+.floating-menu__translate {
+  min-height: 28px;
+}
+
+body.floating-menu-open {
+  overflow: hidden;
+}
+
+body.floating-menu-open .floating-menu__trigger {
+  opacity: 0 !important;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body.floating-menu-open .whatsapp-float {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .site-nav {
+    width: calc(100% - 36px);
+    min-height: 76px;
+    display: flex;
+  }
+
+  .site-nav__links,
+  .site-nav__contact {
+    display: none;
+  }
+
+  .floating-menu__trigger {
+    top: 14px;
+    right: 14px;
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+
+  .floating-menu__panel {
+    width: 100%;
+    padding: 24px 24px 32px;
+    border-radius: 0 0 0 18%;
+  }
+
+  .floating-menu__nav a {
+    font-size: clamp(1.6rem, 9vw, 3rem);
+    padding-block: 4px;
+  }
+
+  .floating-menu__footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ── Submenu de projetos ──────────────────────────── */
+.site-nav__has-sub {
+  position: relative;
+}
+
+.site-nav__chevron {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 3px;
+  margin-top: -1px;
+  transition: transform 0.22s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.site-nav__has-sub:hover .site-nav__chevron,
+.site-nav__has-sub:focus-within .site-nav__chevron {
+  transform: rotate(180deg);
+}
+
+.site-nav__sub {
+  position: absolute;
+  top: calc(100% + 14px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  min-width: 210px;
+  padding: 6px;
+  margin: 0;
+  list-style: none;
+  background: var(--color-neutral-050, #f7f7f4);
+  border: 1px solid rgba(1, 7, 29, 0.07);
+  border-radius: 14px;
+  box-shadow:
+    0 4px 16px rgba(1, 7, 29, 0.08),
+    0 12px 40px rgba(1, 7, 29, 0.07);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.22s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
+    visibility 0s 0.2s;
+  z-index: 10;
+}
+
+/* Invisible bridge so hovering gap between link and menu doesn't close it */
+.site-nav__sub::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+}
+
+.site-nav__has-sub:hover .site-nav__sub,
+.site-nav__has-sub:focus-within .site-nav__sub {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+  transition:
+    opacity 0.2s ease,
+    transform 0.22s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
+    visibility 0s;
+}
+
+.site-nav__sub li {
+  list-style: none;
+}
+
+.site-nav__sub a {
+  display: block;
+  padding: 9px 14px;
+  border-radius: 9px;
+  font-size: 0.78rem;
+  font-weight: var(--fw-medium, 500);
+  color: var(--color-dark-900, #01071d);
+  white-space: nowrap;
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+/* Suppress the global underline pseudo-element for submenu links */
+.site-nav__sub a::after {
+  display: none !important;
+}
+
+.site-nav__sub a:hover,
+.site-nav__sub a:focus-visible {
+  background: rgba(1, 7, 29, 0.05);
+  color: var(--color-brand-500, #ee782e);
+}
+
+@media (max-width: 900px) {
+  .site-nav__has-sub,
+  .site-nav__sub,
+  .site-nav__chevron {
+    display: none;
+  }
+}
+
+/* ── Floating menu submenu (acordeão) ─────────────── */
+.floating-menu__has-sub {
+  display: flex;
+  flex-direction: column;
+}
+
+.floating-menu__sub-toggle {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-block: 6px;
+  color: rgba(247, 247, 247, 0.58);
+  font-size: clamp(1.8rem, 3.8vw, 3.6rem);
+  font-weight: var(--fw-light);
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  transition: color 0.25s ease, transform 0.35s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.floating-menu__sub-toggle:hover,
+.floating-menu__sub-toggle:focus-visible {
+  color: var(--color-neutral-050);
+  transform: translateX(10px);
+}
+
+.floating-menu__sub-toggle > span {
+  min-width: 24px;
+  color: var(--color-brand-500);
+  font-size: 0.64rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
+  flex-shrink: 0;
+}
+
+.floating-menu__sub-chevron {
+  margin-left: auto;
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: transform 0.3s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.floating-menu__sub-toggle[aria-expanded="true"] .floating-menu__sub-chevron {
+  transform: rotate(180deg);
+}
+
+.floating-menu__sub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 44px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-menu__sub-list.is-open {
+  max-height: 420px;
+}
+
+.floating-menu__sub-list li {
+  list-style: none;
+}
+
+.floating-menu__sub-list a {
+  display: block;
+  padding: 8px 0;
+  color: rgba(247, 247, 247, 0.4);
+  font-size: clamp(1.2rem, 3.2vw, 1.7rem);
+  font-weight: var(--fw-light);
+  letter-spacing: -0.02em;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.floating-menu__sub-list a:hover,
+.floating-menu__sub-list a:focus-visible {
+  color: var(--color-neutral-050);
+  transform: translateX(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-menu__panel,
+  .floating-menu__trigger,
+  .site-nav {
+    transition: none;
+  }
+}
+
+/* ===================================================
+   Home V2
+   =================================================== */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.home-redesign {
+  background: #f1f0ec;
+}
+
+.home-v2 {
+  color: var(--color-dark-900);
+  overflow: clip;
+}
+
+.home-shell {
+  width: min(calc(100% - 48px), 1392px);
+  margin-inline: auto;
+}
+
+.home-eyebrow {
+  font-size: 0.72rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-hero {
+  position: relative;
+  min-height: 100svh;
+  padding: 106px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 55%, rgba(238, 120, 46, 0.17), transparent 31%),
+    linear-gradient(135deg, #f7f7f4 0%, #e9e7e1 100%);
+}
+
+.home-hero__topline {
+  width: min(100%, 1392px);
+  margin-inline: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 0.67rem;
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.home-hero__availability {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.home-hero__availability::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #39a85a;
+  box-shadow: 0 0 0 4px rgba(57, 168, 90, 0.12);
+}
+
+.home-marquee {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  right: 0;
+  left: 0;
+  transform: translateY(-60%);
+  padding-block: 0.08em;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.home-marquee__track {
+  width: max-content;
+  display: flex;
+  will-change: transform;
+}
+
+.home-marquee__group {
+  display: flex;
+  align-items: center;
+  gap: 0.12em;
+  padding-right: 0.12em;
+  color: var(--color-dark-900);
+  font-size: clamp(5rem, 13vw, 13rem);
+  font-weight: var(--fw-light);
+  line-height: 1.12;
+  letter-spacing: -0.075em;
+  white-space: nowrap;
+}
+
+.home-marquee__mark {
+  color: var(--color-brand-500);
+  font-size: 0.5em;
+}
+
+.home-hero__stage {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1392px);
+  flex: 1;
+  margin: 20px auto 0;
+}
+
+.home-hero__portrait {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  width: min(clamp(560px, 52vw, 680px), 78svh);
+  transform: translateX(-50%);
+}
+
+.home-hero__portrait::after {
+  content: "";
+  position: absolute;
+  right: 10%;
+  bottom: 2%;
+  left: 10%;
+  height: 10%;
+  background: rgba(1, 7, 29, 0.22);
+  filter: blur(24px);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.home-hero__portrait-halo {
+  position: absolute;
+  inset: 19% 6% 3%;
+  z-index: -1;
+  border-radius: 50% 50% 46% 54%;
+  border: 1px solid rgba(1, 7, 29, 0.14);
+  transform: rotate(-6deg);
+}
+
+.home-hero__portrait-halo::before,
+.home-hero__portrait-halo::after {
+  content: "";
+  position: absolute;
+  inset: 7%;
+  border-radius: inherit;
+  border: 1px solid rgba(1, 7, 29, 0.08);
+}
+
+.home-hero__portrait-halo::after {
+  inset: 14%;
+}
+
+.home-hero__portrait img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.home-hero__statement {
+  position: absolute;
+  bottom: 32px;
+  left: 0;
+  max-width: 310px;
+  font-size: clamp(0.88rem, 1.25vw, 1.08rem);
+  line-height: 1.6;
+}
+
+.home-hero__scroll {
+  position: absolute;
+  right: 0;
+  bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.72rem;
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.home-hero__scroll svg {
+  animation: home-scroll-cue 1.8s ease-in-out infinite;
+}
+
+@keyframes home-scroll-cue {
+  50% {
+    transform: translateY(7px);
+  }
+}
+
+.home-intro {
+  padding-block: clamp(110px, 14vw, 220px);
+}
+
+.home-intro__grid {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.65fr) minmax(0, 2fr);
+  gap: clamp(40px, 8vw, 150px);
+}
+
+.home-intro__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(220px, 0.7fr);
+  gap: clamp(34px, 5vw, 90px);
+  align-items: start;
+}
+
+.home-intro__lead {
+  grid-column: 1 / -1;
+  max-width: 1050px;
+  font-size: clamp(2.6rem, 6.2vw, 6rem);
+  font-weight: var(--fw-light);
+  line-height: 1.03;
+  letter-spacing: -0.065em;
+}
+
+.home-intro__copy {
+  max-width: 640px;
+  font-size: clamp(1.08rem, 1.8vw, 1.45rem);
+  line-height: 1.62;
+}
+
+.round-link {
+  justify-self: end;
+  position: relative;
+  width: clamp(168px, 15vw, 210px);
+  aspect-ratio: 1;
+  padding: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--color-neutral-050);
+  background: var(--color-brand-500);
+  font-size: 0.92rem;
+  font-weight: var(--fw-semibold);
+  text-align: center;
+  will-change: transform;
+}
+
+.project-index {
+  position: relative;
+  padding-block: 36px clamp(130px, 14vw, 210px);
+}
+
+.home-section-head {
+  display: grid;
+  grid-template-columns: minmax(120px, 0.65fr) minmax(0, 1.45fr) minmax(210px, 0.55fr);
+  gap: clamp(30px, 6vw, 110px);
+  align-items: end;
+  margin-bottom: clamp(64px, 8vw, 112px);
+}
+
+.home-section-head h2 {
+  max-width: 820px;
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: var(--fw-light);
+  line-height: 0.96;
+  letter-spacing: -0.07em;
+}
+
+.home-section-head > p:last-child {
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.project-index__list {
+  border-top: 1px solid rgba(1, 7, 29, 0.2);
+}
+
+.project-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 60px minmax(260px, 1.5fr) minmax(170px, 0.65fr) 70px 32px;
+  gap: 20px;
+  align-items: center;
+  min-height: 132px;
+  border-bottom: 1px solid rgba(1, 7, 29, 0.2);
+  transition: color 0.3s ease, padding 0.4s var(--ease-out-expo);
+}
+
+.project-row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-dark-900);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.42s var(--ease-out-expo);
+}
+
+.project-row:hover,
+.project-row:focus-visible {
+  color: var(--color-neutral-050);
+  padding-inline: 20px;
+}
+
+.project-row:hover::before,
+.project-row:focus-visible::before {
+  transform: scaleY(1);
+}
+
+.project-row__number,
+.project-row__meta,
+.project-row__year {
+  font-size: 0.72rem;
+  font-weight: var(--fw-medium);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.project-row__name {
+  font-size: clamp(1.65rem, 3.5vw, 3.8rem);
+  font-weight: var(--fw-light);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.project-row__arrow {
+  font-size: 1.5rem;
+}
+
+.project-row__thumb {
+  display: none;
+}
+
+.project-preview {
+  position: fixed;
+  z-index: 90;
+  top: 0;
+  left: 0;
+  width: min(34vw, 470px);
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 18px;
+  opacity: 0;
+  transform: scale(0.84);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+.project-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 26px 70px rgba(1, 7, 29, 0.28);
+}
+
+.project-preview__cta {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 92px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--color-dark-900);
+  background: var(--color-brand-500);
+  font-size: 0.74rem;
+  font-weight: var(--fw-semibold);
+  box-shadow: 0 12px 30px rgba(1, 7, 29, 0.22);
+}
+
+.home-services-v2 {
+  position: relative;
+  padding-block: clamp(150px, 16vw, 240px) clamp(110px, 13vw, 190px);
+  color: var(--color-neutral-050);
+  background: var(--color-dark-900);
+}
+
+.section-curve {
+  position: absolute;
+  top: -99px;
+  right: 0;
+  left: 0;
+  height: 100px;
+  overflow: hidden;
+}
+
+.section-curve svg {
+  width: 100%;
+  height: 100%;
+}
+
+.section-curve path {
+  fill: var(--color-dark-900);
+}
+
+.home-section-head--dark {
+  grid-template-columns: minmax(120px, 0.65fr) minmax(0, 2fr);
+}
+
+.home-section-head--dark h2 {
+  max-width: 970px;
+}
+
+.service-lines {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service-line {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.service-line summary {
+  min-height: 148px;
+  display: grid;
+  grid-template-columns: 72px 1fr 52px;
+  gap: 24px;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+
+.service-line summary::-webkit-details-marker {
+  display: none;
+}
+
+.service-line__number {
+  color: var(--color-brand-500);
+  font-size: 0.72rem;
+  font-weight: var(--fw-semibold);
+}
+
+.service-line__title {
+  font-size: clamp(2rem, 5vw, 5rem);
+  font-weight: var(--fw-light);
+  letter-spacing: -0.06em;
+}
+
+.service-line__icon {
+  width: 48px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transition: transform 0.35s ease, background-color 0.35s ease;
+}
+
+.service-line[open] .service-line__icon {
+  color: var(--color-dark-900);
+  background: var(--color-brand-500);
+  border-color: var(--color-brand-500);
+  transform: rotate(45deg);
+}
+
+.service-line__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.6fr);
+  gap: 50px;
+  padding: 0 76px 54px 96px;
+  color: rgba(247, 247, 247, 0.7);
+}
+
+.service-line__content p {
+  max-width: 760px;
+  font-size: clamp(1rem, 1.7vw, 1.3rem);
+  line-height: 1.65;
+}
+
+.service-line__content span {
+  font-size: 0.76rem;
+  line-height: 1.7;
+}
+
+.home-proof {
+  padding-block: clamp(110px, 14vw, 210px);
+  background: #f1f0ec;
+}
+
+.home-proof .home-proof__viewport {
+  margin-top: 36px;
+  overflow: hidden;
+  transition: height 0.45s var(--ease-out-expo);
+}
+
+.home-proof .home-proof__track {
+  display: flex;
+  align-items: flex-start;
+  transition: transform 0.55s var(--ease-out-expo);
+  will-change: transform;
+}
+
+.home-proof .home-proof__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(260px, 0.5fr);
+  gap: clamp(60px, 10vw, 180px);
+  align-items: start;
+  text-align: left;
+}
+
+.home-proof blockquote {
+  margin: 0;
+  max-width: 1040px;
+  font-size: clamp(2.2rem, 5.4vw, 5.2rem);
+  font-weight: var(--fw-light);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+}
+
+.home-proof__author {
+  display: flex;
+  align-self: end;
+  align-items: center;
+  gap: 16px;
+  color: inherit;
+}
+
+.home-proof__author img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.home-proof__author div {
+  display: grid;
+  gap: 3px;
+}
+
+.home-proof__author strong {
+  font-size: 0.86rem;
+}
+
+.home-proof__author span {
+  color: rgba(1, 7, 29, 0.62);
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.home-proof .home-proof__controls {
+  margin-top: clamp(42px, 5vw, 72px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.home-proof .home-proof__button {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(1, 7, 29, 0.22);
+  border-radius: 50%;
+  color: var(--color-dark-900);
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
+}
+
+.home-proof .home-proof__button:hover,
+.home-proof .home-proof__button:focus-visible {
+  color: var(--color-neutral-050);
+  background: var(--color-dark-900);
+}
+
+.home-proof .home-proof__dots {
+  min-width: 72px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.home-proof .testimonials__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-dark-900);
+  opacity: 0.22;
+  cursor: pointer;
+  transition: width 0.25s ease, opacity 0.25s ease;
+}
+
+.home-proof .testimonials__dot.active {
+  width: 28px;
+  opacity: 1;
+}
+
+@media (min-width: 1600px) {
+  .home-marquee__group {
+    font-size: clamp(8rem, 10vw, 11rem);
+  }
+
+  .home-hero__portrait {
+    width: min(42vw, 700px, 78svh);
+  }
+}
+
+@media (max-width: 1000px) {
+  .home-marquee {
+    transform: translateY(-72%);
+  }
+
+  .home-hero__portrait {
+    width: min(78vw, 620px, 78svh);
+  }
+
+  .home-intro__grid,
+  .home-section-head {
+    grid-template-columns: 1fr;
+  }
+
+  .home-intro__content {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .project-row {
+    grid-template-columns: 46px minmax(220px, 1fr) minmax(150px, 0.55fr) 60px 24px;
+  }
+
+  .home-proof .home-proof__slide {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-shell {
+    width: min(calc(100% - 36px), 1392px);
+  }
+
+  .home-hero {
+    min-height: 820px;
+    padding: 92px 18px 18px;
+  }
+
+  .home-hero__topline {
+    align-items: flex-start;
+  }
+
+  .home-hero__availability {
+    max-width: 140px;
+    text-align: right;
+  }
+
+  .home-marquee {
+    top: 31%;
+    z-index: 2;
+    transform: none;
+    mix-blend-mode: difference;
+  }
+
+  .home-marquee__group {
+    color: #ffffff;
+    font-size: clamp(4.4rem, 23vw, 7.5rem);
+  }
+
+  .home-hero__portrait {
+    width: min(112vw, 610px, 78svh);
+  }
+
+  .home-hero__statement {
+    bottom: 112px;
+    max-width: 230px;
+    padding: 12px;
+    background: rgba(247, 247, 244, 0.74);
+    backdrop-filter: blur(10px);
+  }
+
+  .home-hero__scroll {
+    bottom: 32px;
+  }
+
+  .home-intro {
+    padding-block: 110px 150px;
+  }
+
+  .home-intro__grid,
+  .home-intro__content {
+    grid-template-columns: 1fr;
+  }
+
+  .home-intro__grid {
+    gap: 42px;
+  }
+
+  .home-intro__content {
+    gap: 38px;
+  }
+
+  .home-intro__lead {
+    font-size: clamp(2.7rem, 14vw, 4.3rem);
+  }
+
+  .round-link {
+    justify-self: start;
+    width: 168px;
+  }
+
+  .project-index {
+    padding-bottom: 145px;
+  }
+
+  .home-section-head {
+    gap: 22px;
+    margin-bottom: 54px;
+  }
+
+  .home-section-head h2 {
+    font-size: clamp(3.2rem, 16vw, 5rem);
+  }
+
+  .project-row {
+    grid-template-columns: 34px 1fr 24px;
+    gap: 12px;
+    min-height: auto;
+    padding-block: 22px;
+  }
+
+  .project-row:hover,
+  .project-row:focus-visible {
+    color: var(--color-dark-900);
+    padding-inline: 0;
+  }
+
+  .project-row:hover::before,
+  .project-row:focus-visible::before {
+    transform: scaleY(0);
+  }
+
+  .project-row__meta,
+  .project-row__year {
+    grid-column: 2;
+  }
+
+  .project-row__meta {
+    margin-top: -8px;
+  }
+
+  .project-row__year {
+    display: none;
+  }
+
+  .project-row__arrow {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .project-row__thumb {
+    grid-column: 1 / -1;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    margin-top: 8px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .project-preview {
+    display: none;
+  }
+
+  .home-services-v2 {
+    padding-block: 120px 110px;
+  }
+
+  .section-curve {
+    top: -69px;
+    height: 70px;
+  }
+
+  .service-line summary {
+    min-height: 112px;
+    grid-template-columns: 38px 1fr 42px;
+    gap: 10px;
+  }
+
+  .service-line__title {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .service-line__icon {
+    width: 40px;
+  }
+
+  .service-line__content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 0 38px 48px;
+  }
+
+  .home-proof {
+    padding-block: 110px;
+  }
+
+  .home-proof blockquote {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .home-proof .home-proof__controls {
+    justify-content: flex-start;
+  }
+}
+
+@media (pointer: coarse) {
+  .project-preview {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero__scroll svg {
+    animation: none;
+  }
+}
+
+/* ===================================================
+   Footer global
+   =================================================== */
+
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(88px, 10vw, 144px) 32px;
+  border-radius: var(--curve-depth) var(--curve-depth) 0 0;
+}
+
+.site-footer__container {
+  position: relative;
+}
+
+.site-footer__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: clamp(40px, 7vw, 96px);
+}
+
+.site-footer__eyebrow {
+  margin-bottom: 20px;
+  color: rgba(247, 247, 247, 0.62);
+  font-size: var(--text-sm);
+}
+
+.site-footer__title {
+  max-width: 10ch;
+  color: var(--color-neutral-050);
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-weight: var(--fw-light);
+  line-height: 0.96;
+  letter-spacing: -0.055em;
+}
+
+.site-footer__cta {
+  display: inline-flex;
+  width: clamp(148px, 14vw, 190px);
+  aspect-ratio: 1;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 50%;
+  background: var(--color-brand-500);
+  color: var(--color-dark-900);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  transition:
+    transform var(--duration-base) var(--ease-out-expo),
+    background-color var(--duration-fast) ease;
+}
+
+.site-footer__cta:hover {
+  background: #f28b49;
+  transform: scale(1.04);
+}
+
+.site-footer__divider {
+  width: 100%;
+  height: 1px;
+  margin-block: clamp(56px, 7vw, 88px) 32px;
+  background: rgba(247, 247, 247, 0.18);
+}
+
+.site-footer__details {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 32px;
+}
+
+.site-footer__location {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid rgba(247, 247, 247, 0.2);
+  border-radius: var(--radius-full);
+  color: rgba(247, 247, 247, 0.76);
+  font-size: var(--text-xs);
+}
+
+.site-footer__location time {
+  padding-left: 10px;
+  border-left: 1px solid rgba(247, 247, 247, 0.2);
+  color: var(--color-neutral-050);
+  font-variant-numeric: tabular-nums;
+}
+
+.site-footer__status {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-brand-500);
+  box-shadow: 0 0 0 4px rgba(238, 120, 46, 0.14);
+}
+
+.site-footer__email {
+  grid-column: 1;
+  width: fit-content;
+  color: var(--color-neutral-050);
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  text-decoration: underline;
+  text-decoration-color: rgba(247, 247, 247, 0.28);
+  text-underline-offset: 6px;
+}
+
+.site-footer__links {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 14px 32px;
+}
+
+.site-footer__links a {
+  color: rgba(247, 247, 247, 0.72);
+  font-size: var(--text-sm);
+  transition: color var(--duration-fast) ease;
+}
+
+.site-footer__links a:hover {
+  color: var(--color-brand-500);
+}
+
+.site-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: clamp(64px, 8vw, 104px);
+  color: rgba(247, 247, 247, 0.58);
+  font-size: var(--text-xs);
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: clamp(18px, 2.2vw, 28px);
+  bottom: clamp(18px, 2.2vw, 28px);
+  z-index: 180;
+  width: 58px;
+  height: 58px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 50%;
+  background: var(--clr-whatsapp);
+  color: var(--clr-white);
+  box-shadow: 0 16px 34px rgba(37, 211, 102, 0.32), 0 10px 28px rgba(1, 7, 29, 0.18);
+  transition: transform var(--transition), filter var(--transition), box-shadow var(--transition);
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.05);
+  box-shadow: 0 18px 42px rgba(37, 211, 102, 0.4), 0 12px 32px rgba(1, 7, 29, 0.2);
+}
+
+.whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+/* ── Botão voltar ao topo ──────────────────────────── */
+.back-to-top {
+  position: fixed;
+  left: clamp(18px, 2.2vw, 28px);
+  bottom: clamp(18px, 2.2vw, 28px);
+  z-index: 180;
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(1, 7, 29, 0.14);
+  border-radius: 50%;
+  background: var(--color-neutral-050, #f7f7f4);
+  color: var(--color-dark-900, #01071d);
+  box-shadow: 0 8px 24px rgba(1, 7, 29, 0.1);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition:
+    opacity 0.35s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
+    transform 0.35s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  background: var(--color-dark-900, #01071d);
+  color: var(--color-neutral-050, #f7f7f4);
+  box-shadow: 0 12px 32px rgba(1, 7, 29, 0.18);
+  transform: translateY(-3px);
+}
+
+body.floating-menu-open .back-to-top {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding-top: 72px;
+    border-radius: 34px 34px 0 0;
+  }
+
+  .site-footer__hero {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .site-footer__title {
+    font-size: clamp(2.75rem, 14vw, 4.5rem);
+  }
+
+  .site-footer__cta {
+    width: 144px;
+    justify-self: end;
+  }
+
+  .site-footer__details {
+    grid-template-columns: 1fr;
+  }
+
+  .site-footer__location {
+    flex-wrap: wrap;
+  }
+
+  .site-footer__email,
+  .site-footer__links {
+    grid-column: 1;
+  }
+
+  .site-footer__links {
+    grid-row: auto;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 16px;
+  }
+
+  .site-footer__bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .whatsapp-float {
+    right: 18px;
+    bottom: 18px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .whatsapp-float svg {
+    width: 27px;
+    height: 27px;
+  }
+}
+
+/* ===================================================
+   Motion foundation
+   GSAP 3.15.0, ScrollTrigger 3.15.0, Lenis 1.3.23
+   =================================================== */
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.01ms;
+}
+
+[data-theme="light"] {
+  --bg: var(--color-neutral-050);
+  --fg: var(--color-dark-900);
+  background: var(--bg);
+  color: var(--fg);
+}
+
+[data-theme="dark"] {
+  --bg: var(--color-dark-900);
+  --fg: var(--color-neutral-050);
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* Mantém a aparência atual dos reveals enquanto as páginas não são redesenhadas. */
+.motion-js [data-animate] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--duration-reveal) var(--ease-reveal),
+    transform var(--duration-reveal) var(--ease-reveal);
+}
+
+.motion-js [data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.motion-js [data-animate][data-delay="1"] { transition-delay: 0.1s; }
+.motion-js [data-animate][data-delay="2"] { transition-delay: 0.2s; }
+.motion-js [data-animate][data-delay="3"] { transition-delay: 0.3s; }
+.motion-js [data-animate][data-delay="4"] { transition-delay: 0.4s; }
+
+.motion-js .featured-project-card[data-animate],
+.motion-js .home-testimonial-card[data-animate],
+.motion-js .reflections .post-card[data-animate] {
+  transition-delay: 0s;
+}
+
+.page-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: var(--color-dark-900, #01071d);
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-105%);
+  transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: transform;
+}
+
+.page-transition.is-entering {
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.page-transition.is-leaving {
+  transform: translateY(105%);
+  visibility: visible;
+}
+
+.page-transition__shape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 112%;
+  filter: drop-shadow(0 18px 30px rgba(1, 7, 29, 0.18));
+}
+
+.page-transition__shape path {
+  fill: var(--color-dark-900);
+}
+
+.page-transition__label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(calc(100% - 48px), 1400px);
+  color: var(--color-neutral-050);
+  font-size: clamp(2.6rem, 7vw, 7.4rem);
+  font-weight: var(--fw-light);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.site-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-112%);
+  transition: transform 0.56s cubic-bezier(0.76, 0, 0.24, 1);
+  will-change: transform;
+}
+
+.site-preloader__shape {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 112%;
+  filter: drop-shadow(0 18px 30px rgba(1, 7, 29, 0.18));
+}
+
+.site-preloader__shape path {
+  fill: var(--color-dark-900);
+}
+
+.site-preloader__words {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  color: var(--color-neutral-050);
+  font-size: clamp(2.4rem, 8vw, 7rem);
+  font-weight: var(--fw-light);
+  letter-spacing: -0.055em;
+  transform: translate(-50%, -50%);
+}
+
+.site-preloader__words span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -30%);
+  transition: opacity 0.16s ease, transform 0.2s var(--ease-out-expo);
+  white-space: nowrap;
+}
+
+.site-preloader__words span.is-active {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+html[data-preloader-pending] .site-preloader {
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+  animation: preloader-failsafe 0.25s 3.5s forwards;
+}
+
+html[data-preloader-pending] .site-preloader.is-leaving {
+  pointer-events: none;
+  transform: translateY(-112%);
+}
+
+@keyframes preloader-failsafe {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* Cobre a página imediatamente na chegada, antes do JS rodar */
+html[data-transition-pending] .page-transition {
+  transform: translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+  transition: none;
+}
+
+/* Failsafe: remove overlay if JS travou */
+.page-transition.is-entering,
+.page-transition.is-leaving {
+  animation: page-transition-failsafe 0.2s 5s forwards;
+}
+
+@keyframes page-transition-failsafe {
+  to {
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-105%);
+  }
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .motion-js [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .carousel__track,
+  .testimonials__track {
+    transition: none !important;
+  }
+
+  .page-transition {
+    display: none !important;
+  }
+
+  .site-preloader {
+    display: none !important;
+  }
+}
+
+/* ── Custom cursor ───────────────────────────────── */
+html.has-custom-cursor,
+html.has-custom-cursor * {
+  cursor: none !important;
+}
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform, width, height;
+  opacity: 0;
+}
+
+/* ── Clip-path reveal para figures com imagem ────── */
+.motion-js figure[data-animate] {
+  clip-path: inset(100% 0 0 0);
+  opacity: 1;
+  transform: none;
+  transition:
+    clip-path 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.motion-js figure[data-animate].visible {
+  clip-path: inset(0% 0 0 0);
+  transform: none;
+}
+
+/* ── Text mask reveal ─────────────────────────────── */
+.motion-js .tr-word {
+  display: inline-block;
+  vertical-align: bottom;
+  line-height: inherit;
+  /*
+   * Extra space for descenders (g, j, p, y).
+   * Negative margin-bottom compensates so line height isn't affected.
+   */
+  padding-bottom: 0.22em;
+  margin-bottom: -0.22em;
+  /*
+   * Clip ONLY vertically to hide the slide-in text below the line,
+   * while leaving the sides free so glyph overhangs (e.g. 's', 'f', italic chars)
+   * are never clipped. Negative inset values extend the visible area beyond the border.
+   */
+  clip-path: inset(-0.4em -0.2em 0% -0.2em);
+}
+
+.motion-js .tr-word__inner {
+  display: inline-block;
+}
+
+  </style>
   
   
+  
+  <!-- Cobre a página imediatamente se há uma transição pendente, evitando flash -->
+  <script>
+    (function () {
+      try {
+        var raw = sessionStorage.getItem('floriano:page-transition');
+        var s = raw ? JSON.parse(raw) : null;
+        if (s && s.expiresAt > Date.now()) {
+          document.documentElement.setAttribute('data-transition-pending', '');
+        }
+      } catch (_) {}
+    }());
+  </script>
 </head>
-<body>
+<body class="home-redesign">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K738G4S2"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+  
+  <div class="site-preloader" data-site-preloader aria-hidden="true">
+  <div class="site-preloader__words" aria-hidden="true">
+    <span class="is-active" data-preloader-word>Entender</span>
+    <span data-preloader-word>Estruturar</span>
+    <span data-preloader-word>Construir</span>
+  </div>
+  <svg class="site-preloader__shape" viewBox="0 0 100 112" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 0H100V94C82 109 64 104 48 99C30 93 15 104 0 112V0Z"></path>
+  </svg>
+</div>
 
   
-    <header class="header" id="header">
-    <nav class="nav">
+  <div class="page-transition" data-page-transition aria-hidden="true">
+  <svg
+    class="page-transition__shape"
+    viewBox="0 0 100 112"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <path d="M0 0H100V96C78 108 42 99 0 111Z"></path>
+  </svg>
+  <p class="page-transition__label" data-page-transition-label></p>
+</div>
 
-      <!-- Logo -->
-      <div class="nav__logo-wrap">
-        <a href="/" class="nav__logo" aria-label="Floriano Silva, página inicial">
-          <img
-            src="/assets/floriano-logotipo.svg"
-            alt="Floriano"
-            width="140"
-            height="24"
-            decoding="async"
-          >
+
+
+  
+  <header class="site-header" id="header">
+  <nav class="site-nav" aria-label="Navegação principal">
+    <a href="/" class="site-nav__logo" aria-label="Floriano Silva, página inicial">
+      <img src="/assets/floriano-logotipo.svg" alt="Floriano" width="140" height="24" decoding="async">
+    </a>
+
+    <ul class="site-nav__links">
+      <li class="site-nav__has-sub">
+        <a href="/#projetos">
+          Projetos
+          <svg class="site-nav__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+            <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </a>
-      </div>
-
-      <!-- Links centrais -->
-      <div class="nav__center">
-        <ul class="nav__menu" id="navMenu">
-          <li class="nav__item">
-            <a href="/" class="nav__link active">Home</a>
-          </li>
-          <li class="nav__item">
-            <div class="nav__divider" aria-hidden="true"></div>
-          </li>
-          <li class="nav__item">
-            <a href="/#servicos" class="nav__link">Serviços</a>
-          </li>
-          <li class="nav__item">
-            <div class="nav__divider" aria-hidden="true"></div>
-          </li>
-          <li class="nav__item">
-            <a href="/#projetos" class="nav__link">Portfólio</a>
-          </li>
-          <li class="nav__item">
-            <div class="nav__divider" aria-hidden="true"></div>
-          </li>
-          <li class="nav__item">
-            <a href="/reflexoes/" class="nav__link">Reflexões</a>
-          </li>
-          <li class="nav__item">
-            <div class="nav__divider" aria-hidden="true"></div>
-          </li>
-          <li class="nav__item">
-            <a href="/sobre/" class="nav__link">Sobre</a>
-          </li>
+        <ul class="site-nav__sub" role="menu">
+          <li role="none"><a href="/projetos/quantum-vizz/" role="menuitem">Quantum Vizz</a></li>
+          <li role="none"><a href="/projetos/mercado-das-figurinhas/" role="menuitem">Mercado das Figurinhas</a></li>
+          <li role="none"><a href="/projetos/bit-system/" role="menuitem">Bit System</a></li>
+          <li role="none"><a href="/projetos/farm-well-hub/" role="menuitem">Farm Well Hub</a></li>
+          <li role="none"><a href="/projetos/2p-web-dev/" role="menuitem">Web Dev 2.0</a></li>
+          <li role="none"><a href="/projetos/olho-vivo/" role="menuitem">Olho Vivo</a></li>
         </ul>
-      </div>
+      </li>
+      <li><a href="/#servicos">Serviços</a></li>
+      <li><a href="/sobre/">Sobre</a></li>
+      <li><a href="/reflexoes/">Reflexões</a></li>
+      <li><a href="/contato/">Contato</a></li>
+    </ul>
 
-      <!-- Ícones -->
-      <div class="nav__right">
-        <div class="nav__socials">
-          <a href="https://www.linkedin.com/in/floriano-des/" target="_blank" rel="noopener noreferrer" class="nav__social-btn nav__social-btn--linkedin" aria-label="LinkedIn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-          </a>
-          <a href="https://docs.google.com/document/d/1hm6hnDomiTFlADy_AUysVOnuAU3BDrJ8Y7_ym4VbcRo/edit?tab=t.qxjadoowrw9d" target="_blank" rel="noopener noreferrer" class="nav__social-btn nav__social-btn--dark" aria-label="Ver CV">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="12" y1="18" x2="12" y2="12"/>
-              <polyline points="9 15 12 18 15 15"/>
-            </svg>
-          </a>
-          <a href="https://github.com/floriano-des/" target="_blank" rel="noopener noreferrer" class="nav__social-btn nav__social-btn--dark" aria-label="GitHub">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
-            </svg>
-          </a>
-          <a href="https://wa.me/5518996773264" target="_blank" rel="noopener noreferrer" class="nav__social-btn nav__social-btn--whatsapp" aria-label="WhatsApp">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-          </a>
-        </div>
-        <div class="nav__translate" aria-label="Selecionar idioma">
-          <div class="gtranslate_wrapper nav__translate-widget"></div>
-        </div>
-      </div>
+    <a class="site-nav__contact" href="/contato/">
+      Vamos conversar
+    </a>
+  </nav>
 
-      <!-- Hamburger mobile -->
-      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+  <button
+  class="floating-menu__trigger"
+  type="button"
+  aria-label="Abrir menu"
+  aria-expanded="false"
+  aria-controls="floatingMenuPanel"
+  data-floating-menu-trigger
+  data-magnetic
+>
+  <span class="floating-menu__trigger-label">Menu</span>
+</button>
+
+<div class="floating-menu__backdrop" data-floating-menu-backdrop hidden></div>
+
+<aside
+  class="floating-menu__panel"
+  id="floatingMenuPanel"
+  aria-hidden="true"
+  aria-label="Menu"
+  data-floating-menu-panel
+  data-lenis-prevent
+>
+  <div class="floating-menu__panel-top">
+    <span>Navegação</span>
+    <button type="button" class="floating-menu__close" aria-label="Fechar menu" data-floating-menu-close>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <nav class="floating-menu__nav" aria-label="Navegação expandida">
+    <a href="/" data-floating-menu-link><span>01</span>Home</a>
+
+    <div class="floating-menu__has-sub">
+      <button
+        class="floating-menu__sub-toggle"
+        type="button"
+        aria-expanded="false"
+        data-floating-submenu-toggle
+      >
+        <span>02</span>Projetos
+        <svg class="floating-menu__sub-chevron" width="14" height="9" viewBox="0 0 14 9" fill="none" aria-hidden="true">
+          <path d="M1 1l6 6 6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </button>
+      <ul class="floating-menu__sub-list" aria-hidden="true">
+        <li><a href="/projetos/quantum-vizz/" data-floating-menu-link>Quantum Vizz</a></li>
+        <li><a href="/projetos/mercado-das-figurinhas/" data-floating-menu-link>Mercado das Figurinhas</a></li>
+        <li><a href="/projetos/bit-system/" data-floating-menu-link>Bit System</a></li>
+        <li><a href="/projetos/farm-well-hub/" data-floating-menu-link>Farm Well Hub</a></li>
+        <li><a href="/projetos/2p-web-dev/" data-floating-menu-link>Web Dev 2.0</a></li>
+        <li><a href="/projetos/olho-vivo/" data-floating-menu-link>Olho Vivo</a></li>
+      </ul>
+    </div>
 
-    </nav>
-    <script>
-      window.gtranslateSettings = {
-        "default_language": "pt",
-        "languages": ["pt", "en"],
-        "wrapper_selector": ".gtranslate_wrapper",
-        "flag_size": 16,
-        "alt_flags": {
-          "pt": "brazil",
-          "en": "usa"
-        }
-      };
-    </script>
-    <script src="https://cdn.gtranslate.net/widgets/latest/fc.js" defer></script>
-  </header>
+    <a href="/#servicos" data-floating-menu-link><span>03</span>Serviços</a>
+    <a href="/sobre/" data-floating-menu-link><span>04</span>Sobre</a>
+    <a href="/reflexoes/" data-floating-menu-link><span>05</span>Reflexões</a>
+    <a href="/contato/" data-floating-menu-link><span>06</span>Contato</a>
+  </nav>
+
+  <div class="floating-menu__footer">
+    <div class="floating-menu__socials">
+      <a href="https://www.linkedin.com/in/floriano-des/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/floriano-des/" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://wa.me/5518996773264" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    </div>
+    <div class="gtranslate_wrapper floating-menu__translate" aria-label="Selecionar idioma"></div>
+  </div>
+</aside>
+
+</header>
+
+<script>
+  window.gtranslateSettings = {
+    "default_language": "pt",
+    "languages": ["pt", "en"],
+    "wrapper_selector": ".gtranslate_wrapper",
+    "flag_size": 16,
+    "alt_flags": {
+      "pt": "brazil",
+      "en": "usa"
+    }
+  };
+</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/fc.js" defer></script>
 
   
 
   
-  <!-- ================================================
-       HERO
-       ================================================ -->
-  <section class="hero" id="home">
+<main class="home-v2" id="conteudo">
+  <section class="home-hero" id="home" aria-labelledby="home-title">
+    <div class="home-hero__topline">
+      <span class="home-hero__location">Brasil</span>
+      <span class="home-hero__availability">Disponível para novos projetos</span>
+    </div>
 
-    <div class="hero__container">
+    <h1 class="sr-only" id="home-title">Floriano Silva, Designer de experiências digitais</h1>
 
-      <div class="hero__image" data-animate>
+    <div class="home-marquee" data-marquee aria-label="Designer de experiências digitais">
+      <div class="home-marquee__track" data-marquee-track>
+        <div class="home-marquee__group">
+          <span>Designer de experiências digitais</span>
+          <span class="home-marquee__mark" aria-hidden="true">✳</span>
+        </div>
+        <div class="home-marquee__group" aria-hidden="true">
+          <span>Designer de experiências digitais</span>
+          <span class="home-marquee__mark">✳</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="home-hero__stage">
+      <div class="home-hero__portrait">
+        <div class="home-hero__portrait-halo" aria-hidden="true"></div>
         <img
-          src="/assets/perfil-floriano-hero.png"
+          src="/assets/foto-hero-floriano.webp?v=af4df382f6"
           alt="Floriano Silva"
-          width="900"
-          height="900"
+          width="3197"
+          height="3861"
           loading="eager"
           fetchpriority="high"
           decoding="async"
         >
       </div>
 
-      <div class="hero__content">
-        <p class="hero__kicker" data-animate>Designer de experiências digitais</p>
-        <h1 class="hero__title" data-animate>
-          Transformo problemas de negócio em produtos, sites e experiências digitais funcionais.
-        </h1>
-        <p class="hero__subtitle" data-animate data-delay="1">
-          Combino UX, estratégia, marketing, dados e desenvolvimento para criar interfaces, páginas e sistemas que melhoram clareza, conversão e operação.
+      <p class="home-hero__statement" data-animate>
+        Transformo problemas de negócio em produtos, sites e experiências digitais que funcionam.
+      </p>
+
+      <a class="home-hero__scroll" href="#sobre-mim" aria-label="Ir para a apresentação">
+        <span>Explorar</span>
+        <svg width="18" height="26" viewBox="0 0 18 26" fill="none" aria-hidden="true">
+          <path d="M9 1v22M2 16l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="home-intro" id="sobre-mim">
+    <div class="home-shell home-intro__grid">
+      <p class="home-eyebrow" data-animate>Como eu trabalho</p>
+      <div class="home-intro__content">
+        <p class="home-intro__lead" data-animate>
+          Entender o problema vem antes de desenhar a tela.
         </p>
-        <div class="hero__actions" data-animate data-delay="2">
-          <a href="https://wa.me/5518996773264?text=Ol%C3%A1%2C%20Floriano.%20Vi%20seu%20site%20e%20quero%20conversar%20sobre%20um%20projeto%20digital." class="hero__cta" target="_blank" rel="noopener noreferrer">Conversar pelo WhatsApp</a>
-          <a href="/#projetos" class="btn btn--white-glass">Ver portfólio</a>
-        </div>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- ================================================
-       BIG NUMBERS
-       ================================================ -->
-  <section class="impact-stats section" id="resultados">
-    <div class="container">
-
-      <div class="impact-stats__grid">
-        <article class="impact-stat" data-animate>
-          <p class="impact-stat__value">8+ anos</p>
-          <p class="impact-stat__label">de experiência em design</p>
-        </article>
-
-        <article class="impact-stat" data-animate data-delay="1">
-          <p class="impact-stat__value">R$ 2 mi+</p>
-          <p class="impact-stat__label">em receita gerada para empresas</p>
-        </article>
-
-        <article class="impact-stat" data-animate data-delay="2">
-          <p class="impact-stat__value">7M+</p>
-          <p class="impact-stat__label">usuários impactados</p>
-        </article>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================
-       SERVIÇOS
-       ================================================ -->
-  <section class="home-services section" id="servicos">
-    <div class="container">
-
-      <div class="section-header home-services__header" data-animate>
-        <div>
-          <p class="section-kicker">Serviços</p>
-          <h2 class="section-title section-title--home">O que eu faço</h2>
-          <p class="section-subtitle">Três frentes para transformar problemas, ideias e operações em experiências digitais mais claras, comerciais e funcionais.</p>
-        </div>
-      </div>
-
-      <div class="home-services__grid">
-        <article class="home-service-card" data-animate>
-          <div class="home-service-card__icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="2"/>
-              <circle cx="12" cy="12" r="2.5" stroke="currentColor" stroke-width="2"/>
-              <path d="M12 5v3M12 16v3M5 12h3M16 12h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="home-service-card__title">Produto e Experiência Digital</h3>
-          <p class="home-service-card__desc">Redesign de produtos, auditorias de UX, estruturação de fluxos, interfaces e experiências digitais orientadas por negócio, clareza e usabilidade.</p>
-          <div class="home-service-card__tags">
-            <span>UX/UI Design</span>
-            <span>Produto digital</span>
-            <span>Service Design</span>
-            <span>Pesquisa</span>
-          </div>
-        </article>
-
-        <article class="home-service-card" data-animate data-delay="1">
-          <div class="home-service-card__icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <path d="M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M5 15l4-4 4 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M16 7h3v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3 class="home-service-card__title">Marketing Digital, Growth e Infoprodutos</h3>
-          <p class="home-service-card__desc">Estratégia de páginas, funis, lançamentos, conteúdo, campanhas e otimização de conversão para negócios digitais, infoprodutores e serviços.</p>
-          <div class="home-service-card__tags">
-            <span>Growth</span>
-            <span>Infoprodutos</span>
-            <span>Funis</span>
-            <span>CRO</span>
-          </div>
-        </article>
-
-        <article class="home-service-card" data-animate data-delay="2">
-          <div class="home-service-card__icon" aria-hidden="true">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-              <rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" stroke-width="2"/>
-              <path d="M4 9h16M8 13h4M8 16h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="home-service-card__title">Sites e Landing Pages</h3>
-          <p class="home-service-card__desc">Sites institucionais, landing pages e páginas comerciais com estratégia, design responsivo, SEO, performance e implementação pronta para publicação.</p>
-          <div class="home-service-card__tags">
-            <span>Sites</span>
-            <span>Landing Pages</span>
-            <span>SEO</span>
-            <span>Performance</span>
-          </div>
-        </article>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ================================================
-       IA NO PROCESSO
-       ================================================ -->
-  <section class="ai-process section" id="ia">
-    <div class="container">
-      <div class="ai-process__grid">
-
-        <div class="ai-process__content" data-animate>
-          <p class="section-kicker">IA no processo</p>
-          <h2 class="section-title section-title--home">Design acelerado por inteligência artificial</h2>
-          <p class="ai-process__text">Uso IA de forma estratégica para acelerar pesquisa, prototipação, documentação, conteúdo, automações e validação de ideias, mantendo critério de UX, negócio e execução.</p>
-          <div class="ai-process__tools" aria-label="Ferramentas usadas no processo">
-            <span>Figma Make</span>
-            <span>Codex</span>
-            <span>Claude Code</span>
-          </div>
-        </div>
-
-        <ul class="ai-process__list" data-animate data-delay="1">
-          <li>Prototipação mais rápida do briefing ao teste</li>
-          <li>Ciclos de design mais curtos com apoio de automações</li>
-          <li>MVPs e interfaces funcionais com mais velocidade</li>
-          <li>Documentação, conteúdo e handoff mais organizados</li>
-          <li>Mais qualidade em menos tempo, sem perder direção estratégica</li>
-        </ul>
-
+        <p class="home-intro__copy" data-animate>
+          Conecto estratégia, experiência e tecnologia para transformar contextos complexos em soluções digitais claras, úteis e prontas para operar no mundo real.
+        </p>
+        <a class="round-link" href="/sobre/" data-magnetic data-animate>
+          <span>Sobre mim</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ================================================
-       PROJETOS EM DESTAQUE
-       ================================================ -->
-  <section class="featured-projects section" id="projetos">
-    <div class="container">
-
-      <div class="section-header featured-projects__header" data-animate>
-        <div>
-          <p class="section-kicker">Portfólio</p>
-          <h2 class="section-title section-title--home">Projetos que mostram resultado, não só tela bonita.</h2>
-          <p class="section-subtitle">Cases com foco em conversão, produto, operação e experiência digital.</p>
-        </div>
+  <section class="project-index" id="projetos" aria-labelledby="projects-title">
+    <div class="home-shell">
+      <div class="home-section-head">
+        <p class="home-eyebrow" data-animate>Portfólio</p>
+        <h2 id="projects-title" data-animate>Trabalhos selecionados</h2>
+        <p data-animate>Projetos em produto, conversão, operação e serviços digitais.</p>
       </div>
 
-      <div class="featured-projects__grid">
+      <div class="project-index__list">
+        <a class="project-row" href="/projetos/quantum-vizz/" data-project-row data-project-image="/assets/projetos/quantum-vizz/cover-hover.webp">
+          <span class="project-row__number">01</span>
+          <span class="project-row__name">Quantum Vizz</span>
+          <span class="project-row__meta">Growth e CRO</span>
+          <span class="project-row__year">2025</span>
+          <span class="project-row__arrow" aria-hidden="true">↗</span>
+          <img class="project-row__thumb" src="/assets/projetos/quantum-vizz/thumb.webp" alt="" loading="lazy">
+        </a>
 
-        <article class="featured-project-card" data-animate>
-          <a href="/projetos/quantum-vizz" class="featured-project-card__media" aria-label="Ver projeto Quantum Vizz">
-            <img src="/assets/projetos/quantum-vizz/cover.webp" alt="Quantum Vizz, case de growth e CRO" loading="lazy">
-          </a>
-          <div class="featured-project-card__body">
-            <span class="featured-project-card__tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <path d="M5 15l4-4 4 3 6-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16 7h3v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Growth / CRO
-            </span>
-            <h3 class="featured-project-card__title">+194% de conversão sem elevar investimento em mídia</h3>
-            <p class="featured-project-card__desc">Problema de conversão em tráfego pago, resolvido com diagnóstico, hipóteses, redesign e leitura de comportamento.</p>
-            <a href="/projetos/quantum-vizz" class="featured-project-card__btn">Ver projeto</a>
+        <a class="project-row" href="/projetos/2p-web-dev/" data-project-row data-project-image="/assets/projetos/web-dev/cover-hover.webp">
+          <span class="project-row__number">02</span>
+          <span class="project-row__name">Web Dev 2.0</span>
+          <span class="project-row__meta">Produto interno</span>
+          <span class="project-row__year">2026</span>
+          <span class="project-row__arrow" aria-hidden="true">↗</span>
+          <img class="project-row__thumb" src="/assets/projetos/web-dev/thumb.webp" alt="" loading="lazy">
+        </a>
+
+        <a class="project-row" href="/projetos/mercado-das-figurinhas/" data-project-row data-project-image="/assets/projetos/mercado-das-figurinhas/cover-hover.webp">
+          <span class="project-row__number">03</span>
+          <span class="project-row__name">Mercado das Figurinhas</span>
+          <span class="project-row__meta">Produto e IA</span>
+          <span class="project-row__year">2026</span>
+          <span class="project-row__arrow" aria-hidden="true">↗</span>
+          <img class="project-row__thumb" src="/assets/projetos/mercado-das-figurinhas/thumb.webp" alt="" loading="lazy">
+        </a>
+
+        <a class="project-row" href="/projetos/bit-system/" data-project-row data-project-image="/assets/projetos/bit-system/cover-hover.webp">
+          <span class="project-row__number">04</span>
+          <span class="project-row__name">Bit System</span>
+          <span class="project-row__meta">Design system</span>
+          <span class="project-row__year">2025</span>
+          <span class="project-row__arrow" aria-hidden="true">↗</span>
+          <img class="project-row__thumb" src="/assets/projetos/bit-system/thumb.webp" alt="" loading="lazy">
+        </a>
+
+        <a class="project-row" href="/projetos/farm-well-hub/" data-project-row data-project-image="/assets/projetos/farm-well-hub/cover-hover.webp">
+          <span class="project-row__number">05</span>
+          <span class="project-row__name">Farm Well Hub</span>
+          <span class="project-row__meta">Serviço digital</span>
+          <span class="project-row__year">2024</span>
+          <span class="project-row__arrow" aria-hidden="true">↗</span>
+          <img class="project-row__thumb" src="/assets/projetos/farm-well-hub/thumb.webp" alt="" loading="lazy">
+        </a>
+
+        <a class="project-row" href="/projetos/olho-vivo/" data-project-row data-project-image="/assets/projetos/olho-vivo/cover-hover.webp">
+          <span class="project-row__number">06</span>
+          <span class="project-row__name">Olho Vivo</span>
+          <span class="project-row__meta">Pesquisa e produto</span>
+          <span class="project-row__year">2026</span>
+          <span class="project-row__arrow" aria-hidden="true">↗</span>
+          <img class="project-row__thumb" src="/assets/projetos/olho-vivo/thumb.webp" alt="" loading="lazy">
+        </a>
+      </div>
+    </div>
+
+    <div class="project-preview" data-project-preview aria-hidden="true">
+      <img
+        src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
+        alt=""
+        width="960"
+        height="620"
+        data-project-preview-image
+      >
+      <span class="project-preview__cta">Ver case</span>
+    </div>
+  </section>
+
+  <section class="home-services-v2" id="servicos" aria-labelledby="services-title">
+    <div class="section-curve" aria-hidden="true">
+      <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
+        <path data-section-curve-path d="M0 100 Q280 0 600 70 T1200 50 V100 H0Z"></path>
+      </svg>
+    </div>
+
+    <div class="home-shell">
+      <div class="home-section-head home-section-head--dark">
+        <p class="home-eyebrow" data-animate>Serviços</p>
+        <h2 id="services-title" data-animate>Da pergunta certa até a solução no ar.</h2>
+      </div>
+
+      <div class="service-lines">
+        <details class="service-line" data-animate>
+          <summary>
+            <span class="service-line__number">01</span>
+            <span class="service-line__title">Estratégia e UX</span>
+            <span class="service-line__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="service-line__content">
+            <p>Pesquisa, diagnóstico, arquitetura, fluxos e interfaces orientadas pelo problema de negócio e pelas necessidades reais de quem usa.</p>
+            <span>Pesquisa, UX, Produto, Service Design</span>
           </div>
-        </article>
+        </details>
 
-        <article class="featured-project-card" data-animate data-delay="1">
-          <a href="/projetos/2p-web-dev" class="featured-project-card__media" aria-label="Ver projeto Web Dev 2.0">
-            <img src="/assets/projetos/web-dev/cover.webp" alt="Web Dev 2.0, produto interno para operação e segurança" loading="lazy">
-          </a>
-          <div class="featured-project-card__body">
-            <span class="featured-project-card__tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
-                <path d="M12 2v3M12 19v3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M2 12h3M19 12h3M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              Sistema interno / Implementação
-            </span>
-            <h3 class="featured-project-card__title">Uma planilha pública virou um sistema interno com login, histórico e controle</h3>
-            <p class="featured-project-card__desc">Um improviso operacional virou produto interno com autenticação, histórico, controle e mais segurança para a equipe.</p>
-            <a href="/projetos/2p-web-dev" class="featured-project-card__btn">Ver projeto</a>
+        <details class="service-line" data-animate>
+          <summary>
+            <span class="service-line__number">02</span>
+            <span class="service-line__title">Sites e produtos</span>
+            <span class="service-line__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="service-line__content">
+            <p>Sites, landing pages, sistemas internos e produtos digitais projetados e implementados para funcionar com clareza, performance e consistência.</p>
+            <span>Web design, Desenvolvimento, SEO, CRO</span>
           </div>
-        </article>
+        </details>
 
-        <article class="featured-project-card" data-animate>
-          <a href="/projetos/mercado-das-figurinhas" class="featured-project-card__media" aria-label="Ver projeto Mercado das Figurinhas">
-            <img src="/assets/projetos/mercado-das-figurinhas/cover.webp" alt="Mercado das Figurinhas, produto digital para troca de figurinhas" loading="lazy">
-          </a>
-          <div class="featured-project-card__body">
-            <span class="featured-project-card__tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M12 21s7-5.4 7-12a7 7 0 1 0-14 0c0 6.6 7 12 7 12Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="2"/>
-              </svg>
-              Produto + IA / Matching
-            </span>
-            <h3 class="featured-project-card__title">Um produto para organizar a bagunça das trocas de figurinhas</h3>
-            <p class="featured-project-card__desc">Da pesquisa ao MVP funcional, um produto com matching geolocalizado, WhatsApp contextual e modelo de assinatura.</p>
-            <a href="/projetos/mercado-das-figurinhas" class="featured-project-card__btn">Ver projeto</a>
+        <details class="service-line" data-animate>
+          <summary>
+            <span class="service-line__number">03</span>
+            <span class="service-line__title">IA aplicada</span>
+            <span class="service-line__icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="service-line__content">
+            <p>Uso estratégico de inteligência artificial para acelerar pesquisa, prototipação, desenvolvimento e operações sem terceirizar as decisões.</p>
+            <span>Automação, Prototipação, Desenvolvimento assistido</span>
           </div>
-        </article>
-
-        <article class="featured-project-card" data-animate data-delay="1">
-          <a href="/projetos/bit-system" class="featured-project-card__media" aria-label="Ver projeto Bit System">
-            <img src="/assets/projetos/bit-system/bitsystem-cover.webp" alt="Bit System, sistema de marca e design system" loading="lazy">
-          </a>
-          <div class="featured-project-card__body">
-            <span class="featured-project-card__tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <rect x="4" y="4" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="2"/>
-                <rect x="14" y="4" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="2"/>
-                <rect x="4" y="14" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="2"/>
-                <rect x="14" y="14" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="2"/>
-              </svg>
-              Design System / Marca
-            </span>
-            <h3 class="featured-project-card__title">Um sistema de componentes para padronizar a entrega de uma operação que precisava escalar</h3>
-            <p class="featured-project-card__desc">Menos decisão repetida, menos retrabalho e mais consistência visual para uma operação de design em escala.</p>
-            <a href="/projetos/bit-system" class="featured-project-card__btn">Ver projeto</a>
-          </div>
-        </article>
-
-        <article class="featured-project-card" data-animate>
-          <a href="/projetos/farm-well-hub" class="featured-project-card__media" aria-label="Ver projeto Farm Well Hub">
-            <img src="/assets/projetos/farm-well-hub/cover.webp" alt="Farm Well Hub, serviço digital com foco em acessibilidade" loading="lazy">
-          </a>
-          <div class="featured-project-card__body">
-            <span class="featured-project-card__tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M5 19c9 0 14-5 14-14C10 5 5 10 5 19Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <path d="M5 19c3.8-4.7 7.4-7.5 12-10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              Serviço digital / Acessibilidade
-            </span>
-            <h3 class="featured-project-card__title">Uma plataforma para quem não podia perder tempo tentando entender a interface</h3>
-            <p class="featured-project-card__desc">A clareza vinha antes da estética: informação fácil, fluxo direto e acessibilidade para um público vulnerável.</p>
-            <a href="/projetos/farm-well-hub" class="featured-project-card__btn">Ver projeto</a>
-          </div>
-        </article>
-
-        <article class="featured-project-card" data-animate data-delay="1">
-          <a href="/projetos/olho-vivo" class="featured-project-card__media" aria-label="Ver projeto Olho Vivo">
-            <img src="/assets/projetos/olho-vivo/cover.webp" alt="Olho Vivo, pesquisa de produto sobre participação política" loading="lazy">
-          </a>
-          <div class="featured-project-card__body">
-            <span class="featured-project-card__tag">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="2"/>
-                <path d="M16 16l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              Pesquisa / Produto digital
-            </span>
-            <h3 class="featured-project-card__title">Uma pesquisa para entender por que participar da política parecia tão distante</h3>
-            <p class="featured-project-card__desc">O trabalho partiu de entrevistas, mapas e jornadas para transformar barreiras reais em direção de produto.</p>
-            <a href="/projetos/olho-vivo" class="featured-project-card__btn">Ver projeto</a>
-          </div>
-        </article>
-
+        </details>
       </div>
     </div>
   </section>
 
-  <!-- ================================================
-       DEPOIMENTOS
-       ================================================ -->
-  <section class="home-testimonials section" id="depoimentos">
-    <div class="container">
+  <section class="home-proof" aria-labelledby="proof-title">
+    <div class="home-shell">
+      <p class="home-eyebrow" data-animate>Trabalho em parceria</p>
+      <h2 class="sr-only" id="proof-title">Depoimentos de clientes e parceiros</h2>
 
-      <p class="section-kicker" data-animate>Depoimentos</p>
-      <h2 class="section-title section-title--home" data-animate>O que dizem sobre trabalhar comigo</h2>
-
-      <div class="home-testimonials__grid">
-
-        <article class="home-testimonial-card" data-animate data-delay="1">
-          <div class="home-testimonial-card__author">
-            <div class="home-testimonial-card__avatar" aria-hidden="true">
-              <span>JD</span>
-              <img src="/assets/clients/Juan.webp" alt="" loading="lazy">
-            </div>
-            <div>
-              <h3 class="home-testimonial-card__name">Juan Diaz</h3>
-              <a class="home-testimonial-card__profile" href="https://www.linkedin.com/in/juandiazmarketing/" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil de Juan Diaz no LinkedIn">LinkedIn</a>
-              <p class="home-testimonial-card__role">Growth Marketing · Cliente direto</p>
-            </div>
-          </div>
-          <blockquote class="home-testimonial-card__quote">
-            "Floriano's contributions have led to significant enhancements in digital platforms for esteemed clients. His ability to merge technical skill with creative vision ensures that all projects not only function seamlessly but also resonate with the intended audiences."
-          </blockquote>
-        </article>
-
-        <article class="home-testimonial-card" data-animate data-delay="2">
-          <div class="home-testimonial-card__author">
-            <div class="home-testimonial-card__avatar" aria-hidden="true">
-              <span>AM</span>
-              <img src="/assets/clients/Aramis.webp" alt="" loading="lazy">
-            </div>
-            <div>
-              <h3 class="home-testimonial-card__name">Aramis Magwitz</h3>
-              <a class="home-testimonial-card__profile" href="https://www.linkedin.com/in/aramis-magwitz-7483a82a/" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil de Aramis Magwitz no LinkedIn">LinkedIn</a>
-              <p class="home-testimonial-card__role">CEO da 2 Palitos Growth Lab</p>
-            </div>
-          </div>
-          <blockquote class="home-testimonial-card__quote">
-            "Desenvolvemos diversos projetos juntos e conseguimos alcançar todos os objetivos propostos pelos clientes, resultando em aumento das vendas, melhoria da identidade visual das marcas e crescimento na internet."
-          </blockquote>
-        </article>
-
-        <article class="home-testimonial-card" data-animate data-delay="3">
-          <div class="home-testimonial-card__author">
-            <div class="home-testimonial-card__avatar" aria-hidden="true">
-              <span>LS</span>
-              <img src="/assets/clients/Leonardo.webp" alt="" loading="lazy">
-            </div>
-            <div>
-              <h3 class="home-testimonial-card__name">Leonardo Santos</h3>
-              <a class="home-testimonial-card__profile" href="https://www.linkedin.com/in/leonardo-luis-santos/" target="_blank" rel="noopener noreferrer" aria-label="Ver perfil de Leonardo Santos no LinkedIn">LinkedIn</a>
-              <p class="home-testimonial-card__role">Growth Marketing · Supervisor direto</p>
-            </div>
-          </div>
-          <blockquote class="home-testimonial-card__quote">
-            "Ele não apenas desenvolve soluções eficazes, mas também identifica os problemas reais a serem resolvidos, tornando-se um valioso companheiro no dia a dia."
-          </blockquote>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================================
-       SOBRE MIM
-       ================================================ -->
-  <section class="home-about section" id="sobre-mim">
-    <div class="container">
-      <div class="home-about__grid">
-
-        <div class="home-about__media" data-animate>
-          <img
-            src="/assets/foto-floriano-sobre.webp"
-            alt="Floriano Silva"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="home-about__content" data-animate data-delay="1">
-          <ul class="home-about__list">
-            <li>Mais de 8 anos de experiência em design</li>
-            <li>Mais de 3 anos unindo estratégia, interface, dados e execução</li>
-            <li>Pós-graduado em Design Digital (UX/UI)</li>
-            <li>Certificado em Analytics, Growth e Google UX Design</li>
-            <li>Experiência internacional, atuando com clientes na Irlanda, EUA e Austrália</li>
-            
-          </ul>
-
-          <div class="home-about__actions">
-            <a href="https://docs.google.com/document/d/1hm6hnDomiTFlADy_AUysVOnuAU3BDrJ8Y7_ym4VbcRo/edit?tab=t.qxjadoowrw9d" class="home-about__btn home-about__btn--primary" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M14 2v6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M12 12v6M9 15l3 3 3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              Currículo
+      <div class="home-proof__viewport testimonials__viewport" data-animate>
+        <div class="home-proof__track testimonials__track" id="testimonialsTrack">
+          <article class="home-proof__slide testimonial-slide">
+            <blockquote>
+              “Ele não apenas desenvolve soluções eficazes, mas também identifica os problemas reais a serem resolvidos.”
+            </blockquote>
+            <a class="home-proof__author" href="https://www.linkedin.com/in/leonardo-luis-santos/" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/clients/Leonardo.webp" alt="" width="64" height="64" loading="lazy">
+              <div>
+                <strong>Leonardo Santos</strong>
+                <span>Growth Marketing, supervisor direto</span>
+              </div>
             </a>
-            <a href="https://www.linkedin.com/in/floriano-des/" class="home-about__btn home-about__btn--secondary" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-              LinkedIn
+          </article>
+
+          <article class="home-proof__slide testimonial-slide">
+            <blockquote>
+              “His ability to merge technical skill with creative vision ensures that projects function seamlessly and resonate with the intended audiences.”
+            </blockquote>
+            <a class="home-proof__author" href="https://www.linkedin.com/in/juandiazmarketing/" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/clients/Juan.webp" alt="" width="64" height="64" loading="lazy">
+              <div>
+                <strong>Juan Diaz</strong>
+                <span>Growth Marketing, cliente direto</span>
+              </div>
             </a>
-            <a href="/sobre/" class="home-about__btn home-about__btn--secondary">Sobre mim</a>
-          </div>
-        </div>
+          </article>
 
+          <article class="home-proof__slide testimonial-slide">
+            <blockquote>
+              “Desenvolvemos diversos projetos juntos e conseguimos alcançar todos os objetivos propostos pelos clientes.”
+            </blockquote>
+            <a class="home-proof__author" href="https://www.linkedin.com/in/aramis-magwitz-7483a82a/" target="_blank" rel="noopener noreferrer">
+              <img src="/assets/clients/Aramis.webp" alt="" width="64" height="64" loading="lazy">
+              <div>
+                <strong>Aramis Magwitz</strong>
+                <span>CEO da 2 Palitos Growth Lab</span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+
+      <div class="home-proof__controls testimonials__controls" data-animate>
+        <button class="home-proof__button testimonials__btn" id="testimonialsPrev" type="button" aria-label="Depoimento anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M19 12H5M11 18l-6-6 6-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="home-proof__dots testimonials__dots" id="testimonialsDots" role="tablist" aria-label="Selecionar depoimento"></div>
+        <button class="home-proof__button testimonials__btn" id="testimonialsNext" type="button" aria-label="Próximo depoimento">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
       </div>
     </div>
   </section>
-
-  <!-- ================================================
-       REFLEXÕES
-       ================================================ -->
-  <section class="reflections section" id="reflexoes">
-    <div class="container">
-
-      <div class="section-header" data-animate>
-        <div>
-          <p class="section-kicker">Reflexões</p>
-          <h2 class="section-title section-title--home">Penso em voz alta por aqui.</h2>
-        </div>
-          <a href="/reflexoes/" class="btn btn--orange">Ver todas as reflexões</a>
-      </div>
-
-      <div class="reflections__grid">
-
-        
-          
-            
-            <article class="post-card" data-animate data-delay="1">
-              <a href="/reflexoes/pare-de-tratar-a-ia-como-a-oraculo-do-filme-matrix/" class="post-card__link">
-                <div class="post-card__thumb">
-                  
-                    <img src="https://cdn-images-1.medium.com/max/1024/1*HdmzckFxPauqfRBhGjitFg.jpeg" alt="Pare de tratar a IA como a Oráculo do filme Matrix" loading="lazy">
-                  
-                  <div class="post-card__thumb-gradient"></div>
-                </div>
-                <div class="post-card__body">
-                  <h3 class="post-card__title">Pare de tratar a IA como a Oráculo do filme Matrix</h3>
-                  
-                    <p class="post-card__excerpt">Você já ficou olhando pra uma resposta da IA pensando “não era bem isso, mas tudo bem”? Pois é. Não foi a IA que errou. Foi o prompt. E a parte engraçada: a...</p>
-                  
-                  <span class="post-card__cta">Leia mais »</span>
-                </div>
-                
-                  <time class="post-card__date" datetime="2026-04-16">16 de abril de 2026</time>
-                
-              </a>
-            </article>
-            
-          
-            
-            <article class="post-card" data-animate data-delay="2">
-              <a href="/reflexoes/apliquei-mounjaro-no-meu-portfolio-e-ele-perdeu-5-megabytes/" class="post-card__link">
-                <div class="post-card__thumb">
-                  
-                    <img src="https://cdn-images-1.medium.com/max/1024/1*odZhNtKUjvCUTe5XAGZIfg.jpeg" alt="Apliquei Mounjaro no meu portfólio e ele perdeu 5 Megabytes." loading="lazy">
-                  
-                  <div class="post-card__thumb-gradient"></div>
-                </div>
-                <div class="post-card__body">
-                  <h3 class="post-card__title">Apliquei Mounjaro no meu portfólio e ele perdeu 5 Megabytes.</h3>
-                  
-                    <p class="post-card__excerpt">Comparação feita no GTMetrix, a diferença de DOM é abismal Eu tinha um site que, visualmente, cumpria o seu papel. Ele rodava em WordPress + Elementor. Era...</p>
-                  
-                  <span class="post-card__cta">Leia mais »</span>
-                </div>
-                
-                  <time class="post-card__date" datetime="2026-04-12">12 de abril de 2026</time>
-                
-              </a>
-            </article>
-            
-          
-            
-            <article class="post-card" data-animate data-delay="3">
-              <a href="/reflexoes/pesquisa-olho-vivo/" class="post-card__link">
-                <div class="post-card__thumb">
-                  
-                    <img src="https://cdn-images-1.medium.com/max/1024/1*3S8mUTGNlpD4__bqie0MLA.jpeg" alt="Pesquisa: Olho Vivo" loading="lazy">
-                  
-                  <div class="post-card__thumb-gradient"></div>
-                </div>
-                <div class="post-card__body">
-                  <h3 class="post-card__title">Pesquisa: Olho Vivo</h3>
-                  
-                    <p class="post-card__excerpt">Projeto de pesquisa para entender barreiras de participação política e orientar solução digital acessível. O desafio Em Palmital/SP, percebi que muitos...</p>
-                  
-                  <span class="post-card__cta">Leia mais »</span>
-                </div>
-                
-                  <time class="post-card__date" datetime="2026-04-11">11 de abril de 2026</time>
-                
-              </a>
-            </article>
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-            
-          
-        
-
-      </div>
-    </div>
-  </section>
+</main>
 
 
   
-    <section class="cta-section" id="contato">
-    <div class="container">
-      <div class="cta-card">
-        <div class="cta-card__inner">
-          <h2 class="cta-card__title" data-animate>
-            Tem um projeto digital para tirar do lugar?
-          </h2>
-          <p class="cta-card__subtitle" data-animate data-delay="1">
-            Me chame no WhatsApp para conversar sobre produto, site, landing page, marketing digital, growth ou experiência digital.
-          </p>
-          <div class="cta-card__contacts" data-animate data-delay="2">
-            <a href="https://wa.me/5518996773264?text=Ol%C3%A1%2C%20Floriano.%20Vi%20seu%20site%20e%20quero%20conversar%20sobre%20um%20projeto%20digital." class="cta-contact" target="_blank" rel="noopener noreferrer">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18l3-.02a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l.91-.84a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.03z"/>
-              </svg>
-              Conversar pelo WhatsApp
-            </a>
-            <a href="mailto:contato@floriano.des.br" class="cta-contact">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect width="20" height="16" x="2" y="4" rx="2"/>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-              </svg>
-              contato@floriano.des.br
-            </a>
-          </div>
-          <div class="cta-card__socials" data-animate data-delay="3">
-            <a href="https://wa.me/5518996773264" target="_blank" rel="noopener noreferrer" class="cta-social-btn cta-social-btn--whatsapp" aria-label="WhatsApp">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-            </a>
-            <a href="https://www.linkedin.com/in/floriano-des/" target="_blank" rel="noopener noreferrer" class="cta-social-btn cta-social-btn--linkedin" aria-label="LinkedIn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="white" aria-hidden="true">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
+  <footer class="site-footer" id="contato" data-theme="dark">
+  <div class="container site-footer__container">
+    <div class="site-footer__hero">
+      <div>
+        <p class="site-footer__eyebrow">Tem um projeto digital para tirar do lugar?</p>
+        <h2 class="site-footer__title" data-animate>Vamos construir algo juntos</h2>
       </div>
-    </div>
-  </section>
 
-  <footer class="footer">
-    <div class="container footer__container">
-      <p class="footer__tagline">
-        Desenvolvido por mim, com Figma, Eleventy, IA, muitos livros e muita iteração.
-      </p>
-      <nav class="footer__right" aria-label="Links do rodapé">
-        <a href="/politica-de-privacidade/">Política de Privacidade</a>
-        <a href="https://www.linkedin.com/in/floriano-des/" target="_blank" rel="noopener noreferrer">Linkedin</a>
-        <a href="https://wa.me/5518996773264" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a
+        class="site-footer__cta"
+        href="/contato/"
+        data-magnetic
+      >
+        <span>Conversar</span>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 19 19 5M9 5h10v10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+
+    <div class="site-footer__divider" aria-hidden="true"></div>
+
+    <div class="site-footer__details">
+      <div class="site-footer__location" aria-label="Localização e hora local">
+        <span class="site-footer__status" aria-hidden="true"></span>
+        <span>Brasil</span>
+        <time data-local-time>São Paulo</time>
+      </div>
+
+      <a class="site-footer__email" href="mailto:contato@floriano.des.br">
+        contato@floriano.des.br
+      </a>
+
+      <nav class="site-footer__links" aria-label="Links do rodapé">
+        <a href="/reflexoes/">Reflexões</a>
+        <a href="/sobre/">Sobre</a>
+        <a href="/contato/">Contato</a>
+        <a href="/politica-de-privacidade/">Privacidade</a>
+        <a href="https://www.linkedin.com/in/floriano-des/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/floriano-des/" target="_blank" rel="noopener noreferrer">GitHub</a>
       </nav>
     </div>
-  </footer>
 
+    <div class="site-footer__bottom">
+      <p>© 2026 Floriano Silva</p>
+      <p>Designer de experiências digitais</p>
+    </div>
+  </div>
+</footer>
+
+  <button
+    class="back-to-top"
+    type="button"
+    aria-label="Voltar ao topo"
+    data-back-to-top
+  >
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d="M8 13V3M3 8l5-5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
   <a
     href="https://wa.me/5518996773264?text=Ol%C3%A1%2C%20Floriano.%20Vi%20seu%20site%20e%20quero%20conversar%20sobre%20um%20projeto%20digital."
     class="whatsapp-float"
@@ -770,6 +2912,56 @@
   </a>
   
 
-  <script src="/js/main.js?v=4ee53d0b94"></script>
+  <script src="/js/main.js?v=1504d88634"></script>
+  
+  <script src="/js/motion/transitions.js?v=4daea0c295" defer></script>
+
+<script src="/js/motion/preloader.js?v=082f2f06c0" defer></script>
+
+<script src="/js/motion/footer-clock.js?v=2ceac01182" defer></script>
+
+<script>
+  (function () {
+    "use strict";
+
+    var sources = [
+      "/js/vendor/gsap-3.15.0.min.js?v=bf3fd8ec2a",
+      "/js/vendor/ScrollTrigger-3.15.0.min.js?v=5445d0e95e",
+      "/js/vendor/lenis-1.3.23.min.js?v=c94f512954",
+      "/js/motion/lenis-init.js?v=753de89af8",
+      "/js/motion/cursor.js?v=f9eb5cddd1",
+      "/js/motion/reveals.js?v=760da37033",
+      "/js/motion/text-reveal.js?v=5a3e52877d",
+      "/js/motion/floating-menu.js?v=ef68e87d89",
+      "/js/motion/magnetic.js?v=166e0da26c",
+      "/js/motion/count-up.js?v=1d3121fc15"
+      
+      ,
+      "/js/motion/home-marquee.js?v=8f9af43059",
+      "/js/motion/project-preview.js?v=ad7c667d1c",
+      "/js/motion/section-curves.js?v=88384db8f5"
+      
+    ];
+
+    function loadMotion() {
+      if (window.__florianoMotionLoading) return;
+      window.__florianoMotionLoading = true;
+
+      sources.forEach(function (source) {
+        var script = document.createElement("script");
+        script.src = source;
+        script.async = false;
+        document.body.appendChild(script);
+      });
+    }
+
+    if (document.readyState === "complete") {
+      loadMotion();
+    } else {
+      window.addEventListener("load", loadMotion, { once: true });
+    }
+  }());
+</script>
+
 </body>
 </html>
