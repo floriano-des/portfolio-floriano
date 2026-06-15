@@ -1847,6 +1847,207 @@ body.floating-menu-open .whatsapp-float {
   }
 }
 
+
+/* Galeria carrossel */
+.home-redesign .galeria-carrossel {
+  padding-block: 0 clamp(56px, 7vw, 96px);
+  overflow-x: clip;
+  background: #F1F0EC;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.home-redesign .galeria-carrossel__row {
+  display: flex;
+  gap: 16px;
+  cursor: grab;
+  user-select: none;
+}
+
+.home-redesign .galeria-carrossel__row.is-dragging {
+  cursor: grabbing;
+}
+
+@media (max-width: 768px) {
+  .home-redesign .galeria-carrossel__row {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 4px;
+  }
+  .home-redesign .galeria-carrossel__row::-webkit-scrollbar { display: none; }
+}
+
+.home-redesign .galeria-card {
+  flex-shrink: 0;
+  width: clamp(320px, 32vw, 500px);
+  height: clamp(340px, 30vw, 480px);
+  border-radius: 24px;
+  position: relative;
+  padding: 24px 16px;
+  background: #ffffff;
+  box-shadow: 0 2px 12px rgba(1,7,29,.06), 0 1px 3px rgba(1,7,29,.04);
+  cursor: inherit;
+  transition: transform 0.35s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+.home-redesign .galeria-card__window {
+  overflow: hidden;
+  border-radius: 12px;
+  width: 100%;
+  height: 100%;
+}
+
+.home-redesign .galeria-card__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: translateY(0);
+  transition: transform .85s cubic-bezier(.25, 0, .1, 1);
+}
+
+@keyframes galeria-scroll-left {
+  to { transform: translateX(-50%); }
+}
+@keyframes galeria-scroll-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+@media (min-width: 769px) {
+  .home-redesign .galeria-carrossel__row--1 {
+    will-change: transform;
+  }
+  .home-redesign .galeria-carrossel__row--2 {
+    will-change: transform;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .home-redesign .galeria-card:hover {
+    transform: scale(1.035);
+    z-index: 2;
+  }
+
+  .home-redesign .galeria-card__img {
+    will-change: transform;
+  }
+}
+
+
+/* Galeria lightbox */
+.home-redesign .galeria-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateZ(0);
+  transition: opacity 0.36s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0.36s;
+  background: #F1F0EC;
+  will-change: opacity;
+}
+
+.home-redesign .galeria-lightbox.is-open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+  transition-delay: 0s;
+}
+
+.home-redesign .galeria-lightbox__backdrop {
+  display: none;
+}
+
+.home-redesign .galeria-lightbox__close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(1, 7, 29, 0.08);
+  border: 1px solid rgba(1, 7, 29, 0.14);
+  color: var(--color-dark-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translate3d(0, -6px, 0);
+  transition: background 0.2s, opacity 0.24s ease, transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.home-redesign .galeria-lightbox__close:hover {
+  background: rgba(1, 7, 29, 0.14);
+}
+
+.home-redesign .galeria-lightbox.is-open .galeria-lightbox__close {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.home-redesign .galeria-lightbox__notebook {
+  position: relative;
+  width: 100vw;
+  flex-shrink: 0;
+  line-height: 0;
+  z-index: 2;
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.985);
+  transition: opacity 0.34s ease, transform 0.46s cubic-bezier(0.22, 1, 0.36, 1);
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+}
+
+.home-redesign .galeria-lightbox.is-open .galeria-lightbox__notebook {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.home-redesign .galeria-lightbox__frame {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+}
+
+.home-redesign .galeria-lightbox__screen {
+  position: absolute;
+  left: 17.77%;
+  top: 14.70%;
+  width: 64.03%;
+  height: 60.00%;
+  z-index: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  cursor: grab;
+  scrollbar-width: none;
+  contain: paint;
+  transform: translateZ(0);
+}
+.home-redesign .galeria-lightbox__screen::-webkit-scrollbar { display: none; }
+.home-redesign .galeria-lightbox__screen.is-dragging { cursor: grabbing; }
+
+.home-redesign .galeria-lightbox__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
 /* ===================================================
    Footer global
    =================================================== */
@@ -2719,6 +2920,123 @@ html.has-custom-cursor * {
     </div>
   </section>
 
+
+  <section class="galeria-carrossel" aria-label="Galeria de trabalhos">
+
+    <div class="galeria-carrossel__row galeria-carrossel__row--1" data-galeria-row="1">
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/cafe-invest-preview.webp" data-full-src="/assets/galeria-carrossel/cafe-invest.webp" alt="Site Café Invest" loading="lazy" decoding="async" width="1200" height="7871">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/farm-well-preview.webp" data-full-src="/assets/galeria-carrossel/farm-well.webp" alt="Site Farm Well" loading="lazy" decoding="async" width="1200" height="5453">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/lp-vendas-2p-preview.webp" data-full-src="/assets/galeria-carrossel/lp-vendas-2p.webp" alt="Landing Page Vendas 2P" loading="lazy" decoding="async" width="1200" height="6259">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/lp-texas-preview.webp" data-full-src="/assets/galeria-carrossel/lp-texas.webp" alt="Landing Page Texas" loading="lazy" decoding="async" width="1200" height="4896">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/lady-milton-preview.webp" data-full-src="/assets/galeria-carrossel/lady-milton.webp" alt="Site Lady Milton" loading="lazy" decoding="async" width="1200" height="7116">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/martinelli-cuccina-preview.webp" data-full-src="/assets/galeria-carrossel/martinelli-cuccina.webp" alt="Site Martinelli Cuccina" loading="lazy" decoding="async" width="1200" height="6688">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/minhau-preview.webp" data-full-src="/assets/galeria-carrossel/minhau.webp" alt="Site MinhAU" loading="lazy" decoding="async" width="1200" height="5400">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/speed-construtora-preview.webp" data-full-src="/assets/galeria-carrossel/speed-construtora.webp" alt="Site Speed Construtora" loading="lazy" decoding="async" width="1200" height="3547">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/toque-genial-preview.webp" data-full-src="/assets/galeria-carrossel/toque-genial.webp" alt="Site Toque Genial" loading="lazy" decoding="async" width="1200" height="5458">
+        </div>
+      </div>
+    </div>
+
+    <div class="galeria-carrossel__row galeria-carrossel__row--2" data-galeria-row="2">
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/lady-milton-preview.webp" data-full-src="/assets/galeria-carrossel/lady-milton.webp" alt="Site Lady Milton" loading="lazy" decoding="async" width="1200" height="7116">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/toque-genial-preview.webp" data-full-src="/assets/galeria-carrossel/toque-genial.webp" alt="Site Toque Genial" loading="lazy" decoding="async" width="1200" height="5458">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/farm-well-preview.webp" data-full-src="/assets/galeria-carrossel/farm-well.webp" alt="Site Farm Well" loading="lazy" decoding="async" width="1200" height="5453">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/lp-texas-preview.webp" data-full-src="/assets/galeria-carrossel/lp-texas.webp" alt="Landing Page Texas" loading="lazy" decoding="async" width="1200" height="4896">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/speed-construtora-preview.webp" data-full-src="/assets/galeria-carrossel/speed-construtora.webp" alt="Site Speed Construtora" loading="lazy" decoding="async" width="1200" height="3547">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/minhau-preview.webp" data-full-src="/assets/galeria-carrossel/minhau.webp" alt="Site MinhAU" loading="lazy" decoding="async" width="1200" height="5400">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/cafe-invest-preview.webp" data-full-src="/assets/galeria-carrossel/cafe-invest.webp" alt="Site Café Invest" loading="lazy" decoding="async" width="1200" height="7871">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/martinelli-cuccina-preview.webp" data-full-src="/assets/galeria-carrossel/martinelli-cuccina.webp" alt="Site Martinelli Cuccina" loading="lazy" decoding="async" width="1200" height="6688">
+        </div>
+      </div>
+      <div class="galeria-card">
+        <div class="galeria-card__window">
+          <img class="galeria-card__img" src="/assets/galeria-carrossel/lp-vendas-2p-preview.webp" data-full-src="/assets/galeria-carrossel/lp-vendas-2p.webp" alt="Landing Page Vendas 2P" loading="lazy" decoding="async" width="1200" height="6259">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Lightbox da galeria -->
+  <div class="galeria-lightbox" id="galeriaLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Visualização do projeto">
+    <div class="galeria-lightbox__backdrop"></div>
+    <button class="galeria-lightbox__close" aria-label="Fechar visualização">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+        <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <div class="galeria-lightbox__notebook">
+      <div class="galeria-lightbox__screen">
+        <img class="galeria-lightbox__img" src="" alt="">
+      </div>
+      <img class="galeria-lightbox__frame" src="/assets/projetos/quantum-vizz/v2/notebook-screen.png" alt="" aria-hidden="true">
+    </div>
+  </div>
+
   <section class="home-services-v2" id="servicos" aria-labelledby="services-title">
     <div class="section-curve" aria-hidden="true">
       <svg viewBox="0 0 1200 100" preserveAspectRatio="none">
@@ -2939,7 +3257,8 @@ html.has-custom-cursor * {
       ,
       "/js/motion/home-marquee.js?v=8f9af43059",
       "/js/motion/project-preview.js?v=ad7c667d1c",
-      "/js/motion/section-curves.js?v=88384db8f5"
+      "/js/motion/section-curves.js?v=88384db8f5",
+      "/js/motion/galeria-carrossel.js?v=8ad3a2dff1"
       
     ];
 
