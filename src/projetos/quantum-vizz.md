@@ -298,7 +298,7 @@ Baseline disponível antes do redesenho: conversão de 0,71%, CTR acima de 8% e 
 <figure class="cs-case-media" data-animate>
   <div class="cs-notebook-wrap">
     <video class="cs-notebook-video" src="/assets/projetos/quantum-vizz/v2/versao-antiga-lp.mp4" autoplay loop muted playsinline preload="metadata"></video>
-    <img class="cs-notebook-frame" src="/assets/projetos/quantum-vizz/v2/notebook-screen.png" alt="Versão antiga da landing page no notebook">
+    <img class="cs-notebook-frame" src="/assets/projetos/quantum-vizz/v2/notebook-screen.webp" alt="Versão antiga da landing page no notebook">
   </div>
 </figure>
 
@@ -340,7 +340,7 @@ Esses artefatos deixaram claro por que mover a galeria, cortar ruído no CTA e r
 {% caseSection "Processo", "Do diagnóstico às hipóteses de redesenho.", "section" %}
 
 <figure class="cs-quantum-v2__wide-figure" data-animate>
-  <img src="/assets/projetos/quantum-vizz/v2/double-diamond.png" alt="Diagrama Double Diamond com duas fases: descoberta e definição do problema, seguidas de desenvolvimento e entrega da solução." loading="lazy">
+  <img src="/assets/projetos/quantum-vizz/v2/double-diamond.webp" alt="Diagrama Double Diamond com duas fases: descoberta e definição do problema, seguidas de desenvolvimento e entrega da solução." loading="lazy">
   <figcaption>O processo seguiu o Double Diamond: expandir para entender o contexto, afunilar para definir o problema, expandir para explorar soluções e afunilar para entregar.</figcaption>
 </figure>
 
@@ -414,7 +414,7 @@ Para quem não é técnico, a mudança foi simples: mostrar prova antes de discu
 <figure class="cs-case-media" data-animate>
   <div class="cs-notebook-wrap">
     <video class="cs-notebook-video" src="/assets/projetos/quantum-vizz/v2/versao-nova-lp.mp4" autoplay loop muted playsinline preload="metadata"></video>
-    <img class="cs-notebook-frame" src="/assets/projetos/quantum-vizz/v2/notebook-screen.png" alt="Versão nova da landing page no notebook">
+    <img class="cs-notebook-frame" src="/assets/projetos/quantum-vizz/v2/notebook-screen.webp" alt="Versão nova da landing page no notebook">
   </div>
 </figure>
 
