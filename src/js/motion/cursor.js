@@ -15,7 +15,7 @@
   var moveX = window.gsap.quickTo(cursor, 'x', { duration: 0.12, ease: 'power3.out' });
   var moveY = window.gsap.quickTo(cursor, 'y', { duration: 0.12, ease: 'power3.out' });
 
-  var INTERACTIVE = 'a, button, label, [role="button"], [data-magnetic], summary, input, textarea, select';
+  var INTERACTIVE = 'a, button, label, [role="button"], [data-magnetic], [data-case-zoom], [data-case-carousel], summary, input, textarea, select';
 
   // Appear on first move
   window.addEventListener('mousemove', function (e) {
