@@ -297,7 +297,7 @@ Baseline disponível antes do redesenho: conversão de 0,71%, CTR acima de 8% e 
 
 <figure class="cs-case-media" data-animate>
   <div class="cs-notebook-wrap">
-    <video class="cs-notebook-video" src="/assets/projetos/quantum-vizz/v2/versao-antiga-lp.mp4" autoplay loop muted playsinline></video>
+    <video class="cs-notebook-video" src="/assets/projetos/quantum-vizz/v2/versao-antiga-lp.mp4" autoplay loop muted playsinline preload="metadata"></video>
     <img class="cs-notebook-frame" src="/assets/projetos/quantum-vizz/v2/notebook-screen.png" alt="Versão antiga da landing page no notebook">
   </div>
 </figure>
@@ -413,7 +413,7 @@ Para quem não é técnico, a mudança foi simples: mostrar prova antes de discu
 
 <figure class="cs-case-media" data-animate>
   <div class="cs-notebook-wrap">
-    <video class="cs-notebook-video" src="/assets/projetos/quantum-vizz/v2/versao-nova-lp.mp4" autoplay loop muted playsinline></video>
+    <video class="cs-notebook-video" src="/assets/projetos/quantum-vizz/v2/versao-nova-lp.mp4" autoplay loop muted playsinline preload="metadata"></video>
     <img class="cs-notebook-frame" src="/assets/projetos/quantum-vizz/v2/notebook-screen.png" alt="Versão nova da landing page no notebook">
   </div>
 </figure>

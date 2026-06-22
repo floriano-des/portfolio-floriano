@@ -151,7 +151,7 @@ projectNav:
           <img src="/assets/projetos/olho-vivo/5w2h.webp" alt="Framework 5W2H preenchido para mapear o problema do Olho Vivo" loading="lazy">
         </figure>
         <figure>
-          <video src="/assets/projetos/olho-vivo/affinity-diagram.webm" autoplay loop muted playsinline></video>
+          <video src="/assets/projetos/olho-vivo/affinity-diagram.webm" autoplay loop muted playsinline preload="metadata"></video>
         </figure>
       </div>
 {% endcaseSection %}
