@@ -68,7 +68,7 @@
       return;
     }
 
-    window.location.href = "/#projetos";
+    window.location.href = "/projetos/";
   }
 
   if (closeButton) {

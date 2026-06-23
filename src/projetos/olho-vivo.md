@@ -68,7 +68,7 @@ roleGroups:
       - "Roadmap"
       - "KPIs"
 projectNav:
-  backHref: "/#projetos"
+  backHref: "/projetos/"
   backLabel: "Todos os Projetos"
   prev:
     href: "/projetos/farm-well-hub/"

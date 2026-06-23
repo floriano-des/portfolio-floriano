@@ -92,6 +92,9 @@
     Array.from(row.children).forEach(function (card) {
       var clone = card.cloneNode(true);
       clone.setAttribute('aria-hidden', 'true');
+      clone.querySelectorAll('.galeria-card__open').forEach(function (button) {
+        button.setAttribute('tabindex', '-1');
+      });
       row.appendChild(clone);
       attachHoverPan(clone);
     });
@@ -373,6 +376,12 @@
         lightboxOpenFrame = 0;
       });
     });
+
+    window.setTimeout(function () {
+      if (token !== lightboxOpenToken || lightbox.classList.contains('is-open')) return;
+      lightbox.classList.add('is-open');
+      lightboxOpenFrame = 0;
+    }, 80);
   }
 
   function showLightbox(src, alt, token) {
@@ -422,9 +431,19 @@
     }, 380);
   }
 
+  function openCardLightbox(card) {
+    var img;
+
+    if (!card) return;
+
+    img = card.querySelector('.galeria-card__img');
+    if (!img || !img.src) return;
+
+    openLightbox(img.getAttribute('data-full-src') || img.currentSrc || img.src, img.alt);
+  }
+
   section.addEventListener('click', function (e) {
     var card;
-    var img;
 
     if (suppressNextClick) {
       suppressNextClick = false;
@@ -433,12 +452,16 @@
 
     card = e.target.closest('.galeria-card') || pendingClickCard;
     clearPendingClickCard();
-    if (!card) return;
+    openCardLightbox(card);
+  });
 
-    img = card.querySelector('.galeria-card__img');
-    if (!img || !img.src) return;
+  section.addEventListener('keydown', function (e) {
+    var trigger = e.target.closest('.galeria-card__open');
+    if (!trigger || !section.contains(trigger)) return;
+    if (e.key !== 'Enter' && e.key !== ' ' && e.key !== 'Spacebar') return;
 
-    openLightbox(img.getAttribute('data-full-src') || img.currentSrc || img.src, img.alt);
+    e.preventDefault();
+    openCardLightbox(trigger.closest('.galeria-card'));
   });
 
   lbClose.addEventListener('click', closeLightbox);

@@ -136,7 +136,7 @@ roleGroups:
       - "8 semanas"
       - "2025"
 projectNav:
-  backHref: "/#projetos"
+  backHref: "/projetos/"
   backLabel: "Todos os Projetos"
   next:
     href: "/projetos/2p-web-dev/"

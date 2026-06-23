@@ -28,8 +28,10 @@
       {% endif %}
       {% if motionContext == "home" %},
       "/js/motion/home-marquee.js?v={{ '/js/motion/home-marquee.js' | assetVersion }}",
+      "/js/motion/section-curves.js?v={{ '/js/motion/section-curves.js' | assetVersion }}"
+      {% endif %}
+      {% if motionContext == "home" or motionContext == "projects" %},
       "/js/motion/project-preview.js?v={{ '/js/motion/project-preview.js' | assetVersion }}",
-      "/js/motion/section-curves.js?v={{ '/js/motion/section-curves.js' | assetVersion }}",
       "/js/motion/galeria-carrossel.js?v={{ '/js/motion/galeria-carrossel.js' | assetVersion }}"
       {% endif %}
     ];

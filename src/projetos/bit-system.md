@@ -64,7 +64,7 @@ roleGroups:
       - "Motion"
       - "Guia para IA"
 projectNav:
-  backHref: "/#projetos"
+  backHref: "/projetos/"
   backLabel: "Todos os Projetos"
   prev:
     href: "/projetos/mercado-das-figurinhas/"

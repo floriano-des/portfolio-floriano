@@ -57,7 +57,7 @@ roleGroups:
     tags:
       - "6 semanas"
 projectNav:
-  backHref: "/#projetos"
+  backHref: "/projetos/"
   backLabel: "Todos os Projetos"
   prev:
     href: "/projetos/bit-system/"

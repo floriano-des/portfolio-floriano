@@ -1,0 +1,202 @@
+{% set selectedProjects = [
+  {
+    number: "01",
+    name: "Mercado das Figurinhas",
+    meta: "Produto e IA",
+    year: "2026",
+    href: "/projetos/mercado-das-figurinhas/",
+    image: "/assets/projetos/mercado-das-figurinhas/cover-hover.webp"
+  },
+  {
+    number: "02",
+    name: "Quantum Vizz",
+    meta: "Growth e CRO",
+    year: "2025",
+    href: "/projetos/quantum-vizz/",
+    image: "/assets/projetos/quantum-vizz/cover-hover.webp"
+  },
+  {
+    number: "03",
+    name: "Bit System",
+    meta: "Design system",
+    year: "2025",
+    href: "/projetos/bit-system/",
+    image: "/assets/projetos/bit-system/cover-hover.webp"
+  },
+  {
+    number: "04",
+    name: "Web Dev 2.0",
+    meta: "Produto interno",
+    year: "2026",
+    href: "/projetos/2p-web-dev/",
+    image: "/assets/projetos/web-dev/cover-hover.webp"
+  },
+  {
+    number: "05",
+    name: "Olho Vivo",
+    meta: "Pesquisa e produto",
+    year: "2026",
+    href: "/projetos/olho-vivo/",
+    image: "/assets/projetos/olho-vivo/cover-hover.webp"
+  },
+  {
+    number: "06",
+    name: "Farm Well Hub",
+    meta: "Serviço digital",
+    year: "2024",
+    href: "/projetos/farm-well-hub/",
+    image: "/assets/projetos/farm-well-hub/cover-hover.webp"
+  }
+] %}
+
+{% set galleryItems = [
+  {
+    preview: "/assets/galeria-carrossel/cafe-invest-preview.webp",
+    full: "/assets/galeria-carrossel/cafe-invest.webp",
+    alt: "Site Café Invest",
+    height: "7871"
+  },
+  {
+    preview: "/assets/galeria-carrossel/farm-well-preview.webp",
+    full: "/assets/galeria-carrossel/farm-well.webp",
+    alt: "Site Farm Well",
+    height: "5453"
+  },
+  {
+    preview: "/assets/galeria-carrossel/lp-vendas-2p-preview.webp",
+    full: "/assets/galeria-carrossel/lp-vendas-2p.webp",
+    alt: "Landing Page Vendas 2P",
+    height: "6259"
+  },
+  {
+    preview: "/assets/galeria-carrossel/lp-texas-preview.webp",
+    full: "/assets/galeria-carrossel/lp-texas.webp",
+    alt: "Landing Page Texas",
+    height: "4896"
+  },
+  {
+    preview: "/assets/galeria-carrossel/lady-milton-preview.webp",
+    full: "/assets/galeria-carrossel/lady-milton.webp",
+    alt: "Site Lady Milton",
+    height: "7116"
+  },
+  {
+    preview: "/assets/galeria-carrossel/martinelli-cuccina-preview.webp",
+    full: "/assets/galeria-carrossel/martinelli-cuccina.webp",
+    alt: "Site Martinelli Cuccina",
+    height: "6688"
+  },
+  {
+    preview: "/assets/galeria-carrossel/minhau-preview.webp",
+    full: "/assets/galeria-carrossel/minhau.webp",
+    alt: "Site MinhAU",
+    height: "5400"
+  },
+  {
+    preview: "/assets/galeria-carrossel/speed-construtora-preview.webp",
+    full: "/assets/galeria-carrossel/speed-construtora.webp",
+    alt: "Site Speed Construtora",
+    height: "3547"
+  },
+  {
+    preview: "/assets/galeria-carrossel/toque-genial-preview.webp",
+    full: "/assets/galeria-carrossel/toque-genial.webp",
+    alt: "Site Toque Genial",
+    height: "5458"
+  }
+] %}
+
+{% set galleryItemsReverse = [
+  galleryItems[8],
+  galleryItems[7],
+  galleryItems[6],
+  galleryItems[5],
+  galleryItems[4],
+  galleryItems[3],
+  galleryItems[2],
+  galleryItems[1],
+  galleryItems[0]
+] %}
+
+<section class="project-index" id="projetos" aria-labelledby="projects-title">
+  <div class="home-shell">
+    <div class="home-section-head">
+      <p class="home-eyebrow" data-animate>Portfólio</p>
+      <h2 id="projects-title" data-animate>Trabalhos selecionados</h2>
+      <p data-animate>Projetos em produto, conversão, operação e serviços digitais.</p>
+    </div>
+
+    <div class="project-index__list">
+      {% for project in selectedProjects %}
+      <a class="project-row" href="{{ project.href }}" data-project-row data-project-image="{{ project.image }}">
+        <span class="project-row__number">{{ project.number }}</span>
+        <span class="project-row__name">{{ project.name }}</span>
+        <span class="project-row__meta">{{ project.meta }}</span>
+        <span class="project-row__year">{{ project.year }}</span>
+        <span class="project-row__arrow" aria-hidden="true">↗</span>
+        <img class="project-row__thumb" src="{{ project.image }}" alt="" loading="lazy" decoding="async">
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="project-preview" data-project-preview aria-hidden="true">
+    <img
+      src="data:image/gif;base64,R0lGODlhAQABAAAAACw="
+      alt=""
+      width="960"
+      height="620"
+      data-project-preview-image
+    >
+    <span class="project-preview__cta">Ver case</span>
+  </div>
+</section>
+
+<section class="galeria-carrossel" aria-label="Galeria de trabalhos">
+  <div class="galeria-carrossel__row galeria-carrossel__row--1" data-galeria-row="1">
+    {% for item in galleryItems %}
+    <div class="galeria-card">
+      <div class="galeria-card__window">
+        <img class="galeria-card__img" src="{{ item.preview }}" data-full-src="{{ item.full }}" alt="{{ item.alt }}" loading="lazy" decoding="async" width="1200" height="{{ item.height }}">
+      </div>
+      <button class="galeria-card__open" type="button" aria-label="Abrir visualização: {{ item.alt }}">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M6.25 3.5H14.5V11.75" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14.25 3.75L4 14" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="galeria-carrossel__row galeria-carrossel__row--2" data-galeria-row="2">
+    {% for item in galleryItemsReverse %}
+    <div class="galeria-card">
+      <div class="galeria-card__window">
+        <img class="galeria-card__img" src="{{ item.preview }}" data-full-src="{{ item.full }}" alt="{{ item.alt }}" loading="lazy" decoding="async" width="1200" height="{{ item.height }}">
+      </div>
+      <button class="galeria-card__open" type="button" aria-label="Abrir visualização: {{ item.alt }}">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M6.25 3.5H14.5V11.75" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M14.25 3.75L4 14" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<div class="galeria-lightbox" id="galeriaLightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Visualização do projeto">
+  <div class="galeria-lightbox__backdrop"></div>
+  <button class="galeria-lightbox__close" aria-label="Fechar visualização">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <div class="galeria-lightbox__notebook">
+    <div class="galeria-lightbox__screen">
+      <img class="galeria-lightbox__img" src="" alt="">
+    </div>
+    <img class="galeria-lightbox__frame" src="/assets/projetos/quantum-vizz/v2/notebook-screen.webp" alt="" aria-hidden="true">
+  </div>
+</div>
