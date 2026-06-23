@@ -95,6 +95,10 @@
     var perView   = slideMode ? 1 : (window.innerWidth <= 768 ? 1 : 2);
     var current   = 0;
     var resizeTimer;
+    var dragSurface = slideMode ? (trackEl.closest('.home-proof') || trackEl.parentElement || trackEl) : null;
+    var dragState = null;
+    var blockNextClick = false;
+    var clickBlockTimer = 0;
 
     function maxIndex() {
       return Math.max(0, total - perView);
@@ -103,6 +107,11 @@
     function itemWidth() {
       if (slideMode) return trackEl.offsetWidth;
       return items[0] ? items[0].offsetWidth + CAROUSEL_GAP : 0;
+    }
+
+    function setTrackTranslate(index, dragOffset) {
+      var x = (dragOffset || 0) - (index * itemWidth());
+      trackEl.style.transform = 'translateX(' + x + 'px)';
     }
 
     function targetIndex(index) {
@@ -124,9 +133,124 @@
 
     function goTo(index) {
       current = targetIndex(index);
-      trackEl.style.transform = 'translateX(-' + (current * itemWidth()) + 'px)';
+      setTrackTranslate(current, 0);
       updateViewportHeight();
       updateDots();
+    }
+
+    function setDragging(isDragging) {
+      trackEl.classList.toggle('is-dragging', isDragging);
+      if (dragSurface) dragSurface.classList.toggle('is-dragging', isDragging);
+    }
+
+    function releaseDragCapture(event) {
+      if (!dragSurface || !event || typeof dragSurface.hasPointerCapture !== 'function') return;
+      if (!dragSurface.hasPointerCapture(event.pointerId)) return;
+      try { dragSurface.releasePointerCapture(event.pointerId); } catch (_) {}
+    }
+
+    function captureDragPointer(event) {
+      if (!dragSurface || !event || typeof dragSurface.setPointerCapture !== 'function') return;
+      try { dragSurface.setPointerCapture(event.pointerId); } catch (_) {}
+    }
+
+    function armClickBlock() {
+      blockNextClick = true;
+      window.clearTimeout(clickBlockTimer);
+      clickBlockTimer = window.setTimeout(function () {
+        blockNextClick = false;
+      }, 450);
+    }
+
+    function startDrag(event) {
+      if (!slideMode || total < 2) return;
+      if (event.pointerType === 'mouse' && event.button !== 0) return;
+
+      dragState = {
+        pointerId: event.pointerId,
+        startX: event.clientX,
+        startY: event.clientY,
+        deltaX: 0,
+        active: false
+      };
+    }
+
+    function moveDrag(event) {
+      if (!dragState || event.pointerId !== dragState.pointerId) return;
+
+      var deltaX = event.clientX - dragState.startX;
+      var deltaY = event.clientY - dragState.startY;
+      var absX = Math.abs(deltaX);
+      var absY = Math.abs(deltaY);
+
+      if (!dragState.active) {
+        if (absX < 8 && absY < 8) return;
+        if (absY > absX) {
+          dragState = null;
+          return;
+        }
+
+        dragState.active = true;
+        captureDragPointer(event);
+        setDragging(true);
+        trackEl.style.transition = 'none';
+      }
+
+      event.preventDefault();
+      dragState.deltaX = deltaX;
+
+      var visibleDelta = deltaX;
+      var lastIndex = maxIndex();
+      if ((current === 0 && deltaX > 0) || (current === lastIndex && deltaX < 0)) {
+        visibleDelta = deltaX * 0.35;
+      }
+
+      setTrackTranslate(current, visibleDelta);
+    }
+
+    function endDrag(event) {
+      if (!dragState || (event && event.pointerId !== dragState.pointerId)) return;
+
+      var wasActive = dragState.active;
+      var deltaX = dragState.deltaX;
+      var threshold = Math.min(140, Math.max(48, itemWidth() * 0.12));
+
+      releaseDragCapture(event);
+      dragState = null;
+
+      if (!wasActive) return;
+
+      setDragging(false);
+      trackEl.style.transition = '';
+
+      if (Math.abs(deltaX) >= threshold) {
+        armClickBlock();
+        goTo(current + (deltaX < 0 ? 1 : -1));
+        return;
+      }
+
+      if (Math.abs(deltaX) > 8) armClickBlock();
+      goTo(current);
+    }
+
+    function initDragNavigation() {
+      if (!dragSurface || total < 2) return;
+
+      dragSurface.addEventListener('pointerdown', startDrag);
+      dragSurface.addEventListener('pointermove', moveDrag);
+      dragSurface.addEventListener('pointerup', endDrag);
+      dragSurface.addEventListener('pointercancel', endDrag);
+      dragSurface.addEventListener('lostpointercapture', endDrag);
+      dragSurface.addEventListener('dragstart', function (event) {
+        event.preventDefault();
+      });
+      dragSurface.addEventListener('click', function (event) {
+        if (!blockNextClick) return;
+        event.preventDefault();
+        event.stopPropagation();
+        blockNextClick = false;
+        window.clearTimeout(clickBlockTimer);
+      }, true);
     }
 
     function buildDots() {
@@ -186,6 +310,7 @@
     }, { passive: true });
 
     buildDots();
+    initDragNavigation();
     goTo(0);
     window.addEventListener('load', updateViewportHeight, { once: true });
   }
@@ -499,6 +624,145 @@
     });
   }
 
+  function initServiceAccordion() {
+    var detailsItems = document.querySelectorAll('.service-line');
+    if (!detailsItems.length) return;
+
+    var reduceMotion = window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    detailsItems.forEach(function (details) {
+      var summary = details.querySelector('summary');
+      var content = details.querySelector('.service-line__content');
+      var animationFrame = 0;
+      var animationStartTimer = 0;
+      var animationTimer = 0;
+
+      if (!summary || !content) return;
+
+      function cancelPendingAnimation() {
+        if (animationFrame) {
+          window.cancelAnimationFrame(animationFrame);
+          animationFrame = 0;
+        }
+
+        if (animationStartTimer) {
+          window.clearTimeout(animationStartTimer);
+          animationStartTimer = 0;
+        }
+
+        if (animationTimer) {
+          window.clearTimeout(animationTimer);
+          animationTimer = 0;
+        }
+      }
+
+      function scheduleAnimationStart(callback) {
+        var started = false;
+
+        function start() {
+          if (started) return;
+          started = true;
+
+          if (animationFrame) {
+            window.cancelAnimationFrame(animationFrame);
+            animationFrame = 0;
+          }
+
+          if (animationStartTimer) {
+            window.clearTimeout(animationStartTimer);
+            animationStartTimer = 0;
+          }
+
+          callback();
+        }
+
+        animationFrame = window.requestAnimationFrame(start);
+        animationStartTimer = window.setTimeout(start, 32);
+      }
+
+      function clearTransitionState() {
+        cancelPendingAnimation();
+        details.classList.remove('is-animating', 'is-opening', 'is-closing');
+        content.style.height = '';
+      }
+
+      function finishAnimation() {
+        cancelPendingAnimation();
+        if (details.classList.contains('is-closing')) {
+          details.open = false;
+          content.style.height = '';
+        } else if (details.classList.contains('is-opening')) {
+          content.style.height = 'auto';
+        }
+
+        details.classList.remove('is-animating', 'is-opening', 'is-closing');
+      }
+
+      function finishTransition(event) {
+        if (event.propertyName !== 'height') return;
+        finishAnimation();
+      }
+
+      function scheduleFallbackFinish() {
+        animationTimer = window.setTimeout(finishAnimation, 650);
+      }
+
+      function openDetails() {
+        cancelPendingAnimation();
+        details.open = true;
+        details.classList.remove('is-closing');
+        details.classList.add('is-animating', 'is-opening');
+
+        content.style.height = 'auto';
+        var targetHeight = content.scrollHeight;
+        content.style.height = '0px';
+        content.offsetHeight;
+
+        scheduleAnimationStart(function () {
+          content.style.height = targetHeight + 'px';
+          scheduleFallbackFinish();
+        });
+      }
+
+      function closeDetails() {
+        cancelPendingAnimation();
+        content.style.height = content.scrollHeight + 'px';
+        content.offsetHeight;
+
+        details.classList.remove('is-opening');
+        details.classList.add('is-animating', 'is-closing');
+
+        scheduleAnimationStart(function () {
+          content.style.height = '0px';
+          scheduleFallbackFinish();
+        });
+      }
+
+      if (details.open) {
+        content.style.height = 'auto';
+      }
+
+      content.addEventListener('transitionend', finishTransition);
+
+      summary.addEventListener('click', function (event) {
+        if (reduceMotion) {
+          clearTransitionState();
+          return;
+        }
+
+        event.preventDefault();
+
+        if (details.open && !details.classList.contains('is-closing')) {
+          closeDetails();
+        } else {
+          openDetails();
+        }
+      });
+    });
+  }
+
+  initServiceAccordion();
   initAboutParallax();
   initCaseImageLightbox();
   initQuantumResearchCarousels();

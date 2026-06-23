@@ -423,6 +423,7 @@
 
 .service-line {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: clip;
 }
 
 .service-line summary {
@@ -475,6 +476,34 @@
   gap: 50px;
   padding: 0 76px 54px 96px;
   color: rgba(247, 247, 247, 0.7);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    height 0.48s var(--ease-out-expo),
+    padding-bottom 0.48s var(--ease-out-expo),
+    opacity 0.24s ease,
+    transform 0.48s var(--ease-out-expo);
+}
+
+.service-line[open] .service-line__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-line.is-opening .service-line__content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-line.is-closing .service-line__content {
+  padding-bottom: 0;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.service-line.is-animating .service-line__content {
+  will-change: height, opacity, transform;
 }
 
 .service-line__content p {
@@ -491,6 +520,8 @@
 .home-proof {
   padding-block: clamp(110px, 14vw, 210px);
   background: #f1f0ec;
+  cursor: grab;
+  touch-action: pan-y;
 }
 
 .home-proof .home-proof__viewport {
@@ -504,6 +535,10 @@
   align-items: flex-start;
   transition: transform 0.55s var(--ease-out-expo);
   will-change: transform;
+}
+
+.home-proof .home-proof__track.is-dragging {
+  transition: none;
 }
 
 .home-proof .home-proof__slide {
@@ -581,6 +616,16 @@
 .home-proof .home-proof__button:focus-visible {
   color: var(--color-neutral-050);
   background: var(--color-dark-900);
+}
+
+.home-proof.is-dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.home-proof.is-dragging a,
+.home-proof.is-dragging button {
+  cursor: grabbing;
 }
 
 .home-proof .home-proof__dots {
