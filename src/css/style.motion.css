@@ -247,6 +247,10 @@ html.has-custom-cursor * {
   opacity: 0;
 }
 
+html.is-case-zoom-panning .cursor {
+  opacity: 0 !important;
+}
+
 /* ── Clip-path reveal para figures com imagem ────── */
 .motion-js figure[data-animate] {
   clip-path: inset(100% 0 0 0);

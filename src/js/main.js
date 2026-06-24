@@ -214,6 +214,8 @@
       var wasActive = dragState.active;
       var deltaX = dragState.deltaX;
       var threshold = Math.min(140, Math.max(48, itemWidth() * 0.12));
+      var dragDirection = deltaX < 0 ? 1 : -1;
+      var dragTarget = Math.max(0, Math.min(current + dragDirection, maxIndex()));
 
       releaseDragCapture(event);
       dragState = null;
@@ -225,7 +227,7 @@
 
       if (Math.abs(deltaX) >= threshold) {
         armClickBlock();
-        goTo(current + (deltaX < 0 ? 1 : -1));
+        goTo(dragTarget);
         return;
       }
 
