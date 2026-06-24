@@ -3,7 +3,7 @@
 <script src="/js/motion/preloader.js?v={{ '/js/motion/preloader.js' | assetVersion }}" defer></script>
 {% endif %}
 <script src="/js/motion/footer-clock.js?v={{ '/js/motion/footer-clock.js' | assetVersion }}" defer></script>
-{% if motionContext == "case" %}
+{% if motionContext == "case" or motionContext == "immersive" %}
 <script src="/js/motion/case-toc.js?v={{ '/js/motion/case-toc.js' | assetVersion }}" defer></script>
 {% endif %}
 <script>

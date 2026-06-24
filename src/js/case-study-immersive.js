@@ -10,7 +10,9 @@
   var modeButtons = Array.from(root.querySelectorAll("[data-case-mode-button]"));
   var modePanels = Array.from(root.querySelectorAll("[data-case-mode-panel]"));
   var modeSwitch = root.querySelector("[data-case-mode-switch]");
+  var modeStage = root.querySelector("[data-case-mode-stage]");
   var backToTop = document.querySelector("[data-back-to-top]");
+  var modeAnimationId = 0;
 
   function prepareMotion() {
     var selector = [
@@ -93,35 +95,112 @@
     updateBackToTop();
   }
 
-  function setMode(mode, options) {
-    var nextMode = mode === "tldr" ? "tldr" : "detailed";
-    var config = options || {};
+  function getModePanel(mode) {
+    return modePanels.find(function (panel) {
+      return panel.getAttribute("data-case-mode-panel") === mode;
+    });
+  }
 
+  function updateModeControls(nextMode) {
     modeButtons.forEach(function (button) {
       var active = button.getAttribute("data-case-mode-button") === nextMode;
       button.setAttribute("aria-selected", active ? "true" : "false");
       button.tabIndex = active ? 0 : -1;
     });
+  }
 
+  function updateModeUrl(nextMode, config) {
+    if (config.updateUrl === false) return;
+    var url = new URL(window.location.href);
+    if (nextMode === "detailed") {
+      url.searchParams.delete("mode");
+    } else {
+      url.searchParams.set("mode", "tldr");
+    }
+    window.history.replaceState(null, "", url.toString());
+  }
+
+  function resetModePanel(panel) {
+    panel.classList.remove("is-entering", "is-exiting");
+    panel.style.position = "";
+    panel.style.inset = "";
+    panel.style.width = "";
+  }
+
+  function showModeImmediately(nextMode) {
     modePanels.forEach(function (panel) {
       panel.hidden = panel.getAttribute("data-case-mode-panel") !== nextMode;
+      resetModePanel(panel);
     });
 
-    root.setAttribute("data-case-mode", nextMode);
+    if (modeStage) {
+      modeStage.classList.remove("is-switching");
+      modeStage.style.height = "";
+    }
+  }
 
-    if (config.updateUrl !== false) {
-      var url = new URL(window.location.href);
-      if (nextMode === "detailed") {
-        url.searchParams.delete("mode");
-      } else {
-        url.searchParams.set("mode", "tldr");
-      }
-      window.history.replaceState(null, "", url.toString());
+  function setMode(mode, options) {
+    var nextMode = mode === "tldr" ? "tldr" : "detailed";
+    var config = options || {};
+    var nextPanel = getModePanel(nextMode);
+    var currentPanel = modePanels.find(function (panel) {
+      return !panel.hidden;
+    });
+    var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (!nextPanel || (modeStage && modeStage.classList.contains("is-switching"))) return;
+
+    updateModeControls(nextMode);
+    root.setAttribute("data-case-mode", nextMode);
+    updateModeUrl(nextMode, config);
+    modeAnimationId += 1;
+
+    if (config.animate === false || reducedMotion || !modeStage || !currentPanel || currentPanel === nextPanel) {
+      showModeImmediately(nextMode);
+      window.requestAnimationFrame(centerCarousels);
+      return;
     }
 
+    var animationId = modeAnimationId;
+    var startHeight = currentPanel.offsetHeight;
+
+    modeStage.classList.add("is-switching");
+    modeStage.style.height = startHeight + "px";
+    resetModePanel(currentPanel);
+    resetModePanel(nextPanel);
+
+    currentPanel.hidden = false;
+    nextPanel.hidden = false;
+    currentPanel.style.position = "absolute";
+    currentPanel.style.inset = "0 0 auto 0";
+    currentPanel.style.width = "100%";
+    nextPanel.style.position = "absolute";
+    nextPanel.style.inset = "0 0 auto 0";
+    nextPanel.style.width = "100%";
+    nextPanel.classList.add("is-entering");
+
+    var nextHeight = nextPanel.scrollHeight;
+
     window.requestAnimationFrame(function () {
+      if (animationId !== modeAnimationId) return;
+      modeStage.style.height = nextHeight + "px";
+      currentPanel.classList.add("is-exiting");
+      nextPanel.classList.remove("is-entering");
       centerCarousels();
     });
+
+    window.setTimeout(function () {
+      if (animationId !== modeAnimationId) return;
+
+      modePanels.forEach(function (panel) {
+        panel.hidden = panel !== nextPanel;
+        resetModePanel(panel);
+      });
+
+      modeStage.classList.remove("is-switching");
+      modeStage.style.height = "";
+      centerCarousels();
+    }, 560);
   }
 
   modeButtons.forEach(function (button) {
@@ -371,7 +450,7 @@
   root.querySelectorAll("[data-case-zoom]").forEach(initializeZoomViewer);
 
   var initialMode = new URLSearchParams(window.location.search).get("mode");
-  setMode(initialMode === "tldr" ? "tldr" : "detailed", { updateUrl: false });
+  setMode(initialMode === "tldr" ? "tldr" : "detailed", { animate: false, updateUrl: false });
 
   window.addEventListener("resize", centerCarousels);
   window.addEventListener("pageshow", centerCarousels);
