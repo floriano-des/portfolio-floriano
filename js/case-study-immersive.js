@@ -209,10 +209,8 @@
       y: 0,
       panning: false,
       pointerId: null,
-      startX: 0,
-      startY: 0,
-      originX: 0,
-      originY: 0
+      lastX: 0,
+      lastY: 0
     };
     var minScale = 1;
     var maxScale = 4;
@@ -278,6 +276,12 @@
       render();
     }
 
+    function setPanning(active) {
+      state.panning = active;
+      viewer.classList.toggle("is-panning", active);
+      document.documentElement.classList.toggle("is-case-zoom-panning", active);
+    }
+
     controls.addEventListener("pointerdown", function (event) {
       event.stopPropagation();
     });
@@ -299,28 +303,26 @@
 
       event.preventDefault();
       event.stopPropagation();
-      state.panning = true;
+      setPanning(true);
       state.pointerId = event.pointerId;
-      state.startX = event.clientX;
-      state.startY = event.clientY;
-      state.originX = state.x;
-      state.originY = state.y;
-      viewer.classList.add("is-panning");
+      state.lastX = event.clientX;
+      state.lastY = event.clientY;
       viewer.setPointerCapture(event.pointerId);
     });
 
     viewer.addEventListener("pointermove", function (event) {
       if (!state.panning || event.pointerId !== state.pointerId) return;
       event.preventDefault();
-      state.x = state.originX + event.clientX - state.startX;
-      state.y = state.originY + event.clientY - state.startY;
+      state.x += event.clientX - state.lastX;
+      state.y += event.clientY - state.lastY;
+      state.lastX = event.clientX;
+      state.lastY = event.clientY;
       render();
     });
 
     function stopPanning(event) {
       if (!state.panning) return;
-      state.panning = false;
-      viewer.classList.remove("is-panning");
+      setPanning(false);
 
       if (event && viewer.hasPointerCapture(event.pointerId)) {
         viewer.releasePointerCapture(event.pointerId);
