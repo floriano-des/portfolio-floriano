@@ -3,16 +3,23 @@
 
   var toc = document.querySelector("[data-cs-toc]");
   var main = toc ? toc.closest("main") : null;
-  var sections = main
-    ? Array.from(main.querySelectorAll("[data-cs-section]"))
+  var scope = toc
+    ? toc.closest("[data-cs-toc-scope]") || main
+    : null;
+  var sections = scope
+    ? Array.from(scope.querySelectorAll("[data-cs-section]"))
     : [];
-  var layout = toc ? toc.closest(".cs-layout") : null;
+  var layout = toc
+    ? toc.closest("[data-cs-toc-layout]") || toc.closest(".cs-layout")
+    : null;
 
   if (!toc || !layout || !sections.length || toc.hasAttribute("data-cs-toc-initialized")) return;
 
   var list = toc.querySelector(".cs-toc__list");
   var links = new Map();
   var visibleSections = new Set();
+
+  if (!list) return;
 
   toc.setAttribute("data-cs-toc-initialized", "");
   list.replaceChildren();

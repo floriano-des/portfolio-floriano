@@ -114,7 +114,7 @@
   <link rel="stylesheet" href="/css/style.tokens.css?v=8f22a411bb">
   <link rel="stylesheet" href="/css/style.footer-motion.css?v=da52c39693">
   <link rel="stylesheet" href="/css/style.motion.css?v=94aeb980bd">
-  <link rel="stylesheet" href="/css/case-study-immersive.css?v=eb7f7abb07">
+  <link rel="stylesheet" href="/css/case-study-immersive.css?v=1241e5c501">
 </head>
 <body class="immersive-case-page mercado-case-page">
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K738G4S2"
@@ -142,7 +142,7 @@
 
   <main>
     
-<article class="immersive-case" data-immersive-case data-case-mode="detailed">
+<article class="immersive-case" data-immersive-case data-case-mode="detailed" data-cs-toc-layout data-cs-toc-scope>
   <header class="immersive-case__hero">
     <figure class="immersive-case__cover">
       <img
@@ -174,9 +174,17 @@
 
   <div class="case-mode-switch" role="tablist" aria-label="Versão do case" data-case-mode-switch>
     <button type="button" role="tab" aria-selected="true" data-case-mode-button="detailed">Detalhado</button>
-    <button type="button" role="tab" aria-selected="false" data-case-mode-button="tldr">TL;DR</button>
+    <button type="button" role="tab" aria-selected="false" data-case-mode-button="tldr">Resumo</button>
   </div>
 
+  <aside class="cs-toc immersive-case__toc" aria-label="Índice do case" data-cs-toc>
+    <p class="cs-toc__title">Neste case</p>
+    <nav aria-label="Seções do case">
+      <ul class="cs-toc__list"></ul>
+    </nav>
+  </aside>
+
+  <div class="case-mode-stage" data-case-mode-stage>
   <section class="case-mode-panel case-mode-panel--detailed" role="tabpanel" data-case-mode-panel="detailed">
     <div class="case-content">
       <h1 class="case-title">Mercado das Figurinhas</h1>
@@ -211,7 +219,7 @@
 
       <p class="case-quote">Eu esperava um lançamento estrondoso, cometi um erro de processo logo no início e o resultado ficou bem diferente do que imaginei. No entanto, consegui entender o motivo, e isso mudou a forma como eu vejo a construção de produtos.</p>
 
-      <section class="case-section">
+      <section class="case-section" id="sec-contexto" data-cs-section data-cs-label="Contexto">
         <h2>1. O contexto e o problema</h2>
         <div class="case-copy">
           <p>A ideia surgiu de uma conversa com meu amigo e desenvolvedor Cristiano. A Copa estava chegando e decidimos lançar algo relacionado a ela.</p>
@@ -231,7 +239,7 @@
         </div>
       </section>
 
-      <section class="case-section">
+      <section class="case-section" id="sec-descoberta" data-cs-section data-cs-label="Descoberta">
         <h2>2. A descoberta e a armadilha do Desk Research</h2>
         <div class="case-copy">
           <p>A primeira fase foi entender o tamanho do mercado e os concorrentes.</p>
@@ -279,7 +287,7 @@
         </div>
       </section>
 
-      <section class="case-section">
+      <section class="case-section" id="sec-sintese" data-cs-section data-cs-label="Síntese">
         <h2>3. Síntese e definição do problema</h2>
         <div class="case-copy">
           <p>A partir da desk research, criei a proto-persona "O Trocador Estrategista".</p>
@@ -323,7 +331,7 @@
         </figure>
       </section>
 
-      <section class="case-section">
+      <section class="case-section" id="sec-prototipacao" data-cs-section data-cs-label="Prototipação">
         <h2>4. Prototipação com IA e Desenvolvimento Solo</h2>
         <div class="case-copy">
           <p>Logo no começo, o desenvolvedor parceiro precisou se afastar aos poucos. Eu não quis abandonar a ideia e levei o projeto de ponta a ponta sozinho.</p>
@@ -360,7 +368,7 @@
         </div>
       </section>
 
-      <section class="case-section case-section--tests">
+      <section class="case-section case-section--tests" id="sec-testes" data-cs-section data-cs-label="Testes">
         <h2>5. Testes de usabilidade</h2>
         <div class="case-copy">
           <p>Usei teste de usabilidade moderado com 5 pessoas para avaliar o sistema de match em tempo real. Houve dois problemas principais:</p>
@@ -382,7 +390,7 @@
         </div>
       </section>
 
-      <section class="case-section">
+      <section class="case-section" id="sec-lancamento" data-cs-section data-cs-label="Lançamento">
         <h2>6. Lançamento e o funil da verdade</h2>
         <div class="case-copy">
           <p>O lançamento ocorreu em 9 de maio. Preparei toda a infraestrutura (Vercel, Neon, Stripe) e criei a identidade visual completa e as campanhas para redes sociais.</p>
@@ -401,7 +409,7 @@
         </div>
       </section>
 
-      <section class="case-section">
+      <section class="case-section" id="sec-campo" data-cs-section data-cs-label="Campo">
         <h2>7. O campo e a verdadeira persona</h2>
         <div class="case-copy">
           <p>Com o baixo uso do sistema de matching, fiz aquilo que deveria ter feito no começo: fui a campo. Entrei em grupos de troca de figurinhas no WhatsApp de várias regiões, conversei e observei o comportamento real das pessoas.</p>
@@ -425,7 +433,7 @@
         </div>
       </section>
 
-      <section class="case-section case-section--closing">
+      <section class="case-section case-section--closing" id="sec-aprendizados" data-cs-section data-cs-label="Aprendizados">
         <h2>8. Aprendizados e próximos passos</h2>
         <div class="case-copy">
           <p>Olhando para trás, consigo nomear com clareza os erros e o que eu faria diferente:</p>
@@ -546,6 +554,7 @@
 
     <a class="case-footer-cta" href="https://mercadodasfigurinhas.com.br" target="_blank" rel="noopener noreferrer">Ver projeto online</a>
   </section>
+  </div>
 </article>
 
   </main>
@@ -562,11 +571,13 @@
     </svg>
   </button>
 
-  <script src="/js/case-study-immersive.js?v=fd17686977" defer></script>
+  <script src="/js/case-study-immersive.js?v=7496d3ba83" defer></script>
   
   <script src="/js/motion/transitions.js?v=4daea0c295" defer></script>
 
 <script src="/js/motion/footer-clock.js?v=2ceac01182" defer></script>
+
+<script src="/js/motion/case-toc.js?v=9fa45dd957" defer></script>
 
 <script>
   (function () {
