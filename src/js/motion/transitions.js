@@ -58,6 +58,7 @@
     var pathname = url.pathname.replace(/\/+$/, "") || "/";
     var known = {
       "/": "Início",
+      "/projetos": "Projetos",
       "/sobre": "Sobre",
       "/reflexoes": "Reflexões",
       "/contato": "Contato",
