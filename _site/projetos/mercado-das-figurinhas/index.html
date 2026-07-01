@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  
+  <meta charset="UTF-8">
+  <!-- Google Tag Manager -->
+<script>
+  (function (window, document, tagName, layerName, containerId) {
+    window[layerName] = window[layerName] || [];
+    window[layerName].push({
+      "gtm.start": new Date().getTime(),
+      event: "gtm.js"
+    });
+
+    function loadTagManager() {
+      var firstScript = document.getElementsByTagName(tagName)[0];
+      var script = document.createElement(tagName);
+      var layerQuery = layerName !== "dataLayer" ? "&l=" + layerName : "";
+
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtm.js?id=" + containerId + layerQuery;
+      firstScript.parentNode.insertBefore(script, firstScript);
+    }
+
+    function scheduleTagManager() {
+      window.setTimeout(loadTagManager, 2500);
+    }
+
+    if (document.readyState === "complete") {
+      scheduleTagManager();
+    } else {
+      window.addEventListener("load", scheduleTagManager, { once: true });
+    }
+  }(window, document, "script", "dataLayer", "GTM-K738G4S2"));
+</script>
+<!-- End Google Tag Manager -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+  (function () {
+    document.documentElement.classList.add("motion-js");
+    window.setTimeout(function () {
+      if (!window.__florianoRevealsReady) {
+        document.documentElement.classList.remove("motion-js");
+      }
+    }, 2500);
+
+    try {
+      var raw = sessionStorage.getItem("floriano:page-transition");
+      var state = raw ? JSON.parse(raw) : null;
+
+      if (state && state.expiresAt > Date.now()) {
+        document.documentElement.setAttribute("data-transition-pending", "");
+      } else {
+        sessionStorage.removeItem("floriano:page-transition");
+      }
+    } catch (_) {
+      document.documentElement.removeAttribute("data-transition-pending");
+    }
+
+    
+      document.documentElement.removeAttribute("data-preloader-pending");
+    
+  }());
+</script>
+
+  <title>Mercado das Figurinhas · Estudo de caso · Floriano Silva</title>
+  <meta name="description" content="Lançamento de um app web de trocas de figurinhas da Copa 2026. Um case de Product Design que mudou minha forma de enxergar a construção de produtos.">
+  <meta name="author" content="Floriano Silva">
+  <link rel="canonical" href="https://floriano.des.br/projetos/mercado-das-figurinhas/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://floriano.des.br/projetos/mercado-das-figurinhas/">
+  <meta property="og:title" content="Mercado das Figurinhas · Estudo de caso · Floriano Silva">
+  <meta property="og:description" content="Lançamento de um app web de trocas de figurinhas da Copa 2026. Um case de Product Design que mudou minha forma de enxergar a construção de produtos.">
+  <meta property="og:image" content="https://floriano.des.br/assets/projetos/mercado-das-figurinhas/og-mercado-das-figurinhas.jpg">
+  <meta property="og:image:secure_url" content="https://floriano.des.br/assets/projetos/mercado-das-figurinhas/og-mercado-das-figurinhas.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Mercado das Figurinhas apresentado em notebook, celular e tablet">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Floriano Silva · Designer de experiências digitais">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mercado das Figurinhas · Estudo de caso · Floriano Silva">
+  <meta name="twitter:description" content="Lançamento de um app web de trocas de figurinhas da Copa 2026. Um case de Product Design que mudou minha forma de enxergar a construção de produtos.">
+  <meta name="twitter:image" content="https://floriano.des.br/assets/projetos/mercado-das-figurinhas/og-mercado-das-figurinhas.jpg">
+  <meta name="twitter:image:alt" content="Mercado das Figurinhas apresentado em notebook, celular e tablet">
+  
+
+
+
+
+
+
+
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://floriano.des.br/#person","name":"Floriano Silva","url":"https://floriano.des.br/sobre/","jobTitle":"Designer de experiências digitais","email":"contato@floriano.des.br","telephone":"+55 18 99677-3264","image":"https://floriano.des.br/assets/foto-floriano-1-720.webp","address":{"@type":"PostalAddress","addressCountry":"BR"},"knowsAbout":["Experiências digitais","UX Design","Estratégia de produto","Growth","CRO","Analytics","Pesquisa de UX","Design de interface","Design system","Desenvolvimento web","IA aplicada"],"sameAs":["https://www.linkedin.com/in/floriano-des/","https://medium.com/@floriano-des"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://floriano.des.br/#website","name":"Floriano Silva · Designer de experiências digitais","url":"https://floriano.des.br/","description":"Crio produtos, sites e experiências digitais que unem UX, estratégia, dados, marketing e tecnologia para resolver problemas de negócio com clareza e resultado.","inLanguage":"pt-BR","publisher":{"@id":"https://floriano.des.br/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://floriano.des.br/projetos/mercado-das-figurinhas/#webpage","url":"https://floriano.des.br/projetos/mercado-das-figurinhas/","name":"Mercado das Figurinhas · Estudo de caso · Floriano Silva","description":"Lançamento de um app web de trocas de figurinhas da Copa 2026. Um case de Product Design que mudou minha forma de enxergar a construção de produtos.","inLanguage":"pt-BR","isPartOf":{"@id":"https://floriano.des.br/#website"},"about":{"@id":"https://floriano.des.br/#person"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://floriano.des.br/assets/projetos/mercado-das-figurinhas/og-mercado-das-figurinhas.jpg"},"breadcrumb":{"@id":"https://floriano.des.br/projetos/mercado-das-figurinhas/#breadcrumb"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","@id":"https://floriano.des.br/projetos/mercado-das-figurinhas/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://floriano.des.br/"},{"@type":"ListItem","position":2,"name":"Projetos","item":"https://floriano.des.br/projetos/"},{"@type":"ListItem","position":3,"name":"Mercado das Figurinhas","item":"https://floriano.des.br/projetos/mercado-das-figurinhas/"}]}</script>
+
+  
+  
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","@id":"https://floriano.des.br/projetos/mercado-das-figurinhas/#case-study","name":"Mercado das Figurinhas · Estudo de caso · Floriano Silva","headline":"Mercado das Figurinhas · Estudo de caso · Floriano Silva","description":"Lançamento de um app web de trocas de figurinhas da Copa 2026. Um case de Product Design que mudou minha forma de enxergar a construção de produtos.","url":"https://floriano.des.br/projetos/mercado-das-figurinhas/","image":"https://floriano.des.br/assets/projetos/mercado-das-figurinhas/og-mercado-das-figurinhas.jpg","inLanguage":"pt-BR","creator":{"@id":"https://floriano.des.br/#person"},"author":{"@id":"https://floriano.des.br/#person"},"isPartOf":{"@id":"https://floriano.des.br/#website"},"mainEntityOfPage":{"@id":"https://floriano.des.br/projetos/mercado-das-figurinhas/#webpage"},"keywords":["Product Design","UX Research","prototipação com IA","produto digital","Mercado das Figurinhas"]}</script>
+
+  <link rel="icon" type="image/webp" href="/assets/favicon.webp">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/montserrat-latin-normal.woff2" crossorigin>
+  <link rel="preload" as="image" href="/assets/projetos/mercado-das-figurinhas/cover-hover.webp" fetchpriority="high">
+  <link rel="stylesheet" href="/css/reset.css?v=db80d640cd">
+  <link rel="stylesheet" href="/css/vendor.lenis.css?v=e2d7eba5ff">
+  <link rel="stylesheet" href="/css/style.tokens.css?v=8f22a411bb">
+  <link rel="stylesheet" href="/css/style.footer-motion.css?v=da52c39693">
+  <link rel="stylesheet" href="/css/style.motion.css?v=94aeb980bd">
+  <link rel="stylesheet" href="/css/case-study-immersive.css?v=1241e5c501">
+</head>
+<body class="immersive-case-page mercado-case-page">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K738G4S2"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <div class="page-transition" data-page-transition aria-hidden="true">
+  <svg
+    class="page-transition__shape"
+    viewBox="0 0 100 112"
+    preserveAspectRatio="none"
+    aria-hidden="true"
+  >
+    <path d="M0 0H100V96C78 108 42 99 0 111Z"></path>
+  </svg>
+  <p class="page-transition__label" data-page-transition-label></p>
+</div>
+
+
+
+  <button class="immersive-case-close" type="button" aria-label="Fechar case" data-case-close data-magnetic>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </svg>
+  </button>
+
+  <main>
+    
+<article class="immersive-case" data-immersive-case data-case-mode="detailed" data-cs-toc-layout data-cs-toc-scope>
+  <header class="immersive-case__hero">
+    <figure class="immersive-case__cover">
+      <img
+        src="/assets/projetos/mercado-das-figurinhas/cover-hover.webp"
+        srcset="/assets/projetos/mercado-das-figurinhas/cover-hover-768.webp 768w, /assets/projetos/mercado-das-figurinhas/cover-hover.webp 1448w"
+        sizes="(max-width: 980px) calc(100vw - 32px), 916px"
+        width="1448"
+        height="1086"
+        alt="Mercado das Figurinhas apresentado em notebook, celular e tablet"
+        fetchpriority="high"
+      >
+    </figure>
+
+    <dl class="immersive-case__meta">
+      <div>
+        <dt>Meu papel</dt>
+        <dd>Product Designer</dd>
+      </div>
+      <div>
+        <dt>Período</dt>
+        <dd>Fevereiro a Julho (do zero ao lançamento e à iteração).</dd>
+      </div>
+    </dl>
+
+    <a class="immersive-case__cta" href="https://mercadodasfigurinhas.com.br" target="_blank" rel="noopener noreferrer">
+      Ver projeto online
+    </a>
+  </header>
+
+  <div class="case-mode-switch" role="tablist" aria-label="Versão do case" data-case-mode-switch>
+    <button type="button" role="tab" aria-selected="true" data-case-mode-button="detailed">Detalhado</button>
+    <button type="button" role="tab" aria-selected="false" data-case-mode-button="tldr">Resumo</button>
+  </div>
+
+  <aside class="cs-toc immersive-case__toc" aria-label="Índice do case" data-cs-toc>
+    <p class="cs-toc__title">Neste case</p>
+    <nav aria-label="Seções do case">
+      <ul class="cs-toc__list"></ul>
+    </nav>
+  </aside>
+
+  <div class="case-mode-stage" data-case-mode-stage>
+  <section class="case-mode-panel case-mode-panel--detailed" role="tabpanel" data-case-mode-panel="detailed">
+    <div class="case-content">
+      <h1 class="case-title">Mercado das Figurinhas</h1>
+      <p class="case-lead">Lançamento de um app web de trocas de figurinhas da Copa 2026. Um case de Product Design que mudou minha forma de enxergar a construção de produtos.</p>
+
+      <h2 class="case-overview-title">Visão Geral</h2>
+      <dl class="case-facts">
+        <div class="case-fact">
+          <dt>Time</dt>
+          <dd>Começou com 1 Product Designer (eu) e 1 Desenvolvedor full-stack, e virou projeto solo.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Métodos</dt>
+          <dd>Desk research, análise competitiva, beta fechado e pesquisa de campo pós-lançamento.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Ferramentas</dt>
+          <dd>Figma, FigJam, Google Analytics, Microsoft Clarity, Codex e Claude Code</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Principal aprendizado</dt>
+          <dd>Base com 100 usuários, dois pagantes e um aprendizado brutal sobre pesquisa com usuários.</dd>
+        </div>
+      </dl>
+
+      <figure class="case-figure">
+        <div class="case-figure__media case-figure__media--app" data-case-zoom>
+          <img src="/assets/projetos/mercado-das-figurinhas/dashboard-inicial.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="Tela inicial do app assim que logado">
+        </div>
+        <figcaption class="case-caption">Tela inicial do app assim que logado</figcaption>
+      </figure>
+
+      <p class="case-quote">Eu esperava um lançamento estrondoso, cometi um erro de processo logo no início e o resultado ficou bem diferente do que imaginei. No entanto, consegui entender o motivo, e isso mudou a forma como eu vejo a construção de produtos.</p>
+
+      <section class="case-section" id="sec-contexto" data-cs-section data-cs-label="Contexto">
+        <h2>1. O contexto e o problema</h2>
+        <div class="case-copy">
+          <p>A ideia surgiu de uma conversa com meu amigo e desenvolvedor Cristiano. A Copa estava chegando e decidimos lançar algo relacionado a ela.</p>
+          <p>Eu venho de agência de marketing, com um histórico de construir sites e e-commerces. É um trabalho que gosto, mas o ciclo é curto: você entrega, vai para o ar e raramente descobre se aquilo deu certo de verdade. O Mercado das Figurinhas era minha chance de fazer um produto de ponta a ponta, de longo prazo, do qual eu pudesse acompanhar o impacto real.</p>
+          <p>Completar álbuns sempre foi uma tarefa complicada para colecionadores. Em uma pesquisa prévia, percebemos que as soluções online eram ruins. A melhor era um app nativo genérico que apenas catalogava o álbum, mas não ajudava a trocar. Então pensamos: que tal fazer um "Tinder das figurinhas"?</p>
+          <p><strong>A hipótese inicial: </strong>Se existisse um sistema de matching conectando automaticamente quem tem a figurinha repetida com quem precisa dela, trocar ficaria muito mais fácil e completar o álbum seria muito mais barato. O que eu não sabia naquele momento é que trocar figurinha não é só um problema a ser resolvido. É um ritual cultural: as pessoas gostam de se encontrar para trocar, gostam da bagunça dos grupos, gostam do encontro presencial. Eu enxergava uma ineficiência onde havia parte da graça. Essa cegueira definiu o projeto inteiro.</p>
+        </div>
+        <div class="case-callout">
+          <h3>Restrições e métricas:</h3>
+          <div class="case-copy">
+            <ul>
+              <li>Time minúsculo e tempo curto. A ideia surgiu em fevereiro e precisava estar online em abril.</li>
+              <li>Por limitações financeiras e de tempo, lançar um app nativo era inviável. Seguimos no modelo de app web.</li>
+              <li>Métrica de sucesso definida: ativação (ter usuários efetivamente usando o sistema de trocas).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-descoberta" data-cs-section data-cs-label="Descoberta">
+        <h2>2. A descoberta e a armadilha do Desk Research</h2>
+        <div class="case-copy">
+          <p>A primeira fase foi entender o tamanho do mercado e os concorrentes.</p>
+        </div>
+
+        <figure class="case-figure case-figure--within case-figure--research">
+          <div class="case-pdf" tabindex="0" aria-label="Pesquisa inicial do Mercado das Figurinhas. Use a rolagem para navegar pelas 13 páginas.">
+            <img src="/assets/projetos/mercado-das-figurinhas/pesquisa-inicial/pagina-01.jpg" alt="Pesquisa inicial, página 1 de 13" width="994" height="1404" loading="lazy" decoding="async">
+            <img src="/assets/projetos/mercado-das-figurinhas/pesquisa-inicial/pagina-02.jpg" alt="Pesquisa inicial, página 2 de 13" width="994" height="1404" loading="lazy" decoding="async">
+            <img src="/assets/projetos/mercado-das-figurinhas/pesquisa-inicial/pagina-03.jpg" alt="Pesquisa inicial, página 3 de 13" width="994" height="1404" loading="lazy" decoding="async">
+            <img src="/assets/projetos/mercado-das-figurinhas/pesquisa-inicial/pagina-04.jpg" alt="Pesquisa inicial, página 4 de 13" width="994" height="1404" loading="lazy" decoding="async">
+            <img src="/assets/projetos/mercado-das-figurinhas/pesquisa-inicial/pagina-05.jpg" alt="Pesquisa inicial, página 5 de 13" width="994" height="1404" loading="lazy" decoding="async">
+            <img src="/assets/projetos/mercado-das-figurinhas/pesquisa-inicial/pagina-06.jpg" alt="Pesquisa inicial, página 6 de 13" width="994" height="1404" loading="lazy" decoding="async">
+            <img src="/assets/projetos/mercado-das-figurinhas/pesquisa-inicial/pagina-07.jpg" alt="Pesquisa inicial, página 7 de 13" width="994" height="1404" loading="lazy" decoding="async">
+            <img src="/assets/projetos/mercado-das-figurinhas/pesquisa-inicial/pagina-08.jpg" alt="Pesquisa inicial, página 8 de 13" width="994" height="1404" loading="lazy" decoding="async">
+            <img src="/assets/projetos/mercado-das-figurinhas/pesquisa-inicial/pagina-09.jpg" alt="Pesquisa inicial, página 9 de 13" width="994" height="1404" loading="lazy" decoding="async">
+            <img src="/assets/projetos/mercado-das-figurinhas/pesquisa-inicial/pagina-10.jpg" alt="Pesquisa inicial, página 10 de 13" width="994" height="1404" loading="lazy" decoding="async">
+            <img src="/assets/projetos/mercado-das-figurinhas/pesquisa-inicial/pagina-11.jpg" alt="Pesquisa inicial, página 11 de 13" width="994" height="1404" loading="lazy" decoding="async">
+            <img src="/assets/projetos/mercado-das-figurinhas/pesquisa-inicial/pagina-12.jpg" alt="Pesquisa inicial, página 12 de 13" width="994" height="1404" loading="lazy" decoding="async">
+            <img src="/assets/projetos/mercado-das-figurinhas/pesquisa-inicial/pagina-13.jpg" alt="Pesquisa inicial, página 13 de 13" width="994" height="1404" loading="lazy" decoding="async">
+          </div>
+          <figcaption>
+            <a class="case-caption" href="https://docs.google.com/document/d/1XN_xWXwS70H6p33s8qfu5kxwOcPgMGyNA4D0ijih5Vo/edit?tab=t.0" target="_blank" rel="noopener noreferrer">
+              Navegue pela pesquisa inicial para entendê-la.
+            </a>
+          </figcaption>
+        </figure>
+
+        <div class="case-copy">
+          <p>Descobri que o mercado brasileiro representa cerca de 40% das vendas globais da Panini em anos de Copa. Neste ano, as figurinhas ficariam mais caras e o álbum seria o maior da história. Completar só comprando poderia ultrapassar R$ 4.000, tornando as trocas uma necessidade.</p>
+          <p>Os apps existentes sofriam com travamentos e interfaces datadas. Além disso, as trocas aconteciam em grupos de WhatsApp bagunçados. Não existia nenhum sistema de matching parecido com o Tinder para figurinhas. Essa informação acabou me enviesando.</p>
+          <p>Toda a minha descoberta foi baseada em dados secundários (Desk research e análise competitiva). Eu cheguei a montar um survey quantitativo completo para validar hipóteses, mas a execução técnica do banco de dados travou, atrasou duas semanas, e a pesquisa nunca rodou.</p>
+        </div>
+
+        <figure class="case-figure case-figure--within case-figure--research">
+          <div class="case-figure__media case-figure__media--app case-figure__media--contain" data-case-zoom>
+            <img src="/assets/projetos/mercado-das-figurinhas/pesquisa.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="Pesquisa Trocaê que não foi aplicada">
+          </div>
+          <figcaption class="case-caption">Por estar enviesado pelos dados da pesquisa primária, e por outros motivos, acabei não rodando essa pesquisa.</figcaption>
+        </figure>
+
+        <div class="case-copy">
+          <p><strong>O meu principal erro:</strong> Enviesado pelos resultados animadores da desk research e pressionado pelo prazo, optei por pular a pesquisa com usuários e depois a pesquisa qualitativa, e ir direto para a definição do problema.</p>
+          <p>Eu estava tão convencido de que tinha a resposta certa que a entrevista me pareceu uma formalidade. O dado secundário te diz o tamanho do mercado, mas não te diz o significado emocional do comportamento das pessoas.</p>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-sintese" data-cs-section data-cs-label="Síntese">
+        <h2>3. Síntese e definição do problema</h2>
+        <div class="case-copy">
+          <p>A partir da desk research, criei a proto-persona "O Trocador Estrategista".</p>
+        </div>
+
+        <div class="case-carousel case-carousel--personas" data-case-carousel data-carousel-centered tabindex="0" aria-label="Proto-persona e mapa de empatia do Trocador Estrategista">
+          <div class="case-carousel__track">
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/mercado-das-figurinhas/proto-persona-o-trocador-estrategista.webp" width="8614" height="4872" loading="lazy" decoding="async" alt="Proto-persona O Trocador Estrategista">
+            </figure>
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/mercado-das-figurinhas/mapa-de-empatia-o-trocador-estrategista.webp" width="9238" height="4872" loading="lazy" decoding="async" alt="Mapa de empatia do Trocador Estrategista">
+            </figure>
+          </div>
+        </div>
+
+        <div class="case-copy case-section--compact">
+          <p>Cheguei a explorar o "Pai/Mãe Coletor", mas descartei a ideia. Mirar nesse público deixaria a plataforma atraente para crianças e, como o fluxo terminava abrindo o WhatsApp de um estranho para o outro, isso abria um risco real de segurança e um problema jurídico. Pelo mesmo motivo, deixei a criação de um chat interno fora do escopo.</p>
+        </div>
+
+        <figure class="case-figure case-figure--within case-figure--discarded">
+          <div class="case-figure__media" data-case-zoom>
+            <img src="/assets/projetos/mercado-das-figurinhas/proto-persona-o-trocador-de-comunidade.webp" width="8404" height="4896" loading="lazy" decoding="async" alt="Proto-persona descartada">
+          </div>
+          <figcaption class="case-caption">proto-persona descartada</figcaption>
+        </figure>
+
+        <div class="case-copy case-section--compact">
+          <p>Para entender o caminho do usuário, montei uma jornada completa e criei uma matriz de priorização. Um detalhe importante dessa matriz é que o "app nativo" foi colocado em baixo impacto. Foi nesse julgamento que eu mais errei, como descobri depois.</p>
+        </div>
+
+        <figure class="case-wide" data-case-zoom>
+          <img src="/assets/projetos/mercado-das-figurinhas/jornada-do-usuario.webp" width="15492" height="7388" loading="lazy" decoding="async" alt="Jornada do usuário">
+        </figure>
+
+        <figure class="case-matrix">
+          <div class="case-zoom-surface" data-case-zoom>
+            <img src="/assets/projetos/mercado-das-figurinhas/matriz-de-priorizacao.webp" width="5280" height="5216" loading="lazy" decoding="async" alt="Matriz de priorização">
+          </div>
+          <figcaption class="case-caption">Na matriz que eu tinha criada, fica claro que o “app nativo” foi descartado</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section" id="sec-prototipacao" data-cs-section data-cs-label="Prototipação">
+        <h2>4. Prototipação com IA e Desenvolvimento Solo</h2>
+        <div class="case-copy">
+          <p>Logo no começo, o desenvolvedor parceiro precisou se afastar aos poucos. Eu não quis abandonar a ideia e levei o projeto de ponta a ponta sozinho.</p>
+          <p>Para ganhar tempo, utilizei IAs (Claude Code e Codex) para a geração de telas. Com essas telas em mãos, importei tudo para o Figma usando o plugin html.to.design. Lá dentro fiz os ajustes finos e defini os tokens de fontes e cores. Depois de refinado, voltei do design para o código usando conexão via MCP, permitindo que a IA transformasse o design ajustado em código para o MVP. Escolhi uma experiência minimalista e direta.</p>
+        </div>
+
+        <div class="case-carousel case-carousel--gallery" data-case-carousel tabindex="0" aria-label="Galeria de telas do aplicativo">
+          <div class="case-carousel__track">
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/mercado-das-figurinhas/tela-catalogo-01.webp" width="3000" height="4000" loading="lazy" decoding="async" alt="Dashboard">
+              </div>
+              <figcaption class="case-caption">Dashboard</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/mercado-das-figurinhas/tela-catalogo-02.webp" width="3000" height="4000" loading="lazy" decoding="async" alt="Tela Catálogo">
+              </div>
+              <figcaption class="case-caption">Tela: Catálogo</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/mercado-das-figurinhas/tela-catalogo-03.webp" width="3000" height="4000" loading="lazy" decoding="async" alt="Tela Selecionar figurinha">
+              </div>
+              <figcaption class="case-caption">Tela: Selecionar figurinha</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/mercado-das-figurinhas/tela-catalogo-04.webp" width="3000" height="4000" loading="lazy" decoding="async" alt="Tela Match">
+              </div>
+              <figcaption class="case-caption">Tela: Match!</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-section--tests" id="sec-testes" data-cs-section data-cs-label="Testes">
+        <h2>5. Testes de usabilidade</h2>
+        <div class="case-copy">
+          <p>Usei teste de usabilidade moderado com 5 pessoas para avaliar o sistema de match em tempo real. Houve dois problemas principais:</p>
+          <ol>
+            <li>O sistema de match estava lento e não deixava claro o que aconteceria em seguida, ferindo a heurística de visibilidade do status do sistema. Substituí o "sino" de aviso por notificações push, melhorando muito a experiência.</li>
+            <li>Dois usuários tiveram dificuldade para entender o álbum porque os nomes dos países apareciam em código. Adicionei a bandeira de cada país, o que deixou tudo mais rico visualmente e facilitou o cadastro.</li>
+          </ol>
+          <p><strong>No vídeo abaixo é possível ver esses erros:</strong></p>
+        </div>
+
+        <div class="case-video">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/L2MveW5WQ6s"
+            title="Teste de usabilidade do Mercado das Figurinhas"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-lancamento" data-cs-section data-cs-label="Lançamento">
+        <h2>6. Lançamento e o funil da verdade</h2>
+        <div class="case-copy">
+          <p>O lançamento ocorreu em 9 de maio. Preparei toda a infraestrutura (Vercel, Neon, Stripe) e criei a identidade visual completa e as campanhas para redes sociais.</p>
+          <p>O sistema rodou perfeitamente e sem reclamações. O Microsoft Clarity confirmou que não havia problemas de usabilidade. </p>
+          <p>No entanto, ao montar um funil de ativação pós-lançamento, a dura realidade apareceu.</p>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-zoom-surface" data-case-zoom>
+            <img src="/assets/projetos/mercado-das-figurinhas/funil-de-ativacao.webp" width="8672" height="8335" loading="lazy" decoding="async" alt="Funil de ativação">
+          </div>
+        </figure>
+
+        <div class="case-copy case-section--compact">
+          <p>O funil deixou claras as duas paredes que o produto bateu: pedir cerca de 980 marcações logo de cara matava o fluxo, e o problema do "cold start" (se a cidade do usuário estava vazia, ele via zero matches e sumia). Sem massa crítica, o coração do produto não tinha como acender. A meta de ativação não foi batida.</p>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-campo" data-cs-section data-cs-label="Campo">
+        <h2>7. O campo e a verdadeira persona</h2>
+        <div class="case-copy">
+          <p>Com o baixo uso do sistema de matching, fiz aquilo que deveria ter feito no começo: fui a campo. Entrei em grupos de troca de figurinhas no WhatsApp de várias regiões, conversei e observei o comportamento real das pessoas.</p>
+          <p>A resposta era unânime: as trocas ou acontecem presencialmente, ou através de app nativo. A bagunça do WhatsApp e o encontro na praça não são um problema, <strong>são parte da graça</strong>. É assim que esse mundo funciona.</p>
+          <p>Foi só então que consegui montar a persona real, aquela que o projeto pedia desde o primeiro dia: O Trocador de Comunidade.</p>
+        </div>
+
+        <div class="case-carousel case-carousel--personas" data-case-carousel data-carousel-centered tabindex="0" aria-label="Persona e mapa de empatia do Trocador de Comunidade">
+          <div class="case-carousel__track">
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/mercado-das-figurinhas/proto-persona-o-trocador-de-comunidade.webp" width="8404" height="4896" loading="lazy" decoding="async" alt="Persona O Trocador de Comunidade">
+            </figure>
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/mercado-das-figurinhas/mapa-de-empatia-o-trocador-de-comunidade.webp" width="8832" height="4396" loading="lazy" decoding="async" alt="Mapa de empatia do Trocador de Comunidade">
+            </figure>
+          </div>
+        </div>
+
+        <div class="case-copy case-section--compact">
+          <p>O contraste com a minha persona inicial é enorme. O Trocador de Comunidade coleciona há vários ciclos, vê o álbum como desculpa para o convívio e prefere app nativo. Para ele, eficiência sem convívio não é vantagem. Essa é a pessoa que faz o mercado girar e para a qual eu não desenhei.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-section--closing" id="sec-aprendizados" data-cs-section data-cs-label="Aprendizados">
+        <h2>8. Aprendizados e próximos passos</h2>
+        <div class="case-copy">
+          <p>Olhando para trás, consigo nomear com clareza os erros e o que eu faria diferente:</p>
+          <ul>
+            <li>Eu pulei a etapa que mais importava. A entrevista revela onde você está errado sem perceber.</li>
+            <li>Eu projetei a minha própria lógica no usuário. Tratei a troca como um problema de eficiência a ser otimizado, quando na verdade é um ritual de pertencimento.</li>
+            <li>Subestimei os concorrentes. Eles também modernizaram as plataformas usando IA e lançaram apps nativos de matching.</li>
+            <li>Errei o modelo de negócio. Cobra o valor de R$ 9,99 por mês foi um impeditivo. No campo ficou claro que o público prefere ver anúncios a investir em uma plataforma nova.</li>
+          </ul>
+        </div>
+
+        <div class="case-callout">
+          <h3>Próximos passos concretos:</h3>
+          <div class="case-copy">
+            <ul>
+              <li>Validar antes de construir, sempre. Rodar de 8 a 10 entrevistas com roteiro aberto.</li>
+              <li>Repensar a plataforma e avaliar seriamente um app nativo.</li>
+              <li>Inverter o modelo de receita para gratuito com anúncios.</li>
+              <li>Abraçar o presencial em vez de competir com ele, integrando-se aos grupos existentes.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="case-copy">
+          <p>Este não foi o lançamento estrondoso que eu sonhei e me doeu ver o projeto falhar na ativação. Mas foi, de longe, a experiência que mais me transformou como designer. Saí com um respeito pelo usuário que eu não tinha antes e com a certeza de que a pergunta certa vale muito mais do que qualquer convicção. Sigo para o próximo desafio com uma cabeça muito mais madura e voltada ao comportamento real das pessoas.</p>
+        </div>
+      </section>
+    </div>
+
+    <a class="case-footer-cta" href="https://mercadodasfigurinhas.com.br" target="_blank" rel="noopener noreferrer">Ver projeto online</a>
+  </section>
+
+  <section class="case-mode-panel case-mode-panel--tldr" role="tabpanel" data-case-mode-panel="tldr" hidden>
+    <div class="case-content">
+      <h1 class="case-title">Mercado das Figurinhas: O app de trocas da Copa e a lição que mudou minha visão de produto</h1>
+
+      <section class="case-section">
+        <h2>O Desafio e a Hipótese</h2>
+        <div class="case-copy">
+          <p>Completar o álbum da Copa custa caro e as soluções online eram ruins. A hipótese inicial era criar um "Tinder das figurinhas". Acreditávamos que um sistema de matching automático conectando quem tem a repetida com quem precisa dela tornaria a troca mais fácil e o álbum mais barato.</p>
+        </div>
+        <div class="case-callout">
+          <h3>O Papel e a Execução</h3>
+          <div class="case-copy">
+            <p>O projeto começou em dupla, mas acabei assumindo de ponta a ponta, da pesquisa ao código. Por limitações de tempo e orçamento, optamos por lançar um app web com acesso pelo navegador. Construí a interface e acelerei o desenvolvimento do MVP utilizando inteligências artificiais (Claude Code e Codex) com plugins de integração ao Figma.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="case-carousel case-carousel--gallery" data-case-carousel tabindex="0" aria-label="Galeria de telas do aplicativo">
+        <div class="case-carousel__track">
+          <figure class="case-carousel__item">
+            <div class="case-carousel__image" data-case-zoom>
+              <img src="/assets/projetos/mercado-das-figurinhas/tela-catalogo-01.webp" width="3000" height="4000" loading="lazy" decoding="async" alt="Dashboard">
+            </div>
+            <figcaption class="case-caption">Dashboard</figcaption>
+          </figure>
+          <figure class="case-carousel__item">
+            <div class="case-carousel__image" data-case-zoom>
+              <img src="/assets/projetos/mercado-das-figurinhas/tela-catalogo-02.webp" width="3000" height="4000" loading="lazy" decoding="async" alt="Tela Catálogo">
+            </div>
+            <figcaption class="case-caption">Tela: Catálogo</figcaption>
+          </figure>
+          <figure class="case-carousel__item">
+            <div class="case-carousel__image" data-case-zoom>
+              <img src="/assets/projetos/mercado-das-figurinhas/tela-catalogo-03.webp" width="3000" height="4000" loading="lazy" decoding="async" alt="Tela Selecionar figurinha">
+            </div>
+            <figcaption class="case-caption">Tela: Selecionar figurinha</figcaption>
+          </figure>
+          <figure class="case-carousel__item">
+            <div class="case-carousel__image" data-case-zoom>
+              <img src="/assets/projetos/mercado-das-figurinhas/tela-catalogo-04.webp" width="3000" height="4000" loading="lazy" decoding="async" alt="Tela Match">
+            </div>
+            <figcaption class="case-caption">Tela: Match!</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <section class="case-section">
+        <h2>O Lançamento e o Choque de Realidade</h2>
+        <div class="case-copy">
+          <p>O app foi lançado em 9 de maio e conquistou 100 usuários, sendo dois pagantes. O sistema rodou perfeitamente, sem bugs ou problemas de usabilidade. Porém, a nossa métrica principal de ativação no sistema de trocas não foi batida.</p>
+          <p>A base esbarrou em duas barreiras claras identificadas no funil: a necessidade de marcar quase 980 figurinhas logo de cara e o "cold start" de não encontrar matches em cidades vazias.</p>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-zoom-surface" data-case-zoom>
+            <img src="/assets/projetos/mercado-das-figurinhas/funil-de-ativacao.webp" width="8672" height="8335" loading="lazy" decoding="async" alt="Funil de ativação">
+          </div>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>O Maior Aprendizado: A Falta da Pesquisa Primária</h2>
+        <div class="case-copy">
+          <p>Construí o produto baseando minhas decisões apenas em Desk Research. Pulei as entrevistas com usuários porque estava convencido de que o problema era puramente logístico. Após o lançamento, fui a campo em grupos de WhatsApp e descobri a verdade:</p>
+          <ul>
+            <li>A troca não é uma ineficiência a ser resolvida, mas sim um ritual cultural.</li>
+            <li>As pessoas gostam da bagunça e do encontro presencial.</li>
+            <li>Os usuários preferem aplicativos nativos em vez de apps web.</li>
+          </ul>
+        </div>
+
+        <div class="case-carousel case-carousel--personas" data-case-carousel data-carousel-centered tabindex="0" aria-label="Contraste entre a persona inicial e a persona real">
+          <div class="case-carousel__track">
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/mercado-das-figurinhas/proto-persona-o-trocador-estrategista.webp" width="8614" height="4872" loading="lazy" decoding="async" alt="Proto-persona O Trocador Estrategista">
+            </figure>
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/mercado-das-figurinhas/proto-persona-o-trocador-de-comunidade.webp" width="8404" height="4896" loading="lazy" decoding="async" alt="Persona O Trocador de Comunidade">
+            </figure>
+          </div>
+        </div>
+
+        <p class="case-quote">Este projeto não teve o resultado financeiro ou de tração que eu sonhava, mas foi o que mais me amadureceu como Product Designer. Aprendi na pele que a pergunta certa vale muito mais do que qualquer convicção solitária.</p>
+      </section>
+    </div>
+
+    <a class="case-footer-cta" href="https://mercadodasfigurinhas.com.br" target="_blank" rel="noopener noreferrer">Ver projeto online</a>
+  </section>
+  </div>
+</article>
+
+  </main>
+
+  <button
+    class="back-to-top"
+    type="button"
+    aria-label="Voltar ao topo"
+    data-back-to-top
+    data-magnetic
+  >
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d="M8 13V3M3 8l5-5 5 5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+
+  <script src="/js/case-study-immersive.js?v=7496d3ba83" defer></script>
+  
+  <script src="/js/motion/transitions.js?v=f517369d98" defer></script>
+
+<script src="/js/motion/footer-clock.js?v=2ceac01182" defer></script>
+
+<script src="/js/motion/case-toc.js?v=9fa45dd957" defer></script>
+
+<script>
+  (function () {
+    "use strict";
+
+    var sources = [
+      "/js/vendor/gsap-3.15.0.min.js?v=bf3fd8ec2a",
+      "/js/vendor/ScrollTrigger-3.15.0.min.js?v=5445d0e95e",
+      "/js/vendor/lenis-1.3.23.min.js?v=c94f512954",
+      "/js/motion/lenis-init.js?v=753de89af8",
+      "/js/motion/cursor.js?v=7ab4c96a78",
+      "/js/motion/reveals.js?v=760da37033",
+      "/js/motion/text-reveal.js?v=5a3e52877d",
+      "/js/motion/floating-menu.js?v=ee37054110",
+      "/js/motion/magnetic.js?v=166e0da26c",
+      "/js/motion/count-up.js?v=1d3121fc15"
+      
+      
+      
+    ];
+
+    function loadMotion() {
+      if (window.__florianoMotionLoading) return;
+      window.__florianoMotionLoading = true;
+
+      sources.forEach(function (source) {
+        var script = document.createElement("script");
+        script.src = source;
+        script.async = false;
+        document.body.appendChild(script);
+      });
+    }
+
+    if (document.readyState === "complete") {
+      loadMotion();
+    } else {
+      window.addEventListener("load", loadMotion, { once: true });
+    }
+  }());
+</script>
+
+</body>
+</html>
