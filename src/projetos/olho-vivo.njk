@@ -1,0 +1,485 @@
+---
+layout: case-study-immersive.njk
+permalink: /projetos/olho-vivo/
+title: "Olho Vivo · Estudo de caso · Floriano Silva"
+description: "Da pesquisa de campo em Palmital ao PRD do Olho Vivo: um web-app de bolso para acompanhar promessas de prefeito e vereadores, com módulo de educação política integrado."
+bodyClass: "olho-case-page"
+heroImage: "/assets/projetos/olho-vivo/cover-hover.webp"
+ogType: "article"
+robots: "index, follow, max-image-preview:large"
+lastmod: "2026-07-07"
+caseKeywords:
+  - "UX Research"
+  - "pesquisa de campo"
+  - "produto cívico"
+  - "PRD"
+  - "Olho Vivo"
+---
+
+<article class="immersive-case" data-immersive-case data-case-mode="detailed" data-cs-toc-layout data-cs-toc-scope>
+  <header class="immersive-case__hero">
+    <figure class="immersive-case__cover">
+      <img
+        src="/assets/projetos/olho-vivo/cover-hover.webp"
+        srcset="/assets/projetos/olho-vivo/cover-hover-768.webp 768w, /assets/projetos/olho-vivo/cover-hover.webp 1448w"
+        sizes="(max-width: 980px) calc(100vw - 32px), 916px"
+        width="1448"
+        height="1086"
+        alt="Proposta de interface do produto Olho Vivo"
+        fetchpriority="high"
+      >
+    </figure>
+
+    <dl class="immersive-case__meta">
+      <div>
+        <dt>Meu papel</dt>
+        <dd>Designer de experiências digitais, da pesquisa de campo ao PRD</dd>
+      </div>
+      <div>
+        <dt>Período</dt>
+        <dd>2026, do problema nebuloso ao recorte do MVP.</dd>
+      </div>
+    </dl>
+
+    <a class="immersive-case__cta" href="/reflexoes/pesquisa-olho-vivo/">
+      Ver a pesquisa completa
+    </a>
+  </header>
+
+  <div class="case-mode-switch" role="tablist" aria-label="Versão do case" data-case-mode-switch>
+    <button type="button" role="tab" aria-selected="true" data-case-mode-button="detailed">Detalhado</button>
+    <button type="button" role="tab" aria-selected="false" data-case-mode-button="tldr">Resumo</button>
+  </div>
+
+  <aside class="cs-toc immersive-case__toc" aria-label="Índice do case" data-cs-toc>
+    <p class="cs-toc__title">Neste case</p>
+    <nav aria-label="Seções do case">
+      <ul class="cs-toc__list"></ul>
+    </nav>
+  </aside>
+
+  <div class="case-mode-stage" data-case-mode-stage>
+  <section class="case-mode-panel case-mode-panel--detailed" role="tabpanel" data-case-mode-panel="detailed">
+    <div class="case-content">
+      <h1 class="case-title">Olho Vivo</h1>
+      <p class="case-lead">Pesquisa aplicada em Palmital virou personas, jornadas e a base do Olho Vivo: um web-app de bolso para acompanhar promessas de prefeito e vereadores, com módulo de educação política integrado.</p>
+
+      <h2 class="case-overview-title">Visão Geral</h2>
+      <dl class="case-facts">
+        <div class="case-fact">
+          <dt>Time</dt>
+          <dd>Projeto solo, como pesquisador e designer, da investigação do problema à definição do produto.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Métodos</dt>
+          <dd>Dados secundários, 5W2H, survey com 50 respostas, 8 entrevistas, diagrama de afinidade, personas, mapas de empatia, jornadas, matriz esforço x impacto e PRD.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Ferramentas</dt>
+          <dd>Figma, FigJam, Notion e Google Forms.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Principal resultado</dt>
+          <dd>A pesquisa virou um PRD com o recorte do MVP: rastreador de promessas + módulo de educação política em um web-app PWA, com app nativo na fase seguinte.</dd>
+        </div>
+      </dl>
+
+      <figure class="case-figure">
+        <div class="case-figure__media" data-case-zoom>
+          <img src="/assets/projetos/olho-vivo/Aplicativo-Politico.webp" width="2000" height="1426" loading="lazy" decoding="async" alt="Conceito visual do Olho Vivo gerado a partir da pesquisa">
+        </div>
+        <figcaption class="case-caption">Conceito visual do Olho Vivo gerado a partir da pesquisa</figcaption>
+      </figure>
+
+      <p class="case-quote">O risco era desenhar uma solução com cara de aplicativo cívico, mas desconectada da vida real. Antes de propor interface, a prioridade foi entender como a população se informa, em quem confia e o que impede uma cobrança mais ativa.</p>
+
+      <section class="case-section" id="sec-contexto" data-cs-section data-cs-label="Contexto">
+        <h2>1. O contexto e o problema</h2>
+        <div class="case-copy">
+          <p>Em Palmital, SP, cerca de 19 mil pessoas elegem prefeito e vereadores a cada quatro anos. Mesmo assim, a pesquisa apontou que muita gente não sabe distinguir as atribuições de cada cargo, acompanhar promessas ou identificar fontes confiáveis.</p>
+          <p>O risco era desenhar uma solução com cara de aplicativo cívico, mas desconectada da vida real. Antes de propor interface, a prioridade foi entender como a população se informa, em quem confia e o que impede uma cobrança mais ativa.</p>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-diagnostico" data-cs-section data-cs-label="Diagnóstico">
+        <h2>2. O diagnóstico: o que a solução precisava considerar</h2>
+        <div class="case-copy">
+          <p>Três barreiras apareceram logo nos primeiros dados:</p>
+        </div>
+
+        <div class="case-stats case-stats--topics">
+          <div class="case-stat">
+            <strong>Baixa clareza política</strong>
+            <span>Mais da metade dos respondentes não conseguia separar o papel do prefeito do papel dos vereadores.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Canais oficiais fracos</strong>
+            <span>Apenas 12% usavam sites oficiais para se informar, enquanto rádio, conversas e WhatsApp sustentavam a rotina local.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Confiança antes de engajamento</strong>
+            <span>A desconfiança não era falta de interesse, mas resultado de promessas pouco acompanhadas e informação difícil de verificar.</span>
+          </div>
+        </div>
+
+        <div class="case-callout">
+          <h3>Como ajudar cidadãos de Palmital a compreender e acompanhar o trabalho do prefeito e dos vereadores de forma simples, acessível e confiável?</h3>
+          <div class="case-copy">
+            <p>Essa pergunta norteadora se apoiou em quatro premissas de pesquisa:</p>
+            <ol>
+              <li><strong>Contexto local importa.</strong> Palmital tem escala pequena, dinâmica de cidade próxima e canais de informação muito informais.</li>
+              <li><strong>Acesso não garante uso.</strong> Ter internet não significa buscar informação política por canais oficiais.</li>
+              <li><strong>Educação política é parte do produto.</strong> Sem explicar papéis e responsabilidades, qualquer rastreador vira ruído.</li>
+              <li><strong>Confiança precisa ser construída.</strong> O produto precisava parecer verificável, direto e útil antes de pedir engajamento.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-pesquisa" data-cs-section data-cs-label="Pesquisa">
+        <h2>3. A pesquisa: do dado secundário ao campo</h2>
+        <div class="case-copy">
+          <p>A pesquisa começou com dados do Senado, IBGE, Câmara dos Deputados e fontes locais. Depois, usei 5W2H para estruturar o problema, survey para medir percepção e entrevistas para entender linguagem, confiança e comportamento.</p>
+        </div>
+
+        <figure class="case-figure case-figure--within case-figure--tall">
+          <div class="case-figure__media" data-case-zoom>
+            <img src="/assets/projetos/olho-vivo/5w2h.webp" width="1024" height="1518" loading="lazy" decoding="async" alt="Framework 5W2H preenchido para mapear o problema do Olho Vivo">
+          </div>
+          <figcaption class="case-caption">5W2H usado para estruturar o problema antes do campo</figcaption>
+        </figure>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media case-figure__media--video">
+            <video src="/assets/projetos/olho-vivo/affinity-diagram.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Diagrama de afinidade com os achados das entrevistas em movimento"></video>
+          </div>
+          <figcaption class="case-caption">Diagrama de afinidade organizando os achados das 8 entrevistas</figcaption>
+        </figure>
+
+        <div class="case-copy case-section--compact">
+          <p>As fontes secundárias ajudaram a separar achismo de contexto. Elas mostraram limitações de educação política, dados sociais e condições econômicas que influenciaram diretamente o desenho do survey e do roteiro.</p>
+        </div>
+
+        <div class="case-carousel case-carousel--charts" data-case-carousel tabindex="0" aria-label="Fontes secundárias que moldaram o recorte da pesquisa">
+          <div class="case-carousel__track">
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/olho-vivo/senado_1_webp.webp" width="1044" height="898" loading="lazy" decoding="async" alt="Dados do Senado Federal sobre conhecimento político dos eleitores brasileiros">
+              </div>
+              <figcaption class="case-caption">Senado: conhecimento político dos eleitores</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/olho-vivo/link_ibge_webp.webp" width="1044" height="844" loading="lazy" decoding="async" alt="Dados do IBGE sobre Palmital, SP">
+              </div>
+              <figcaption class="case-caption">IBGE: retrato de Palmital, SP</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/olho-vivo/link_educacao_webp.webp" width="1044" height="829" loading="lazy" decoding="async" alt="Indicadores de educação em Palmital, SP">
+              </div>
+              <figcaption class="case-caption">Indicadores de educação do município</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/olho-vivo/link_economia_ibge_webp.webp" width="1044" height="829" loading="lazy" decoding="async" alt="Indicadores econômicos de Palmital, SP">
+              </div>
+              <figcaption class="case-caption">Indicadores econômicos do município</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="case-copy case-section--compact">
+          <p><strong>O que a pesquisa revelou:</strong></p>
+        </div>
+
+        <div class="case-stats">
+          <div class="case-stat">
+            <strong>12%</strong>
+            <span>usam sites oficiais da prefeitura ou câmara para se informar.</span>
+          </div>
+          <div class="case-stat">
+            <strong>+50%</strong>
+            <span>não distingue com clareza as atribuições do prefeito e dos vereadores.</span>
+          </div>
+          <div class="case-stat">
+            <strong>80%</strong>
+            <span>dos eleitores brasileiros acreditam que políticos não cumprem promessas de campanha.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-sintese" data-cs-section data-cs-label="Síntese">
+        <h2>4. Síntese: duas personas, duas barreiras diferentes</h2>
+        <div class="case-copy">
+          <p>A pesquisa deixou claro que uma solução única excluiria parte do público. O cidadão instruído tem acesso digital, mas pouco tempo e motivação. O cidadão do povo tem mais dependência de canais informais e menor letramento digital.</p>
+        </div>
+
+        <div class="case-carousel case-carousel--charts" data-case-carousel tabindex="0" aria-label="Personas e mapas de empatia do Olho Vivo">
+          <div class="case-carousel__track">
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/olho-vivo/cidad_o_instru_do.webp" width="1919" height="1700" loading="lazy" decoding="async" alt="Persona Cidadão Instruído">
+              </div>
+              <figcaption class="case-caption">Persona: Cidadão Instruído</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/olho-vivo/cidad_o_do_povo.webp" width="1919" height="1736" loading="lazy" decoding="async" alt="Persona Cidadão do Povo">
+              </div>
+              <figcaption class="case-caption">Persona: Cidadão do Povo</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/olho-vivo/mapa-de-empatia-cidadao-instruido.webp" width="1500" height="1500" loading="lazy" decoding="async" alt="Mapa de empatia do Cidadão Instruído">
+              </div>
+              <figcaption class="case-caption">Mapa de empatia: Cidadão Instruído</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/olho-vivo/mapa-de-empatia-cidadao-do-povo.webp" width="1500" height="1500" loading="lazy" decoding="async" alt="Mapa de empatia do Cidadão do Povo">
+              </div>
+              <figcaption class="case-caption">Mapa de empatia: Cidadão do Povo</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-jornadas" data-cs-section data-cs-label="Jornadas">
+        <h2>5. Jornadas: onde cada perfil se perde no ciclo político</h2>
+        <div class="case-copy">
+          <p>As jornadas revelaram que o problema não estava em um único ponto do fluxo. Ele aparece no momento de entender propostas, acompanhar mandatos, identificar responsabilidade e decidir se vale a pena participar.</p>
+        </div>
+
+        <div class="case-carousel case-carousel--personas" data-case-carousel data-carousel-centered tabindex="0" aria-label="Jornadas do Cidadão Instruído e do Cidadão do Povo">
+          <div class="case-carousel__track">
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/olho-vivo/jornadacidadao-instruido.webp" width="3200" height="1800" loading="lazy" decoding="async" alt="Jornada do usuário Cidadão Instruído">
+            </figure>
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/olho-vivo/jornada-cidadao-do-povo.webp" width="3200" height="1800" loading="lazy" decoding="async" alt="Jornada do usuário Cidadão do Povo">
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-ideacao" data-cs-section data-cs-label="Ideação">
+        <h2>6. Ideação: divergir antes de escolher</h2>
+        <div class="case-copy">
+          <p>Antes de fechar uma solução, abri o leque. Usei IA como parceira de ideação para forçar variedade e fugir da primeira ideia óbvia (um app político genérico). Depois fiz a curadoria à mão: cortei por <strong>impacto x esforço</strong>, dado o contexto de designer solo.</p>
+        </div>
+
+        <div class="case-callout">
+          <h3>6 direções exploradas:</h3>
+          <div class="case-copy">
+            <ol>
+              <li><strong>Rastreador de promessas.</strong> Status visual + fonte verificável por promessa.</li>
+              <li><strong>Glossário cívico.</strong> Termos políticos traduzidos em linguagem de feira.</li>
+              <li><strong>Comparador de cargos.</strong> "O que faz prefeito x o que faz vereador" lado a lado.</li>
+              <li><strong>Bot de WhatsApp.</strong> Resposta automática para "qual o status da promessa X?".</li>
+              <li><strong>Newsletter local mensal.</strong> Resumo de promessas em e-mail e mensagem.</li>
+              <li><strong>Checklist em PDF.</strong> Material offline para quem não usa app.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="case-copy case-section--compact">
+          <p>A matriz esforço x impacto cortou para três frentes complementares: uma core (digital), uma de distribuição (social) e uma de inclusão (offline).</p>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-produto" data-cs-section data-cs-label="Produto">
+        <h2>7. Direção de produto: três frentes priorizadas</h2>
+
+        <div class="case-stats case-stats--topics">
+          <div class="case-stat">
+            <strong>Rastreador + educação política</strong>
+            <span>Núcleo do produto. Web-app de bolso para acompanhar promessas com status claros, fontes verificáveis e explicação inline de papéis dos cargos.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Campanha em redes sociais</strong>
+            <span>Distribuição. Conteúdo educativo para o público que já usa canais digitais, sem depender de sites oficiais como ponto de partida.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Checklist em PDF</strong>
+            <span>Suporte offline. Material físico e compartilhável para pessoas com menor acesso digital ou menor conforto com tecnologia.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-mvp" data-cs-section data-cs-label="MVP">
+        <h2>8. O recorte do MVP: o que entra primeiro, o que vai depois</h2>
+        <div class="case-copy">
+          <p>O MVP combina <strong>rastreador de promessas</strong> e <strong>módulo de educação política</strong> num único web-app PWA, escopo Palmital, curadoria por admin único. Redes e PDF entram como apoio depois do lançamento. App nativo é fase 2.</p>
+        </div>
+
+        <div class="case-stats case-stats--topics">
+          <div class="case-stat">
+            <strong>Fase 0: Protótipo</strong>
+            <span>Wireframe + protótipo navegável em Figma, validado com 5 a 8 cidadãos de Palmital em teste de guerrilha.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Fase 1: Web-app PWA</strong>
+            <span>Lançamento público, instalável no celular, 30 promessas pré-cadastradas, analytics ativos (GA4 + Clarity).</span>
+          </div>
+          <div class="case-stat">
+            <strong>Fase 2: App nativo</strong>
+            <span>Migração motivada por notificações push, offline completo e favoritos. Reusa o design system da v1.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-metricas" data-cs-section data-cs-label="Métricas">
+        <h2>9. Métricas de sucesso: como saberemos que funcionou</h2>
+        <div class="case-copy">
+          <p>Sem indicadores, "pronto" vira opinião. O PRD fecha quatro métricas-âncora para a v1 do web-app, definidas antes do lançamento e instrumentadas no GA4 e no Microsoft Clarity.</p>
+        </div>
+
+        <div class="case-stats">
+          <div class="case-stat">
+            <strong>≥40%</strong>
+            <span>Engajamento: dos visitantes abre ao menos uma promessa.</span>
+          </div>
+          <div class="case-stat">
+            <strong>≥25%</strong>
+            <span>Educação: dos visitantes abre o módulo "Quem faz o quê?".</span>
+          </div>
+          <div class="case-stat">
+            <strong>≥0,15</strong>
+            <span>Mobilização: cliques em "compartilhar" por sessão (WhatsApp).</span>
+          </div>
+          <div class="case-stat">
+            <strong>≥15%</strong>
+            <span>Retenção: de visitantes voltam em 30 dias.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-section--closing" id="sec-proximos-passos" data-cs-section data-cs-label="Próximos passos">
+        <h2>10. Resultado da pesquisa e próximos passos</h2>
+        <div class="case-copy">
+          <p>A pesquisa terminou com um mapa claro para decidir o que construir primeiro:</p>
+        </div>
+
+        <div class="case-stats case-stats--topics">
+          <div class="case-stat">
+            <strong>2 personas</strong>
+            <span>com mapas de empatia e necessidades documentadas.</span>
+          </div>
+          <div class="case-stat">
+            <strong>2 jornadas</strong>
+            <span>mostrando pontos de dor, abandono e oportunidades de intervenção.</span>
+          </div>
+          <div class="case-stat">
+            <strong>1 PRD</strong>
+            <span>com escopo de MVP, princípios de UX e roadmap em 3 fases.</span>
+          </div>
+        </div>
+
+        <div class="case-callout">
+          <h3>Do PRD ao produto no ar:</h3>
+          <div class="case-copy">
+            <ol>
+              <li><strong>Wireframes em baixa fidelidade</strong> das 5 telas principais, para validar arquitetura antes do pixel.</li>
+              <li><strong>Protótipo médio-fi em Figma</strong> com 1 fluxo navegável end-to-end e componentes reutilizáveis marcados.</li>
+              <li><strong>Teste de guerrilha</strong> com 5 a 8 cidadãos de Palmital, com pelo menos 2 do perfil Cidadão do Povo.</li>
+              <li><strong>Iteração</strong> baseada nos achados. Reteste se as mudanças forem grandes.</li>
+              <li><strong>Implementação assistida por IA</strong> usando PRD + protótipo aprovado como verdade. Lançamento da PWA com 30 promessas pré-cadastradas.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <a class="case-footer-cta" href="/reflexoes/pesquisa-olho-vivo/">Ver a pesquisa completa</a>
+  </section>
+
+  <section class="case-mode-panel case-mode-panel--tldr" role="tabpanel" data-case-mode-panel="tldr" hidden>
+    <div class="case-content">
+      <h1 class="case-title">Olho Vivo: a pesquisa de campo que virou o PRD de um app para acompanhar promessas políticas</h1>
+
+      <section class="case-section">
+        <h2>O Desafio e a Pergunta</h2>
+        <div class="case-copy">
+          <p>Em Palmital, SP, muita gente vota, mas não sabe o que cobrar de prefeito e vereadores, onde acompanhar promessas ou quais canais oficiais consultar. A pergunta norteadora: como ajudar esses cidadãos a compreender e acompanhar o trabalho dos eleitos de forma simples, acessível e confiável?</p>
+        </div>
+        <div class="case-callout">
+          <h3>O Papel e a Execução</h3>
+          <div class="case-copy">
+            <p>Conduzi a pesquisa de ponta a ponta: dados secundários (Senado, IBGE, Câmara), 5W2H, survey com 50 respostas, 8 entrevistas qualitativas, diagrama de afinidade, personas, mapas de empatia, jornadas e priorização por impacto e esforço. Tudo foi consolidado em um PRD com escopo de MVP, princípios de UX e roadmap em 3 fases.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>O que a pesquisa revelou</h2>
+        <div class="case-copy">
+          <p>O problema não era falta de interesse político. Era falta de referências confiáveis e simples, somada à dificuldade de entender quem é responsável pelo quê.</p>
+        </div>
+
+        <div class="case-stats">
+          <div class="case-stat">
+            <strong>12%</strong>
+            <span>usam sites oficiais da prefeitura ou câmara para se informar.</span>
+          </div>
+          <div class="case-stat">
+            <strong>+50%</strong>
+            <span>não distingue com clareza as atribuições do prefeito e dos vereadores.</span>
+          </div>
+          <div class="case-stat">
+            <strong>80%</strong>
+            <span>dos eleitores brasileiros acreditam que políticos não cumprem promessas de campanha.</span>
+          </div>
+        </div>
+
+        <div class="case-carousel case-carousel--charts" data-case-carousel tabindex="0" aria-label="Personas do Olho Vivo">
+          <div class="case-carousel__track">
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/olho-vivo/cidad_o_instru_do.webp" width="1919" height="1700" loading="lazy" decoding="async" alt="Persona Cidadão Instruído">
+              </div>
+              <figcaption class="case-caption">Persona: Cidadão Instruído</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/olho-vivo/cidad_o_do_povo.webp" width="1919" height="1736" loading="lazy" decoding="async" alt="Persona Cidadão do Povo">
+              </div>
+              <figcaption class="case-caption">Persona: Cidadão do Povo</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>A Direção do Produto</h2>
+        <div class="case-copy">
+          <p>Da ideação com IA e da matriz esforço x impacto saíram três frentes: um web-app PWA com rastreador de promessas e educação política integrada (núcleo), campanha em redes sociais (distribuição) e checklist em PDF (inclusão offline). O app nativo ficou para a fase 2, quando notificações push e offline completo justificarem a migração.</p>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media" data-case-zoom>
+            <img src="/assets/projetos/olho-vivo/Aplicativo-Politico.webp" width="2000" height="1426" loading="lazy" decoding="async" alt="Conceito visual do Olho Vivo gerado a partir da pesquisa">
+          </div>
+          <figcaption class="case-caption">Conceito visual do Olho Vivo gerado a partir da pesquisa</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>O Maior Aprendizado</h2>
+        <div class="case-copy">
+          <ul>
+            <li>Pesquisa transforma problema nebuloso em leitura acionável: o problema não era desinteresse, era falta de referências confiáveis.</li>
+            <li>Pesquisa corta caminhos errados: várias hipóteses iniciais foram refinadas pelos dados, evitando uma solução desconectada do contexto local.</li>
+            <li>Em temas sensíveis como política, as respostas mais úteis aparecem quando há escuta real antes do roteiro.</li>
+            <li>Pesquisa não termina no diagnóstico: fechar o ciclo exige traduzir achados em escopo, princípios de UX e métricas antes de tocar no pixel.</li>
+          </ul>
+        </div>
+
+        <p class="case-quote">A pesquisa mostrou que o problema não era falta de interesse político. Era falta de referências confiáveis e simples. É isso que o Olho Vivo se propõe a resolver.</p>
+      </section>
+    </div>
+
+    <a class="case-footer-cta" href="/reflexoes/pesquisa-olho-vivo/">Ver a pesquisa completa</a>
+  </section>
+  </div>
+</article>

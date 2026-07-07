@@ -1,0 +1,372 @@
+---
+layout: case-study-immersive.njk
+permalink: /projetos/2p-web-dev/
+title: "Web Dev 2.0 · Estudo de caso · Floriano Silva"
+description: "Como substituí uma planilha pública por um sistema interno seguro, escalável e usado diariamente pela operação da agência."
+bodyClass: "webdev-case-page"
+heroImage: "/assets/projetos/web-dev/cover-hover.webp"
+ogType: "article"
+robots: "index, follow, max-image-preview:large"
+lastmod: "2026-07-07"
+caseKeywords:
+  - "Produto interno"
+  - "UX operacional"
+  - "arquitetura de informação"
+  - "Bit System"
+  - "Web Dev 2.0"
+---
+
+<article class="immersive-case" data-immersive-case data-case-mode="detailed" data-cs-toc-layout data-cs-toc-scope>
+  <header class="immersive-case__hero">
+    <figure class="immersive-case__cover">
+      <img
+        src="/assets/projetos/web-dev/cover-hover.webp"
+        srcset="/assets/projetos/web-dev/cover-hover-768.webp 768w, /assets/projetos/web-dev/cover-hover.webp 1448w"
+        sizes="(max-width: 980px) calc(100vw - 32px), 916px"
+        width="1448"
+        height="1086"
+        alt="Telas do sistema interno Web Dev 2.0"
+        fetchpriority="high"
+      >
+    </figure>
+
+    <dl class="immersive-case__meta">
+      <div>
+        <dt>Meu papel</dt>
+        <dd>Designer de experiências digitais, do discovery ao deploy</dd>
+      </div>
+      <div>
+        <dt>Status</dt>
+        <dd>v2.0 em produção, usada diariamente pelo time.</dd>
+      </div>
+    </dl>
+  </header>
+
+  <div class="case-mode-switch" role="tablist" aria-label="Versão do case" data-case-mode-switch>
+    <button type="button" role="tab" aria-selected="true" data-case-mode-button="detailed">Detalhado</button>
+    <button type="button" role="tab" aria-selected="false" data-case-mode-button="tldr">Resumo</button>
+  </div>
+
+  <aside class="cs-toc immersive-case__toc" aria-label="Índice do case" data-cs-toc>
+    <p class="cs-toc__title">Neste case</p>
+    <nav aria-label="Seções do case">
+      <ul class="cs-toc__list"></ul>
+    </nav>
+  </aside>
+
+  <div class="case-mode-stage" data-case-mode-stage>
+  <section class="case-mode-panel case-mode-panel--detailed" role="tabpanel" data-case-mode-panel="detailed">
+    <div class="case-content">
+      <h1 class="case-title">Web Dev 2.0</h1>
+      <p class="case-lead">Como substituí uma planilha pública por um sistema interno seguro, escalável e usado diariamente pelo time da Dois Palitos.</p>
+
+      <h2 class="case-overview-title">Visão Geral</h2>
+      <dl class="case-facts">
+        <div class="case-fact">
+          <dt>Time</dt>
+          <dd>Projeto interno da Dois Palitos, conduzido por mim de ponta a ponta, com iterações guiadas pelo uso real da equipe.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Métodos</dt>
+          <dd>Discovery, arquitetura de informação, design de interface e deploy.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Ferramentas</dt>
+          <dd>PHP, MySQL, AJAX, Hostinger e Bit System v2.1.0.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Principal resultado</dt>
+          <dd>29 clientes ativos e 1.044 tarefas de protocolo monitoradas no sistema, com 100% do time usando a ferramenta como fonte principal da operação.</dd>
+        </div>
+      </dl>
+
+      <figure class="case-figure">
+        <div class="case-figure__media" data-case-zoom>
+          <img src="/assets/projetos/web-dev/webdev-dashboard.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Dashboard sanitizado do sistema Web Dev com indicadores operacionais">
+        </div>
+        <figcaption class="case-caption">Dashboard operacional do sistema, com dados sanitizados</figcaption>
+      </figure>
+
+      <p class="case-quote">O problema não era só técnico. A planilha exigia memória, paciência e contexto que não estavam na interface. Cada busca dependia de saber onde procurar.</p>
+
+      <section class="case-section" id="sec-contexto" data-cs-section data-cs-label="Contexto">
+        <h2>1. O contexto e o problema</h2>
+        <div class="case-copy">
+          <p>A Dois Palitos precisava consultar dados de hospedagem, acessos, protocolos, senhas internas e histórico de clientes todos os dias. A solução existente era uma planilha compartilhada, fácil de editar, mas frágil do ponto de vista de segurança, rastreabilidade e experiência.</p>
+          <p>O problema não era só técnico. A planilha exigia memória, paciência e contexto que não estavam na interface. Cada busca dependia de saber onde procurar, qual aba abrir e como interpretar o que estava preenchido.</p>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-diagnostico" data-cs-section data-cs-label="Diagnóstico">
+        <h2>2. O diagnóstico: o que precisava sair da planilha</h2>
+        <div class="case-copy">
+          <p>Três necessidades definiram o escopo do produto:</p>
+        </div>
+
+        <div class="case-stats case-stats--topics">
+          <div class="case-stat">
+            <strong>Segurança</strong>
+            <span>Credenciais e dados de clientes precisavam sair de um link público e entrar em um ambiente autenticado.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Encontrabilidade</strong>
+            <span>O time precisava localizar cliente, acesso e protocolo em segundos, sem depender de rolagem e memória.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Visibilidade</strong>
+            <span>Protocolos, pendências e clientes ativos precisavam virar indicadores claros para gestão diária.</span>
+          </div>
+        </div>
+
+        <div class="case-callout">
+          <h3>Como criar um produto interno seguro e simples o suficiente para ser adotado pelo time inteiro, sem virar mais uma ferramenta que ninguém usa?</h3>
+          <div class="case-copy">
+            <p>Essa pergunta guiou quatro princípios de produto:</p>
+            <ol>
+              <li><strong>Segurança sem fricção.</strong> Autenticação e perfis eram obrigatórios, mas o fluxo precisava continuar rápido.</li>
+              <li><strong>Contexto antes de edição.</strong> Cada cliente precisava ter sua própria página com dados, notas, protocolos e histórico.</li>
+              <li><strong>Operação acima de estética.</strong> O design precisava ser denso, escaneável e feito para uso repetido.</li>
+              <li><strong>Iteração sem cerimônia.</strong> O sistema precisava aceitar melhorias pequenas, rápidas e seguras depois do lançamento.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-solucao" data-cs-section data-cs-label="Solução">
+        <h2>3. A solução: de planilha pública para sistema operacional</h2>
+        <div class="case-copy">
+          <p>A primeira versão substituiu o risco central: dados expostos sem autenticação. As iterações seguintes transformaram o sistema em uma ferramenta de operação, com módulos para clientes, protocolos, senhas internas, usuários, logs, campos extras e notas inline.</p>
+        </div>
+
+        <div class="case-stats case-stats--topics">
+          <div class="case-stat">
+            <strong>Credenciais completas</strong>
+            <span>Cada rede social passou a guardar perfil, login e senha individual, com cadastro rápido direto na página do cliente.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Campos extras</strong>
+            <span>Campos customizáveis por cliente, com tipo texto, senha mascarada ou URL, usando CRUD completo via AJAX.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Notas inline</strong>
+            <span>A seção de notas deixou de exigir redirecionamento. O usuário edita, salva e continua no mesmo contexto.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Protocolos vivos</strong>
+            <span>Protocolos com status, progresso, ordenação por ativos e celebração ao concluir 100% das tarefas de um cliente.</span>
+          </div>
+        </div>
+
+        <div class="case-carousel case-carousel--personas" data-case-carousel data-carousel-centered tabindex="0" aria-label="Telas sanitizadas dos módulos de senhas, usuários e log">
+          <div class="case-carousel__track">
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/web-dev/webdev-senhas.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Tela sanitizada do módulo de senhas internas do Web Dev">
+            </figure>
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/web-dev/webdev-usuarios.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Tela sanitizada do módulo de usuários do Web Dev">
+            </figure>
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/web-dev/webdev-log.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Tela sanitizada do log de atividades do Web Dev">
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-design-system" data-cs-section data-cs-label="Design System">
+        <h2>4. Bit System aplicado à operação</h2>
+        <div class="case-copy">
+          <p>A v2.1.0 abandonou o visual glow anterior e aproximou o sistema da identidade oficial da Dois Palitos: preto profundo, cards sólidos, neon e fuchsia como acentos, sombras pixel hard e botões sem arredondamento.</p>
+        </div>
+
+        <div class="case-stats case-stats--topics">
+          <div class="case-stat">
+            <span class="case-stat__swatch" style="background: #100f0f;"></span>
+            <strong>#100F0F</strong>
+            <span>Background</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat__swatch" style="background: #221f20;"></span>
+            <strong>#221F20</strong>
+            <span>Cards</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat__swatch" style="background: #00ffd1;"></span>
+            <strong>#00FFD1</strong>
+            <span>Neon</span>
+          </div>
+          <div class="case-stat">
+            <span class="case-stat__swatch" style="background: #ff00ff;"></span>
+            <strong>#FF00FF</strong>
+            <span>Fuchsia</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-decisoes" data-cs-section data-cs-label="Decisões">
+        <h2>5. Decisões de produto: o que mudou na prática</h2>
+
+        <div class="case-compare">
+          <p class="case-compare__label">Decisão 01 · Dashboard</p>
+          <h3>Ativos primeiro, ruído depois</h3>
+          <div class="case-compare__grid case-compare__grid--single">
+            <div class="case-compare__item" data-case-zoom>
+              <img src="/assets/projetos/web-dev/webdev-dashboard.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Dashboard sanitizado do sistema Web Dev com indicadores operacionais">
+            </div>
+          </div>
+          <p class="case-caption">O dashboard passou a destacar clientes ativos, protocolos concluídos, pendências e usuários em atividade. Total e inativos viraram informação secundária.</p>
+        </div>
+
+        <div class="case-compare">
+          <p class="case-compare__label">Decisão 02 · Clientes</p>
+          <h3>Detalhe do cliente como centro da operação</h3>
+          <div class="case-compare__grid case-compare__grid--single">
+            <div class="case-compare__item" data-case-zoom>
+              <img src="/assets/projetos/web-dev/webdev-clientes.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Lista sanitizada de clientes ativos no sistema Web Dev">
+            </div>
+          </div>
+          <p class="case-caption">A página do cliente concentrou credenciais, redes sociais, campos extras, notas inline e botão de voltar contextual, reduzindo dependência do navegador e da memória do time.</p>
+        </div>
+
+        <div class="case-compare">
+          <p class="case-compare__label">Decisão 03 · Protocolos</p>
+          <h3>Status operacional em tempo real</h3>
+          <div class="case-compare__grid case-compare__grid--single">
+            <div class="case-compare__item" data-case-zoom>
+              <img src="/assets/projetos/web-dev/webdev-protocolos-cliente.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Tela sanitizada de protocolos por cliente no sistema Web Dev">
+            </div>
+          </div>
+          <p class="case-caption">A tela de protocolos passou a ordenar clientes ativos primeiro, mostrar progresso e permitir atualização de status sem transformar a rotina em tarefa administrativa pesada.</p>
+        </div>
+
+        <div class="case-compare">
+          <p class="case-compare__label">Decisão 04 · Infraestrutura</p>
+          <h3>Produção mais previsível</h3>
+          <div class="case-stats case-stats--topics">
+            <div class="case-stat">
+              <strong>PHP + MySQL</strong>
+              <span>Ambiente local espelhado da produção para desenvolver com segurança.</span>
+            </div>
+            <div class="case-stat">
+              <strong>PowerShell + PSCP</strong>
+              <span>Deploy seletivo via SSH preservando o config.php de produção.</span>
+            </div>
+            <div class="case-stat">
+              <strong>Hostinger</strong>
+              <span>Migração para webdev.doispalitosmkt.com.br com banco de dados dedicado.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-section--closing" id="sec-resultado" data-cs-section data-cs-label="Resultado">
+        <h2>6. Resultado: sistema interno em produção e em uso real</h2>
+        <div class="case-copy">
+          <p>O sistema entrou em produção e passou a centralizar clientes ativos, protocolos, senhas internas, usuários e logs. A antiga planilha pública deixou de fazer parte do fluxo principal.</p>
+        </div>
+
+        <div class="case-stats">
+          <div class="case-stat">
+            <strong>100%</strong>
+            <span>do time usando o sistema como fonte principal da operação</span>
+          </div>
+          <div class="case-stat">
+            <strong>v2.0</strong>
+            <span>redesign visual e funcionalidades novas já em produção</span>
+          </div>
+          <div class="case-stat">
+            <strong>0</strong>
+            <span>dependência da antiga planilha pública para o fluxo principal</span>
+          </div>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media case-figure__media--video">
+            <video src="/assets/projetos/web-dev/2026-03-18-01-18-24.mp4" controls preload="metadata" aria-label="Registro em vídeo da versão anterior do sistema Web Dev"></video>
+          </div>
+          <figcaption class="case-caption">Registro da versão anterior do sistema, antes das iterações visuais e funcionais mais recentes</figcaption>
+        </figure>
+
+        <div class="case-callout">
+          <h3>O que este projeto prova:</h3>
+          <div class="case-copy">
+            <ul>
+              <li><strong>Consigo transformar risco operacional em produto utilizável.</strong> O valor não estava só em esconder a planilha, mas em criar uma rotina melhor para quem depende daqueles dados.</li>
+              <li><strong>Produto interno precisa ser denso e claro ao mesmo tempo.</strong> A interface não podia parecer landing page. Ela precisava ser uma ferramenta de trabalho.</li>
+              <li><strong>Iteração é parte do produto, não manutenção menor.</strong> Redes sociais, campos extras, notas inline e confete de conclusão nasceram depois do uso real.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="case-mode-panel case-mode-panel--tldr" role="tabpanel" data-case-mode-panel="tldr" hidden>
+    <div class="case-content">
+      <h1 class="case-title">Web Dev 2.0: a planilha pública que virou sistema interno seguro e adotado por todo o time</h1>
+
+      <section class="case-section">
+        <h2>O Desafio</h2>
+        <div class="case-copy">
+          <p>A Dois Palitos gerenciava credenciais, protocolos e dados operacionais de clientes em uma planilha pública. O fluxo era rápido para nascer, mas inseguro para escalar: dados expostos, buscas dependentes de memória e nenhuma rastreabilidade.</p>
+        </div>
+        <div class="case-callout">
+          <h3>O Papel e a Execução</h3>
+          <div class="case-copy">
+            <p>Conduzi o projeto de ponta a ponta: mapeei os fluxos críticos, desenhei a estrutura do produto, implementei com PHP e MySQL, evoluí a interface para o Bit System v2.1.0 e iterei com base no uso real da equipe. O princípio central foi operação acima de estética: uma ferramenta densa, escaneável e feita para uso repetido.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="case-carousel case-carousel--personas" data-case-carousel data-carousel-centered tabindex="0" aria-label="Telas sanitizadas do sistema Web Dev 2.0">
+        <div class="case-carousel__track">
+          <figure class="case-carousel__item" data-case-zoom>
+            <img src="/assets/projetos/web-dev/webdev-dashboard.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Dashboard sanitizado do sistema Web Dev com indicadores operacionais">
+          </figure>
+          <figure class="case-carousel__item" data-case-zoom>
+            <img src="/assets/projetos/web-dev/webdev-clientes.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Lista sanitizada de clientes ativos no sistema Web Dev">
+          </figure>
+          <figure class="case-carousel__item" data-case-zoom>
+            <img src="/assets/projetos/web-dev/webdev-protocolos-cliente.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Tela sanitizada de protocolos por cliente no sistema Web Dev">
+          </figure>
+        </div>
+      </div>
+
+      <section class="case-section">
+        <h2>O Resultado</h2>
+        <div class="case-copy">
+          <p>O sistema entrou em produção em webdev.doispalitosmkt.com.br e virou a fonte principal da operação, com módulos de clientes, protocolos, senhas internas, usuários, logs, campos extras e notas inline.</p>
+        </div>
+
+        <div class="case-stats">
+          <div class="case-stat">
+            <strong>29</strong>
+            <span>clientes ativos no dashboard operacional</span>
+          </div>
+          <div class="case-stat">
+            <strong>1.044</strong>
+            <span>tarefas de protocolo monitoradas no sistema</span>
+          </div>
+          <div class="case-stat">
+            <strong>100%</strong>
+            <span>do time usando o sistema como fonte principal da operação</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>O Maior Aprendizado</h2>
+        <div class="case-copy">
+          <p>Produto interno também é produto:</p>
+          <ul>
+            <li>O valor não estava só em esconder a planilha, mas em criar uma rotina melhor para quem depende daqueles dados.</li>
+            <li>A interface não podia parecer landing page. Precisava ser uma ferramenta de trabalho, densa e clara ao mesmo tempo.</li>
+            <li>Iteração é parte do produto: redes sociais, campos extras, notas inline e o confete de conclusão nasceram depois do uso real.</li>
+          </ul>
+        </div>
+
+        <p class="case-quote">O valor não estava em esconder a planilha. Estava em criar uma rotina melhor para quem depende daqueles dados todos os dias.</p>
+      </section>
+    </div>
+  </section>
+  </div>
+</article>

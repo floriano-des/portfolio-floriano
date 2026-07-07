@@ -1,0 +1,630 @@
+---
+layout: case-study-immersive.njk
+permalink: /projetos/quantum-vizz/
+title: "Quantum Vizz · Estudo de caso · Floriano Silva"
+description: "Redesenho de landing page para a Quantum Vizz, com pesquisa, revisão heurística, WordPress, Elementor e teste A/B que levou a conversão de 0,71% para 2,09%."
+bodyClass: "quantum-case-page"
+heroImage: "/assets/projetos/quantum-vizz/cover-hover.webp"
+ogType: "article"
+robots: "index, follow, max-image-preview:large"
+lastmod: "2026-07-07"
+caseKeywords:
+  - "UX Design"
+  - "CRO"
+  - "teste A/B"
+  - "landing page"
+  - "Quantum Vizz"
+---
+
+<article class="immersive-case" data-immersive-case data-case-mode="detailed" data-cs-toc-layout data-cs-toc-scope>
+  <header class="immersive-case__hero">
+    <figure class="immersive-case__cover">
+      <img
+        src="/assets/projetos/quantum-vizz/cover-hover.webp"
+        srcset="/assets/projetos/quantum-vizz/cover-hover-768.webp 768w, /assets/projetos/quantum-vizz/cover-hover.webp 1448w"
+        sizes="(max-width: 980px) calc(100vw - 32px), 916px"
+        width="1448"
+        height="1086"
+        alt="Landing page da Quantum Vizz exibida em diferentes telas"
+        fetchpriority="high"
+      >
+    </figure>
+
+    <dl class="immersive-case__meta">
+      <div>
+        <dt>Meu papel</dt>
+        <dd>UX Designer, da pesquisa à implementação</dd>
+      </div>
+      <div>
+        <dt>Período</dt>
+        <dd>8 semanas em 2025, do diagnóstico ao teste A/B.</dd>
+      </div>
+    </dl>
+  </header>
+
+  <div class="case-mode-switch" role="tablist" aria-label="Versão do case" data-case-mode-switch>
+    <button type="button" role="tab" aria-selected="true" data-case-mode-button="detailed">Detalhado</button>
+    <button type="button" role="tab" aria-selected="false" data-case-mode-button="tldr">Resumo</button>
+  </div>
+
+  <aside class="cs-toc immersive-case__toc" aria-label="Índice do case" data-cs-toc>
+    <p class="cs-toc__title">Neste case</p>
+    <nav aria-label="Seções do case">
+      <ul class="cs-toc__list"></ul>
+    </nav>
+  </aside>
+
+  <div class="case-mode-stage" data-case-mode-stage>
+  <section class="case-mode-panel case-mode-panel--detailed" role="tabpanel" data-case-mode-panel="detailed">
+    <div class="case-content">
+      <h1 class="case-title">Quantum Vizz</h1>
+      <p class="case-lead">Redesenho da landing page de um estúdio de visualização 3D. A página recebia muitos cliques do Google Ads, mas quase não gerava contatos. Pesquisa, reorganização do conteúdo e teste A/B levaram a conversão de 0,71% para 2,09%.</p>
+
+      <h2 class="case-overview-title">Visão Geral</h2>
+      <dl class="case-facts">
+        <div class="case-fact">
+          <dt>Time</dt>
+          <dd>Eu como UX Designer dentro da agência, em contato direto com o Iago, fundador do estúdio, e com o time de mídia.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Métodos</dt>
+          <dd>Pesquisa quantitativa com 19 arquitetos, inspeção de usabilidade guiada por heurísticas, benchmark de concorrentes e teste A/B.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Ferramentas</dt>
+          <dd>Figma, WordPress, Elementor, Hotjar, Google Analytics e Google Ads.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Principal resultado</dt>
+          <dd>Conversão de 0,71% para 2,09%, um aumento de 194%, e tempo médio de sessão 42,8% maior, sem aumentar o orçamento de mídia.</dd>
+        </div>
+      </dl>
+
+      <figure class="case-figure">
+        <div class="case-figure__media case-figure__media--video">
+          <video src="/assets/projetos/quantum-vizz/v2/versao-nova-lp.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Navegação pela nova versão da landing page da Quantum Vizz"></video>
+        </div>
+        <figcaption class="case-caption">A nova versão da landing page, implementada no WordPress com Elementor</figcaption>
+      </figure>
+
+      <p class="case-quote">Eu não precisava de uma página mais bonita. Precisava descobrir por que quem clicava no anúncio não chamava no WhatsApp. A resposta estava na ordem do conteúdo.</p>
+
+      <section class="case-section" id="sec-contexto" data-cs-section data-cs-label="Contexto">
+        <h2>1. O contexto e o problema</h2>
+        <div class="case-copy">
+          <p>A Quantum Vizz é um estúdio fundado por Iago Godoy, designer 3D com formação em interiores e produtos. O estúdio tinha site, redes sociais e uma página de campanha para Google Ads, mas ainda dependia muito de indicação para vender.</p>
+          <p>O cliente do projeto era o Iago. O usuário final da página era outro: arquitetos e profissionais de interiores que precisavam avaliar rápido se valia a pena chamar o estúdio no WhatsApp.</p>
+          <p>Os anúncios atraíam cliques. O CTR era de 8%, acima da média do setor, estimada em 6,6% pela <a href="https://www.wordstream.com/ppc-benchmarks" target="_blank" rel="noopener noreferrer">WordStream, PPC Benchmarks</a>. O problema vinha depois: menos de 1% dos visitantes clicava no botão principal, o WhatsApp. <strong>A hipótese inicial foi simples:</strong> o gargalo estava na experiência da página depois do clique.</p>
+        </div>
+        <div class="case-callout">
+          <h3>Briefing e restrições:</h3>
+          <div class="case-copy">
+            <ul>
+              <li>Negócio: visualização 3D para arquitetura, interiores e produtos.</li>
+              <li>Objetivo: transformar tráfego pago em contatos qualificados.</li>
+              <li>Macroconversão: clique no WhatsApp.</li>
+              <li>Público-alvo: arquitetos e profissionais de interiores.</li>
+              <li>Restrições: manter WordPress e Elementor, trabalhar sobre uma página já existente e não aumentar o orçamento de mídia.</li>
+              <li>Acesso inicial: Google Ads, página antiga, Figma e Hotjar.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-pesquisa" data-cs-section data-cs-label="Pesquisa">
+        <h2>2. A pesquisa com arquitetos</h2>
+        <div class="case-copy">
+          <p>Antes de mexer na página, eu precisava entender quem era o cliente real do serviço. A pesquisa não estava no escopo inicial, então montei por conta própria um questionário curto para tirar a discussão do campo do gosto pessoal.</p>
+          <p>O formulário recebeu 19 respostas de arquitetos, divulgado em grupos de Facebook, Telegram e contatos diretos da área. Foi pesquisa possível para contexto de agência: barata, rápida e suficiente para orientar hipóteses.</p>
+          <p><strong>Os principais achados:</strong></p>
+          <ul>
+            <li>63% dos 19 respondentes tinham mais de 5 anos de atuação.</li>
+            <li>47% dos 19 nunca tinham contratado renderização 3D, sinal de que a página precisava educar sem enrolar.</li>
+            <li>Entre os 10 que já contratavam, 9 (90%) usavam 3D para apresentar melhor o projeto ao cliente final.</li>
+            <li>Preço e qualidade visual eram os critérios mais fortes na contratação.</li>
+            <li>Indicação e Instagram apareciam como caminhos mais fortes que Google, então quem chegava pelo anúncio precisava confiar rápido.</li>
+            <li>Nas respostas abertas, os termos de busca giravam em torno de "render", "render arquitetura", "maquete eletrônica", "visualização arquitetônica" e "3D para interiores".</li>
+            <li>Nos critérios de portfólio, apareceram realismo, qualidade da imagem, iluminação, detalhamento, fidelidade e ângulo.</li>
+            <li>Entre quem respondeu a escala de impacto, todas as notas válidas ficaram entre 8 e 10.</li>
+          </ul>
+          <p>Esse último ponto virou o centro do diagnóstico. O arquiteto sabe que imagem 3D vende, mas é o portfólio que convence. Quem chega por anúncio não quer decifrar a marca primeiro. Quer ver o trabalho pronto.</p>
+        </div>
+
+        <div class="case-carousel case-carousel--charts" data-case-carousel tabindex="0" aria-label="Gráficos e respostas abertas da pesquisa com arquitetos">
+          <div class="case-carousel__track">
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/quantum-vizz/pesquisa/forms-habito-contratacao-3d.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Gráfico sobre frequência de contratação de serviços de renderização 3D">
+              </div>
+              <figcaption class="case-caption">Quase metade nunca tinha contratado 3D</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/quantum-vizz/pesquisa/forms-motivo-contratacao.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Gráfico sobre motivo de contratação de renderização 3D">
+              </div>
+              <figcaption class="case-caption">O motivo dominante: apresentar melhor o projeto</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/quantum-vizz/pesquisa/forms-criterios-contratacao.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Gráfico sobre critérios de contratação de renderização 3D">
+              </div>
+              <figcaption class="case-caption">Preço e qualidade visual concentravam a decisão</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/quantum-vizz/pesquisa/forms-canais-descoberta.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Gráfico sobre canais usados para encontrar profissionais de 3D">
+              </div>
+              <figcaption class="case-caption">Indicação e Instagram eram caminhos fortes</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/quantum-vizz/pesquisa/forms-impacto-qualidade-venda.webp" width="1254" height="1254" loading="lazy" decoding="async" alt="Gráfico sobre impacto da qualidade do 3D na venda do projeto">
+              </div>
+              <figcaption class="case-caption">Notas entre 8 e 10 para o impacto do 3D na venda</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/quantum-vizz/pesquisa/forms-termos-busca-google-respostas.webp" width="1124" height="914" loading="lazy" decoding="async" alt="Respostas abertas sobre palavras buscadas no Google">
+              </div>
+              <figcaption class="case-caption">Termos reais de busca que orientaram a copy</figcaption>
+            </figure>
+            <figure class="case-carousel__item">
+              <div class="case-carousel__image" data-case-zoom>
+                <img src="/assets/projetos/quantum-vizz/pesquisa/forms-criterios-portfolio-respostas.webp" width="1090" height="924" loading="lazy" decoding="async" alt="Respostas abertas sobre critérios de avaliação de portfólio 3D">
+              </div>
+              <figcaption class="case-caption">Realismo, iluminação e detalhe sustentaram a decisão de subir a galeria</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <figure class="case-figure case-figure--within case-figure--phone">
+          <div class="case-figure__media" data-case-zoom>
+            <img src="/assets/projetos/quantum-vizz/pesquisa/divulgacao-pesquisa-facebook-crop.webp" width="668" height="1323" loading="lazy" decoding="async" alt="Publicação usada para divulgar a pesquisa com arquitetos">
+          </div>
+          <figcaption class="case-caption">Pesquisa divulgada por iniciativa própria, fora do escopo do projeto, para validar o redesign com dados reais.</figcaption>
+        </figure>
+
+        <div class="case-copy case-section--compact">
+          <p>Também revisei três concorrentes diretos. Os mais fortes colocavam o portfólio logo no topo e usavam termos mais próximos da busca real dos arquitetos.</p>
+          <p><strong>Baseline disponível antes do redesenho:</strong> conversão de 0,71%, CTR acima de 8% e saída de cerca de 50% dos visitantes antes da galeria.</p>
+        </div>
+
+        <div class="case-stats">
+          <div class="case-stat">
+            <strong>19</strong>
+            <span>arquitetos responderam à pesquisa que orientou o reposicionamento da página.</span>
+          </div>
+          <div class="case-stat">
+            <strong>8%+</strong>
+            <span>de CTR nas campanhas de Google Ads. O tráfego chegava, mas a página não convertia.</span>
+          </div>
+          <div class="case-stat">
+            <strong>0,71%</strong>
+            <span>era a taxa de conversão inicial registrada antes do redesenho.</span>
+          </div>
+          <div class="case-stat">
+            <strong>50%</strong>
+            <span>dos visitantes saíam antes de chegar ao portfólio, que estava quase no fim da página.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-usabilidade" data-cs-section data-cs-label="Usabilidade">
+        <h2>3. O que a página antiga colocava no caminho</h2>
+        <div class="case-copy">
+          <p>Para complementar a pesquisa, fiz uma inspeção de usabilidade da página antiga e de três concorrentes diretos, guiada pelas 10 heurísticas de Nielsen. Foi uma avaliação de um único especialista, eu, e não uma avaliação heurística formal com três a cinco avaliadores. Por isso trato os achados como hipóteses fortes, não como veredito fechado.</p>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media case-figure__media--video">
+            <video src="/assets/projetos/quantum-vizz/v2/versao-antiga-lp.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Navegação pela versão antiga da landing page da Quantum Vizz"></video>
+          </div>
+          <figcaption class="case-caption">A versão antiga da landing page: logo em destaque, portfólio escondido e dois botões concorrendo</figcaption>
+        </figure>
+
+        <div class="case-copy case-section--compact">
+          <p>Os gargalos mais importantes, com a heurística (ou o princípio de UX) que cada um tensiona:</p>
+          <ul>
+            <li><strong>Portfólio escondido</strong> (reconhecimento em vez de memória). O principal argumento de venda aparecia quase no fim da página.</li>
+            <li><strong>Texto desalinhado da busca</strong> (correspondência com o mundo real). A página falava em "visualizações que emocionam", enquanto o público buscava termos como "render arquitetura" e "3D para interiores".</li>
+            <li><strong>CTAs concorrentes</strong> (estética e design minimalista). A revista do Iago e o WhatsApp disputavam atenção, mesmo a campanha precisando levar ao contato.</li>
+            <li><strong>Hierarquia invertida</strong> (arquitetura de informação e modelo mental do usuário, mais do que uma heurística específica). A página explicava antes de provar, mas o visitante precisava ver imagens para decidir se continuava.</li>
+          </ul>
+          <p>O padrão dos concorrentes ajudou a validar a direção: proposta de valor clara no início, portfólio visível cedo e prova social perto da decisão. A galeria escondida deixou de ser uma impressão pessoal e virou hipótese de alto impacto.</p>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-artefatos" data-cs-section data-cs-label="Artefatos">
+        <h2>4. Persona e jornada para deixar o raciocínio visível</h2>
+        <div class="case-copy">
+          <p>Para não deixar as decisões só como opinião, transformei os achados em dois artefatos leves:</p>
+          <ul>
+            <li><strong>Proto-persona:</strong> um retrato do cliente típico, baseado nos 19 respondentes e em dados do II Censo do CAU/BR. Usei "proto" porque não houve entrevistas individuais.</li>
+            <li><strong>Mapa de jornada:</strong> o caminho do arquiteto desde a busca por um profissional de 3D até o pós-serviço, destacando a fase em que a landing page travava: a consideração.</li>
+          </ul>
+          <p>Esses artefatos deixaram claro por que mover a galeria, cortar ruído no CTA e reescrever os textos era uma decisão de experiência, não só de estética.</p>
+        </div>
+
+        <div class="case-carousel case-carousel--personas" data-case-carousel data-carousel-centered tabindex="0" aria-label="Proto-persona e mapa de jornada da Pessoa Arquiteta">
+          <div class="case-carousel__track">
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/quantum-vizz/v2/pessoa-arquiteta.webp" width="2400" height="1357" loading="lazy" decoding="async" alt="Proto-persona Pessoa Arquiteta">
+            </figure>
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/quantum-vizz/v2/jornada-do-usuario-pessoa-arquiteta.webp" width="2400" height="1190" loading="lazy" decoding="async" alt="Mapa de jornada do usuário Pessoa Arquiteta">
+            </figure>
+          </div>
+        </div>
+
+        <div class="case-callout">
+          <h3>Como aumentar a taxa de conversão sem aumentar o investimento em mídia?</h3>
+          <div class="case-copy">
+            <p>Essa foi a pergunta que orientou o redesenho. Os gargalos mapeados:</p>
+            <ul>
+              <li>O portfólio, principal prova de valor para arquitetos, estava escondido quase no fim da página.</li>
+              <li>Os textos não usavam as palavras que o público dizia usar na busca por esse tipo de serviço.</li>
+              <li>Dois botões concorriam pela atenção e diluíam o foco no WhatsApp, que era o objetivo da campanha.</li>
+              <li>A ordem das seções priorizava discurso antes de evidência visual, contrariando o jeito como a pessoa avaliava o serviço.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-processo" data-cs-section data-cs-label="Processo">
+        <h2>5. Do diagnóstico às hipóteses de redesenho</h2>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media case-figure__media--contain" data-case-zoom>
+            <img src="/assets/projetos/quantum-vizz/v2/double-diamond.webp" width="1785" height="881" loading="lazy" decoding="async" alt="Diagrama Double Diamond com duas fases: descoberta e definição do problema, seguidas de desenvolvimento e entrega da solução">
+          </div>
+          <figcaption class="case-caption">O processo seguiu o Double Diamond: expandir para entender o contexto, afunilar para definir o problema, expandir para explorar soluções e afunilar para entregar.</figcaption>
+        </figure>
+
+        <div class="case-copy case-section--compact">
+          <p>Com os dados em mãos, reorganizei a arquitetura da página em torno de uma pergunta prática: o que o arquiteto precisa ver antes de chamar no WhatsApp?</p>
+          <p><strong>As hipóteses priorizadas foram:</strong></p>
+          <ul>
+            <li>Colocar a galeria logo abaixo do topo deve reduzir a saída precoce, porque mostra o trabalho antes de a pessoa decidir ir embora.</li>
+            <li>Um grid de três colunas, sem o filtro cinza que escurecia as fotos, deixa o trabalho visível na hora, sem exigir interação.</li>
+            <li>Um topo com uma frase clara de proposta de valor, no lugar do logo, diz de imediato o que o serviço oferece e para quem.</li>
+            <li>Textos reescritos com as palavras reais das buscas aumentam a sensação de "cheguei no lugar certo" para quem veio do Google.</li>
+            <li>Tirar o botão da revista do caminho principal reduz o ruído e mantém o foco no objetivo.</li>
+          </ul>
+        </div>
+
+        <div class="case-table-wrap">
+          <table class="case-table">
+            <thead>
+              <tr>
+                <th>Evidência</th>
+                <th>Decisão</th>
+                <th>Racional</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Portfólio era o critério mais visual e a galeria antiga ficava depois de muita rolagem.</td>
+                <td>Levar a galeria para a segunda dobra.</td>
+                <td>O visitante precisava validar qualidade antes de ler processo, pacotes ou discurso de marca.</td>
+              </tr>
+              <tr>
+                <td>As respostas abertas falavam em render, maquete eletrônica, visualização arquitetônica e 3D para interiores.</td>
+                <td>Reescrever headline e textos com termos mais próximos da busca.</td>
+                <td>Quem vinha do Google precisava reconhecer em segundos que estava no serviço certo.</td>
+              </tr>
+              <tr>
+                <td>O objetivo da campanha era contato pelo WhatsApp, mas a revista disputava atenção.</td>
+                <td>Remover o CTA concorrente do caminho principal.</td>
+                <td>Menos opções no momento crítico reduzem indecisão e direcionam para a macroconversão.</td>
+              </tr>
+              <tr>
+                <td>Hotjar indicava saída antes da galeria, e os concorrentes fortes mostravam projeto cedo.</td>
+                <td>Priorizar prova visual antes de explicação.</td>
+                <td>Não era só preferência estética: comportamento, concorrência e pesquisa apontavam para a mesma direção.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="case-copy case-section--compact">
+          <p>Essa direção não foi aceita de primeira. O escopo inicial era mais próximo de ajuste visual, e eu precisei defender em reuniões com meu chefe e com o Iago que a página deveria ser refeita com base na pesquisa. O argumento foi: se o problema estava depois do clique, melhorar estética sem reorganizar prova, copy e CTA dificilmente mudaria conversão.</p>
+          <p>O protótipo também não saiu pronto. Trabalhei primeiro no Figma, comparando wireframe e protótipo, ajustando ordem de seções, destaque da galeria, peso do hero e foco do CTA antes de levar a solução para o WordPress. A validação foi enxuta: apresentei a proposta ao time e mostrei a nova estrutura para um arquiteto do meu círculo.</p>
+          <p>Essa conversa com o arquiteto não foi um teste de usabilidade formal. Foi uma checagem visual e comercial: se a landing page parecia clara, se os projetos estavam bons e se ele consideraria contratar o serviço. A resposta foi positiva nos três pontos, então usei isso como sinal qualitativo leve, não como validação estatística.</p>
+          <p>Com a direção aprovada, implementei a nova versão no WordPress com Elementor e subi o teste A/B com tráfego dividido entre V1 e V2. O evento de sucesso foi o clique no WhatsApp, que era a macroconversão da campanha.</p>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-solucao" data-cs-section data-cs-label="Solução">
+        <h2>6. A solução: portfólio antes do discurso</h2>
+        <div class="case-copy">
+          <p>Quatro mudanças resolveram o desalinhamento entre o que a página mostrava e o que o arquiteto precisava decidir:</p>
+          <ul>
+            <li><strong>Portfólio logo abaixo do topo.</strong> A galeria virou o segundo elemento da página.</li>
+            <li><strong>Grade de três colunas, sem filtro escuro.</strong> As imagens ficaram visíveis sem depender de hover ou interação.</li>
+            <li><strong>Topo com proposta de valor.</strong> O logo saiu do lugar principal e deu espaço a uma frase que explicava o serviço.</li>
+            <li><strong>Textos alinhados à busca.</strong> A comunicação saiu de uma promessa genérica e passou a usar termos próximos dos arquitetos.</li>
+          </ul>
+          <p>Para quem não é técnico, a mudança foi simples: mostrar prova antes de discurso. Para quem olha o funil, foi uma redução de fricção entre clique no anúncio, avaliação do serviço e clique no WhatsApp.</p>
+        </div>
+
+        <div class="case-compare">
+          <p class="case-compare__label">Seção 01 · Topo</p>
+          <h3>Proposta de valor no lugar do logo</h3>
+          <div class="case-compare__grid">
+            <div class="case-compare__item" data-case-zoom>
+              <span class="case-compare__tag">Antes</span>
+              <img src="/assets/projetos/quantum-vizz/sec01-hero-antes.webp" width="900" height="601" loading="lazy" decoding="async" alt="Topo original com logo Quantum em destaque">
+            </div>
+            <div class="case-compare__item" data-case-zoom>
+              <span class="case-compare__tag">Depois</span>
+              <img src="/assets/projetos/quantum-vizz/sec01-hero-depois.webp" width="900" height="601" loading="lazy" decoding="async" alt="Topo redesenhado com mensagem de valor em destaque">
+            </div>
+          </div>
+          <p class="case-caption">O topo deixou de priorizar a identidade visual isolada e passou a explicar, em poucos segundos, o que o serviço entregava e para quem.</p>
+        </div>
+
+        <div class="case-compare">
+          <p class="case-compare__label">Seção 02 · Galeria</p>
+          <h3>Portfólio mais cedo na página</h3>
+          <div class="case-compare__grid">
+            <div class="case-compare__item" data-case-zoom>
+              <span class="case-compare__tag">Antes</span>
+              <img src="/assets/projetos/quantum-vizz/sec02-proposta-antes.webp" width="900" height="601" loading="lazy" decoding="async" alt="Segunda dobra original sem galeria de projetos">
+            </div>
+            <div class="case-compare__item" data-case-zoom>
+              <span class="case-compare__tag">Depois</span>
+              <img src="/assets/projetos/quantum-vizz/sec02-galeria-depois.webp" width="900" height="601" loading="lazy" decoding="async" alt="Segunda dobra redesenhada com galeria de projetos">
+            </div>
+          </div>
+          <p class="case-caption">A galeria saiu de uma posição tardia e foi levada para perto do topo, para que o arquiteto visse a prova visual antes de decidir sair.</p>
+        </div>
+
+        <div class="case-compare">
+          <p class="case-compare__label">Seção 03 · Prova</p>
+          <h3>Mais evidência antes da decisão</h3>
+          <div class="case-compare__grid">
+            <div class="case-compare__item" data-case-zoom>
+              <span class="case-compare__tag">Antes</span>
+              <img src="/assets/projetos/quantum-vizz/sec03-narrativa-antes.webp" width="900" height="601" loading="lazy" decoding="async" alt="Terceira dobra original antes da reorganização">
+            </div>
+            <div class="case-compare__item" data-case-zoom>
+              <span class="case-compare__tag">Depois</span>
+              <img src="/assets/projetos/quantum-vizz/sec03-prova-depois.webp" width="900" height="601" loading="lazy" decoding="async" alt="Terceira dobra redesenhada com mais prova visual">
+            </div>
+          </div>
+          <p class="case-caption">A seção passou a aproximar exemplos visuais e sinais de confiança do momento em que a pessoa avalia se continua na página.</p>
+        </div>
+
+        <div class="case-compare">
+          <p class="case-compare__label">Seção 04 · CTA</p>
+          <h3>Chamada final mais direta</h3>
+          <div class="case-compare__grid">
+            <div class="case-compare__item" data-case-zoom>
+              <span class="case-compare__tag">Antes</span>
+              <img src="/assets/projetos/quantum-vizz/sec04-pacotes-antes.webp" width="900" height="601" loading="lazy" decoding="async" alt="Quarta dobra original com pacotes e grid de fotos">
+            </div>
+            <div class="case-compare__item" data-case-zoom>
+              <span class="case-compare__tag">Depois</span>
+              <img src="/assets/projetos/quantum-vizz/sec04-cta-depois.webp" width="900" height="601" loading="lazy" decoding="async" alt="Quarta dobra redesenhada com chamada para ação">
+            </div>
+          </div>
+          <p class="case-caption">O caminho principal ficou mais focado no contato, reduzindo distrações e levando a decisão para o WhatsApp.</p>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-build" data-cs-section data-cs-label="Build e QA">
+        <h2>7. Build e QA: a página também precisava carregar melhor</h2>
+        <div class="case-copy">
+          <p>Além de reorganizar o conteúdo, a nova versão recebeu ajustes técnicos que afetam velocidade, manutenção e conversão.</p>
+          <p>As imagens antigas estavam em PNG, pesando entre 500 KB e 1 MB cada. Converti tudo para WebP e reduzi o peso médio para cerca de 100 KB por imagem. Foi uma queda aproximada de 80% no peso dos arquivos, sem perda perceptível de qualidade.</p>
+          <p>Refiz a construção no Elementor usando cores globais, fontes globais e blocos reutilizáveis. Isso funcionou como um kit simples do projeto: mais consistência visual e menos retrabalho em ajustes futuros.</p>
+          <p>Também simplifiquei o caminho principal da página: menos distrações, CTA focado no WhatsApp e conteúdo organizado para funcionar melhor no celular.</p>
+          <p>Não registrei nota de PageSpeed ou Core Web Vitals antes e depois. Por isso, trato a melhoria de performance como ganho técnico esperado, não como número comprovado.</p>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-impacto" data-cs-section data-cs-label="Impacto">
+        <h2>8. O impacto: +194% de conversão, sem aumentar mídia</h2>
+        <div class="case-copy">
+          <p>O teste A/B rodou com 4.484 sessões no total, divididas quase igualmente entre a versão antiga e a versão nova.</p>
+        </div>
+
+        <div class="case-stats">
+          <div class="case-stat">
+            <strong>0,71%</strong>
+            <span>taxa de conversão da versão antiga</span>
+          </div>
+          <div class="case-stat">
+            <strong>2,09%</strong>
+            <span>taxa de conversão da nova versão</span>
+          </div>
+          <div class="case-stat">
+            <strong>+194%</strong>
+            <span>crescimento relativo confirmado no teste A/B</span>
+          </div>
+        </div>
+
+        <div class="case-table-wrap">
+          <table class="case-table">
+            <thead>
+              <tr>
+                <th>Métrica</th>
+                <th>V1 antiga</th>
+                <th>V2 nova</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sessões</td>
+                <td>2.342</td>
+                <td>2.142</td>
+              </tr>
+              <tr>
+                <td>Conversões</td>
+                <td>16</td>
+                <td>44</td>
+              </tr>
+              <tr>
+                <td>Taxa de conversão</td>
+                <td>0,71%</td>
+                <td>2,09%</td>
+              </tr>
+              <tr>
+                <td>Tempo médio de sessão</td>
+                <td>referência</td>
+                <td>+42,8%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media case-figure__media--contain" data-case-zoom>
+            <img src="/assets/projetos/quantum-vizz/resultado-teste-ab.webp" width="900" height="601" loading="lazy" decoding="async" alt="Resultado do teste A/B com V1 em 0,71% e V2 em 2,09% de conversão">
+          </div>
+          <figcaption class="case-caption">Registro do teste A/B usado para validar o ganho de conversão.</figcaption>
+        </figure>
+
+        <div class="case-callout">
+          <h3>Cálculo do crescimento:</h3>
+          <div class="case-copy">
+            <p>A variação percentual compara a nova taxa com o ponto de partida.</p>
+          </div>
+          <p class="case-formula">((2,09 - 0,71) / 0,71) x 100 = 194,36%</p>
+          <div class="case-copy">
+            <p>Arredondado, o crescimento relativo fica em +194%. O objetivo era comparar o desempenho da V2 contra a V1, não mostrar apenas a diferença absoluta.</p>
+          </div>
+        </div>
+
+        <div class="case-copy case-section--compact">
+          <p>A leitura simples: a nova versão gerou 44 conversões contra 16 da antiga, com o mesmo orçamento de mídia. Para a leitura técnica, o teste de duas proporções indicou diferença significativa, com z aproximado de 4,0 e valor-p menor que 0,001. A ferramenta reportou taxa sobre visitantes únicos, enquanto a tabela mostra sessões totais, então dividir conversões por sessões dá um número um pouco menor, mas a conclusão não muda.</p>
+          <p>Sobre causalidade, sendo honesto: a V2 mudou vários elementos ao mesmo tempo, como galeria, copy, CTA, grid e hero. O teste prova que o conjunto venceu, não qual mudança isolada pesou mais. A direção é coerente, porque pesquisa, benchmark e comportamento apontavam todos para a hierarquia da prova visual. Na V1, o Hotjar mostrava cerca de 50% dos visitantes não chegando à galeria; na V2, ela foi para o início e os dados de navegação mostravam as pessoas vendo os projetos. Ainda assim, isolar o peso de cada peça exigiria testes sequenciais ou multivariados. Por isso trato a reorganização da prova visual como a hipótese mais provável, não como causa única comprovada.</p>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-transparencia" data-cs-section data-cs-label="Transparência">
+        <h2>9. Transparência: o que ficou fora da medição final</h2>
+        <div class="case-copy">
+          <p>Nem todo dado do processo ficou preservado. Os registros de comportamento do Hotjar usados no diagnóstico não estão mais disponíveis para exportação, mas os padrões observados na época, como a saída antes da galeria, orientaram as hipóteses que o teste A/B depois confirmou.</p>
+          <p>Uma ressalva sobre a métrica de sucesso: a conversão medida foi o clique no WhatsApp, a macroconversão definida pela campanha. É um indicador forte de intenção, mas um clique não é o mesmo que um lead qualificado ou uma venda fechada. Essa etapa final do funil ficou fora da minha medição.</p>
+          <p>Também instalei uma pesquisa de satisfação, NPS, durante o teste. A taxa de resposta foi quase zero, o que fazia sentido para esse contexto: quem chega por anúncio está decidindo se chama no WhatsApp, não avaliando a experiência.</p>
+          <p>Alguns dados complementares não foram preservados, como baseline completo de GA4 e medições de PageSpeed antes e depois. Por isso, deixo esses pontos fora da argumentação principal. O impacto central se sustenta no teste A/B.</p>
+        </div>
+      </section>
+
+      <section class="case-section case-section--closing" id="sec-aprendizados" data-cs-section data-cs-label="Aprendizados">
+        <h2>10. Aprendizados e encerramento</h2>
+        <div class="case-copy">
+          <p>O principal aprendizado foi sobre ordem de prioridade. O dono do negócio queria apresentar identidade e processo. O arquiteto que chegava pelo Google queria ver portfólio. Resolver esse desencontro foi o que moveu a métrica.</p>
+          <p>A pesquisa com arquitetos, mesmo pequena, foi suficiente para trocar gosto pessoal por hipótese testável. Ela também revelou que indicação e Instagram tinham mais força que busca no Google, insight que repassei para a equipe de redes sociais.</p>
+          <p>Como próximo passo, eu testaria variações do texto principal e revisaria a seção de pacotes, que ficou depois do botão principal. Também rodaria testes sequenciais para isolar qual das mudanças da V2 mais pesou na conversão, já que o A/B validou o conjunto, não cada peça.</p>
+        </div>
+
+        <div class="case-callout">
+          <h3>Como o projeto terminou:</h3>
+          <div class="case-copy">
+            <p>No início de 2026, o Iago começou um projeto pessoal que reduziu a disponibilidade dele para atender novos clientes. O volume de contatos gerado pela página, somado ao que vinha das redes sociais, com um plano de conteúdo orientado pelos insights da pesquisa, passou da capacidade operacional do estúdio naquele momento. A página foi retirada do ar por decisão do cliente.</p>
+            <p>O encerramento não foi uma falha de resultado. Foi uma consequência de capacidade: o canal funcionava.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <section class="case-mode-panel case-mode-panel--tldr" role="tabpanel" data-case-mode-panel="tldr" hidden>
+    <div class="case-content">
+      <h1 class="case-title">Quantum Vizz: a landing page que quase triplicou a conversão sem um real a mais de mídia</h1>
+
+      <section class="case-section">
+        <h2>O Desafio e a Hipótese</h2>
+        <div class="case-copy">
+          <p>A Quantum Vizz, estúdio de visualização 3D para arquitetura, rodava anúncios no Google com CTR acima de 8%. O problema vinha depois do clique: de cada 100 visitantes, menos de um chamava no WhatsApp, a conversão principal da campanha. A hipótese foi direta: o gargalo estava na experiência da página, não no anúncio.</p>
+        </div>
+        <div class="case-callout">
+          <h3>O Papel e a Execução</h3>
+          <div class="case-copy">
+            <p>Atuei como UX Designer de ponta a ponta. Por iniciativa própria, rodei uma pesquisa com 19 arquitetos, fiz uma inspeção guiada pelas heurísticas de Nielsen e analisei concorrentes. O diagnóstico: o portfólio, principal prova de valor, estava escondido no fim da página. Redesenhei a hierarquia no Figma, reescrevi os textos com os termos reais de busca do público e implementei tudo no WordPress com Elementor, respeitando a restrição de não aumentar o orçamento de mídia.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>O Redesenho: prova antes do discurso</h2>
+        <div class="case-copy">
+          <ul>
+            <li>A galeria de projetos virou o segundo elemento da página, antes do discurso institucional.</li>
+            <li>O topo trocou o logo por uma frase clara de proposta de valor.</li>
+            <li>Os textos passaram a usar as palavras que os arquitetos digitavam no Google.</li>
+            <li>O botão concorrente saiu do caminho, deixando o WhatsApp como foco único.</li>
+          </ul>
+        </div>
+
+        <div class="case-compare">
+          <p class="case-compare__label">Topo da página</p>
+          <h3>Proposta de valor no lugar do logo</h3>
+          <div class="case-compare__grid">
+            <div class="case-compare__item" data-case-zoom>
+              <span class="case-compare__tag">Antes</span>
+              <img src="/assets/projetos/quantum-vizz/sec01-hero-antes.webp" width="900" height="601" loading="lazy" decoding="async" alt="Topo original com logo Quantum em destaque">
+            </div>
+            <div class="case-compare__item" data-case-zoom>
+              <span class="case-compare__tag">Depois</span>
+              <img src="/assets/projetos/quantum-vizz/sec01-hero-depois.webp" width="900" height="601" loading="lazy" decoding="async" alt="Topo redesenhado com mensagem de valor em destaque">
+            </div>
+          </div>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media case-figure__media--video">
+            <video src="/assets/projetos/quantum-vizz/v2/versao-nova-lp.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Navegação pela nova versão da landing page da Quantum Vizz"></video>
+          </div>
+          <figcaption class="case-caption">A nova versão da landing page em navegação</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>O Resultado no Teste A/B</h2>
+        <div class="case-copy">
+          <p>Validei o redesenho em um teste A/B com 4.484 sessões, com tráfego dividido entre a versão antiga e a nova. A V2 gerou 44 conversões contra 16 da V1, com o mesmo orçamento de mídia e diferença estatisticamente significativa (valor-p menor que 0,001).</p>
+        </div>
+
+        <div class="case-stats">
+          <div class="case-stat">
+            <strong>0,71%</strong>
+            <span>taxa de conversão da versão antiga</span>
+          </div>
+          <div class="case-stat">
+            <strong>2,09%</strong>
+            <span>taxa de conversão da nova versão</span>
+          </div>
+          <div class="case-stat">
+            <strong>+194%</strong>
+            <span>crescimento relativo confirmado no teste A/B</span>
+          </div>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media case-figure__media--contain" data-case-zoom>
+            <img src="/assets/projetos/quantum-vizz/resultado-teste-ab.webp" width="900" height="601" loading="lazy" decoding="async" alt="Resultado do teste A/B com V1 em 0,71% e V2 em 2,09% de conversão">
+          </div>
+          <figcaption class="case-caption">Registro do teste A/B usado para validar o ganho de conversão.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>O Maior Aprendizado</h2>
+        <div class="case-copy">
+          <p>O dono do negócio queria apresentar identidade e processo. O arquiteto que chegava pelo Google queria ver portfólio. Resolver esse desencontro foi o que moveu a métrica:</p>
+          <ul>
+            <li>A ordem do conteúdo move conversão. Trazer a prova visual para cima reduziu a dúvida inicial.</li>
+            <li>Pesquisa pequena ainda orienta boas hipóteses. Os 19 respondentes deram direção suficiente para testar melhor.</li>
+            <li>Impacto precisa ser medido com critério. O ganho foi validado em teste A/B, com tráfego dividido e leitura transparente das métricas.</li>
+          </ul>
+        </div>
+
+        <p class="case-quote">O visitante não veio ver uma apresentação. Veio buscar uma prova. Colocar o portfólio antes do discurso foi o que transformou cliques em contatos.</p>
+      </section>
+    </div>
+  </section>
+  </div>
+</article>

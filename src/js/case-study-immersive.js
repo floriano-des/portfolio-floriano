@@ -31,6 +31,9 @@
       ".case-carousel",
       ".case-video",
       ".case-quote",
+      ".case-stats",
+      ".case-compare",
+      ".case-table-wrap",
       ".case-footer-cta"
     ].join(",");
 

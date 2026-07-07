@@ -1,0 +1,346 @@
+---
+layout: case-study-immersive.njk
+permalink: /projetos/bit-system/
+title: "Bit System · Estudo de caso · Floriano Silva"
+description: "Como transformei um design system interno da Dois Palitos em um sistema operacional de marca com documentação, componentes, padrões visuais e camada para IA."
+bodyClass: "bit-case-page"
+heroImage: "/assets/projetos/bit-system/cover-hover.webp"
+ogType: "article"
+robots: "index, follow, max-image-preview:large"
+lastmod: "2026-07-07"
+caseKeywords:
+  - "Design System"
+  - "identidade de marca"
+  - "documentação"
+  - "design com IA"
+  - "Bit System"
+---
+
+<article class="immersive-case" data-immersive-case data-case-mode="detailed" data-cs-toc-layout data-cs-toc-scope>
+  <header class="immersive-case__hero">
+    <figure class="immersive-case__cover">
+      <img
+        src="/assets/projetos/bit-system/cover-hover.webp"
+        srcset="/assets/projetos/bit-system/cover-hover-768.webp 768w, /assets/projetos/bit-system/cover-hover.webp 1448w"
+        sizes="(max-width: 980px) calc(100vw - 32px), 916px"
+        width="1448"
+        height="1086"
+        alt="Visão geral do Bit System em diferentes telas"
+        fetchpriority="high"
+      >
+    </figure>
+
+    <dl class="immersive-case__meta">
+      <div>
+        <dt>Meu papel</dt>
+        <dd>Designer de experiências digitais, criador e mantenedor do sistema</dd>
+      </div>
+      <div>
+        <dt>Status</dt>
+        <dd>v2.1.0 em uso real na operação da agência.</dd>
+      </div>
+    </dl>
+
+    <a class="immersive-case__cta" href="https://bitsystem.doispalitosmkt.com.br/" target="_blank" rel="noopener noreferrer">
+      Ver sistema online
+    </a>
+  </header>
+
+  <div class="case-mode-switch" role="tablist" aria-label="Versão do case" data-case-mode-switch>
+    <button type="button" role="tab" aria-selected="true" data-case-mode-button="detailed">Detalhado</button>
+    <button type="button" role="tab" aria-selected="false" data-case-mode-button="tldr">Resumo</button>
+  </div>
+
+  <aside class="cs-toc immersive-case__toc" aria-label="Índice do case" data-cs-toc>
+    <p class="cs-toc__title">Neste case</p>
+    <nav aria-label="Seções do case">
+      <ul class="cs-toc__list"></ul>
+    </nav>
+  </aside>
+
+  <div class="case-mode-stage" data-case-mode-stage>
+  <section class="case-mode-panel case-mode-panel--detailed" role="tabpanel" data-case-mode-panel="detailed">
+    <div class="case-content">
+      <h1 class="case-title">Bit System</h1>
+      <p class="case-lead">Como organizei a identidade visual, os componentes, os padrões de motion e a documentação da Dois Palitos em um sistema vivo para acelerar entregas sem perder consistência.</p>
+
+      <h2 class="case-overview-title">Visão Geral</h2>
+      <dl class="case-facts">
+        <div class="case-fact">
+          <dt>Time</dt>
+          <dd>Projeto interno da Dois Palitos, conduzido por mim de ponta a ponta, do diagnóstico à documentação online.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Métodos</dt>
+          <dd>Tokens, componentes, receitas, padrões de motion, documentação online e guia para IA.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Ferramentas</dt>
+          <dd>Figma, HTML, CSS, JavaScript e IA.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Principal resultado</dt>
+          <dd>O Bit System virou a referência central da marca, com v2.1.0 em uso, orientando designers, editores, social media, devs e agentes de IA.</dd>
+        </div>
+      </dl>
+
+      <figure class="case-figure">
+        <div class="case-figure__media" data-case-zoom>
+          <img src="/assets/projetos/bit-system/bit-home.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Página inicial do Bit System com chamada principal e atalhos de navegação">
+        </div>
+        <figcaption class="case-caption">Página inicial da documentação online do Bit System</figcaption>
+      </figure>
+
+      <p class="case-quote">A estética já era reconhecível. O que faltava era tirar as decisões da memória do time e colocá-las em um lugar que qualquer pessoa, ou IA, pudesse consultar.</p>
+
+      <section class="case-section" id="sec-contexto" data-cs-section data-cs-label="Contexto">
+        <h2>1. O contexto e o problema</h2>
+        <div class="case-copy">
+          <p>A Dois Palitos já tinha uma estética reconhecível: pixel, neon, preto, contraste alto, linguagem direta e uma energia visual própria. O problema era que essa identidade dependia demais de quem já conhecia a marca.</p>
+          <p>Cada nova peça exigia recuperar decisões anteriores: qual fonte usar, como escrever, quais cores aplicar, como animar, que tipo de botão ou componente manter. O Bit System nasceu para reduzir esse atrito.</p>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-diagnostico" data-cs-section data-cs-label="Diagnóstico">
+        <h2>2. O diagnóstico: o que precisava virar sistema</h2>
+        <div class="case-copy">
+          <p>Olhando para o dia a dia da agência, três necessidades se repetiam e definiram o escopo do sistema:</p>
+        </div>
+
+        <div class="case-stats case-stats--topics">
+          <div class="case-stat">
+            <strong>Consistência</strong>
+            <span>Centralizar cores, tipografia, voz, ícones, componentes e regras para que a marca não mudasse a cada entrega.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Escala</strong>
+            <span>Transformar decisões recorrentes em padrões reutilizáveis para reduzir retrabalho em campanhas, páginas e produtos internos.</span>
+          </div>
+          <div class="case-stat">
+            <strong>IA e documentação</strong>
+            <span>Criar uma fonte clara o suficiente para orientar pessoas e também agentes, prompts e fluxos assistidos por IA.</span>
+          </div>
+        </div>
+
+        <div class="case-callout">
+          <h3>Como transformar uma estética forte em um sistema prático, consultável e útil para o ritmo real de uma agência?</h3>
+          <div class="case-copy">
+            <p>Essa pergunta guiou três princípios:</p>
+            <ol>
+              <li><strong>Decisão antes de componente.</strong> O sistema precisava explicar o porquê dos padrões, não apenas mostrar exemplos bonitos.</li>
+              <li><strong>Uso por função.</strong> Designer, editor, social media, IA e dev deveriam encontrar rapidamente o que precisavam.</li>
+              <li><strong>Documentação viva.</strong> O site precisava ser mais fácil de consultar e atualizar do que um arquivo parado no Figma.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-arquitetura" data-cs-section data-cs-label="Arquitetura">
+        <h2>3. Decisão 01: arquitetura organizada pelo uso, não pelo arquivo</h2>
+        <div class="case-copy">
+          <p>A navegação foi pensada para responder às perguntas mais comuns da operação: onde usar, quais bases seguir, como aplicar identidade, como montar componentes e como gerar variações sem quebrar a marca.</p>
+          <p>A origem do sistema continua sendo a <a href="https://www.figma.com/design/HXUvqiIZK4wdkpdUObXw30/Bit-System?node-id=0-1&t=nXBhpnLIvyuOddn1-1" target="_blank" rel="noopener noreferrer">biblioteca no Figma</a>, mas a consulta do dia a dia acontece na documentação online.</p>
+        </div>
+
+        <div class="case-carousel case-carousel--personas" data-case-carousel data-carousel-centered tabindex="0" aria-label="Telas da arquitetura de navegação do Bit System">
+          <div class="case-carousel__track">
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/bit-system/bit-home.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Página inicial do Bit System com chamada principal e atalhos de navegação">
+            </figure>
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/bit-system/bit-uso-bases.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Seção de uso e bases do Bit System com cards de referência">
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-fundamentos" data-cs-section data-cs-label="Fundamentos">
+        <h2>4. Decisão 02: transformar cor, tipo e voz em regras claras</h2>
+        <div class="case-copy">
+          <p>A base do sistema documenta paleta, contraste, tipografia, tokens e direção verbal para que a marca continue reconhecível em peças comerciais, interfaces e materiais editoriais.</p>
+        </div>
+
+        <div class="case-carousel case-carousel--personas" data-case-carousel data-carousel-centered tabindex="0" aria-label="Telas de fundamentos do Bit System: cores, tipografia e identidade">
+          <div class="case-carousel__track">
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/bit-system/bit-cores.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Página de cores do Bit System">
+            </figure>
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/bit-system/bit-tipografia.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Página de tipografia do Bit System">
+            </figure>
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/bit-system/bit-bases-identidade.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Página de bases e identidade do Bit System">
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-componentes" data-cs-section data-cs-label="Componentes">
+        <h2>5. Decisão 03: componentes e receitas para recombinar</h2>
+        <div class="case-copy">
+          <p>Botões, efeitos de marca, boxes de conteúdo, seções e receitas ajudam o time a sair do zero com uma estrutura coerente. O objetivo não era engessar a criação, era reduzir decisões repetidas.</p>
+        </div>
+
+        <div class="case-carousel case-carousel--personas" data-case-carousel data-carousel-centered tabindex="0" aria-label="Telas de componentes e assets reutilizáveis do Bit System">
+          <div class="case-carousel__track">
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/bit-system/bit-botoes.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Página de botões do Bit System com variações de componentes">
+            </figure>
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/bit-system/bit-assets-reutilizaveis.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Biblioteca de assets reutilizáveis do Bit System">
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-ia" data-cs-section data-cs-label="IA">
+        <h2>6. Decisão 04: um sistema pronto para leitura humana e assistida por IA</h2>
+        <div class="case-copy">
+          <p>A documentação inclui instruções, exemplos e arquivos de referência para que agentes possam gerar peças, páginas e variações respeitando a identidade da marca.</p>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media" data-case-zoom>
+            <img src="/assets/projetos/bit-system/bit-ia.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Página do Bit System com arquivos e instruções para uso com IA">
+          </div>
+          <figcaption class="case-caption">Arquivos e instruções que orientam agentes e prompts a respeitar a identidade da marca</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section" id="sec-motion" data-cs-section data-cs-label="Motion">
+        <h2>7. Decisão 05: documentar o movimento como parte da identidade</h2>
+        <div class="case-copy">
+          <p>O Bit System trata motion como linguagem de marca, com padrões para tempo, easing, glitch, scanlines, blink e outros efeitos que aparecem em interfaces e peças visuais.</p>
+        </div>
+
+        <div class="case-carousel case-carousel--personas" data-case-carousel data-carousel-centered tabindex="0" aria-label="Telas de motion e efeitos de marca do Bit System">
+          <div class="case-carousel__track">
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/bit-system/bit-design-grafico-motion.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Página de design gráfico e motion do Bit System">
+            </figure>
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/bit-system/bit-motion-video.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Página de padrões de motion e vídeo do Bit System">
+            </figure>
+            <figure class="case-carousel__item" data-case-zoom>
+              <img src="/assets/projetos/bit-system/bit-efeitos-marca.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Página de efeitos de marca do Bit System">
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section case-section--closing" id="sec-resultado" data-cs-section data-cs-label="Resultado">
+        <h2>8. Resultado e aprendizados</h2>
+        <div class="case-copy">
+          <p>O Bit System deixou de ser um projeto de organização e virou ferramenta de operação. Hoje ele é a referência central da marca, na versão 2.1.0, consultada no dia a dia por quem cria, edita, publica e desenvolve.</p>
+        </div>
+
+        <div class="case-stats case-stats--topics">
+          <div class="case-stat">
+            <strong>Online</strong>
+            <span>Documentação consultável fora do Figma, com navegação por uso real.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Menos retrabalho</strong>
+            <span>Decisões visuais recorrentes passaram a ter referência clara e reaproveitável.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Mais escala</strong>
+            <span>O sistema passou a orientar designers, social media, editores, devs e IA.</span>
+          </div>
+        </div>
+
+        <div class="case-callout">
+          <h3>O que este projeto prova:</h3>
+          <div class="case-copy">
+            <ul>
+              <li><strong>Consigo transformar linguagem visual em sistema operacional.</strong> O valor do Bit System não está só em documentar estética, mas em tornar decisões de marca fáceis de consultar, aplicar e repetir.</li>
+              <li><strong>Design system precisa nascer do uso real.</strong> Componentes, tokens, motion e receitas só fazem sentido quando respondem dúvidas recorrentes da operação.</li>
+              <li><strong>IA exige documentação mais clara, não menos humana.</strong> Para uma marca ser usada por pessoas e agentes, o sistema precisa explicitar contexto, regras e exemplos.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="case-copy">
+          <p>O sistema segue vivo: cada dúvida nova da operação vira candidata a padrão documentado, e cada padrão documentado reduz uma conversa repetida. É esse ciclo que mantém o Bit System útil em vez de decorativo.</p>
+        </div>
+      </section>
+    </div>
+
+    <a class="case-footer-cta" href="https://bitsystem.doispalitosmkt.com.br/" target="_blank" rel="noopener noreferrer">Ver sistema online</a>
+  </section>
+
+  <section class="case-mode-panel case-mode-panel--tldr" role="tabpanel" data-case-mode-panel="tldr" hidden>
+    <div class="case-content">
+      <h1 class="case-title">Bit System: a identidade da Dois Palitos transformada em um sistema vivo de operação</h1>
+
+      <section class="case-section">
+        <h2>O Desafio</h2>
+        <div class="case-copy">
+          <p>A Dois Palitos tinha uma estética forte e reconhecível, mas as decisões de marca viviam espalhadas entre arquivos, referências, entregas anteriores e memória do time. Cada peça nova exigia recuperar decisões antigas: fonte, cor, voz, animação, componente. Isso custava tempo e arriscava a consistência.</p>
+        </div>
+        <div class="case-callout">
+          <h3>O Papel e a Execução</h3>
+          <div class="case-copy">
+            <p>Conduzi o projeto de ponta a ponta como designer de experiências digitais. Estruturei fundamentos, identidade, componentes, receitas, padrões de motion e tokens, e transformei tudo em uma documentação online que conecta Figma, código e operação. A navegação foi organizada pelo uso real: designer, editor, social media, dev e IA encontram rápido o que precisam.</p>
+          </div>
+        </div>
+      </section>
+
+      <div class="case-carousel case-carousel--personas" data-case-carousel data-carousel-centered tabindex="0" aria-label="Destaques da documentação do Bit System">
+        <div class="case-carousel__track">
+          <figure class="case-carousel__item" data-case-zoom>
+            <img src="/assets/projetos/bit-system/bit-home.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Página inicial do Bit System com chamada principal e atalhos de navegação">
+          </figure>
+          <figure class="case-carousel__item" data-case-zoom>
+            <img src="/assets/projetos/bit-system/bit-cores.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Página de cores do Bit System">
+          </figure>
+          <figure class="case-carousel__item" data-case-zoom>
+            <img src="/assets/projetos/bit-system/bit-botoes.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Página de botões do Bit System com variações de componentes">
+          </figure>
+          <figure class="case-carousel__item" data-case-zoom>
+            <img src="/assets/projetos/bit-system/bit-ia.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Página do Bit System com arquivos e instruções para uso com IA">
+          </figure>
+        </div>
+      </div>
+
+      <section class="case-section">
+        <h2>O Resultado</h2>
+        <div class="case-copy">
+          <p>O Bit System virou a referência central da marca, com a versão 2.1.0 em uso real pela operação. A documentação cobre quatro frentes (fundamentos, identidade, componentes e motion) e inclui uma camada preparada para orientar agentes e prompts de IA.</p>
+        </div>
+
+        <div class="case-stats case-stats--topics">
+          <div class="case-stat">
+            <strong>Online</strong>
+            <span>Documentação consultável fora do Figma, com navegação por uso real.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Menos retrabalho</strong>
+            <span>Decisões visuais recorrentes passaram a ter referência clara e reaproveitável.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Mais escala</strong>
+            <span>O sistema passou a orientar designers, social media, editores, devs e IA.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>O Maior Aprendizado</h2>
+        <div class="case-copy">
+          <p>Design system só funciona quando nasce do uso real:</p>
+          <ul>
+            <li>O valor não está em documentar estética, e sim em tornar decisões de marca fáceis de consultar, aplicar e repetir.</li>
+            <li>Componentes, tokens, motion e receitas só fazem sentido quando respondem dúvidas recorrentes da operação.</li>
+            <li>IA exige documentação mais clara, não menos humana: contexto, regras e exemplos explícitos servem a pessoas e agentes ao mesmo tempo.</li>
+          </ul>
+        </div>
+
+        <p class="case-quote">Um design system não é um arquivo bonito no Figma. É a marca funcionando sem depender da memória de quem a conhece.</p>
+      </section>
+    </div>
+
+    <a class="case-footer-cta" href="https://bitsystem.doispalitosmkt.com.br/" target="_blank" rel="noopener noreferrer">Ver sistema online</a>
+  </section>
+  </div>
+</article>
