@@ -6,9 +6,9 @@ Este arquivo descreve quem é Floriano, qual é o posicionamento do site, como o
 
 ## Quem é Floriano
 
-**Floriano Silva** é um **Designer de experiências digitais** com mais de 3 anos de experiência construindo produtos, sites e experiências digitais. Seu diferencial não está em apenas executar, está em entender o problema de negócio a fundo, estruturar a solução correta e desenvolver a experiência funcional adequada.
+**Floriano Silva** é um **Designer da Web** com mais de 3 anos de experiência criando sites, interfaces e produtos digitais. Atua no encontro entre design de interface e desenvolvimento front-end, pensando o visual desde o início com viabilidade técnica, acessibilidade e performance no navegador.
 
-Ele atua entre negócio, experiência e tecnologia. O repertório cobre UX, estratégia de produto, marketing digital, growth, CRO, analytics, dados, desenvolvimento web e IA aplicada. Não é especialista absoluto em tudo, é um profissional com escuta, leitura de contexto e capacidade de conectar áreas para chegar na solução certa.
+Seu repertório cobre UI, UX, Design Systems, HTML, CSS, JavaScript, acessibilidade, performance web e IA aplicada ao fluxo. O objetivo profissional é evoluir para Design Engineer, aprofundando a ponte entre concepção visual e implementação.
 
 A IA faz parte do método de trabalho, não da identidade. Ela aparece como apoio para desenvolvimento, prototipação e entrega.
 
@@ -19,9 +19,9 @@ A IA faz parte do método de trabalho, não da identidade. Ela aparece como apoi
 
 ## Posicionamento e tom de voz
 
-- O título principal é exatamente: **Designer de experiências digitais**. Não usar o posicionamento antigo como título público.
-- O site comunica: entendimento do problema, estruturação da solução e construção da experiência digital funcional.
-- Design é uma ferramenta, não a identidade. Não posicionar Floriano como "designer que também programa".
+- O título principal é exatamente: **Designer da Web**. Não usar o posicionamento anterior como título público.
+- O site comunica a união entre design de interface e código front-end para criar experiências digitais que funcionam com qualidade no navegador.
+- Não posicionar Floriano como desenvolvedor puro nem como designer distante da implementação. O diferencial está justamente na ponte entre as duas disciplinas.
 - Tom: direto, estratégico, humano. Sem jargões vazios, sem exageros, sem corporativês.
 - O texto soa como alguém que pensa, estrutura e executa, não como consultor que só analisa, nem como alguém que só codifica.
 
@@ -252,10 +252,10 @@ Disponível em todos os templates como `{{ metadata.* }}`. É a fonte de verdade
 
 ```json
 {
-  "title": "Floriano Silva | Designer de experiências digitais",
-  "description": "Crio produtos, sites e experiências digitais que unem UX, estratégia, dados, marketing e tecnologia para resolver problemas de negócio com clareza e resultado.",
-  "profession": "Designer de experiências digitais",
-  "siteName": "Floriano Silva · Designer de experiências digitais"
+  "title": "Floriano Silva | Designer da Web",
+  "description": "Designer da Web que une design de interface e desenvolvimento front-end para criar sites e produtos digitais acessíveis, performáticos e fiéis ao projeto.",
+  "profession": "Designer da Web",
+  "siteName": "Floriano Silva · Designer da Web"
 }
 ```
 

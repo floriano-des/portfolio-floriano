@@ -143,13 +143,13 @@ function normalizePositioningTerms(value) {
   if (!value) return value;
 
   return value
-    .replace(/Sou web designer e atuo principalmente com criação de interfaces e experiências digitais\./gi, 'Atuo principalmente com criação de interfaces e experiências digitais.')
-    .replace(/Ainda sou web designer\./gi, 'Ainda atuo com design e experiências digitais.')
-    .replace(/Como Product Designer orientado a dados/gi, 'Como designer orientado a dados')
-    .replace(/Floriano Silva,<br>\s*UX\s*Designer/gi, 'Floriano Silva,<br>Designer de experiências digitais')
-    .replace(/\bProduct Designer\b/g, 'Designer de experiências digitais')
-    .replace(/\bUX Designer\b/g, 'Designer de experiências digitais')
-    .replace(/\bweb designer\b/gi, 'designer de experiências digitais');
+    .replace(/Sou web designer e atuo principalmente com criação de interfaces e experiências digitais\./gi, 'Sou Designer da Web e atuo principalmente com criação de interfaces e experiências digitais.')
+    .replace(/Ainda sou web designer\./gi, 'Ainda sou Designer da Web.')
+    .replace(/Como Product Designer orientado a dados/gi, 'Como Designer da Web orientado a dados')
+    .replace(/Floriano Silva,<br>\s*UX\s*Designer/gi, 'Floriano Silva,<br>Designer da Web')
+    .replace(/\bProduct Designer\b/g, 'Designer da Web')
+    .replace(/\bUX Designer\b/g, 'Designer da Web')
+    .replace(/\bweb designer\b/gi, 'Designer da Web');
 }
 
 function slugFromMediumUrl(url) {
@@ -233,7 +233,7 @@ function buildBlogPostingJsonLd(post) {
     },
     inLanguage: 'pt-BR',
     isBasedOn: post.sourceUrl,
-    keywords: ['Designer de experiências digitais', 'UX', 'Growth', 'CRO', 'Analytics', 'IA aplicada'],
+    keywords: ['Designer da Web', 'Design de interface', 'UX', 'Front-end', 'Design Systems', 'IA aplicada'],
     wordCount: post.plainText ? post.plainText.split(/\s+/).filter(Boolean).length : undefined,
   };
 
