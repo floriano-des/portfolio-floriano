@@ -144,14 +144,15 @@ lastmod: "2026-06-22"
         <div class="case-copy">
           <p>Descobri que o mercado brasileiro representa cerca de 40% das vendas globais da Panini em anos de Copa. Neste ano, as figurinhas ficariam mais caras e o álbum seria o maior da história. Completar só comprando poderia ultrapassar R$ 4.000, tornando as trocas uma necessidade.</p>
           <p>Os apps existentes sofriam com travamentos e interfaces datadas. Além disso, as trocas aconteciam em grupos de WhatsApp bagunçados. Não existia nenhum sistema de matching parecido com o Tinder para figurinhas. Essa informação acabou me enviesando.</p>
-          <p>Toda a minha descoberta foi baseada em dados secundários (Desk research e análise competitiva). Eu cheguei a montar um survey quantitativo completo para validar hipóteses, mas a execução técnica do banco de dados travou, atrasou duas semanas, e a pesquisa nunca rodou.</p>
+          <p>Toda a minha descoberta foi baseada em dados secundários (Desk research e análise competitiva). Eu cheguei a montar um survey quantitativo completo para validar hipóteses, mas ele dependia de um banco de dados que ficou sob responsabilidade do meu parceiro dev e que nunca veio. Fiquei duas semanas travado esperando, e a pesquisa quantitativa nunca rodou.</p>
+          <p>Só que usar isso de desculpa não fecha. A entrevista qualitativa não precisava de banco nenhum: precisava de umas oito pessoas e um roteiro. Aquelas duas semanas de espera eram exatamente a janela para conversar com usuários, e eu não conversei. Foi uma decisão minha, empurrada pelo prazo, e foi errada.</p>
         </div>
 
         <figure class="case-figure case-figure--within case-figure--research">
           <div class="case-figure__media case-figure__media--app case-figure__media--contain" data-case-zoom>
             <img src="/assets/projetos/mercado-das-figurinhas/pesquisa.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="Pesquisa Trocaê que não foi aplicada">
           </div>
-          <figcaption class="case-caption">Por estar enviesado pelos dados da pesquisa primária, e por outros motivos, acabei não rodando essa pesquisa.</figcaption>
+          <figcaption class="case-caption">Por estar enviesado pelos dados da pesquisa secundária, e por outros motivos, acabei não rodando essa pesquisa.</figcaption>
         </figure>
 
         <div class="case-copy">
@@ -189,7 +190,7 @@ lastmod: "2026-06-22"
         </figure>
 
         <div class="case-copy case-section--compact">
-          <p>Para entender o caminho do usuário, montei uma jornada completa e criei uma matriz de priorização. Um detalhe importante dessa matriz é que o "app nativo" foi colocado em baixo impacto. Foi nesse julgamento que eu mais errei, como descobri depois.</p>
+          <p>Para entender o caminho do usuário, montei uma jornada completa e criei uma matriz de priorização. Um detalhe importante dessa matriz é que o "app nativo" foi colocado em baixo impacto. E aqui preciso ser justo com os fatos: nativo também era uma restrição real de orçamento e prazo naquele momento, então não dá pra jogar tudo na matriz. O erro, esse sim, foi de julgamento. Eu presumi que, se boa parte do público acessa até apps de aposta direto pelo navegador, um webapp bastaria aqui também. Foi uma suposição minha, sem base, que ignorava um detalhe: este público específico troca por app nativo. Foi nesse julgamento que eu mais errei, como descobri depois.</p>
         </div>
 
         <figure class="case-wide" data-case-zoom>
@@ -208,7 +209,9 @@ lastmod: "2026-06-22"
         <h2>4. Prototipação com IA e Desenvolvimento Solo</h2>
         <div class="case-copy">
           <p>Logo no começo, o desenvolvedor parceiro precisou se afastar aos poucos. Eu não quis abandonar a ideia e levei o projeto de ponta a ponta sozinho.</p>
-          <p>Para ganhar tempo, utilizei IAs (Claude Code e Codex) para a geração de telas. Com essas telas em mãos, importei tudo para o Figma usando o plugin html.to.design. Lá dentro fiz os ajustes finos e defini os tokens de fontes e cores. Depois de refinado, voltei do design para o código usando conexão via MCP, permitindo que a IA transformasse o design ajustado em código para o MVP. Escolhi uma experiência minimalista e direta.</p>
+          <p>A primeira decisão de design foi de recorte. Como é um app prático, apostei no essencial: ao logar, o usuário cai num pequeno dashboard que ensina a plataforma e já emenda no que importa — preencher o catálogo e procurar match. A régua era tempo até o valor: cerca de cinco minutos do cadastro ao primeiro uso funcional. Tudo que competia com isso saiu da frente.</p>
+          <p>A interação mais sensível era o match, e aí eu decidi <strong>não</strong> ir direto ao ponto, de propósito. Quando dá match, chega uma notificação, a tela mostra o par e pede uma confirmação explícita antes de qualquer contato, com um aviso claro sobre os riscos de abrir conversa com um estranho. É a mesma preocupação que me fez tirar o chat interno e a persona infantil do escopo: num fluxo que termina jogando o WhatsApp de um lado no do outro, segurança é decisão de design, não detalhe.</p>
+          <p>Para acelerar, gerei as telas com IA (Claude Code e Codex) e defini a identidade e os tokens (fontes e cores) apoiado no Figma. Mas o refinamento de verdade não foi visual, foi de código, versionado no git/GitHub. A primeira entrega da IA era um frankenstein: funcionava pela metade (o match travava dependendo das regras), com layout simples demais, sem identidade, e seções, espaçamentos e fontes cada um puxando pra um lado. Meu trabalho foi esse — apontar, commit a commit, o que estava errado e como consertar, até virar uma interface coerente. A versão crua que eu rejeitei está lá no histórico. Só depois desse refino levei o produto pro teste de usabilidade, e aí sim as pessoas usaram sem tropeçar.</p>
         </div>
 
         <div class="case-carousel case-carousel--gallery" data-case-carousel tabindex="0" aria-label="Galeria de telas do aplicativo">
@@ -279,13 +282,15 @@ lastmod: "2026-06-22"
 
         <div class="case-copy case-section--compact">
           <p>O funil deixou claras as duas paredes que o produto bateu: pedir cerca de 980 marcações logo de cara matava o fluxo, e o problema do "cold start" (se a cidade do usuário estava vazia, ele via zero matches e sumia). Sem massa crítica, o coração do produto não tinha como acender. A meta de ativação não foi batida.</p>
+          <p>Sendo honesto, o cold start é o empty state mais previsível de um produto de rede, e eu até tinha uma resposta para a cidade vazia: a tela pedia para o usuário aumentar o raio de busca. Minha leitura do funil, na época e ainda hoje, é que o gargalo do cold start foi de aquisição. A plataforma rodava e o match funcionava, mas faltou densidade de usuários por região para o sistema ter com quem casar. Um lançamento mais forte e escalonado, trazendo massa crítica cidade a cidade, teria dado combustível para um motor que já estava pronto. Esse foi o meu erro aqui: subestimei o quanto o produto dependia de gente chegando junta e não tratei o lançamento com esse cuidado.</p>
         </div>
       </section>
 
       <section class="case-section" id="sec-campo" data-cs-section data-cs-label="Campo">
         <h2>7. O campo e a verdadeira persona</h2>
         <div class="case-copy">
-          <p>Com o baixo uso do sistema de matching, fiz aquilo que deveria ter feito no começo: fui a campo. Entrei em grupos de troca de figurinhas no WhatsApp de várias regiões, conversei e observei o comportamento real das pessoas.</p>
+          <p>Com o baixo uso do sistema de matching, fiz aquilo que deveria ter feito no começo: fui a campo. Entrei em sete grupos de troca de figurinhas no WhatsApp, de diferentes regiões — do ABC paulista a Belo Horizonte, passando pelo Vale do Paraíba e por Campos —, somando mais de 3,6 mil membros. Ali eu observei o comportamento real das pessoas e puxei conversa no fluxo dos grupos.</p>
+          <p>E preciso ser honesto sobre o método: isso não foi entrevista estruturada. Os grupos eram muito movimentados (um deles acumulava mais de mil mensagens entre uma visita e outra), então não tenho um número fechado de quantas conversas puxei ou de quantas pessoas me responderam. Foi observação de campo, com todas as limitações que isso carrega — o ideal ainda seria rodar as entrevistas com roteiro que faltaram lá no começo. Ainda assim, o padrão que apareceu era grande demais para ignorar.</p>
           <p>A resposta era unânime: as trocas ou acontecem presencialmente, ou através de app nativo. A bagunça do WhatsApp e o encontro na praça não são um problema, <strong>são parte da graça</strong>. É assim que esse mundo funciona.</p>
           <p>Foi só então que consegui montar a persona real, aquela que o projeto pedia desde o primeiro dia: O Trocador de Comunidade.</p>
         </div>
@@ -309,12 +314,14 @@ lastmod: "2026-06-22"
       <section class="case-section case-section--closing" id="sec-aprendizados" data-cs-section data-cs-label="Aprendizados">
         <h2>8. Aprendizados e próximos passos</h2>
         <div class="case-copy">
-          <p>Olhando para trás, consigo nomear com clareza os erros e o que eu faria diferente:</p>
+          <p>Antes de listar o que errei, o que sustentou o trabalho — porque reconhecer isso também é parte do julgamento. Levei um produto real do zero ao ar sozinho: pesquisa, estratégia, UI, protótipo, desenvolvimento, deploy e analytics, tudo instrumentado com GA e Clarity. Quando a ativação não veio, o funil que montei leu o problema com precisão cirúrgica — as duas paredes (as ~980 marcações e o cold start) estavam nítidas nos dados, não no achismo. E tomei pelo menos uma decisão de escopo da qual não abro mão: cortei o chat interno e a persona "Pai/Mãe Coletor" porque o fluxo terminava jogando o WhatsApp de um estranho no de outro, um risco real de segurança e um problema jurídico. Isso é julgamento, não sorte.</p>
+          <p>Dito isso, os erros foram meus e sei nomeá-los com a mesma clareza:</p>
           <ul>
             <li>Eu pulei a etapa que mais importava. A entrevista revela onde você está errado sem perceber.</li>
-            <li>Eu projetei a minha própria lógica no usuário. Tratei a troca como um problema de eficiência a ser otimizado, quando na verdade é um ritual de pertencimento.</li>
+            <li>Eu projetei a minha própria lógica no usuário — duas vezes. Tratei a troca como um problema de eficiência a ser otimizado, quando é um ritual de pertencimento; e presumi que o público se contentaria com um webapp só porque eu me contentaria. A restrição de orçamento era real, mas eu a transformei em convicção em vez de ir checar.</li>
+            <li>Refinei o layer errado. Gastei energia puxando usabilidade (troquei o sino por push, botei bandeiras nos países) enquanto a pergunta que decidia o produto seguia sem resposta: as pessoas querem isso? O Clarity não achava problema de usabilidade nenhum, e o produto falhou mesmo assim.</li>
             <li>Subestimei os concorrentes. Eles também modernizaram as plataformas usando IA e lançaram apps nativos de matching.</li>
-            <li>Errei o modelo de negócio. Cobra o valor de R$ 9,99 por mês foi um impeditivo. No campo ficou claro que o público prefere ver anúncios a investir em uma plataforma nova.</li>
+            <li>Errei o modelo de negócio, e esse eu poderia ter previsto antes de lançar. Cobra o valor de R$ 9,99 por mês num marketplace de duas pontas ainda sem liquidez é cobrar ingresso de sala vazia. O campo só confirmou o que a estratégia já dizia: o público prefere ver anúncios a investir em uma plataforma nova.</li>
           </ul>
         </div>
 
@@ -331,7 +338,7 @@ lastmod: "2026-06-22"
         </div>
 
         <div class="case-copy">
-          <p>Este não foi o lançamento estrondoso que eu sonhei e me doeu ver o projeto falhar na ativação. Mas foi, de longe, a experiência que mais me transformou como designer. Saí com um respeito pelo usuário que eu não tinha antes e com a certeza de que a pergunta certa vale muito mais do que qualquer convicção. Sigo para o próximo desafio com uma cabeça muito mais madura e voltada ao comportamento real das pessoas.</p>
+          <p>Este não foi o lançamento estrondoso que eu sonhei, e me doeu ver o projeto falhar na ativação. E sou honesto: "falar com o usuário antes de construir" não é uma descoberta minha, é o primeiro capítulo de qualquer livro de produto. Eu já sabia disso na teoria. O que este projeto fez foi me obrigar a aprender na pele, gastando cinco meses e um lançamento inteiro para internalizar um fundamento que eu recitava sem viver. Saí com um respeito pelo usuário que eu não tinha antes e com a certeza de que a pergunta certa vale muito mais do que qualquer convicção minha. Sigo para o próximo desafio com uma cabeça muito mais madura e voltada ao comportamento real das pessoas.</p>
         </div>
       </section>
     </div>
