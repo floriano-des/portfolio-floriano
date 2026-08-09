@@ -55,7 +55,7 @@
   visibility: hidden;
   pointer-events: none;
   transform: translateY(-105%);
-  transition: transform 0.7s cubic-bezier(0.76, 0, 0.24, 1);
+  transition: transform 0.46s cubic-bezier(0.76, 0, 0.24, 1);
   will-change: transform;
 }
 

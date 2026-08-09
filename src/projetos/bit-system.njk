@@ -8,6 +8,8 @@ heroImage: "/assets/projetos/bit-system/cover-hover.webp"
 ogType: "article"
 robots: "index, follow, max-image-preview:large"
 lastmod: "2026-07-07"
+caseDetailedReadTime: "4min"
+caseSummaryReadTime: "2min"
 caseKeywords:
   - "Design System"
   - "identidade de marca"
@@ -30,6 +32,8 @@ caseKeywords:
       >
     </figure>
 
+    {% include "partials/case-mode-switch.njk" %}
+
     <dl class="immersive-case__meta">
       <div>
         <dt>Meu papel</dt>
@@ -46,11 +50,6 @@ caseKeywords:
     </a>
   </header>
 
-  <div class="case-mode-switch" role="tablist" aria-label="Versão do case" data-case-mode-switch>
-    <button type="button" role="tab" aria-selected="true" data-case-mode-button="detailed">Detalhado</button>
-    <button type="button" role="tab" aria-selected="false" data-case-mode-button="tldr">Resumo</button>
-  </div>
-
   <aside class="cs-toc immersive-case__toc" aria-label="Índice do case" data-cs-toc>
     <p class="cs-toc__title">Neste case</p>
     <nav aria-label="Seções do case">
@@ -59,7 +58,7 @@ caseKeywords:
   </aside>
 
   <div class="case-mode-stage" data-case-mode-stage>
-  <section class="case-mode-panel case-mode-panel--detailed" role="tabpanel" data-case-mode-panel="detailed">
+  <section class="case-mode-panel case-mode-panel--detailed" id="{{ page.fileSlug }}-panel-detailed" role="tabpanel" aria-labelledby="{{ page.fileSlug }}-tab-detailed" tabindex="0" data-case-mode-panel="detailed">
     <div class="case-content">
       <h1 class="case-title">Bit System</h1>
       <p class="case-lead">Como organizei a identidade visual, os componentes, os padrões de motion e a documentação da Dois Palitos em um sistema vivo para acelerar entregas sem perder consistência.</p>
@@ -269,7 +268,7 @@ caseKeywords:
     <a class="case-footer-cta" href="https://bitsystem.doispalitosmkt.com.br/" target="_blank" rel="noopener noreferrer">Ver sistema online</a>
   </section>
 
-  <section class="case-mode-panel case-mode-panel--tldr" role="tabpanel" data-case-mode-panel="tldr" hidden>
+  <section class="case-mode-panel case-mode-panel--tldr" id="{{ page.fileSlug }}-panel-tldr" role="tabpanel" aria-labelledby="{{ page.fileSlug }}-tab-tldr" tabindex="0" data-case-mode-panel="tldr" hidden>
     <div class="case-content">
       <h1 class="case-title">Bit System: a identidade da Dois Palitos transformada em um sistema vivo de operação</h1>
 

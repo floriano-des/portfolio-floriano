@@ -8,6 +8,8 @@ heroImage: "/assets/projetos/quantum-vizz/cover-hover.webp"
 ogType: "article"
 robots: "index, follow, max-image-preview:large"
 lastmod: "2026-07-07"
+caseDetailedReadTime: "15min"
+caseSummaryReadTime: "3min"
 caseKeywords:
   - "UX Design"
   - "CRO"
@@ -30,6 +32,8 @@ caseKeywords:
       >
     </figure>
 
+    {% include "partials/case-mode-switch.njk" %}
+
     <dl class="immersive-case__meta">
       <div>
         <dt>Meu papel</dt>
@@ -42,11 +46,6 @@ caseKeywords:
     </dl>
   </header>
 
-  <div class="case-mode-switch" role="tablist" aria-label="Versão do case" data-case-mode-switch>
-    <button type="button" role="tab" aria-selected="true" data-case-mode-button="detailed">Detalhado</button>
-    <button type="button" role="tab" aria-selected="false" data-case-mode-button="tldr">Resumo</button>
-  </div>
-
   <aside class="cs-toc immersive-case__toc" aria-label="Índice do case" data-cs-toc>
     <p class="cs-toc__title">Neste case</p>
     <nav aria-label="Seções do case">
@@ -55,7 +54,7 @@ caseKeywords:
   </aside>
 
   <div class="case-mode-stage" data-case-mode-stage>
-  <section class="case-mode-panel case-mode-panel--detailed" role="tabpanel" data-case-mode-panel="detailed">
+  <section class="case-mode-panel case-mode-panel--detailed" id="{{ page.fileSlug }}-panel-detailed" role="tabpanel" aria-labelledby="{{ page.fileSlug }}-tab-detailed" tabindex="0" data-case-mode-panel="detailed">
     <div class="case-content">
       <h1 class="case-title">Quantum Vizz</h1>
       <p class="case-lead">Redesenho da landing page de um estúdio de visualização 3D. A página recebia muitos cliques do Google Ads, mas quase não gerava contatos. Pesquisa, reorganização do conteúdo e teste A/B levaram a conversão de 0,71% para 2,09%.</p>
@@ -531,7 +530,7 @@ caseKeywords:
     </div>
   </section>
 
-  <section class="case-mode-panel case-mode-panel--tldr" role="tabpanel" data-case-mode-panel="tldr" hidden>
+  <section class="case-mode-panel case-mode-panel--tldr" id="{{ page.fileSlug }}-panel-tldr" role="tabpanel" aria-labelledby="{{ page.fileSlug }}-tab-tldr" tabindex="0" data-case-mode-panel="tldr" hidden>
     <div class="case-content">
       <h1 class="case-title">Quantum Vizz: a landing page que quase triplicou a conversão sem um real a mais de mídia</h1>
 

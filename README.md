@@ -70,7 +70,7 @@ floriano-des-br/
 │   ├── _includes/                    # Layouts e partials reutilizáveis
 │   │   ├── layouts/
 │   │   │   ├── base.njk              # Layout base (html, head, nav, footer)
-│   │   │   └── case-study-md.njk     # Template compartilhado dos seis cases principais
+│   │   │   └── case-study-immersive.njk # Template dos cases detalhados e resumidos
 │   │   └── partials/
 │   │       ├── nav.njk               # Navbar responsiva com hamburger mobile
 │   │       ├── footer.njk            # Rodapé com CTA de contato
@@ -85,9 +85,7 @@ floriano-des-br/
 │   │   ├── style.footer-motion.css
 │   │   ├── style.pages.css
 │   │   ├── style.responsive.css
-│   │   ├── case-study.core.css
-│   │   ├── case-study.projects.css
-│   │   └── case-study.extras.css
+│   │   └── case-study-immersive.css   # Estilos compartilhados dos cases
 │   │
 │   ├── js/
 │   │   ├── main.js                   # Interações globais
@@ -101,13 +99,14 @@ floriano-des-br/
 │   │   ├── fonts/                    # Fontes locais e licenças
 │   │   └── sobre/                    # Fotos pessoais para a página Sobre
 │   │
-│   ├── projetos/                     # Case studies principais em Markdown
-│   │   ├── quantum-vizz.md           # +194% conversão (Growth / CRO)
-│   │   ├── 2p-web-dev.md             # Produto interno com login e controle
-│   │   ├── mercado-das-figurinhas.md
-│   │   ├── bit-system.md             # Design system para escalabilidade
-│   │   ├── farm-well-hub.md          # Plataforma com foco em acessibilidade
-│   │   ├── olho-vivo.md              # Pesquisa sobre participação política
+│   ├── projetos/                     # Case studies principais em Nunjucks
+│   │   ├── cafe-invest.njk           # Web design e implementação
+│   │   ├── quantum-vizz.njk          # +194% conversão (Growth / CRO)
+│   │   ├── 2p-web-dev.njk            # Produto interno com login e controle
+│   │   ├── mercado-das-figurinhas.njk
+│   │   ├── bit-system.njk            # Design system para escalabilidade
+│   │   ├── farm-well-hub.njk         # Plataforma com foco em acessibilidade
+│   │   ├── olho-vivo.njk             # Pesquisa sobre participação política
 │   │   └── design-grafico.njk        # Portfólio de design visual
 │   │
 │   ├── index.njk                     # Home (hero, stats, 6 projetos, depoimentos, sobre, reflexões)

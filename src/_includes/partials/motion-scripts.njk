@@ -3,7 +3,7 @@
 <script src="/js/motion/preloader.js?v={{ '/js/motion/preloader.js' | assetVersion }}" defer></script>
 {% endif %}
 <script src="/js/motion/footer-clock.js?v={{ '/js/motion/footer-clock.js' | assetVersion }}" defer></script>
-{% if motionContext == "case" or motionContext == "immersive" %}
+{% if motionContext == "immersive" %}
 <script src="/js/motion/case-toc.js?v={{ '/js/motion/case-toc.js' | assetVersion }}" defer></script>
 {% endif %}
 <script>
@@ -21,11 +21,6 @@
       "/js/motion/floating-menu.js?v={{ '/js/motion/floating-menu.js' | assetVersion }}",
       "/js/motion/magnetic.js?v={{ '/js/motion/magnetic.js' | assetVersion }}",
       "/js/motion/count-up.js?v={{ '/js/motion/count-up.js' | assetVersion }}"
-      {% if motionContext == "case" %},
-      "/js/motion/section-colors.js?v={{ '/js/motion/section-colors.js' | assetVersion }}",
-      "/js/motion/image-parallax.js?v={{ '/js/motion/image-parallax.js' | assetVersion }}",
-      "/js/motion/cs-content-reveals.js?v={{ '/js/motion/cs-content-reveals.js' | assetVersion }}"
-      {% endif %}
       {% if motionContext == "home" %},
       "/js/motion/home-marquee.js?v={{ '/js/motion/home-marquee.js' | assetVersion }}",
       "/js/motion/section-curves.js?v={{ '/js/motion/section-curves.js' | assetVersion }}"

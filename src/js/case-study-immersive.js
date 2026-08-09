@@ -1,8 +1,7 @@
 (function () {
   "use strict";
 
-  // Interações exclusivas do template imersivo. Este arquivo não deve assumir
-  // a estrutura dos cases que continuam usando case-study-md.njk.
+  // Interações exclusivas do template imersivo usado pelos cases do portfólio.
   var root = document.querySelector("[data-immersive-case]");
   if (!root) return;
 
@@ -13,6 +12,8 @@
   var modeStage = root.querySelector("[data-case-mode-stage]");
   var backToTop = document.querySelector("[data-back-to-top]");
   var modeAnimationId = 0;
+  var modeAnimationTimer = 0;
+  var modePreferenceKey = "portfolio-case-mode";
 
   function prepareMotion() {
     var selector = [
@@ -44,13 +45,13 @@
 
     var heroMotion = [
       root.querySelector(".immersive-case__cover"),
+      modeSwitch,
       root.querySelector(".immersive-case__meta"),
-      root.querySelector(".immersive-case__cta"),
-      modeSwitch
+      root.querySelector(".immersive-case__cta")
     ];
 
-    heroMotion.forEach(function (element, index) {
-      if (!element || index === 0) return;
+    heroMotion.filter(Boolean).forEach(function (element, index) {
+      if (index === 0) return;
       element.setAttribute("data-delay", String(index));
     });
 
@@ -104,6 +105,82 @@
     });
   }
 
+  function normalizeMode(mode) {
+    return mode === "tldr" || mode === "detailed" ? mode : null;
+  }
+
+  function getCurrentMode() {
+    var rootMode = normalizeMode(root.getAttribute("data-case-mode"));
+    if (rootMode) return rootMode;
+
+    var selectedButton = modeButtons.find(function (button) {
+      return button.getAttribute("aria-selected") === "true";
+    });
+
+    if (selectedButton) {
+      return normalizeMode(selectedButton.getAttribute("data-case-mode-button"));
+    }
+
+    var visiblePanel = modePanels.find(function (panel) {
+      return !panel.hidden;
+    });
+
+    return visiblePanel
+      ? normalizeMode(visiblePanel.getAttribute("data-case-mode-panel"))
+      : "detailed";
+  }
+
+  function getStoredMode() {
+    try {
+      return normalizeMode(window.sessionStorage.getItem(modePreferenceKey));
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function storeMode(mode) {
+    try {
+      window.sessionStorage.setItem(modePreferenceKey, mode);
+    } catch (error) {
+      // A preferência é opcional quando o armazenamento está indisponível.
+    }
+  }
+
+  function trackCaseModeEvent(eventName, data) {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({
+      event: eventName,
+      case_path: window.location.pathname
+    }, data || {}));
+  }
+
+  function prepareModeRelationships() {
+    modeButtons.forEach(function (button, index) {
+      var mode = normalizeMode(button.getAttribute("data-case-mode-button"));
+      var panel = mode && getModePanel(mode);
+      if (!panel) return;
+
+      if (!button.id) button.id = "case-mode-tab-" + mode + "-" + index;
+      if (!panel.id) panel.id = "case-mode-panel-" + mode + "-" + index;
+      button.setAttribute("aria-controls", panel.id);
+      panel.setAttribute("aria-labelledby", button.id);
+    });
+  }
+
+  function updateModePanelAccessibility(nextMode) {
+    modePanels.forEach(function (panel) {
+      var active = panel.getAttribute("data-case-mode-panel") === nextMode;
+      panel.setAttribute("aria-hidden", active ? "false" : "true");
+      panel.inert = !active;
+
+      if (active) {
+        panel.removeAttribute("inert");
+      } else {
+        panel.setAttribute("inert", "");
+      }
+    });
+  }
+
   function updateModeControls(nextMode) {
     modeButtons.forEach(function (button) {
       var active = button.getAttribute("data-case-mode-button") === nextMode;
@@ -131,6 +208,8 @@
   }
 
   function showModeImmediately(nextMode) {
+    updateModePanelAccessibility(nextMode);
+
     modePanels.forEach(function (panel) {
       panel.hidden = panel.getAttribute("data-case-mode-panel") !== nextMode;
       resetModePanel(panel);
@@ -142,20 +221,43 @@
     }
   }
 
+  function finishModeAnimation() {
+    if (!modeStage || !modeStage.classList.contains("is-switching")) return;
+
+    window.clearTimeout(modeAnimationTimer);
+    modeAnimationTimer = 0;
+    modeAnimationId += 1;
+    showModeImmediately(getCurrentMode());
+  }
+
   function setMode(mode, options) {
     var nextMode = mode === "tldr" ? "tldr" : "detailed";
     var config = options || {};
     var nextPanel = getModePanel(nextMode);
+    var previousMode = getCurrentMode();
+
+    if (!nextPanel) return;
+    finishModeAnimation();
+
     var currentPanel = modePanels.find(function (panel) {
       return !panel.hidden;
     });
     var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    if (!nextPanel || (modeStage && modeStage.classList.contains("is-switching"))) return;
-
     updateModeControls(nextMode);
+    updateModePanelAccessibility(nextMode);
     root.setAttribute("data-case-mode", nextMode);
     updateModeUrl(nextMode, config);
+
+    if (config.manual === true) {
+      storeMode(nextMode);
+      trackCaseModeEvent("case_mode_select", {
+        previous_mode: previousMode,
+        selected_mode: nextMode,
+        selection_changed: previousMode !== nextMode
+      });
+    }
+
     modeAnimationId += 1;
 
     if (config.animate === false || reducedMotion || !modeStage || !currentPanel || currentPanel === nextPanel) {
@@ -192,7 +294,7 @@
       centerCarousels();
     });
 
-    window.setTimeout(function () {
+    modeAnimationTimer = window.setTimeout(function () {
       if (animationId !== modeAnimationId) return;
 
       modePanels.forEach(function (panel) {
@@ -202,6 +304,7 @@
 
       modeStage.classList.remove("is-switching");
       modeStage.style.height = "";
+      modeAnimationTimer = 0;
       centerCarousels();
     }, 560);
   }
@@ -209,7 +312,7 @@
   modeButtons.forEach(function (button) {
     button.addEventListener("click", function () {
       var switchTop = modeSwitch.getBoundingClientRect().top;
-      setMode(button.getAttribute("data-case-mode-button"));
+      setMode(button.getAttribute("data-case-mode-button"), { manual: true });
 
       if (switchTop < 0) {
         modeSwitch.scrollIntoView({ block: "start" });
@@ -226,6 +329,65 @@
       modeButtons[nextIndex].click();
     });
   });
+
+  function observeModeSelectorImpression() {
+    if (!modeSwitch) return;
+
+    var impressionTimer = 0;
+    var selectorIsVisible = false;
+    var impressionTracked = false;
+    var observer;
+
+    function clearImpressionTimer() {
+      window.clearTimeout(impressionTimer);
+      impressionTimer = 0;
+    }
+
+    function stopObserving() {
+      clearImpressionTimer();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      if (observer) observer.disconnect();
+    }
+
+    function startImpressionTimer() {
+      if (impressionTracked || impressionTimer || !selectorIsVisible || document.hidden) return;
+
+      impressionTimer = window.setTimeout(function () {
+        impressionTimer = 0;
+        if (!selectorIsVisible || document.hidden || impressionTracked) return;
+
+        impressionTracked = true;
+        trackCaseModeEvent("case_mode_selector_impression", {
+          selected_mode: getCurrentMode()
+        });
+        stopObserving();
+      }, 1000);
+    }
+
+    function handleVisibilityChange() {
+      if (document.hidden) {
+        clearImpressionTimer();
+      } else {
+        startImpressionTimer();
+      }
+    }
+
+    if (!("IntersectionObserver" in window)) return;
+
+    observer = new IntersectionObserver(function (entries) {
+      var entry = entries[0];
+      selectorIsVisible = Boolean(entry && entry.isIntersecting && entry.intersectionRatio >= 0.5);
+
+      if (selectorIsVisible) {
+        startImpressionTimer();
+      } else {
+        clearImpressionTimer();
+      }
+    }, { threshold: [0, 0.5, 1] });
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    observer.observe(modeSwitch);
+  }
 
   function centerCarousel(carousel) {
     if (!carousel.hasAttribute("data-carousel-centered")) return;
@@ -452,8 +614,12 @@
 
   root.querySelectorAll("[data-case-zoom]").forEach(initializeZoomViewer);
 
-  var initialMode = new URLSearchParams(window.location.search).get("mode");
-  setMode(initialMode === "tldr" ? "tldr" : "detailed", { animate: false, updateUrl: false });
+  prepareModeRelationships();
+
+  var urlMode = normalizeMode(new URLSearchParams(window.location.search).get("mode"));
+  var initialMode = urlMode || getStoredMode() || "detailed";
+  setMode(initialMode, { animate: false, updateUrl: false });
+  observeModeSelectorImpression();
 
   window.addEventListener("resize", centerCarousels);
   window.addEventListener("pageshow", centerCarousels);

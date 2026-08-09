@@ -1,0 +1,38 @@
+<div
+  class="case-mode-switch"
+  aria-labelledby="{{ page.fileSlug }}-mode-title"
+  data-case-mode-switch
+>
+  <div class="case-mode-switch__intro">
+    <p class="case-mode-switch__title" id="{{ page.fileSlug }}-mode-title">Escolha o nível de detalhe</p>
+  </div>
+
+  <div class="case-mode-switch__options" role="tablist" aria-labelledby="{{ page.fileSlug }}-mode-title">
+    <button
+      class="case-mode-switch__option"
+      id="{{ page.fileSlug }}-tab-detailed"
+      type="button"
+      role="tab"
+      aria-selected="true"
+      aria-controls="{{ page.fileSlug }}-panel-detailed"
+      data-case-mode-button="detailed"
+    >
+      <span class="case-mode-switch__option-label">Case completo</span>
+      <span class="case-mode-switch__option-time">{{ caseDetailedReadTime }}</span>
+    </button>
+
+    <button
+      class="case-mode-switch__option"
+      id="{{ page.fileSlug }}-tab-tldr"
+      type="button"
+      role="tab"
+      aria-selected="false"
+      aria-controls="{{ page.fileSlug }}-panel-tldr"
+      tabindex="-1"
+      data-case-mode-button="tldr"
+    >
+      <span class="case-mode-switch__option-label">Resumo</span>
+      <span class="case-mode-switch__option-time">{{ caseSummaryReadTime }}</span>
+    </button>
+  </div>
+</div>

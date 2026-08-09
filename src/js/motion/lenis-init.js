@@ -28,7 +28,8 @@
     window.gsap.registerPlugin(window.ScrollTrigger);
 
     lenis = new window.Lenis({
-      lerp: 0.065,
+      // Mais responsivo em telas de 60/75 Hz, sem perder a suavização.
+      lerp: 0.10,
       smoothWheel: true,
       syncTouch: false,
       anchors: false,
@@ -103,4 +104,3 @@
   reducedMotionQuery.addEventListener("change", sync);
   sync();
 }());
-

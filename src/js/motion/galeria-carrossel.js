@@ -17,8 +17,11 @@
   var isSectionHovering = false;
   var rowStates = [];
   var lastFrameTime = 0;
+  var rowAnimationFrame = 0;
   var rowDuration = 32;
   var lightboxImagePromises = {};
+  var isSectionInView = typeof window.IntersectionObserver === 'undefined';
+  var isPageVisible = !document.hidden;
 
   function preloadLightboxImage(src) {
     if (!src) return Promise.resolve(src);
@@ -165,11 +168,59 @@
     if (row2) createRowState(row2, 1, rowDuration);
   }
 
+  function canRunSectionAnimation() {
+    return isSectionInView && isPageVisible;
+  }
+
+  function canRunRowLoop() {
+    return canRunSectionAnimation() && !reduceMotion && canDragRows && !isSectionHovering;
+  }
+
+  function setCssAnimationState() {
+    var playState = canRunSectionAnimation() && !reduceMotion ? 'running' : 'paused';
+
+    [row1, row2].forEach(function (row) {
+      if (row) row.style.animationPlayState = playState;
+    });
+  }
+
+  function stopRowLoop() {
+    if (rowAnimationFrame) {
+      window.cancelAnimationFrame(rowAnimationFrame);
+      rowAnimationFrame = 0;
+    }
+
+    lastFrameTime = 0;
+  }
+
+  function startRowLoop() {
+    if (!canRunRowLoop() || rowAnimationFrame) return;
+    lastFrameTime = 0;
+    rowAnimationFrame = window.requestAnimationFrame(animateRows);
+  }
+
+  function syncSectionAnimation() {
+    setCssAnimationState();
+
+    if (canRunRowLoop()) {
+      startRowLoop();
+    } else {
+      stopRowLoop();
+    }
+  }
+
   function animateRows(now) {
+    rowAnimationFrame = 0;
+
+    if (!canRunRowLoop()) {
+      lastFrameTime = 0;
+      return;
+    }
+
     var delta = lastFrameTime ? (now - lastFrameTime) / 1000 : 0;
     lastFrameTime = now;
 
-    if (!reduceMotion && canDragRows && !isSectionHovering && delta > 0) {
+    if (delta > 0) {
       rowStates.forEach(function (state) {
         if (state.dragging) return;
         state.offset += state.direction * state.speed * delta;
@@ -177,20 +228,34 @@
       });
     }
 
-    window.requestAnimationFrame(animateRows);
+    rowAnimationFrame = window.requestAnimationFrame(animateRows);
   }
 
   if (canDragRows) {
-    window.requestAnimationFrame(animateRows);
-
     section.addEventListener('mouseenter', function () {
       isSectionHovering = true;
+      syncSectionAnimation();
     });
 
     section.addEventListener('mouseleave', function () {
       isSectionHovering = false;
+      syncSectionAnimation();
     });
   }
+
+  if (typeof window.IntersectionObserver !== 'undefined') {
+    new window.IntersectionObserver(function (entries) {
+      isSectionInView = entries[0].isIntersecting;
+      syncSectionAnimation();
+    }).observe(section);
+  }
+
+  document.addEventListener('visibilitychange', function () {
+    isPageVisible = !document.hidden;
+    syncSectionAnimation();
+  });
+
+  syncSectionAnimation();
 
   function getStateForRow(row) {
     return rowStates.find(function (state) {

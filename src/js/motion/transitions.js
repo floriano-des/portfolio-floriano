@@ -2,8 +2,8 @@
   "use strict";
 
   var STORAGE_KEY = "floriano:page-transition";
-  var HOLD_MS = 900;       // tempo visível com o label antes de navegar
-  var ENTER_MS = 700;      // duração da CSS transition (deve bater com style.motion.css)
+  var HOLD_MS = 200;       // breve pausa com o label antes de navegar
+  var ENTER_MS = 460;      // duração da CSS transition (deve bater com style.motion.css)
   var FAILSAFE_MS = 5000;
   var overlay = document.querySelector("[data-page-transition]");
   var label = document.querySelector("[data-page-transition-label]");

@@ -13,6 +13,8 @@ ogImageHeight: 1086
 ogImageAlt: "Site e página de performance da Café Wealth Management exibidos em dispositivos"
 robots: "index, follow, max-image-preview:large"
 lastmod: "2026-08-09"
+caseDetailedReadTime: "10min"
+caseSummaryReadTime: "3min"
 caseKeywords:
   - "Web Design"
   - "WordPress"
@@ -36,6 +38,8 @@ caseKeywords:
       >
     </figure>
 
+    {% include "partials/case-mode-switch.njk" %}
+
     <dl class="immersive-case__meta">
       <div>
         <dt>Meu papel</dt>
@@ -52,11 +56,6 @@ caseKeywords:
     </a>
   </header>
 
-  <div class="case-mode-switch" role="tablist" aria-label="Versão do case" data-case-mode-switch>
-    <button id="cafe-tab-detailed" type="button" role="tab" aria-selected="true" aria-controls="cafe-panel-detailed" data-case-mode-button="detailed">Detalhado</button>
-    <button id="cafe-tab-tldr" type="button" role="tab" aria-selected="false" aria-controls="cafe-panel-tldr" tabindex="-1" data-case-mode-button="tldr">Resumo</button>
-  </div>
-
   <aside class="cs-toc immersive-case__toc" aria-label="Índice do case" data-cs-toc>
     <p class="cs-toc__title">Neste case</p>
     <nav aria-label="Seções do case">
@@ -65,7 +64,7 @@ caseKeywords:
   </aside>
 
   <div class="case-mode-stage" data-case-mode-stage>
-  <section class="case-mode-panel case-mode-panel--detailed" id="cafe-panel-detailed" role="tabpanel" aria-labelledby="cafe-tab-detailed" data-case-mode-panel="detailed">
+  <section class="case-mode-panel case-mode-panel--detailed" id="{{ page.fileSlug }}-panel-detailed" role="tabpanel" aria-labelledby="{{ page.fileSlug }}-tab-detailed" tabindex="0" data-case-mode-panel="detailed">
     <div class="case-content">
       <h1 class="case-title">Café Wealth Management</h1>
       <p class="case-lead">Como Designer da Web, conduzi o novo site do briefing à publicação: organizei o conteúdo, desenhei e apresentei a interface, implementei as páginas principais e criei uma integração para atualizar a performance automaticamente a partir de uma planilha.</p>
@@ -330,7 +329,7 @@ caseKeywords:
     </div>
   </section>
 
-  <section class="case-mode-panel case-mode-panel--tldr" id="cafe-panel-tldr" role="tabpanel" aria-labelledby="cafe-tab-tldr" data-case-mode-panel="tldr" hidden>
+  <section class="case-mode-panel case-mode-panel--tldr" id="{{ page.fileSlug }}-panel-tldr" role="tabpanel" aria-labelledby="{{ page.fileSlug }}-tab-tldr" tabindex="0" data-case-mode-panel="tldr" hidden>
     <div class="case-content">
       <h1 class="case-title">Café Wealth Management: do briefing ao WordPress, com performance atualizada pela planilha</h1>
 
