@@ -1,0 +1,441 @@
+---
+layout: case-study-immersive.njk
+permalink: /projetos/cafe-invest/
+title: "Café Wealth Management · Case de Web Design · Floriano Silva"
+description: "Como redesenhei e implementei o site da Café Wealth Management e conectei Google Sheets, Apps Script e WordPress para atualizar a página de performance."
+bodyClass: "cafe-invest-case-page"
+heroImage: "/assets/projetos/cafe-invest/cover-hover.webp"
+ogType: "article"
+ogImage: "https://floriano.des.br/assets/projetos/cafe-invest/cover-hover.webp"
+ogImageType: "image/webp"
+ogImageWidth: 1448
+ogImageHeight: 1086
+ogImageAlt: "Site e página de performance da Café Wealth Management exibidos em dispositivos"
+robots: "index, follow, max-image-preview:large"
+lastmod: "2026-08-09"
+caseKeywords:
+  - "Web Design"
+  - "WordPress"
+  - "Elementor"
+  - "Google Sheets"
+  - "Apps Script"
+  - "Café Wealth Management"
+---
+
+<article class="immersive-case" data-immersive-case data-case-mode="detailed" data-cs-toc-layout data-cs-toc-scope>
+  <header class="immersive-case__hero">
+    <figure class="immersive-case__cover">
+      <img
+        src="/assets/projetos/cafe-invest/cover-hover.webp"
+        srcset="/assets/projetos/cafe-invest/cover-hover-768.webp 768w, /assets/projetos/cafe-invest/cover-hover.webp 1448w"
+        sizes="(max-width: 980px) calc(100vw - 32px), 916px"
+        width="1448"
+        height="1086"
+        alt="Home e página de performance da Café Wealth Management em um notebook e um tablet"
+        fetchpriority="high"
+      >
+    </figure>
+
+    <dl class="immersive-case__meta">
+      <div>
+        <dt>Meu papel</dt>
+        <dd>Designer da Web, do briefing à publicação e às evoluções pós-lançamento</dd>
+      </div>
+      <div>
+        <dt>Período</dt>
+        <dd>2º semestre de 2025, com evoluções em 2026.</dd>
+      </div>
+    </dl>
+
+    <a class="immersive-case__cta" href="https://cafeinvest.com.br/" target="_blank" rel="noopener noreferrer">
+      Conhecer o site publicado
+    </a>
+  </header>
+
+  <div class="case-mode-switch" role="tablist" aria-label="Versão do case" data-case-mode-switch>
+    <button id="cafe-tab-detailed" type="button" role="tab" aria-selected="true" aria-controls="cafe-panel-detailed" data-case-mode-button="detailed">Detalhado</button>
+    <button id="cafe-tab-tldr" type="button" role="tab" aria-selected="false" aria-controls="cafe-panel-tldr" tabindex="-1" data-case-mode-button="tldr">Resumo</button>
+  </div>
+
+  <aside class="cs-toc immersive-case__toc" aria-label="Índice do case" data-cs-toc>
+    <p class="cs-toc__title">Neste case</p>
+    <nav aria-label="Seções do case">
+      <ul class="cs-toc__list"></ul>
+    </nav>
+  </aside>
+
+  <div class="case-mode-stage" data-case-mode-stage>
+  <section class="case-mode-panel case-mode-panel--detailed" id="cafe-panel-detailed" role="tabpanel" aria-labelledby="cafe-tab-detailed" data-case-mode-panel="detailed">
+    <div class="case-content">
+      <h1 class="case-title">Café Wealth Management</h1>
+      <p class="case-lead">Como Designer da Web, conduzi o novo site do briefing à publicação: organizei o conteúdo, desenhei e apresentei a interface, implementei as páginas principais e criei uma integração para atualizar a performance automaticamente a partir de uma planilha.</p>
+
+      <h2 class="case-overview-title">Visão Geral</h2>
+      <dl class="case-facts">
+        <div class="case-fact">
+          <dt>Time</dt>
+          <dd>Projeto realizado na Dois Palitos · 2P Growth Lab, em contato direto com o cliente e em colaboração com os times comercial, estratégico, de atendimento e desenvolvimento.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Métodos</dt>
+          <dd>Briefing, benchmark, arquitetura de conteúdo, prototipação, apresentação ao cliente, validação e QA.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Ferramentas</dt>
+          <dd>Figma, WordPress, Elementor, Google Sheets, Apps Script e JavaScript.</dd>
+        </div>
+        <div class="case-fact">
+          <dt>Principal resultado</dt>
+          <dd>O site passou a apoiar as conversas do time comercial, ganhou uma página de performance atualizável pela planilha e continuou evoluindo com a implementação do blog.</dd>
+        </div>
+      </dl>
+
+      <figure class="case-figure">
+        <div class="case-figure__media" data-case-zoom>
+          <img src="/assets/projetos/cafe-invest/home-direcao.webp" width="1440" height="1500" loading="lazy" decoding="async" alt="Home publicada da Café Wealth Management, com apresentação institucional e início dos serviços">
+        </div>
+        <figcaption class="case-caption">A presença digital da Café Wealth Management depois do redesign e da implementação no WordPress.</figcaption>
+      </figure>
+
+      <p class="case-quote">O desafio não era só publicar um site mais profissional. Era traduzir confiança para a web e deixar a estrutura pronta para continuar evoluindo depois do lançamento.</p>
+
+      <section class="case-section" id="sec-contexto" data-cs-section data-cs-label="Contexto">
+        <h2>1. Um site que já não representava o negócio</h2>
+        <div class="case-copy">
+          <p>A Café Invest chegou à Dois Palitos com a necessidade de um novo site institucional. A versão anterior havia sido construída pelo próprio cliente e estava hospedada no HubSpot. Ela cumpriu um papel importante no início, mas já não acompanhava a forma como a empresa queria se apresentar ao mercado.</p>
+          <p>O negócio entrava em uma nova fase, agora com o posicionamento Café Wealth Management. Essa definição veio do cliente. Minha responsabilidade foi traduzi-la para a web de forma clara, confiável e coerente com o nível de serviço que a empresa queria comunicar.</p>
+          <p>O site precisava explicar rapidamente quem era a Café, quais serviços oferecia, por que o visitante poderia confiar na equipe e qual seria o próximo passo. Também precisava funcionar como uma apresentação que o time comercial pudesse abrir durante uma conversa e enviar depois dela.</p>
+          <p>Usei o site anterior como ponto de partida. Ele ajudou a identificar quais informações já existiam, o que precisava ser reorganizado e quais lacunas deveriam ser preenchidas na nova estrutura.</p>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media" data-case-zoom>
+            <img src="/assets/projetos/cafe-invest/before-wayback.webp" width="1440" height="1080" loading="lazy" decoding="async" alt="Registro parcial do site anterior da Café Invest no Wayback Machine">
+          </div>
+          <figcaption class="case-caption">Registro parcial da estrutura anterior. O Wayback Machine não preservou todos os assets; por isso, a imagem serve apenas como contexto e não como avaliação visual do trabalho anterior.</figcaption>
+        </figure>
+
+        <div class="case-callout">
+          <h3>O ponto de partida:</h3>
+          <div class="case-copy">
+            <ul>
+              <li><strong>Nova direção:</strong> posicionamento Café Wealth Management definido pelo cliente.</li>
+              <li><strong>Objetivo do site:</strong> elevar a presença institucional e apoiar as conversas comerciais.</li>
+              <li><strong>Implementação:</strong> construir a nova experiência no WordPress com Elementor.</li>
+              <li><strong>Evolução:</strong> criar uma base capaz de receber novas páginas e conteúdos depois da publicação.</li>
+            </ul>
+            <p>Há um <a href="https://web.archive.org/web/20250227235326/https://www.cafeinvest.com.br/" target="_blank" rel="noopener noreferrer">registro parcial da versão anterior no Wayback Machine</a>. Como nem todos os arquivos foram preservados, uso esse material apenas para contextualizar o ponto de partida.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-conteudo" data-cs-section data-cs-label="Conteúdo">
+        <h2>2. Clareza e confiança antes da aparência</h2>
+        <div class="case-copy">
+          <p>Comecei pelo que precisava ser comunicado. Nas reuniões de briefing, reuni informações sobre os serviços, a equipe, os diferenciais, as credenciais, as dúvidas recorrentes e a forma como a Café queria se posicionar.</p>
+          <p>O conteúdo foi construído de forma colaborativa. O cliente era a fonte de conhecimento sobre o negócio; eu organizei esse material, eliminei repetições, adaptei os textos para leitura na web e transformei informações dispersas em uma arquitetura compreensível.</p>
+          <p>Também fiz um benchmark de empresas do segmento para observar como serviços complexos, independência, certificações e equipe eram apresentados. O objetivo não era copiar uma fórmula, mas calibrar a hierarquia e evitar que o novo site parecesse genérico ou excessivamente técnico.</p>
+          <p>Meu papel foi além de desenhar as telas. Eu precisava decidir o que apareceria primeiro, quais informações mereciam destaque, onde uma prova sustentava melhor uma afirmação e como cada seção conduziria à próxima.</p>
+        </div>
+
+        <div class="case-callout">
+          <h3>Como transmitir seriedade sem transformar o site em um bloco de texto financeiro?</h3>
+          <div class="case-copy">
+            <ol>
+              <li><strong>Explicar antes de aprofundar.</strong> O visitante deveria entender a atuação da Café sem precisar dominar o vocabulário do mercado.</li>
+              <li><strong>Aproximar afirmação e evidência.</strong> Credenciais, experiência e equipe precisavam aparecer no contexto em que geravam confiança.</li>
+              <li><strong>Mostrar as pessoas por trás da gestão.</strong> A relação com o cliente era parte importante do serviço e não deveria ficar escondida.</li>
+              <li><strong>Dar um próximo passo claro.</strong> Os CTAs precisavam acompanhar a leitura sem competir com o conteúdo.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-home" data-cs-section data-cs-label="Direção visual">
+        <h2>3. A Home definiu a direção do restante do site</h2>
+        <div class="case-copy">
+          <p>Em vez de desenhar todas as páginas antes do primeiro alinhamento, usei a Home para validar a direção do projeto. Ela concentrava as decisões mais importantes de conteúdo, hierarquia, linguagem visual e navegação.</p>
+          <p>Montei a primeira versão no Figma e preparei uma apresentação para explicar o raciocínio por trás da tela. Não mostrei apenas o resultado: percorri a estrutura, contextualizei as escolhas e abri espaço para o cliente comentar antes que a solução fosse replicada nas outras páginas.</p>
+          <p>A Home antecipou os serviços, colocou credenciais e autorização em contexto, apresentou equipe e diferenciais, respondeu dúvidas frequentes e distribuiu CTAs ao longo da jornada. A intenção não era colocar tudo no topo, mas responder à próxima dúvida no momento certo da rolagem.</p>
+          <p>Depois dos ajustes e da aprovação, essa página virou a referência para o restante do site. Tipografia, componentes, ritmo visual, espaçamentos e padrões de conteúdo passaram a formar uma base comum para as páginas seguintes.</p>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media" data-case-zoom>
+            <img src="/assets/projetos/cafe-invest/figma-apresentacao.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Slide do deck de apresentação explicando a navegação, o hero e o fluxo da Home">
+          </div>
+          <figcaption class="case-caption">O deck transformou as decisões da tela em uma conversa estruturada com o cliente.</figcaption>
+        </figure>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-pdf" tabindex="0" aria-label="Protótipo completo da Home no Figma. Use a rolagem para percorrer a página.">
+            <img src="/assets/projetos/cafe-invest/figma-home-prototipo.webp" width="949" height="8192" loading="lazy" decoding="async" alt="Protótipo vertical completo da Home da Café Wealth Management no Figma">
+          </div>
+          <figcaption class="case-caption">A Home usada para validar a direção antes de escalar o projeto para as outras páginas.</figcaption>
+        </figure>
+
+        <div class="case-callout">
+          <h3>Decisões que organizaram a Home:</h3>
+          <div class="case-copy">
+            <ul>
+              <li>Proposta de valor e ação principal logo no início.</li>
+              <li>Serviços apresentados antes do discurso institucional mais longo.</li>
+              <li>Credenciais, autorização e experiência usadas como sinais de confiança.</li>
+              <li>Equipe visível, com funções e certificações em contexto.</li>
+              <li>Diferenciais e FAQ para reduzir dúvidas antes do contato.</li>
+              <li>CTAs recorrentes, sem interromper a leitura ou criar caminhos concorrentes.</li>
+            </ul>
+            <p>É possível consultar o <a href="https://www.figma.com/deck/4YkPgRPqFDlpN8daqXbHYp" target="_blank" rel="noopener noreferrer">deck usado na apresentação</a> e o <a href="https://www.figma.com/design/1se26eFDfbo7PuVIw4CACY/Site-Caf%C3%A9-Invest?node-id=4832-245" target="_blank" rel="noopener noreferrer">projeto no Figma</a>.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="case-section" id="sec-implementacao" data-cs-section data-cs-label="Implementação">
+        <h2>4. Do Figma ao WordPress, com colaboração e QA</h2>
+        <div class="case-copy">
+          <p>Com a direção aprovada, levei o projeto para o WordPress com Elementor. Implementei as páginas principais e traduzi para o navegador a hierarquia, os componentes e o comportamento responsivo definidos no Figma.</p>
+          <p>Tive o suporte de um estagiário(Nicolas), que desenvolveu as páginas derivadas. Nessa etapa, meu trabalho também passou por orientação, suporte e controle de qualidade: revisei a implementação em relação ao protótipo, ajudei a resolver dúvidas e acompanhei os ajustes necessários antes da publicação.</p>
+          <p>Esse fluxo permitiu dividir a produção sem perder consistência. A Home aprovada funcionou como referência visual e de conteúdo, enquanto o QA manteve as páginas construídas por pessoas diferentes dentro da mesma experiência.</p>
+          <p>O projeto foi colaborativo desde a entrada na agência. Aramis Magwitz trouxe a oportunidade comercial, Leonardo Santos orientou as decisões estratégicas e Palloma Louzada conduziu o atendimento com o cliente. Minha responsabilidade foi manter a continuidade entre briefing, conteúdo, Figma, implementação e qualidade final.</p>
+        </div>
+
+        <div class="case-callout">
+          <h3>Ponta a ponta não significa trabalhar sozinho.</h3>
+          <div class="case-copy">
+            <ul>
+              <li><strong>Aramis Magwitz:</strong> condução comercial da oportunidade.</li>
+              <li><strong>Leonardo Santos:</strong> direção estratégica do projeto.</li>
+              <li><strong>Palloma Louzada:</strong> atendimento e comunicação com o cliente.</li>
+              <li><strong>Nicolas Moraes Oliveira:</strong> desenvolvimento das páginas derivadas, com meu suporte e QA.</li>
+              <li><strong>Meu papel:</strong> briefing, arquitetura de conteúdo, interface, apresentação, páginas principais, suporte à implementação e controle de qualidade.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="case-copy case-section--compact">
+          <p>No vídeo abaixo, apresento o site publicado e as principais decisões do projeto:</p>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media case-figure__media--video">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/xxm4LvujW6o"
+              title="Floriano Silva apresenta o site da Café Wealth Management"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+          <figcaption class="case-caption">Vídeo autoral de apresentação do projeto depois da publicação. <a href="https://youtu.be/xxm4LvujW6o" target="_blank" rel="noopener noreferrer">Assistir no YouTube</a>.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section" id="sec-performance" data-cs-section data-cs-label="Performance">
+        <h2>5. Performance sem reconstruir a página todo mês</h2>
+        <div class="case-copy">
+          <p>Depois do lançamento, surgiu uma necessidade diferente das páginas institucionais. A Café precisava publicar a evolução de uma carteira e compará-la com indicadores como CDI e IPCA. Como os dados seriam consolidados mensalmente, editar indicadores, tabela e gráfico no Elementor criaria retrabalho a cada atualização.</p>
+          <p>A melhor interface para o cliente já existia: o Google Sheets. Em vez de criar um painel administrativo novo, transformei a planilha em uma fonte estruturada para aquela página.</p>
+          <p>Organizei os dados no Sheets, criei um Web App com Google Apps Script para expor as informações e implementei o consumo no WordPress com JavaScript. Quando a página carrega, ela busca os dados, preenche quatro indicadores, monta o histórico mensal em tabela e exibe o gráfico publicado pelo Google Sheets.</p>
+          <p>Na prática, a planilha passou a funcionar como um pequeno CMS para esse recorte do site. O cliente atualiza a fonte que já conhece, e a página recebe os novos dados sem que seja necessário reconstruir o layout no WordPress.</p>
+        </div>
+
+        <ol class="case-stats case-stats--topics case-data-flow" aria-label="Fluxo de atualização da página de performance">
+          <li class="case-stat">
+            <strong>Google Sheets</strong>
+            <span>O cliente mantém os dados mensais na fonte que já conhece.</span>
+          </li>
+          <li class="case-stat">
+            <strong>Apps Script</strong>
+            <span>O Web App organiza e disponibiliza os dados para consulta.</span>
+          </li>
+          <li class="case-stat">
+            <strong>WordPress</strong>
+            <span>A página consulta e apresenta indicadores, histórico e gráfico.</span>
+          </li>
+        </ol>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media" data-case-zoom>
+            <img src="/assets/projetos/cafe-invest/performance-desktop.webp" width="1440" height="2450" loading="lazy" decoding="async" alt="Página de performance em desktop com quatro indicadores, tabela mensal e gráfico comparativo">
+          </div>
+          <figcaption class="case-caption">A <a href="https://cafeinvest.com.br/performance/" target="_blank" rel="noopener noreferrer">página de performance</a> é alimentada automaticamente a partir dos dados organizados no Google Sheets.</figcaption>
+        </figure>
+
+        <figure class="case-figure case-figure--within case-figure--phone">
+          <div class="case-pdf" tabindex="0" aria-label="Página de performance em tela móvel. Use a rolagem para percorrer indicadores, histórico e gráfico.">
+            <img src="/assets/projetos/cafe-invest/performance-mobile.webp" width="390" height="3350" loading="lazy" decoding="async" alt="Página de performance em tela móvel com indicadores, histórico mensal e gráfico">
+          </div>
+          <figcaption class="case-caption">A mesma estrutura adaptada para telas menores, preservando indicadores, histórico e contexto.</figcaption>
+        </figure>
+
+        <div class="case-callout">
+          <h3>O ganho estava no fluxo, não em criar mais uma ferramenta.</h3>
+          <div class="case-copy">
+            <p>A atualização acontece a partir da planilha quando a página é carregada. Ela consulta a fonte e passa a exibir os dados disponíveis sem exigir uma nova montagem no Elementor.</p>
+            <p>O relatório em PDF permanece um download separado e não fez parte dessa automação.</p>
+            <p>A solução foi aprovada e adotada pelo cliente porque preservou uma rotina simples de atualização e manteve o resultado integrado ao site.</p>
+          </div>
+        </div>
+
+        <p class="case-quote">A melhor interface para atualizar os dados já era a planilha. Meu trabalho foi conectá-la ao site sem transferir a complexidade técnica para o cliente.</p>
+      </section>
+
+      <section class="case-section case-section--closing" id="sec-resultado" data-cs-section data-cs-label="Resultado">
+        <h2>6. Um site comercial que continuou evoluindo</h2>
+        <div class="case-copy">
+          <p>O site foi publicado no segundo semestre de 2025 e passou a representar a Café Wealth Management nas conversas com o mercado. Pelo retorno do cliente, o time comercial começou a usá-lo como cartão institucional e apoio para apresentar os serviços.</p>
+          <p>O projeto não ficou congelado depois do lançamento. A estrutura recebeu a página de performance e, em julho de 2026, um blog que também projetei e implementei. A mesma base visual e técnica conseguiu absorver novas necessidades sem romper a experiência já construída.</p>
+          <p>Não havia instrumentação disponível para atribuir conversão, tráfego ou receita ao redesign. Por isso, sustento o resultado no que é verificável neste projeto: adoção pelo comercial, simplificação da atualização de performance e capacidade de evolução depois da entrega inicial.</p>
+        </div>
+
+        <div class="case-stats case-stats--topics">
+          <div class="case-stat">
+            <strong>Comercial</strong>
+            <span>O site passou a apoiar a apresentação da empresa e dos serviços nas conversas de venda.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Operação</strong>
+            <span>Os dados passaram a ser atualizados pela planilha, sem remontar a página a cada período.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Evolução</strong>
+            <span>A base recebeu a página de performance e o blog depois da publicação inicial.</span>
+          </div>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media" data-case-zoom>
+            <img src="/assets/projetos/cafe-invest/blog.webp" width="1440" height="850" loading="lazy" decoding="async" alt="Área de insights da Café Wealth Management com dois cards de artigos">
+          </div>
+          <figcaption class="case-caption">A área de blog integrada à presença digital como uma evolução pós-lançamento.</figcaption>
+        </figure>
+
+        <div class="case-callout">
+          <h3>O que este projeto reforçou na minha atuação:</h3>
+          <div class="case-copy">
+            <ul>
+              <li><strong>Web design não termina no layout.</strong> O resultado depende da continuidade entre conteúdo, interface, implementação e manutenção.</li>
+              <li><strong>Apresentar também é parte do trabalho.</strong> Explicar as decisões ajudou o cliente a avaliar a proposta para além do gosto pessoal.</li>
+              <li><strong>Colaboração exige referência e QA.</strong> Dividir a implementação funcionou porque havia uma direção aprovada e acompanhamento de qualidade.</li>
+              <li><strong>A solução técnica precisa respeitar a rotina.</strong> Integrar a planilha foi mais útil do que obrigar o cliente a aprender um painel novo.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="case-quote">Ser Designer da Web, neste projeto, foi manter a mesma intenção do briefing ao navegador — e continuar cuidando dela quando o site precisou evoluir.</p>
+
+        <a class="case-footer-cta" href="https://cafeinvest.com.br/" target="_blank" rel="noopener noreferrer">Conhecer o site publicado</a>
+      </section>
+    </div>
+  </section>
+
+  <section class="case-mode-panel case-mode-panel--tldr" id="cafe-panel-tldr" role="tabpanel" aria-labelledby="cafe-tab-tldr" data-case-mode-panel="tldr" hidden>
+    <div class="case-content">
+      <h1 class="case-title">Café Wealth Management: do briefing ao WordPress, com performance atualizada pela planilha</h1>
+
+      <section class="case-section">
+        <h2>O Desafio</h2>
+        <div class="case-copy">
+          <p>A Café Invest tinha um site construído pelo próprio cliente e hospedado no HubSpot, mas a presença digital já não acompanhava o novo posicionamento Café Wealth Management. O novo site precisava transmitir confiança, explicar os serviços com clareza e servir de apoio para as conversas do time comercial.</p>
+        </div>
+
+        <div class="case-compare">
+          <p class="case-compare__label">Presença digital</p>
+          <h3>Do site anterior à nova direção institucional</h3>
+          <div class="case-compare__grid">
+            <div class="case-compare__item" data-case-zoom>
+              <span class="case-compare__tag">Antes</span>
+              <img src="/assets/projetos/cafe-invest/before-wayback.webp" width="1440" height="1080" loading="lazy" decoding="async" alt="Registro parcial do site anterior da Café Invest no Wayback Machine">
+            </div>
+            <div class="case-compare__item" data-case-zoom>
+              <span class="case-compare__tag">Depois</span>
+              <img src="/assets/projetos/cafe-invest/after-home.webp" width="1440" height="1080" loading="lazy" decoding="async" alt="Nova Home da Café Wealth Management publicada no WordPress">
+            </div>
+          </div>
+          <p class="case-caption">O registro anterior é parcial porque o Wayback Machine não preservou todos os assets.</p>
+        </div>
+      </section>
+
+      <section class="case-section">
+        <h2>Meu Papel e a Execução</h2>
+        <div class="case-copy">
+          <p>Atuei como Designer da Web do briefing à publicação. Conduzi reuniões com o cliente, organizei e adaptei o conteúdo, fiz benchmark, desenhei a interface no Figma, apresentei a proposta e implementei as páginas principais no WordPress com Elementor.</p>
+          <p>Tive ajuda do estagiário Nicolas, que desenvolveu as páginas derivadas com meu suporte e QA. O projeto também contou com Aramis Magwitz no comercial, Leonardo Santos na direção estratégica e Palloma Louzada no atendimento.</p>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media" data-case-zoom>
+            <img src="/assets/projetos/cafe-invest/figma-apresentacao.webp" width="1920" height="1080" loading="lazy" decoding="async" alt="Slide do Figma usado para apresentar ao cliente as decisões de navegação, conteúdo e interface da Home">
+          </div>
+          <figcaption class="case-caption">A Home foi apresentada primeiro para validar a direção antes de levar o sistema visual às outras páginas.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>A Integração de Performance</h2>
+        <div class="case-copy">
+          <p>Para evitar que a página de performance precisasse ser reconstruída a cada atualização mensal, transformei o Google Sheets em uma fonte estruturada. Um Web App em Apps Script disponibiliza os dados, e o JavaScript no WordPress monta indicadores e tabela e exibe o gráfico publicado pela planilha.</p>
+          <p>Assim, o cliente mantém os dados em uma ferramenta que já conhece, enquanto o site funciona como camada de visualização. A atualização é automática a partir da planilha; o PDF permanece um download separado.</p>
+        </div>
+
+        <ol class="case-stats case-stats--topics case-data-flow" aria-label="Resumo do fluxo de atualização da página de performance">
+          <li class="case-stat">
+            <strong>Google Sheets</strong>
+            <span>Fonte de dados mantida pelo cliente.</span>
+          </li>
+          <li class="case-stat">
+            <strong>Apps Script</strong>
+            <span>Ponte que disponibiliza as informações.</span>
+          </li>
+          <li class="case-stat">
+            <strong>WordPress</strong>
+            <span>Camada que apresenta indicadores, histórico e gráfico.</span>
+          </li>
+        </ol>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-pdf" tabindex="0" aria-label="Página de performance em desktop. Use a rolagem para percorrer indicadores, histórico e gráfico.">
+            <img src="/assets/projetos/cafe-invest/performance-desktop.webp" width="1440" height="2450" loading="lazy" decoding="async" alt="Página de performance com indicadores, histórico mensal e gráfico alimentados pela planilha">
+          </div>
+          <figcaption class="case-caption">A página publicada transforma os dados da planilha em indicadores, histórico e visualização comparativa.</figcaption>
+        </figure>
+      </section>
+
+      <section class="case-section">
+        <h2>O Resultado</h2>
+        <div class="case-copy">
+          <p>O site passou a ser usado pelo comercial como cartão institucional e apoio para apresentar os serviços. Depois da publicação inicial, a estrutura continuou evoluindo com a página de performance e com o blog, projetado e implementado em julho de 2026.</p>
+          <p>Sem métricas disponíveis de conversão ou receita, o impacto é apresentado pelo que o projeto permite comprovar: adoção comercial, uma rotina mais simples de atualização e uma base capaz de receber novas necessidades.</p>
+        </div>
+
+        <div class="case-stats case-stats--topics">
+          <div class="case-stat">
+            <strong>Comercial</strong>
+            <span>Um site institucional usado como apoio nas conversas de venda.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Operação</strong>
+            <span>Performance atualizada pela planilha, sem remontar a página.</span>
+          </div>
+          <div class="case-stat">
+            <strong>Evolução</strong>
+            <span>Uma base que recebeu a página de performance e o blog.</span>
+          </div>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media" data-case-zoom>
+            <img src="/assets/projetos/cafe-invest/blog.webp" width="1440" height="850" loading="lazy" decoding="async" alt="Área de insights da Café Wealth Management com cards de artigos">
+          </div>
+          <figcaption class="case-caption">O blog foi projetado e implementado como uma evolução da mesma presença digital.</figcaption>
+        </figure>
+
+        <p class="case-quote">O trabalho não terminou quando o layout foi aprovado. Ele continuou na implementação, no QA e na forma como o cliente mantém o site depois da entrega.</p>
+
+        <a class="case-footer-cta" href="https://cafeinvest.com.br/" target="_blank" rel="noopener noreferrer">Conhecer o site publicado</a>
+      </section>
+    </div>
+  </section>
+  </div>
+</article>

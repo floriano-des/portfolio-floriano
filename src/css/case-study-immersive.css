@@ -549,6 +549,18 @@ body.immersive-case-page {
   color: var(--case-action);
 }
 
+.cafe-invest-case-page .case-copy a,
+.cafe-invest-case-page .case-caption a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.cafe-invest-case-page .case-copy a:hover,
+.cafe-invest-case-page .case-caption a:hover {
+  text-decoration-thickness: 2px;
+}
+
 .case-quote {
   margin-top: var(--space-16);
   color: var(--case-ink);
@@ -1042,6 +1054,28 @@ body.immersive-case-page {
   font-size: var(--text-lg);
 }
 
+.case-data-flow {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-8);
+  padding: 0;
+  list-style: none;
+}
+
+.case-data-flow .case-stat {
+  position: relative;
+}
+
+.case-data-flow .case-stat:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 50%;
+  left: calc(100% + var(--space-4));
+  transform: translate(-50%, -50%);
+  color: var(--case-action);
+  font-size: var(--text-xl);
+  font-weight: var(--fw-semibold);
+}
+
 .case-stat__swatch {
   display: block;
   height: 48px;
@@ -1153,6 +1187,17 @@ body.immersive-case-page {
   object-fit: cover;
 }
 
+.case-figure__media--video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.lenis.lenis-smooth .case-figure__media--video iframe {
+  pointer-events: auto;
+}
+
 .case-figure--phone {
   width: min(360px, 100%);
   margin-inline: auto;
@@ -1215,6 +1260,16 @@ body.immersive-case-page {
 }
 
 @media (max-width: 640px) {
+  .case-data-flow {
+    grid-template-columns: 1fr;
+  }
+
+  .case-data-flow .case-stat:not(:last-child)::after {
+    top: calc(100% + var(--space-4));
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+
   .case-compare__grid {
     grid-template-columns: 1fr;
   }
