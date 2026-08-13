@@ -1,6 +1,6 @@
 # PRD — Olho Vivo
 **Documento de requisitos de produto (foco UX)**
-Versão 0.1 · Maio 2026 · Autor: Floriano Silva
+Versão 0.2 · Agosto 2026 · Autor: Floriano Silva · Colaboração técnica: Vinicius Di Santi
 
 > Este PRD orienta a construção do MVP do Olho Vivo como **web-app (PWA)**, com a visão de evoluir para **app nativo** numa fase seguinte. O escopo aqui é UX e produto, não stack técnica. Dúvidas de implementação ficam abertas para a fase de código, mas as decisões de experiência precisam estar fechadas antes do protótipo.
 
@@ -10,7 +10,7 @@ Versão 0.1 · Maio 2026 · Autor: Floriano Silva
 
 **Frase de visão.** Tornar a fiscalização do poder público municipal **simples, acessível e confiável** para qualquer cidadão de Palmital — começando pelo acompanhamento de promessas de prefeito e vereadores e pela educação sobre o que cobrar de cada cargo.
 
-**Por que existe.** A pesquisa de campo mostrou que o problema não é desinteresse, é **falta de referência**: mais de 50% dos respondentes não distingue o papel do prefeito do dos vereadores, e só 12% usam canais oficiais. O Olho Vivo é uma referência única, em linguagem cotidiana, que devolve ao eleitor o "o que cobrar, de quem e como".
+**Por que existe.** A pesquisa de campo mostrou que o problema não é desinteresse, é **falta de referência**: mais de 50% dos respondentes não distinguiam o papel do prefeito do dos vereadores, e só 12% usavam canais oficiais. O Olho Vivo é uma referência única, em linguagem cotidiana, que devolve ao eleitor o "o que cobrar, de quem e como".
 
 **Para quem.** Eleitores de Palmital (≈19 mil), em dois perfis identificados na pesquisa: Cidadão Instruído (digital, sem tempo) e Cidadão do Povo (informal, baixo letramento digital).
 
@@ -299,7 +299,7 @@ A solução precisa caber no celular, na rotina, e numa conexão modesta. Não �
 2. **Protótipo médio-fi no Figma** das mesmas 5 telas + 1 fluxo navegável. Componentes reutilizáveis já marcados.
 3. **Teste de guerrilha** com 5–8 cidadãos de Palmital (incluir pelo menos 2 do perfil "Cidadão do Povo"). Roteiro de teste deriva das jornadas J1–J4.
 4. **Iterar** o protótipo com base nos achados. Repetir o teste se mudanças forem grandes.
-5. **Handoff para implementação** (IA + você) usando este PRD + protótipo aprovado como verdade.
+5. **Implementação colaborativa** com Vinicius Di Santi no backend, usando este PRD e o protótipo aprovado como referências para as decisões de produto e tecnologia.
 6. **Definir métricas no GA4 e Clarity** antes do lançamento — sem instrumentação, não há aprendizado.
 
 ---

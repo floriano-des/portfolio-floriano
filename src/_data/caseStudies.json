@@ -81,10 +81,10 @@
   },
   "olho-vivo": {
     "title": "Olho Vivo",
-    "service": "Pesquisa e estratégia de produto",
+    "service": "Pesquisa e produto em desenvolvimento",
     "stack": "Figma, FigJam, Notion, Google Forms",
-    "timeLabel": "Ano",
-    "time": "2026",
+    "timeLabel": "Período",
+    "time": "2025/26",
     "cover": "/assets/projetos/olho-vivo/cover-hover.webp",
     "coverSmall": "/assets/projetos/olho-vivo/cover-hover-768.webp",
     "coverAlt": "Proposta de interface do produto Olho Vivo",
