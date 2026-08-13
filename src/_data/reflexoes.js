@@ -88,7 +88,7 @@ function normalizeFeed(feed) {
 }
 
 function normalizePost(post) {
-  const title = post.title || 'Reflexão';
+  const title = normalizePositioningTerms(post.title || 'Reflexão');
   const sourceUrl = post.sourceUrl || post.link || '';
   const slug = post.slug || slugFromMediumUrl(sourceUrl) || slugify(title);
   const plainText = normalizePositioningTerms(post.plainText || toPlainText(post.contentHtml || post.excerpt || ''));
@@ -143,13 +143,17 @@ function normalizePositioningTerms(value) {
   if (!value) return value;
 
   return value
-    .replace(/Sou web designer e atuo principalmente com criação de interfaces e experiências digitais\./gi, 'Sou Designer da Web e atuo principalmente com criação de interfaces e experiências digitais.')
-    .replace(/Ainda sou web designer\./gi, 'Ainda sou Designer da Web.')
-    .replace(/Como Product Designer orientado a dados/gi, 'Como Designer da Web orientado a dados')
-    .replace(/Floriano Silva,<br>\s*UX\s*Designer/gi, 'Floriano Silva,<br>Designer da Web')
-    .replace(/\bProduct Designer\b/g, 'Designer da Web')
-    .replace(/\bUX Designer\b/g, 'Designer da Web')
-    .replace(/\bweb designer\b/gi, 'Designer da Web');
+    .replace(/Sou web designer e atuo principalmente com criação de interfaces e experiências digitais\./gi, 'Sou Product Designer e atuo na criação de produtos e experiências digitais.')
+    .replace(/Ainda sou web designer\./gi, 'Continuo sendo Product Designer.')
+    .replace(/Floriano Silva,<br>\s*UX\s*Designer/gi, 'Floriano Silva,<br>Product Designer')
+    .replace(/\bUX Designer\b/g, 'Product Designer')
+    .replace(/\bDesigner da Web\b/gi, 'Product Designer')
+    .replace(/\bweb designer\b/gi, 'Product Designer')
+    .replace(/Hipótese (\d+)\s*[—–]\s*/gi, 'Hipótese $1: ')
+    .replace(/Priorização\s*[—–]\s*/gi, 'Priorização: ')
+    .replace(/(\d)\s*[—–]\s*(\d)/g, '$1 a $2')
+    .replace(/\s*[—–]\s*é\b/gi, '. É')
+    .replace(/\s*[—–]\s*/g, ', ');
 }
 
 function slugFromMediumUrl(url) {
@@ -233,7 +237,7 @@ function buildBlogPostingJsonLd(post) {
     },
     inLanguage: 'pt-BR',
     isBasedOn: post.sourceUrl,
-    keywords: ['Designer da Web', 'Design de interface', 'UX', 'Front-end', 'Design Systems', 'IA aplicada'],
+    keywords: ['Product Design', 'Pesquisa com usuários', 'Estratégia de produto', 'UX', 'Design Systems', 'Front-end'],
     wordCount: post.plainText ? post.plainText.split(/\s+/).filter(Boolean).length : undefined,
   };
 

@@ -17,7 +17,7 @@ caseDetailedReadTime: "12min"
 caseSummaryReadTime: "2min"
 ---
 
-<article class="immersive-case" data-immersive-case data-case-mode="detailed" data-cs-toc-layout data-cs-toc-scope>
+<article class="immersive-case" data-immersive-case data-case-mode="tldr" data-cs-toc-layout data-cs-toc-scope>
   <header class="immersive-case__hero">
     <figure class="immersive-case__cover">
       <img
@@ -36,7 +36,7 @@ caseSummaryReadTime: "2min"
     <dl class="immersive-case__meta">
       <div>
         <dt>Meu papel</dt>
-        <dd>Product Designer</dd>
+        <dd>Product Designer, do zero ao lançamento e à iteração</dd>
       </div>
       <div>
         <dt>Período</dt>
@@ -57,7 +57,7 @@ caseSummaryReadTime: "2min"
   </aside>
 
   <div class="case-mode-stage" data-case-mode-stage>
-  <section class="case-mode-panel case-mode-panel--detailed" id="{{ page.fileSlug }}-panel-detailed" role="tabpanel" aria-labelledby="{{ page.fileSlug }}-tab-detailed" tabindex="0" data-case-mode-panel="detailed">
+  <section class="case-mode-panel case-mode-panel--detailed" id="{{ page.fileSlug }}-panel-detailed" role="tabpanel" aria-labelledby="{{ page.fileSlug }}-tab-detailed" tabindex="0" data-case-mode-panel="detailed" hidden>
     <div class="case-content">
       <h1 class="case-title">Mercado das Figurinhas</h1>
       <p class="case-lead">Lançamento de um app web de trocas de figurinhas da Copa 2026. Um case de Product Design que mudou minha forma de enxergar a construção de produtos.</p>
@@ -74,7 +74,7 @@ caseSummaryReadTime: "2min"
         </div>
         <div class="case-fact">
           <dt>Ferramentas</dt>
-          <dd>Figma, FigJam, Google Analytics, Microsoft Clarity, Codex e Claude Code</dd>
+          <dd>Figma, FigJam, Google Analytics, Microsoft Clarity e IA aplicada ao desenvolvimento.</dd>
         </div>
         <div class="case-fact">
           <dt>Principal aprendizado</dt>
@@ -200,17 +200,17 @@ caseSummaryReadTime: "2min"
           <div class="case-zoom-surface" data-case-zoom>
             <img src="/assets/projetos/mercado-das-figurinhas/matriz-de-priorizacao.webp" width="5280" height="5216" loading="lazy" decoding="async" alt="Matriz de priorização">
           </div>
-          <figcaption class="case-caption">Na matriz que eu tinha criada, fica claro que o “app nativo” foi descartado</figcaption>
+          <figcaption class="case-caption">Na matriz que eu tinha criado, fica claro que o “app nativo” foi descartado</figcaption>
         </figure>
       </section>
 
       <section class="case-section" id="sec-prototipacao" data-cs-section data-cs-label="Prototipação">
-        <h2>4. Prototipação com IA e Desenvolvimento Solo</h2>
+        <h2>4. Do recorte ao protótipo funcional</h2>
         <div class="case-copy">
-          <p>Logo no começo, o desenvolvedor parceiro precisou se afastar aos poucos. Eu não quis abandonar a ideia e levei o projeto de ponta a ponta sozinho.</p>
-          <p>A primeira decisão de design foi de recorte. Como é um app prático, apostei no essencial: ao logar, o usuário cai num pequeno dashboard que ensina a plataforma e já emenda no que importa — preencher o catálogo e procurar match. A régua era tempo até o valor: cerca de cinco minutos do cadastro ao primeiro uso funcional. Tudo que competia com isso saiu da frente.</p>
+          <p>Logo no começo, o desenvolvedor parceiro precisou se afastar. Assumi a continuidade do projeto e levei a solução do protótipo ao lançamento.</p>
+          <p>A primeira decisão de design foi de recorte. Como é um app prático, apostei no essencial: ao entrar, o usuário cai num pequeno dashboard que ensina a plataforma e já emenda no que importa: preencher o catálogo e procurar match. A régua era tempo até o valor: cerca de cinco minutos do cadastro ao primeiro uso funcional. Tudo que competia com isso saiu da frente.</p>
           <p>A interação mais sensível era o match, e aí eu decidi <strong>não</strong> ir direto ao ponto, de propósito. Quando dá match, chega uma notificação, a tela mostra o par e pede uma confirmação explícita antes de qualquer contato, com um aviso claro sobre os riscos de abrir conversa com um estranho. É a mesma preocupação que me fez tirar o chat interno e a persona infantil do escopo: num fluxo que termina jogando o WhatsApp de um lado no do outro, segurança é decisão de design, não detalhe.</p>
-          <p>Para acelerar, gerei as telas com IA (Claude Code e Codex) e defini a identidade e os tokens (fontes e cores) apoiado no Figma. Mas o refinamento de verdade não foi visual, foi de código, versionado no git/GitHub. A primeira entrega da IA era um frankenstein: funcionava pela metade (o match travava dependendo das regras), com layout simples demais, sem identidade, e seções, espaçamentos e fontes cada um puxando pra um lado. Meu trabalho foi esse — apontar, commit a commit, o que estava errado e como consertar, até virar uma interface coerente. A versão crua que eu rejeitei está lá no histórico. Só depois desse refino levei o produto pro teste de usabilidade, e aí sim as pessoas usaram sem tropeçar.</p>
+          <p>Usei IA para acelerar a primeira versão e defini identidade e tokens com apoio do Figma. A saída inicial funcionava só em parte e ainda não tinha coerência visual. A partir daí, refinei regras, fluxos e interface de forma versionada, corrigi o match e consolidei seções, espaçamentos e tipografia. Só depois levei a solução ao teste de usabilidade.</p>
         </div>
 
         <div class="case-carousel case-carousel--gallery" data-case-carousel tabindex="0" aria-label="Galeria de telas do aplicativo">
@@ -269,8 +269,7 @@ caseSummaryReadTime: "2min"
         <h2>6. Lançamento e o funil da verdade</h2>
         <div class="case-copy">
           <p>O lançamento ocorreu em 9 de maio. Preparei toda a infraestrutura (Vercel, Neon, Stripe) e criei a identidade visual completa e as campanhas para redes sociais.</p>
-          <p>O sistema rodou perfeitamente e sem reclamações. O Microsoft Clarity confirmou que não havia problemas de usabilidade. </p>
-          <p>No entanto, ao montar um funil de ativação pós-lançamento, a dura realidade apareceu.</p>
+          <p>Os primeiros sinais não mostravam falhas graves no fluxo, mas isso não significava que o produto gerava valor. O funil de ativação montado depois do lançamento expôs o problema.</p>
         </div>
 
         <figure class="case-figure case-figure--within">
@@ -288,9 +287,9 @@ caseSummaryReadTime: "2min"
       <section class="case-section" id="sec-campo" data-cs-section data-cs-label="Campo">
         <h2>7. O campo e a verdadeira persona</h2>
         <div class="case-copy">
-          <p>Com o baixo uso do sistema de matching, fiz aquilo que deveria ter feito no começo: fui a campo. Entrei em sete grupos de troca de figurinhas no WhatsApp, de diferentes regiões — do ABC paulista a Belo Horizonte, passando pelo Vale do Paraíba e por Campos —, somando mais de 3,6 mil membros. Ali eu observei o comportamento real das pessoas e puxei conversa no fluxo dos grupos.</p>
-          <p>E preciso ser honesto sobre o método: isso não foi entrevista estruturada. Os grupos eram muito movimentados (um deles acumulava mais de mil mensagens entre uma visita e outra), então não tenho um número fechado de quantas conversas puxei ou de quantas pessoas me responderam. Foi observação de campo, com todas as limitações que isso carrega — o ideal ainda seria rodar as entrevistas com roteiro que faltaram lá no começo. Ainda assim, o padrão que apareceu era grande demais para ignorar.</p>
-          <p>A resposta era unânime: as trocas ou acontecem presencialmente, ou através de app nativo. A bagunça do WhatsApp e o encontro na praça não são um problema, <strong>são parte da graça</strong>. É assim que esse mundo funciona.</p>
+          <p>Com o baixo uso do sistema de matching, fiz aquilo que deveria ter feito no começo: fui a campo. Entrei em sete grupos de troca de figurinhas no WhatsApp, de diferentes regiões, do ABC paulista a Belo Horizonte, passando pelo Vale do Paraíba e por Campos. Juntos, eles somavam mais de 3,6 mil membros. Ali eu observei o comportamento real das pessoas e puxei conversa no fluxo dos grupos.</p>
+          <p>E preciso ser honesto sobre o método: isso não foi entrevista estruturada. Os grupos eram muito movimentados, então não tenho um número fechado de quantas conversas puxei ou de quantas pessoas me responderam. Foi observação de campo, com as limitações que isso carrega. O ideal ainda seria rodar as entrevistas roteirizadas que faltaram no começo. Mesmo assim, um padrão apareceu com força.</p>
+          <p>As trocas acontecem principalmente de forma presencial ou por app nativo. A bagunça do WhatsApp e o encontro na praça não são um problema, <strong>são parte da graça</strong>. É assim que esse mundo funciona.</p>
           <p>Foi só então que consegui montar a persona real, aquela que o projeto pedia desde o primeiro dia: O Trocador de Comunidade.</p>
         </div>
 
@@ -313,14 +312,14 @@ caseSummaryReadTime: "2min"
       <section class="case-section case-section--closing" id="sec-aprendizados" data-cs-section data-cs-label="Aprendizados">
         <h2>8. Aprendizados e próximos passos</h2>
         <div class="case-copy">
-          <p>Antes de listar o que errei, o que sustentou o trabalho — porque reconhecer isso também é parte do julgamento. Levei um produto real do zero ao ar sozinho: pesquisa, estratégia, UI, protótipo, desenvolvimento, deploy e analytics, tudo instrumentado com GA e Clarity. Quando a ativação não veio, o funil que montei leu o problema com precisão cirúrgica — as duas paredes (as ~980 marcações e o cold start) estavam nítidas nos dados, não no achismo. E tomei pelo menos uma decisão de escopo da qual não abro mão: cortei o chat interno e a persona "Pai/Mãe Coletor" porque o fluxo terminava jogando o WhatsApp de um estranho no de outro, um risco real de segurança e um problema jurídico. Isso é julgamento, não sorte.</p>
+          <p>Antes de listar o que errei, vale registrar o que sustentou o trabalho. Levei um produto real do zero ao ar com pesquisa, estratégia, UI, protótipo, desenvolvimento, deploy e analytics. Quando a ativação não veio, o funil mostrou duas barreiras com clareza: as cerca de 980 marcações necessárias e o cold start. Também cortei o chat interno e a persona "Pai/Mãe Coletor" porque o fluxo exporia o WhatsApp de pessoas desconhecidas entre si, criando um risco de segurança e um problema jurídico.</p>
           <p>Dito isso, os erros foram meus e sei nomeá-los com a mesma clareza:</p>
           <ul>
             <li>Eu pulei a etapa que mais importava. A entrevista revela onde você está errado sem perceber.</li>
-            <li>Eu projetei a minha própria lógica no usuário — duas vezes. Tratei a troca como um problema de eficiência a ser otimizado, quando é um ritual de pertencimento; e presumi que o público se contentaria com um webapp só porque eu me contentaria. A restrição de orçamento era real, mas eu a transformei em convicção em vez de ir checar.</li>
-            <li>Refinei o layer errado. Gastei energia puxando usabilidade (troquei o sino por push, botei bandeiras nos países) enquanto a pergunta que decidia o produto seguia sem resposta: as pessoas querem isso? O Clarity não achava problema de usabilidade nenhum, e o produto falhou mesmo assim.</li>
+            <li>Eu projetei minha própria lógica no usuário em dois momentos. Tratei a troca como um problema de eficiência, quando para muitas pessoas ela é um ritual de pertencimento. Também presumi que o público aceitaria um webapp sem validar essa restrição.</li>
+            <li>Refinei a camada errada. Ajustei detalhes de usabilidade enquanto a pergunta que decidia o produto seguia sem resposta: as pessoas querem isso?</li>
             <li>Subestimei os concorrentes. Eles também modernizaram as plataformas usando IA e lançaram apps nativos de matching.</li>
-            <li>Errei o modelo de negócio, e esse eu poderia ter previsto antes de lançar. Cobra o valor de R$ 9,99 por mês num marketplace de duas pontas ainda sem liquidez é cobrar ingresso de sala vazia. O campo só confirmou o que a estratégia já dizia: o público prefere ver anúncios a investir em uma plataforma nova.</li>
+            <li>Errei o modelo de negócio, e esse eu poderia ter previsto antes de lançar. Cobrar o valor de R$ 9,99 por mês num marketplace de duas pontas ainda sem liquidez é cobrar ingresso de sala vazia. O campo só confirmou o que a estratégia já dizia: o público prefere ver anúncios a investir em uma plataforma nova.</li>
           </ul>
         </div>
 
@@ -337,7 +336,7 @@ caseSummaryReadTime: "2min"
         </div>
 
         <div class="case-copy">
-          <p>Este não foi o lançamento estrondoso que eu sonhei, e me doeu ver o projeto falhar na ativação. E sou honesto: "falar com o usuário antes de construir" não é uma descoberta minha, é o primeiro capítulo de qualquer livro de produto. Eu já sabia disso na teoria. O que este projeto fez foi me obrigar a aprender na pele, gastando cinco meses e um lançamento inteiro para internalizar um fundamento que eu recitava sem viver. Saí com um respeito pelo usuário que eu não tinha antes e com a certeza de que a pergunta certa vale muito mais do que qualquer convicção minha. Sigo para o próximo desafio com uma cabeça muito mais madura e voltada ao comportamento real das pessoas.</p>
+          <p>O lançamento não bateu a ativação que eu esperava, e me doeu ver isso depois de cinco meses de trabalho. Eu já sabia na teoria que precisava falar com usuários antes de construir. Este projeto me obrigou a aprender isso na prática. Saí com mais respeito pelo comportamento real das pessoas e com uma certeza: a pergunta certa, feita cedo, vale mais do que uma resposta sofisticada ao problema errado.</p>
         </div>
       </section>
     </div>
@@ -345,7 +344,7 @@ caseSummaryReadTime: "2min"
     <a class="case-footer-cta" href="https://mercadodasfigurinhas.com.br" target="_blank" rel="noopener noreferrer">Ver projeto online</a>
   </section>
 
-  <section class="case-mode-panel case-mode-panel--tldr" id="{{ page.fileSlug }}-panel-tldr" role="tabpanel" aria-labelledby="{{ page.fileSlug }}-tab-tldr" tabindex="0" data-case-mode-panel="tldr" hidden>
+  <section class="case-mode-panel case-mode-panel--tldr" id="{{ page.fileSlug }}-panel-tldr" role="tabpanel" aria-labelledby="{{ page.fileSlug }}-tab-tldr" tabindex="0" data-case-mode-panel="tldr">
     <div class="case-content">
       <h1 class="case-title">Mercado das Figurinhas: O app de trocas da Copa e a lição que mudou minha visão de produto</h1>
 
@@ -357,7 +356,7 @@ caseSummaryReadTime: "2min"
         <div class="case-callout">
           <h3>O Papel e a Execução</h3>
           <div class="case-copy">
-            <p>O projeto começou em dupla, mas acabei assumindo de ponta a ponta, da pesquisa ao código. Por limitações de tempo e orçamento, optamos por lançar um app web com acesso pelo navegador. Construí a interface e acelerei o desenvolvimento do MVP utilizando inteligências artificiais (Claude Code e Codex) com plugins de integração ao Figma.</p>
+            <p>O projeto começou em dupla, mas assumi a continuidade da estratégia ao lançamento. Por limitações de tempo e orçamento, optamos por um app web. Desenhei os fluxos e a interface, defini identidade e tokens e usei IA para acelerar a primeira versão do MVP. Depois refinei regras, usabilidade e consistência antes de levar a solução aos testes.</p>
           </div>
         </div>
       </section>
@@ -394,7 +393,7 @@ caseSummaryReadTime: "2min"
       <section class="case-section">
         <h2>O Lançamento e o Choque de Realidade</h2>
         <div class="case-copy">
-          <p>O app foi lançado em 9 de maio e conquistou 100 usuários, sendo dois pagantes. O sistema rodou perfeitamente, sem bugs ou problemas de usabilidade. Porém, a nossa métrica principal de ativação no sistema de trocas não foi batida.</p>
+          <p>O app foi lançado em 9 de maio e conquistou 100 usuários, sendo dois pagantes. Os primeiros sinais não mostravam falhas graves no fluxo, mas a métrica principal de ativação no sistema de trocas não foi batida.</p>
           <p>A base esbarrou em duas barreiras claras identificadas no funil: a necessidade de marcar quase 980 figurinhas logo de cara e o "cold start" de não encontrar matches em cidades vazias.</p>
         </div>
 
@@ -406,9 +405,9 @@ caseSummaryReadTime: "2min"
       </section>
 
       <section class="case-section">
-        <h2>O Maior Aprendizado: A Falta da Pesquisa Primária</h2>
+        <h2>O Maior Aprendizado: validar antes de construir</h2>
         <div class="case-copy">
-          <p>Construí o produto baseando minhas decisões apenas em Desk Research. Pulei as entrevistas com usuários porque estava convencido de que o problema era puramente logístico. Após o lançamento, fui a campo em grupos de WhatsApp e descobri a verdade:</p>
+          <p>A hipótese inicial se apoiou em desk research, mas não foi validada cedo com entrevistas. Quando a ativação ficou abaixo do esperado, fui a campo em sete grupos de WhatsApp, observei o comportamento real e encontrei três padrões:</p>
           <ul>
             <li>A troca não é uma ineficiência a ser resolvida, mas sim um ritual cultural.</li>
             <li>As pessoas gostam da bagunça e do encontro presencial.</li>
@@ -427,7 +426,7 @@ caseSummaryReadTime: "2min"
           </div>
         </div>
 
-        <p class="case-quote">Este projeto não teve o resultado financeiro ou de tração que eu sonhava, mas foi o que mais me amadureceu como Product Designer. Aprendi na pele que a pergunta certa vale muito mais do que qualquer convicção solitária.</p>
+        <p class="case-quote">O lançamento não bateu a ativação que eu esperava, mas mudou meu processo. Hoje valido comportamento antes de transformar restrições e convicções em solução. A pergunta certa, feita cedo, vale mais do que uma resposta sofisticada ao problema errado.</p>
       </section>
     </div>
 

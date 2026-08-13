@@ -127,7 +127,7 @@
 
     return visiblePanel
       ? normalizeMode(visiblePanel.getAttribute("data-case-mode-panel"))
-      : "detailed";
+      : "tldr";
   }
 
   function getStoredMode() {
@@ -617,7 +617,7 @@
   prepareModeRelationships();
 
   var urlMode = normalizeMode(new URLSearchParams(window.location.search).get("mode"));
-  var initialMode = urlMode || getStoredMode() || "detailed";
+  var initialMode = urlMode || getStoredMode() || "tldr";
   setMode(initialMode, { animate: false, updateUrl: false });
   observeModeSelectorImpression();
 

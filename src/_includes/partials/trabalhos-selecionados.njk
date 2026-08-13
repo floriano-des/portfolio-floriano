@@ -1,51 +1,51 @@
 {% set selectedProjects = [
   {
     number: "01",
+    name: "Olho Vivo",
+    meta: "Pesquisa e estratégia de produto",
+    year: "2026",
+    href: "/projetos/olho-vivo/",
+    image: "/assets/projetos/olho-vivo/cover-hover.webp"
+  },
+  {
+    number: "02",
     name: "Mercado das Figurinhas",
-    meta: "Produto e IA",
+    meta: "Produto do zero ao lançamento",
     year: "2026",
     href: "/projetos/mercado-das-figurinhas/",
     image: "/assets/projetos/mercado-das-figurinhas/cover-hover.webp"
   },
   {
-    number: "02",
+    number: "03",
     name: "Café Wealth Management",
-    meta: "Web design e implementação",
-    year: "2025–26",
+    meta: "Interface e implementação",
+    year: "2025/26",
     href: "/projetos/cafe-invest/",
     image: "/assets/projetos/cafe-invest/cover-hover.webp"
   },
   {
-    number: "03",
+    number: "04",
     name: "Quantum Vizz",
-    meta: "Growth e CRO",
+    meta: "Pesquisa, UX e CRO",
     year: "2025",
     href: "/projetos/quantum-vizz/",
     image: "/assets/projetos/quantum-vizz/cover-hover.webp"
   },
   {
-    number: "04",
-    name: "Bit System",
-    meta: "Design system",
-    year: "2025",
-    href: "/projetos/bit-system/",
-    image: "/assets/projetos/bit-system/cover-hover.webp"
-  },
-  {
     number: "05",
     name: "Web Dev 2.0",
-    meta: "Produto interno",
+    meta: "Produto interno e UX operacional",
     year: "2026",
     href: "/projetos/2p-web-dev/",
     image: "/assets/projetos/web-dev/cover-hover.webp"
   },
   {
     number: "06",
-    name: "Olho Vivo",
-    meta: "Pesquisa e produto",
-    year: "2026",
-    href: "/projetos/olho-vivo/",
-    image: "/assets/projetos/olho-vivo/cover-hover.webp"
+    name: "Bit System",
+    meta: "Design system e operação",
+    year: "2025",
+    href: "/projetos/bit-system/",
+    image: "/assets/projetos/bit-system/cover-hover.webp"
   }
 ] %}
 
@@ -123,7 +123,7 @@
     <div class="home-section-head">
       <p class="home-eyebrow" data-animate>Portfólio</p>
       <h2 id="projects-title" data-animate>Trabalhos selecionados</h2>
-      <p data-animate>Projetos em produto, conversão, operação e serviços digitais.</p>
+      <p data-animate>Cases em pesquisa, estratégia, experiência, sistemas e evolução de produtos digitais.</p>
     </div>
 
     <div class="project-index__list">
@@ -152,7 +152,15 @@
   </div>
 </section>
 
-<section class="galeria-carrossel" aria-label="Galeria de trabalhos">
+<section class="galeria-carrossel" aria-labelledby="repertoire-title">
+  <div class="home-shell">
+    <div class="home-section-head galeria-carrossel__head">
+      <p class="home-eyebrow" data-animate>Repertório complementar</p>
+      <h2 id="repertoire-title" data-animate>Sites e interfaces</h2>
+      <p data-animate>Uma seleção de trabalhos que amplia minha base visual e técnica.</p>
+    </div>
+  </div>
+
   <div class="galeria-carrossel__row galeria-carrossel__row--1" data-galeria-row="1">
     {% for item in galleryItems %}
     <div class="galeria-card">

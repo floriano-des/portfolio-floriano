@@ -6,9 +6,9 @@ Este arquivo descreve quem é Floriano, qual é o posicionamento do site, como o
 
 ## Quem é Floriano
 
-**Floriano Silva** é um **Designer da Web** com mais de 3 anos de experiência criando sites, interfaces e produtos digitais. Atua no encontro entre design de interface e desenvolvimento front-end, pensando o visual desde o início com viabilidade técnica, acessibilidade e performance no navegador.
+**Floriano Silva** é **Product Designer** com mais de 3 anos de experiência construindo produtos digitais. Atua da descoberta ao lançamento, conectando pesquisa, estratégia, UX, interface, sistemas de design e evolução orientada por dados.
 
-Seu repertório cobre UI, UX, Design Systems, HTML, CSS, JavaScript, acessibilidade, performance web e IA aplicada ao fluxo. O objetivo profissional é evoluir para Design Engineer, aprofundando a ponte entre concepção visual e implementação.
+Seu repertório técnico em front-end ajuda a aproximar design e tecnologia, antecipar restrições e preservar a intenção do projeto até a entrega. Código é um diferencial de execução, não uma segunda profissão.
 
 A IA faz parte do método de trabalho, não da identidade. Ela aparece como apoio para desenvolvimento, prototipação e entrega.
 
@@ -19,22 +19,23 @@ A IA faz parte do método de trabalho, não da identidade. Ela aparece como apoi
 
 ## Posicionamento e tom de voz
 
-- O título principal é exatamente: **Designer da Web**. Não usar o posicionamento anterior como título público.
-- O site comunica a união entre design de interface e código front-end para criar experiências digitais que funcionam com qualidade no navegador.
-- Não posicionar Floriano como desenvolvedor puro nem como designer distante da implementação. O diferencial está justamente na ponte entre as duas disciplinas.
+- O título principal é exatamente: **Product Designer**.
+- O site comunica uma atuação de produto da descoberta ao lançamento, com pesquisa, estratégia, UX, sistemas e evolução orientada por dados.
+- Front-end e IA aparecem como fluências de processo e entrega, nunca como cargos paralelos ao Product Design.
 - Tom: direto, estratégico, humano. Sem jargões vazios, sem exageros, sem corporativês.
 - O texto soa como alguém que pensa, estrutura e executa, não como consultor que só analisa, nem como alguém que só codifica.
 
-**Escopo protegido, nunca alterar:**
-- Conteúdo interno dos cases/projetos (`src/projetos/*.njk`)
+**Escopo protegido, nunca alterar sem solicitação explícita:**
+- Conteúdo factual dos cases/projetos (`src/projetos/*.njk`), exceto rótulos de posicionamento
 - Posts, reflexões e artigos
 - Métricas, resultados e números dos projetos
 
 **Decisões editoriais consolidadas:**
-- A página `/projetos/` foi removida. Era réplica da home. O nav "Portfólio" aponta para `/#projetos`.
-- A home agora prioriza serviços, IA no processo e portfólio comercial para clientes diretos.
+- A página `/projetos/` reúne o mesmo índice de cases da home e é acessada pelo item "Projetos" da navegação.
+- A home prioriza posicionamento, competências de produto e provas profissionais para recrutadores e clientes.
 - A seção de design gráfico foi movida para a página Sobre (link discreto na trajetória).
-- Ordem dos projetos na home: Quantum Vizz, 2P Web Dev, Mercado das Figurinhas, Bit System, Farm Well Hub e Olho Vivo.
+- Ordem dos projetos na home: Olho Vivo, Mercado das Figurinhas, Café Wealth Management, Quantum Vizz, Web Dev 2.0 e Bit System.
+- Os cases com versão detalhada abrem no modo Resumo. A escolha manual do visitante fica salva durante a sessão.
 
 ---
 
@@ -251,10 +252,10 @@ Disponível em todos os templates como `{{ metadata.* }}`. É a fonte de verdade
 
 ```json
 {
-  "title": "Floriano Silva | Designer da Web",
-  "description": "Designer da Web que une design de interface e desenvolvimento front-end para criar sites e produtos digitais acessíveis, performáticos e fiéis ao projeto.",
-  "profession": "Designer da Web",
-  "siteName": "Floriano Silva · Designer da Web"
+  "title": "Floriano Silva | Product Designer",
+  "description": "Product Designer com atuação de ponta a ponta em pesquisa, estratégia, UX, design systems e entrega de produtos digitais, com fluência em front-end.",
+  "profession": "Product Designer",
+  "siteName": "Floriano Silva · Product Designer"
 }
 ```
 

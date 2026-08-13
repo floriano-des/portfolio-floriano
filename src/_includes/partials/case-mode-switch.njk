@@ -13,8 +13,9 @@
       id="{{ page.fileSlug }}-tab-detailed"
       type="button"
       role="tab"
-      aria-selected="true"
+      aria-selected="false"
       aria-controls="{{ page.fileSlug }}-panel-detailed"
+      tabindex="-1"
       data-case-mode-button="detailed"
     >
       <span class="case-mode-switch__option-label">Case completo</span>
@@ -26,9 +27,8 @@
       id="{{ page.fileSlug }}-tab-tldr"
       type="button"
       role="tab"
-      aria-selected="false"
+      aria-selected="true"
       aria-controls="{{ page.fileSlug }}-panel-tldr"
-      tabindex="-1"
       data-case-mode-button="tldr"
     >
       <span class="case-mode-switch__option-label">Resumo</span>
