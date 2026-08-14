@@ -54,7 +54,12 @@
     if (!siteKey || !window.turnstile || tsId !== null) return;
     tsBox.hidden = false;
     try {
-      tsId = window.turnstile.render(tsBox, { sitekey: siteKey, size: "flexible" });
+      // "interaction-only": invisível para usuários legítimos; só mostra desafio se necessário.
+      tsId = window.turnstile.render(tsBox, {
+        sitekey: siteKey,
+        size: "flexible",
+        appearance: "interaction-only",
+      });
     } catch (_) { /* ignora */ }
   }
   function turnstileToken() {
