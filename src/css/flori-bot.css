@@ -228,6 +228,28 @@
   text-decoration: underline;
 }
 
+/* Feedback (👍/👎) */
+.fb-feedback {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: var(--clr-text-subtle, #6b7280);
+}
+.fb-fb-btn {
+  border: 1px solid var(--clr-border, #e6e6e6);
+  background: transparent;
+  border-radius: 999px;
+  padding: 2px 9px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.fb-fb-btn:hover {
+  border-color: var(--clr-orange, #ee782e);
+}
+
 /* Indicador "digitando" */
 .fb-typing {
   display: inline-flex;

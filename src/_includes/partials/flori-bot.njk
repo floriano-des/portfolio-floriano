@@ -120,6 +120,7 @@
 (function(){
   var opener = document.querySelector('[data-floribot-open]');
   if(!opener) return;
+  (window.dataLayer = window.dataLayer || []).push({ event: 'floribot_impression' });
   var CSS = "/css/flori-bot.css?v={{ '/css/flori-bot.css' | assetVersion }}";
   var JS  = "/js/flori-bot.js?v={{ '/js/flori-bot.js' | assetVersion }}";
   var state = 0; // 0 idle, 1 loading, 2 ready

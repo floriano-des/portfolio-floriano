@@ -24,6 +24,13 @@
   var siteKey = isLocal ? "" : root.dataset.turnstileSitekey || "";
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // Telemetria agregada (GTM/dataLayer). NUNCA envia texto de pergunta/resposta.
+  function track(event, params) {
+    try {
+      (window.dataLayer = window.dataLayer || []).push(Object.assign({ event: event }, params || {}));
+    } catch (_) { /* ignora */ }
+  }
+
   var history = [];
   var busy = false;
   var opened = false;
@@ -74,6 +81,7 @@
     root.classList.add("fb-open");
     launcher.setAttribute("aria-expanded", "true");
     document.body.classList.add("fb-lock");
+    track("floribot_open");
     loadTurnstile();
     document.addEventListener("keydown", onKeydown, true);
     (input || panel).focus();
@@ -140,12 +148,35 @@
     input.disabled = b;
   }
 
+  function addFeedback(botEl) {
+    var el = document.createElement("div");
+    el.className = "fb-feedback";
+    var label = document.createElement("span");
+    label.textContent = "Esta resposta foi útil?";
+    el.appendChild(label);
+    [["up", "👍", "Útil"], ["down", "👎", "Não útil"]].forEach(function (opt) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "fb-fb-btn";
+      b.setAttribute("aria-label", opt[2]);
+      b.textContent = opt[1];
+      b.addEventListener("click", function () {
+        track("floribot_feedback", { value: opt[0] });
+        el.textContent = "Obrigado pelo retorno!";
+      });
+      el.appendChild(b);
+    });
+    botEl.appendChild(el);
+    scrollDown();
+  }
+
   /* ---------- Enviar pergunta ---------- */
   function ask(text) {
     var q = (text != null ? text : input.value || "").trim();
     if (!q || busy) return;
     if (intro) intro.hidden = true;
     setBusy(true);
+    track("floribot_question_sent", { locale: navigator.language });
 
     addMsg("user").querySelector(".fb-msg__body").textContent = q;
     history.push({ role: "user", content: q });
@@ -201,10 +232,14 @@
                 a.target = "_blank";
                 a.rel = "noopener noreferrer";
                 a.innerHTML = '<span aria-hidden="true">↗</span> ' + escapeHtml(data.title || "Fonte");
+                a.addEventListener("click", function (e) {
+                  track("floribot_source_click", { url: e.currentTarget.href });
+                });
                 cites.appendChild(a);
               } else if (ev === "error") {
                 if (!answer) body.innerHTML = "";
                 body.insertAdjacentHTML("beforeend", '<span class="fb-err">' + escapeHtml(data.message || data.code || "erro") + "</span>");
+                track("floribot_error", { code: data.code || "error" });
               }
             }
             return pump();
@@ -213,14 +248,18 @@
         return pump();
       })
       .then(function () {
-        if (answer) history.push({ role: "assistant", content: answer });
-        else if (!body.querySelector(".fb-err")) {
+        if (answer) {
+          history.push({ role: "assistant", content: answer });
+          track("floribot_response_completed", { citations: cites.childElementCount });
+          addFeedback(bot);
+        } else if (!body.querySelector(".fb-err")) {
           body.innerHTML = '<span class="fb-err">Não consegui responder agora. Tente novamente.</span>';
         }
       })
       .catch(function (err) {
         if (!answer) body.innerHTML = "";
         body.insertAdjacentHTML("beforeend", '<span class="fb-err">' + escapeHtml(err.message || "Falha de conexão") + "</span>");
+        track("floribot_error", { code: "fetch_failed" });
       })
       .then(function () {
         setBusy(false);
@@ -241,6 +280,11 @@
   });
   root.querySelectorAll("[data-fb-suggest]").forEach(function (btn) {
     btn.addEventListener("click", function () { ask(btn.textContent); });
+  });
+  root.querySelectorAll(".fb-direct a").forEach(function (a) {
+    a.addEventListener("click", function () {
+      track("floribot_contact_click", { channel: /wa\.me/.test(a.href) ? "whatsapp" : "email" });
+    });
   });
   form.addEventListener("submit", function (e) { e.preventDefault(); ask(); });
   input.addEventListener("input", autoGrow);
