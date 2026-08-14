@@ -19,6 +19,9 @@
   --case-media-radius: clamp(var(--radius-md), 2vw, 24px);
   /* Espaço reservado à esquerda para o índice flutuante (32px + 176px + respiro) não cobrir mídias largas. */
   --case-toc-clear: 256px;
+  /* Recuo lateral simétrico das mídias largas no desktop: mantém carrosséis centralizados
+     no mesmo eixo do texto, deixando folga suficiente à esquerda para não cobrir o índice. */
+  --case-media-inset: 224px;
 }
 
 html {
@@ -221,10 +224,18 @@ body.immersive-case-page {
 }
 
 .case-mode-switch__option[aria-selected="true"] {
-  border-color: var(--case-action);
-  background: var(--case-action);
+  border-color: var(--clr-orange);
+  background: var(--clr-orange);
+  color: var(--case-action);
+  box-shadow: 0 5px 16px rgba(238, 120, 46, 0.32);
+}
+
+.case-mode-switch__option[aria-selected="true"]:hover {
+  transform: translateY(-1px);
+  border-color: var(--clr-orange-dark);
+  background: var(--clr-orange-dark);
   color: var(--color-white);
-  box-shadow: 0 5px 14px rgba(1, 7, 29, 0.18);
+  box-shadow: 0 9px 22px rgba(212, 100, 26, 0.42);
 }
 
 .case-mode-switch__option:focus-visible {
@@ -234,8 +245,8 @@ body.immersive-case-page {
 
 .case-mode-switch__option[aria-selected="true"]:focus-visible {
   box-shadow:
-    inset 0 0 0 2px #f8c69f,
-    0 5px 14px rgba(1, 7, 29, 0.18);
+    inset 0 0 0 2px rgba(1, 7, 29, 0.82),
+    0 5px 16px rgba(238, 120, 46, 0.32);
 }
 
 .case-mode-switch__option-label {
@@ -253,7 +264,11 @@ body.immersive-case-page {
 }
 
 .case-mode-switch__option[aria-selected="true"] .case-mode-switch__option-time {
-  color: #f8c69f;
+  color: rgba(1, 7, 29, 0.66);
+}
+
+.case-mode-switch__option[aria-selected="true"]:hover .case-mode-switch__option-time {
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .case-mode-stage {
@@ -865,13 +880,13 @@ body.immersive-case-page {
   }
 
   .case-carousel {
-    width: min(var(--case-carousel-width), calc(100vw - 24px - var(--case-toc-clear)));
-    margin-left: calc(50% + (var(--case-toc-clear) / 2));
+    width: min(var(--case-carousel-width), calc(100vw - var(--case-media-inset) * 2));
+    margin-left: 50%;
   }
 
   .case-wide {
-    width: min(var(--case-wide-width), calc(100vw - 48px - var(--case-toc-clear)));
-    margin-left: calc(50% + (var(--case-toc-clear) / 2));
+    width: min(var(--case-wide-width), calc(100vw - var(--case-media-inset) * 2));
+    margin-left: 50%;
   }
 }
 
@@ -1400,4 +1415,313 @@ body.immersive-case-page {
 
 .immersive-case-page .back-to-top {
   z-index: 190;
+}
+
+
+/* ==========================================================================
+   Lightbox — clique numa imagem do case para ampliá-la em tela cheia.
+   Substitui o zoom embutido (controle "100%") por uma visualização ampliada.
+   ========================================================================== */
+
+.case-zoomable {
+  cursor: zoom-in;
+}
+
+.case-zoomable:focus-visible {
+  outline: 2px solid var(--clr-orange-dark);
+  outline-offset: 4px;
+}
+
+body.is-immersive-lightbox-open {
+  overflow: hidden;
+}
+
+.immersive-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 4vw, 48px);
+}
+
+.immersive-lightbox[hidden] {
+  display: none;
+}
+
+.immersive-lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(1, 7, 29, 0.88);
+  backdrop-filter: blur(6px);
+  animation: caseLightboxFade 200ms ease;
+}
+
+.immersive-lightbox__dialog {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(8px, 2vw, 20px);
+  width: 100%;
+  max-width: 1400px;
+  animation: caseLightboxPop 240ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.immersive-lightbox__figure {
+  grid-column: 2;
+  min-width: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.immersive-lightbox__stage {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.immersive-lightbox__stage.is-zoomed {
+  cursor: grab;
+}
+
+.immersive-lightbox__stage.is-panning {
+  cursor: grabbing;
+}
+
+.immersive-lightbox .immersive-lightbox__image {
+  width: auto;
+  height: auto;
+  max-width: min(92vw, 1320px);
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  transition: transform var(--transition);
+  will-change: transform;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.immersive-lightbox__stage.is-panning .immersive-lightbox__image {
+  transition: none;
+}
+
+.immersive-lightbox__caption {
+  max-width: min(92vw, 760px);
+  color: rgba(255, 255, 255, 0.86);
+  font-size: var(--text-sm);
+  font-style: italic;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.immersive-lightbox__caption[hidden] {
+  display: none;
+}
+
+.immersive-lightbox__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  transition: transform var(--transition), background-color var(--transition);
+}
+
+.immersive-lightbox__close:hover {
+  transform: scale(1.06);
+  background: rgba(255, 255, 255, 0.26);
+}
+
+.immersive-lightbox__close svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.immersive-lightbox__nav {
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+  transition: transform var(--transition), background-color var(--transition);
+}
+
+.immersive-lightbox__nav:hover {
+  transform: scale(1.06);
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.immersive-lightbox__nav--prev {
+  grid-column: 1;
+}
+
+.immersive-lightbox__nav--next {
+  grid-column: 3;
+}
+
+.immersive-lightbox__nav[hidden] {
+  display: none;
+}
+
+.immersive-lightbox__nav svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@keyframes caseLightboxFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes caseLightboxPop {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (max-width: 640px) {
+  .immersive-lightbox__nav {
+    width: 40px;
+    height: 40px;
+  }
+
+  .immersive-lightbox .immersive-lightbox__image {
+    max-width: 94vw;
+    max-height: 74vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .immersive-lightbox__backdrop,
+  .immersive-lightbox__dialog {
+    animation: none;
+  }
+
+  .immersive-lightbox .immersive-lightbox__image {
+    transition: none;
+  }
+}
+
+
+/* ==========================================================================
+   Controles de navegação dos carrosséis (setas + indicadores).
+   Aparecem abaixo do carrossel apenas quando há imagens além das visíveis.
+   ========================================================================== */
+
+.case-carousel__controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: var(--space-4);
+}
+
+.case-carousel__controls[hidden] {
+  display: none;
+}
+
+.case-carousel__arrow {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--case-border);
+  border-radius: 50%;
+  background: var(--color-white);
+  color: var(--case-action);
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform var(--transition),
+    border-color var(--transition),
+    background-color var(--transition),
+    box-shadow var(--transition),
+    opacity var(--transition);
+}
+
+.case-carousel__arrow:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: var(--case-action);
+  box-shadow: 0 6px 16px rgba(1, 7, 29, 0.14);
+}
+
+.case-carousel__arrow:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.case-carousel__arrow svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.case-carousel__dots {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.case-carousel__dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(1, 7, 29, 0.2);
+  cursor: pointer;
+  transition: transform var(--transition), background-color var(--transition);
+}
+
+.case-carousel__dot:hover {
+  background: rgba(1, 7, 29, 0.4);
+}
+
+.case-carousel__dot[aria-current="true"] {
+  background: var(--clr-orange);
+  transform: scale(1.3);
+}
+
+.case-carousel__arrow:focus-visible,
+.case-carousel__dot:focus-visible {
+  outline: 2px solid var(--clr-orange-dark);
+  outline-offset: 3px;
 }

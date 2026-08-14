@@ -433,186 +433,405 @@
     carousel.addEventListener("lostpointercapture", stopDragging);
   });
 
-  function createZoomButton(label, action, icon) {
-    var button = document.createElement("button");
-    button.type = "button";
-    button.className = "case-zoom__button";
-    button.setAttribute("aria-label", label);
-    button.setAttribute("data-case-zoom-action", action);
-    button.innerHTML = icon;
-    return button;
-  }
+  // Lightbox: clique numa imagem marcada com [data-case-zoom] para vê-la ampliada
+  // em tela cheia, com navegação entre imagens do mesmo carrossel e zoom por scroll.
+  function setupLightbox(scope) {
+    // Toda imagem dentro do case vira um gatilho do lightbox. Quando a imagem já
+    // está num contêiner [data-case-zoom], usamos esse contêiner; senão, a própria
+    // imagem. Ignoramos imagens dentro de links (para o link continuar funcionando)
+    // e da UI do seletor de modo.
+    var triggers = [];
+    Array.prototype.forEach.call(scope.querySelectorAll("img"), function (img) {
+      if (img.closest("a")) return;
+      if (img.closest(".case-mode-switch")) return;
+      var trigger = img.closest("[data-case-zoom]") || img;
+      if (triggers.indexOf(trigger) === -1) triggers.push(trigger);
+    });
+    if (!triggers.length) return;
 
-  function initializeZoomViewer(viewer, index) {
-    var image = viewer.querySelector(":scope > img");
-    if (!image) return;
+    var overlay = document.createElement("div");
+    overlay.className = "immersive-lightbox";
+    overlay.setAttribute("role", "dialog");
+    overlay.setAttribute("aria-modal", "true");
+    overlay.setAttribute("aria-label", "Imagem ampliada");
+    overlay.hidden = true;
+    overlay.innerHTML =
+      '<div class="immersive-lightbox__backdrop" data-lb-close></div>' +
+      '<div class="immersive-lightbox__dialog">' +
+        '<button class="immersive-lightbox__close" type="button" aria-label="Fechar" data-lb-close>' +
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
+        "</button>" +
+        '<button class="immersive-lightbox__nav immersive-lightbox__nav--prev" type="button" aria-label="Imagem anterior" data-lb-prev hidden>' +
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>' +
+        "</button>" +
+        '<figure class="immersive-lightbox__figure">' +
+          '<div class="immersive-lightbox__stage" data-lb-stage>' +
+            '<img class="immersive-lightbox__image" alt="" data-lb-image>' +
+          "</div>" +
+          '<figcaption class="immersive-lightbox__caption" data-lb-caption></figcaption>' +
+        "</figure>" +
+        '<button class="immersive-lightbox__nav immersive-lightbox__nav--next" type="button" aria-label="Próxima imagem" data-lb-next hidden>' +
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>' +
+        "</button>" +
+      "</div>";
+    document.body.appendChild(overlay);
 
-    var state = {
-      scale: 1,
-      x: 0,
-      y: 0,
-      panning: false,
-      pointerId: null,
-      lastX: 0,
-      lastY: 0
-    };
+    var lbImage = overlay.querySelector("[data-lb-image]");
+    var lbCaption = overlay.querySelector("[data-lb-caption]");
+    var lbStage = overlay.querySelector("[data-lb-stage]");
+    var prevButton = overlay.querySelector("[data-lb-prev]");
+    var nextButton = overlay.querySelector("[data-lb-next]");
+
+    var group = [];
+    var current = 0;
+    var lastFocus = null;
+
+    var zoom = { scale: 1, x: 0, y: 0, panning: false, pointerId: null, lastX: 0, lastY: 0 };
     var minScale = 1;
     var maxScale = 4;
-    var scaleStep = 0.5;
-    var controls = document.createElement("div");
-    var zoomOut = createZoomButton(
-      "Diminuir zoom",
-      "out",
-      '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12"/></svg>'
-    );
-    var reset = document.createElement("button");
-    var zoomIn = createZoomButton(
-      "Aumentar zoom",
-      "in",
-      '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 4v12M4 10h12"/></svg>'
-    );
+    var scaleStep = 0.6;
 
-    viewer.classList.add("case-zoom");
-    viewer.tabIndex = viewer.hasAttribute("tabindex") ? viewer.tabIndex : 0;
-    viewer.setAttribute("aria-label", "Imagem ampliável: " + image.alt);
-    image.draggable = false;
-
-    controls.className = "case-zoom__controls";
-    controls.setAttribute("aria-label", "Controles de zoom");
-    reset.type = "button";
-    reset.className = "case-zoom__level";
-    reset.setAttribute("aria-label", "Restaurar zoom para 100%");
-    reset.setAttribute("data-case-zoom-action", "reset");
-    reset.textContent = "100%";
-    controls.append(zoomOut, reset, zoomIn);
-    viewer.appendChild(controls);
-
-    function getBounds() {
-      return {
-        x: Math.max(0, (image.offsetWidth * state.scale - viewer.clientWidth) / 2),
-        y: Math.max(0, (image.offsetHeight * state.scale - viewer.clientHeight) / 2)
-      };
+    function imageOf(trigger) {
+      return trigger.tagName === "IMG" ? trigger : trigger.querySelector("img");
     }
 
-    function clampPan() {
-      var bounds = getBounds();
-      state.x = Math.min(bounds.x, Math.max(-bounds.x, state.x));
-      state.y = Math.min(bounds.y, Math.max(-bounds.y, state.y));
+    function captionOf(trigger) {
+      var figure = trigger.closest("figure");
+      var caption = figure ? figure.querySelector(".case-caption, figcaption") : null;
+      if (caption && caption.textContent.trim()) return caption.textContent.trim();
+      var img = imageOf(trigger);
+      return img && img.alt ? img.alt : "";
     }
 
-    function render() {
-      clampPan();
-      image.style.transform = "translate3d(" + state.x + "px, " + state.y + "px, 0) scale(" + state.scale + ")";
-      reset.textContent = Math.round(state.scale * 100) + "%";
-      zoomOut.disabled = state.scale <= minScale;
-      zoomIn.disabled = state.scale >= maxScale;
-      viewer.classList.toggle("is-zoomed", state.scale > minScale);
+    function groupOf(trigger) {
+      var carousel = trigger.closest("[data-case-carousel]");
+      if (!carousel) return [trigger];
+      // Agrupa todos os gatilhos que estão dentro do mesmo carrossel, na ordem do DOM.
+      return triggers.filter(function (item) {
+        return carousel.contains(item);
+      });
+    }
 
-      if (state.scale === minScale) {
-        state.x = 0;
-        state.y = 0;
-        image.style.transform = "";
+    function renderZoom() {
+      lbImage.style.transform =
+        "translate(" + zoom.x + "px, " + zoom.y + "px) scale(" + zoom.scale + ")";
+      lbStage.classList.toggle("is-zoomed", zoom.scale > minScale);
+    }
+
+    function resetZoom() {
+      zoom.scale = 1;
+      zoom.x = 0;
+      zoom.y = 0;
+      zoom.panning = false;
+      lbImage.style.transform = "";
+      lbStage.classList.remove("is-zoomed", "is-panning");
+    }
+
+    function setScale(next) {
+      zoom.scale = Math.min(maxScale, Math.max(minScale, next));
+      if (zoom.scale === minScale) {
+        zoom.x = 0;
+        zoom.y = 0;
       }
+      renderZoom();
     }
 
-    function setScale(nextScale) {
-      state.scale = Math.min(maxScale, Math.max(minScale, nextScale));
-      render();
+    function show(index) {
+      if (!group.length) return;
+      current = (index + group.length) % group.length;
+      var trigger = group[current];
+      var img = imageOf(trigger);
+      resetZoom();
+      lbImage.src = img.currentSrc || img.src;
+      lbImage.alt = img.alt || "";
+      var caption = captionOf(trigger);
+      lbCaption.textContent = caption;
+      lbCaption.hidden = !caption;
+      var many = group.length > 1;
+      prevButton.hidden = !many;
+      nextButton.hidden = !many;
     }
 
-    function setPanning(active) {
-      state.panning = active;
-      viewer.classList.toggle("is-panning", active);
-      document.documentElement.classList.toggle("is-case-zoom-panning", active);
+    function open(trigger) {
+      group = groupOf(trigger);
+      var index = group.indexOf(trigger);
+      lastFocus = document.activeElement;
+      overlay.hidden = false;
+      document.body.classList.add("is-immersive-lightbox-open");
+      show(index < 0 ? 0 : index);
+      overlay.querySelector("[data-lb-close]").focus();
     }
 
-    controls.addEventListener("pointerdown", function (event) {
-      event.stopPropagation();
+    function close() {
+      overlay.hidden = true;
+      document.body.classList.remove("is-immersive-lightbox-open");
+      resetZoom();
+      if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+    }
+
+    overlay.addEventListener("click", function (event) {
+      if (event.target.closest("[data-lb-close]")) close();
     });
 
-    controls.addEventListener("click", function (event) {
-      var button = event.target.closest("[data-case-zoom-action]");
-      if (!button) return;
-      event.stopPropagation();
-
-      var action = button.getAttribute("data-case-zoom-action");
-      if (action === "in") setScale(state.scale + scaleStep);
-      if (action === "out") setScale(state.scale - scaleStep);
-      if (action === "reset") setScale(minScale);
+    prevButton.addEventListener("click", function () {
+      show(current - 1);
     });
 
-    viewer.addEventListener("pointerdown", function (event) {
-      if (state.scale <= minScale || event.target.closest(".case-zoom__controls")) return;
+    nextButton.addEventListener("click", function () {
+      show(current + 1);
+    });
+
+    lbStage.addEventListener(
+      "wheel",
+      function (event) {
+        event.preventDefault();
+        setScale(zoom.scale + (event.deltaY < 0 ? scaleStep : -scaleStep));
+      },
+      { passive: false }
+    );
+
+    lbImage.addEventListener("dblclick", function (event) {
+      event.preventDefault();
+      setScale(zoom.scale > minScale ? minScale : 2.4);
+    });
+
+    lbStage.addEventListener("pointerdown", function (event) {
+      if (zoom.scale <= minScale) return;
       if (event.pointerType === "mouse" && event.button !== 0) return;
-
-      event.preventDefault();
-      event.stopPropagation();
-      setPanning(true);
-      state.pointerId = event.pointerId;
-      state.lastX = event.clientX;
-      state.lastY = event.clientY;
-      viewer.setPointerCapture(event.pointerId);
+      zoom.panning = true;
+      zoom.pointerId = event.pointerId;
+      zoom.lastX = event.clientX;
+      zoom.lastY = event.clientY;
+      lbStage.classList.add("is-panning");
+      lbStage.setPointerCapture(event.pointerId);
     });
 
-    viewer.addEventListener("pointermove", function (event) {
-      if (!state.panning || event.pointerId !== state.pointerId) return;
-      event.preventDefault();
-      state.x += event.clientX - state.lastX;
-      state.y += event.clientY - state.lastY;
-      state.lastX = event.clientX;
-      state.lastY = event.clientY;
-      render();
+    lbStage.addEventListener("pointermove", function (event) {
+      if (!zoom.panning || event.pointerId !== zoom.pointerId) return;
+      zoom.x += event.clientX - zoom.lastX;
+      zoom.y += event.clientY - zoom.lastY;
+      zoom.lastX = event.clientX;
+      zoom.lastY = event.clientY;
+      renderZoom();
     });
 
-    function stopPanning(event) {
-      if (!state.panning) return;
-      setPanning(false);
-
-      if (event && viewer.hasPointerCapture(event.pointerId)) {
-        viewer.releasePointerCapture(event.pointerId);
+    function stopPan(event) {
+      if (!zoom.panning) return;
+      zoom.panning = false;
+      lbStage.classList.remove("is-panning");
+      if (event && lbStage.hasPointerCapture(event.pointerId)) {
+        lbStage.releasePointerCapture(event.pointerId);
       }
     }
 
-    viewer.addEventListener("pointerup", stopPanning);
-    viewer.addEventListener("pointercancel", stopPanning);
-    viewer.addEventListener("lostpointercapture", stopPanning);
+    lbStage.addEventListener("pointerup", stopPan);
+    lbStage.addEventListener("pointercancel", stopPan);
+    lbStage.addEventListener("lostpointercapture", stopPan);
 
-    viewer.addEventListener("dblclick", function (event) {
-      if (event.target.closest(".case-zoom__controls")) return;
-      event.preventDefault();
-      event.stopPropagation();
-      setScale(state.scale === minScale ? 2 : minScale);
-    });
-
-    viewer.addEventListener("keydown", function (event) {
-      var panStep = 40;
-
-      if (event.key === "+" || event.key === "=") {
-        event.preventDefault();
-        setScale(state.scale + scaleStep);
+    document.addEventListener("keydown", function (event) {
+      if (overlay.hidden) return;
+      if (event.key === "Escape") {
+        close();
+      } else if (event.key === "ArrowLeft" && group.length > 1) {
+        show(current - 1);
+      } else if (event.key === "ArrowRight" && group.length > 1) {
+        show(current + 1);
+      } else if (event.key === "+" || event.key === "=") {
+        setScale(zoom.scale + scaleStep);
       } else if (event.key === "-") {
-        event.preventDefault();
-        setScale(state.scale - scaleStep);
+        setScale(zoom.scale - scaleStep);
       } else if (event.key === "0") {
-        event.preventDefault();
         setScale(minScale);
-      } else if (state.scale > minScale && event.key.indexOf("Arrow") === 0) {
-        event.preventDefault();
-        if (event.key === "ArrowLeft") state.x += panStep;
-        if (event.key === "ArrowRight") state.x -= panStep;
-        if (event.key === "ArrowUp") state.y += panStep;
-        if (event.key === "ArrowDown") state.y -= panStep;
-        render();
       }
     });
 
-    viewer.setAttribute("data-case-zoom-index", String(index + 1));
-    render();
+    triggers.forEach(function (trigger) {
+      var img = imageOf(trigger);
+      if (!img) return;
 
-    window.addEventListener("resize", render);
+      trigger.classList.add("case-zoomable");
+      trigger.setAttribute("role", "button");
+      trigger.setAttribute("tabindex", "0");
+      trigger.setAttribute(
+        "aria-label",
+        "Ampliar imagem" + (img.alt ? ": " + img.alt : "")
+      );
+
+      // Diferencia clique de arraste ouvindo o movimento no documento (funciona
+      // mesmo quando o carrossel captura o ponteiro durante o arraste).
+      var startX = 0;
+      var startY = 0;
+      var dragged = false;
+
+      function onDocMove(event) {
+        if (
+          Math.abs(event.clientX - startX) > 8 ||
+          Math.abs(event.clientY - startY) > 8
+        ) {
+          dragged = true;
+        }
+      }
+
+      function onDocUp() {
+        document.removeEventListener("pointermove", onDocMove, true);
+        document.removeEventListener("pointerup", onDocUp, true);
+      }
+
+      trigger.addEventListener("pointerdown", function (event) {
+        startX = event.clientX;
+        startY = event.clientY;
+        dragged = false;
+        document.addEventListener("pointermove", onDocMove, true);
+        document.addEventListener("pointerup", onDocUp, true);
+      });
+
+      trigger.addEventListener("click", function (event) {
+        if (dragged) return;
+        event.preventDefault();
+        open(trigger);
+      });
+
+      trigger.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          open(trigger);
+        }
+      });
+    });
   }
 
-  root.querySelectorAll("[data-case-zoom]").forEach(initializeZoomViewer);
+  // Adiciona setas e indicadores (dots) abaixo de cada carrossel. Os controles só
+  // aparecem quando há imagens além das visíveis, e se ajustam ao redimensionar
+  // (inclusive quando o painel "Case completo" deixa de estar oculto).
+  function setupCarouselControls(scope) {
+    Array.prototype.forEach.call(
+      scope.querySelectorAll("[data-case-carousel]"),
+      function (carousel) {
+        var items = carousel.querySelectorAll(".case-carousel__item");
+        if (items.length < 2) return;
+
+        var controls = document.createElement("div");
+        controls.className = "case-carousel__controls";
+        controls.hidden = true;
+
+        var prev = document.createElement("button");
+        prev.type = "button";
+        prev.className = "case-carousel__arrow case-carousel__arrow--prev";
+        prev.setAttribute("aria-label", "Imagem anterior");
+        prev.innerHTML =
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>';
+
+        var dots = document.createElement("div");
+        dots.className = "case-carousel__dots";
+        var dotList = [];
+        Array.prototype.forEach.call(items, function (item, index) {
+          var dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "case-carousel__dot";
+          dot.setAttribute("aria-label", "Ir para a imagem " + (index + 1));
+          dot.addEventListener("click", function () {
+            goTo(index);
+          });
+          dots.appendChild(dot);
+          dotList.push(dot);
+        });
+
+        var next = document.createElement("button");
+        next.type = "button";
+        next.className = "case-carousel__arrow case-carousel__arrow--next";
+        next.setAttribute("aria-label", "Próxima imagem");
+        next.innerHTML =
+          '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>';
+
+        controls.appendChild(prev);
+        controls.appendChild(dots);
+        controls.appendChild(next);
+        carousel.insertAdjacentElement("afterend", controls);
+
+        function currentIndex() {
+          var carRect = carousel.getBoundingClientRect();
+          var center = carRect.left + carRect.width / 2;
+          var best = 0;
+          var bestDist = Infinity;
+          Array.prototype.forEach.call(items, function (item, index) {
+            var r = item.getBoundingClientRect();
+            var dist = Math.abs((r.left + r.right) / 2 - center);
+            if (dist < bestDist) {
+              bestDist = dist;
+              best = index;
+            }
+          });
+          return best;
+        }
+
+        function goTo(index) {
+          index = Math.max(0, Math.min(items.length - 1, index));
+          var target = items[index];
+          var carRect = carousel.getBoundingClientRect();
+          var tRect = target.getBoundingClientRect();
+          var delta =
+            tRect.left -
+            carRect.left -
+            (carousel.clientWidth - target.clientWidth) / 2;
+          carousel.scrollBy({ left: delta, behavior: "smooth" });
+        }
+
+        function updateState() {
+          var overflow = carousel.scrollWidth - carousel.clientWidth > 2;
+          controls.hidden = !overflow;
+          if (!overflow) return;
+          var index = currentIndex();
+          dotList.forEach(function (dot, i) {
+            dot.setAttribute("aria-current", i === index ? "true" : "false");
+          });
+          prev.disabled = carousel.scrollLeft <= 1;
+          next.disabled =
+            carousel.scrollLeft >=
+            carousel.scrollWidth - carousel.clientWidth - 1;
+        }
+
+        prev.addEventListener("click", function () {
+          goTo(currentIndex() - 1);
+        });
+        next.addEventListener("click", function () {
+          goTo(currentIndex() + 1);
+        });
+
+        var scheduled = false;
+        carousel.addEventListener("scroll", function () {
+          if (scheduled) return;
+          scheduled = true;
+          window.requestAnimationFrame(function () {
+            scheduled = false;
+            updateState();
+          });
+        });
+
+        carousel.addEventListener("keydown", function (event) {
+          if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            goTo(currentIndex() - 1);
+          } else if (event.key === "ArrowRight") {
+            event.preventDefault();
+            goTo(currentIndex() + 1);
+          }
+        });
+
+        if (typeof ResizeObserver === "function") {
+          new ResizeObserver(function () {
+            updateState();
+          }).observe(carousel);
+        } else {
+          window.addEventListener("resize", updateState);
+        }
+
+        updateState();
+      }
+    );
+  }
+
+  setupLightbox(root);
+  setupCarouselControls(root);
 
   prepareModeRelationships();
 
