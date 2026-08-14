@@ -1,0 +1,140 @@
+{#
+  flori-bot — launcher + painel do assistente de evidências.
+  - Substitui o botão flutuante de WhatsApp (que vira CTA dentro do painel).
+  - CSS do painel e JS do chat carregam SOB DEMANDA (não bloqueiam o load inicial).
+  - O launcher tem CSS crítico inline para renderizar sem requisição extra.
+#}
+<div
+  class="fb-root"
+  data-floribot
+  data-endpoint="https://flori-bot.contato-f75.workers.dev"
+  data-turnstile-sitekey="0x4AAAAAAEPc09HAxYDzDKPX"
+>
+  <button
+    class="fb-launcher"
+    type="button"
+    data-floribot-open
+    aria-label="Abrir assistente: pergunte sobre o trabalho de Floriano"
+    aria-haspopup="dialog"
+    aria-expanded="false"
+    aria-controls="fbPanel"
+  >
+    <span class="fb-launcher__icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none">
+        <path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3z" fill="currentColor"/>
+        <path d="M18.5 14l.8 2.2 2.2.8-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.8.8-2.2z" fill="currentColor" opacity=".7"/>
+      </svg>
+    </span>
+    <span class="fb-launcher__label">Pergunte sobre meu trabalho</span>
+  </button>
+
+  <div class="fb-backdrop" data-floribot-close hidden></div>
+
+  <section
+    class="fb-panel"
+    id="fbPanel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="fbTitle"
+    aria-describedby="fbDisclaimer"
+    data-lenis-prevent
+    hidden
+  >
+    <header class="fb-panel__head">
+      <div class="fb-panel__id">
+        <span class="fb-panel__avatar" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+            <path d="M12 3l1.6 4.4L18 9l-4.4 1.6L12 15l-1.6-4.4L6 9l4.4-1.6L12 3z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="fb-panel__idtext">
+          <strong id="fbTitle">flori-bot</strong>
+          <span class="fb-panel__sub">Assistente de IA · fala sobre Floriano</span>
+        </span>
+      </div>
+      <button class="fb-panel__close" type="button" aria-label="Fechar assistente" data-floribot-close>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </header>
+
+    <div class="fb-log" id="fbLog" role="log" aria-live="polite" aria-atomic="false">
+      <div class="fb-intro" data-fb-intro>
+        <p class="fb-disclaimer" id="fbDisclaimer">
+          Sou uma IA baseada em informações revisadas por Floriano. Falo dele em
+          terceira pessoa, aponto as fontes e posso errar — confira nos links.
+        </p>
+        <div class="fb-chips">
+          <button type="button" class="fb-chip" data-fb-suggest>Que experiência ele tem com pesquisa?</button>
+          <button type="button" class="fb-chip" data-fb-suggest>Quais resultados mensuráveis já entregou?</button>
+          <button type="button" class="fb-chip" data-fb-suggest>Como conecta design e front-end?</button>
+          <button type="button" class="fb-chip" data-fb-suggest>Que evidências tem de trabalho ponta a ponta?</button>
+        </div>
+        <p class="fb-direct">
+          Prefere falar direto?
+          <a href="https://wa.me/5518996773264?text=Ol%C3%A1%2C%20Floriano.%20Vi%20seu%20site%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          ·
+          <a href="mailto:contato@floriano.des.br">E-mail</a>
+        </p>
+      </div>
+    </div>
+
+    <form class="fb-form" data-floribot-form>
+      <div class="fb-turnstile" data-fb-turnstile hidden></div>
+      <div class="fb-input-row">
+        <textarea
+          class="fb-input"
+          data-fb-input
+          rows="1"
+          maxlength="2000"
+          placeholder="Pergunte sobre o trabalho de Floriano..."
+          aria-label="Sua pergunta"
+        ></textarea>
+        <button class="fb-send" type="submit" data-fb-send aria-label="Enviar pergunta">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true">
+            <path d="M12 19V5M6 11l6-6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    </form>
+  </section>
+</div>
+
+{# CSS crítico só do launcher (o painel vem em flori-bot.css, sob demanda). #}
+<style>
+  .fb-launcher{position:fixed;right:clamp(18px,2.2vw,28px);bottom:clamp(18px,2.2vw,28px);z-index:200;display:inline-flex;align-items:center;gap:10px;height:56px;padding:0 20px 0 18px;border:none;border-radius:99px;cursor:pointer;background:var(--clr-orange,#ee782e);color:var(--clr-text-dark,#01071d);font-family:var(--font,'Montserrat',sans-serif);font-weight:500;font-size:.95rem;line-height:1;box-shadow:var(--shadow-md,0 4px 12px rgba(0,0,0,.12));transition:transform .22s ease,box-shadow .22s ease,opacity .22s ease}
+  .fb-launcher__icon{display:inline-flex}
+  .fb-launcher:hover{transform:translateY(-2px);box-shadow:var(--shadow-brand,0 8px 24px rgba(238,120,46,.4))}
+  .fb-launcher:active{transform:translateY(0)}
+  .fb-root.fb-open .fb-launcher{opacity:0;pointer-events:none;transform:scale(.92)}
+  @media (max-width:600px){
+    .fb-launcher{padding:0;width:56px;justify-content:center}
+    .fb-launcher__label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  }
+  @media (prefers-reduced-motion:reduce){ .fb-launcher{transition:none} }
+</style>
+
+{# Carregamento sob demanda: CSS + JS do painel só ao interagir (com preload em idle). #}
+<script>
+(function(){
+  var opener = document.querySelector('[data-floribot-open]');
+  if(!opener) return;
+  var CSS = "/css/flori-bot.css?v={{ '/css/flori-bot.css' | assetVersion }}";
+  var JS  = "/js/flori-bot.js?v={{ '/js/flori-bot.js' | assetVersion }}";
+  var state = 0; // 0 idle, 1 loading, 2 ready
+  var queueOpen = false;
+  function boot(open){
+    if(open) queueOpen = true;
+    if(state === 2){ if(queueOpen && window.FloriBot){ window.FloriBot.open(); } return; }
+    if(state === 1) return;
+    state = 1;
+    var l = document.createElement('link'); l.rel = 'stylesheet'; l.href = CSS; document.head.appendChild(l);
+    var s = document.createElement('script'); s.src = JS; s.defer = true;
+    s.onload = function(){ state = 2; if(queueOpen && window.FloriBot){ window.FloriBot.open(); } };
+    document.body.appendChild(s);
+  }
+  opener.addEventListener('click', function(){ boot(true); });
+  if('requestIdleCallback' in window){ requestIdleCallback(function(){ boot(false); }, { timeout: 5000 }); }
+})();
+</script>
