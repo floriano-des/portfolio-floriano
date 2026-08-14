@@ -227,7 +227,7 @@ ${items.map((item, index) => `<div class="cs-metric${item.modifier ? ` ${escapeA
       data: "_data",
       layouts: "_includes/layouts",
     },
-    templateFormats: ["njk", "html", "md"],
+    templateFormats: ["njk", "html", "md", "11ty.js"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
   };
