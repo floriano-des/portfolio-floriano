@@ -7,7 +7,7 @@ bodyClass: "olho-case-page"
 heroImage: "/assets/projetos/olho-vivo/cover-hover.webp"
 ogType: "article"
 robots: "index, follow, max-image-preview:large"
-lastmod: "2026-08-12"
+lastmod: "2026-08-14"
 caseDetailedReadTime: "7min"
 caseSummaryReadTime: "3min"
 caseKeywords:
@@ -47,9 +47,9 @@ caseKeywords:
       </div>
     </dl>
 
-    <a class="immersive-case__cta" href="/reflexoes/pesquisa-olho-vivo/">
+    <button class="immersive-case__cta" type="button" disabled hidden>
       Ver a pesquisa completa
-    </a>
+    </button>
   </header>
 
   <aside class="cs-toc immersive-case__toc" aria-label="Índice do case" data-cs-toc>
@@ -147,22 +147,8 @@ caseKeywords:
       <section class="case-section" id="sec-pesquisa" data-cs-section data-cs-label="Pesquisa">
         <h2>3. A pesquisa: do dado secundário ao campo</h2>
         <div class="case-copy">
-          <p>Em 2025, a pesquisa começou com dados do Senado, IBGE, Câmara dos Deputados e fontes locais. Depois, usei 5W2H para estruturar o problema, survey para medir percepção e entrevistas para entender linguagem, confiança e comportamento.</p>
+          <p>Em 2025, comecei pelos dados do Senado, IBGE, Câmara dos Deputados e fontes locais. Estruturei o recorte com 5W2H, medi padrões em um survey com 50 respostas e fui a campo para entender a linguagem, a confiança e os comportamentos por trás dos números.</p>
         </div>
-
-        <figure class="case-figure case-figure--within case-figure--tall">
-          <div class="case-figure__media" data-case-zoom>
-            <img src="/assets/projetos/olho-vivo/5w2h.webp" width="1024" height="1518" loading="lazy" decoding="async" alt="Framework 5W2H preenchido para mapear o problema do Olho Vivo">
-          </div>
-          <figcaption class="case-caption">5W2H usado para estruturar o problema antes do campo</figcaption>
-        </figure>
-
-        <figure class="case-figure case-figure--within">
-          <div class="case-figure__media case-figure__media--video">
-            <video src="/assets/projetos/olho-vivo/affinity-diagram.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Diagrama de afinidade com os achados das entrevistas em movimento"></video>
-          </div>
-          <figcaption class="case-caption">Diagrama de afinidade organizando os achados das 8 entrevistas</figcaption>
-        </figure>
 
         <div class="case-copy case-section--compact">
           <p>As fontes secundárias ajudaram a separar achismo de contexto. Elas mostraram limitações de educação política, dados sociais e condições econômicas que influenciaram diretamente o desenho do survey e do roteiro. Os recortes abaixo registram os dados disponíveis durante a pesquisa de 2025.</p>
@@ -196,6 +182,50 @@ caseKeywords:
             </figure>
           </div>
         </div>
+
+        <figure class="case-figure case-figure--within case-figure--tall">
+          <div class="case-figure__media" data-case-zoom>
+            <img src="/assets/projetos/olho-vivo/5w2h.webp" width="1024" height="1518" loading="lazy" decoding="async" alt="Framework 5W2H preenchido para mapear o problema do Olho Vivo">
+          </div>
+          <figcaption class="case-caption">5W2H usado para estruturar o problema antes do campo</figcaption>
+        </figure>
+
+        <div class="case-callout">
+          <h3>Pesquisa em campo</h3>
+          <div class="case-copy">
+            <p>Conduzi 8 entrevistas semiestruturadas, presenciais, com moradores de Palmital de idades, ocupações e níveis de engajamento político variados. O contato direto acrescentou linguagem, contexto e nuances de confiança ao que os dados secundários e o survey já indicavam.</p>
+          </div>
+        </div>
+
+        <figure class="case-figure case-figure--within case-figure--phone">
+          <div class="case-figure__media case-figure__media--video case-figure__media--portrait">
+            <video
+              src="/assets/projetos/olho-vivo/entrevistas-em-campo.mp4"
+              poster="/assets/projetos/olho-vivo/entrevistas-em-campo-poster.webp"
+              width="540"
+              height="960"
+              controls
+              playsinline
+              preload="none"
+              aria-label="Registro visual, sem áudio, das entrevistas presenciais em Palmital"
+              aria-describedby="olho-vivo-registro-campo"
+            >
+              <a href="/assets/projetos/olho-vivo/entrevistas-em-campo.mp4">Assistir ao registro das entrevistas em campo</a>
+            </video>
+          </div>
+          <figcaption class="case-caption" id="olho-vivo-registro-campo">Registro visual sem áudio, editado a partir de dois trechos das entrevistas presenciais para preservar a identidade dos participantes.</figcaption>
+        </figure>
+
+        <div class="case-copy case-section--compact">
+          <p>Em campo, três padrões ganharam força: canais informais como rádio, WhatsApp e conversas presenciais faziam parte da rotina; a confusão entre cargos pedia educação política dentro da experiência; e diferenças de familiaridade digital indicavam que o produto não poderia depender de uma única forma de acesso. Ao agrupar as falas, essas observações viraram padrões comparáveis.</p>
+        </div>
+
+        <figure class="case-figure case-figure--within">
+          <div class="case-figure__media case-figure__media--video">
+            <video src="/assets/projetos/olho-vivo/affinity-diagram.mp4" autoplay loop muted playsinline preload="metadata" aria-label="Diagrama de afinidade com os achados das entrevistas em movimento"></video>
+          </div>
+          <figcaption class="case-caption">Diagrama de afinidade organizando os achados das 8 entrevistas</figcaption>
+        </figure>
 
         <div class="case-copy case-section--compact">
           <p><strong>O que a pesquisa revelou:</strong></p>
@@ -401,7 +431,7 @@ caseKeywords:
       </section>
     </div>
 
-    <a class="case-footer-cta" href="/reflexoes/pesquisa-olho-vivo/">Ver a pesquisa completa</a>
+    <button class="case-footer-cta" type="button" disabled hidden>Ver a pesquisa completa</button>
   </section>
 
   <section class="case-mode-panel case-mode-panel--tldr" id="{{ page.fileSlug }}-panel-tldr" role="tabpanel" aria-labelledby="{{ page.fileSlug }}-tab-tldr" tabindex="0" data-case-mode-panel="tldr">
@@ -506,7 +536,7 @@ caseKeywords:
       </section>
     </div>
 
-    <a class="case-footer-cta" href="/reflexoes/pesquisa-olho-vivo/">Ver a pesquisa completa</a>
+    <button class="case-footer-cta" type="button" disabled hidden>Ver a pesquisa completa</button>
   </section>
   </div>
 </article>

@@ -157,6 +157,24 @@ body.immersive-case-page {
   background: #08133b;
 }
 
+.olho-case-page .immersive-case__cta:disabled,
+.olho-case-page .case-footer-cta:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.olho-case-page .immersive-case__cta[hidden],
+.olho-case-page .case-footer-cta[hidden] {
+  display: none;
+}
+
+.olho-case-page .immersive-case__cta:disabled:hover,
+.olho-case-page .case-footer-cta:disabled:hover {
+  transform: none;
+  background: var(--case-action);
+}
+
 .case-mode-switch {
   position: relative;
   z-index: 2;
@@ -1283,6 +1301,15 @@ body.immersive-case-page {
 
 .case-figure__media--video {
   aspect-ratio: 16 / 9;
+}
+
+.case-figure__media--portrait {
+  aspect-ratio: 4 / 5;
+  background: var(--case-ink);
+}
+
+.case-figure__media--portrait video {
+  object-position: center top;
 }
 
 .case-figure__media--video video {
