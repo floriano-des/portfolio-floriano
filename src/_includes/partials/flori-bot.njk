@@ -108,6 +108,8 @@
   .fb-launcher:hover{transform:translateY(-2px);box-shadow:var(--shadow-brand,0 8px 24px rgba(238,120,46,.4))}
   .fb-launcher:active{transform:translateY(0)}
   .fb-root.fb-open .fb-launcher{opacity:0;pointer-events:none;transform:scale(.92)}
+  /* Esconde o launcher quando o menu flutuante do site abre (mesmo padrão do WhatsApp/voltar-ao-topo). */
+  body.floating-menu-open .fb-launcher{opacity:0;visibility:hidden;pointer-events:none}
   @media (max-width:600px){
     .fb-launcher{padding:0;width:56px;justify-content:center}
     .fb-launcher__label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
