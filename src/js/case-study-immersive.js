@@ -444,6 +444,7 @@
     Array.prototype.forEach.call(scope.querySelectorAll("img"), function (img) {
       if (img.closest("a")) return;
       if (img.closest(".case-mode-switch")) return;
+      if (img.closest(".immersive-case__hero")) return; // capa fica de fora
       var trigger = img.closest("[data-case-zoom]") || img;
       if (triggers.indexOf(trigger) === -1) triggers.push(trigger);
     });
@@ -657,11 +658,16 @@
         "Ampliar imagem" + (img.alt ? ": " + img.alt : "")
       );
 
-      // Diferencia clique de arraste ouvindo o movimento no documento (funciona
-      // mesmo quando o carrossel captura o ponteiro durante o arraste).
+      img.draggable = false;
+
+      // Abrimos no pointerup ouvido no documento (fase de captura), e não no evento
+      // "click". Dentro de um carrossel, o arraste chama setPointerCapture e o clique
+      // acaba sendo entregue ao carrossel, nunca à imagem — então o "click" não serve.
+      // O pointerup, ouvido no documento, chega mesmo com o ponteiro capturado.
       var startX = 0;
       var startY = 0;
       var dragged = false;
+      var armed = false;
 
       function onDocMove(event) {
         if (
@@ -675,20 +681,24 @@
       function onDocUp() {
         document.removeEventListener("pointermove", onDocMove, true);
         document.removeEventListener("pointerup", onDocUp, true);
+        if (!armed) return;
+        armed = false;
+        if (!dragged) open(trigger);
       }
 
       trigger.addEventListener("pointerdown", function (event) {
+        if (event.pointerType === "mouse" && event.button !== 0) return;
         startX = event.clientX;
         startY = event.clientY;
         dragged = false;
+        armed = true;
         document.addEventListener("pointermove", onDocMove, true);
         document.addEventListener("pointerup", onDocUp, true);
       });
 
+      // Neutraliza o clique sintético que pode surgir depois do pointerup.
       trigger.addEventListener("click", function (event) {
-        if (dragged) return;
         event.preventDefault();
-        open(trigger);
       });
 
       trigger.addEventListener("keydown", function (event) {
