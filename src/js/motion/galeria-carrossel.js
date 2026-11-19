@@ -4,24 +4,19 @@
   var section = document.querySelector('.galeria-carrossel');
   if (!section) return;
 
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var desktopQuery = window.matchMedia('(min-width: 769px) and (hover: hover) and (pointer: fine)');
+  var reduceMotion = reducedMotionQuery.matches;
   var canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-  var canDragRows = canHover && window.matchMedia('(min-width: 769px)').matches;
+  var canDragRows = desktopQuery.matches;
   var row1 = section.querySelector('.galeria-carrossel__row--1');
   var row2 = section.querySelector('.galeria-carrossel__row--2');
-  var pointerMoved = false;
   var suppressNextClick = false;
   var pendingClickCard = null;
   var pendingClickTimer = 0;
   var activeRowDrag = null;
-  var isSectionHovering = false;
   var rowStates = [];
-  var lastFrameTime = 0;
-  var rowAnimationFrame = 0;
-  var rowDuration = 32;
   var lightboxImagePromises = {};
-  var isSectionInView = typeof window.IntersectionObserver === 'undefined';
-  var isPageVisible = !document.hidden;
 
   function preloadLightboxImage(src) {
     if (!src) return Promise.resolve(src);
@@ -59,14 +54,15 @@
   function attachHoverPan(card) {
     var win = card.querySelector('.galeria-card__window');
     var img = card.querySelector('.galeria-card__img');
-    if (!win || !img || !canHover) return;
+    if (!win || !img) return;
 
     card.addEventListener('pointerenter', function () {
+      if (!canHover) return;
       preloadLightboxImage(img.getAttribute('data-full-src') || img.currentSrc || img.src);
     }, { passive: true });
 
     card.addEventListener('mouseenter', function () {
-      if (reduceMotion) return;
+      if (reduceMotion || !canHover) return;
 
       var winH = win.offsetHeight;
       var renderedW = win.offsetWidth;
@@ -89,173 +85,141 @@
 
   section.querySelectorAll('.galeria-card').forEach(attachHoverPan);
 
-  [row1, row2].forEach(function (row) {
-    if (!row) return;
-
-    Array.from(row.children).forEach(function (card) {
-      var clone = card.cloneNode(true);
-      clone.setAttribute('aria-hidden', 'true');
-      clone.querySelectorAll('.galeria-card__open').forEach(function (button) {
-        button.setAttribute('tabindex', '-1');
-      });
-      row.appendChild(clone);
-      attachHoverPan(clone);
-    });
-  });
-
-  function getLoopDistance(row) {
-    return Math.max(0, row.scrollWidth / 2);
-  }
-
-  function getReferenceTravel() {
-    return Math.max(1, section.clientWidth / 2);
-  }
-
-  function normalizeOffset(state) {
-    if (!state.loop) return 0;
-
-    while (state.offset <= -state.loop) {
-      state.offset += state.loop;
-    }
-
-    while (state.offset > 0) {
-      state.offset -= state.loop;
-    }
-
-    return state.offset;
-  }
-
   function renderRow(state) {
-    normalizeOffset(state);
+    state.offset = Math.max(-state.travel, Math.min(0, state.offset));
     state.row.style.transform = 'translate3d(' + state.offset.toFixed(2) + 'px, 0, 0)';
   }
 
-  function refreshRowMetrics(state, isInitial) {
-    var oldLoop = state.loop || 0;
-    var oldOffset = state.offset || 0;
-
-    state.loop = getLoopDistance(state.row);
-    state.speed = getReferenceTravel() / state.duration;
-
-    if (isInitial) {
-      state.offset = state.direction > 0 ? -state.loop : 0;
-    } else if (oldLoop && state.loop) {
-      state.offset = (oldOffset / oldLoop) * state.loop;
-    }
-
+  function updateRowProgress(state, trigger) {
+    state.offset = -state.travel * (state.direction < 0 ? trigger.progress : 1 - trigger.progress);
     renderRow(state);
   }
 
-  function createRowState(row, direction, duration) {
+  function createRowState(row, direction, index) {
+    var viewport = document.createElement('div');
+    viewport.className = 'galeria-carrossel__viewport';
+    viewport.setAttribute('role', 'region');
+    viewport.setAttribute('aria-label', 'Sites e interfaces, linha ' + index);
+    viewport.setAttribute('tabindex', '0');
+    row.before(viewport);
+    viewport.appendChild(row);
+
     var state = {
       row: row,
+      viewport: viewport,
       direction: direction,
-      duration: duration,
-      loop: 0,
-      speed: 0,
+      travel: 0,
       offset: 0,
-      dragging: false
+      trigger: null
     };
 
-    row.style.animation = 'none';
     rowStates.push(state);
-    refreshRowMetrics(state, true);
-    return state;
-  }
+    row.addEventListener('dragstart', function (event) {
+      event.preventDefault();
+    });
+    row.addEventListener('pointerdown', startRowDrag);
+    row.addEventListener('pointermove', moveRowDrag);
+    row.addEventListener('pointerup', endRowDrag);
+    row.addEventListener('pointercancel', endRowDrag);
+    row.addEventListener('lostpointercapture', endRowDrag);
 
-  if (canDragRows) {
-    if (row1) createRowState(row1, -1, rowDuration);
-    if (row2) createRowState(row2, 1, rowDuration);
-  }
+    viewport.addEventListener('keydown', function (event) {
+      if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
 
-  function canRunSectionAnimation() {
-    return isSectionInView && isPageVisible;
-  }
+      var offset = state.trigger ? state.offset : -row.scrollLeft;
+      var step = row.clientWidth * 0.75;
+      if (event.key === 'ArrowRight') offset -= step;
+      else if (event.key === 'ArrowLeft') offset += step;
+      else if (event.key === 'Home') offset = 0;
+      else if (event.key === 'End') offset = -(row.scrollWidth - row.clientWidth);
+      else return;
 
-  function canRunRowLoop() {
-    return canRunSectionAnimation() && !reduceMotion && canDragRows && !isSectionHovering;
-  }
+      event.preventDefault();
+      scrollToRowOffset(state, offset);
+    });
 
-  function setCssAnimationState() {
-    var playState = canRunSectionAnimation() && !reduceMotion ? 'running' : 'paused';
+    viewport.addEventListener('focusin', function (event) {
+      var card = event.target.closest('.galeria-card');
+      if (!card || !state.trigger) return;
 
-    [row1, row2].forEach(function (row) {
-      if (row) row.style.animationPlayState = playState;
+      // O foco em um cartão fora da tela deve acompanhar o mesmo progresso do scroll.
+      viewport.scrollLeft = 0;
+      var cardRect = card.getBoundingClientRect();
+      var rowRect = row.getBoundingClientRect();
+      var viewportRect = viewport.getBoundingClientRect();
+      if (cardRect.left >= viewportRect.left + 16 && cardRect.right <= viewportRect.right - 16) return;
+
+      scrollToRowOffset(state, (row.clientWidth - cardRect.width) / 2 - (cardRect.left - rowRect.left));
     });
   }
 
-  function stopRowLoop() {
-    if (rowAnimationFrame) {
-      window.cancelAnimationFrame(rowAnimationFrame);
-      rowAnimationFrame = 0;
-    }
+  function syncScrollRows() {
+    reduceMotion = reducedMotionQuery.matches;
+    canDragRows = desktopQuery.matches;
+    canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    activeRowDrag = null;
 
-    lastFrameTime = 0;
-  }
+    rowStates.forEach(function (state) {
+      if (state.trigger) state.trigger.kill();
+      state.trigger = null;
+      state.viewport.classList.remove('is-scroll-driven');
+      state.row.classList.remove('is-dragging');
+      state.row.style.removeProperty('transform');
+      state.row.scrollLeft = 0;
+    });
 
-  function startRowLoop() {
-    if (!canRunRowLoop() || rowAnimationFrame) return;
-    lastFrameTime = 0;
-    rowAnimationFrame = window.requestAnimationFrame(animateRows);
-  }
+    if (canDragRows && !reduceMotion && window.gsap && window.ScrollTrigger) {
+      window.gsap.registerPlugin(window.ScrollTrigger);
 
-  function syncSectionAnimation() {
-    setCssAnimationState();
+      rowStates.forEach(function (state, index) {
+        state.viewport.classList.add('is-scroll-driven');
 
-    if (canRunRowLoop()) {
-      startRowLoop();
-    } else {
-      stopRowLoop();
-    }
-  }
+        function measure() {
+          state.travel = Math.max(0, state.row.scrollWidth - state.row.clientWidth);
+        }
 
-  function animateRows(now) {
-    rowAnimationFrame = 0;
+        measure();
 
-    if (!canRunRowLoop()) {
-      lastFrameTime = 0;
-      return;
-    }
-
-    var delta = lastFrameTime ? (now - lastFrameTime) / 1000 : 0;
-    lastFrameTime = now;
-
-    if (delta > 0) {
-      rowStates.forEach(function (state) {
-        if (state.dragging) return;
-        state.offset += state.direction * state.speed * delta;
-        renderRow(state);
+        // Cada linha fica no centro da tela até mostrar o primeiro e o último cartão por inteiro.
+        state.trigger = window.ScrollTrigger.create({
+          id: 'galeria-row-' + (index + 1),
+          trigger: state.viewport,
+          start: function () {
+            return 'top ' + Math.max(24, Math.round((window.innerHeight - state.viewport.offsetHeight) / 2)) + 'px';
+          },
+          end: function () { return '+=' + Math.max(1, state.travel); },
+          pin: true,
+          pinSpacing: true,
+          onRefreshInit: measure,
+          onRefresh: function (trigger) { updateRowProgress(state, trigger); },
+          onUpdate: function (trigger) { updateRowProgress(state, trigger); }
+        });
       });
     }
 
-    rowAnimationFrame = window.requestAnimationFrame(animateRows);
+    if (window.ScrollTrigger) window.ScrollTrigger.refresh();
   }
 
-  if (canDragRows) {
-    section.addEventListener('mouseenter', function () {
-      isSectionHovering = true;
-      syncSectionAnimation();
-    });
+  function scrollToRowOffset(state, offset) {
+    var travel = state.trigger ? state.travel : Math.max(0, state.row.scrollWidth - state.row.clientWidth);
+    offset = Math.max(-travel, Math.min(0, offset));
+    if (!state.trigger) {
+      state.row.scrollLeft = -offset;
+      return;
+    }
 
-    section.addEventListener('mouseleave', function () {
-      isSectionHovering = false;
-      syncSectionAnimation();
-    });
+    var progress = travel ? -offset / travel : 0;
+    if (state.direction > 0) progress = 1 - progress;
+    var target = state.trigger.start + progress * (state.trigger.end - state.trigger.start);
+    if (window.__lenis) window.__lenis.scrollTo(target, { immediate: true });
+    else window.scrollTo({ top: target, behavior: 'instant' });
   }
 
-  if (typeof window.IntersectionObserver !== 'undefined') {
-    new window.IntersectionObserver(function (entries) {
-      isSectionInView = entries[0].isIntersecting;
-      syncSectionAnimation();
-    }).observe(section);
-  }
-
-  document.addEventListener('visibilitychange', function () {
-    isPageVisible = !document.hidden;
-    syncSectionAnimation();
-  });
-
-  syncSectionAnimation();
+  if (row1) createRowState(row1, -1, 1);
+  if (row2) createRowState(row2, 1, 2);
+  desktopQuery.addEventListener('change', syncScrollRows);
+  reducedMotionQuery.addEventListener('change', syncScrollRows);
+  syncScrollRows();
 
   function getStateForRow(row) {
     return rowStates.find(function (state) {
@@ -292,14 +256,12 @@
       pointerId: e.pointerId,
       startX: e.clientX,
       startY: e.clientY,
-      startOffset: state.offset,
+      startOffset: state.trigger ? state.offset : -row.scrollLeft,
       moved: false
     };
 
-    pointerMoved = false;
     suppressNextClick = false;
     setPendingClickCard(e.target.closest('.galeria-card'));
-    state.dragging = true;
     row.classList.add('is-dragging');
 
     if (row.setPointerCapture) {
@@ -316,24 +278,20 @@
     dx = e.clientX - activeRowDrag.startX;
     dy = e.clientY - activeRowDrag.startY;
 
-    if (Math.abs(dx) > 6 || Math.abs(dy) > 6) {
+    if (Math.abs(dx) > 6 && Math.abs(dx) >= Math.abs(dy)) {
       activeRowDrag.moved = true;
-      pointerMoved = true;
     }
 
     if (!activeRowDrag.moved) return;
 
     e.preventDefault();
-    activeRowDrag.state.offset = activeRowDrag.startOffset + dx;
-    renderRow(activeRowDrag.state);
+    scrollToRowOffset(activeRowDrag.state, activeRowDrag.startOffset + dx);
   }
 
   function endRowDrag(e) {
     if (!activeRowDrag || activeRowDrag.pointerId !== e.pointerId) return;
 
-    activeRowDrag.state.dragging = false;
     activeRowDrag.state.row.classList.remove('is-dragging');
-    renderRow(activeRowDrag.state);
 
     if (activeRowDrag.moved) {
       clearPendingClickCard();
@@ -343,26 +301,7 @@
       }, 150);
     }
 
-    pointerMoved = false;
     activeRowDrag = null;
-  }
-
-  if (canDragRows) {
-    rowStates.forEach(function (state) {
-      state.row.addEventListener('dragstart', function (e) {
-        e.preventDefault();
-      });
-      state.row.addEventListener('pointerdown', startRowDrag);
-      state.row.addEventListener('pointermove', moveRowDrag);
-      state.row.addEventListener('pointerup', endRowDrag);
-      state.row.addEventListener('pointercancel', endRowDrag);
-    });
-
-    window.addEventListener('resize', function () {
-      rowStates.forEach(function (state) {
-        refreshRowMetrics(state, false);
-      });
-    }, { passive: true });
   }
 
   var lightbox = document.getElementById('galeriaLightbox');
