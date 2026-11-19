@@ -16,6 +16,10 @@
   var pendingClickTimer = 0;
   var activeRowDrag = null;
   var rowStates = [];
+  var galleryTrigger = null;
+  var stage = document.createElement('div');
+  stage.className = 'galeria-carrossel__stage';
+  if (row1 || row2) (row1 || row2).before(stage);
   var lightboxImagePromises = {};
 
   function preloadLightboxImage(src) {
@@ -101,7 +105,7 @@
     viewport.setAttribute('role', 'region');
     viewport.setAttribute('aria-label', 'Sites e interfaces, linha ' + index);
     viewport.setAttribute('tabindex', '0');
-    row.before(viewport);
+    stage.appendChild(viewport);
     viewport.appendChild(row);
 
     var state = {
@@ -159,10 +163,12 @@
     canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     activeRowDrag = null;
 
+    if (galleryTrigger) galleryTrigger.kill();
+    galleryTrigger = null;
+    stage.classList.remove('is-scroll-driven');
+
     rowStates.forEach(function (state) {
-      if (state.trigger) state.trigger.kill();
       state.trigger = null;
-      state.viewport.classList.remove('is-scroll-driven');
       state.row.classList.remove('is-dragging');
       state.row.style.removeProperty('transform');
       state.row.scrollLeft = 0;
@@ -170,30 +176,41 @@
 
     if (canDragRows && !reduceMotion && window.gsap && window.ScrollTrigger) {
       window.gsap.registerPlugin(window.ScrollTrigger);
+      stage.classList.add('is-scroll-driven');
 
-      rowStates.forEach(function (state, index) {
-        state.viewport.classList.add('is-scroll-driven');
-
-        function measure() {
+      function measure() {
+        rowStates.forEach(function (state) {
           state.travel = Math.max(0, state.row.scrollWidth - state.row.clientWidth);
-        }
-
-        measure();
-
-        // Cada linha fica no centro da tela até mostrar o primeiro e o último cartão por inteiro.
-        state.trigger = window.ScrollTrigger.create({
-          id: 'galeria-row-' + (index + 1),
-          trigger: state.viewport,
-          start: function () {
-            return 'top ' + Math.max(24, Math.round((window.innerHeight - state.viewport.offsetHeight) / 2)) + 'px';
-          },
-          end: function () { return '+=' + Math.max(1, state.travel); },
-          pin: true,
-          pinSpacing: true,
-          onRefreshInit: measure,
-          onRefresh: function (trigger) { updateRowProgress(state, trigger); },
-          onUpdate: function (trigger) { updateRowProgress(state, trigger); }
         });
+      }
+
+      function updateRows(trigger) {
+        rowStates.forEach(function (state) {
+          updateRowProgress(state, trigger);
+        });
+      }
+
+      measure();
+
+      // As duas linhas compartilham o mesmo trecho de rolagem e permanecem visíveis juntas.
+      galleryTrigger = window.ScrollTrigger.create({
+        id: 'galeria-carrosseis',
+        trigger: stage,
+        start: function () {
+          return 'top ' + Math.max(24, Math.round((window.innerHeight - stage.offsetHeight) / 2)) + 'px';
+        },
+        end: function () {
+          return '+=' + Math.max.apply(null, [1].concat(rowStates.map(function (state) { return state.travel; })));
+        },
+        pin: true,
+        pinSpacing: true,
+        onRefreshInit: measure,
+        onRefresh: updateRows,
+        onUpdate: updateRows
+      });
+
+      rowStates.forEach(function (state) {
+        state.trigger = galleryTrigger;
       });
     }
 
