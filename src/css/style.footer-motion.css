@@ -135,6 +135,16 @@
   font-size: var(--text-xs);
 }
 
+.site-footer__bottom a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-footer__bottom a:hover {
+  color: rgba(247, 247, 247, 0.9);
+}
+
 .whatsapp-float {
   position: fixed;
   right: clamp(18px, 2.2vw, 28px);

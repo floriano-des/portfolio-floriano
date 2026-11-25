@@ -3,6 +3,7 @@
     number: "01",
     name: "Quantum Vizz",
     meta: "Growth e CRO: +194% de conversão",
+    code: true,
     year: "2025",
     href: "/projetos/quantum-vizz/",
     image: "/assets/projetos/quantum-vizz/cover-hover.webp"
@@ -11,6 +12,7 @@
     number: "02",
     name: "Mercado das Figurinhas",
     meta: "Do lançamento aos aprendizados de ativação",
+    code: true,
     year: "2026",
     href: "/projetos/mercado-das-figurinhas/",
     image: "/assets/projetos/mercado-das-figurinhas/cover-hover.webp"
@@ -19,6 +21,7 @@
     number: "03",
     name: "Web Dev 2.0",
     meta: "Produto interno e UX operacional",
+    code: true,
     year: "2026",
     href: "/projetos/2p-web-dev/",
     image: "/assets/projetos/web-dev/cover-hover.webp"
@@ -27,6 +30,7 @@
     number: "04",
     name: "Café Wealth Management",
     meta: "Interface e implementação",
+    code: true,
     year: "2025/26",
     href: "/projetos/cafe-invest/",
     image: "/assets/projetos/cafe-invest/cover-hover.webp"
@@ -43,6 +47,7 @@
     number: "06",
     name: "Bit System",
     meta: "Design system e operação",
+    code: true,
     year: "2025",
     href: "/projetos/bit-system/",
     image: "/assets/projetos/bit-system/cover-hover.webp"
@@ -131,7 +136,7 @@
       <a class="project-row" href="{{ project.href }}" data-project-row data-project-image="{{ project.image }}">
         <span class="project-row__number">{{ project.number }}</span>
         <span class="project-row__name">{{ project.name }}</span>
-        <span class="project-row__meta">{{ project.meta }}</span>
+        <span class="project-row__meta">{{ project.meta }}{% if project.code %}<span class="project-row__tag">Design + código</span>{% endif %}</span>
         <span class="project-row__year">{{ project.year }}</span>
         <span class="project-row__arrow" aria-hidden="true">↗</span>
         <img class="project-row__thumb" src="{{ project.image }}" alt="" loading="lazy" decoding="async">

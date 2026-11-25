@@ -330,6 +330,18 @@
   letter-spacing: 0.06em;
 }
 
+/* Marca os cases que também foram implementados em código. */
+.project-row__tag {
+  display: table;
+  margin-top: 8px;
+  padding: 3px 9px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  line-height: 1.4;
+  opacity: 0.72;
+}
+
 .project-row__name {
   font-size: clamp(1.65rem, 3.5vw, 3.8rem);
   font-weight: var(--fw-light);

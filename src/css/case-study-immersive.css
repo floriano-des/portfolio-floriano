@@ -122,6 +122,15 @@ body.immersive-case-page {
   text-align: right;
 }
 
+/* Papel, período e stack lado a lado; o item do meio fica centralizado. */
+.immersive-case__meta--stack {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.immersive-case__meta--stack div:nth-child(2) {
+  text-align: center;
+}
+
 .immersive-case__meta dt {
   font-size: var(--text-xl);
   font-weight: var(--fw-semibold);
@@ -976,7 +985,8 @@ body.immersive-case-page {
     gap: var(--space-4);
   }
 
-  .immersive-case__meta div:last-child {
+  .immersive-case__meta div:last-child,
+  .immersive-case__meta--stack div:nth-child(2) {
     text-align: left;
   }
 

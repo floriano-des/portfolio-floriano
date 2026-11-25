@@ -36,6 +36,9 @@ A IA faz parte do método de trabalho, não da identidade. Ela aparece como apoi
 - A home prioriza posicionamento, competências de produto e provas profissionais para recrutadores e clientes.
 - A seção de design gráfico foi movida para a página Sobre (link discreto na trajetória).
 - Ordem dos projetos na home: Quantum Vizz, Mercado das Figurinhas, Web Dev 2.0, Café Wealth Management, Olho Vivo e Bit System. O case com resultado medido abre a lista; o Olho Vivo, encerrado, vem depois dos produtos entregues.
+- Os cases implementados em código levam `code: true` em `trabalhos-selecionados.njk` e mostram a etiqueta "Design + código". Hoje: Quantum Vizz, Mercado das Figurinhas, Web Dev 2.0, Café Wealth Management e Bit System.
+- O topo de cada case mostra Meu papel, Período e Stack (`immersive-case__meta--stack`). O Stack repete o campo Ferramentas da Visão Geral.
+- O rodapé credita o site como desenhado e desenvolvido por Floriano com apoio de IA e linka o repositório público.
 - Os cases com versão detalhada abrem no modo Resumo. A escolha manual do visitante fica salva durante a sessão.
 - Mercado das Figurinhas usa uma página única com resumo inicial e aprofundamentos nativos expansíveis. Esse case não lê nem altera a preferência de modo dos demais projetos.
 
