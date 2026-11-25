@@ -638,7 +638,9 @@ body.immersive-case-page {
 
 .cafe-invest-case-page .case-copy a,
 .cafe-invest-case-page .case-caption a,
-.olho-case-page .case-copy a {
+.olho-case-page .case-copy a,
+.olho-case-page .case-lead a,
+.olho-case-page .case-fact a {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
@@ -646,7 +648,9 @@ body.immersive-case-page {
 
 .cafe-invest-case-page .case-copy a:hover,
 .cafe-invest-case-page .case-caption a:hover,
-.olho-case-page .case-copy a:hover {
+.olho-case-page .case-copy a:hover,
+.olho-case-page .case-lead a:hover,
+.olho-case-page .case-fact a:hover {
   text-decoration-thickness: 2px;
 }
 
