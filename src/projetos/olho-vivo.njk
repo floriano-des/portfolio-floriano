@@ -88,7 +88,7 @@ caseKeywords:
       <div class="case-callout">
         <h3>Status: projeto encerrado</h3>
         <div class="case-copy">
-          <p>Encerramos o Olho Vivo antes de concluir a construção. Conto o motivo na seção 11, e a pesquisa fica aberta para quem encontrar uma solução melhor.</p>
+          <p>Encerramos o Olho Vivo antes de concluir a construção. O motivo está na seção 11.</p>
         </div>
       </div>
 
@@ -398,13 +398,13 @@ caseKeywords:
         <div class="case-copy">
           <p>Concluí a pesquisa em 2025 e pausei o projeto até ter apoio especializado para validar decisões sobre dados e backend. Depender apenas de IA nessa base técnica não me deixava confortável.</p>
           <p>Em 2026, retomei o Olho Vivo com <a href="https://www.linkedin.com/in/viniciusdisanti/" target="_blank" rel="noopener noreferrer">Vinícius Di Santi</a>, desenvolvedor front-end sênior que assumiu a arquitetura e a revisão técnica. Já existia uma primeira versão do módulo de vereadores, em Next.js, com dados da Câmara puxados do SAPL. Eu seguia responsável pela pesquisa, estratégia, experiência e decisão editorial.</p>
-          <p>As seções 7 a 9 mostram o recorte do primeiro PRD. Em agosto de 2026, fechei um novo PRD que trocava as 30 promessas pré-cadastradas pelo plano de governo inteiro, registrado no TSE.</p>
+          <p>As seções 7 a 9 mostram o primeiro PRD. Em agosto de 2026, fechei um novo PRD que trocava as 30 promessas pré-cadastradas pelo plano de governo inteiro, registrado no TSE.</p>
         </div>
 
         <div class="case-stats">
           <div class="case-stat">
             <strong>216</strong>
-            <span>itens numerados no plano de governo, transcritos e catalogados.</span>
+            <span>itens no plano de governo, todos catalogados.</span>
           </div>
           <div class="case-stat">
             <strong>437</strong>
@@ -420,11 +420,10 @@ caseKeywords:
           <h3>A metodologia do novo PRD:</h3>
           <div class="case-copy">
             <ul>
-              <li><strong>Veredito final binário:</strong> Cumprida ou Não cumprida, com o estado provisório Ainda não cumprida. Sem “em andamento” nem percentual por promessa.</li>
-              <li><strong>Critério congelado</strong> antes da avaliação: um documento posterior pode comprovar, mas não redefinir o que foi prometido.</li>
+              <li><strong>Veredito final binário:</strong> Cumprida ou Não cumprida, com o estado provisório Ainda não cumprida.</li>
+              <li><strong>Critério congelado</strong> antes da avaliação.</li>
               <li><strong>Evidência preservada</strong> com arquivo e hash, verificável mesmo se a fonte sumir.</li>
               <li><strong>Diligência obrigatória</strong> com pedido formal à Prefeitura antes de qualquer “Não cumprida”.</li>
-              <li><strong>Direito de resposta</strong> para a Prefeitura, publicado separado da conclusão editorial.</li>
               <li><strong>IA sem poder de publicação:</strong> ela pesquisa e recomenda; cada veredito passa pela minha aprovação.</li>
             </ul>
           </div>
@@ -435,15 +434,16 @@ caseKeywords:
         <h2>11. Por que encerramos e o que fica aberto</h2>
         <div class="case-copy">
           <p>Mandei o PRD para o <a href="https://www.linkedin.com/in/viniciusdisanti/" target="_blank" rel="noopener noreferrer">Vinícius</a> no fim de agosto. Em 13 de outubro, ele usou IA para comparar o documento com o que já existia e me mandou as lacunas. A primeira reação dele resumiu tudo: “cara, é um canhão esse md, não MVP”.</p>
-          <p>A análise mostrou que o PRD descrevia um produto cerca de quatro blocos maior do que o existente:</p>
+          <p>A análise mostrou um produto cerca de quatro blocos maior que o existente:</p>
           <ol>
             <li><strong>Legislativo endurecido:</strong> banco próprio, snapshots do SAPL (o site ainda o consultava ao vivo) e uma metodologia de presença revisada.</li>
             <li><strong>Promessas do prefeito:</strong> catálogo, placar, critérios, evidências, vereditos e histórico. Era o maior bloco, e não existia nada dele.</li>
-            <li><strong>Operação editorial:</strong> login forte, papéis, MFA, fluxo de aprovação, vereditos versionados, registro das execuções de IA e bloqueio técnico para a IA não publicar.</li>
-            <li><strong>Direito de resposta:</strong> portal da Prefeitura com validação de e-mail institucional, protocolo e moderação.</li>
+            <li><strong>Operação editorial:</strong> login, papéis, MFA, fluxo de aprovação, vereditos versionados e bloqueio técnico para a IA não publicar.</li>
+            <li><strong>Direito de resposta:</strong> portal da Prefeitura com protocolo e moderação.</li>
           </ol>
-          <p>Também faltavam armazenamento de evidências, e-mail, observabilidade, backups, testes e CI: eram 34 requisitos obrigatórios para lançar.</p>
+          <p>Somando a infraestrutura (armazenamento, backups, testes e CI), eram 34 requisitos obrigatórios para lançar.</p>
           <p>Construir era possível. O problema era operar. Cada uma das 105 entregas exigia pesquisa, diligência formal à Prefeitura antes de qualquer “Não cumprida” e a minha aprovação. A IA podia pesquisar e recomendar, mas deixar que ela decidisse estava fora de questão: em política, nem toda promessa tem resposta exata, e um veredito errado pode ser lido como ataque ou como propaganda. Sem mais pessoas para revisar, tudo dependia de nós dois.</p>
+          <p>Lançar só o módulo de vereadores também não resolvia. O Olho Vivo nasceu para acompanhar as promessas do prefeito; os vereadores entravam como educação política e mais uma opção na plataforma. Até o nome vem daí: é inspirado em <em>1984</em>, de George Orwell, mas a favor da população, que passa a ficar de olho no poder. Sem o prefeito, seria outro produto.</p>
           <p>O próprio PRD listava “escopo inviável para equipe pequena” entre os riscos. Em 13 de outubro, ele se confirmou. Passei um tempo procurando uma saída que mantivesse a confiança sem depender de mais gente revisando, e não encontrei. Decidimos encerrar antes de concluir a construção, em vez de publicar algo que não conseguiríamos manter confiável.</p>
         </div>
 
@@ -538,7 +538,7 @@ caseKeywords:
           <p>Concluí a pesquisa em 2025 e pausei o projeto até ter apoio especializado para validar decisões sobre dados e backend.</p>
           <p>Em 2026, retomei o projeto com <a href="https://www.linkedin.com/in/viniciusdisanti/" target="_blank" rel="noopener noreferrer">Vinícius Di Santi</a>, desenvolvedor front-end sênior que assumiu a arquitetura e a revisão técnica. Já existia uma primeira versão do módulo de vereadores, com dados do SAPL.</p>
           <p>Em agosto, fechei um novo PRD: catalogamos os 216 itens do plano de governo do prefeito e chegamos a 105 entregas verificáveis, com veredito binário, evidência preservada, diligência à Prefeitura e minha aprovação em cada decisão.</p>
-          <p>Em outubro, o <a href="https://www.linkedin.com/in/viniciusdisanti/" target="_blank" rel="noopener noreferrer">Vinícius</a> usou IA para comparar o PRD com o que existia: o produto era cerca de quatro blocos maior, com 34 requisitos obrigatórios. Construir era possível; operar, não. Cada veredito dependia de revisão humana, e em política um erro pode ser lido como ataque ou propaganda. Procurei uma saída, não encontrei, e encerramos antes de concluir a construção.</p>
+          <p>Em outubro, o <a href="https://www.linkedin.com/in/viniciusdisanti/" target="_blank" rel="noopener noreferrer">Vinícius</a> usou IA para comparar o PRD com o que existia: o produto era cerca de quatro blocos maior, com 34 requisitos obrigatórios. Construir era possível; operar, não. Cada veredito dependia de revisão humana, e em política um erro pode ser lido como ataque ou propaganda. Lançar só os vereadores não resolvia: o prato principal sempre foi o prefeito. Procurei uma saída, não encontrei, e encerramos antes de concluir a construção.</p>
         </div>
 
         <div class="case-callout">
