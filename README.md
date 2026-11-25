@@ -22,6 +22,7 @@ A IA faz parte do método de trabalho, não da identidade. Ela aparece como apoi
 - O título principal é exatamente: **Product Designer**.
 - O site comunica uma atuação de produto da descoberta ao lançamento, com pesquisa, estratégia, UX, sistemas e evolução orientada por dados.
 - Front-end e IA aparecem como fluências de processo e entrega, nunca como cargos paralelos ao Product Design.
+- Growth e CRO aparecem como diferencial de atuação (leitura de funil, hipóteses e teste A/B), com a Quantum Vizz como prova principal, sem virar título paralelo.
 - Tom: direto, estratégico, humano. Sem jargões vazios, sem exageros, sem corporativês.
 - O texto soa como alguém que pensa, estrutura e executa, não como consultor que só analisa, nem como alguém que só codifica.
 
