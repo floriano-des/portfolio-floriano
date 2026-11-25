@@ -4,6 +4,7 @@
   // Interações exclusivas do template imersivo usado pelos cases do portfólio.
   var root = document.querySelector("[data-immersive-case]");
   if (!root) return;
+  var progressiveReading = root.getAttribute("data-case-reading") === "progressive";
 
   var closeButton = document.querySelector("[data-case-close]");
   var modeButtons = Array.from(root.querySelectorAll("[data-case-mode-button]"));
@@ -39,6 +40,7 @@
     ].join(",");
 
     root.querySelectorAll(selector).forEach(function (element) {
+      if (progressiveReading && element.closest("details")) return;
       if (element.classList.contains("case-copy") && element.closest(".case-callout")) return;
       element.setAttribute("data-animate", "");
     });
@@ -843,12 +845,31 @@
   setupLightbox(root);
   setupCarouselControls(root);
 
-  prepareModeRelationships();
+  if (!progressiveReading) {
+    prepareModeRelationships();
 
-  var urlMode = normalizeMode(new URLSearchParams(window.location.search).get("mode"));
-  var initialMode = urlMode || getStoredMode() || "tldr";
-  setMode(initialMode, { animate: false, updateUrl: false });
-  observeModeSelectorImpression();
+    var urlMode = normalizeMode(new URLSearchParams(window.location.search).get("mode"));
+    var initialMode = urlMode || getStoredMode() || "tldr";
+    setMode(initialMode, { animate: false, updateUrl: false });
+    observeModeSelectorImpression();
+  } else {
+    var indexDetails = root.querySelector(".mfd-index");
+    if (indexDetails) {
+      var desktopIndex = window.matchMedia("(min-width: 1180px)");
+      var updateIndexLayout = function () {
+        indexDetails.open = desktopIndex.matches;
+      };
+      updateIndexLayout();
+      desktopIndex.addEventListener("change", updateIndexLayout);
+    }
+    // Os aprofundamentos são nativos; atualiza apenas mídias e animações ao abrir.
+    root.querySelectorAll("details").forEach(function (details) {
+      details.addEventListener("toggle", function () {
+        if (details.open) centerCarousels();
+        if (window.ScrollTrigger) window.ScrollTrigger.refresh();
+      });
+    });
+  }
 
   window.addEventListener("resize", centerCarousels);
   window.addEventListener("pageshow", centerCarousels);

@@ -1752,3 +1752,496 @@ body.is-immersive-lightbox-open {
   outline: 2px solid var(--clr-orange-dark);
   outline-offset: 3px;
 }
+
+/* Leitura progressiva do Mercado: escopo local, sem alterar os outros cases. */
+.mercado-case-page .mfd-header {
+  width: min(var(--case-text-width), calc(100vw - var(--space-8)));
+}
+
+.mercado-case-page .mfd-header .case-title {
+  margin-top: var(--space-4);
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+}
+
+.mercado-case-page .mfd-header .case-lead {
+  margin-top: var(--space-4);
+  font-size: var(--text-lg);
+  line-height: 1.6;
+}
+
+.mercado-case-page .immersive-case__meta {
+  margin-top: var(--space-8);
+  padding-block: var(--space-6);
+  border-block: 1px solid var(--case-border);
+}
+
+.mercado-case-page .immersive-case__meta dt {
+  font-size: var(--text-sm);
+}
+
+.mercado-case-page .immersive-case__meta dd {
+  line-height: 1.6;
+}
+
+.mercado-case-page .mfd-content {
+  margin-top: var(--space-12);
+}
+
+.mercado-case-page .mfd-content > .case-section:first-child {
+  margin-top: 0;
+}
+
+.mercado-case-page .mfd-eyebrow {
+  color: var(--clr-orange-readable);
+  font-size: 0.75rem;
+  font-weight: var(--fw-semibold);
+  line-height: 1.5;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mercado-case-page .case-section > h2 {
+  margin-top: var(--space-3);
+  font-size: clamp(1.5rem, 2.8vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.mercado-case-page .case-copy {
+  margin-top: var(--space-5);
+  line-height: 1.75;
+}
+
+.mercado-case-page .mfd-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+  padding-block: var(--space-6);
+  border-block: 1px solid var(--case-border);
+}
+
+.mercado-case-page .mfd-highlights dt {
+  font-size: 0.75rem;
+  font-weight: var(--fw-semibold);
+  color: var(--case-caption);
+}
+
+.mercado-case-page .mfd-highlights dd {
+  margin-top: var(--space-2);
+  color: var(--case-ink);
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: var(--fw-semibold);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.mercado-case-page .mfd-highlights dd span {
+  display: block;
+  margin-top: var(--space-3);
+  color: var(--case-copy);
+  font-size: 0.8125rem;
+  font-weight: var(--fw-regular);
+  line-height: 1.6;
+}
+
+.mercado-case-page .mfd-cover {
+  width: min(var(--case-hero-width), calc(100vw - var(--space-8)));
+  max-width: none;
+  margin-top: 0;
+  margin-left: 50%;
+  translate: -50% 0;
+}
+
+/* Capa no topo, como nos demais cases; o texto do hero vem logo abaixo. */
+.mercado-case-page .mfd-header .mfd-cover + .mfd-eyebrow {
+  margin-top: var(--space-10);
+}
+
+.mercado-case-page .mfd-product-link .immersive-case__cta {
+  margin-top: var(--space-6);
+}
+
+.mercado-case-page .mfd-note {
+  margin-top: var(--space-3);
+  color: var(--case-caption);
+  font-size: 0.8125rem;
+  line-height: 1.65;
+}
+
+.mercado-case-page .mfd-product-link .mfd-note {
+  text-align: center;
+}
+
+.mercado-case-page .mfd-details {
+  margin-top: var(--space-6);
+  border: 1px solid var(--case-border);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+}
+
+.mercado-case-page .mfd-details + .mfd-details {
+  margin-top: var(--space-3);
+}
+
+.mercado-case-page .mfd-details > summary {
+  position: relative;
+  display: block;
+  padding: var(--space-5) var(--space-12) var(--space-5) var(--space-6);
+  color: var(--case-ink);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-semibold);
+  line-height: 1.6;
+  list-style: none;
+  cursor: pointer;
+  border-radius: inherit;
+}
+
+.mercado-case-page .mfd-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.mercado-case-page .mfd-details > summary::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: var(--space-6);
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-70%) rotate(45deg);
+}
+
+.mercado-case-page .mfd-details[open] > summary::after {
+  transform: translateY(-20%) rotate(225deg);
+}
+
+.mercado-case-page .mfd-details > summary:hover {
+  background: var(--color-neutral-050);
+}
+
+.mercado-case-page .mfd-details__body {
+  min-width: 0;
+  margin-top: 0;
+  padding: 0 var(--space-6) var(--space-6);
+}
+
+.mercado-case-page .mfd-details__body .case-figure {
+  margin-top: var(--space-6);
+}
+
+.mercado-case-page .mfd-text-link {
+  color: var(--case-ink);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.mercado-case-page .mfd-decisions,
+.mercado-case-page .mfd-findings,
+.mercado-case-page .mfd-experiments {
+  margin-top: var(--space-6);
+}
+
+.mercado-case-page .mfd-decisions > div,
+.mercado-case-page .mfd-findings > div {
+  padding-block: var(--space-6);
+  border-bottom: 1px solid var(--case-border);
+}
+
+.mercado-case-page .mfd-decisions > div:first-child,
+.mercado-case-page .mfd-findings > div:first-child {
+  padding-top: 0;
+}
+
+.mercado-case-page .mfd-decisions h3,
+.mercado-case-page .mfd-findings dt,
+.mercado-case-page .mfd-experiments h3 {
+  color: var(--case-ink);
+  font-size: var(--text-lg);
+  font-weight: var(--fw-semibold);
+  line-height: 1.4;
+}
+
+.mercado-case-page .mfd-decisions p,
+.mercado-case-page .mfd-findings dd,
+.mercado-case-page .mfd-experiments p,
+.mercado-case-page .mfd-observation > p:not(.mfd-eyebrow):not(.mfd-note) {
+  margin-top: var(--space-3);
+  line-height: 1.75;
+}
+
+.mercado-case-page .mfd-journey {
+  counter-reset: journey;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  padding: 0;
+  list-style: none;
+}
+
+.mercado-case-page .mfd-journey li {
+  counter-increment: journey;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--case-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-white);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.mercado-case-page .mfd-journey li::before {
+  content: counter(journey, decimal-leading-zero);
+  color: var(--clr-orange-readable);
+  font-weight: var(--fw-semibold);
+}
+
+.mercado-case-page .mfd-journey li:last-child {
+  border-color: var(--clr-orange-readable);
+}
+
+.mercado-case-page .mfd-screen-grid,
+.mercado-case-page .mfd-profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}
+
+.mercado-case-page .mfd-screen-grid .case-figure,
+.mercado-case-page .mfd-profile-grid .case-figure {
+  min-width: 0;
+  margin-top: 0;
+}
+
+.mercado-case-page .mfd-details .case-carousel {
+  width: 100%;
+  max-width: 100%;
+  margin: var(--space-3) 0 0;
+  padding: 0;
+  transform: none;
+}
+
+.mercado-case-page .mfd-details .case-carousel--gallery .case-carousel__item {
+  width: min(78%, 360px);
+  flex: 0 0 min(78%, 360px);
+}
+
+.mercado-case-page .mfd-details .case-carousel[data-animate],
+.mercado-case-page .mfd-details .case-carousel[data-animate].visible {
+  transform: none;
+}
+
+.mercado-case-page .mfd-observation {
+  margin-top: var(--space-8);
+  padding: var(--space-6);
+  border-left: 3px solid var(--clr-orange);
+  background: var(--color-white);
+}
+
+.mercado-case-page .mfd-observation h3 {
+  margin-top: var(--space-3);
+  line-height: 1.4;
+}
+
+.mercado-case-page .mfd-label-change {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: center;
+  color: var(--case-ink);
+}
+
+.mercado-case-page .mfd-label-change > span:first-child {
+  color: var(--case-caption);
+}
+
+.mercado-case-page .mfd-table-wrap {
+  margin-block: var(--space-4) var(--space-6);
+}
+
+.mercado-case-page .mfd-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.mercado-case-page .mfd-table caption {
+  margin-bottom: var(--space-4);
+  color: var(--case-ink);
+  font-weight: var(--fw-semibold);
+  text-align: left;
+}
+
+.mercado-case-page .mfd-table th,
+.mercado-case-page .mfd-table td {
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--case-border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.mercado-case-page .mfd-table th {
+  font-weight: var(--fw-regular);
+}
+
+.mercado-case-page .mfd-table thead th,
+.mercado-case-page .mfd-table__total th,
+.mercado-case-page .mfd-table__total td {
+  color: var(--case-ink);
+  font-weight: var(--fw-semibold);
+}
+
+.mercado-case-page .mfd-table tr > :last-child {
+  padding-left: var(--space-4);
+  white-space: nowrap;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.mercado-case-page .mfd-experiments {
+  padding-left: var(--space-6);
+  list-style: decimal;
+}
+
+.mercado-case-page .mfd-experiments li {
+  padding-left: var(--space-2);
+}
+
+.mercado-case-page .mfd-experiments li + li {
+  margin-top: var(--space-6);
+}
+
+.mercado-case-page .immersive-case__toc {
+  display: block;
+  width: min(var(--case-text-width), calc(100vw - var(--space-8)));
+  margin: var(--space-8) auto 0;
+  padding: var(--space-5);
+  border: 1px solid var(--case-border);
+  border-radius: var(--radius-md);
+}
+
+.mercado-case-page .immersive-case__toc .cs-toc__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2) var(--space-4);
+}
+
+.mercado-case-page .immersive-case__toc .cs-toc__title,
+.mercado-case-page .immersive-case__toc a {
+  color: var(--case-caption);
+}
+
+.mercado-case-page .mfd-index > summary {
+  position: relative;
+  display: block;
+  margin-bottom: 0;
+  padding-right: var(--space-6);
+  list-style: none;
+  cursor: pointer;
+}
+
+.mercado-case-page .mfd-index > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Mesmo chevron dos aprofundamentos, no lugar do marcador nativo. */
+.mercado-case-page .mfd-index > summary::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: var(--space-1);
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: translateY(-70%) rotate(45deg);
+}
+
+.mercado-case-page .mfd-index[open] > summary {
+  margin-bottom: var(--space-3);
+}
+
+.mercado-case-page .mfd-index[open] > summary::after {
+  transform: translateY(-20%) rotate(225deg);
+}
+
+.mercado-case-page .immersive-case__toc a {
+  padding: var(--space-2) 0;
+  border-left: 0;
+  font-size: 0.8125rem;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.mercado-case-page .immersive-case__toc a:hover,
+.mercado-case-page .immersive-case__toc a.is-active {
+  color: var(--clr-orange-readable);
+}
+
+@media (min-width: 1180px) {
+  .mercado-case-page .mfd-cover {
+    width: min(var(--case-hero-width), calc(100vw - var(--case-media-inset) * 2));
+  }
+
+  .mercado-case-page .immersive-case__toc.is-ready {
+    display: none;
+    margin: 0;
+  }
+
+  .mercado-case-page .immersive-case__toc.is-ready.is-visible {
+    display: block;
+    padding: var(--space-4);
+    width: 176px;
+  }
+
+  .mercado-case-page .immersive-case__toc.is-ready .cs-toc__list {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+}
+
+@media (max-width: 640px) {
+  .mercado-case-page .mfd-highlights {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .mercado-case-page .mfd-highlights > div {
+    display: grid;
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: var(--space-4);
+    align-items: start;
+  }
+
+  .mercado-case-page .mfd-highlights dd {
+    margin-top: 0;
+  }
+
+  .mercado-case-page .mfd-highlights dd span {
+    margin-top: var(--space-2);
+  }
+
+  .mercado-case-page .mfd-journey,
+  .mercado-case-page .mfd-screen-grid,
+  .mercado-case-page .mfd-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mercado-case-page .mfd-details > summary {
+    padding-left: var(--space-4);
+  }
+
+  .mercado-case-page .mfd-details__body {
+    padding-inline: var(--space-4);
+  }
+
+  .mercado-case-page .mfd-observation {
+    padding: var(--space-5);
+  }
+}
