@@ -108,7 +108,7 @@ floriano-des-br/
 │   │   ├── mercado-das-figurinhas.njk
 │   │   ├── bit-system.njk            # Design system para escalabilidade
 │   │   ├── farm-well-hub.njk         # Plataforma com foco em acessibilidade
-│   │   ├── olho-vivo.njk             # Pesquisa e produto cívico em desenvolvimento
+│   │   ├── olho-vivo.njk             # Pesquisa cívica aberta; produto encerrado
 │   │   └── design-grafico.njk        # Portfólio de design visual
 │   │
 │   ├── index.njk                     # Home (hero, stats, 6 projetos, depoimentos, sobre, reflexões)
