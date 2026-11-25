@@ -34,7 +34,7 @@ A IA faz parte do método de trabalho, não da identidade. Ela aparece como apoi
 - A página `/projetos/` reúne o mesmo índice de cases da home e é acessada pelo item "Projetos" da navegação.
 - A home prioriza posicionamento, competências de produto e provas profissionais para recrutadores e clientes.
 - A seção de design gráfico foi movida para a página Sobre (link discreto na trajetória).
-- Ordem dos projetos na home: Olho Vivo, Mercado das Figurinhas, Quantum Vizz, Café Wealth Management, Web Dev 2.0 e Bit System.
+- Ordem dos projetos na home: Quantum Vizz, Mercado das Figurinhas, Web Dev 2.0, Café Wealth Management, Olho Vivo e Bit System. O case com resultado medido abre a lista; o Olho Vivo, encerrado, vem depois dos produtos entregues.
 - Os cases com versão detalhada abrem no modo Resumo. A escolha manual do visitante fica salva durante a sessão.
 - Mercado das Figurinhas usa uma página única com resumo inicial e aprofundamentos nativos expansíveis. Esse case não lê nem altera a preferência de modo dos demais projetos.
 
