@@ -216,6 +216,7 @@ ${items.map((item, index) => `<div class="cs-metric${item.modifier ? ` ${escapeA
   eleventyConfig.addPassthroughCopy({ "src/.htaccess": ".htaccess" });
   // O deploy atual é no Cloudflare Pages, que lê redirecionamentos de _redirects.
   eleventyConfig.addPassthroughCopy({ "src/_redirects": "_redirects" });
+  eleventyConfig.addPassthroughCopy({ "src/_headers": "_headers" });
 
   eleventyConfig.addWatchTarget("src/css/");
   eleventyConfig.addWatchTarget("src/js/");

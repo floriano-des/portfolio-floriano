@@ -1,0 +1,21 @@
+# Cabeçalhos do Cloudflare Pages. Espelham o .htaccess, que só valia na Hostinger.
+# O Cloudflare já envia X-Content-Type-Options: nosniff e
+# Referrer-Policy: strict-origin-when-cross-origin por padrão.
+# Regras não se sobrepõem: se duas casarem com o mesmo caminho e
+# definirem o mesmo cabeçalho, o Cloudflare junta os valores.
+
+/*
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# CSS e JS são referenciados com ?v=hash, então podem ficar 1 ano em cache.
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Imagens, fontes e vídeos não têm versão na URL: 7 dias, sem immutable,
+# para que um arquivo substituído com o mesmo nome apareça em até uma semana.
+/assets/*
+  Cache-Control: public, max-age=604800
