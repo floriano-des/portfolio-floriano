@@ -1,0 +1,25 @@
+# Redirecionamentos do Cloudflare Pages (migração WordPress → Eleventy).
+# Espelha os Redirect 301 do .htaccess, que só valia na Hostinger.
+# Cada endereço antigo aparece com e sem a barra final.
+
+# Posts antigos → Reflexões
+/2025/06/o-que-aprendi-construindo-meu-primeiro-design-system-do-zero/ /reflexoes/ 301
+/2025/06/o-que-aprendi-construindo-meu-primeiro-design-system-do-zero /reflexoes/ 301
+/2025/06/parece-carinho-e-empatia-mas-e-so-ux/ /reflexoes/ 301
+/2025/06/parece-carinho-e-empatia-mas-e-so-ux /reflexoes/ 301
+/2026/02/as-maquinas-ja-ganharam-de-humanos-nas-fabricas-voce-vai-cometer-o-mesmo-erro/ /reflexoes/ 301
+/2026/02/as-maquinas-ja-ganharam-de-humanos-nas-fabricas-voce-vai-cometer-o-mesmo-erro /reflexoes/ 301
+
+# Páginas renomeadas
+/sobre-mim/ /sobre/ 301
+/sobre-mim /sobre/ 301
+/projetos-de-design/ /projetos/ 301
+/projetos-de-design /projetos/ 301
+
+# Projetos
+/olho-vivo/ /projetos/olho-vivo/ 301
+/olho-vivo /projetos/olho-vivo/ 301
+/bit-system-design-system-da-dois-palitos-marketing/ /projetos/bit-system/ 301
+/bit-system-design-system-da-dois-palitos-marketing /projetos/bit-system/ 301
+/quantum-viz-ux-estrategico-copywriting-e-otimizacao-de-conversao/ /projetos/quantum-vizz/ 301
+/quantum-viz-ux-estrategico-copywriting-e-otimizacao-de-conversao /projetos/quantum-vizz/ 301
