@@ -15,7 +15,8 @@
 /js/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Imagens, fontes e vídeos não têm versão na URL: 7 dias, sem immutable,
-# para que um arquivo substituído com o mesmo nome apareça em até uma semana.
-/assets/*
-  Cache-Control: public, max-age=604800
+# /assets/* fica sem regra de propósito e usa o padrão do Cloudflare
+# (public, max-age=14400, must-revalidate). Um max-age longo faz a borda do
+# Cloudflare guardar o arquivo antigo mesmo depois de um deploy, e imagens e o
+# currículo não têm versão na URL. Em novembro de 2026, 7 dias aqui deixaram o
+# currículo desatualizado no ar após uma publicação.
